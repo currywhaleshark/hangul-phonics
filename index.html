@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한글 파닉스 브로마이드 제작기</title>
+  <!-- Google Fonts: Outfit (English UI), Nanum Gothic, Gowun Dodum, Gowun Batang, Hahmlet, Jua -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Hahmlet:wght@400;700&family=Jua&family=Nanum+Gothic:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="logo-icon">🎨</span>
+        <div class="logo-text">
+          <h1>한글 파닉스 브로마이드 제작기</h1>
+          <p>Hangul Phonics Bromide Maker</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-reset" class="btn btn-secondary">
+          <span class="btn-icon">↺</span> 초기화
+        </button>
+        <button id="btn-download" class="btn btn-primary">
+          <span class="btn-icon">📥</span> 고해상도 인쇄용 PNG 저장 (A2)
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="app-main">
+      <!-- Sidebar Control Panel -->
+      <aside class="sidebar">
+        <!-- Section: Layout Configuration -->
+        <section class="control-section">
+          <h2><span class="sec-icon">📐</span> 레이아웃 설정</h2>
+          <div class="control-group">
+            <label>기본 포맷</label>
+            <div class="preset-buttons">
+              <button id="layout-portrait" class="btn-preset active" data-layout="portrait">
+                <span class="preset-icon">📄</span>
+                <div class="preset-desc">
+                  <strong>세로형 (A2)</strong>
+                  <span>4 x 4 그리드</span>
+                </div>
+              </button>
+              <button id="layout-landscape" class="btn-preset" data-layout="landscape">
+                <span class="preset-icon">📑</span>
+                <div class="preset-desc">
+                  <strong>가로형 (A2)</strong>
+                  <span>7 x 2 그리드</span>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="control-group row-group">
+            <div>
+              <label for="input-cols">열(가로) 개수</label>
+              <input type="number" id="input-cols" min="1" max="10" value="4">
+            </div>
+            <div>
+              <label for="input-rows">행(세로) 개수</label>
+              <input type="number" id="input-rows" min="1" max="10" value="4">
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Design Style & Theme -->
+        <section class="control-section">
+          <h2><span class="sec-icon">🎨</span> 디자인 테마 및 색상</h2>
+          
+          <div class="control-group">
+            <label>추천 컬러 테마</label>
+            <div class="theme-presets">
+              <button class="theme-chip active" data-theme="warm" style="background: linear-gradient(135deg, #FFF5E0 50%, #F4AB46 50%);" title="클래식 웜"></button>
+              <button class="theme-chip" data-theme="pastel" style="background: linear-gradient(135deg, #F0F4F8 50%, #87A9C7 50%);" title="파스텔 스카이"></button>
+              <button class="theme-chip" data-theme="forest" style="background: linear-gradient(135deg, #EBF3E8 50%, #86A789 50%);" title="내추럴 포레스트"></button>
+              <button class="theme-chip" data-theme="strawberry" style="background: linear-gradient(135deg, #FFF0F0 50%, #FF8E9E 50%);" title="딸기 핑크"></button>
+              <button class="theme-chip" data-theme="dark" style="background: linear-gradient(135deg, #2D2727 50%, #D5B4B4 50%);" title="모던 다크"></button>
+            </div>
+          </div>
+
+          <div class="control-group color-pickers">
+            <div class="color-picker-item">
+              <label for="color-bg">배경색</label>
+              <div class="color-input-wrapper">
+                <input type="color" id="color-bg" value="#FFF5E0">
+                <span class="color-value">#FFF5E0</span>
+              </div>
+            </div>
+            <div class="color-picker-item">
+              <label for="color-border">테두리/선</label>
+              <div class="color-input-wrapper">
+                <input type="color" id="color-border" value="#F4AB46">
+                <span class="color-value">#F4AB46</span>
+              </div>
+            </div>
+            <div class="color-picker-item">
+              <label for="color-title">메인 타이틀 색상</label>
+              <div class="color-input-wrapper">
+                <input type="color" id="color-title" value="#392A22">
+                <span class="color-value">#392A22</span>
+              </div>
+            </div>
+            <div class="color-picker-item">
+              <label for="color-subtitle">서브 타이틀 색상</label>
+              <div class="color-input-wrapper">
+                <input type="color" id="color-subtitle" value="#7C6552">
+                <span class="color-value">#7C6552</span>
+              </div>
+            </div>
+            <div class="color-picker-item">
+              <label for="color-badge-bg">자음 배지 배경</label>
+              <div class="color-input-wrapper">
+                <input type="color" id="color-badge-bg" value="#F4AB46">
+                <span class="color-value">#F4AB46</span>
+              </div>
+            </div>
+            <div class="color-picker-item">
+              <label for="color-badge-text">자음 배지 글자</label>
+              <div class="color-input-wrapper">
+                <input type="color" id="color-badge-text" value="#FFFFFF">
+                <span class="color-value">#FFFFFF</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section: Text & Typography Content -->
+        <section class="control-section">
+          <h2><span class="sec-icon">✍</span> 타이틀 및 폰트 설정</h2>
+          <div class="control-group">
+            <label for="select-font-family">폰트 스타일</label>
+            <select id="select-font-family">
+              <option value="'Gowun Dodum'" selected>고운 돋움 (둥근 고딕)</option>
+              <option value="'Nanum Gothic'">나눔 고딕 (기본 고딕)</option>
+              <option value="'Gowun Batang'">고운 바탕 (명조체)</option>
+              <option value="'Hahmlet'">함렛 (현대적인 명조체)</option>
+              <option value="'Jua'">주아체 (배달의민족 동글동글)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="input-title">메인 타이틀</label>
+            <input type="text" id="input-title" value="한글 파닉스" placeholder="메인 타이틀 입력">
+          </div>
+          <div class="control-group">
+            <div class="slider-header">
+              <label for="range-title-size">메인 타이틀 크기</label>
+              <span id="val-title-size">210px</span>
+            </div>
+            <input type="range" id="range-title-size" min="100" max="350" step="5" value="210">
+          </div>
+          <div class="control-group">
+            <label for="input-subtitle">서브 타이틀</label>
+            <input type="text" id="input-subtitle" value="자음순 브로마이드" placeholder="서브 타이틀 입력">
+          </div>
+          <div class="control-group">
+            <div class="slider-header">
+              <label for="range-subtitle-size">서브 타이틀 크기</label>
+              <span id="val-subtitle-size">72px</span>
+            </div>
+            <input type="range" id="range-subtitle-size" min="30" max="150" step="2" value="72">
+          </div>
+          <div class="control-group">
+            <div class="slider-header">
+              <label for="range-title-sub-gap">타이틀-서브타이틀 간격</label>
+              <span id="val-title-sub-gap">40px</span>
+            </div>
+            <input type="range" id="range-title-sub-gap" min="10" max="250" step="5" value="40">
+          </div>
+          <div class="control-group">
+            <div class="slider-header">
+              <label for="range-badge-size">자음 배지 글자 크기</label>
+              <span id="val-badge-size">84px</span>
+            </div>
+            <input type="range" id="range-badge-size" min="40" max="140" step="2" value="84">
+          </div>
+          <div class="control-group">
+            <div class="slider-header">
+              <label for="range-badge-bg-size">자음 배지 배경 크기</label>
+              <span id="val-badge-bg-size">100px</span>
+            </div>
+            <input type="range" id="range-badge-bg-size" min="60" max="200" step="5" value="100">
+          </div>
+        </section>
+
+        <!-- Section: Layout Details (Margins, Spacing) -->
+        <section class="control-section">
+          <h2><span class="sec-icon">📏</span> 상세 간격 및 조절</h2>
+          <div class="control-group">
+            <div class="slider-header">
+              <label for="range-margin">바깥 여백 (Margin)</label>
+              <span id="val-margin">250px</span>
+            </div>
+            <input type="range" id="range-margin" min="100" max="400" step="10" value="250">
+          </div>
+          <div class="control-group">
+            <div class="slider-header">
+              <label for="range-gap">카드 간격 (Gap)</label>
+              <span id="val-gap">56px</span>
+            </div>
+            <input type="range" id="range-gap" min="10" max="100" step="2" value="56">
+          </div>
+          <div class="control-group">
+            <div class="slider-header">
+              <label for="range-title-h">타이틀 영역 높이</label>
+              <span id="val-title-h">620px</span>
+            </div>
+            <input type="range" id="range-title-h" min="300" max="900" step="10" value="620">
+          </div>
+        </section>
+
+        <!-- Section: Card Order & Management -->
+        <section class="control-section cards-section">
+          <h2>
+            <span class="sec-icon">🗂</span> 카드 순서 편집
+            <span class="info-tooltip" title="마우스 드래그로 카드의 순서를 변경하거나 빈칸을 삽입하세요.">ⓘ</span>
+          </h2>
+          <div class="card-list-actions">
+            <button id="btn-add-blank" class="btn btn-small btn-secondary">+ 빈 칸 삽입</button>
+            <button id="btn-clear-blanks" class="btn btn-small btn-secondary">모든 빈칸 제거</button>
+          </div>
+          <div class="card-list-container">
+            <ul id="card-sortable-list" class="sortable-list">
+              <!-- Cards will be populated dynamically -->
+            </ul>
+          </div>
+        </section>
+      </aside>
+
+      <!-- Preview Area -->
+      <section class="preview-area">
+        <div class="preview-wrapper">
+          <div class="preview-status" id="preview-status">
+            <span class="spinner"></span> 이미지 렌더링 중...
+          </div>
+          <div class="canvas-container">
+            <canvas id="preview-canvas"></canvas>
+          </div>
+          <div class="canvas-dimensions-info">
+            실제 해상도: <span id="span-res">4961 x 7016 (A2 300 DPI)</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
