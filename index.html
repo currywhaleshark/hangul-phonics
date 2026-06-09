@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>한글 파닉스 브로마이드 제작기</title>
-  <!-- Google Fonts: Outfit (English UI), Nanum Gothic, Gowun Dodum, Gowun Batang, Hahmlet, Jua -->
+  <!-- Google Fonts: Outfit (English UI), Korean display/body font options -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Hahmlet:wght@400;700&family=Jua&family=Nanum+Gothic:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Dokdo&family=Dongle:wght@300;400;700&family=Gamja+Flower&family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Gugi&family=Hahmlet:wght@400;700&family=Jua&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&family=Poor+Story&family=Single+Day&family=Song+Myung&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -137,11 +137,46 @@
             <label for="select-font-family">폰트 스타일</label>
             <select id="select-font-family">
               <option value="'Gowun Dodum'" selected>고운 돋움 (둥근 고딕)</option>
+              <option value="'Noto Sans KR'">Noto Sans KR (깔끔한 고딕)</option>
               <option value="'Nanum Gothic'">나눔 고딕 (기본 고딕)</option>
+              <option value="'Do Hyeon'">도현체 (굵은 제목용)</option>
+              <option value="'Black Han Sans'">Black Han Sans (강한 제목용)</option>
               <option value="'Gowun Batang'">고운 바탕 (명조체)</option>
+              <option value="'Noto Serif KR'">Noto Serif KR (정돈된 명조)</option>
               <option value="'Hahmlet'">함렛 (현대적인 명조체)</option>
+              <option value="'Song Myung'">송명체 (전통 명조)</option>
               <option value="'Jua'">주아체 (배달의민족 동글동글)</option>
+              <option value="'Dongle'">동글체 (귀여운 손글씨)</option>
+              <option value="'Gamja Flower'">감자꽃체 (손글씨)</option>
+              <option value="'Poor Story'">푸어스토리 (동화 느낌)</option>
+              <option value="'Single Day'">싱글데이 (캐주얼 손글씨)</option>
+              <option value="'Gugi'">구기체 (개성 있는 제목)</option>
+              <option value="'Dokdo'">독도체 (붓글씨 느낌)</option>
             </select>
+          </div>
+          <div class="control-group">
+            <label>타이틀 정렬</label>
+            <div class="segmented-control" id="title-align-controls" role="group" aria-label="타이틀 정렬">
+              <button type="button" class="segment-btn active" data-align="left">왼쪽</button>
+              <button type="button" class="segment-btn" data-align="center">가운데</button>
+              <button type="button" class="segment-btn" data-align="right">오른쪽</button>
+            </div>
+          </div>
+          <div class="control-group color-pickers text-color-pickers">
+            <div class="color-picker-item">
+              <label for="color-title-quick">메인 타이틀 색상</label>
+              <div class="color-input-wrapper">
+                <input type="color" id="color-title-quick" value="#392A22">
+                <span class="color-value">#392A22</span>
+              </div>
+            </div>
+            <div class="color-picker-item">
+              <label for="color-subtitle-quick">서브 타이틀 색상</label>
+              <div class="color-input-wrapper">
+                <input type="color" id="color-subtitle-quick" value="#7C6552">
+                <span class="color-value">#7C6552</span>
+              </div>
+            </div>
           </div>
           <div class="control-group">
             <label for="input-title">메인 타이틀</label>

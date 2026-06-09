@@ -374,6 +374,39 @@ input[type="range"]::-webkit-slider-thumb:hover {
   box-shadow: var(--shadow-md);
 }
 
+.segmented-control {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--secondary);
+}
+
+.segment-btn {
+  height: 36px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--secondary-text);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.segment-btn:hover {
+  background: rgba(244, 171, 70, 0.12);
+}
+
+.segment-btn.active {
+  background: var(--white);
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+}
+
 /* Color Pickers */
 .color-pickers {
   display: flex;
@@ -423,6 +456,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
   font-size: 11px;
   font-family: monospace;
   color: var(--text-muted);
+}
+
+.text-color-pickers {
+  padding: 12px;
 }
 
 /* Info Tooltip */

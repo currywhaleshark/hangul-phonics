@@ -75,6 +75,7 @@ const state = {
   gap: 56,
   titleH: 620,
   fontFamily: "'Gowun Dodum'",
+  titleAlign: 'left',
   titleFontSize: 210,
   subtitleFontSize: 72,
   titleSubGap: 40,
@@ -121,9 +122,12 @@ const colorTitle = document.getElementById('color-title');
 const colorSubtitle = document.getElementById('color-subtitle');
 const colorBadgeBg = document.getElementById('color-badge-bg');
 const colorBadgeText = document.getElementById('color-badge-text');
+const colorTitleQuick = document.getElementById('color-title-quick');
+const colorSubtitleQuick = document.getElementById('color-subtitle-quick');
 
 // Typography Controls
 const selectFontFamily = document.getElementById('select-font-family');
+const titleAlignControls = document.getElementById('title-align-controls');
 const rangeTitleSize = document.getElementById('range-title-size');
 const valTitleSize = document.getElementById('val-title-size');
 const rangeSubtitleSize = document.getElementById('range-subtitle-size');
@@ -303,19 +307,26 @@ function drawPoster(targetCanvas, scale) {
   );
   
   // Title text
-  targetCtx.textAlign = 'left';
+  targetCtx.textAlign = state.titleAlign;
   targetCtx.textBaseline = 'top';
+  const titleXByAlign = {
+    left: state.margin * scale,
+    center: W / 2,
+    right: W - state.margin * scale
+  };
+  const titleX = titleXByAlign[state.titleAlign] ?? titleXByAlign.left;
   
   // Draw Main Title
   targetCtx.font = `bold ${state.titleFontSize * scale}px ${state.fontFamily}, 'Malgun Gothic', sans-serif`;
   targetCtx.fillStyle = state.colors.title;
-  targetCtx.fillText(state.title, state.margin * scale, state.margin * scale);
+  targetCtx.fillText(state.title, titleX, state.margin * scale);
   
   // Draw Subtitle
   targetCtx.font = `${state.subtitleFontSize * scale}px ${state.fontFamily}, 'Malgun Gothic', sans-serif`;
   targetCtx.fillStyle = state.colors.subtitle;
   const subtitleY = (state.margin + state.titleFontSize + state.titleSubGap) * scale;
-  targetCtx.fillText(state.subtitle, (state.margin + 8) * scale, subtitleY);
+  const subtitleOffset = state.titleAlign === 'left' ? 8 * scale : state.titleAlign === 'right' ? -8 * scale : 0;
+  targetCtx.fillText(state.subtitle, titleX + subtitleOffset, subtitleY);
   
   // Grid layout parameters
   const rows = parseInt(state.rows);
@@ -442,6 +453,8 @@ function updateColorInputs() {
   colorSubtitle.value = state.colors.subtitle;
   colorBadgeBg.value = state.colors.badgeBg;
   colorBadgeText.value = state.colors.badgeText;
+  colorTitleQuick.value = state.colors.title;
+  colorSubtitleQuick.value = state.colors.subtitle;
 
   // Text representation update
   document.querySelectorAll('.color-picker-item').forEach(item => {
@@ -450,6 +463,12 @@ function updateColorInputs() {
     if (input && textSpan) {
       textSpan.textContent = input.value.toUpperCase();
     }
+  });
+}
+
+function updateTitleAlignControls() {
+  titleAlignControls.querySelectorAll('.segment-btn').forEach(button => {
+    button.classList.toggle('active', button.dataset.align === state.titleAlign);
   });
 }
 
@@ -486,6 +505,15 @@ function initEvents() {
   // Font Controls
   selectFontFamily.addEventListener('change', e => {
     state.fontFamily = e.target.value;
+    scheduleRender();
+  });
+
+  titleAlignControls.addEventListener('click', e => {
+    const button = e.target.closest('.segment-btn');
+    if (!button) return;
+
+    state.titleAlign = button.dataset.align;
+    updateTitleAlignControls();
     scheduleRender();
   });
   
@@ -616,6 +644,8 @@ function initEvents() {
   colorBorder.addEventListener('input', e => handleColorChange('border', e.target.value));
   colorTitle.addEventListener('input', e => handleColorChange('title', e.target.value));
   colorSubtitle.addEventListener('input', e => handleColorChange('subtitle', e.target.value));
+  colorTitleQuick.addEventListener('input', e => handleColorChange('title', e.target.value));
+  colorSubtitleQuick.addEventListener('input', e => handleColorChange('subtitle', e.target.value));
   colorBadgeBg.addEventListener('input', e => handleColorChange('badgeBg', e.target.value));
   colorBadgeText.addEventListener('input', e => handleColorChange('badgeText', e.target.value));
   
@@ -657,6 +687,7 @@ function initEvents() {
       state.gap = 56;
       state.titleH = 620;
       state.fontFamily = "'Gowun Dodum'";
+      state.titleAlign = 'left';
       state.titleFontSize = 210;
       state.subtitleFontSize = 72;
       state.titleSubGap = 40;
@@ -677,6 +708,7 @@ function initEvents() {
       valTitleH.textContent = `${state.titleH}px`;
       
       selectFontFamily.value = state.fontFamily;
+      updateTitleAlignControls();
       rangeTitleSize.value = state.titleFontSize;
       valTitleSize.textContent = `${state.titleFontSize}px`;
       rangeSubtitleSize.value = state.subtitleFontSize;
@@ -739,6 +771,7 @@ async function init() {
   
   // Initial UI updates
   updateColorInputs();
+  updateTitleAlignControls();
   renderCardList();
   
   // Load images and render
