@@ -16,7 +16,40 @@ const DEFAULT_CARDS = [
   { id: 'ㅎ', consonant: 'ㅎ', file: '하하 하마.png', label: '하하 하마' }
 ];
 
-let currentCards = JSON.parse(JSON.stringify(DEFAULT_CARDS)); // Deep copy
+const VOWEL_CARDS = [
+  { id: 'ㅏ', consonant: 'ㅏ', file: '아아 나뭇가지.png', label: '아아 나뭇가지' },
+  { id: 'ㅓ', consonant: 'ㅓ', file: '어어 풍선.png', label: '어어 풍선' },
+  { id: 'ㅗ', consonant: 'ㅗ', file: '오오 상자.png', label: '오오 상자' },
+  { id: 'ㅜ', consonant: 'ㅜ', file: '우우 발판.png', label: '우우 발판' },
+  { id: 'ㅠ', consonant: 'ㅠ', file: '유유 의자.png', label: '유유 의자' },
+  { id: 'ㅛ', consonant: 'ㅛ', file: '요요 그네.png', label: '요요 그네' },
+  { id: 'ㅡ', consonant: 'ㅡ', file: '으으 쿠션.png', label: '으으 쿠션' },
+  { id: 'ㅣ', consonant: 'ㅣ', file: '이이 막대.png', label: '이이 막대' }
+];
+
+const CARD_SETS = {
+  consonants: DEFAULT_CARDS,
+  vowels: VOWEL_CARDS,
+  all: [...DEFAULT_CARDS, ...VOWEL_CARDS]
+};
+
+const CARD_MODE_SUBTITLES = {
+  consonants: '자음순 브로마이드',
+  vowels: '모음 브로마이드',
+  all: '자음·모음 브로마이드'
+};
+
+const ALL_CARD_IMAGES = [...new Map(CARD_SETS.all.map(card => [card.file, card])).values()];
+
+function cloneCards(cards) {
+  return cards.map(card => ({ ...card }));
+}
+
+function cardsForMode(mode) {
+  return cloneCards(CARD_SETS[mode] || DEFAULT_CARDS);
+}
+
+let currentCards = cardsForMode('consonants');
 
 const THEME_PRESETS = {
   warm: {
@@ -66,6 +99,7 @@ const A2_LANDSCAPE = { w: 7016, h: 4961 };
 
 const state = {
   layout: 'portrait', // 'portrait' | 'landscape'
+  cardMode: 'consonants',
   cols: 4,
   rows: 4,
   title: '한글 파닉스',
@@ -128,6 +162,7 @@ const colorSubtitleQuick = document.getElementById('color-subtitle-quick');
 // Typography Controls
 const selectFontFamily = document.getElementById('select-font-family');
 const titleAlignControls = document.getElementById('title-align-controls');
+const cardModeControls = document.getElementById('card-mode-controls');
 const rangeTitleSize = document.getElementById('range-title-size');
 const valTitleSize = document.getElementById('val-title-size');
 const rangeSubtitleSize = document.getElementById('range-subtitle-size');
@@ -144,7 +179,7 @@ const cardSortableList = document.getElementById('card-sortable-list');
 // --- Image Preloading ---
 async function preloadImages() {
   showStatus('이미지 로딩 중...');
-  const promises = DEFAULT_CARDS.map(card => {
+  const promises = ALL_CARD_IMAGES.map(card => {
     return new Promise((resolve) => {
       const img = new Image();
       img.src = encodeURI(card.file);
@@ -472,6 +507,27 @@ function updateTitleAlignControls() {
   });
 }
 
+function updateCardModeControls() {
+  cardModeControls.querySelectorAll('.segment-btn').forEach(button => {
+    button.classList.toggle('active', button.dataset.cardMode === state.cardMode);
+  });
+}
+
+function fitRowsToCurrentCards() {
+  const cols = Math.max(1, parseInt(state.cols) || 1);
+  const neededRows = Math.max(1, Math.ceil(currentCards.length / cols));
+  state.rows = Math.min(10, neededRows);
+  inputRows.value = state.rows;
+}
+
+function updateSubtitleForMode(previousMode) {
+  const previousDefault = CARD_MODE_SUBTITLES[previousMode];
+  if (!state.subtitle || state.subtitle === previousDefault) {
+    state.subtitle = CARD_MODE_SUBTITLES[state.cardMode];
+    inputSubtitle.value = state.subtitle;
+  }
+}
+
 // --- Apply Selected Theme Preset ---
 function applyTheme(themeName) {
   const preset = THEME_PRESETS[themeName];
@@ -516,6 +572,20 @@ function initEvents() {
     updateTitleAlignControls();
     scheduleRender();
   });
+
+  cardModeControls.addEventListener('click', e => {
+    const button = e.target.closest('.segment-btn');
+    if (!button) return;
+
+    const previousMode = state.cardMode;
+    state.cardMode = button.dataset.cardMode;
+    currentCards = cardsForMode(state.cardMode);
+    updateSubtitleForMode(previousMode);
+    fitRowsToCurrentCards();
+    updateCardModeControls();
+    renderCardList();
+    scheduleRender();
+  });
   
   rangeTitleSize.addEventListener('input', e => {
     state.titleFontSize = parseInt(e.target.value);
@@ -555,9 +625,8 @@ function initEvents() {
     
     // Update grid defaults
     state.cols = 4;
-    state.rows = 4;
     inputCols.value = 4;
-    inputRows.value = 4;
+    fitRowsToCurrentCards();
     
     // Sliders
     state.titleH = 620;
@@ -579,9 +648,8 @@ function initEvents() {
     
     // Update grid defaults
     state.cols = 7;
-    state.rows = 2;
     inputCols.value = 7;
-    inputRows.value = 2;
+    fitRowsToCurrentCards();
     
     // Sliders
     state.titleH = 560;
@@ -600,6 +668,7 @@ function initEvents() {
   inputCols.addEventListener('change', e => {
     state.cols = Math.max(1, parseInt(e.target.value) || 1);
     e.target.value = state.cols;
+    fitRowsToCurrentCards();
     scheduleRender();
   });
   
@@ -677,7 +746,8 @@ function initEvents() {
   // Reset Action
   btnReset.addEventListener('click', () => {
     if (confirm('모든 설정을 초기값으로 되돌리시겠습니까?')) {
-      currentCards = JSON.parse(JSON.stringify(DEFAULT_CARDS));
+      state.cardMode = 'consonants';
+      currentCards = cardsForMode(state.cardMode);
       state.layout = 'portrait';
       state.cols = 4;
       state.rows = 4;
@@ -709,6 +779,7 @@ function initEvents() {
       
       selectFontFamily.value = state.fontFamily;
       updateTitleAlignControls();
+      updateCardModeControls();
       rangeTitleSize.value = state.titleFontSize;
       valTitleSize.textContent = `${state.titleFontSize}px`;
       rangeSubtitleSize.value = state.subtitleFontSize;
@@ -772,6 +843,7 @@ async function init() {
   // Initial UI updates
   updateColorInputs();
   updateTitleAlignControls();
+  updateCardModeControls();
   renderCardList();
   
   // Load images and render

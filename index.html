@@ -255,6 +255,14 @@
             <span class="sec-icon">🗂</span> 카드 순서 편집
             <span class="info-tooltip" title="마우스 드래그로 카드의 순서를 변경하거나 빈칸을 삽입하세요.">ⓘ</span>
           </h2>
+          <div class="control-group">
+            <label>카드 구성</label>
+            <div class="segmented-control card-mode-control" id="card-mode-controls" role="group" aria-label="카드 구성">
+              <button type="button" class="segment-btn active" data-card-mode="consonants">자음만</button>
+              <button type="button" class="segment-btn" data-card-mode="vowels">모음만</button>
+              <button type="button" class="segment-btn" data-card-mode="all">자음모음 함께</button>
+            </div>
+          </div>
           <div class="card-list-actions">
             <button id="btn-add-blank" class="btn btn-small btn-secondary">+ 빈 칸 삽입</button>
             <button id="btn-clear-blanks" class="btn btn-small btn-secondary">모든 빈칸 제거</button>
