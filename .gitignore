@@ -3,3 +3,7 @@ node_modules/
 dist/
 .env
 .env.*
+.superpowers/
+worksheets/*.log
+worksheets/*.pid
+worksheets/*.jobid
