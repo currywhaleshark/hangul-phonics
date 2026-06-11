@@ -1,0 +1,184 @@
+{
+  "title": "7레슨 푸푸와 하하: ㅍ ㅎ 첫소리 친구",
+  "pages": [
+    {
+      "type": "character",
+      "theme": "gogo",
+      "kicker": "1장 / 캐릭터와 자음 길",
+      "title": "푸푸 풍선이야",
+      "image": "../../../public/푸푸 풍선.png",
+      "panelTitle": "푸푸의 퐁퐁 길",
+      "letter": "ㅍ",
+      "sound": "프 프 프",
+      "read": "나는 푸푸 풍선이야. 내 몸에는 ㅍ 길이 있어.",
+      "activityTitle": "손가락으로 ㅍ 길을 따라가요",
+      "trace": [
+        "ㅍ",
+        "ㅍ",
+        "ㅍ"
+      ],
+      "teacherNote": "읽어주기: \"푸푸 풍선, 프 프 프\". ㅍ은 바람이 퐁 나오는 친구처럼 입바람 놀이와 연결한다.",
+      "footerLeft": "푸푸 풍선",
+      "footerRight": "7레슨 푸푸와 하하: ㅍ ㅎ 첫소리 친구"
+    },
+    {
+      "type": "spot",
+      "theme": "gogo",
+      "kicker": "2장 / 첫소리 연결",
+      "title": "푸푸 풍선의 친구와 좋아하는 것",
+      "read": "나는 포도, 피자, 풀, 풍선, 파도를 좋아해.",
+      "activityTitle": "푸푸의 소리로 시작하는 그림에 동그라미",
+      "cards": [
+        {
+          "label": "포도",
+          "fill": "FFE96B"
+        },
+        {
+          "label": "피자",
+          "fill": "D9F7FF"
+        },
+        {
+          "label": "풀",
+          "fill": "FCE0FF"
+        },
+        {
+          "label": "풍선",
+          "fill": "E9FFD8"
+        },
+        {
+          "label": "파도",
+          "fill": "FFE6D8"
+        },
+        {
+          "label": "하마",
+          "fill": "EDE4FF"
+        }
+      ],
+      "soundBox": "푸푸의 소리: 프 프 프",
+      "teacherNote": "활동: 포도, 피자, 풀, 풍선, 파도 그림을 찾아 표시한다. 정답을 재촉하지 말고 \"푸푸와 같은 소리일까?\"라고 묻는다.",
+      "footerLeft": "첫소리 연결",
+      "footerRight": "7레슨 푸푸와 하하: ㅍ ㅎ 첫소리 친구"
+    },
+    {
+      "type": "character",
+      "theme": "nana",
+      "kicker": "3장 / 캐릭터와 자음 길",
+      "title": "하하 하마야",
+      "image": "../../../public/하하 하마.png",
+      "panelTitle": "하하의 숨 길",
+      "letter": "ㅎ",
+      "sound": "흐 흐 흐",
+      "read": "나는 하하 하마야. 내 몸에는 ㅎ 숨 길이 있어.",
+      "activityTitle": "손가락으로 ㅎ 길을 따라가요",
+      "trace": [
+        "ㅎ",
+        "ㅎ",
+        "ㅎ"
+      ],
+      "teacherNote": "읽어주기: \"하하 하마, 흐 흐 흐\". ㅎ은 따뜻한 숨이 나오는 친구처럼 손을 입 앞에 대고 느낀다.",
+      "footerLeft": "하하 하마",
+      "footerRight": "7레슨 푸푸와 하하: ㅍ ㅎ 첫소리 친구"
+    },
+    {
+      "type": "spot",
+      "theme": "nana",
+      "kicker": "4장 / 첫소리 연결",
+      "title": "하하 하마의 친구와 좋아하는 것",
+      "read": "나는 해, 하트, 호랑이, 하모니카, 햄버거를 좋아해.",
+      "activityTitle": "하하의 소리로 시작하는 그림에 동그라미",
+      "cards": [
+        {
+          "label": "해",
+          "fill": "FFE96B"
+        },
+        {
+          "label": "하트",
+          "fill": "D9F7FF"
+        },
+        {
+          "label": "호랑이",
+          "fill": "FCE0FF"
+        },
+        {
+          "label": "하모니카",
+          "fill": "E9FFD8"
+        },
+        {
+          "label": "햄버거",
+          "fill": "FFE6D8"
+        },
+        {
+          "label": "포도",
+          "fill": "EDE4FF"
+        }
+      ],
+      "soundBox": "하하의 소리: 흐 흐 흐",
+      "teacherNote": "활동: 해, 하트, 호랑이, 하모니카, 햄버거 그림을 찾아 표시한다. 정답을 재촉하지 말고 \"하하와 같은 소리일까?\"라고 묻는다.",
+      "footerLeft": "첫소리 연결",
+      "footerRight": "7레슨 푸푸와 하하: ㅍ ㅎ 첫소리 친구"
+    },
+    {
+      "type": "sorting",
+      "theme": "mix",
+      "kicker": "5장 / 분류 활동",
+      "title": "친구를 집에 보낼까?",
+      "read": "푸푸 풍선의 친구는 ㅍ 집으로, 하하 하마의 친구는 ㅎ 집으로 보내요.",
+      "houses": [
+        {
+          "title": "ㅍ 집",
+          "theme": "gogo"
+        },
+        {
+          "title": "ㅎ 집",
+          "theme": "nana"
+        }
+      ],
+      "activityTitle": "오려서 붙이거나 선으로 이어요",
+      "tiles": [
+        {
+          "label": "포도",
+          "fill": "FFE96B",
+          "answer": "ㅍ"
+        },
+        {
+          "label": "해",
+          "fill": "FFE96B",
+          "answer": "ㅎ"
+        },
+        {
+          "label": "피자",
+          "fill": "D9F7FF",
+          "answer": "ㅍ"
+        },
+        {
+          "label": "하트",
+          "fill": "D9F7FF",
+          "answer": "ㅎ"
+        },
+        {
+          "label": "풀",
+          "fill": "FCE0FF",
+          "answer": "ㅍ"
+        },
+        {
+          "label": "호랑이",
+          "fill": "FCE0FF",
+          "answer": "ㅎ"
+        },
+        {
+          "label": "풍선",
+          "fill": "E9FFD8",
+          "answer": "ㅍ"
+        },
+        {
+          "label": "하모니카",
+          "fill": "E9FFD8",
+          "answer": "ㅎ"
+        }
+      ],
+      "teacherNote": "검사 포인트: 아이가 캐릭터 이름을 외운 결과와 첫소리 분류를 하는 것을 구분해서 관찰한다.",
+      "footerLeft": "ㅍ/ㅎ 분류",
+      "footerRight": "7레슨 푸푸와 하하: ㅍ ㅎ 첫소리 친구"
+    }
+  ]
+}

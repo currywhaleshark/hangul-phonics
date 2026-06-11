@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>한글 파닉스 학습지 편집기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./editor.css">
+  </head>
+  <body>
+    <div class="editor-shell">
+      <header class="editor-header">
+        <div>
+          <h1>학습지 편집기</h1>
+          <p>JSON으로 내용을 고치고, 검증된 A4 HTML 형식으로 바로 확인합니다.</p>
+        </div>
+        <div class="header-actions">
+          <button id="download-json" class="tool-button secondary" type="button">JSON</button>
+          <button id="download-html" class="tool-button secondary" type="button">HTML</button>
+          <button id="download-png" class="tool-button secondary" type="button">PNG</button>
+          <button id="print-preview" class="tool-button primary" type="button">인쇄</button>
+        </div>
+      </header>
+
+      <main class="editor-main">
+        <aside class="editor-sidebar">
+          <section class="panel compact">
+            <label for="lesson-select">레슨 선택</label>
+            <select id="lesson-select"></select>
+          </section>
+
+          <section class="panel compact">
+            <label for="lesson-title">문서 제목</label>
+            <input id="lesson-title" type="text">
+          </section>
+
+          <nav class="page-list" id="page-list" aria-label="학습지 페이지"></nav>
+
+          <section class="panel editor-panel">
+            <div class="panel-title-row">
+              <h2 id="page-editor-title">페이지</h2>
+              <span id="page-type-badge"></span>
+            </div>
+            <form id="page-form"></form>
+          </section>
+        </aside>
+
+        <section class="preview-pane">
+          <div class="preview-toolbar">
+            <span id="status-text">준비됨</span>
+            <button id="reload-data" class="icon-button" type="button" title="원본 JSON 다시 불러오기">↻</button>
+          </div>
+          <iframe id="preview-frame" title="A4 학습지 미리보기"></iframe>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./editor.js"></script>
+  </body>
+</html>
