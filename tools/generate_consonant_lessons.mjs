@@ -95,8 +95,8 @@ const lessons = [
     ],
   },
   {
-    folder: "lesson-02-dodo-rara",
-    title: "2레슨 도도와 라라: ㄷ ㄹ 첫소리 친구",
+    folder: "lesson-03-dodo-rara",
+    title: "3레슨 도도와 라라: ㄷ ㄹ 첫소리 친구",
     pair: [
       {
         key: "dodo",
@@ -145,8 +145,8 @@ const lessons = [
     ],
   },
   {
-    folder: "lesson-03-mimi-bubu",
-    title: "3레슨 미미와 부부: ㅁ ㅂ 첫소리 친구",
+    folder: "lesson-02-mimi-bubu",
+    title: "2레슨 미미와 부부: ㅁ ㅂ 입술로 느끼는 자음",
     pair: [
       {
         key: "mimi",
@@ -157,10 +157,18 @@ const lessons = [
         image: characterImage("미미 문어.png"),
         panelTitle: "미미의 네모 길",
         sound: "므 므 므",
-        introLine: "나는 미미 문어야. 내 몸에는 ㅁ 네모 길이 있어.",
+        introLine: "나는 미미 문어야. ㅁ 네모 길이 있는 어항에 살고 있어.",
+        introTtsLine: "미음 네모 길이 있는 어항에 살고 있어.",
         likesLine: "나는 모자, 문, 물, 무지개, 미끄럼틀을 좋아해.",
         note: "ㅁ은 닫힌 네모 방처럼 보여 주고 손가락으로 한 바퀴 돈다.",
-        cards: labels(["모자", "문", "물", "무지개", "미끄럼틀", "바나나"]),
+        cards: [
+          { label: "모자", image: asset("hat.png") },
+          { label: "문", image: asset("door.png") },
+          { label: "물", image: asset("water.png") },
+          { label: "무지개", image: asset("rainbow.png") },
+          { label: "미끄럼틀", image: asset("slide.png") },
+          { label: "바나나", image: asset("banana.png") },
+        ],
         correct: ["모자", "문", "물", "무지개", "미끄럼틀"],
       },
       {
@@ -175,14 +183,21 @@ const lessons = [
         introLine: "나는 부부 부엉이야. 내 몸에는 ㅂ 두 방 길이 있어.",
         likesLine: "나는 바나나, 버스, 별, 비, 바구니를 좋아해.",
         note: "ㅂ은 ㅁ 위에 작은 길이 더 있는 모양으로 비교하지 말고, 두 방 친구로 소개한다.",
-        cards: labels(["바나나", "버스", "별", "비", "바구니", "모자"]),
+        cards: [
+          { label: "바나나", image: asset("banana.png") },
+          { label: "버스", image: asset("bus.png") },
+          { label: "별", image: asset("star.png") },
+          { label: "비", image: asset("rain.png") },
+          { label: "바구니", image: asset("basket.png") },
+          { label: "모자", image: asset("hat.png") },
+        ],
         correct: ["바나나", "버스", "별", "비", "바구니"],
       },
     ],
   },
   {
-    folder: "lesson-04-sasa-aa",
-    title: "4레슨 사사와 아아: ㅅ 그리고 조용한 ㅇ",
+    folder: "lesson-04-sasa-haha",
+    title: "4레슨 사사와 하하: ㅅ ㅎ 숨과 바람 자음",
     pair: [
       {
         key: "sasa",
@@ -193,26 +208,27 @@ const lessons = [
         image: characterImage("사사 사슴.png"),
         panelTitle: "사사의 산 길",
         sound: "스 스 스",
-        introLine: "나는 사사 사슴이야. 내 몸에는 ㅅ 산 길이 있어.",
+        introLine: "나는 사사 사슴이야. 내 뿔에는 ㅅ 산 길이 있어.",
+        introTtsLine: "내 뿔에는 시옷 산 길이 있어.",
         likesLine: "나는 사과, 수박, 산, 손, 사탕을 좋아해.",
         note: "ㅅ은 산처럼 올라갔다 내려오는 길로 몸동작과 연결한다.",
         cards: labels(["사과", "수박", "산", "손", "사탕", "아기"]),
         correct: ["사과", "수박", "산", "손", "사탕"],
       },
       {
-        key: "aa",
+        key: "haha",
         theme: "nana",
-        letter: "ㅇ",
-        name: "아아 아기",
-        title: "아아 아기야",
-        image: characterImage("아아 아기.png"),
-        panelTitle: "아아의 조용한 자리",
-        sound: "조용 조용",
-        introLine: "나는 아아 아기야. 첫자리에서는 소리가 조용해.",
-        likesLine: "나는 아기, 엄마, 오리, 우유, 의자처럼 모음 소리를 그대로 들려줘.",
-        note: "ㅇ은 첫자리에서 소리 없는 빈자리 친구로 소개한다. 정답보다 조용한 자리를 느끼게 한다.",
-        cards: labels(["아기", "엄마", "오리", "우유", "의자", "사과"]),
-        correct: ["아기", "엄마", "오리", "우유", "의자"],
+        letter: "ㅎ",
+        name: "하하 하마",
+        title: "하하 하마야",
+        image: characterImage("하하 하마.png"),
+        panelTitle: "하하의 숨 길",
+        sound: "흐 흐 흐",
+        introLine: "나는 하하 하마야. 내 몸에는 ㅎ 숨 길이 있어.",
+        likesLine: "나는 해, 하트, 호랑이, 하모니카, 햄버거를 좋아해.",
+        note: "ㅎ은 따뜻한 숨이 나오는 친구처럼 손을 입 앞에 대고 느낀다.",
+        cards: labels(["해", "하트", "호랑이", "하모니카", "햄버거", "사과"]),
+        correct: ["해", "하트", "호랑이", "하모니카", "햄버거"],
       },
     ],
   },
@@ -229,7 +245,8 @@ const lessons = [
         image: characterImage("지지 지렁이.png"),
         panelTitle: "지지의 작은 지붕 길",
         sound: "즈 즈 즈",
-        introLine: "나는 지지 지렁이야. 내 몸에는 ㅈ 길이 있어.",
+        introLine: "나는 지지 지렁이야. ㅈ 길이 있는 나무를 좋아해.",
+        introTtsLine: "지읒 길이 있는 나무를 좋아해.",
         likesLine: "나는 자동차, 집, 주스, 지갑, 젤리를 좋아해.",
         note: "ㅈ은 ㅅ 위에 작은 길이 더 있는 친구처럼 보이되, 이름보다 소리 반복을 앞세운다.",
         cards: labels(["자동차", "집", "주스", "지갑", "젤리", "치즈"]),
@@ -253,8 +270,8 @@ const lessons = [
     ],
   },
   {
-    folder: "lesson-06-koko-toto",
-    title: "6레슨 코코와 토토: ㅋ ㅌ 첫소리 친구",
+    folder: "lesson-06-koko-toto-pupu",
+    title: "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사",
     pair: [
       {
         key: "koko",
@@ -286,9 +303,25 @@ const lessons = [
         cards: labels(["토마토", "택시", "타조", "튤립", "토끼풀", "쿠키"]),
         correct: ["토마토", "택시", "타조", "튤립", "토끼풀"],
       },
+      {
+        key: "pupu",
+        theme: "mix",
+        letter: "ㅍ",
+        name: "푸푸 풍선",
+        title: "푸푸 풍선이야",
+        image: characterImage("푸푸 풍선.png"),
+        panelTitle: "푸푸의 퐁퐁 길",
+        sound: "프 프 프",
+        introLine: "나는 푸푸 풍선이야. 내 몸에는 ㅍ 길이 있어.",
+        likesLine: "나는 포도, 피자, 풀, 풍선, 파도를 좋아해.",
+        note: "ㅍ은 바람이 퐁 나오는 친구처럼 입바람 놀이와 연결한다.",
+        cards: labels(["포도", "피자", "풀", "풍선", "파도", "쿠키"]),
+        correct: ["포도", "피자", "풀", "풍선", "파도"],
+      },
     ],
   },
   {
+    disabled: true,
     folder: "lesson-07-pupu-haha",
     title: "7레슨 푸푸와 하하: ㅍ ㅎ 첫소리 친구",
     pair: [
@@ -342,6 +375,10 @@ function ttsSound(character) {
   return ttsSounds[character.letter] || character.sound;
 }
 
+function introTtsLine(character) {
+  return character.introTtsLine || `내 몸에는 ${letterName(character)} 길이 있어.`;
+}
+
 function audioTitle(lesson) {
   return lesson.title.replace(/[ㄱ-ㅎ]/g, (letter) => letterNames[letter] || letter);
 }
@@ -382,24 +419,25 @@ function pageForSpot(character, lessonTitle, pageNumber) {
 }
 
 function pageForSorting(lesson) {
-  const [first, second] = lesson.pair;
-  const firstCards = first.cards.slice(0, 4).map((card) => ({ ...card, answer: first.letter }));
-  const secondCards = second.cards.slice(0, 4).map((card) => ({ ...card, answer: second.letter }));
+  const characters = charactersForLesson(lesson);
+  const tilesPerCharacter = characters.length > 2 ? 3 : 4;
+  const tileColumns = characters.length > 2 ? 3 : 4;
+  const tileGroups = characters.map((character) =>
+    character.cards.slice(0, tilesPerCharacter).map((card) => ({ ...card, answer: character.letter }))
+  );
 
   return {
     type: "sorting",
     theme: "mix",
     kicker: "5장 / 분류 활동",
     title: "친구를 집에 보낼까?",
-    read: `${first.name}의 친구는 ${first.letter} 집으로, ${second.name}의 친구는 ${second.letter} 집으로 보내요.`,
-    houses: [
-      { title: `${first.letter} 집`, theme: "gogo" },
-      { title: `${second.letter} 집`, theme: "nana" },
-    ],
+    read: `${characters.map((character) => `${character.name}의 친구는 ${character.letter} 집`).join("으로, ")}으로 보내요.`,
+    houses: characters.map((character) => ({ title: `${character.letter} 집`, theme: character.theme })),
     activityTitle: "오려서 붙이거나 선으로 이어요",
-    tiles: interleave(firstCards, secondCards),
+    tileColumns,
+    tiles: interleaveMany(tileGroups),
     teacherNote: "검사 포인트: 아이가 캐릭터 이름을 외운 결과와 첫소리 분류를 하는 것을 구분해서 관찰한다.",
-    footerLeft: `${first.letter}/${second.letter} 분류`,
+    footerLeft: `${characters.map((character) => character.letter).join("/")} 분류`,
     footerRight: lesson.title,
   };
 }
@@ -413,22 +451,71 @@ function interleave(left, right) {
   return result;
 }
 
+function interleaveMany(lists) {
+  const result = [];
+  const maxLength = Math.max(...lists.map((items) => items.length));
+  for (let i = 0; i < maxLength; i += 1) {
+    for (const list of lists) {
+      if (list[i]) result.push(list[i]);
+    }
+  }
+  return result;
+}
+
+function charactersForLesson(lesson) {
+  return lesson.pair;
+}
+
+function orderedLessons() {
+  return lessons
+    .filter((lesson) => !lesson.disabled)
+    .slice()
+    .sort((left, right) => {
+      const leftNumber = Number(left.folder.match(/^lesson-(\d+)/)?.[1] || 0);
+      const rightNumber = Number(right.folder.match(/^lesson-(\d+)/)?.[1] || 0);
+      return leftNumber - rightNumber;
+    });
+}
+
+function joinKoreanList(items) {
+  if (items.length <= 2) return items.join("와 ");
+  return `${items.slice(0, -1).join(", ")}와 ${items.at(-1)}`;
+}
+
 function worksheetForLesson(lesson) {
-  const [first, second] = lesson.pair;
+  const characters = charactersForLesson(lesson);
+  const characterPages = characters.flatMap((character, index) => [
+    pageForCharacter(character, lesson.title, index * 2 + 1),
+    pageForSpot(character, lesson.title, index * 2 + 2),
+  ]);
+
   return {
     title: lesson.title,
-    pages: [
-      pageForCharacter(first, lesson.title, 1),
-      pageForSpot(first, lesson.title, 2),
-      pageForCharacter(second, lesson.title, 3),
-      pageForSpot(second, lesson.title, 4),
-      pageForSorting(lesson),
-    ],
+    pages: [...characterPages, pageForSorting(lesson)],
   };
 }
 
 function introScript(lesson) {
-  const [first, second] = lesson.pair;
+  const characters = charactersForLesson(lesson);
+  const characterSections = characters
+    .map(
+      (character) => `## ${character.name}
+
+안녕, 나는 ${character.name}야.  
+${introTtsLine(character)}  
+내 소리는 ${ttsSound(character)}.  
+
+${character.likesLine}  
+우리 같이 말해 볼까?  
+${ttsSound(character)}.  
+${ttsSound(character)}.  
+${firstName(character)}의 소리!`
+    )
+    .join("\n\n");
+  const summary = characters
+    .map((character) => `${firstName(character)}는 ${letterName(character)} 길`)
+    .join(", ");
+
   return `# ${audioTitle(lesson)} 캐릭터 자기소개 TTS 대본
 
 ## TTS 방향
@@ -439,40 +526,34 @@ function introScript(lesson) {
 - 반복 소리: 한국어 음절 반복 대신 [g] [g] [g]처럼 발음기호로 읽기
 - 호흡: 아이가 따라 말할 수 있도록 질문 뒤 짧게 멈추기
 
-## ${first.name}
-
-안녕, 나는 ${first.name}야.  
-내 몸에는 ${letterName(first)} 길이 있어.  
-내 소리는 ${ttsSound(first)}.  
-
-${first.likesLine}  
-우리 같이 말해 볼까?  
-${ttsSound(first)}.  
-${ttsSound(first)}.  
-${firstName(first)}의 소리!
-
-## ${second.name}
-
-안녕, 나는 ${second.name}야.  
-내 몸에는 ${letterName(second)} 길이 있어.  
-내 소리는 ${ttsSound(second)}.  
-
-${second.likesLine}  
-우리 같이 말해 볼까?  
-${ttsSound(second)}.  
-${ttsSound(second)}.  
-${firstName(second)}의 소리!
+${characterSections}
 
 ## 마무리
 
-오늘 만난 친구는 ${first.name}와 ${second.name}.  
-${firstName(first)}는 ${letterName(first)} 길, ${firstName(second)}는 ${letterName(second)} 길.  
+오늘 만난 친구는 ${joinKoreanList(characters.map((character) => character.name))}.  
+${summary}.  
 손가락으로 길을 따라가며 한 번 더 말해 보자.
 `;
 }
 
 function chantScript(lesson) {
-  const [first, second] = lesson.pair;
+  const characters = charactersForLesson(lesson);
+  const chantBlocks = characters
+    .map(
+      (character) => `선생님: ${character.name}, ${ttsSound(character)}  
+아이: ${ttsSound(character)}  
+선생님: ${character.correct.slice(0, 3).join(", ")}  
+아이: ${ttsSound(character)}  
+
+다 같이:  
+${firstName(character)} ${ttsSound(character)}  
+${firstName(character)} ${ttsSound(character)}  
+${letterName(character)} 길을 따라가요  
+${ttsSound(character)}, 좋아요!`
+    )
+    .join("\n\n");
+  const houses = characters.map((character) => `${letterName(character)} 집`).join(", ");
+
   return `# ${audioTitle(lesson)} 챈트 대본
 
 ## 챈트 진행
@@ -485,30 +566,10 @@ function chantScript(lesson) {
 
 ## 챈트
 
-선생님: ${first.name}, ${ttsSound(first)}  
-아이: ${ttsSound(first)}  
-선생님: ${first.correct.slice(0, 3).join(", ")}  
-아이: ${ttsSound(first)}  
-
-다 같이:  
-${firstName(first)} ${ttsSound(first)}  
-${firstName(first)} ${ttsSound(first)}  
-${letterName(first)} 길을 따라가요  
-${ttsSound(first)}, 좋아요!
-
-선생님: ${second.name}, ${ttsSound(second)}  
-아이: ${ttsSound(second)}  
-선생님: ${second.correct.slice(0, 3).join(", ")}  
-아이: ${ttsSound(second)}  
-
-다 같이:  
-${firstName(second)} ${ttsSound(second)}  
-${firstName(second)} ${ttsSound(second)}  
-${letterName(second)} 길을 따라가요  
-${ttsSound(second)}, 좋아요!
+${chantBlocks}
 
 마무리:  
-${letterName(first)} 집, ${letterName(second)} 집  
+${houses}  
 친구들이 찾아가요  
 같은 소리 들리면  
 쏙쏙 붙여요!
@@ -516,7 +577,25 @@ ${letterName(first)} 집, ${letterName(second)} 집
 }
 
 function songMarkdown(lesson) {
-  const [first, second] = lesson.pair;
+  const characters = charactersForLesson(lesson);
+  const verses = characters
+    .map(
+      (character, index) => `[Verse ${index + 1}]  
+안녕 안녕 ${character.name}  
+${letterName(character)} 길을 따라가요  
+${character.sound}, ${character.sound}  
+${firstName(character)} 소리 들려요
+
+[Pre-Chorus ${index + 1}]  
+${character.correct.slice(0, 3).join(", ")}  
+같은 소리 찾아요  
+손가락으로 길을 따라  
+천천히 말해요`
+    )
+    .join("\n\n");
+  const chorus = characters.map((character) => `${firstName(character)} ${character.sound}`).join("  \n");
+  const outro = characters.map((character) => `${letterName(character)} 집으로 쏙`).join("  \n");
+
   return `# ${audioTitle(lesson)} 노래
 
 ## Suno 스타일 지시문
@@ -526,45 +605,15 @@ Sing consonant names in Korean, such as 기역 and 니은, instead of isolated H
 
 ## 가사
 
-[Verse 1]  
-안녕 안녕 ${first.name}  
-${letterName(first)} 길을 따라가요  
-${first.sound}, ${first.sound}  
-${firstName(first)} 소리 들려요
-
-[Pre-Chorus]  
-${first.correct.slice(0, 3).join(", ")}  
-같은 소리 찾아요  
-손가락으로 길을 따라  
-천천히 말해요
+${verses}
 
 [Chorus]  
-${firstName(first)} ${first.sound}  
-${firstName(second)} ${second.sound}  
-두 친구가 웃어요  
-소리 길을 걸어요
-
-[Verse 2]  
-안녕 안녕 ${second.name}  
-${letterName(second)} 길을 따라가요  
-${second.sound}, ${second.sound}  
-${firstName(second)} 소리 들려요
-
-[Pre-Chorus]  
-${second.correct.slice(0, 3).join(", ")}  
-같은 소리 찾아요  
-손가락으로 길을 따라  
-천천히 말해요
-
-[Chorus]  
-${firstName(first)} ${first.sound}  
-${firstName(second)} ${second.sound}  
-두 친구가 웃어요  
+${chorus}  
+친구들이 웃어요  
 소리 길을 걸어요
 
 [Outro]  
-${letterName(first)} 집으로 쏙  
-${letterName(second)} 집으로 쏙  
+${outro}  
 오늘 만난 자음 친구  
 다시 한번 안녕
 `;
@@ -584,12 +633,13 @@ async function writeLesson(lesson) {
 }
 
 async function writeManifest() {
+  const activeLessons = orderedLessons();
   const manifest = {
     title: "자음 친구 레슨",
-    lessons: lessons.map((lesson) => ({
+    lessons: activeLessons.map((lesson) => ({
       id: lesson.folder,
       title: lesson.title,
-      letters: lesson.pair.map((character) => character.letter).join("/"),
+      letters: charactersForLesson(lesson).map((character) => character.letter).join("/"),
       worksheetPath: `../lessons/consonants/${lesson.folder}/worksheet.json`,
       htmlPath: `../lessons/consonants/${lesson.folder}/worksheet.html`,
     })),
@@ -599,10 +649,10 @@ async function writeManifest() {
   await writeFile(path.join(root, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
 }
 
-for (const lesson of lessons) {
+for (const lesson of orderedLessons()) {
   await writeLesson(lesson);
 }
 
 await writeManifest();
 
-console.log(`Wrote ${lessons.length} consonant lesson folders to ${root}`);
+console.log(`Wrote ${orderedLessons().length} consonant lesson folders to ${root}`);

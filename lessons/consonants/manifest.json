@@ -9,25 +9,25 @@
       "htmlPath": "../lessons/consonants/lesson-01-gogo-nana/worksheet.html"
     },
     {
-      "id": "lesson-02-dodo-rara",
-      "title": "2레슨 도도와 라라: ㄷ ㄹ 첫소리 친구",
-      "letters": "ㄷ/ㄹ",
-      "worksheetPath": "../lessons/consonants/lesson-02-dodo-rara/worksheet.json",
-      "htmlPath": "../lessons/consonants/lesson-02-dodo-rara/worksheet.html"
-    },
-    {
-      "id": "lesson-03-mimi-bubu",
-      "title": "3레슨 미미와 부부: ㅁ ㅂ 첫소리 친구",
+      "id": "lesson-02-mimi-bubu",
+      "title": "2레슨 미미와 부부: ㅁ ㅂ 입술로 느끼는 자음",
       "letters": "ㅁ/ㅂ",
-      "worksheetPath": "../lessons/consonants/lesson-03-mimi-bubu/worksheet.json",
-      "htmlPath": "../lessons/consonants/lesson-03-mimi-bubu/worksheet.html"
+      "worksheetPath": "../lessons/consonants/lesson-02-mimi-bubu/worksheet.json",
+      "htmlPath": "../lessons/consonants/lesson-02-mimi-bubu/worksheet.html"
     },
     {
-      "id": "lesson-04-sasa-aa",
-      "title": "4레슨 사사와 아아: ㅅ 그리고 조용한 ㅇ",
-      "letters": "ㅅ/ㅇ",
-      "worksheetPath": "../lessons/consonants/lesson-04-sasa-aa/worksheet.json",
-      "htmlPath": "../lessons/consonants/lesson-04-sasa-aa/worksheet.html"
+      "id": "lesson-03-dodo-rara",
+      "title": "3레슨 도도와 라라: ㄷ ㄹ 첫소리 친구",
+      "letters": "ㄷ/ㄹ",
+      "worksheetPath": "../lessons/consonants/lesson-03-dodo-rara/worksheet.json",
+      "htmlPath": "../lessons/consonants/lesson-03-dodo-rara/worksheet.html"
+    },
+    {
+      "id": "lesson-04-sasa-haha",
+      "title": "4레슨 사사와 하하: ㅅ ㅎ 숨과 바람 자음",
+      "letters": "ㅅ/ㅎ",
+      "worksheetPath": "../lessons/consonants/lesson-04-sasa-haha/worksheet.json",
+      "htmlPath": "../lessons/consonants/lesson-04-sasa-haha/worksheet.html"
     },
     {
       "id": "lesson-05-jiji-chichi",
@@ -37,18 +37,11 @@
       "htmlPath": "../lessons/consonants/lesson-05-jiji-chichi/worksheet.html"
     },
     {
-      "id": "lesson-06-koko-toto",
-      "title": "6레슨 코코와 토토: ㅋ ㅌ 첫소리 친구",
-      "letters": "ㅋ/ㅌ",
-      "worksheetPath": "../lessons/consonants/lesson-06-koko-toto/worksheet.json",
-      "htmlPath": "../lessons/consonants/lesson-06-koko-toto/worksheet.html"
-    },
-    {
-      "id": "lesson-07-pupu-haha",
-      "title": "7레슨 푸푸와 하하: ㅍ ㅎ 첫소리 친구",
-      "letters": "ㅍ/ㅎ",
-      "worksheetPath": "../lessons/consonants/lesson-07-pupu-haha/worksheet.json",
-      "htmlPath": "../lessons/consonants/lesson-07-pupu-haha/worksheet.html"
+      "id": "lesson-06-koko-toto-pupu",
+      "title": "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사",
+      "letters": "ㅋ/ㅌ/ㅍ",
+      "worksheetPath": "../lessons/consonants/lesson-06-koko-toto-pupu/worksheet.json",
+      "htmlPath": "../lessons/consonants/lesson-06-koko-toto-pupu/worksheet.html"
     }
   ]
 }

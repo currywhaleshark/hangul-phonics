@@ -1,18 +1,17 @@
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = path.resolve("lessons", "consonants");
 
 const expectedLessons = [
   "lesson-01-gogo-nana",
-  "lesson-02-dodo-rara",
-  "lesson-03-mimi-bubu",
-  "lesson-04-sasa-aa",
+  "lesson-02-mimi-bubu",
+  "lesson-03-dodo-rara",
+  "lesson-04-sasa-haha",
   "lesson-05-jiji-chichi",
-  "lesson-06-koko-toto",
-  "lesson-07-pupu-haha",
+  "lesson-06-koko-toto-pupu",
 ];
 
 const lesson2AssetFiles = [
@@ -28,15 +27,55 @@ const lesson2AssetFiles = [
   "lemon.png",
 ];
 
+const lesson3AssetFiles = [
+  "hat.png",
+  "door.png",
+  "water.png",
+  "rainbow.png",
+  "slide.png",
+  "banana.png",
+  "bus.png",
+  "star.png",
+  "rain.png",
+  "basket.png",
+];
+
 const lesson1AudioFiles = [
   "\u3131 \ucc48\ud2b8.wav",
   "\u3134 \ucc48\ud2b8.wav",
   "\u3131, \u3134 \uc18c\uac1c.wav",
 ];
 
+const expectedManifest = [
+  ["lesson-01-gogo-nana", "ㄱ/ㄴ"],
+  ["lesson-02-mimi-bubu", "ㅁ/ㅂ"],
+  ["lesson-03-dodo-rara", "ㄷ/ㄹ"],
+  ["lesson-04-sasa-haha", "ㅅ/ㅎ"],
+  ["lesson-05-jiji-chichi", "ㅈ/ㅊ"],
+  ["lesson-06-koko-toto-pupu", "ㅋ/ㅌ/ㅍ"],
+];
+
 for (const fileName of lesson2AssetFiles) {
   assert.ok(existsSync(path.resolve("worksheets", "assets", fileName)), `lesson 2 asset ${fileName} should exist`);
 }
+
+for (const fileName of lesson3AssetFiles) {
+  assert.ok(existsSync(path.resolve("worksheets", "assets", fileName)), `lesson 3 asset ${fileName} should exist`);
+}
+
+const manifest = JSON.parse(await readFile(path.join(root, "manifest.json"), "utf8"));
+assert.deepEqual(
+  manifest.lessons.map((lesson) => [lesson.id, lesson.letters]),
+  expectedManifest,
+  "manifest should follow the active 6-lesson consonant order and postpone ㅇ"
+);
+assert.ok(!manifest.lessons.some((lesson) => lesson.letters.includes("ㅇ")), "ㅇ should be postponed from the active consonant manifest");
+
+const lessonDirectories = (await readdir(root, { withFileTypes: true }))
+  .filter((entry) => entry.isDirectory() && entry.name.startsWith("lesson-"))
+  .map((entry) => entry.name)
+  .sort();
+assert.deepEqual(lessonDirectories, expectedLessons, "lesson folders should match the active consonant sequence");
 
 for (const lessonName of expectedLessons) {
   const lessonDir = path.join(root, lessonName);
@@ -53,12 +92,11 @@ for (const lessonName of expectedLessons) {
   }
 
   const worksheet = JSON.parse(await readFile(path.join(lessonDir, "worksheet.json"), "utf8"));
-  assert.equal(worksheet.pages.length, 5, `${lessonName} should keep the 5-page pilot structure`);
-  assert.deepEqual(
-    worksheet.pages.map((page) => page.type),
-    ["character", "spot", "character", "spot", "sorting"],
-    `${lessonName} should use character, spot, character, spot, sorting pages`
-  );
+  const expectedPageTypes =
+    lessonName === "lesson-06-koko-toto-pupu"
+      ? ["character", "spot", "character", "spot", "character", "spot", "sorting"]
+      : ["character", "spot", "character", "spot", "sorting"];
+  assert.deepEqual(worksheet.pages.map((page) => page.type), expectedPageTypes, `${lessonName} should use the expected worksheet pages`);
 
   const intro = await readFile(path.join(lessonDir, "character-intro-tts.md"), "utf8");
   const chant = await readFile(path.join(lessonDir, "chant-script.md"), "utf8");
@@ -99,15 +137,80 @@ for (const lessonName of expectedLessons) {
     assert.doesNotMatch(song, /\[g\]|\[n\]/);
   }
 
-  if (lessonName === "lesson-02-dodo-rara") {
+  if (lessonName === "lesson-03-dodo-rara") {
     const imageFiles = worksheet.pages
       .flatMap((page) => [...(page.cards || []), ...(page.tiles || [])])
       .map((card) => card.image ? path.basename(card.image) : "")
       .filter(Boolean);
 
     for (const fileName of lesson2AssetFiles) {
-      assert.ok(imageFiles.includes(fileName), `lesson 2 worksheet should reference ${fileName}`);
+      assert.ok(imageFiles.includes(fileName), `lesson 3 worksheet should reference ${fileName}`);
     }
-    assert.equal(imageFiles.length, 20, "lesson 2 spot cards and sorting tiles should all use image assets");
+    assert.equal(imageFiles.length, 20, "lesson 3 spot cards and sorting tiles should all use image assets");
+  }
+
+  if (lessonName === "lesson-02-mimi-bubu") {
+    const imageFiles = worksheet.pages
+      .flatMap((page) => [...(page.cards || []), ...(page.tiles || [])])
+      .map((card) => card.image ? path.basename(card.image) : "")
+      .filter(Boolean);
+
+    assert.equal(
+      worksheet.pages[0].read,
+      "나는 미미 문어야. ㅁ 네모 길이 있는 어항에 살고 있어.",
+      "mimi worksheet intro should place the ㅁ path on the fishbowl"
+    );
+    assert.match(intro, /미음 네모 길이 있는 어항에 살고 있어/);
+    assert.doesNotMatch(intro, /내 몸에는 미음 길이 있어/);
+
+    for (const fileName of lesson3AssetFiles) {
+      assert.ok(imageFiles.includes(fileName), `lesson 3 worksheet should reference ${fileName}`);
+    }
+    assert.equal(imageFiles.length, 20, "lesson 3 spot cards and sorting tiles should all use image assets");
+  }
+
+  if (lessonName === "lesson-04-sasa-haha") {
+    assert.equal(
+      worksheet.pages[0].read,
+      "나는 사사 사슴이야. 내 뿔에는 ㅅ 산 길이 있어.",
+      "sasa worksheet intro should place the ㅅ path on the antlers"
+    );
+    assert.equal(worksheet.pages[2].letter, "ㅎ", "lesson 4 should pair ㅅ with ㅎ while ㅇ is postponed");
+    assert.match(worksheet.pages[2].read, /하하 하마/);
+    assert.match(intro, /내 뿔에는 시옷 산 길이 있어/);
+    assert.doesNotMatch(intro, /내 몸에는 시옷 길이 있어/);
+    assert.match(intro, /하하 하마/);
+    assert.doesNotMatch(intro, /아아 아기/);
+  }
+
+  if (lessonName === "lesson-05-jiji-chichi") {
+    assert.equal(
+      worksheet.pages[0].read,
+      "나는 지지 지렁이야. ㅈ 길이 있는 나무를 좋아해.",
+      "jiji worksheet intro should place the ㅈ path on a tree"
+    );
+    assert.match(intro, /지읒 길이 있는 나무를 좋아해/);
+    assert.doesNotMatch(intro, /내 몸에는 지읒 길이 있어/);
+  }
+
+  if (lessonName === "lesson-06-koko-toto-pupu") {
+    assert.equal(worksheet.pages.length, 7, "lesson 6 should include three character/spot pairs plus sorting");
+    assert.deepEqual(
+      worksheet.pages.filter((page) => page.type === "character").map((page) => page.letter),
+      ["ㅋ", "ㅌ", "ㅍ"],
+      "lesson 6 should cover ㅋ, ㅌ, ㅍ"
+    );
+    const sorting = worksheet.pages.at(-1);
+    assert.deepEqual(
+      sorting.houses.map((house) => house.title),
+      ["ㅋ 집", "ㅌ 집", "ㅍ 집"],
+      "lesson 6 sorting should have three houses"
+    );
+    assert.equal(sorting.tileColumns, 3, "lesson 6 sorting tiles should use a balanced 3-column layout");
+    assert.equal(sorting.tiles.length, 9, "lesson 6 sorting should keep three tiles per consonant");
+    assert.match(intro, /코코 코알라/);
+    assert.match(intro, /토토 토끼/);
+    assert.match(intro, /푸푸 풍선/);
+    assert.match(song, /푸푸 프 프 프/);
   }
 }

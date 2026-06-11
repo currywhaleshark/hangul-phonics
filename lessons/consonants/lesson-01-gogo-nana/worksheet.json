@@ -134,6 +134,7 @@
         }
       ],
       "activityTitle": "오려서 붙이거나 선으로 이어요",
+      "tileColumns": 4,
       "tiles": [
         {
           "label": "강아지",

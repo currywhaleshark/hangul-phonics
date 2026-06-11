@@ -72,3 +72,55 @@ assert.ok(
   (relsXml.match(/Target="media\//g) || []).length >= 8,
   "DOCX should embed worksheet images"
 );
+
+const threeColumnInputPath = path.join(outDir, "three-column-sorting.json");
+const threeColumnDocxPath = path.join(outDir, "three-column-sorting.docx");
+fs.writeFileSync(
+  threeColumnInputPath,
+  JSON.stringify({
+    title: "three-column sorting",
+    pages: [
+      {
+        type: "sorting",
+        theme: "mix",
+        kicker: "테스트",
+        title: "분류",
+        read: "읽기",
+        houses: [
+          { title: "ㅋ 집", theme: "gogo" },
+          { title: "ㅌ 집", theme: "nana" },
+          { title: "ㅍ 집", theme: "mix" },
+        ],
+        activityTitle: "오려 붙이기",
+        tileColumns: 3,
+        tiles: [
+          { label: "코", answer: "ㅋ", fill: "FFE96B" },
+          { label: "토", answer: "ㅌ", fill: "E8F5E9" },
+          { label: "포", answer: "ㅍ", fill: "E1F5FE" },
+          { label: "쿠키", answer: "ㅋ", fill: "FFE96B" },
+          { label: "토마토", answer: "ㅌ", fill: "E8F5E9" },
+          { label: "포도", answer: "ㅍ", fill: "E1F5FE" },
+        ],
+        teacherNote: "메모",
+        footerLeft: "왼쪽",
+        footerRight: "오른쪽",
+      },
+    ],
+  }),
+  "utf8"
+);
+
+generateWorksheetDocx({
+  inputPath: threeColumnInputPath,
+  outputPath: threeColumnDocxPath,
+  repoRoot,
+});
+
+const threeColumnEntries = readStoredZipEntries(threeColumnDocxPath);
+const threeColumnXml = threeColumnEntries.get("word/document.xml").toString("utf8");
+const threeColumnGrid = '<w:tblGrid><w:gridCol w:w="2966"/><w:gridCol w:w="2966"/><w:gridCol w:w="2966"/></w:tblGrid>';
+assert.strictEqual(
+  (threeColumnXml.match(new RegExp(threeColumnGrid.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length,
+  2,
+  "DOCX sorting page should render both houses and tiles as three-column grids"
+);

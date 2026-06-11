@@ -1,0 +1,252 @@
+{
+  "title": "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사",
+  "pages": [
+    {
+      "type": "character",
+      "theme": "gogo",
+      "kicker": "1장 / 캐릭터와 자음 길",
+      "title": "코코 코알라야",
+      "image": "../../../public/코코 코알라.png",
+      "panelTitle": "코코의 큰 숨 길",
+      "letter": "ㅋ",
+      "sound": "크 크 크",
+      "read": "나는 코코 코알라야. 내 몸에는 ㅋ 길이 있어.",
+      "activityTitle": "손가락으로 ㅋ 길을 따라가요",
+      "trace": [
+        "ㅋ",
+        "ㅋ",
+        "ㅋ"
+      ],
+      "teacherNote": "읽어주기: \"코코 코알라, 크 크 크\". ㅋ은 ㄱ보다 숨이 더 크게 나가는 친구처럼 놀이로만 느끼게 한다.",
+      "footerLeft": "코코 코알라",
+      "footerRight": "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사"
+    },
+    {
+      "type": "spot",
+      "theme": "gogo",
+      "kicker": "2장 / 첫소리 연결",
+      "title": "코코 코알라의 친구와 좋아하는 것",
+      "read": "나는 쿠키, 콩, 카드, 크레용, 코끼리를 좋아해.",
+      "activityTitle": "코코의 소리로 시작하는 그림에 동그라미",
+      "cards": [
+        {
+          "label": "쿠키",
+          "fill": "FFE96B"
+        },
+        {
+          "label": "콩",
+          "fill": "D9F7FF"
+        },
+        {
+          "label": "카드",
+          "fill": "FCE0FF"
+        },
+        {
+          "label": "크레용",
+          "fill": "E9FFD8"
+        },
+        {
+          "label": "코끼리",
+          "fill": "FFE6D8"
+        },
+        {
+          "label": "토끼",
+          "fill": "EDE4FF"
+        }
+      ],
+      "soundBox": "코코의 소리: 크 크 크",
+      "teacherNote": "활동: 쿠키, 콩, 카드, 크레용, 코끼리 그림을 찾아 표시한다. 정답을 재촉하지 말고 \"코코와 같은 소리일까?\"라고 묻는다.",
+      "footerLeft": "첫소리 연결",
+      "footerRight": "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사"
+    },
+    {
+      "type": "character",
+      "theme": "nana",
+      "kicker": "3장 / 캐릭터와 자음 길",
+      "title": "토토 토끼야",
+      "image": "../../../public/토토 토끼.png",
+      "panelTitle": "토토의 톡톡 길",
+      "letter": "ㅌ",
+      "sound": "트 트 트",
+      "read": "나는 토토 토끼야. 내 몸에는 ㅌ 길이 있어.",
+      "activityTitle": "손가락으로 ㅌ 길을 따라가요",
+      "trace": [
+        "ㅌ",
+        "ㅌ",
+        "ㅌ"
+      ],
+      "teacherNote": "읽어주기: \"토토 토끼, 트 트 트\". ㅌ은 ㄷ보다 톡 튀는 숨이 있는 친구처럼 손뼉 동작을 붙인다.",
+      "footerLeft": "토토 토끼",
+      "footerRight": "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사"
+    },
+    {
+      "type": "spot",
+      "theme": "nana",
+      "kicker": "4장 / 첫소리 연결",
+      "title": "토토 토끼의 친구와 좋아하는 것",
+      "read": "나는 토마토, 택시, 타조, 튤립, 토끼풀을 좋아해.",
+      "activityTitle": "토토의 소리로 시작하는 그림에 동그라미",
+      "cards": [
+        {
+          "label": "토마토",
+          "fill": "FFE96B"
+        },
+        {
+          "label": "택시",
+          "fill": "D9F7FF"
+        },
+        {
+          "label": "타조",
+          "fill": "FCE0FF"
+        },
+        {
+          "label": "튤립",
+          "fill": "E9FFD8"
+        },
+        {
+          "label": "토끼풀",
+          "fill": "FFE6D8"
+        },
+        {
+          "label": "쿠키",
+          "fill": "EDE4FF"
+        }
+      ],
+      "soundBox": "토토의 소리: 트 트 트",
+      "teacherNote": "활동: 토마토, 택시, 타조, 튤립, 토끼풀 그림을 찾아 표시한다. 정답을 재촉하지 말고 \"토토와 같은 소리일까?\"라고 묻는다.",
+      "footerLeft": "첫소리 연결",
+      "footerRight": "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사"
+    },
+    {
+      "type": "character",
+      "theme": "mix",
+      "kicker": "5장 / 캐릭터와 자음 길",
+      "title": "푸푸 풍선이야",
+      "image": "../../../public/푸푸 풍선.png",
+      "panelTitle": "푸푸의 퐁퐁 길",
+      "letter": "ㅍ",
+      "sound": "프 프 프",
+      "read": "나는 푸푸 풍선이야. 내 몸에는 ㅍ 길이 있어.",
+      "activityTitle": "손가락으로 ㅍ 길을 따라가요",
+      "trace": [
+        "ㅍ",
+        "ㅍ",
+        "ㅍ"
+      ],
+      "teacherNote": "읽어주기: \"푸푸 풍선, 프 프 프\". ㅍ은 바람이 퐁 나오는 친구처럼 입바람 놀이와 연결한다.",
+      "footerLeft": "푸푸 풍선",
+      "footerRight": "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사"
+    },
+    {
+      "type": "spot",
+      "theme": "mix",
+      "kicker": "6장 / 첫소리 연결",
+      "title": "푸푸 풍선의 친구와 좋아하는 것",
+      "read": "나는 포도, 피자, 풀, 풍선, 파도를 좋아해.",
+      "activityTitle": "푸푸의 소리로 시작하는 그림에 동그라미",
+      "cards": [
+        {
+          "label": "포도",
+          "fill": "FFE96B"
+        },
+        {
+          "label": "피자",
+          "fill": "D9F7FF"
+        },
+        {
+          "label": "풀",
+          "fill": "FCE0FF"
+        },
+        {
+          "label": "풍선",
+          "fill": "E9FFD8"
+        },
+        {
+          "label": "파도",
+          "fill": "FFE6D8"
+        },
+        {
+          "label": "쿠키",
+          "fill": "EDE4FF"
+        }
+      ],
+      "soundBox": "푸푸의 소리: 프 프 프",
+      "teacherNote": "활동: 포도, 피자, 풀, 풍선, 파도 그림을 찾아 표시한다. 정답을 재촉하지 말고 \"푸푸와 같은 소리일까?\"라고 묻는다.",
+      "footerLeft": "첫소리 연결",
+      "footerRight": "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사"
+    },
+    {
+      "type": "sorting",
+      "theme": "mix",
+      "kicker": "5장 / 분류 활동",
+      "title": "친구를 집에 보낼까?",
+      "read": "코코 코알라의 친구는 ㅋ 집으로, 토토 토끼의 친구는 ㅌ 집으로, 푸푸 풍선의 친구는 ㅍ 집으로 보내요.",
+      "houses": [
+        {
+          "title": "ㅋ 집",
+          "theme": "gogo"
+        },
+        {
+          "title": "ㅌ 집",
+          "theme": "nana"
+        },
+        {
+          "title": "ㅍ 집",
+          "theme": "mix"
+        }
+      ],
+      "activityTitle": "오려서 붙이거나 선으로 이어요",
+      "tileColumns": 3,
+      "tiles": [
+        {
+          "label": "쿠키",
+          "fill": "FFE96B",
+          "answer": "ㅋ"
+        },
+        {
+          "label": "토마토",
+          "fill": "FFE96B",
+          "answer": "ㅌ"
+        },
+        {
+          "label": "포도",
+          "fill": "FFE96B",
+          "answer": "ㅍ"
+        },
+        {
+          "label": "콩",
+          "fill": "D9F7FF",
+          "answer": "ㅋ"
+        },
+        {
+          "label": "택시",
+          "fill": "D9F7FF",
+          "answer": "ㅌ"
+        },
+        {
+          "label": "피자",
+          "fill": "D9F7FF",
+          "answer": "ㅍ"
+        },
+        {
+          "label": "카드",
+          "fill": "FCE0FF",
+          "answer": "ㅋ"
+        },
+        {
+          "label": "타조",
+          "fill": "FCE0FF",
+          "answer": "ㅌ"
+        },
+        {
+          "label": "풀",
+          "fill": "FCE0FF",
+          "answer": "ㅍ"
+        }
+      ],
+      "teacherNote": "검사 포인트: 아이가 캐릭터 이름을 외운 결과와 첫소리 분류를 하는 것을 구분해서 관찰한다.",
+      "footerLeft": "ㅋ/ㅌ/ㅍ 분류",
+      "footerRight": "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사"
+    }
+  ]
+}

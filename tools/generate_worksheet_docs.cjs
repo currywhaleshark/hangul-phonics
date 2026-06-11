@@ -150,31 +150,34 @@ function renderSpotPage(page, media, inputPath) {
 
 function renderSortingPage(page, media, inputPath) {
   const theme = THEMES[page.theme] || THEMES.mix;
+  const houseWidth = Math.floor(8900 / Math.max(page.houses.length, 1));
   const houseCells = page.houses
     .map((house) => {
       const houseTheme = THEMES[house.theme] || theme;
       return tableCell(
         paragraph(house.title, { align: "center", size: 42, bold: true, color: houseTheme.accent, fill: houseTheme.soft, border: houseTheme.accent }) +
           paragraph(" ", { before: 1600, after: 1600, fill: houseTheme.soft, border: houseTheme.accent }),
-        { width: 4450, border: houseTheme.accent }
+        { width: houseWidth, border: houseTheme.accent }
       );
     })
     .join("");
+  const tileColumns = page.tileColumns || 4;
+  const tileWidth = Math.floor(8900 / Math.max(tileColumns, 1));
   const tileRows = [];
-  for (let i = 0; i < page.tiles.length; i += 4) {
+  for (let i = 0; i < page.tiles.length; i += tileColumns) {
     tileRows.push(
       page.tiles
-        .slice(i, i + 4)
-        .map((tile) => tableCell(cardBlock(tile, media, { theme, inputPath, small: true }), { width: 2225, border: "E0D0BB" }))
+        .slice(i, i + tileColumns)
+        .map((tile) => tableCell(cardBlock(tile, media, { theme, inputPath, small: true }), { width: tileWidth, border: "E0D0BB" }))
         .join("")
     );
   }
   return [
     renderHeader(page, theme),
     paragraph(page.read, { align: "center", size: 28, fill: "FFFFFF", border: "E0D0BB" }),
-    table([houseCells], [4450, 4450]),
+    table([houseCells], page.houses.map(() => houseWidth)),
     paragraph(page.activityTitle, { align: "center", size: 24, fill: theme.soft, border: theme.accent, bold: true, color: theme.accent }),
-    table(tileRows, [2225, 2225, 2225, 2225]),
+    table(tileRows, Array.from({ length: tileColumns }, () => tileWidth)),
     paragraph(page.teacherNote, { size: 18, color: "8C7662", fill: "FFFFFF", border: "8C7662" }),
     paragraph(`${page.footerLeft}    ${page.footerRight}`, { align: "center", size: 18, color: "8C7662" }),
   ].join("");

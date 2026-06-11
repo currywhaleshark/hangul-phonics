@@ -109,10 +109,10 @@ function renderSortingPage(page) {
         <div class="page-kicker">${escapeHtml(page.kicker)}</div>
         <h1>${escapeHtml(page.title)}</h1>
         <div class="read-box">${escapeHtml(page.read)}</div>
-        <div class="sorting-board">${houses}</div>
+        <div class="sorting-board" style="--house-count:${(page.houses || []).length || 2}">${houses}</div>
         <div class="activity-box">
           <div class="activity-title">${escapeHtml(page.activityTitle)}</div>
-          <div class="tile-bank">${tiles}</div>
+          <div class="tile-bank" style="--tile-columns:${page.tileColumns || 4}">${tiles}</div>
         </div>
         <div class="teacher-note">${escapeHtml(page.teacherNote)}</div>
         ${pageFooter(page)}

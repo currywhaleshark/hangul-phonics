@@ -47,18 +47,18 @@ node tests/generate_worksheet_docs.test.cjs
 실행:
 
 ```bash
-npm run dev
+학습지편집기.bat
 ```
 
 브라우저에서 열기:
 
 ```text
-http://localhost:3000/worksheets/editor.html
+http://127.0.0.1:3001/worksheets/editor.html
 ```
 
 ## 자음 레슨 폴더
 
-자음 친구들은 두 명씩 묶어 `../lessons/consonants/lesson-*` 폴더로 관리한다. 각 폴더에는 다음 파일이 들어간다.
+자음 친구들은 두세 명씩 묶어 `../lessons/consonants/lesson-*` 폴더로 관리한다. 현재 활성 학습지 범위는 1레슨 ㄱ/ㄴ부터 6레슨 ㅋ/ㅌ/ㅍ까지이며, ㅇ과 모음 시작 레슨은 보류 상태다. 각 폴더에는 다음 파일이 들어간다.
 
 - `../lessons/consonants/manifest.json`: 편집기에서 쓰는 레슨 선택 목록
 - `worksheet.json`: 편집기/렌더러에서 쓰는 학습지 원본 데이터

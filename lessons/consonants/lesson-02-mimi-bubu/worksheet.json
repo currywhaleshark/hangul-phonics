@@ -1,0 +1,185 @@
+{
+  "title": "2레슨 미미와 부부: ㅁ ㅂ 입술로 느끼는 자음",
+  "pages": [
+    {
+      "type": "character",
+      "theme": "gogo",
+      "kicker": "1장 / 캐릭터와 자음 길",
+      "title": "미미 문어야",
+      "image": "../../../public/미미 문어.png",
+      "panelTitle": "미미의 네모 길",
+      "letter": "ㅁ",
+      "sound": "므 므 므",
+      "read": "나는 미미 문어야. ㅁ 네모 길이 있는 어항에 살고 있어.",
+      "activityTitle": "손가락으로 ㅁ 길을 따라가요",
+      "trace": [
+        "ㅁ",
+        "ㅁ",
+        "ㅁ"
+      ],
+      "teacherNote": "읽어주기: \"미미 문어, 므 므 므\". ㅁ은 닫힌 네모 방처럼 보여 주고 손가락으로 한 바퀴 돈다.",
+      "footerLeft": "미미 문어",
+      "footerRight": "2레슨 미미와 부부: ㅁ ㅂ 입술로 느끼는 자음"
+    },
+    {
+      "type": "spot",
+      "theme": "gogo",
+      "kicker": "2장 / 첫소리 연결",
+      "title": "미미 문어의 친구와 좋아하는 것",
+      "read": "나는 모자, 문, 물, 무지개, 미끄럼틀을 좋아해.",
+      "activityTitle": "미미의 소리로 시작하는 그림에 동그라미",
+      "cards": [
+        {
+          "label": "모자",
+          "image": "../../../worksheets/assets/hat.png"
+        },
+        {
+          "label": "문",
+          "image": "../../../worksheets/assets/door.png"
+        },
+        {
+          "label": "물",
+          "image": "../../../worksheets/assets/water.png"
+        },
+        {
+          "label": "무지개",
+          "image": "../../../worksheets/assets/rainbow.png"
+        },
+        {
+          "label": "미끄럼틀",
+          "image": "../../../worksheets/assets/slide.png"
+        },
+        {
+          "label": "바나나",
+          "image": "../../../worksheets/assets/banana.png"
+        }
+      ],
+      "soundBox": "미미의 소리: 므 므 므",
+      "teacherNote": "활동: 모자, 문, 물, 무지개, 미끄럼틀 그림을 찾아 표시한다. 정답을 재촉하지 말고 \"미미와 같은 소리일까?\"라고 묻는다.",
+      "footerLeft": "첫소리 연결",
+      "footerRight": "2레슨 미미와 부부: ㅁ ㅂ 입술로 느끼는 자음"
+    },
+    {
+      "type": "character",
+      "theme": "nana",
+      "kicker": "3장 / 캐릭터와 자음 길",
+      "title": "부부 부엉이야",
+      "image": "../../../public/부부 부엉이.png",
+      "panelTitle": "부부의 두 방 길",
+      "letter": "ㅂ",
+      "sound": "브 브 브",
+      "read": "나는 부부 부엉이야. 내 몸에는 ㅂ 두 방 길이 있어.",
+      "activityTitle": "손가락으로 ㅂ 길을 따라가요",
+      "trace": [
+        "ㅂ",
+        "ㅂ",
+        "ㅂ"
+      ],
+      "teacherNote": "읽어주기: \"부부 부엉이, 브 브 브\". ㅂ은 ㅁ 위에 작은 길이 더 있는 모양으로 비교하지 말고, 두 방 친구로 소개한다.",
+      "footerLeft": "부부 부엉이",
+      "footerRight": "2레슨 미미와 부부: ㅁ ㅂ 입술로 느끼는 자음"
+    },
+    {
+      "type": "spot",
+      "theme": "nana",
+      "kicker": "4장 / 첫소리 연결",
+      "title": "부부 부엉이의 친구와 좋아하는 것",
+      "read": "나는 바나나, 버스, 별, 비, 바구니를 좋아해.",
+      "activityTitle": "부부의 소리로 시작하는 그림에 동그라미",
+      "cards": [
+        {
+          "label": "바나나",
+          "image": "../../../worksheets/assets/banana.png"
+        },
+        {
+          "label": "버스",
+          "image": "../../../worksheets/assets/bus.png"
+        },
+        {
+          "label": "별",
+          "image": "../../../worksheets/assets/star.png"
+        },
+        {
+          "label": "비",
+          "image": "../../../worksheets/assets/rain.png"
+        },
+        {
+          "label": "바구니",
+          "image": "../../../worksheets/assets/basket.png"
+        },
+        {
+          "label": "모자",
+          "image": "../../../worksheets/assets/hat.png"
+        }
+      ],
+      "soundBox": "부부의 소리: 브 브 브",
+      "teacherNote": "활동: 바나나, 버스, 별, 비, 바구니 그림을 찾아 표시한다. 정답을 재촉하지 말고 \"부부와 같은 소리일까?\"라고 묻는다.",
+      "footerLeft": "첫소리 연결",
+      "footerRight": "2레슨 미미와 부부: ㅁ ㅂ 입술로 느끼는 자음"
+    },
+    {
+      "type": "sorting",
+      "theme": "mix",
+      "kicker": "5장 / 분류 활동",
+      "title": "친구를 집에 보낼까?",
+      "read": "미미 문어의 친구는 ㅁ 집으로, 부부 부엉이의 친구는 ㅂ 집으로 보내요.",
+      "houses": [
+        {
+          "title": "ㅁ 집",
+          "theme": "gogo"
+        },
+        {
+          "title": "ㅂ 집",
+          "theme": "nana"
+        }
+      ],
+      "activityTitle": "오려서 붙이거나 선으로 이어요",
+      "tileColumns": 4,
+      "tiles": [
+        {
+          "label": "모자",
+          "image": "../../../worksheets/assets/hat.png",
+          "answer": "ㅁ"
+        },
+        {
+          "label": "바나나",
+          "image": "../../../worksheets/assets/banana.png",
+          "answer": "ㅂ"
+        },
+        {
+          "label": "문",
+          "image": "../../../worksheets/assets/door.png",
+          "answer": "ㅁ"
+        },
+        {
+          "label": "버스",
+          "image": "../../../worksheets/assets/bus.png",
+          "answer": "ㅂ"
+        },
+        {
+          "label": "물",
+          "image": "../../../worksheets/assets/water.png",
+          "answer": "ㅁ"
+        },
+        {
+          "label": "별",
+          "image": "../../../worksheets/assets/star.png",
+          "answer": "ㅂ"
+        },
+        {
+          "label": "무지개",
+          "image": "../../../worksheets/assets/rainbow.png",
+          "answer": "ㅁ"
+        },
+        {
+          "label": "비",
+          "image": "../../../worksheets/assets/rain.png",
+          "answer": "ㅂ"
+        }
+      ],
+      "teacherNote": "검사 포인트: 아이가 캐릭터 이름을 외운 결과와 첫소리 분류를 하는 것을 구분해서 관찰한다.",
+      "footerLeft": "ㅁ/ㅂ 분류",
+      "footerRight": "2레슨 미미와 부부: ㅁ ㅂ 입술로 느끼는 자음"
+    }
+  ]
+}

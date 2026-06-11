@@ -13,17 +13,11 @@ Sing consonant names in Korean, such as 기역 and 니은, instead of isolated H
 그 그 그, 그 그 그  
 고고 소리 들려요
 
-[Pre-Chorus]  
+[Pre-Chorus 1]  
 강아지, 곰, 고기  
 같은 소리 찾아요  
 손가락으로 길을 따라  
 천천히 말해요
-
-[Chorus]  
-고고 그 그 그  
-나나 느 느 느  
-두 친구가 웃어요  
-소리 길을 걸어요
 
 [Verse 2]  
 안녕 안녕 나나 나비  
@@ -31,7 +25,7 @@ Sing consonant names in Korean, such as 기역 and 니은, instead of isolated H
 느 느 느, 느 느 느  
 나나 소리 들려요
 
-[Pre-Chorus]  
+[Pre-Chorus 2]  
 노란색, 너구리, 나무  
 같은 소리 찾아요  
 손가락으로 길을 따라  
@@ -40,7 +34,7 @@ Sing consonant names in Korean, such as 기역 and 니은, instead of isolated H
 [Chorus]  
 고고 그 그 그  
 나나 느 느 느  
-두 친구가 웃어요  
+친구들이 웃어요  
 소리 길을 걸어요
 
 [Outro]  

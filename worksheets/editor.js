@@ -1,5 +1,11 @@
 import html2canvas from "html2canvas";
 
+import {
+  clearDraftForLesson,
+  loadDraftForSource,
+  sourceSignature,
+  writeDraftForSource,
+} from "./editor-storage.js";
 import { renderWorksheetDocument } from "./worksheet-renderer.js";
 
 const STORAGE_PREFIX = "hangul-phonics-worksheet-editor";
@@ -83,6 +89,7 @@ let lessonCatalog = [FALLBACK_LESSON];
 let selectedLessonId = FALLBACK_LESSON.id;
 let activePageIndex = 0;
 let previewTimer = null;
+let selectedSourceSignature = "";
 
 function clone(value) {
   return JSON.parse(JSON.stringify(value));
@@ -96,8 +103,18 @@ function storageKeyFor(lessonId) {
   return `${STORAGE_PREFIX}:${lessonId}`;
 }
 
+function sourceSignatureKeyFor(lessonId) {
+  return `${storageKeyFor(lessonId)}:sourceSignature`;
+}
+
 function saveDraft() {
-  localStorage.setItem(storageKeyFor(selectedLessonId), JSON.stringify(lesson));
+  writeDraftForSource(
+    localStorage,
+    storageKeyFor(selectedLessonId),
+    sourceSignatureKeyFor(selectedLessonId),
+    lesson,
+    selectedSourceSignature
+  );
   localStorage.setItem(SELECTED_LESSON_KEY, selectedLessonId);
 }
 
@@ -556,24 +573,37 @@ function selectedLessonMeta() {
 }
 
 async function loadLesson({ forceOriginal = false } = {}) {
+  const meta = selectedLessonMeta();
+  const response = await fetch(meta.worksheetPath);
+  if (!response.ok) throw new Error(`Could not load ${meta.worksheetPath}`);
+  const sourceLesson = clone(await response.json());
+  selectedSourceSignature = sourceSignature(sourceLesson);
+
   if (!forceOriginal) {
-    const saved = localStorage.getItem(storageKeyFor(selectedLessonId));
-    if (saved) {
-      lesson = JSON.parse(saved);
+    const savedDraft = loadDraftForSource(
+      localStorage,
+      storageKeyFor(selectedLessonId),
+      sourceSignatureKeyFor(selectedLessonId),
+      sourceLesson
+    );
+    if (savedDraft.status === "hit") {
+      lesson = savedDraft.lesson;
       activePageIndex = 0;
       renderAll();
       setStatus("저장된 임시 편집본 불러옴");
       return;
     }
+    if (savedDraft.status === "stale") {
+      setStatus("원본 JSON이 바뀌어 새 원본을 불러옴");
+    }
   }
 
-  const meta = selectedLessonMeta();
-  const response = await fetch(meta.worksheetPath);
-  if (!response.ok) throw new Error(`Could not load ${meta.worksheetPath}`);
-  lesson = clone(await response.json());
+  lesson = sourceLesson;
   activePageIndex = 0;
   renderAll();
-  setStatus("원본 JSON 불러옴");
+  if (forceOriginal) {
+    setStatus("원본 JSON 불러옴");
+  }
 }
 
 lessonTitle.addEventListener("input", () => {
@@ -616,7 +646,7 @@ printButton.addEventListener("click", () => {
 
 reloadButton.addEventListener("click", async () => {
   if (!confirm("현재 임시 편집본을 버리고 원본 JSON을 다시 불러올까요?")) return;
-  localStorage.removeItem(storageKeyFor(selectedLessonId));
+  clearDraftForLesson(localStorage, storageKeyFor(selectedLessonId), sourceSignatureKeyFor(selectedLessonId));
   await loadLesson({ forceOriginal: true });
 });
 

@@ -42,3 +42,28 @@ const escaped = renderWorksheetPage({
 assert.match(escaped, /&lt;제목&gt;/);
 assert.match(escaped, /A &amp; B/);
 assert.match(escaped, /&lt;강아지&gt;/);
+
+const threeColumnSorting = renderWorksheetPage({
+  type: "sorting",
+  theme: "mix",
+  kicker: "테스트",
+  title: "분류",
+  read: "읽기",
+  houses: [
+    { title: "ㅋ 집", theme: "gogo" },
+    { title: "ㅌ 집", theme: "nana" },
+    { title: "ㅍ 집", theme: "mix" },
+  ],
+  activityTitle: "오려 붙이기",
+  tileColumns: 3,
+  tiles: [
+    { label: "코", answer: "ㅋ", fill: "FFE96B" },
+    { label: "토", answer: "ㅌ", fill: "E8F5E9" },
+    { label: "포", answer: "ㅍ", fill: "E1F5FE" },
+  ],
+  teacherNote: "메모",
+  footerLeft: "왼쪽",
+  footerRight: "오른쪽",
+});
+
+assert.match(threeColumnSorting, /class="tile-bank" style="--tile-columns:3"/);

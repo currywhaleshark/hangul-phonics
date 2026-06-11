@@ -10,7 +10,7 @@
       "panelTitle": "지지의 작은 지붕 길",
       "letter": "ㅈ",
       "sound": "즈 즈 즈",
-      "read": "나는 지지 지렁이야. 내 몸에는 ㅈ 길이 있어.",
+      "read": "나는 지지 지렁이야. ㅈ 길이 있는 나무를 좋아해.",
       "activityTitle": "손가락으로 ㅈ 길을 따라가요",
       "trace": [
         "ㅈ",
@@ -134,6 +134,7 @@
         }
       ],
       "activityTitle": "오려서 붙이거나 선으로 이어요",
+      "tileColumns": 4,
       "tiles": [
         {
           "label": "자동차",
