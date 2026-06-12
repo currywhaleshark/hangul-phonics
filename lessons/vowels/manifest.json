@@ -1,0 +1,12 @@
+{
+  "title": "모음 친구 레슨",
+  "lessons": [
+    {
+      "id": "lesson-01-aa-baby-vowel",
+      "title": "1레슨 아아 아기와 아: 조용한 아기가 소리를 찾았어",
+      "letters": "ㅇ/ㅏ/아",
+      "worksheetPath": "../lessons/vowels/lesson-01-aa-baby-vowel/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-01-aa-baby-vowel/worksheet.html"
+    }
+  ]
+}

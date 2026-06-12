@@ -67,3 +67,43 @@ const threeColumnSorting = renderWorksheetPage({
 });
 
 assert.match(threeColumnSorting, /class="tile-bank" style="--tile-columns:3"/);
+
+const storyPage = renderWorksheetPage({
+  type: "story",
+  theme: "gogo",
+  kicker: "1장 / 그림 이야기",
+  title: "아아 아기가 소리를 찾았어",
+  read: "아아 아기는 조용하다가 나뭇가지를 만나 아 소리를 냅니다.",
+  panels: [
+    { image: "./assets/aa-story-01-silent.png", caption: "아아 아기는 조용조용." },
+    { image: "./assets/aa-story-02-branch.png", caption: "어? 나뭇가지다!" },
+    { image: "./assets/aa-story-03-ah.png", caption: "나뭇가지를 들고, 아!" },
+  ],
+  teacherNote: "그림을 순서대로 보며 아 소리를 기다리게 한다.",
+  footerLeft: "이야기",
+  footerRight: "아아 아기와 아",
+});
+
+assert.match(storyPage, /class="story-grid"/);
+assert.match(storyPage, /class="story-panel"/);
+assert.match(storyPage, /아아 아기는 조용조용/);
+
+const vowelActivityPage = renderWorksheetPage({
+  type: "vowel-activity",
+  theme: "gogo",
+  kicker: "2장 / 소리 활동",
+  title: "입 크게 아",
+  read: "아아 아기가 나뭇가지를 들고 아!",
+  heroImage: "../../../public/아아 아기 나뭇가지 시안.png",
+  traceLetter: "아",
+  activityTitle: "보고 따라 그리고 붙여서 만들어요",
+  buildPieces: ["ㅇ", "ㅏ", "아"],
+  teacherNote: "손가락으로 큰 글자를 따라가고, ㅇ 옆에 ㅏ를 붙여 아를 만든다.",
+  footerLeft: "ㅇ + ㅏ = 아",
+  footerRight: "아아 아기와 아",
+});
+
+assert.match(vowelActivityPage, /class="vowel-activity-grid"/);
+assert.match(vowelActivityPage, /class="finger-trace-letter">아<\/div>/);
+assert.match(vowelActivityPage, /<div class="build-piece">ㅇ<\/div>/);
+assert.match(vowelActivityPage, /<div class="build-result">아<\/div>/);

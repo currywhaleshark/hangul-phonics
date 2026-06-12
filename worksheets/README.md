@@ -42,7 +42,7 @@ node tests/generate_worksheet_docs.test.cjs
 - `worksheet-renderer.js`: JSON을 인쇄용 HTML로 바꾸는 공통 렌더러
 - 편집기는 `../lessons/consonants/manifest.json`의 레슨 목록을 불러오고, 선택한 레슨의 `worksheet.json`을 편집한다.
 - 레슨별 임시 편집본은 브라우저 임시 저장소에 따로 자동 저장한다.
-- 상단의 `JSON`, `HTML`, `PNG`, `인쇄` 버튼으로 수정본을 내려받거나 페이지별 PNG를 저장하거나 바로 인쇄한다.
+- 상단의 `JSON`, `HTML`, `PNG`, `PDF`, `인쇄` 버튼으로 수정본을 내려받거나 페이지별 PNG/PDF를 저장하거나 바로 인쇄한다.
 
 실행:
 
@@ -58,7 +58,7 @@ http://127.0.0.1:3001/worksheets/editor.html
 
 ## 자음 레슨 폴더
 
-자음 친구들은 두세 명씩 묶어 `../lessons/consonants/lesson-*` 폴더로 관리한다. 현재 활성 학습지 범위는 1레슨 ㄱ/ㄴ부터 6레슨 ㅋ/ㅌ/ㅍ까지이며, ㅇ과 모음 시작 레슨은 보류 상태다. 각 폴더에는 다음 파일이 들어간다.
+자음 친구들은 두세 명씩 묶어 `../lessons/consonants/lesson-*` 폴더로 관리한다. 현재 자음 학습지 범위는 1레슨 ㄱ/ㄴ부터 6레슨 ㅋ/ㅌ/ㅍ까지다. 모음 전환은 `../lessons/vowels/lesson-*` 폴더에서 시작하며, 첫 레슨은 아아 아기가 아아 나뭇가지를 만나 `아` 소리를 찾는 2쪽 학습지다. 각 자음 폴더에는 다음 파일이 들어간다.
 
 - `../lessons/consonants/manifest.json`: 편집기에서 쓰는 레슨 선택 목록
 - `worksheet.json`: 편집기/렌더러에서 쓰는 학습지 원본 데이터
@@ -71,6 +71,7 @@ http://127.0.0.1:3001/worksheets/editor.html
 
 ```bash
 node tools/generate_consonant_lessons.mjs
+node tools/generate_vowel_lessons.mjs
 ```
 
 검증 명령:

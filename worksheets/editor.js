@@ -6,6 +6,7 @@ import {
   sourceSignature,
   writeDraftForSource,
 } from "./editor-storage.js";
+import { buildImagePdfBlob, canvasToJpegPage } from "./pdf-export.js";
 import { renderWorksheetDocument } from "./worksheet-renderer.js";
 
 const STORAGE_PREFIX = "hangul-phonics-worksheet-editor";
@@ -69,6 +70,7 @@ const statusText = document.querySelector("#status-text");
 const downloadJsonButton = document.querySelector("#download-json");
 const downloadHtmlButton = document.querySelector("#download-html");
 const downloadPngButton = document.querySelector("#download-png");
+const downloadPdfButton = document.querySelector("#download-pdf");
 const printButton = document.querySelector("#print-preview");
 const reloadButton = document.querySelector("#reload-data");
 
@@ -137,6 +139,10 @@ function refreshPreviewNow() {
 
 function downloadText(filename, text, type) {
   const blob = new Blob([text], { type });
+  downloadBlob(filename, blob);
+}
+
+function downloadBlob(filename, blob) {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
   anchor.href = url;
@@ -165,14 +171,7 @@ function canvasToPngBlob(canvas) {
 
 async function downloadCanvasPng(filename, canvas) {
   const blob = await canvasToPngBlob(canvas);
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement("a");
-  anchor.href = url;
-  anchor.download = filename;
-  document.body.append(anchor);
-  anchor.click();
-  anchor.remove();
-  URL.revokeObjectURL(url);
+  downloadBlob(filename, blob);
 }
 
 function waitForFrameLoad() {
@@ -247,6 +246,31 @@ async function exportPngPages() {
   }
 
   setStatus(`PNG ${sheets.length}개 저장 요청 완료`);
+}
+
+async function exportPdfDocument() {
+  await refreshPreviewNow();
+
+  const previewDocument = previewFrame.contentDocument;
+  await waitForPreviewAssets(previewDocument);
+
+  const sheets = [...previewDocument.querySelectorAll(".sheet")];
+  if (!sheets.length) throw new Error("PDF로 저장할 학습지 페이지가 없습니다.");
+
+  const compatibilityStyle = installPngCompatibilityStyle(previewDocument);
+
+  try {
+    const pages = [];
+    for (const sheet of sheets) {
+      const canvas = await captureSheetCanvas(sheet);
+      pages.push(await canvasToJpegPage(canvas));
+    }
+    downloadBlob(`${selectedLessonId}-edited.pdf`, buildImagePdfBlob(pages));
+  } finally {
+    compatibilityStyle.remove();
+  }
+
+  setStatus(`PDF ${sheets.length}쪽 저장 요청 완료`);
 }
 
 function field(label, input) {
@@ -636,6 +660,20 @@ downloadPngButton.addEventListener("click", async () => {
     setStatus(`PNG 저장 실패: ${error.message}`);
   } finally {
     downloadPngButton.disabled = false;
+  }
+});
+
+downloadPdfButton.addEventListener("click", async () => {
+  downloadPdfButton.disabled = true;
+  setStatus("PDF 생성 중...");
+
+  try {
+    await exportPdfDocument();
+  } catch (error) {
+    console.error(error);
+    setStatus(`PDF 저장 실패: ${error.message}`);
+  } finally {
+    downloadPdfButton.disabled = false;
   }
 });
 

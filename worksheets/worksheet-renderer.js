@@ -122,10 +122,70 @@ function renderSortingPage(page) {
     </section>`;
 }
 
+function renderStoryPage(page) {
+  const panels = (page.panels || [])
+    .map(
+      (panel, index) => `
+          <figure class="story-panel"${attr("data-asset", panel.image || panel.caption)}>
+            <div class="story-image"><img src="${escapeHtml(panel.image)}" alt="${escapeHtml(panel.caption)}"></div>
+            <figcaption><span>${index + 1}</span>${escapeHtml(panel.caption)}</figcaption>
+          </figure>`
+    )
+    .join("");
+
+  return `
+    <section class="sheet theme-${escapeHtml(page.theme)}">
+      <div class="sheet-inner">
+        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
+        <h1>${escapeHtml(page.title)}</h1>
+        <div class="read-box">${escapeHtml(page.read)}</div>
+        <div class="story-grid">${panels}</div>
+        <div class="teacher-note">${escapeHtml(page.teacherNote)}</div>
+        ${pageFooter(page)}
+      </div>
+    </section>`;
+}
+
+function renderVowelActivityPage(page) {
+  const [lead = "ㅇ", vowel = "ㅏ", result = "아"] = page.buildPieces || [];
+
+  return `
+    <section class="sheet theme-${escapeHtml(page.theme)}">
+      <div class="sheet-inner">
+        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
+        <h1>${escapeHtml(page.title)}</h1>
+        <div class="read-box">${escapeHtml(page.read)}</div>
+        <div class="activity-box">
+          <div class="activity-title">${escapeHtml(page.activityTitle)}</div>
+          <div class="vowel-activity-grid">
+            <div class="vowel-hero">
+              <img src="${escapeHtml(page.heroImage)}" alt="${escapeHtml(page.title)}">
+            </div>
+            <div class="finger-trace-card">
+              <div class="finger-trace-label">손가락으로 따라가요</div>
+              <div class="finger-trace-letter">${escapeHtml(page.traceLetter)}</div>
+            </div>
+          </div>
+          <div class="vowel-build-row" aria-label="${escapeHtml(`${lead} + ${vowel} = ${result}`)}">
+            <div class="build-piece">${escapeHtml(lead)}</div>
+            <div class="build-operator">+</div>
+            <div class="build-piece">${escapeHtml(vowel)}</div>
+            <div class="build-operator">=</div>
+            <div class="build-result">${escapeHtml(result)}</div>
+          </div>
+        </div>
+        <div class="teacher-note">${escapeHtml(page.teacherNote)}</div>
+        ${pageFooter(page)}
+      </div>
+    </section>`;
+}
+
 export function renderWorksheetPage(page) {
   if (page.type === "character") return renderCharacterPage(page);
   if (page.type === "spot") return renderSpotPage(page);
   if (page.type === "sorting") return renderSortingPage(page);
+  if (page.type === "story") return renderStoryPage(page);
+  if (page.type === "vowel-activity") return renderVowelActivityPage(page);
   throw new Error(`Unsupported worksheet page type: ${page.type}`);
 }
 
