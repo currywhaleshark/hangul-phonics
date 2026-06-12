@@ -31,27 +31,27 @@
       "cards": [
         {
           "label": "사과",
-          "fill": "FFE96B"
+          "image": "../../../worksheets/assets/apple.png"
         },
         {
           "label": "수박",
-          "fill": "D9F7FF"
+          "image": "../../../worksheets/assets/watermelon.png"
         },
         {
           "label": "산",
-          "fill": "FCE0FF"
+          "image": "../../../worksheets/assets/mountain.png"
         },
         {
           "label": "손",
-          "fill": "E9FFD8"
+          "image": "../../../worksheets/assets/hand.png"
         },
         {
           "label": "사탕",
-          "fill": "FFE6D8"
+          "image": "../../../worksheets/assets/candy.png"
         },
         {
           "label": "아기",
-          "fill": "EDE4FF"
+          "image": "../../../worksheets/assets/baby.png"
         }
       ],
       "soundBox": "사사의 소리: 스 스 스",
@@ -89,27 +89,27 @@
       "cards": [
         {
           "label": "해",
-          "fill": "FFE96B"
+          "image": "../../../worksheets/assets/sun.png"
         },
         {
           "label": "하트",
-          "fill": "D9F7FF"
+          "image": "../../../worksheets/assets/heart.png"
         },
         {
           "label": "호랑이",
-          "fill": "FCE0FF"
+          "image": "../../../worksheets/assets/tiger.png"
         },
         {
           "label": "하모니카",
-          "fill": "E9FFD8"
+          "image": "../../../worksheets/assets/harmonica.png"
         },
         {
           "label": "햄버거",
-          "fill": "FFE6D8"
+          "image": "../../../worksheets/assets/hamburger.png"
         },
         {
           "label": "사과",
-          "fill": "EDE4FF"
+          "image": "../../../worksheets/assets/apple.png"
         }
       ],
       "soundBox": "하하의 소리: 흐 흐 흐",
@@ -138,42 +138,42 @@
       "tiles": [
         {
           "label": "사과",
-          "fill": "FFE96B",
+          "image": "../../../worksheets/assets/apple.png",
           "answer": "ㅅ"
         },
         {
           "label": "해",
-          "fill": "FFE96B",
+          "image": "../../../worksheets/assets/sun.png",
           "answer": "ㅎ"
         },
         {
           "label": "수박",
-          "fill": "D9F7FF",
+          "image": "../../../worksheets/assets/watermelon.png",
           "answer": "ㅅ"
         },
         {
           "label": "하트",
-          "fill": "D9F7FF",
+          "image": "../../../worksheets/assets/heart.png",
           "answer": "ㅎ"
         },
         {
           "label": "산",
-          "fill": "FCE0FF",
+          "image": "../../../worksheets/assets/mountain.png",
           "answer": "ㅅ"
         },
         {
           "label": "호랑이",
-          "fill": "FCE0FF",
+          "image": "../../../worksheets/assets/tiger.png",
           "answer": "ㅎ"
         },
         {
           "label": "손",
-          "fill": "E9FFD8",
+          "image": "../../../worksheets/assets/hand.png",
           "answer": "ㅅ"
         },
         {
           "label": "하모니카",
-          "fill": "E9FFD8",
+          "image": "../../../worksheets/assets/harmonica.png",
           "answer": "ㅎ"
         }
       ],

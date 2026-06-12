@@ -40,6 +40,52 @@ const lesson3AssetFiles = [
   "basket.png",
 ];
 
+const lesson4AssetFiles = [
+  "apple.png",
+  "watermelon.png",
+  "mountain.png",
+  "hand.png",
+  "candy.png",
+  "baby.png",
+  "sun.png",
+  "heart.png",
+  "tiger.png",
+  "harmonica.png",
+  "hamburger.png",
+];
+
+const lesson5AssetFiles = [
+  "car.png",
+  "house.png",
+  "juice.png",
+  "wallet.png",
+  "jelly.png",
+  "cheese.png",
+  "book.png",
+  "chocolate.png",
+  "skirt.png",
+  "friend.png",
+];
+
+const lesson6AssetFiles = [
+  "cookie.png",
+  "bean.png",
+  "card.png",
+  "crayon.png",
+  "elephant.png",
+  "rabbit.png",
+  "tomato.png",
+  "taxi.png",
+  "ostrich.png",
+  "tulip.png",
+  "clover.png",
+  "grapes.png",
+  "pizza.png",
+  "grass.png",
+  "balloon.png",
+  "wave.png",
+];
+
 const lesson1AudioFiles = [
   "\u3131 \ucc48\ud2b8.wav",
   "\u3134 \ucc48\ud2b8.wav",
@@ -61,6 +107,18 @@ for (const fileName of lesson2AssetFiles) {
 
 for (const fileName of lesson3AssetFiles) {
   assert.ok(existsSync(path.resolve("worksheets", "assets", fileName)), `lesson 3 asset ${fileName} should exist`);
+}
+
+for (const fileName of lesson4AssetFiles) {
+  assert.ok(existsSync(path.resolve("worksheets", "assets", fileName)), `lesson 4 asset ${fileName} should exist`);
+}
+
+for (const fileName of lesson5AssetFiles) {
+  assert.ok(existsSync(path.resolve("worksheets", "assets", fileName)), `lesson 5 asset ${fileName} should exist`);
+}
+
+for (const fileName of lesson6AssetFiles) {
+  assert.ok(existsSync(path.resolve("worksheets", "assets", fileName)), `lesson 6 asset ${fileName} should exist`);
 }
 
 const manifest = JSON.parse(await readFile(path.join(root, "manifest.json"), "utf8"));
@@ -170,6 +228,11 @@ for (const lessonName of expectedLessons) {
   }
 
   if (lessonName === "lesson-04-sasa-haha") {
+    const imageFiles = worksheet.pages
+      .flatMap((page) => [...(page.cards || []), ...(page.tiles || [])])
+      .map((card) => card.image ? path.basename(card.image) : "")
+      .filter(Boolean);
+
     assert.equal(
       worksheet.pages[0].read,
       "나는 사사 사슴이야. 내 뿔에는 ㅅ 산 길이 있어.",
@@ -181,9 +244,19 @@ for (const lessonName of expectedLessons) {
     assert.doesNotMatch(intro, /내 몸에는 시옷 길이 있어/);
     assert.match(intro, /하하 하마/);
     assert.doesNotMatch(intro, /아아 아기/);
+
+    for (const fileName of lesson4AssetFiles) {
+      assert.ok(imageFiles.includes(fileName), `lesson 4 worksheet should reference ${fileName}`);
+    }
+    assert.equal(imageFiles.length, 20, "lesson 4 spot cards and sorting tiles should all use image assets");
   }
 
   if (lessonName === "lesson-05-jiji-chichi") {
+    const imageFiles = worksheet.pages
+      .flatMap((page) => [...(page.cards || []), ...(page.tiles || [])])
+      .map((card) => card.image ? path.basename(card.image) : "")
+      .filter(Boolean);
+
     assert.equal(
       worksheet.pages[0].read,
       "나는 지지 지렁이야. ㅈ 길이 있는 나무를 좋아해.",
@@ -191,9 +264,19 @@ for (const lessonName of expectedLessons) {
     );
     assert.match(intro, /지읒 길이 있는 나무를 좋아해/);
     assert.doesNotMatch(intro, /내 몸에는 지읒 길이 있어/);
+
+    for (const fileName of lesson5AssetFiles) {
+      assert.ok(imageFiles.includes(fileName), `lesson 5 worksheet should reference ${fileName}`);
+    }
+    assert.equal(imageFiles.length, 20, "lesson 5 spot cards and sorting tiles should all use image assets");
   }
 
   if (lessonName === "lesson-06-koko-toto-pupu") {
+    const imageFiles = worksheet.pages
+      .flatMap((page) => [...(page.cards || []), ...(page.tiles || [])])
+      .map((card) => card.image ? path.basename(card.image) : "")
+      .filter(Boolean);
+
     assert.equal(worksheet.pages.length, 7, "lesson 6 should include three character/spot pairs plus sorting");
     assert.deepEqual(
       worksheet.pages.filter((page) => page.type === "character").map((page) => page.letter),
@@ -212,5 +295,10 @@ for (const lessonName of expectedLessons) {
     assert.match(intro, /토토 토끼/);
     assert.match(intro, /푸푸 풍선/);
     assert.match(song, /푸푸 프 프 프/);
+
+    for (const fileName of lesson6AssetFiles) {
+      assert.ok(imageFiles.includes(fileName), `lesson 6 worksheet should reference ${fileName}`);
+    }
+    assert.equal(imageFiles.length, 27, "lesson 6 spot cards and sorting tiles should all use image assets");
   }
 }

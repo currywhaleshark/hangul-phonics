@@ -31,27 +31,27 @@
       "cards": [
         {
           "label": "쿠키",
-          "fill": "FFE96B"
+          "image": "../../../worksheets/assets/cookie.png"
         },
         {
           "label": "콩",
-          "fill": "D9F7FF"
+          "image": "../../../worksheets/assets/bean.png"
         },
         {
           "label": "카드",
-          "fill": "FCE0FF"
+          "image": "../../../worksheets/assets/card.png"
         },
         {
           "label": "크레용",
-          "fill": "E9FFD8"
+          "image": "../../../worksheets/assets/crayon.png"
         },
         {
           "label": "코끼리",
-          "fill": "FFE6D8"
+          "image": "../../../worksheets/assets/elephant.png"
         },
         {
           "label": "토끼",
-          "fill": "EDE4FF"
+          "image": "../../../worksheets/assets/rabbit.png"
         }
       ],
       "soundBox": "코코의 소리: 크 크 크",
@@ -89,27 +89,27 @@
       "cards": [
         {
           "label": "토마토",
-          "fill": "FFE96B"
+          "image": "../../../worksheets/assets/tomato.png"
         },
         {
           "label": "택시",
-          "fill": "D9F7FF"
+          "image": "../../../worksheets/assets/taxi.png"
         },
         {
           "label": "타조",
-          "fill": "FCE0FF"
+          "image": "../../../worksheets/assets/ostrich.png"
         },
         {
           "label": "튤립",
-          "fill": "E9FFD8"
+          "image": "../../../worksheets/assets/tulip.png"
         },
         {
           "label": "토끼풀",
-          "fill": "FFE6D8"
+          "image": "../../../worksheets/assets/clover.png"
         },
         {
           "label": "쿠키",
-          "fill": "EDE4FF"
+          "image": "../../../worksheets/assets/cookie.png"
         }
       ],
       "soundBox": "토토의 소리: 트 트 트",
@@ -147,27 +147,27 @@
       "cards": [
         {
           "label": "포도",
-          "fill": "FFE96B"
+          "image": "../../../worksheets/assets/grapes.png"
         },
         {
           "label": "피자",
-          "fill": "D9F7FF"
+          "image": "../../../worksheets/assets/pizza.png"
         },
         {
           "label": "풀",
-          "fill": "FCE0FF"
+          "image": "../../../worksheets/assets/grass.png"
         },
         {
           "label": "풍선",
-          "fill": "E9FFD8"
+          "image": "../../../worksheets/assets/balloon.png"
         },
         {
           "label": "파도",
-          "fill": "FFE6D8"
+          "image": "../../../worksheets/assets/wave.png"
         },
         {
           "label": "쿠키",
-          "fill": "EDE4FF"
+          "image": "../../../worksheets/assets/cookie.png"
         }
       ],
       "soundBox": "푸푸의 소리: 프 프 프",
@@ -200,47 +200,47 @@
       "tiles": [
         {
           "label": "쿠키",
-          "fill": "FFE96B",
+          "image": "../../../worksheets/assets/cookie.png",
           "answer": "ㅋ"
         },
         {
           "label": "토마토",
-          "fill": "FFE96B",
+          "image": "../../../worksheets/assets/tomato.png",
           "answer": "ㅌ"
         },
         {
           "label": "포도",
-          "fill": "FFE96B",
+          "image": "../../../worksheets/assets/grapes.png",
           "answer": "ㅍ"
         },
         {
           "label": "콩",
-          "fill": "D9F7FF",
+          "image": "../../../worksheets/assets/bean.png",
           "answer": "ㅋ"
         },
         {
           "label": "택시",
-          "fill": "D9F7FF",
+          "image": "../../../worksheets/assets/taxi.png",
           "answer": "ㅌ"
         },
         {
           "label": "피자",
-          "fill": "D9F7FF",
+          "image": "../../../worksheets/assets/pizza.png",
           "answer": "ㅍ"
         },
         {
           "label": "카드",
-          "fill": "FCE0FF",
+          "image": "../../../worksheets/assets/card.png",
           "answer": "ㅋ"
         },
         {
           "label": "타조",
-          "fill": "FCE0FF",
+          "image": "../../../worksheets/assets/ostrich.png",
           "answer": "ㅌ"
         },
         {
           "label": "풀",
-          "fill": "FCE0FF",
+          "image": "../../../worksheets/assets/grass.png",
           "answer": "ㅍ"
         }
       ],

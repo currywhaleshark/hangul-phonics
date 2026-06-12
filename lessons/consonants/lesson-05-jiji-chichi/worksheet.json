@@ -31,27 +31,27 @@
       "cards": [
         {
           "label": "자동차",
-          "fill": "FFE96B"
+          "image": "../../../worksheets/assets/car.png"
         },
         {
           "label": "집",
-          "fill": "D9F7FF"
+          "image": "../../../worksheets/assets/house.png"
         },
         {
           "label": "주스",
-          "fill": "FCE0FF"
+          "image": "../../../worksheets/assets/juice.png"
         },
         {
           "label": "지갑",
-          "fill": "E9FFD8"
+          "image": "../../../worksheets/assets/wallet.png"
         },
         {
           "label": "젤리",
-          "fill": "FFE6D8"
+          "image": "../../../worksheets/assets/jelly.png"
         },
         {
           "label": "치즈",
-          "fill": "EDE4FF"
+          "image": "../../../worksheets/assets/cheese.png"
         }
       ],
       "soundBox": "지지의 소리: 즈 즈 즈",
@@ -89,27 +89,27 @@
       "cards": [
         {
           "label": "치즈",
-          "fill": "FFE96B"
+          "image": "../../../worksheets/assets/cheese.png"
         },
         {
           "label": "책",
-          "fill": "D9F7FF"
+          "image": "../../../worksheets/assets/book.png"
         },
         {
           "label": "초콜릿",
-          "fill": "FCE0FF"
+          "image": "../../../worksheets/assets/chocolate.png"
         },
         {
           "label": "치마",
-          "fill": "E9FFD8"
+          "image": "../../../worksheets/assets/skirt.png"
         },
         {
           "label": "친구",
-          "fill": "FFE6D8"
+          "image": "../../../worksheets/assets/friend.png"
         },
         {
           "label": "주스",
-          "fill": "EDE4FF"
+          "image": "../../../worksheets/assets/juice.png"
         }
       ],
       "soundBox": "치치의 소리: 츠 츠 츠",
@@ -138,42 +138,42 @@
       "tiles": [
         {
           "label": "자동차",
-          "fill": "FFE96B",
+          "image": "../../../worksheets/assets/car.png",
           "answer": "ㅈ"
         },
         {
           "label": "치즈",
-          "fill": "FFE96B",
+          "image": "../../../worksheets/assets/cheese.png",
           "answer": "ㅊ"
         },
         {
           "label": "집",
-          "fill": "D9F7FF",
+          "image": "../../../worksheets/assets/house.png",
           "answer": "ㅈ"
         },
         {
           "label": "책",
-          "fill": "D9F7FF",
+          "image": "../../../worksheets/assets/book.png",
           "answer": "ㅊ"
         },
         {
           "label": "주스",
-          "fill": "FCE0FF",
+          "image": "../../../worksheets/assets/juice.png",
           "answer": "ㅈ"
         },
         {
           "label": "초콜릿",
-          "fill": "FCE0FF",
+          "image": "../../../worksheets/assets/chocolate.png",
           "answer": "ㅊ"
         },
         {
           "label": "지갑",
-          "fill": "E9FFD8",
+          "image": "../../../worksheets/assets/wallet.png",
           "answer": "ㅈ"
         },
         {
           "label": "치마",
-          "fill": "E9FFD8",
+          "image": "../../../worksheets/assets/skirt.png",
           "answer": "ㅊ"
         }
       ],

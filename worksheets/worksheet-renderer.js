@@ -83,6 +83,8 @@ function renderSpotPage(page) {
 }
 
 function renderSortingPage(page) {
+  const housesCount = (page.houses || []).length || 2;
+  const compactClass = housesCount > 2 ? " sorting-compact" : "";
   const houses = (page.houses || [])
     .map(
       (house) => `
@@ -105,11 +107,11 @@ function renderSortingPage(page) {
 
   return `
     <section class="sheet theme-${escapeHtml(page.theme)}">
-      <div class="sheet-inner">
+      <div class="sheet-inner${compactClass}">
         <div class="page-kicker">${escapeHtml(page.kicker)}</div>
         <h1>${escapeHtml(page.title)}</h1>
         <div class="read-box">${escapeHtml(page.read)}</div>
-        <div class="sorting-board" style="--house-count:${(page.houses || []).length || 2}">${houses}</div>
+        <div class="sorting-board" style="--house-count:${housesCount}">${houses}</div>
         <div class="activity-box">
           <div class="activity-title">${escapeHtml(page.activityTitle)}</div>
           <div class="tile-bank" style="--tile-columns:${page.tileColumns || 4}">${tiles}</div>
