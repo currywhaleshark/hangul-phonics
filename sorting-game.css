@@ -1,0 +1,650 @@
+/* --- Reset & Base Variables --- */
+:root {
+  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --font-family: 'Gowun Dodum', 'Jua', 'Outfit', sans-serif;
+  
+  /* House Theme Colors */
+  --color-gogo: #F4AB46;
+  --color-nana: #87A9C7;
+  --color-mix: #FF8E9E;
+  
+  /* Common Colors */
+  --bg-card: #FFFFFF;
+  --text-dark: #2D3748;
+  --text-light: #718096;
+  --shadow-normal: 0 8px 16px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.12);
+  --shadow-drag: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Header Section --- */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 15px 25px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-normal);
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #EDF2F7;
+  color: #4A5568;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border: 1px solid #E2E8F0;
+}
+
+.btn-back:hover {
+  background: #E2E8F0;
+  transform: translateY(-2px);
+}
+
+.logo-text h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1A202C;
+  font-family: 'Jua', sans-serif;
+}
+
+.logo-text p {
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+}
+
+/* Lesson Selector */
+.lesson-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.selector-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4A5568;
+}
+
+.lesson-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-lesson {
+  padding: 8px 14px;
+  border: none;
+  background: #EDF2F7;
+  color: #4A5568;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-lesson:hover {
+  background: #E2E8F0;
+}
+
+.btn-lesson.active {
+  background: #FF8E9E;
+  color: white;
+  box-shadow: 0 4px 10px rgba(255, 142, 158, 0.3);
+}
+
+/* --- Main Play Area --- */
+.game-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.game-info {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.game-info h2 {
+  font-size: 28px;
+  color: #1A202C;
+  font-family: 'Jua', sans-serif;
+  margin-bottom: 6px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.game-info p {
+  font-size: 16px;
+  color: #4A5568;
+}
+
+/* --- Drop Zones (Houses) --- */
+.houses-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.house {
+  background: var(--bg-card);
+  border-radius: 30px;
+  width: 280px;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 20px;
+  box-shadow: var(--shadow-normal);
+  border: 4px solid var(--house-color, #CBD5E0);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: visible;
+}
+
+.house::before {
+  /* Roof decoration */
+  content: '';
+  position: absolute;
+  top: -20px;
+  width: 0;
+  height: 0;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-bottom: 20px solid var(--house-color, #CBD5E0);
+  filter: drop-shadow(0 -4px 3px rgba(0,0,0,0.03));
+}
+
+.house.drag-hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-hover);
+  background: rgba(255, 255, 255, 0.95);
+  border-style: dashed;
+}
+
+.house-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+}
+
+.house-character-img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #F7FAFC;
+  padding: 10px;
+  border: 3px solid #E2E8F0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.house-header:hover .house-character-img {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.audio-badge {
+  position: absolute;
+  bottom: 30px;
+  right: calc(50% - 55px);
+  background: #FF8E9E;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border: 2px solid white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  animation: bounce-slow 2s infinite;
+}
+
+.house-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 24px;
+  color: #2D3748;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Inside House Drop Area */
+.house-slots {
+  flex: 1;
+  width: 100%;
+  background: #F7FAFC;
+  border-radius: 20px;
+  padding: 12px;
+  min-height: 150px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-content: start;
+  border: 2px dashed #E2E8F0;
+}
+
+/* --- Drag Cards (Deck) --- */
+.deck-wrapper {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 25px;
+  padding: 20px 25px;
+  box-shadow: var(--shadow-normal);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin-top: 15px;
+}
+
+.deck-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 18px;
+  color: #4A5568;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.deck-bank {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  min-height: 110px;
+}
+
+/* Game Card Style */
+.game-card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  width: 100px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px;
+  box-shadow: var(--shadow-normal);
+  border: 2px solid #E2E8F0;
+  cursor: grab;
+  touch-action: none; /* Crucial for pointer events drag on touch screens */
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease, opacity 0.2s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.game-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: var(--shadow-hover);
+  border-color: #CBD5E0;
+}
+
+.game-card:active {
+  cursor: grabbing;
+}
+
+.card-img-wrapper {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.card-img-wrapper img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.card-fill-bg {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.game-card strong {
+  font-size: 13px;
+  color: #4A5568;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+/* Placed card style (inside house slot) - 그림 그대로 유지 */
+.game-card.placed {
+  width: 100px;
+  height: 110px;
+  cursor: default;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  border-color: #EDF2F7;
+  animation: scale-up 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.game-card.placed:hover {
+  transform: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.game-card.placed strong {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Floating Card During Drag */
+.dragging-card {
+  box-shadow: var(--shadow-drag) !important;
+  transform: scale(1.15) rotate(3deg) !important;
+  border-color: #A0AEC0 !important;
+  opacity: 0.95;
+  transition: none !important;
+}
+
+/* --- Celebration/Success Overlay --- */
+.celebration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.celebration-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.celebration-modal {
+  background: white;
+  border-radius: 30px;
+  width: 90%;
+  max-width: 450px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transform: scale(0.85);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.celebration-overlay.show .celebration-modal {
+  transform: scale(1);
+}
+
+.trophy-icon {
+  font-size: 70px;
+  margin-bottom: 20px;
+  animation: pulse-ring 1.5s infinite;
+}
+
+.celebration-modal h2 {
+  font-family: 'Jua', sans-serif;
+  font-size: 32px;
+  color: #1A202C;
+  margin-bottom: 10px;
+}
+
+.celebration-modal p {
+  color: #4A5568;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  padding: 14px 20px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.btn-next {
+  background: #FF8E9E;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 142, 158, 0.4);
+}
+
+.btn-next:hover {
+  background: #ff7587;
+  transform: translateY(-2px);
+}
+
+.btn-replay {
+  background: #EDF2F7;
+  color: #4A5568;
+}
+
+.btn-replay:hover {
+  background: #E2E8F0;
+  transform: translateY(-2px);
+}
+
+/* Audio init overlay (Safari Autoplay bypass) */
+.audio-init-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(26, 32, 44, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.audio-init-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.audio-init-card {
+  background: white;
+  border-radius: 25px;
+  padding: 35px 30px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  animation: scale-up 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.music-icon {
+  font-size: 60px;
+  display: block;
+  margin-bottom: 15px;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.audio-init-card h3 {
+  font-family: 'Jua', sans-serif;
+  font-size: 22px;
+  color: #1A202C;
+  margin-bottom: 10px;
+}
+
+.audio-init-card p {
+  font-size: 14px;
+  color: #718096;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.btn-start {
+  background: #4299E1;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(66, 153, 225, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-start:hover {
+  background: #3182CE;
+  transform: translateY(-2px);
+}
+
+/* Confetti canvas */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* --- Animations --- */
+@keyframes scale-up {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 15px rgba(255, 142, 158, 0.4);
+  }
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+/* --- Mobile / Tablet Media Queries --- */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+  
+  .lesson-selector {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .houses-wrapper {
+    gap: 15px;
+  }
+  
+  .house {
+    width: 100%;
+    max-width: 320px;
+    min-height: 320px;
+  }
+  
+  .house::before {
+    display: none; /* Hide 3D roof on small devices to maximize space */
+  }
+}

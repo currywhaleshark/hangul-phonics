@@ -11,7 +11,10 @@ import { renderWorksheetDocument } from "./worksheet-renderer.js";
 
 const STORAGE_PREFIX = "hangul-phonics-worksheet-editor";
 const SELECTED_LESSON_KEY = `${STORAGE_PREFIX}:selectedLessonId`;
-const MANIFEST_URL = "../lessons/consonants/manifest.json";
+const MANIFEST_URLS = [
+  "../lessons/consonants/manifest.json",
+  "../lessons/vowels/manifest.json",
+];
 const PNG_EXPORT_SCALE = 2;
 const PNG_CAPTURE_CSS = `
   html,
@@ -78,6 +81,8 @@ const PAGE_TYPE_LABELS = {
   character: "캐릭터",
   spot: "첫소리",
   sorting: "분류",
+  story: "그림 이야기",
+  "vowel-activity": "모음 활동",
 };
 
 const PAGE_THEMES = [
@@ -120,10 +125,18 @@ function saveDraft() {
   localStorage.setItem(SELECTED_LESSON_KEY, selectedLessonId);
 }
 
+function renderCurrentWorksheetDocument() {
+  const meta = selectedLessonMeta();
+  return renderWorksheetDocument(lesson, {
+    assetBaseHref: meta.htmlPath,
+    documentHref: window.location.href,
+  });
+}
+
 function schedulePreview() {
   clearTimeout(previewTimer);
   previewTimer = setTimeout(() => {
-    previewFrame.srcdoc = renderWorksheetDocument(lesson);
+    previewFrame.srcdoc = renderCurrentWorksheetDocument();
     saveDraft();
     setStatus("변경사항 미리보기 반영됨");
   }, 120);
@@ -132,7 +145,7 @@ function schedulePreview() {
 function refreshPreviewNow() {
   clearTimeout(previewTimer);
   const loadPromise = waitForFrameLoad();
-  previewFrame.srcdoc = renderWorksheetDocument(lesson);
+  previewFrame.srcdoc = renderCurrentWorksheetDocument();
   saveDraft();
   return loadPromise;
 }
@@ -472,6 +485,28 @@ function renderTileEditor(tile, index, tiles) {
   );
 }
 
+function renderStoryPanelEditor(panel, index, panels) {
+  return itemCard(
+    `장면 ${index + 1}`,
+    panel,
+    [
+      field("이미지 경로", textInput(panel.image || "", (value) => {
+        panel.image = value;
+        schedulePreview();
+      })),
+      field("캡션", textInput(panel.caption || "", (value) => {
+        panel.caption = value;
+        schedulePreview();
+      })),
+    ],
+    () => {
+      panels.splice(index, 1);
+      renderActivePageForm();
+      schedulePreview();
+    }
+  );
+}
+
 function renderHouseEditor(house, index, houses) {
   return itemCard(
     `집 ${index + 1}`,
@@ -506,12 +541,38 @@ function renderSpotFields(page) {
   return fragment;
 }
 
+function renderStoryFields(page) {
+  const fragment = document.createDocumentFragment();
+  if (!page.panels) page.panels = [];
+  addCommonFields(fragment, page);
+  fragment.append(
+    itemList("이야기 장면", page.panels, renderStoryPanelEditor, () => ({ image: "./aa-story-01-silent.png", caption: "새 장면" }))
+  );
+  return fragment;
+}
+
 function renderSortingFields(page) {
   const fragment = document.createDocumentFragment();
   addCommonFields(fragment, page);
   fragment.append(
     itemList("분류 집", page.houses, renderHouseEditor, () => ({ title: "새 집", theme: "gogo" })),
     itemList("오려 붙이는 조각", page.tiles, renderTileEditor, () => ({ label: "새 조각", answer: "ㄱ", image: "./assets/dog.png" }))
+  );
+  return fragment;
+}
+
+function renderVowelActivityFields(page) {
+  const fragment = document.createDocumentFragment();
+  addCommonFields(fragment, page);
+  fragment.append(
+    field("대표 이미지 경로", textInput(page.heroImage || "", (value) => updatePageField(page, "heroImage", value))),
+    row(
+      field("따라쓰기 글자", textInput(page.traceLetter || "", (value) => updatePageField(page, "traceLetter", value))),
+      field("조합 글자", textInput((page.buildPieces || []).join(", "), (value) => {
+        page.buildPieces = value.split(",").map((item) => item.trim()).filter(Boolean);
+        schedulePreview();
+      }, "ㅇ, ㅏ, 아"))
+    )
   );
   return fragment;
 }
@@ -525,6 +586,8 @@ function renderActivePageForm() {
   if (page.type === "character") pageForm.append(renderCharacterFields(page));
   if (page.type === "spot") pageForm.append(renderSpotFields(page));
   if (page.type === "sorting") pageForm.append(renderSortingFields(page));
+  if (page.type === "story") pageForm.append(renderStoryFields(page));
+  if (page.type === "vowel-activity") pageForm.append(renderVowelActivityFields(page));
 }
 
 function renderPageList() {
@@ -574,16 +637,22 @@ function renderLessonOptions() {
   }
 }
 
+async function loadManifestLessons(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Manifest response ${response.status}`);
+  const manifest = await response.json();
+  return manifest.lessons || [];
+}
+
 async function loadLessonCatalog() {
-  try {
-    const response = await fetch(MANIFEST_URL);
-    if (!response.ok) throw new Error(`Manifest response ${response.status}`);
-    const manifest = await response.json();
-    lessonCatalog = manifest.lessons?.length ? manifest.lessons : [FALLBACK_LESSON];
-  } catch (error) {
-    console.warn("Lesson manifest could not be loaded; using fallback lesson.", error);
-    lessonCatalog = [FALLBACK_LESSON];
-  }
+  const manifests = await Promise.allSettled(MANIFEST_URLS.map((url) => loadManifestLessons(url)));
+  const loadedLessons = manifests.flatMap((result, index) => {
+    if (result.status === "fulfilled") return result.value;
+    console.warn(`Lesson manifest could not be loaded: ${MANIFEST_URLS[index]}`, result.reason);
+    return [];
+  });
+
+  lessonCatalog = loadedLessons.length ? loadedLessons : [FALLBACK_LESSON];
 
   selectedLessonId = localStorage.getItem(SELECTED_LESSON_KEY) || lessonCatalog[0].id;
   if (!lessonCatalog.some((item) => item.id === selectedLessonId)) {
@@ -646,7 +715,7 @@ downloadJsonButton.addEventListener("click", () => {
 });
 
 downloadHtmlButton.addEventListener("click", () => {
-  downloadText(`${selectedLessonId}-edited.html`, renderWorksheetDocument(lesson), "text/html;charset=utf-8");
+  downloadText(`${selectedLessonId}-edited.html`, renderCurrentWorksheetDocument(), "text/html;charset=utf-8");
 });
 
 downloadPngButton.addEventListener("click", async () => {

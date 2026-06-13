@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>한글 파닉스 - 자음 분류 게임</title>
+  <!-- Google Fonts: Gowun Dodum & Jua (태블릿 학습용 둥글고 예쁜 폰트) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/sorting-game.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-area">
+        <a href="/index.html" class="btn-back" title="브로마이드 제작기로 돌아가기">
+          <span class="back-icon">🎨</span> 돌아가기
+        </a>
+        <div class="logo-text">
+          <h1>한글 파닉스 자음 분류 게임</h1>
+          <p>Hangul Phonics Sorting Game</p>
+        </div>
+      </div>
+      
+      <!-- Lesson Selector -->
+      <div class="lesson-selector">
+        <span class="selector-label">레슨 선택:</span>
+        <div class="lesson-buttons" id="lesson-buttons-container">
+          <!-- Dynamically populated lesson buttons -->
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Game Play Area -->
+    <main class="game-main">
+      <div class="game-info">
+        <h2 id="game-title">친구를 집에 보내줄까요?</h2>
+        <p id="game-instruction">카드를 끌어서 알맞은 첫소리 집에 넣어보세요!</p>
+      </div>
+
+      <!-- Drop Zones (Houses) -->
+      <div class="houses-wrapper" id="houses-wrapper">
+        <!-- Houses will be generated here -->
+      </div>
+
+      <!-- Drag Items (Deck Bank) -->
+      <div class="deck-wrapper">
+        <div class="deck-title">💌 분류할 카드들을 집어보세요!</div>
+        <div class="deck-bank" id="deck-bank">
+          <!-- Cards will be generated here -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Success/Celebration Modal -->
+  <div class="celebration-overlay" id="celebration-overlay">
+    <div class="celebration-modal">
+      <div class="trophy-icon">🎉</div>
+      <h2>우와, 대단해요!</h2>
+      <p>모든 친구들을 알맞은 집에 보내주었어요!</p>
+      <div class="modal-buttons">
+        <button id="btn-next-lesson" class="btn btn-next">다음 레슨 하기 ➔</button>
+        <button id="btn-replay" class="btn btn-replay">다시 하기 ↺</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Context Activation Bar (for Safari/iOS Autoplay policy) -->
+  <div id="audio-init-overlay" class="audio-init-overlay">
+    <div class="audio-init-card">
+      <span class="music-icon">🎵</span>
+      <h3>음악과 챈트를 들으며 플레이해요!</h3>
+      <p>화면을 누르면 게임이 시작됩니다.</p>
+      <button id="btn-start-game" class="btn-start">게임 시작하기</button>
+    </div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <script type="module" src="/sorting-game.js"></script>
+</body>
+</html>

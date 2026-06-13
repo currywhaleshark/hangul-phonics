@@ -7,6 +7,20 @@
       "letters": "ㅇ/ㅏ/아",
       "worksheetPath": "../lessons/vowels/lesson-01-aa-baby-vowel/worksheet.json",
       "htmlPath": "../lessons/vowels/lesson-01-aa-baby-vowel/worksheet.html"
+    },
+    {
+      "id": "lesson-02-oo-box-vowel",
+      "title": "2레슨 아아 아기와 오: 상자를 만나 오 소리",
+      "letters": "ㅇ/ㅗ/오",
+      "worksheetPath": "../lessons/vowels/lesson-02-oo-box-vowel/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-02-oo-box-vowel/worksheet.html"
+    },
+    {
+      "id": "lesson-03-uu-platform-vowel",
+      "title": "3레슨 아아 아기와 우: 발판을 만나 우 소리",
+      "letters": "ㅇ/ㅜ/우",
+      "worksheetPath": "../lessons/vowels/lesson-03-uu-platform-vowel/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-03-uu-platform-vowel/worksheet.html"
     }
   ]
 }

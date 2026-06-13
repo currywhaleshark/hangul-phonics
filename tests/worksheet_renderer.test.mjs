@@ -25,6 +25,27 @@ assert.match(documentHtml, /<!doctype html>/);
 assert.match(documentHtml, /<link rel="stylesheet" href="\.\/pilot-a4\.css">/);
 assert.match(documentHtml, /한글 파닉스 A4 파일럿 학습지/);
 
+const vowelLesson = JSON.parse(await readFile(new URL("../lessons/vowels/lesson-01-aa-baby-vowel/worksheet.json", import.meta.url), "utf8"));
+const vowelPreviewHtml = renderWorksheetDocument(vowelLesson, {
+  assetBaseHref: "../lessons/vowels/lesson-01-aa-baby-vowel/worksheet.html",
+  documentHref: "http://127.0.0.1:3000/worksheets/editor.html",
+});
+assert.match(
+  vowelPreviewHtml,
+  /src="\/lessons\/vowels\/lesson-01-aa-baby-vowel\/aa-story-01-silent\.png"/,
+  "editor preview HTML should resolve story images beside the vowel lesson HTML"
+);
+assert.doesNotMatch(
+  vowelPreviewHtml,
+  /src="\.\/aa-story-01-silent\.png"/,
+  "editor preview HTML should not leave lesson-local images relative to worksheets/editor.html"
+);
+assert.equal(
+  vowelLesson.pages[0].panels[0].image,
+  "./aa-story-01-silent.png",
+  "preview asset resolution should not mutate the editable worksheet data"
+);
+
 const escaped = renderWorksheetPage({
   type: "spot",
   theme: "gogo",

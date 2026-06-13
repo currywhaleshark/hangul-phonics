@@ -1,0 +1,47 @@
+{
+  "title": "3레슨 아아 아기와 우: 발판을 만나 우 소리",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "아아 아기가 발판을 만났어",
+      "read": "아아 아기는 조용조용. 우우 발판을 만나면 어떤 소리가 날까요?",
+      "panels": [
+        {
+          "image": "../../../public/아아 아기.png",
+          "caption": "아아 아기는 조용조용."
+        },
+        {
+          "image": "../../../public/우우 발판.png",
+          "caption": "어? 우우 발판이다!"
+        },
+        {
+          "image": "../../../public/우우 발판 시안.png",
+          "caption": "발판을 아래에 놓고, 우!"
+        }
+      ],
+      "teacherNote": "발판이 아래로 받쳐 주는 모습을 보며 입을 오므려 우 소리를 낸다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "아아 아기와 우"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "입 오므려 우",
+      "read": "아아 아기가 우우 발판을 만나 우! 입을 오므리고 같이 말해요.",
+      "heroImage": "../../../public/우우 발판 시안.png",
+      "traceLetter": "우",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅇ",
+        "ㅜ",
+        "우"
+      ],
+      "teacherNote": "큰 글자 우를 손가락으로 천천히 따라간 뒤, ㅇ 아래에 ㅜ를 붙여 우를 만든다.",
+      "footerLeft": "ㅇ + ㅜ = 우",
+      "footerRight": "아아 아기와 우"
+    }
+  ]
+}

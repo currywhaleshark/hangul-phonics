@@ -11,6 +11,54 @@ function attr(name, value) {
   return ` ${name}="${escapeHtml(value)}"`;
 }
 
+const ASSET_PATH_KEYS = new Set(["image", "heroImage"]);
+
+function defaultDocumentHref() {
+  if (typeof globalThis.location?.href === "string") return globalThis.location.href;
+  return "http://localhost/";
+}
+
+function shouldResolveAssetPath(value) {
+  return typeof value === "string" && value && !/^(?:[a-z][a-z0-9+.-]*:|\/|#)/i.test(value);
+}
+
+function rootRelativeUrl(url) {
+  return `${url.pathname}${url.search}${url.hash}`;
+}
+
+export function resolveWorksheetAssetPath(assetPath, assetBaseHref, documentHref = defaultDocumentHref()) {
+  if (!assetBaseHref || !shouldResolveAssetPath(assetPath)) return assetPath;
+
+  const baseUrl = new URL(assetBaseHref, documentHref);
+  return rootRelativeUrl(new URL(assetPath, baseUrl));
+}
+
+export function resolveWorksheetAssetPaths(lesson, assetBaseHref, documentHref = defaultDocumentHref()) {
+  if (!assetBaseHref) return lesson;
+
+  const resolvedLesson = JSON.parse(JSON.stringify(lesson));
+
+  function walk(value) {
+    if (!value || typeof value !== "object") return;
+
+    if (Array.isArray(value)) {
+      value.forEach(walk);
+      return;
+    }
+
+    for (const [key, child] of Object.entries(value)) {
+      if (ASSET_PATH_KEYS.has(key) && shouldResolveAssetPath(child)) {
+        value[key] = resolveWorksheetAssetPath(child, assetBaseHref, documentHref);
+      } else {
+        walk(child);
+      }
+    }
+  }
+
+  walk(resolvedLesson);
+  return resolvedLesson;
+}
+
 function pageFooter(page) {
   return `<div class="page-footer"><span>${escapeHtml(page.footerLeft)}</span><span>${escapeHtml(page.footerRight)}</span></div>`;
 }
@@ -195,13 +243,14 @@ export function renderWorksheetBody(lesson) {
 
 export function renderWorksheetDocument(lesson, options = {}) {
   const cssHref = options.cssHref || "./pilot-a4.css";
+  const renderedLesson = resolveWorksheetAssetPaths(lesson, options.assetBaseHref, options.documentHref);
 
   return `<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(lesson.title || "A4 worksheet")}</title>
+    <title>${escapeHtml(renderedLesson.title || "A4 worksheet")}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
@@ -209,10 +258,10 @@ export function renderWorksheetDocument(lesson, options = {}) {
   </head>
   <body>
     <div class="toolbar">
-      <strong>${escapeHtml(lesson.title || "A4 worksheet")}</strong>
+      <strong>${escapeHtml(renderedLesson.title || "A4 worksheet")}</strong>
       JSON 데이터로 생성한 인쇄용 A4 학습지입니다.
     </div>
-${renderWorksheetBody(lesson)}
+${renderWorksheetBody(renderedLesson)}
   </body>
 </html>
 `;
