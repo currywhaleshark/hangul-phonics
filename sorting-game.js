@@ -27,7 +27,8 @@ const state = {
   totalCardsCount: 0,
   audioContext: null,
   audioContextActivated: false,
-  currentAudioChant: null
+  currentAudioChant: null,
+  currentConsonantPlaying: null
 };
 
 // --- Web Audio API Synth Effects ---
@@ -108,13 +109,24 @@ function playFailSynth() {
   osc.stop(now + 0.3);
 }
 
-// --- Play Chant Audio ---
-function playChant(consonant, lessonId) {
-  // Stop currently playing chant
+// --- Play & Stop Chant Audio ---
+function stopCurrentChant() {
   if (state.currentAudioChant) {
     state.currentAudioChant.pause();
     state.currentAudioChant = null;
+    state.currentConsonantPlaying = null;
   }
+}
+
+function playChant(consonant, lessonId) {
+  // If the same consonant is clicked again while playing, stop it (toggle stop)
+  if (state.currentAudioChant && state.currentConsonantPlaying === consonant) {
+    stopCurrentChant();
+    return;
+  }
+
+  // Stop currently playing chant
+  stopCurrentChant();
   
   // Audio file URL encoding
   const audioPath = `/lessons/consonants/${lessonId}/${consonant} 챈트.wav`;
@@ -123,10 +135,19 @@ function playChant(consonant, lessonId) {
   audio.play()
     .then(() => {
       state.currentAudioChant = audio;
+      state.currentConsonantPlaying = consonant;
     })
     .catch(err => {
       console.warn(`챈트 오디오를 재생할 수 없습니다: ${audioPath}`, err);
     });
+
+  // Audio ended listener to reset state
+  audio.addEventListener('ended', () => {
+    if (state.currentAudioChant === audio) {
+      state.currentAudioChant = null;
+      state.currentConsonantPlaying = null;
+    }
+  });
 }
 
 // --- Korean Choseong (Initial Consonant) Extractor ---
@@ -211,6 +232,7 @@ function renderLessonButtons() {
 }
 
 async function loadLessonData() {
+  stopCurrentChant(); // Stop playing chant on lesson change
   const currentLesson = state.lessons[state.currentLessonIndex];
   
   // Load buttons active state
@@ -504,6 +526,7 @@ function findOverlapHouse(x, y) {
 
 // --- Game Success & Celebration ---
 function showCelebration() {
+  stopCurrentChant(); // Stop playing chant on clear
   document.getElementById('celebration-overlay').classList.add('show');
   startConfetti();
 }
