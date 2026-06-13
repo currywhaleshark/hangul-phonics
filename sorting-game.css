@@ -636,15 +636,87 @@ body {
   
   .houses-wrapper {
     gap: 15px;
+    flex-wrap: nowrap; /* 세로화면에서도 집들이 꺾이지 않고 가로로 배치되도록 설정 */
+    width: 100%;
   }
   
   .house {
-    width: 100%;
-    max-width: 320px;
-    min-height: 320px;
+    flex: 1;
+    min-width: 100px;
+    max-width: 280px;
+    min-height: 260px;
+    padding: 15px 10px;
+    border-radius: 20px;
   }
   
   .house::before {
     display: none; /* Hide 3D roof on small devices to maximize space */
+  }
+
+  .house-character-img {
+    width: 70px;
+    height: 70px;
+    padding: 6px;
+  }
+  
+  .audio-badge {
+    bottom: 20px;
+    right: calc(50% - 35px);
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
+  
+  .house-title {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+  
+  .house-slots {
+    padding: 6px;
+    min-height: 110px;
+    gap: 6px;
+  }
+  
+  /* 세로화면/좁은화면 카드 크기 조정 */
+  .game-card {
+    width: 76px;
+    height: 86px;
+    padding: 6px 4px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  }
+  
+  .game-card.placed {
+    width: 76px;
+    height: 86px;
+  }
+  
+  .game-card strong {
+    font-size: 11px;
+  }
+  
+  .card-img-wrapper {
+    margin-bottom: 2px;
+  }
+  
+  .card-fill-bg {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+  
+  .deck-wrapper {
+    padding: 12px 15px;
+  }
+  
+  .deck-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .deck-bank {
+    gap: 10px;
+    min-height: 86px;
   }
 }
