@@ -233,6 +233,8 @@ function renderLessonButtons() {
 
 async function loadLessonData() {
   stopCurrentChant(); // Stop playing chant on lesson change
+  showLoadingScreen(); // Show preloader screen during lesson change
+  
   const currentLesson = state.lessons[state.currentLessonIndex];
   
   // Load buttons active state
@@ -253,6 +255,7 @@ async function loadLessonData() {
     if (!sortingPage) {
       console.error('분류 활동(sorting) 페이지를 찾을 수 없습니다.');
       alert('이 레슨에는 분류 활동이 없습니다.');
+      hideLoadingScreen();
       return;
     }
     
@@ -290,12 +293,18 @@ async function loadLessonData() {
     // Shuffle deck cards
     shuffleArray(state.cardsInDeck);
     
+    // Collect and preload tile images
+    const tileUrls = state.cardsInDeck.map(c => c.image).filter(url => !!url);
+    await preloadImages(tileUrls, updateLoadingProgress);
+    
     // Render
     renderGameField(worksheetUrl);
+    hideLoadingScreen();
     
   } catch (err) {
     console.error('레슨 정보를 로드하는 데 실패했습니다:', err);
     alert('레슨 로딩 실패: ' + err.message);
+    hideLoadingScreen();
   }
 }
 
@@ -387,7 +396,15 @@ function initCardDragging(cardEl, cardData) {
 
   function onPointerDown(e) {
     e.preventDefault();
-    initAudioContext(); // Activate audio context on user interaction
+    
+    // 1. 멀티터치 방지: 이미 드래그 중인 카드가 있다면 추가 드래그 무시
+    if (activeDrag) return;
+    
+    // 2. iOS/사파리 AudioContext 깨우기 보장
+    initAudioContext();
+    if (state.audioContext && state.audioContext.state === 'suspended') {
+      state.audioContext.resume();
+    }
     
     // Prevent dragging already placed card
     if (cardEl.classList.contains('placed')) return;
@@ -613,6 +630,65 @@ function updateConfetti() {
   confettiInterval = requestAnimationFrame(updateConfetti);
 }
 
+// --- Loading Screen Controls & Preloader ---
+function showLoadingScreen() {
+  const loader = document.getElementById('loading-screen');
+  const bar = document.getElementById('progress-bar');
+  const status = document.getElementById('loading-status');
+  
+  if (loader) {
+    loader.classList.remove('hide');
+    if (bar) bar.style.width = '0%';
+    if (status) status.textContent = '0% 완료';
+  }
+}
+
+function updateLoadingProgress(percent) {
+  const bar = document.getElementById('progress-bar');
+  const status = document.getElementById('loading-status');
+  if (bar) bar.style.width = `${percent}%`;
+  if (status) status.textContent = `${percent}% 완료`;
+}
+
+function hideLoadingScreen() {
+  const loader = document.getElementById('loading-screen');
+  if (loader) {
+    loader.classList.add('hide');
+  }
+}
+
+function preloadImages(urls, onProgress) {
+  return new Promise((resolve) => {
+    if (!urls || urls.length === 0) {
+      resolve();
+      return;
+    }
+    
+    let loadedCount = 0;
+    const total = urls.length;
+    
+    urls.forEach(url => {
+      const img = new Image();
+      img.src = encodeURI(url);
+      
+      const checkComplete = () => {
+        loadedCount++;
+        const percent = Math.floor((loadedCount / total) * 100);
+        onProgress(percent);
+        if (loadedCount === total) {
+          resolve();
+        }
+      };
+      
+      img.onload = checkComplete;
+      img.onerror = () => {
+        console.warn(`이미지 프리로드 실패: ${url}`);
+        checkComplete();
+      };
+    });
+  });
+}
+
 // --- General Utility Helpers ---
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -623,6 +699,8 @@ function shuffleArray(array) {
 
 // --- App Initialization ---
 async function init() {
+  showLoadingScreen(); // Show preloader immediately on launch
+  
   // Load manifest.json
   try {
     const response = await fetch('/lessons/consonants/manifest.json');
@@ -630,7 +708,13 @@ async function init() {
     state.lessons = data.lessons;
     
     renderLessonButtons();
-    loadLessonData();
+    
+    // 1. 최초 진입 시 공통 자음 캐릭터 이미지들 프리로드
+    const commonUrls = Object.values(CHARACTER_MAP).map(c => c.file).filter(url => !!url);
+    await preloadImages(commonUrls, updateLoadingProgress);
+    
+    // 2. 그 후 1레슨 로딩 시작 (내부적으로 타일 프리로드 후 loading screen을 닫음)
+    await loadLessonData();
     
   } catch (err) {
     console.error('manifest.json 로드 실패:', err);
