@@ -20,10 +20,13 @@ assert.match(js, /exportPdfDocument/, "editor should export preview pages as a P
 assert.match(js, /html2canvas/, "editor should capture the rendered worksheet DOM for PNG export");
 assert.match(js, /story:\s*"그림 이야기"/, "editor should label story pages");
 assert.match(js, /"vowel-activity":\s*"모음 활동"/, "editor should label vowel activity pages");
+assert.match(js, /"sound-choice":\s*"소리 정리"/, "editor should label sound choice review pages");
 assert.match(js, /renderStoryFields/, "editor should expose fields for story pages");
 assert.match(js, /renderVowelActivityFields/, "editor should expose fields for vowel activity pages");
+assert.match(js, /renderSoundChoiceFields/, "editor should expose fields for sound choice review pages");
 assert.match(js, /page\.panels/, "editor should edit story panels");
 assert.match(js, /page\.heroImage/, "editor should edit the vowel activity hero image");
+assert.match(js, /choice\.image/, "editor should edit sound choice card images");
 assert.match(js, /assetBaseHref:\s*meta\.htmlPath/, "editor preview should resolve lesson-local assets from the lesson HTML path");
 assert.match(js, /querySelectorAll\("\.sheet"\)/, "editor should export the actual preview sheets");
 assert.match(js, /toBlob/, "editor should download PNGs from canvas blobs");
@@ -51,12 +54,16 @@ for (const lesson of manifest.lessons) {
 
 assert.deepEqual(
   vowelManifest.lessons.map((lesson) => lesson.id),
-  ["lesson-01-aa-baby-vowel", "lesson-02-oo-box-vowel", "lesson-03-uu-platform-vowel"],
-  "vowel manifest should expose the first Aa baby ㅏ, ㅗ, ㅜ sequence for the editor catalog"
+  [
+    "lesson-01-aa-baby-vowel",
+    "lesson-02-gogo-nana-combination",
+    "lesson-03-mimi-bubu-combination",
+  ],
+  "vowel manifest should expose grouped vowel and combination lessons for the editor catalog"
 );
 
 for (const lesson of vowelManifest.lessons) {
   assert.match(lesson.title, /레슨/);
-  assert.match(lesson.letters, /[아오우]/);
+  assert.match(lesson.letters, /^[ㄱ-ㅎㅏ-ㅣ가-힣]+(\/[ㄱ-ㅎㅏ-ㅣ가-힣]+)+$/);
   assert.match(lesson.worksheetPath, /^\.\.\/lessons\/vowels\/lesson-/);
 }

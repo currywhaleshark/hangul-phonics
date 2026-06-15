@@ -171,6 +171,7 @@ function renderSortingPage(page) {
 }
 
 function renderStoryPage(page) {
+  const gridClass = (page.panels || []).length > 3 ? "story-grid story-grid-four" : "story-grid";
   const panels = (page.panels || [])
     .map(
       (panel, index) => `
@@ -187,18 +188,42 @@ function renderStoryPage(page) {
         <div class="page-kicker">${escapeHtml(page.kicker)}</div>
         <h1>${escapeHtml(page.title)}</h1>
         <div class="read-box">${escapeHtml(page.read)}</div>
-        <div class="story-grid">${panels}</div>
+        <div class="${gridClass}">${panels}</div>
         <div class="teacher-note">${escapeHtml(page.teacherNote)}</div>
         ${pageFooter(page)}
       </div>
     </section>`;
 }
 
-function renderVowelActivityPage(page) {
-  const [lead = "ㅇ", vowel = "ㅏ", result = "아"] = page.buildPieces || [];
+function renderSoundSteps(page) {
+  const soundSteps = page.soundSteps || [];
+  if (!soundSteps.length) return "";
 
   return `
-    <section class="sheet theme-${escapeHtml(page.theme)}">
+          <div class="sound-step-list" aria-label="소리 합치기">
+            ${soundSteps
+              .map(
+                (step) => `<div class="sound-step">
+              <div class="sound-step-label">${escapeHtml(step.label)}</div>
+              <div class="sound-step-sound">${escapeHtml(step.sound)}</div>
+            </div>`
+              )
+              .join("")}
+          </div>`;
+}
+
+function buildFormula(buildPieces = []) {
+  const [lead = "", vowel = "", result = ""] = buildPieces;
+  return { lead, vowel, result, expression: `${lead} + ${vowel}`.trim() };
+}
+
+function renderVowelActivityPage(page) {
+  const { lead, vowel, result } = buildFormula(page.buildPieces || ["ㅇ", "ㅏ", "아"]);
+  const hasSoundSteps = (page.soundSteps || []).length > 0;
+  const soundStepBlock = renderSoundSteps(page);
+
+  return `
+    <section class="sheet theme-${escapeHtml(page.theme)}${hasSoundSteps ? " has-sound-steps" : ""}">
       <div class="sheet-inner">
         <div class="page-kicker">${escapeHtml(page.kicker)}</div>
         <h1>${escapeHtml(page.title)}</h1>
@@ -213,7 +238,7 @@ function renderVowelActivityPage(page) {
               <div class="finger-trace-label">손가락으로 따라가요</div>
               <div class="finger-trace-letter">${escapeHtml(page.traceLetter)}</div>
             </div>
-          </div>
+          </div>${soundStepBlock}
           <div class="vowel-build-row" aria-label="${escapeHtml(`${lead} + ${vowel} = ${result}`)}">
             <div class="build-piece">${escapeHtml(lead)}</div>
             <div class="build-operator">+</div>
@@ -228,12 +253,56 @@ function renderVowelActivityPage(page) {
     </section>`;
 }
 
+function renderSoundChoicePage(page) {
+  const choices = page.choices || [];
+  const prompts = page.prompts || [];
+  const choiceCards = choices
+    .map((choice) => {
+      const { result, expression } = buildFormula(choice.buildPieces || []);
+      const image = choice.image
+        ? `<div class="sound-choice-image"><img src="${escapeHtml(choice.image)}" alt="${escapeHtml(choice.label || result)} 그림"></div>`
+        : "";
+      return `
+              <div class="sound-choice-card">
+                ${image}
+                <div class="sound-choice-formula">${escapeHtml(expression)}</div>
+                <strong>${escapeHtml(choice.label || result)}</strong>
+              </div>`;
+    })
+    .join("");
+  const promptRows = prompts
+    .map(
+      (prompt) => `
+            <div class="sound-choice-prompt"${attr("data-answer", prompt.answer)}>
+              <div class="sound-choice-prompt-label">${escapeHtml(prompt.label)} 소리</div>
+              <div class="sound-choice-options">${choiceCards}</div>
+            </div>`
+    )
+    .join("");
+
+  return `
+    <section class="sheet theme-${escapeHtml(page.theme)} sound-choice-sheet">
+      <div class="sheet-inner">
+        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
+        <h1>${escapeHtml(page.title)}</h1>
+        <div class="read-box">${escapeHtml(page.read)}</div>
+        <div class="activity-box">
+          <div class="activity-title">${escapeHtml(page.activityTitle)}</div>
+          <div class="sound-choice-grid">${promptRows}</div>
+        </div>
+        <div class="teacher-note">${escapeHtml(page.teacherNote)}</div>
+        ${pageFooter(page)}
+      </div>
+    </section>`;
+}
+
 export function renderWorksheetPage(page) {
   if (page.type === "character") return renderCharacterPage(page);
   if (page.type === "spot") return renderSpotPage(page);
   if (page.type === "sorting") return renderSortingPage(page);
   if (page.type === "story") return renderStoryPage(page);
   if (page.type === "vowel-activity") return renderVowelActivityPage(page);
+  if (page.type === "sound-choice") return renderSoundChoicePage(page);
   throw new Error(`Unsupported worksheet page type: ${page.type}`);
 }
 

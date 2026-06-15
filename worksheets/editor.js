@@ -83,6 +83,7 @@ const PAGE_TYPE_LABELS = {
   sorting: "분류",
   story: "그림 이야기",
   "vowel-activity": "모음 활동",
+  "sound-choice": "소리 정리",
 };
 
 const PAGE_THEMES = [
@@ -577,6 +578,84 @@ function renderVowelActivityFields(page) {
   return fragment;
 }
 
+function renderSoundPromptEditor(prompt, index, prompts) {
+  return itemCard(
+    `소리 ${index + 1}`,
+    prompt,
+    [
+      row(
+        field("표시 라벨", textInput(prompt.label, (value) => {
+          prompt.label = value;
+          schedulePreview();
+        }, "1번")),
+        field("교사용 소리", textInput(prompt.sound, (value) => {
+          prompt.sound = value;
+          schedulePreview();
+        }, "아")),
+        field("정답", textInput(prompt.answer, (value) => {
+          prompt.answer = value;
+          schedulePreview();
+        }, "아"))
+      ),
+    ],
+    () => {
+      prompts.splice(index, 1);
+      renderActivePageForm();
+      schedulePreview();
+    }
+  );
+}
+
+function renderSoundChoiceEditor(choice, index, choices) {
+  return itemCard(
+    `조합 카드 ${index + 1}`,
+    choice,
+    [
+      field("이미지 경로", textInput(choice.image || "", (value) => {
+        choice.image = value;
+        schedulePreview();
+      })),
+      row(
+        field("라벨", textInput(choice.label, (value) => {
+          choice.label = value;
+          schedulePreview();
+        }, "아")),
+        field("조합 글자", textInput((choice.buildPieces || []).join(", "), (value) => {
+          choice.buildPieces = value.split(",").map((item) => item.trim()).filter(Boolean);
+          schedulePreview();
+        }, "ㅇ, ㅏ, 아"))
+      ),
+    ],
+    () => {
+      choices.splice(index, 1);
+      renderActivePageForm();
+      schedulePreview();
+    }
+  );
+}
+
+function renderSoundChoiceFields(page) {
+  const fragment = document.createDocumentFragment();
+  if (!page.prompts) page.prompts = [];
+  if (!page.choices) page.choices = [];
+  addCommonFields(fragment, page);
+  fragment.append(
+    itemList(
+      "소리 번호",
+      page.prompts,
+      (prompt, index) => renderSoundPromptEditor(prompt, index, page.prompts),
+      () => ({ label: `${page.prompts.length + 1}번`, sound: "아", answer: "아" })
+    ),
+    itemList(
+      "조합 카드",
+      page.choices,
+      (choice, index) => renderSoundChoiceEditor(choice, index, page.choices),
+      () => ({ label: "아", buildPieces: ["ㅇ", "ㅏ", "아"] })
+    )
+  );
+  return fragment;
+}
+
 function renderActivePageForm() {
   const page = lesson.pages[activePageIndex];
   pageEditorTitle.textContent = `${activePageIndex + 1}장 편집`;
@@ -588,6 +667,7 @@ function renderActivePageForm() {
   if (page.type === "sorting") pageForm.append(renderSortingFields(page));
   if (page.type === "story") pageForm.append(renderStoryFields(page));
   if (page.type === "vowel-activity") pageForm.append(renderVowelActivityFields(page));
+  if (page.type === "sound-choice") pageForm.append(renderSoundChoiceFields(page));
 }
 
 function renderPageList() {
