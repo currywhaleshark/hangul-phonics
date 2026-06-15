@@ -21,6 +21,41 @@
       "letters": "ㅁ/ㅂ/ㅏ/ㅗ/마/모/바/보",
       "worksheetPath": "../lessons/vowels/lesson-03-mimi-bubu-combination/worksheet.json",
       "htmlPath": "../lessons/vowels/lesson-03-mimi-bubu-combination/worksheet.html"
+    },
+    {
+      "id": "lesson-04-dodo-rara-combination",
+      "title": "4레슨 도도와 라라: 다/도/라/로를 만들어요",
+      "letters": "ㄷ/ㄹ/ㅏ/ㅗ/다/도/라/로",
+      "worksheetPath": "../lessons/vowels/lesson-04-dodo-rara-combination/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-04-dodo-rara-combination/worksheet.html"
+    },
+    {
+      "id": "lesson-05-sasa-haha-combination",
+      "title": "5레슨 사사와 하하: 사/소/하/호를 만들어요",
+      "letters": "ㅅ/ㅎ/ㅏ/ㅗ/사/소/하/호",
+      "worksheetPath": "../lessons/vowels/lesson-05-sasa-haha-combination/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-05-sasa-haha-combination/worksheet.html"
+    },
+    {
+      "id": "lesson-06-jiji-chichi-combination",
+      "title": "6레슨 지지와 치치: 자/조/차/초를 만들어요",
+      "letters": "ㅈ/ㅊ/ㅏ/ㅗ/자/조/차/초",
+      "worksheetPath": "../lessons/vowels/lesson-06-jiji-chichi-combination/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-06-jiji-chichi-combination/worksheet.html"
+    },
+    {
+      "id": "lesson-07a-koko-toto-combination",
+      "title": "7-A레슨 코코와 토토: 카/코/타/토를 만들어요",
+      "letters": "ㅋ/ㅌ/ㅏ/ㅗ/카/코/타/토",
+      "worksheetPath": "../lessons/vowels/lesson-07a-koko-toto-combination/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-07a-koko-toto-combination/worksheet.html"
+    },
+    {
+      "id": "lesson-07b-pupu-combination",
+      "title": "7-B레슨 푸푸: 파/포를 만들어요",
+      "letters": "ㅍ/ㅏ/ㅗ/파/포",
+      "worksheetPath": "../lessons/vowels/lesson-07b-pupu-combination/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-07b-pupu-combination/worksheet.html"
     }
   ]
 }

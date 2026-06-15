@@ -127,9 +127,13 @@ function playChant(consonant, lessonId) {
 
   // Stop currently playing chant
   stopCurrentChant();
-  
-  // Audio file URL encoding
-  const audioPath = `/lessons/consonants/${lessonId}/${consonant} 챈트.wav`;
+
+  // 짧은 버전 우선 사용: public/audio/{캐릭터명} {자음}.wav (예: "고고 고양이 ㄱ.wav")
+  // 캐릭터 정보가 없으면 기존 긴 챈트로 폴백한다.
+  const charInfo = CHARACTER_MAP[consonant];
+  const audioPath = charInfo
+    ? `/audio/${charInfo.name} ${consonant}.wav`
+    : `/lessons/consonants/${lessonId}/${consonant} 챈트.wav`;
   const audio = new Audio(encodeURI(audioPath));
   
   audio.play()

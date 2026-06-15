@@ -33,7 +33,7 @@ assert.match(js, /toBlob/, "editor should download PNGs from canvas blobs");
 assert.doesNotMatch(js, /renderWorksheetPagePngCanvas/, "PNG export should not use a separate hand-drawn renderer");
 assert.doesNotMatch(js, /toDataURL\("image\/png"\)/, "PNG export should avoid tainted toDataURL failures");
 
-assert.equal(manifest.lessons.length, 6, "manifest should list the six consonant lessons");
+assert.equal(manifest.lessons.length, 7, "manifest should list the consonant lessons with 6-A and 6-B split");
 assert.deepEqual(
   manifest.lessons.map((lesson) => lesson.id),
   [
@@ -42,7 +42,8 @@ assert.deepEqual(
     "lesson-03-dodo-rara",
     "lesson-04-sasa-haha",
     "lesson-05-jiji-chichi",
-    "lesson-06-koko-toto-pupu",
+    "lesson-06a-koko-toto-pupu-meet",
+    "lesson-06b-koko-toto-pupu-sounds",
   ]
 );
 
@@ -58,6 +59,11 @@ assert.deepEqual(
     "lesson-01-aa-baby-vowel",
     "lesson-02-gogo-nana-combination",
     "lesson-03-mimi-bubu-combination",
+    "lesson-04-dodo-rara-combination",
+    "lesson-05-sasa-haha-combination",
+    "lesson-06-jiji-chichi-combination",
+    "lesson-07a-koko-toto-combination",
+    "lesson-07b-pupu-combination",
   ],
   "vowel manifest should expose grouped vowel and combination lessons for the editor catalog"
 );

@@ -9,7 +9,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        sortingGame: 'sorting-game.html'
+        sortingGame: 'sorting-game.html',
+        vowelGame: 'vowel-game.html'
       }
     }
   }

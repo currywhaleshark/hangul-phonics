@@ -43,6 +43,75 @@ const ttsSounds = {
   "ㅎ": "[h] [h] [h]",
 };
 
+const strongBreathCharacters = [
+  {
+    key: "koko",
+    theme: "gogo",
+    letter: "ㅋ",
+    name: "코코 코알라",
+    title: "코코 코알라야",
+    image: characterImage("코코 코알라.png"),
+    panelTitle: "코코의 큰 숨 길",
+    sound: "크 크 크",
+    introLine: "나는 코코 코알라야. 내 몸에는 ㅋ 길이 있어.",
+    likesLine: "나는 쿠키, 콩, 카드, 크레용, 코끼리를 좋아해.",
+    note: "ㅋ은 ㄱ보다 숨이 더 크게 나가는 친구처럼 놀이로만 느끼게 한다.",
+    cards: [
+      { label: "쿠키", image: asset("cookie.png") },
+      { label: "콩", image: asset("bean.png") },
+      { label: "카드", image: asset("card.png") },
+      { label: "크레용", image: asset("crayon.png") },
+      { label: "코끼리", image: asset("elephant.png") },
+      { label: "토끼", image: asset("rabbit.png") },
+    ],
+    correct: ["쿠키", "콩", "카드", "크레용", "코끼리"],
+  },
+  {
+    key: "toto",
+    theme: "nana",
+    letter: "ㅌ",
+    name: "토토 토끼",
+    title: "토토 토끼야",
+    image: characterImage("토토 토끼.png"),
+    panelTitle: "토토의 톡톡 길",
+    sound: "트 트 트",
+    introLine: "나는 토토 토끼야. 내 몸에는 ㅌ 길이 있어.",
+    likesLine: "나는 토마토, 택시, 타조, 튤립, 토끼풀을 좋아해.",
+    note: "ㅌ은 ㄷ보다 톡 튀는 숨이 있는 친구처럼 손뼉 동작을 붙인다.",
+    cards: [
+      { label: "토마토", image: asset("tomato.png") },
+      { label: "택시", image: asset("taxi.png") },
+      { label: "타조", image: asset("ostrich.png") },
+      { label: "튤립", image: asset("tulip.png") },
+      { label: "토끼풀", image: asset("clover.png") },
+      { label: "쿠키", image: asset("cookie.png") },
+    ],
+    correct: ["토마토", "택시", "타조", "튤립", "토끼풀"],
+  },
+  {
+    key: "pupu",
+    theme: "mix",
+    letter: "ㅍ",
+    name: "푸푸 풍선",
+    title: "푸푸 풍선이야",
+    image: characterImage("푸푸 풍선.png"),
+    panelTitle: "푸푸의 퐁퐁 길",
+    sound: "프 프 프",
+    introLine: "나는 푸푸 풍선이야. 내 몸에는 ㅍ 길이 있어.",
+    likesLine: "나는 포도, 피자, 풀, 풍선, 파도를 좋아해.",
+    note: "ㅍ은 바람이 퐁 나오는 친구처럼 입바람 놀이와 연결한다.",
+    cards: [
+      { label: "포도", image: asset("grapes.png") },
+      { label: "피자", image: asset("pizza.png") },
+      { label: "풀", image: asset("grass.png") },
+      { label: "풍선", image: asset("balloon.png") },
+      { label: "파도", image: asset("wave.png") },
+      { label: "쿠키", image: asset("cookie.png") },
+    ],
+    correct: ["포도", "피자", "풀", "풍선", "파도"],
+  },
+];
+
 const lessons = [
   {
     folder: "lesson-01-gogo-nana",
@@ -298,76 +367,17 @@ const lessons = [
     ],
   },
   {
-    folder: "lesson-06-koko-toto-pupu",
-    title: "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사",
-    pair: [
-      {
-        key: "koko",
-        theme: "gogo",
-        letter: "ㅋ",
-        name: "코코 코알라",
-        title: "코코 코알라야",
-        image: characterImage("코코 코알라.png"),
-        panelTitle: "코코의 큰 숨 길",
-        sound: "크 크 크",
-        introLine: "나는 코코 코알라야. 내 몸에는 ㅋ 길이 있어.",
-        likesLine: "나는 쿠키, 콩, 카드, 크레용, 코끼리를 좋아해.",
-        note: "ㅋ은 ㄱ보다 숨이 더 크게 나가는 친구처럼 놀이로만 느끼게 한다.",
-        cards: [
-          { label: "쿠키", image: asset("cookie.png") },
-          { label: "콩", image: asset("bean.png") },
-          { label: "카드", image: asset("card.png") },
-          { label: "크레용", image: asset("crayon.png") },
-          { label: "코끼리", image: asset("elephant.png") },
-          { label: "토끼", image: asset("rabbit.png") },
-        ],
-        correct: ["쿠키", "콩", "카드", "크레용", "코끼리"],
-      },
-      {
-        key: "toto",
-        theme: "nana",
-        letter: "ㅌ",
-        name: "토토 토끼",
-        title: "토토 토끼야",
-        image: characterImage("토토 토끼.png"),
-        panelTitle: "토토의 톡톡 길",
-        sound: "트 트 트",
-        introLine: "나는 토토 토끼야. 내 몸에는 ㅌ 길이 있어.",
-        likesLine: "나는 토마토, 택시, 타조, 튤립, 토끼풀을 좋아해.",
-        note: "ㅌ은 ㄷ보다 톡 튀는 숨이 있는 친구처럼 손뼉 동작을 붙인다.",
-        cards: [
-          { label: "토마토", image: asset("tomato.png") },
-          { label: "택시", image: asset("taxi.png") },
-          { label: "타조", image: asset("ostrich.png") },
-          { label: "튤립", image: asset("tulip.png") },
-          { label: "토끼풀", image: asset("clover.png") },
-          { label: "쿠키", image: asset("cookie.png") },
-        ],
-        correct: ["토마토", "택시", "타조", "튤립", "토끼풀"],
-      },
-      {
-        key: "pupu",
-        theme: "mix",
-        letter: "ㅍ",
-        name: "푸푸 풍선",
-        title: "푸푸 풍선이야",
-        image: characterImage("푸푸 풍선.png"),
-        panelTitle: "푸푸의 퐁퐁 길",
-        sound: "프 프 프",
-        introLine: "나는 푸푸 풍선이야. 내 몸에는 ㅍ 길이 있어.",
-        likesLine: "나는 포도, 피자, 풀, 풍선, 파도를 좋아해.",
-        note: "ㅍ은 바람이 퐁 나오는 친구처럼 입바람 놀이와 연결한다.",
-        cards: [
-          { label: "포도", image: asset("grapes.png") },
-          { label: "피자", image: asset("pizza.png") },
-          { label: "풀", image: asset("grass.png") },
-          { label: "풍선", image: asset("balloon.png") },
-          { label: "파도", image: asset("wave.png") },
-          { label: "쿠키", image: asset("cookie.png") },
-        ],
-        correct: ["포도", "피자", "풀", "풍선", "파도"],
-      },
-    ],
+    folder: "lesson-06a-koko-toto-pupu-meet",
+    title: "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기",
+    pageSet: "characters",
+    pair: strongBreathCharacters,
+  },
+  {
+    folder: "lesson-06b-koko-toto-pupu-sounds",
+    title: "6-B레슨 코코와 토토와 푸푸: 첫소리 찾기",
+    pageSet: "spots",
+    sortingTilesPerCharacter: 2,
+    pair: strongBreathCharacters,
   },
   {
     disabled: true,
@@ -467,9 +477,9 @@ function pageForSpot(character, lessonTitle, pageNumber) {
   };
 }
 
-function pageForSorting(lesson) {
+function pageForSorting(lesson, pageNumber) {
   const characters = charactersForLesson(lesson);
-  const tilesPerCharacter = characters.length > 2 ? 3 : 4;
+  const tilesPerCharacter = lesson.sortingTilesPerCharacter || (characters.length > 2 ? 3 : 4);
   const tileColumns = characters.length > 2 ? 3 : 4;
   const tileGroups = characters.map((character) =>
     character.cards.slice(0, tilesPerCharacter).map((card) => ({ ...card, answer: character.letter }))
@@ -478,7 +488,7 @@ function pageForSorting(lesson) {
   return {
     type: "sorting",
     theme: "mix",
-    kicker: "5장 / 분류 활동",
+    kicker: `${pageNumber}장 / 분류 활동`,
     title: "친구를 집에 보낼까?",
     read: `${characters.map((character) => `${character.name}의 친구는 ${character.letter} 집`).join("으로, ")}으로 보내요.`,
     houses: characters.map((character) => ({ title: `${character.letter} 집`, theme: character.theme })),
@@ -533,6 +543,21 @@ function joinKoreanList(items) {
 
 function worksheetForLesson(lesson) {
   const characters = charactersForLesson(lesson);
+  if (lesson.pageSet === "characters") {
+    return {
+      title: lesson.title,
+      pages: characters.map((character, index) => pageForCharacter(character, lesson.title, index + 1)),
+    };
+  }
+
+  if (lesson.pageSet === "spots") {
+    const spotPages = characters.map((character, index) => pageForSpot(character, lesson.title, index + 1));
+    return {
+      title: lesson.title,
+      pages: [...spotPages, pageForSorting(lesson, spotPages.length + 1)],
+    };
+  }
+
   const characterPages = characters.flatMap((character, index) => [
     pageForCharacter(character, lesson.title, index * 2 + 1),
     pageForSpot(character, lesson.title, index * 2 + 2),
@@ -540,7 +565,7 @@ function worksheetForLesson(lesson) {
 
   return {
     title: lesson.title,
-    pages: [...characterPages, pageForSorting(lesson)],
+    pages: [...characterPages, pageForSorting(lesson, characterPages.length + 1)],
   };
 }
 

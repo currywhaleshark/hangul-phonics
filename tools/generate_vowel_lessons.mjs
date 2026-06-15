@@ -61,6 +61,57 @@ function reviewPage({ sounds, builds, images = [], footerRight }) {
   };
 }
 
+function combinationLesson({ folder, title, letters, storyTitle, storyRead, storyTeacherNote, footerRight, characters }) {
+  const panels = characters.flatMap((character) =>
+    character.combos.map((combo) => ({
+      image: combo.heroImage,
+      caption: `${character.consonant}이 ${combo.vowel}를 만나, ${combo.result}!`,
+    }))
+  );
+  const activities = characters.flatMap((character) =>
+    character.combos.map((combo) =>
+      activity({
+        title: `${character.consonant}과 ${combo.vowel}가 만나면 ${combo.result}`,
+        read: `${character.shortName}의 ${character.consonant} 소리, ${character.sound}! ${combo.vowelTool}의 ${combo.vowel} 소리, ${combo.vowelSound}! 합치면 ${combo.result}!`,
+        heroImage: combo.heroImage,
+        traceLetter: combo.result,
+        buildPieces: [character.consonant, combo.vowel, combo.result],
+        soundSteps: soundSteps(
+          `${character.shortName}의`,
+          character.consonant,
+          `${character.sound}!`,
+          combo.vowelTool,
+          combo.vowel,
+          `${combo.vowelSound}!`,
+          combo.result
+        ),
+        teacherNote: `${character.teacherNoteStem} ${combo.teacherNoteTail}`,
+        footerRight: `${character.fullName}와 ${combo.result}`,
+      })
+    )
+  );
+
+  return {
+    folder,
+    title,
+    letters,
+    story: {
+      title: storyTitle,
+      read: storyRead,
+      panels,
+      teacherNote: storyTeacherNote,
+      footerLeft: "그림 이야기",
+      footerRight,
+    },
+    activities,
+    review: {
+      sounds: activities.map((item) => item.traceLetter),
+      builds: activities.map((item) => item.buildPieces),
+      footerRight,
+    },
+  };
+}
+
 const lessons = [
   {
     folder: "lesson-01-aa-baby-vowel",
@@ -272,6 +323,286 @@ const lessons = [
       footerRight: "미미와 부부",
     },
   },
+  combinationLesson({
+    folder: "lesson-04-dodo-rara-combination",
+    title: "4레슨 도도와 라라: 다/도/라/로를 만들어요",
+    letters: "ㄷ/ㄹ/ㅏ/ㅗ/다/도/라/로",
+    storyTitle: "도도와 라라가 새 글자를 만들어요",
+    storyRead: "도도 몸의 ㄷ 길과 라라 리본의 ㄹ 길이 모음 도구를 만나요.",
+    storyTeacherNote: "도도는 몸의 ㄷ 길, 라라는 리본의 ㄹ 꼬불길을 먼저 찾게 한다.",
+    footerRight: "도도와 라라",
+    characters: [
+      {
+        fullName: "도도 도토리",
+        shortName: "도도",
+        consonant: "ㄷ",
+        sound: "드",
+        teacherNoteStem: "도도 몸의 ㄷ 길을 손가락으로 따라가고,",
+        combos: [
+          {
+            vowel: "ㅏ",
+            vowelTool: "아아 막대기",
+            vowelSound: "아",
+            result: "다",
+            heroImage: "../../../public/도도 다 새시안.png",
+            teacherNoteTail: "오른쪽의 ㅏ를 붙여 다를 읽는다.",
+          },
+          {
+            vowel: "ㅗ",
+            vowelTool: "오오 상자",
+            vowelSound: "오",
+            result: "도",
+            heroImage: "../../../public/도도 도 새시안.png",
+            teacherNoteTail: "아래의 ㅗ 상자를 붙여 도를 읽는다.",
+          },
+        ],
+      },
+      {
+        fullName: "라라 리본",
+        shortName: "라라",
+        consonant: "ㄹ",
+        sound: "르",
+        teacherNoteStem: "라라 리본의 ㄹ 꼬불길을 손가락으로 따라가고,",
+        combos: [
+          {
+            vowel: "ㅏ",
+            vowelTool: "아아 막대기",
+            vowelSound: "아",
+            result: "라",
+            heroImage: "../../../public/라라 라 새시안.png",
+            teacherNoteTail: "오른쪽의 ㅏ를 붙여 라를 읽는다.",
+          },
+          {
+            vowel: "ㅗ",
+            vowelTool: "오오 상자",
+            vowelSound: "오",
+            result: "로",
+            heroImage: "../../../public/라라 로 새시안.png",
+            teacherNoteTail: "아래의 ㅗ 상자를 붙여 로를 읽는다.",
+          },
+        ],
+      },
+    ],
+  }),
+  combinationLesson({
+    folder: "lesson-05-sasa-haha-combination",
+    title: "5레슨 사사와 하하: 사/소/하/호를 만들어요",
+    letters: "ㅅ/ㅎ/ㅏ/ㅗ/사/소/하/호",
+    storyTitle: "사사와 하하가 새 글자를 만들어요",
+    storyRead: "사사 뿔의 ㅅ 산 길과 하하 몸의 ㅎ 숨 길이 모음 도구를 만나요.",
+    storyTeacherNote: "사사는 뿔의 ㅅ 산 길, 하하는 몸의 ㅎ 숨 길을 먼저 찾게 한다.",
+    footerRight: "사사와 하하",
+    characters: [
+      {
+        fullName: "사사 사슴",
+        shortName: "사사",
+        consonant: "ㅅ",
+        sound: "스",
+        teacherNoteStem: "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고,",
+        combos: [
+          {
+            vowel: "ㅏ",
+            vowelTool: "아아 막대기",
+            vowelSound: "아",
+            result: "사",
+            heroImage: "../../../public/사사 사 새시안.png",
+            teacherNoteTail: "오른쪽의 ㅏ를 붙여 사를 읽는다.",
+          },
+          {
+            vowel: "ㅗ",
+            vowelTool: "오오 상자",
+            vowelSound: "오",
+            result: "소",
+            heroImage: "../../../public/사사 소 새시안.png",
+            teacherNoteTail: "아래의 ㅗ 상자를 붙여 소를 읽는다.",
+          },
+        ],
+      },
+      {
+        fullName: "하하 하마",
+        shortName: "하하",
+        consonant: "ㅎ",
+        sound: "흐",
+        teacherNoteStem: "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고,",
+        combos: [
+          {
+            vowel: "ㅏ",
+            vowelTool: "아아 막대기",
+            vowelSound: "아",
+            result: "하",
+            heroImage: "../../../public/하하 하 새시안.png",
+            teacherNoteTail: "오른쪽의 ㅏ를 붙여 하를 읽는다.",
+          },
+          {
+            vowel: "ㅗ",
+            vowelTool: "오오 상자",
+            vowelSound: "오",
+            result: "호",
+            heroImage: "../../../public/하하 호 새시안.png",
+            teacherNoteTail: "아래의 ㅗ 상자를 붙여 호를 읽는다.",
+          },
+        ],
+      },
+    ],
+  }),
+  combinationLesson({
+    folder: "lesson-06-jiji-chichi-combination",
+    title: "6레슨 지지와 치치: 자/조/차/초를 만들어요",
+    letters: "ㅈ/ㅊ/ㅏ/ㅗ/자/조/차/초",
+    storyTitle: "지지와 치치가 새 글자를 만들어요",
+    storyRead: "지지의 ㅈ 길과 치치의 ㅊ 칙칙 길이 모음 도구를 만나요.",
+    storyTeacherNote: "지지는 ㅈ 길, 치치는 ㅊ 칙칙 길을 먼저 찾게 한다.",
+    footerRight: "지지와 치치",
+    characters: [
+      {
+        fullName: "지지 지렁이",
+        shortName: "지지",
+        consonant: "ㅈ",
+        sound: "즈",
+        teacherNoteStem: "지지의 ㅈ 길을 손가락으로 따라가고,",
+        combos: [
+          {
+            vowel: "ㅏ",
+            vowelTool: "아아 막대기",
+            vowelSound: "아",
+            result: "자",
+            heroImage: "../../../public/지지 자 새시안.png",
+            teacherNoteTail: "오른쪽의 ㅏ를 붙여 자를 읽는다.",
+          },
+          {
+            vowel: "ㅗ",
+            vowelTool: "오오 상자",
+            vowelSound: "오",
+            result: "조",
+            heroImage: "../../../public/지지 조 새시안.png",
+            teacherNoteTail: "아래의 ㅗ 상자를 붙여 조를 읽는다.",
+          },
+        ],
+      },
+      {
+        fullName: "치치 칙폭이",
+        shortName: "치치",
+        consonant: "ㅊ",
+        sound: "츠",
+        teacherNoteStem: "치치의 ㅊ 칙칙 길을 손가락으로 따라가고,",
+        combos: [
+          {
+            vowel: "ㅏ",
+            vowelTool: "아아 막대기",
+            vowelSound: "아",
+            result: "차",
+            heroImage: "../../../public/치치 차 새시안.png",
+            teacherNoteTail: "오른쪽의 ㅏ를 붙여 차를 읽는다.",
+          },
+          {
+            vowel: "ㅗ",
+            vowelTool: "오오 상자",
+            vowelSound: "오",
+            result: "초",
+            heroImage: "../../../public/치치 초 새시안.png",
+            teacherNoteTail: "아래의 ㅗ 상자를 붙여 초를 읽는다.",
+          },
+        ],
+      },
+    ],
+  }),
+  combinationLesson({
+    folder: "lesson-07a-koko-toto-combination",
+    title: "7-A레슨 코코와 토토: 카/코/타/토를 만들어요",
+    letters: "ㅋ/ㅌ/ㅏ/ㅗ/카/코/타/토",
+    storyTitle: "코코와 토토가 새 글자를 만들어요",
+    storyRead: "코코 몸의 ㅋ 큰 숨 길과 토토 몸의 ㅌ 톡톡 길이 모음 도구를 만나요.",
+    storyTeacherNote: "코코는 몸의 ㅋ 큰 숨 길, 토토는 몸의 ㅌ 톡톡 길을 먼저 찾게 한다.",
+    footerRight: "코코와 토토",
+    characters: [
+      {
+        fullName: "코코 코알라",
+        shortName: "코코",
+        consonant: "ㅋ",
+        sound: "크",
+        teacherNoteStem: "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고,",
+        combos: [
+          {
+            vowel: "ㅏ",
+            vowelTool: "아아 막대기",
+            vowelSound: "아",
+            result: "카",
+            heroImage: "../../../public/코코 카 새시안.png",
+            teacherNoteTail: "오른쪽의 ㅏ를 붙여 카를 읽는다.",
+          },
+          {
+            vowel: "ㅗ",
+            vowelTool: "오오 상자",
+            vowelSound: "오",
+            result: "코",
+            heroImage: "../../../public/코코 코 새시안.png",
+            teacherNoteTail: "아래의 ㅗ 상자를 붙여 코를 읽는다.",
+          },
+        ],
+      },
+      {
+        fullName: "토토 토끼",
+        shortName: "토토",
+        consonant: "ㅌ",
+        sound: "트",
+        teacherNoteStem: "토토 몸의 ㅌ 톡톡 길을 손가락으로 따라가고,",
+        combos: [
+          {
+            vowel: "ㅏ",
+            vowelTool: "아아 막대기",
+            vowelSound: "아",
+            result: "타",
+            heroImage: "../../../public/토토 타 새시안.png",
+            teacherNoteTail: "오른쪽의 ㅏ를 붙여 타를 읽는다.",
+          },
+          {
+            vowel: "ㅗ",
+            vowelTool: "오오 상자",
+            vowelSound: "오",
+            result: "토",
+            heroImage: "../../../public/토토 토 새시안.png",
+            teacherNoteTail: "아래의 ㅗ 상자를 붙여 토를 읽는다.",
+          },
+        ],
+      },
+    ],
+  }),
+  combinationLesson({
+    folder: "lesson-07b-pupu-combination",
+    title: "7-B레슨 푸푸: 파/포를 만들어요",
+    letters: "ㅍ/ㅏ/ㅗ/파/포",
+    storyTitle: "푸푸가 새 글자를 만들어요",
+    storyRead: "푸푸 풍선 몸의 ㅍ 길이 모음 도구를 만나요.",
+    storyTeacherNote: "푸푸 풍선 몸의 ㅍ 길을 먼저 찾고, 입바람 놀이와 함께 파/포를 읽는다.",
+    footerRight: "푸푸",
+    characters: [
+      {
+        fullName: "푸푸 풍선",
+        shortName: "푸푸",
+        consonant: "ㅍ",
+        sound: "프",
+        teacherNoteStem: "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고,",
+        combos: [
+          {
+            vowel: "ㅏ",
+            vowelTool: "아아 막대기",
+            vowelSound: "아",
+            result: "파",
+            heroImage: "../../../public/푸푸 파 새시안.png",
+            teacherNoteTail: "오른쪽의 ㅏ를 붙여 파를 읽는다.",
+          },
+          {
+            vowel: "ㅗ",
+            vowelTool: "오오 상자",
+            vowelSound: "오",
+            result: "포",
+            heroImage: "../../../public/푸푸 포 새시안.png",
+            teacherNoteTail: "아래의 ㅗ 상자를 붙여 포를 읽는다.",
+          },
+        ],
+      },
+    ],
+  }),
 ];
 
 function worksheetForLesson(lesson) {

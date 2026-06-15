@@ -11,7 +11,8 @@ const expectedLessons = [
   "lesson-03-dodo-rara",
   "lesson-04-sasa-haha",
   "lesson-05-jiji-chichi",
-  "lesson-06-koko-toto-pupu",
+  "lesson-06a-koko-toto-pupu-meet",
+  "lesson-06b-koko-toto-pupu-sounds",
 ];
 
 const lesson2AssetFiles = [
@@ -98,7 +99,8 @@ const expectedManifest = [
   ["lesson-03-dodo-rara", "ㄷ/ㄹ"],
   ["lesson-04-sasa-haha", "ㅅ/ㅎ"],
   ["lesson-05-jiji-chichi", "ㅈ/ㅊ"],
-  ["lesson-06-koko-toto-pupu", "ㅋ/ㅌ/ㅍ"],
+  ["lesson-06a-koko-toto-pupu-meet", "ㅋ/ㅌ/ㅍ"],
+  ["lesson-06b-koko-toto-pupu-sounds", "ㅋ/ㅌ/ㅍ"],
 ];
 
 for (const fileName of lesson2AssetFiles) {
@@ -151,9 +153,11 @@ for (const lessonName of expectedLessons) {
 
   const worksheet = JSON.parse(await readFile(path.join(lessonDir, "worksheet.json"), "utf8"));
   const expectedPageTypes =
-    lessonName === "lesson-06-koko-toto-pupu"
-      ? ["character", "spot", "character", "spot", "character", "spot", "sorting"]
-      : ["character", "spot", "character", "spot", "sorting"];
+    lessonName === "lesson-06a-koko-toto-pupu-meet"
+      ? ["character", "character", "character"]
+      : lessonName === "lesson-06b-koko-toto-pupu-sounds"
+        ? ["spot", "spot", "spot", "sorting"]
+        : ["character", "spot", "character", "spot", "sorting"];
   assert.deepEqual(worksheet.pages.map((page) => page.type), expectedPageTypes, `${lessonName} should use the expected worksheet pages`);
 
   const intro = await readFile(path.join(lessonDir, "character-intro-tts.md"), "utf8");
@@ -271,34 +275,47 @@ for (const lessonName of expectedLessons) {
     assert.equal(imageFiles.length, 20, "lesson 5 spot cards and sorting tiles should all use image assets");
   }
 
-  if (lessonName === "lesson-06-koko-toto-pupu") {
+  if (lessonName === "lesson-06a-koko-toto-pupu-meet") {
+    assert.equal(worksheet.pages.length, 3, "lesson 6-A should include only the three character pages");
+    assert.deepEqual(
+      worksheet.pages.map((page) => page.letter),
+      ["ㅋ", "ㅌ", "ㅍ"],
+      "lesson 6-A should introduce ㅋ, ㅌ, ㅍ without first-sound cards"
+    );
+    assert.match(intro, /코코 코알라/);
+    assert.match(intro, /토토 토끼/);
+    assert.match(intro, /푸푸 풍선/);
+    assert.match(song, /푸푸 프 프 프/);
+  }
+
+  if (lessonName === "lesson-06b-koko-toto-pupu-sounds") {
     const imageFiles = worksheet.pages
       .flatMap((page) => [...(page.cards || []), ...(page.tiles || [])])
       .map((card) => card.image ? path.basename(card.image) : "")
       .filter(Boolean);
 
-    assert.equal(worksheet.pages.length, 7, "lesson 6 should include three character/spot pairs plus sorting");
+    assert.equal(worksheet.pages.length, 4, "lesson 6-B should include three spot pages plus one light sorting page");
     assert.deepEqual(
-      worksheet.pages.filter((page) => page.type === "character").map((page) => page.letter),
-      ["ㅋ", "ㅌ", "ㅍ"],
-      "lesson 6 should cover ㅋ, ㅌ, ㅍ"
+      worksheet.pages.slice(0, 3).map((page) => page.type),
+      ["spot", "spot", "spot"],
+      "lesson 6-B should keep the first-sound pages together"
     );
     const sorting = worksheet.pages.at(-1);
     assert.deepEqual(
       sorting.houses.map((house) => house.title),
       ["ㅋ 집", "ㅌ 집", "ㅍ 집"],
-      "lesson 6 sorting should have three houses"
+      "lesson 6-B sorting should have three houses"
     );
-    assert.equal(sorting.tileColumns, 3, "lesson 6 sorting tiles should use a balanced 3-column layout");
-    assert.equal(sorting.tiles.length, 9, "lesson 6 sorting should keep three tiles per consonant");
+    assert.equal(sorting.tileColumns, 3, "lesson 6-B sorting tiles should use a balanced 3-column layout");
+    assert.equal(sorting.tiles.length, 6, "lesson 6-B sorting should keep two tiles per consonant to stay uncluttered");
     assert.match(intro, /코코 코알라/);
     assert.match(intro, /토토 토끼/);
     assert.match(intro, /푸푸 풍선/);
     assert.match(song, /푸푸 프 프 프/);
 
     for (const fileName of lesson6AssetFiles) {
-      assert.ok(imageFiles.includes(fileName), `lesson 6 worksheet should reference ${fileName}`);
+      assert.ok(imageFiles.includes(fileName), `lesson 6-B worksheet should reference ${fileName}`);
     }
-    assert.equal(imageFiles.length, 27, "lesson 6 spot cards and sorting tiles should all use image assets");
+    assert.equal(imageFiles.length, 24, "lesson 6-B spot cards and sorting tiles should all use image assets");
   }
 }

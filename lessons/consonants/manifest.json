@@ -37,11 +37,18 @@
       "htmlPath": "../lessons/consonants/lesson-05-jiji-chichi/worksheet.html"
     },
     {
-      "id": "lesson-06-koko-toto-pupu",
-      "title": "6레슨 코코와 토토와 푸푸: ㅋ ㅌ ㅍ 센 숨 친구 3총사",
+      "id": "lesson-06a-koko-toto-pupu-meet",
+      "title": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기",
       "letters": "ㅋ/ㅌ/ㅍ",
-      "worksheetPath": "../lessons/consonants/lesson-06-koko-toto-pupu/worksheet.json",
-      "htmlPath": "../lessons/consonants/lesson-06-koko-toto-pupu/worksheet.html"
+      "worksheetPath": "../lessons/consonants/lesson-06a-koko-toto-pupu-meet/worksheet.json",
+      "htmlPath": "../lessons/consonants/lesson-06a-koko-toto-pupu-meet/worksheet.html"
+    },
+    {
+      "id": "lesson-06b-koko-toto-pupu-sounds",
+      "title": "6-B레슨 코코와 토토와 푸푸: 첫소리 찾기",
+      "letters": "ㅋ/ㅌ/ㅍ",
+      "worksheetPath": "../lessons/consonants/lesson-06b-koko-toto-pupu-sounds/worksheet.json",
+      "htmlPath": "../lessons/consonants/lesson-06b-koko-toto-pupu-sounds/worksheet.html"
     }
   ]
 }

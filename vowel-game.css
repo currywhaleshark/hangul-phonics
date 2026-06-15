@@ -1,0 +1,395 @@
+/* =====================================================================
+   모음 합치기 게임 전용 스타일 — 만 3세 유아 친화 버전
+   (헤더 / 로딩 / 컨페티 / 오버레이 기본 골격은 sorting-game.css 재사용,
+    아래에서 더 크고 밝고 둥글게 덮어씁니다)
+   ===================================================================== */
+
+/* --- 밝고 따뜻한 배경 (코너마다 부드러운 색 방울) --- */
+body {
+  background:
+    radial-gradient(circle at 12% 16%, rgba(255, 209, 102, 0.40), transparent 42%),
+    radial-gradient(circle at 88% 10%, rgba(134, 167, 137, 0.32), transparent 40%),
+    radial-gradient(circle at 84% 86%, rgba(135, 169, 199, 0.34), transparent 44%),
+    radial-gradient(circle at 14% 90%, rgba(255, 142, 158, 0.34), transparent 44%),
+    linear-gradient(160deg, #FFF7EA 0%, #FFEFF4 52%, #E9F5FF 100%);
+  background-attachment: fixed;
+}
+
+/* 헤더 글자 살짝 키우고 둥글게 */
+.logo-text h1 { font-size: 22px; }
+.btn-lesson { font-size: 16px; padding: 9px 16px; border-radius: 14px; }
+.btn-lesson.active { background: #FF8E9E; box-shadow: 0 5px 14px rgba(255, 142, 158, 0.4); }
+.selector-label { font-size: 15px; }
+
+.game-main { gap: 18px; }
+
+/* --- 소리 듣기 프롬프트 바 --- */
+.prompt-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 30px;
+  padding: 18px 34px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  margin: 0 auto;
+}
+
+.sound-btn {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #FF8E9E 0%, #F4AB46 100%);
+  color: white;
+  font-size: 46px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 142, 158, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: sound-breathe 2.4s ease-in-out infinite;
+}
+
+.sound-btn:active { transform: scale(0.92); }
+
+/* 평소 살짝 숨쉬듯 커졌다 작아지며 "눌러요" 신호 */
+@keyframes sound-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.07); }
+}
+
+/* 소리 재생 시 한 번 퍼지는 링 */
+.sound-btn.pinging { animation: sound-ping 0.7s ease; }
+
+@keyframes sound-ping {
+  0%   { box-shadow: 0 8px 20px rgba(255, 142, 158, 0.45), 0 0 0 0 rgba(255, 142, 158, 0.55); }
+  70%  { box-shadow: 0 8px 20px rgba(255, 142, 158, 0.45), 0 0 0 26px rgba(255, 142, 158, 0); }
+  100% { box-shadow: 0 8px 20px rgba(255, 142, 158, 0.45), 0 0 0 0 rgba(255, 142, 158, 0); }
+}
+
+.prompt-text { text-align: left; }
+
+.prompt-text h2 {
+  font-family: 'Jua', sans-serif;
+  font-size: 32px;
+  color: #1A202C;
+  margin-bottom: 8px;
+}
+
+/* 진행 표시: 숫자 대신 동그라미 점 */
+.prompt-text .progress-dots {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+
+.pdot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #E2E8F0;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.pdot.current {
+  background: #F4AB46;
+  transform: scale(1.25);
+  box-shadow: 0 0 0 4px rgba(244, 171, 70, 0.25);
+}
+
+.pdot.done { background: #86A789; }
+
+/* --- 합치기 스테이지 --- */
+.combine-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 4px auto 2px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 36px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+}
+
+.slot {
+  width: 154px;
+  height: 154px;
+  border-radius: 32px;
+  background: #F7FAFC;
+  border: 5px dashed #CBD5E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+
+/* 빈 슬롯이 가만히 있을 때 부드럽게 깜빡여 "여기 놓아요" 신호 */
+.slot:not(.filled) {
+  animation: slot-glow 2s ease-in-out infinite;
+}
+
+@keyframes slot-glow {
+  0%, 100% { border-color: #D6DEE8; background: #F7FAFC; }
+  50%      { border-color: #FFC6CF; background: #FFF7F8; }
+}
+
+.slot .slot-hint {
+  font-family: 'Jua', sans-serif;
+  font-size: 19px;
+  color: #A0AEC0;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.slot .slot-hint .hint-emoji {
+  display: block;
+  font-size: 38px;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+
+.slot.drag-hover {
+  transform: scale(1.09);
+  border-color: #FF8E9E;
+  border-style: solid;
+  background: #FFF5F6;
+  box-shadow: 0 14px 28px rgba(255, 142, 158, 0.3);
+  animation: none;
+}
+
+.slot.filled {
+  border-style: solid;
+  border-color: #86A789;
+  background: #FFFFFF;
+  animation: none;
+}
+
+.slot .slot-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  animation: scale-up 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slot .slot-content img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* + / = 를 귀여운 알약 안에 */
+.combine-op {
+  font-family: 'Jua', sans-serif;
+  font-size: 34px;
+  color: white;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFB3BF;
+  box-shadow: 0 4px 10px rgba(255, 142, 158, 0.3);
+}
+
+.combine-op.equals { background: #F4C36B; box-shadow: 0 4px 10px rgba(244, 171, 70, 0.3); }
+
+/* 결과 칸 */
+.result-box {
+  width: 200px;
+  height: 178px;
+  border-radius: 32px;
+  background: #FFFDF5;
+  border: 5px solid #F4AB46;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.result-box .result-q {
+  font-family: 'Jua', sans-serif;
+  font-size: 78px;
+  color: #F4AB46;
+  opacity: 0.5;
+  animation: q-bob 1.6s ease-in-out infinite;
+}
+
+@keyframes q-bob {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%      { transform: translateY(-6px) rotate(4deg); }
+}
+
+.result-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.result-box.revealed {
+  border-color: #86A789;
+  background: #F4FBF2;
+  animation: result-pop 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes result-pop {
+  0%   { transform: scale(0.4) rotate(-8deg); opacity: 0; }
+  60%  { transform: scale(1.14) rotate(3deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+/* 오답 흔들림 */
+.combine-stage.shake { animation: stage-shake 0.45s ease; }
+
+@keyframes stage-shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-11px); }
+  40%      { transform: translateX(11px); }
+  60%      { transform: translateX(-7px); }
+  80%      { transform: translateX(7px); }
+}
+
+/* --- 카드 트레이 --- */
+.tray-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.tray {
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 28px;
+  padding: 16px 22px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.tray-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 19px;
+  color: #5A6677;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.tray-bank {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  min-height: 138px;
+}
+
+/* --- 카드: 더 크게, 그림 강조 --- */
+.tray-bank .game-card {
+  width: 124px;
+  height: 140px;
+  border-radius: 24px;
+  padding: 10px 8px 8px;
+  border: 3px solid #EDF2F7;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  animation: card-bob 2.6s ease-in-out infinite;
+}
+
+/* 카드가 살짝 까닥여서 "끌 수 있어요" 신호 (순번마다 시차) */
+@keyframes card-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+.tray-bank .game-card:nth-child(2) { animation-delay: 0.3s; }
+.tray-bank .game-card:nth-child(3) { animation-delay: 0.6s; }
+.tray-bank .game-card:nth-child(4) { animation-delay: 0.9s; }
+.tray-bank .game-card:nth-child(5) { animation-delay: 1.2s; }
+
+.tray-bank .game-card:hover {
+  animation-play-state: paused;
+  transform: translateY(-8px) scale(1.06);
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.14);
+  border-color: #FFC6CF;
+}
+
+.tray-bank .game-card .card-img-wrapper {
+  flex: 1;
+  margin-bottom: 4px;
+}
+
+.tray-bank .game-card .card-img-wrapper img {
+  max-width: 96%;
+  max-height: 96%;
+}
+
+.tray-bank .game-card strong {
+  font-size: 14px;
+  color: #718096;
+  font-weight: bold;
+}
+
+/* 드래그 중 떠다니는 카드 */
+.dragging-card {
+  border-radius: 24px !important;
+  animation: none !important;
+}
+
+/* --- 정답 별 터짐 효과 --- */
+.star-pop {
+  position: fixed;
+  font-size: 30px;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  animation: star-fly 0.9s ease-out forwards;
+}
+
+@keyframes star-fly {
+  0%   { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+  25%  { opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.3); opacity: 0; }
+}
+
+/* 축하 모달 글자 살짝 키움 */
+.celebration-modal h2 { font-size: 36px; }
+.celebration-modal p { font-size: 18px; }
+.btn { font-size: 18px; padding: 16px 22px; border-radius: 18px; }
+
+/* --- 태블릿/모바일 대응 --- */
+@media (max-width: 768px) {
+  .prompt-bar { width: 100%; padding: 14px 18px; gap: 16px; }
+  .sound-btn { width: 76px; height: 76px; font-size: 36px; }
+  .prompt-text h2 { font-size: 24px; }
+  .pdot { width: 13px; height: 13px; }
+
+  .combine-stage { gap: 10px; padding: 14px 10px; border-radius: 26px; }
+  .slot { width: 104px; height: 104px; border-radius: 22px; border-width: 4px; }
+  .slot .slot-hint { font-size: 14px; }
+  .slot .slot-hint .hint-emoji { font-size: 28px; }
+  .combine-op { width: 38px; height: 38px; font-size: 24px; }
+  .result-box { width: 124px; height: 112px; border-radius: 22px; border-width: 4px; }
+  .result-box .result-q { font-size: 52px; }
+
+  .tray { padding: 12px 14px; }
+  .tray-title { font-size: 15px; margin-bottom: 8px; }
+  .tray-bank { gap: 12px; min-height: 112px; }
+
+  .tray-bank .game-card { width: 96px; height: 110px; border-radius: 18px; }
+  .tray-bank .game-card strong { font-size: 12px; }
+}
+
+@media (max-width: 420px) {
+  .slot { width: 86px; height: 86px; }
+  .result-box { width: 100px; height: 94px; }
+  .combine-op { width: 32px; height: 32px; font-size: 20px; }
+  .tray-bank .game-card { width: 84px; height: 98px; }
+}

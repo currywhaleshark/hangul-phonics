@@ -1,0 +1,65 @@
+{
+  "title": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기",
+  "pages": [
+    {
+      "type": "character",
+      "theme": "gogo",
+      "kicker": "1장 / 캐릭터와 자음 길",
+      "title": "코코 코알라야",
+      "image": "../../../public/코코 코알라.png",
+      "panelTitle": "코코의 큰 숨 길",
+      "letter": "ㅋ",
+      "sound": "크 크 크",
+      "read": "나는 코코 코알라야. 내 몸에는 ㅋ 길이 있어.",
+      "activityTitle": "손가락으로 ㅋ 길을 따라가요",
+      "trace": [
+        "ㅋ",
+        "ㅋ",
+        "ㅋ"
+      ],
+      "teacherNote": "읽어주기: \"코코 코알라, 크 크 크\". ㅋ은 ㄱ보다 숨이 더 크게 나가는 친구처럼 놀이로만 느끼게 한다.",
+      "footerLeft": "코코 코알라",
+      "footerRight": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기"
+    },
+    {
+      "type": "character",
+      "theme": "nana",
+      "kicker": "2장 / 캐릭터와 자음 길",
+      "title": "토토 토끼야",
+      "image": "../../../public/토토 토끼.png",
+      "panelTitle": "토토의 톡톡 길",
+      "letter": "ㅌ",
+      "sound": "트 트 트",
+      "read": "나는 토토 토끼야. 내 몸에는 ㅌ 길이 있어.",
+      "activityTitle": "손가락으로 ㅌ 길을 따라가요",
+      "trace": [
+        "ㅌ",
+        "ㅌ",
+        "ㅌ"
+      ],
+      "teacherNote": "읽어주기: \"토토 토끼, 트 트 트\". ㅌ은 ㄷ보다 톡 튀는 숨이 있는 친구처럼 손뼉 동작을 붙인다.",
+      "footerLeft": "토토 토끼",
+      "footerRight": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기"
+    },
+    {
+      "type": "character",
+      "theme": "mix",
+      "kicker": "3장 / 캐릭터와 자음 길",
+      "title": "푸푸 풍선이야",
+      "image": "../../../public/푸푸 풍선.png",
+      "panelTitle": "푸푸의 퐁퐁 길",
+      "letter": "ㅍ",
+      "sound": "프 프 프",
+      "read": "나는 푸푸 풍선이야. 내 몸에는 ㅍ 길이 있어.",
+      "activityTitle": "손가락으로 ㅍ 길을 따라가요",
+      "trace": [
+        "ㅍ",
+        "ㅍ",
+        "ㅍ"
+      ],
+      "teacherNote": "읽어주기: \"푸푸 풍선, 프 프 프\". ㅍ은 바람이 퐁 나오는 친구처럼 입바람 놀이와 연결한다.",
+      "footerLeft": "푸푸 풍선",
+      "footerRight": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기"
+    }
+  ]
+}

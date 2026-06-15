@@ -27,7 +27,14 @@
 
 body {
   font-family: var(--font-family);
-  background: var(--bg-gradient);
+  /* 모음 합치기 게임과 통일된 따뜻한 파스텔 배경 (코너마다 부드러운 색 방울) */
+  background:
+    radial-gradient(circle at 12% 16%, rgba(255, 209, 102, 0.40), transparent 42%),
+    radial-gradient(circle at 88% 10%, rgba(134, 167, 137, 0.32), transparent 40%),
+    radial-gradient(circle at 84% 86%, rgba(135, 169, 199, 0.34), transparent 44%),
+    radial-gradient(circle at 14% 90%, rgba(255, 142, 158, 0.34), transparent 44%),
+    linear-gradient(160deg, #FFF7EA 0%, #FFEFF4 52%, #E9F5FF 100%);
+  background-attachment: fixed;
   min-height: 100vh;
   color: var(--text-dark);
   overflow-x: hidden;
