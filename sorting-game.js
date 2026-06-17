@@ -31,6 +31,24 @@ const state = {
   currentConsonantPlaying: null
 };
 
+const SORTING_LESSON_OVERRIDES = {
+  'lesson-06a-koko-toto-pupu-meet': { hidden: true },
+  'lesson-06b-koko-toto-pupu-sounds': { gameShortTitle: '6레슨' },
+};
+
+function getSortingGameLessons(lessons) {
+  return lessons
+    .filter((lesson) => !SORTING_LESSON_OVERRIDES[lesson.id]?.hidden)
+    .map((lesson) => ({
+      ...lesson,
+      ...SORTING_LESSON_OVERRIDES[lesson.id],
+    }));
+}
+
+function getLessonButtonText(lesson) {
+  return lesson.gameShortTitle || lesson.title.split(':')[0].trim();
+}
+
 // --- Web Audio API Synth Effects ---
 function initAudioContext() {
   if (state.audioContextActivated) return;
@@ -221,9 +239,7 @@ function renderLessonButtons() {
   state.lessons.forEach((lesson, index) => {
     const btn = document.createElement('button');
     btn.className = `btn-lesson ${index === state.currentLessonIndex ? 'active' : ''}`;
-    // "1레슨 고고와 나나: ㄱ ㄴ 첫소리 친구" -> "1레슨" or "ㄱ ㄴ"만 간략하게 표기
-    const shortTitle = lesson.title.split(':')[0].trim();
-    btn.textContent = shortTitle;
+    btn.textContent = getLessonButtonText(lesson);
     
     btn.addEventListener('click', () => {
       if (index === state.currentLessonIndex) return;
@@ -709,7 +725,7 @@ async function init() {
   try {
     const response = await fetch('/lessons/consonants/manifest.json');
     const data = await response.json();
-    state.lessons = data.lessons;
+    state.lessons = getSortingGameLessons(data.lessons);
     
     renderLessonButtons();
     

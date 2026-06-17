@@ -7,7 +7,10 @@ import {
   writeDraftForSource,
 } from "./editor-storage.js";
 import { buildImagePdfBlob, canvasToJpegPage } from "./pdf-export.js";
-import { renderWorksheetDocument } from "./worksheet-renderer.js";
+import {
+  renderWorksheetDocument,
+  resolveWorksheetAssetPaths,
+} from "./worksheet-renderer.js";
 
 const STORAGE_PREFIX = "hangul-phonics-worksheet-editor";
 const SELECTED_LESSON_KEY = `${STORAGE_PREFIX}:selectedLessonId`;
@@ -45,13 +48,36 @@ const PNG_CAPTURE_CSS = `
   .letter-panel,
   .activity-box,
   .spot-card,
-  .house {
+  .house,
+  .story-panel,
+  .vowel-hero,
+  .finger-trace-card,
+  .sound-step,
+  .build-result {
     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.08) !important;
   }
 
   .house-title,
   .drop-zone {
     background: #fff !important;
+  }
+
+  .finger-trace-letter {
+    background: #fff !important;
+    color: #e5d6c4 !important;
+  }
+
+  .build-piece {
+    color: #6d5b4f !important;
+  }
+
+  .capture-preserve-ratio img {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    margin: auto !important;
   }
 `;
 const FALLBACK_LESSON = {
@@ -67,13 +93,21 @@ const pageEditorTitle = document.querySelector("#page-editor-title");
 const pageTypeBadge = document.querySelector("#page-type-badge");
 const lessonSelect = document.querySelector("#lesson-select");
 const lessonTitle = document.querySelector("#lesson-title");
+const pdfBundleList = document.querySelector("#pdf-bundle-list");
+const bundleSelectionCount = document.querySelector("#bundle-selection-count");
 const previewFrame = document.querySelector("#preview-frame");
+const bundleExportFrame = document.querySelector("#bundle-export-frame");
 const statusText = document.querySelector("#status-text");
 
 const downloadJsonButton = document.querySelector("#download-json");
 const downloadHtmlButton = document.querySelector("#download-html");
 const downloadPngButton = document.querySelector("#download-png");
 const downloadPdfButton = document.querySelector("#download-pdf");
+const downloadBundlePdfButton = document.querySelector("#download-bundle-pdf");
+const selectBundleAllButton = document.querySelector("#select-bundle-all");
+const selectBundleConsonantsButton = document.querySelector("#select-bundle-consonants");
+const selectBundleVowelsButton = document.querySelector("#select-bundle-vowels");
+const clearBundleSelectionButton = document.querySelector("#clear-bundle-selection");
 const printButton = document.querySelector("#print-preview");
 const reloadButton = document.querySelector("#reload-data");
 
@@ -95,6 +129,7 @@ const PAGE_THEMES = [
 let lesson = null;
 let lessonCatalog = [FALLBACK_LESSON];
 let selectedLessonId = FALLBACK_LESSON.id;
+let bundleLessonIds = new Set();
 let activePageIndex = 0;
 let previewTimer = null;
 let selectedSourceSignature = "";
@@ -134,6 +169,18 @@ function renderCurrentWorksheetDocument() {
   });
 }
 
+function renderBundledWorksheetDocument(items) {
+  const pages = items.flatMap(({ lesson: itemLesson, meta }) => {
+    const resolvedLesson = resolveWorksheetAssetPaths(itemLesson, meta.htmlPath, window.location.href);
+    return resolvedLesson.pages || [];
+  });
+
+  return renderWorksheetDocument({
+    title: `선택 레슨 묶음 PDF (${items.length}개)`,
+    pages,
+  });
+}
+
 function schedulePreview() {
   clearTimeout(previewTimer);
   previewTimer = setTimeout(() => {
@@ -145,7 +192,7 @@ function schedulePreview() {
 
 function refreshPreviewNow() {
   clearTimeout(previewTimer);
-  const loadPromise = waitForFrameLoad();
+  const loadPromise = waitForFrameLoad(previewFrame);
   previewFrame.srcdoc = renderCurrentWorksheetDocument();
   saveDraft();
   return loadPromise;
@@ -188,9 +235,9 @@ async function downloadCanvasPng(filename, canvas) {
   downloadBlob(filename, blob);
 }
 
-function waitForFrameLoad() {
+function waitForFrameLoad(frame = previewFrame) {
   return new Promise((resolve) => {
-    previewFrame.addEventListener("load", resolve, { once: true });
+    frame.addEventListener("load", resolve, { once: true });
   });
 }
 
@@ -211,13 +258,21 @@ async function waitForPreviewAssets(documentRef) {
   }))), 5000);
 }
 
+function markCaptureRatioContainers(documentRef) {
+  documentRef
+    .querySelectorAll(".character-frame, .spot-image, .story-image, .vowel-hero, .sound-choice-image")
+    .forEach((element) => element.classList.add("capture-preserve-ratio"));
+}
+
 function preparePngClone(clonedDocument) {
+  markCaptureRatioContainers(clonedDocument);
   const style = clonedDocument.createElement("style");
   style.textContent = PNG_CAPTURE_CSS;
   clonedDocument.head.append(style);
 }
 
 function installPngCompatibilityStyle(documentRef) {
+  markCaptureRatioContainers(documentRef);
   const style = documentRef.createElement("style");
   style.textContent = PNG_CAPTURE_CSS;
   documentRef.head.append(style);
@@ -262,7 +317,41 @@ async function exportPngPages() {
   setStatus(`PNG ${sheets.length}개 저장 요청 완료`);
 }
 
+async function exportFrameSheetsToPdf(frame, filename, emptyMessage) {
+  const frameDocument = frame.contentDocument;
+  await waitForPreviewAssets(frameDocument);
+
+  const sheets = [...frameDocument.querySelectorAll(".sheet")];
+  if (!sheets.length) throw new Error(emptyMessage);
+
+  const compatibilityStyle = installPngCompatibilityStyle(frameDocument);
+
+  try {
+    const pages = [];
+    for (const sheet of sheets) {
+      const canvas = await captureSheetCanvas(sheet);
+      pages.push(await canvasToJpegPage(canvas));
+    }
+    downloadBlob(filename, buildImagePdfBlob(pages));
+    return sheets.length;
+  } finally {
+    compatibilityStyle.remove();
+  }
+}
+
 async function exportPdfDocument() {
+  await refreshPreviewNow();
+
+  const pageCount = await exportFrameSheetsToPdf(
+    previewFrame,
+    `${selectedLessonId}-edited.pdf`,
+    "PDF로 저장할 학습지 페이지가 없습니다."
+  );
+
+  setStatus(`PDF ${pageCount}쪽 저장 요청 완료`);
+}
+
+async function legacyExportPdfDocument() {
   await refreshPreviewNow();
 
   const previewDocument = previewFrame.contentDocument;
@@ -717,11 +806,56 @@ function renderLessonOptions() {
   }
 }
 
+function renderBundleCount() {
+  bundleSelectionCount.textContent = `${bundleLessonIds.size}개 선택`;
+}
+
+function renderPdfBundleOptions() {
+  pdfBundleList.replaceChildren();
+
+  for (const item of lessonCatalog) {
+    const label = document.createElement("label");
+    label.className = "pdf-bundle-option";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = item.id;
+    checkbox.checked = bundleLessonIds.has(item.id);
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        bundleLessonIds.add(item.id);
+      } else {
+        bundleLessonIds.delete(item.id);
+      }
+      renderBundleCount();
+    });
+
+    const name = document.createElement("span");
+    name.className = "pdf-bundle-name";
+    name.textContent = item.letters ? `${item.title} (${item.letters})` : item.title;
+
+    label.append(checkbox, name);
+    pdfBundleList.append(label);
+  }
+
+  renderBundleCount();
+}
+
+function setBundleSelection(predicate) {
+  bundleLessonIds = new Set(
+    lessonCatalog
+      .filter(predicate)
+      .map((item) => item.id)
+  );
+  renderPdfBundleOptions();
+}
+
 async function loadManifestLessons(url) {
   const response = await fetch(url);
   if (!response.ok) throw new Error(`Manifest response ${response.status}`);
   const manifest = await response.json();
-  return manifest.lessons || [];
+  const group = url.includes("/consonants/") ? "consonants" : "vowels";
+  return (manifest.lessons || []).map((item) => ({ ...item, group }));
 }
 
 async function loadLessonCatalog() {
@@ -738,11 +872,62 @@ async function loadLessonCatalog() {
   if (!lessonCatalog.some((item) => item.id === selectedLessonId)) {
     selectedLessonId = lessonCatalog[0].id;
   }
+  if (!bundleLessonIds.size) {
+    bundleLessonIds = new Set([selectedLessonId]);
+  }
   renderLessonOptions();
+  renderPdfBundleOptions();
 }
 
 function selectedLessonMeta() {
   return lessonCatalog.find((item) => item.id === selectedLessonId) || lessonCatalog[0];
+}
+
+async function loadLessonForExport(meta) {
+  const response = await fetch(meta.worksheetPath);
+  if (!response.ok) throw new Error(`Could not load ${meta.worksheetPath}`);
+  const sourceLesson = clone(await response.json());
+  const savedDraft = loadDraftForSource(
+    localStorage,
+    storageKeyFor(meta.id),
+    sourceSignatureKeyFor(meta.id),
+    sourceLesson
+  );
+
+  return {
+    meta,
+    lesson: savedDraft.status === "hit" ? savedDraft.lesson : sourceLesson,
+  };
+}
+
+async function renderDocumentInFrame(frame, html) {
+  const loadPromise = waitForFrameLoad(frame);
+  frame.srcdoc = html;
+  return loadPromise;
+}
+
+async function exportBundledPdfDocument() {
+  if (!bundleLessonIds.size) {
+    throw new Error("PDF로 묶을 레슨을 선택하세요.");
+  }
+
+  saveDraft();
+
+  const selectedMetas = lessonCatalog.filter((item) => bundleLessonIds.has(item.id));
+  const exportItems = [];
+  for (const meta of selectedMetas) {
+    exportItems.push(await loadLessonForExport(meta));
+  }
+
+  await renderDocumentInFrame(bundleExportFrame, renderBundledWorksheetDocument(exportItems));
+
+  const pageCount = await exportFrameSheetsToPdf(
+    bundleExportFrame,
+    "selected-lessons-edited.pdf",
+    "PDF로 저장할 학습지 페이지가 없습니다."
+  );
+
+  setStatus(`PDF ${exportItems.length}개 레슨 ${pageCount}쪽 저장 요청 완료`);
 }
 
 async function loadLesson({ forceOriginal = false } = {}) {
@@ -790,6 +975,22 @@ lessonSelect.addEventListener("change", async () => {
   await loadLesson();
 });
 
+selectBundleAllButton.addEventListener("click", () => {
+  setBundleSelection(() => true);
+});
+
+selectBundleConsonantsButton.addEventListener("click", () => {
+  setBundleSelection((item) => item.group === "consonants");
+});
+
+selectBundleVowelsButton.addEventListener("click", () => {
+  setBundleSelection((item) => item.group === "vowels");
+});
+
+clearBundleSelectionButton.addEventListener("click", () => {
+  setBundleSelection(() => false);
+});
+
 downloadJsonButton.addEventListener("click", () => {
   downloadText(`${selectedLessonId}-edited.json`, `${JSON.stringify(lesson, null, 2)}\n`, "application/json;charset=utf-8");
 });
@@ -823,6 +1024,20 @@ downloadPdfButton.addEventListener("click", async () => {
     setStatus(`PDF 저장 실패: ${error.message}`);
   } finally {
     downloadPdfButton.disabled = false;
+  }
+});
+
+downloadBundlePdfButton.addEventListener("click", async () => {
+  downloadBundlePdfButton.disabled = true;
+  setStatus("묶음 PDF 생성 중...");
+
+  try {
+    await exportBundledPdfDocument();
+  } catch (error) {
+    console.error(error);
+    setStatus(`묶음 PDF 저장 실패: ${error.message}`);
+  } finally {
+    downloadBundlePdfButton.disabled = false;
   }
 });
 

@@ -1,0 +1,93 @@
+{
+  "title": "5레슨 나나 나비와 나/노: ㄴ이 ㅏ와 ㅗ를 만나요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "나나 나비가 나와 노를 만들어요",
+      "read": "나나 나비가 앉은 ㄴ 모양 나무가 모음 도구를 만나 새 글자를 만들어요.",
+      "panels": [
+        {
+          "image": "../../../public/나나 나비.png",
+          "caption": "나나 나비가 ㄴ 모양 나무에 앉았어요."
+        },
+        {
+          "image": "../../../public/나나 나 새시안.png",
+          "caption": "ㄴ이 ㅏ를 만나, 나!"
+        },
+        {
+          "image": "../../../public/나나 노 새시안.png",
+          "caption": "ㄴ이 ㅗ를 만나, 노!"
+        }
+      ],
+      "teacherNote": "나비보다 나무의 ㄴ 길을 먼저 짚고, 모음 도구가 옆이나 아래에 놓일 때 글자가 달라지는 모습을 본다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "나나 나비와 나/노"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㄴ과 ㅏ가 만나면 나",
+      "read": "나나의 ㄴ 소리, 느! 아아 막대기의 ㅏ 소리, 아! 합치면 나!",
+      "heroImage": "../../../public/나나 나 새시안.png",
+      "traceLetter": "나",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㄴ",
+        "ㅏ",
+        "나"
+      ],
+      "soundSteps": [
+        {
+          "label": "나나의 ㄴ 소리",
+          "sound": "느!"
+        },
+        {
+          "label": "아아 막대기 ㅏ 소리",
+          "sound": "아!"
+        },
+        {
+          "label": "합치면",
+          "sound": "나!"
+        }
+      ],
+      "teacherNote": "나나가 앉은 ㄴ 모양 나무를 손가락으로 따라가고, 오른쪽의 ㅏ를 붙여 나를 읽는다.",
+      "footerLeft": "ㄴ + ㅏ = 나",
+      "footerRight": "나나 나비와 나"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㄴ과 ㅗ가 만나면 노",
+      "read": "나나의 ㄴ 소리, 느! 오오 상자의 ㅗ 소리, 오! 합치면 노!",
+      "heroImage": "../../../public/나나 노 새시안.png",
+      "traceLetter": "노",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㄴ",
+        "ㅗ",
+        "노"
+      ],
+      "soundSteps": [
+        {
+          "label": "나나의 ㄴ 소리",
+          "sound": "느!"
+        },
+        {
+          "label": "오오 상자 ㅗ 소리",
+          "sound": "오!"
+        },
+        {
+          "label": "합치면",
+          "sound": "노!"
+        }
+      ],
+      "teacherNote": "나무의 ㄴ 모양을 유지하고, 아래의 ㅗ 상자를 붙여 노를 만든다.",
+      "footerLeft": "ㄴ + ㅗ = 노",
+      "footerRight": "나나 나비와 노"
+    }
+  ]
+}

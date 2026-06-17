@@ -84,6 +84,10 @@ textarea {
   padding: 0 14px;
 }
 
+.tool-button.wide {
+  width: 100%;
+}
+
 .tool-button.primary {
   border-color: var(--accent);
   background: var(--accent);
@@ -138,6 +142,85 @@ textarea {
   display: grid;
   gap: 8px;
   padding: 12px;
+}
+
+.bundle-panel {
+  margin-top: 14px;
+}
+
+.bundle-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#bundle-selection-count {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.bundle-actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.mini-button {
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.mini-button:hover {
+  border-color: var(--line-strong);
+  background: #faf5ee;
+}
+
+.pdf-bundle-list {
+  display: grid;
+  gap: 6px;
+  max-height: 190px;
+  overflow-y: auto;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.pdf-bundle-option {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  padding: 6px;
+  border-radius: 6px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.pdf-bundle-option:hover {
+  background: var(--accent-soft);
+}
+
+.pdf-bundle-option input {
+  width: auto;
+  height: auto;
+  margin-top: 2px;
+}
+
+.pdf-bundle-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .panel label,
@@ -345,6 +428,16 @@ textarea:focus {
   height: 100%;
   border: 0;
   background: #e9e9e9;
+}
+
+.export-frame {
+  position: fixed;
+  top: 0;
+  left: -10000px;
+  width: 900px;
+  height: 1200px;
+  border: 0;
+  background: #fff;
 }
 
 @media (max-width: 1200px) {

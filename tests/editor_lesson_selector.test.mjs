@@ -7,6 +7,13 @@ const manifest = JSON.parse(await readFile(new URL("../lessons/consonants/manife
 const vowelManifest = JSON.parse(await readFile(new URL("../lessons/vowels/manifest.json", import.meta.url), "utf8"));
 
 assert.match(html, /id="lesson-select"/, "editor should expose a lesson selector");
+assert.match(html, /id="pdf-bundle-list"/, "editor should expose a multi-lesson PDF selection list");
+assert.match(html, /id="select-bundle-all"/, "editor should expose a select-all button for bundled PDFs");
+assert.match(html, /id="select-bundle-consonants"/, "editor should expose a consonant preset for bundled PDFs");
+assert.match(html, /id="select-bundle-vowels"/, "editor should expose a vowel preset for bundled PDFs");
+assert.match(html, /id="clear-bundle-selection"/, "editor should expose a clear-selection button for bundled PDFs");
+assert.match(html, /id="download-bundle-pdf"/, "editor should expose a bundled PDF download button");
+assert.match(html, /id="bundle-export-frame"/, "editor should expose a hidden frame for bundled PDF rendering");
 assert.match(html, /id="download-png"/, "editor should expose a PNG download button");
 assert.match(html, /id="download-pdf"/, "editor should expose a PDF download button");
 assert.match(js, /MANIFEST_URLS/, "editor should load lesson manifests");
@@ -17,6 +24,12 @@ assert.match(js, /downloadPngButton/, "editor should wire the PNG download butto
 assert.match(js, /exportPngPages/, "editor should export preview pages as PNG files");
 assert.match(js, /downloadPdfButton/, "editor should wire the PDF download button");
 assert.match(js, /exportPdfDocument/, "editor should export preview pages as a PDF document");
+assert.match(js, /bundleLessonIds/, "editor should track selected lessons for bundled PDFs");
+assert.match(js, /renderPdfBundleOptions/, "editor should render bundled PDF lesson checkboxes");
+assert.match(js, /setBundleSelection/, "editor should support preset bundled PDF selections");
+assert.match(js, /loadLessonForExport/, "editor should load saved drafts when exporting bundled PDFs");
+assert.match(js, /renderBundledWorksheetDocument/, "editor should render selected lessons into one export document");
+assert.match(js, /exportBundledPdfDocument/, "editor should export selected lessons as one PDF document");
 assert.match(js, /html2canvas/, "editor should capture the rendered worksheet DOM for PNG export");
 assert.match(js, /story:\s*"그림 이야기"/, "editor should label story pages");
 assert.match(js, /"vowel-activity":\s*"모음 활동"/, "editor should label vowel activity pages");

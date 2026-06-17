@@ -60,12 +60,12 @@ const SYLLABLES = {
   '조': { consonant: 'ㅈ', vowel: 'ㅗ', audio: '/audio/58_조.mp3', combined: '/지지 조 새시안.png' },
   '차': { consonant: 'ㅊ', vowel: 'ㅏ', audio: '/audio/65_차.mp3', combined: '/치치 차 새시안.png' },
   '초': { consonant: 'ㅊ', vowel: 'ㅗ', audio: '/audio/66_초.mp3', combined: '/치치 초 새시안.png' },
-  // 7-A레슨: 코코(ㅋ), 토토(ㅌ)
+  // 7레슨: 코코(ㅋ), 토토(ㅌ), 푸푸(ㅍ)
   '카': { consonant: 'ㅋ', vowel: 'ㅏ', audio: '/audio/73_카.mp3', combined: '/코코 카 새시안.png' },
   '코': { consonant: 'ㅋ', vowel: 'ㅗ', audio: '/audio/74_코.mp3', combined: '/코코 코 새시안.png' },
   '타': { consonant: 'ㅌ', vowel: 'ㅏ', audio: '/audio/81_타.mp3', combined: '/토토 타 새시안.png' },
   '토': { consonant: 'ㅌ', vowel: 'ㅗ', audio: '/audio/82_토.mp3', combined: '/토토 토 새시안.png' },
-  // 7-B레슨: 푸푸(ㅍ)
+  // 7레슨: 푸푸(ㅍ)
   '파': { consonant: 'ㅍ', vowel: 'ㅏ', audio: '/audio/89_파.mp3', combined: '/푸푸 파 새시안.png' },
   '포': { consonant: 'ㅍ', vowel: 'ㅗ', audio: '/audio/90_포.mp3', combined: '/푸푸 포 새시안.png' }
 };
@@ -78,8 +78,7 @@ const LESSONS = [
   { id: 'lesson-04', short: '4', title: '4레슨 · 다도라로', syllables: ['다', '도', '라', '로'] },
   { id: 'lesson-05', short: '5', title: '5레슨 · 사소하호', syllables: ['사', '소', '하', '호'] },
   { id: 'lesson-06', short: '6', title: '6레슨 · 자조차초', syllables: ['자', '조', '차', '초'] },
-  { id: 'lesson-07a', short: '7-A', title: '7-A레슨 · 카코타토', syllables: ['카', '코', '타', '토'] },
-  { id: 'lesson-07b', short: '7-B', title: '7-B레슨 · 파포', syllables: ['파', '포'] },
+  { id: 'lesson-07', short: '7', title: '7레슨 · 카코타토파포', syllables: ['카', '코', '타', '토', '파', '포'] },
   { id: 'all', short: '전체', title: '전체 섞기 복습', syllables: Object.keys(SYLLABLES), isMixed: true }
 ];
 

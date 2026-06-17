@@ -1,0 +1,93 @@
+{
+  "title": "6레슨 미미 문어와 마/모: ㅁ이 ㅏ와 ㅗ를 만나요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "미미 문어가 마와 모를 만들어요",
+      "read": "미미 문어가 사는 ㅁ 모양 어항이 모음 도구를 만나 새 글자를 만들어요.",
+      "panels": [
+        {
+          "image": "../../../public/미미 문어.png",
+          "caption": "미미 문어는 ㅁ 모양 어항에 살아요."
+        },
+        {
+          "image": "../../../public/미미 마 새시안.png",
+          "caption": "ㅁ이 ㅏ를 만나, 마!"
+        },
+        {
+          "image": "../../../public/미미 모 새시안.png",
+          "caption": "ㅁ이 ㅗ를 만나, 모!"
+        }
+      ],
+      "teacherNote": "문어보다 어항의 네모 ㅁ 길을 먼저 짚고, 닫힌 네모 모양이 유지되는지 확인한다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "미미 문어와 마/모"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㅁ과 ㅏ가 만나면 마",
+      "read": "미미의 ㅁ 소리, 므! 아아 막대기의 ㅏ 소리, 아! 합치면 마!",
+      "heroImage": "../../../public/미미 마 새시안.png",
+      "traceLetter": "마",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅁ",
+        "ㅏ",
+        "마"
+      ],
+      "soundSteps": [
+        {
+          "label": "미미의 ㅁ 소리",
+          "sound": "므!"
+        },
+        {
+          "label": "아아 막대기 ㅏ 소리",
+          "sound": "아!"
+        },
+        {
+          "label": "합치면",
+          "sound": "마!"
+        }
+      ],
+      "teacherNote": "어항의 ㅁ 네모 길을 한 바퀴 따라가고, 오른쪽의 ㅏ를 붙여 마를 읽는다.",
+      "footerLeft": "ㅁ + ㅏ = 마",
+      "footerRight": "미미 문어와 마"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㅁ과 ㅗ가 만나면 모",
+      "read": "미미의 ㅁ 소리, 므! 오오 상자의 ㅗ 소리, 오! 합치면 모!",
+      "heroImage": "../../../public/미미 모 새시안.png",
+      "traceLetter": "모",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅁ",
+        "ㅗ",
+        "모"
+      ],
+      "soundSteps": [
+        {
+          "label": "미미의 ㅁ 소리",
+          "sound": "므!"
+        },
+        {
+          "label": "오오 상자 ㅗ 소리",
+          "sound": "오!"
+        },
+        {
+          "label": "합치면",
+          "sound": "모!"
+        }
+      ],
+      "teacherNote": "어항의 ㅁ 모양을 유지하고, 아래의 ㅗ 상자를 붙여 모를 만든다.",
+      "footerLeft": "ㅁ + ㅗ = 모",
+      "footerRight": "미미 문어와 모"
+    }
+  ]
+}

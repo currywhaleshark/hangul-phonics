@@ -32,6 +32,21 @@
             <select id="lesson-select"></select>
           </section>
 
+          <section class="panel compact bundle-panel">
+            <div class="bundle-title-row">
+              <span class="group-label">PDF 묶음</span>
+              <span id="bundle-selection-count">0개 선택</span>
+            </div>
+            <div class="bundle-actions" aria-label="PDF 묶음 빠른 선택">
+              <button id="select-bundle-all" class="mini-button" type="button">전체</button>
+              <button id="select-bundle-consonants" class="mini-button" type="button">자음</button>
+              <button id="select-bundle-vowels" class="mini-button" type="button">모음</button>
+              <button id="clear-bundle-selection" class="mini-button" type="button">해제</button>
+            </div>
+            <div id="pdf-bundle-list" class="pdf-bundle-list" aria-label="PDF로 묶을 레슨"></div>
+            <button id="download-bundle-pdf" class="tool-button primary wide" type="button">선택한 레슨 PDF</button>
+          </section>
+
           <section class="panel compact">
             <label for="lesson-title">문서 제목</label>
             <input id="lesson-title" type="text">
@@ -56,6 +71,7 @@
           <iframe id="preview-frame" title="A4 학습지 미리보기"></iframe>
         </section>
       </main>
+      <iframe id="bundle-export-frame" class="export-frame" title="PDF 묶음 내보내기"></iframe>
     </div>
 
     <script type="module" src="./editor.js"></script>

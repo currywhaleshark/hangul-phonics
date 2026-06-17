@@ -1,0 +1,93 @@
+{
+  "title": "7레슨 부부 부엉이와 바/보: ㅂ이 ㅏ와 ㅗ를 만나요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "부부 부엉이가 바와 보를 만들어요",
+      "read": "부부 부엉이 몸의 ㅂ 두 방 길이 모음 도구를 만나 새 글자를 만들어요.",
+      "panels": [
+        {
+          "image": "../../../public/부부 부엉이.png",
+          "caption": "부부 부엉이 몸에는 ㅂ 두 방 길이 있어요."
+        },
+        {
+          "image": "../../../public/부부 바 새시안.png",
+          "caption": "ㅂ이 ㅏ를 만나, 바!"
+        },
+        {
+          "image": "../../../public/부부 보 새시안.png",
+          "caption": "ㅂ이 ㅗ를 만나, 보!"
+        }
+      ],
+      "teacherNote": "부부 몸의 ㅂ 두 방 길을 짚고, 모음 도구를 붙여도 ㅂ 모양이 유지되는지 본다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "부부 부엉이와 바/보"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㅂ과 ㅏ가 만나면 바",
+      "read": "부부의 ㅂ 소리, 브! 아아 막대기의 ㅏ 소리, 아! 합치면 바!",
+      "heroImage": "../../../public/부부 바 새시안.png",
+      "traceLetter": "바",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅂ",
+        "ㅏ",
+        "바"
+      ],
+      "soundSteps": [
+        {
+          "label": "부부의 ㅂ 소리",
+          "sound": "브!"
+        },
+        {
+          "label": "아아 막대기 ㅏ 소리",
+          "sound": "아!"
+        },
+        {
+          "label": "합치면",
+          "sound": "바!"
+        }
+      ],
+      "teacherNote": "부부 몸의 ㅂ 두 방 길을 손가락으로 짚고, 오른쪽의 ㅏ를 붙여 바를 읽는다.",
+      "footerLeft": "ㅂ + ㅏ = 바",
+      "footerRight": "부부 부엉이와 바"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㅂ과 ㅗ가 만나면 보",
+      "read": "부부의 ㅂ 소리, 브! 오오 상자의 ㅗ 소리, 오! 합치면 보!",
+      "heroImage": "../../../public/부부 보 새시안.png",
+      "traceLetter": "보",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅂ",
+        "ㅗ",
+        "보"
+      ],
+      "soundSteps": [
+        {
+          "label": "부부의 ㅂ 소리",
+          "sound": "브!"
+        },
+        {
+          "label": "오오 상자 ㅗ 소리",
+          "sound": "오!"
+        },
+        {
+          "label": "합치면",
+          "sound": "보!"
+        }
+      ],
+      "teacherNote": "부부 몸의 ㅂ 모양을 유지하고, 아래의 ㅗ 상자를 붙여 보를 만든다.",
+      "footerLeft": "ㅂ + ㅗ = 보",
+      "footerRight": "부부 부엉이와 보"
+    }
+  ]
+}

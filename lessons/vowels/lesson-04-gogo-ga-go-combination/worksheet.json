@@ -1,0 +1,93 @@
+{
+  "title": "4레슨 고고 고양이와 가/고: ㄱ이 ㅏ와 ㅗ를 만나요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "고고 고양이가 가와 고를 만들어요",
+      "read": "꼬리에 ㄱ이 보이는 고고 고양이가 모음 도구를 만나 새 글자를 만들어요.",
+      "panels": [
+        {
+          "image": "../../../public/고고 고양이.png",
+          "caption": "고고 고양이 꼬리는 ㄱ 모양."
+        },
+        {
+          "image": "../../../public/고고 가 막대기 ㄱ폰트 크게 새시안.png",
+          "caption": "ㄱ이 ㅏ 막대기를 만나, 가!"
+        },
+        {
+          "image": "../../../public/고고 고 상자 ㄱ폰트 크게 새시안.png",
+          "caption": "ㄱ이 ㅗ 상자를 만나, 고!"
+        }
+      ],
+      "teacherNote": "그림 속 꼬리의 ㄱ을 먼저 짚고, 오른쪽이나 아래에 놓인 모음 도구를 붙여 새 글자를 만든다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "고고 고양이와 가/고"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㄱ과 ㅏ가 만나면 가",
+      "read": "고고의 ㄱ 소리, 그! 아아 막대기의 ㅏ 소리, 아! 합치면 가!",
+      "heroImage": "../../../public/고고 가 막대기 ㄱ폰트 크게 새시안.png",
+      "traceLetter": "가",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㄱ",
+        "ㅏ",
+        "가"
+      ],
+      "soundSteps": [
+        {
+          "label": "고고의 ㄱ 소리",
+          "sound": "그!"
+        },
+        {
+          "label": "아아 막대기 ㅏ 소리",
+          "sound": "아!"
+        },
+        {
+          "label": "합치면",
+          "sound": "가!"
+        }
+      ],
+      "teacherNote": "고고 꼬리 위의 ㄱ을 손가락으로 짚고, 오른쪽의 ㅏ를 붙여 가를 소리 내어 읽는다.",
+      "footerLeft": "ㄱ + ㅏ = 가",
+      "footerRight": "고고 고양이와 가"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㄱ과 ㅗ가 만나면 고",
+      "read": "고고의 ㄱ 소리, 그! 오오 상자의 ㅗ 소리, 오! 합치면 고!",
+      "heroImage": "../../../public/고고 고 상자 ㄱ폰트 크게 새시안.png",
+      "traceLetter": "고",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㄱ",
+        "ㅗ",
+        "고"
+      ],
+      "soundSteps": [
+        {
+          "label": "고고의 ㄱ 소리",
+          "sound": "그!"
+        },
+        {
+          "label": "오오 상자 ㅗ 소리",
+          "sound": "오!"
+        },
+        {
+          "label": "합치면",
+          "sound": "고!"
+        }
+      ],
+      "teacherNote": "고고 꼬리의 ㄱ 모양을 유지해 보고, 아래의 ㅗ 상자를 붙여 고를 만든다.",
+      "footerLeft": "ㄱ + ㅗ = 고",
+      "footerRight": "고고 고양이와 고"
+    }
+  ]
+}
