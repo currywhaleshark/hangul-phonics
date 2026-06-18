@@ -21,6 +21,56 @@ body {
 .btn-lesson.active { background: #FF8E9E; box-shadow: 0 5px 14px rgba(255, 142, 158, 0.4); }
 .selector-label { font-size: 15px; }
 
+/* --- 단계 탭 (기본 모음 / 확장 모음) --- */
+.selector-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.stage-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.stage-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 8px 18px;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background: #EDF2F7;
+  color: #4A5568;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1.15;
+}
+
+.stage-tab .stage-name {
+  font-family: 'Jua', sans-serif;
+  font-size: 16px;
+}
+
+.stage-tab .stage-sub {
+  font-size: 12px;
+  opacity: 0.7;
+  letter-spacing: 0.5px;
+}
+
+.stage-tab:hover { background: #E2E8F0; }
+
+.stage-tab.active {
+  background: #FFFFFF;
+  border-color: #86A789;
+  color: #2D3748;
+  box-shadow: 0 5px 14px rgba(134, 167, 137, 0.3);
+}
+
+.stage-tab.active .stage-sub { color: #86A789; opacity: 1; }
+
 .game-main { gap: 18px; }
 
 /* --- 소리 듣기 프롬프트 바 --- */
@@ -366,6 +416,11 @@ body {
 
 /* --- 태블릿/모바일 대응 --- */
 @media (max-width: 768px) {
+  .selector-stack { align-items: flex-start; width: 100%; }
+  .stage-tabs { width: 100%; }
+  .stage-tab { flex: 1; padding: 7px 10px; }
+  .lesson-buttons { flex-wrap: wrap; }
+
   .prompt-bar { width: 100%; padding: 14px 18px; gap: 16px; }
   .sound-btn { width: 76px; height: 76px; font-size: 36px; }
   .prompt-text h2 { font-size: 24px; }

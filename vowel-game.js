@@ -1,7 +1,8 @@
 // =====================================================================
 //  모음 합치기 복습 게임 (Vowel Combination Game)
-//  소리를 듣고 → 자음 캐릭터 + 모음 도구를 끌어다 합쳐 → 합쳐진 글자 완성
-//  모음 레슨 1~7 복습용 (각 자음 + ㅏ/ㅗ, 아아 아기는 ㅏ/ㅗ/ㅜ)
+//  소리를 듣고 → 자음 캐릭터 + 모음 도구를 끌어다 합쳐 음절 완성
+//  2단계: 기본 모음(ㅏ·ㅗ) / 확장 모음(ㅓ·ㅜ·ㅡ·ㅣ)
+//  음절 문자열만 주면 자모를 분해해 오디오·합쳐진 그림 경로를 자동 생성한다.
 // =====================================================================
 
 // --- 자음 캐릭터 매핑 (자음 -> 캐릭터 그림) ---
@@ -25,76 +26,139 @@ const CHARACTER_MAP = {
 // --- 모음 도구 매핑 (모음 -> 도구 그림) ---
 const VOWEL_TOOL_MAP = {
   'ㅏ': { name: '나뭇가지', file: '/아아 나뭇가지.png' },
+  'ㅓ': { name: '풍선', file: '/어어 풍선.png' },
   'ㅗ': { name: '상자', file: '/오오 상자.png' },
-  'ㅜ': { name: '발판', file: '/우우 발판.png' }
+  'ㅜ': { name: '발판', file: '/우우 발판.png' },
+  'ㅡ': { name: '쿠션', file: '/으으 쿠션.png' },
+  'ㅣ': { name: '막대', file: '/이이 막대.png' }
 };
 
-// --- 음절 데이터 (소리 오디오 + 합쳐진 그림) ---
-const SYLLABLES = {
-  // 1레슨: 아아 아기(ㅇ) + 모음 도구
-  '아': { consonant: 'ㅇ', vowel: 'ㅏ', audio: '/audio/아!.mp3', combined: '/아아 아기 나뭇가지 시안.png' },
-  '오': { consonant: 'ㅇ', vowel: 'ㅗ', audio: '/audio/오!.mp3', combined: '/오오 상자 시안.png' },
-  '우': { consonant: 'ㅇ', vowel: 'ㅜ', audio: '/audio/우!.mp3', combined: '/우우 발판 시안.png' },
-  // 2레슨: 고고(ㄱ), 나나(ㄴ)
-  '가': { consonant: 'ㄱ', vowel: 'ㅏ', audio: '/audio/01_가.mp3', combined: '/고고 가 막대기 ㄱ폰트 크게 새시안.png' },
-  '고': { consonant: 'ㄱ', vowel: 'ㅗ', audio: '/audio/02_고.mp3', combined: '/고고 고 상자 ㄱ폰트 크게 새시안.png' },
-  '나': { consonant: 'ㄴ', vowel: 'ㅏ', audio: '/audio/01_나.mp3', combined: '/나나 나 새시안.png' },
-  '노': { consonant: 'ㄴ', vowel: 'ㅗ', audio: '/audio/02_노.mp3', combined: '/나나 노 새시안.png' },
-  // 3레슨: 미미(ㅁ), 부부(ㅂ)
-  '마': { consonant: 'ㅁ', vowel: 'ㅏ', audio: '/audio/09_마.mp3', combined: '/미미 마 새시안.png' },
-  '모': { consonant: 'ㅁ', vowel: 'ㅗ', audio: '/audio/10_모.mp3', combined: '/미미 모 새시안.png' },
-  '바': { consonant: 'ㅂ', vowel: 'ㅏ', audio: '/audio/17_바.mp3', combined: '/부부 바 새시안.png' },
-  '보': { consonant: 'ㅂ', vowel: 'ㅗ', audio: '/audio/18_보.mp3', combined: '/부부 보 새시안.png' },
-  // 4레슨: 도도(ㄷ), 라라(ㄹ)
-  '다': { consonant: 'ㄷ', vowel: 'ㅏ', audio: '/audio/25_다.mp3', combined: '/도도 다 새시안.png' },
-  '도': { consonant: 'ㄷ', vowel: 'ㅗ', audio: '/audio/26_도.mp3', combined: '/도도 도 새시안.png' },
-  '라': { consonant: 'ㄹ', vowel: 'ㅏ', audio: '/audio/33_라.mp3', combined: '/라라 라 새시안.png' },
-  '로': { consonant: 'ㄹ', vowel: 'ㅗ', audio: '/audio/34_로.mp3', combined: '/라라 로 새시안.png' },
-  // 5레슨: 사사(ㅅ), 하하(ㅎ)
-  '사': { consonant: 'ㅅ', vowel: 'ㅏ', audio: '/audio/41_사.mp3', combined: '/사사 사 새시안.png' },
-  '소': { consonant: 'ㅅ', vowel: 'ㅗ', audio: '/audio/42_소.mp3', combined: '/사사 소 새시안.png' },
-  '하': { consonant: 'ㅎ', vowel: 'ㅏ', audio: '/audio/49_하.mp3', combined: '/하하 하 새시안.png' },
-  '호': { consonant: 'ㅎ', vowel: 'ㅗ', audio: '/audio/50_호.mp3', combined: '/하하 호 새시안.png' },
-  // 6레슨: 지지(ㅈ), 치치(ㅊ)
-  '자': { consonant: 'ㅈ', vowel: 'ㅏ', audio: '/audio/57_자.mp3', combined: '/지지 자 새시안.png' },
-  '조': { consonant: 'ㅈ', vowel: 'ㅗ', audio: '/audio/58_조.mp3', combined: '/지지 조 새시안.png' },
-  '차': { consonant: 'ㅊ', vowel: 'ㅏ', audio: '/audio/65_차.mp3', combined: '/치치 차 새시안.png' },
-  '초': { consonant: 'ㅊ', vowel: 'ㅗ', audio: '/audio/66_초.mp3', combined: '/치치 초 새시안.png' },
-  // 7레슨: 코코(ㅋ), 토토(ㅌ), 푸푸(ㅍ)
-  '카': { consonant: 'ㅋ', vowel: 'ㅏ', audio: '/audio/73_카.mp3', combined: '/코코 카 새시안.png' },
-  '코': { consonant: 'ㅋ', vowel: 'ㅗ', audio: '/audio/74_코.mp3', combined: '/코코 코 새시안.png' },
-  '타': { consonant: 'ㅌ', vowel: 'ㅏ', audio: '/audio/81_타.mp3', combined: '/토토 타 새시안.png' },
-  '토': { consonant: 'ㅌ', vowel: 'ㅗ', audio: '/audio/82_토.mp3', combined: '/토토 토 새시안.png' },
-  // 7레슨: 푸푸(ㅍ)
-  '파': { consonant: 'ㅍ', vowel: 'ㅏ', audio: '/audio/89_파.mp3', combined: '/푸푸 파 새시안.png' },
-  '포': { consonant: 'ㅍ', vowel: 'ㅗ', audio: '/audio/90_포.mp3', combined: '/푸푸 포 새시안.png' }
+// =====================================================================
+//  음절 데이터 자동 생성 (오디오 + 합쳐진 그림)
+// =====================================================================
+const CHOSEONG = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+const JUNGSEONG = ['ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅓ', 'ㅔ', 'ㅕ', 'ㅖ', 'ㅗ', 'ㅘ', 'ㅙ', 'ㅚ', 'ㅛ', 'ㅜ', 'ㅝ', 'ㅞ', 'ㅟ', 'ㅠ', 'ㅡ', 'ㅢ', 'ㅣ'];
+
+function decompose(syllable) {
+  const code = syllable.charCodeAt(0) - 0xAC00;
+  return {
+    consonant: CHOSEONG[Math.floor(code / 588)],
+    vowel: JUNGSEONG[Math.floor((code % 588) / 28)]
+  };
+}
+
+// 음절 오디오 번호: 자음 블록 시작값 + 모음 오프셋 (파일명은 "NN_음절.mp3")
+const AUDIO_BASE = { 'ㄱ': 1, 'ㄴ': 1, 'ㅁ': 9, 'ㅂ': 17, 'ㄷ': 25, 'ㄹ': 33, 'ㅅ': 41, 'ㅎ': 49, 'ㅈ': 57, 'ㅊ': 65, 'ㅋ': 73, 'ㅌ': 81, 'ㅍ': 89 };
+const VOWEL_AUDIO_OFFSET = { 'ㅏ': 0, 'ㅗ': 1, 'ㅜ': 2, 'ㅓ': 3, 'ㅛ': 4, 'ㅠ': 5, 'ㅡ': 6, 'ㅣ': 7 };
+
+// ㅇ(아아 아기)의 모음별 합쳐진 그림 (도구를 든 모습)
+const IEUNG_IMAGES = {
+  '아': '/아아 아기 나뭇가지 시안.png',
+  '어': '/어어 풍선 시안.png',
+  '오': '/오오 상자 시안.png',
+  '우': '/우우 발판 시안.png',
+  '으': '/으으 쿠션 시안.png',
+  '이': '/이이 막대 시안.png'
 };
 
-// --- 레슨 구성 (모음 레슨 manifest와 동일한 흐름) ---
-const LESSONS = [
-  { id: 'lesson-01', short: '1', title: '1레슨 · 아오우', syllables: ['아', '오', '우'] },
-  { id: 'lesson-02', short: '2', title: '2레슨 · 가고나노', syllables: ['가', '고', '나', '노'] },
-  { id: 'lesson-03', short: '3', title: '3레슨 · 마모바보', syllables: ['마', '모', '바', '보'] },
-  { id: 'lesson-04', short: '4', title: '4레슨 · 다도라로', syllables: ['다', '도', '라', '로'] },
-  { id: 'lesson-05', short: '5', title: '5레슨 · 사소하호', syllables: ['사', '소', '하', '호'] },
-  { id: 'lesson-06', short: '6', title: '6레슨 · 자조차초', syllables: ['자', '조', '차', '초'] },
-  { id: 'lesson-07', short: '7', title: '7레슨 · 카코타토파포', syllables: ['카', '코', '타', '토', '파', '포'] },
-  { id: 'all', short: '전체', title: '전체 섞기 복습', syllables: Object.keys(SYLLABLES), isMixed: true }
+// 파일명이 패턴과 다른 예외 (고고 가/고는 막대기/상자 버전을 사용)
+const COMBINED_OVERRIDE = {
+  '가': '/고고 가 막대기 ㄱ폰트 크게 새시안.png',
+  '고': '/고고 고 상자 ㄱ폰트 크게 새시안.png'
+};
+
+function audioFor(syllable, consonant, vowel) {
+  if (consonant === 'ㅇ') return `/audio/${syllable}!.mp3`;
+  const nn = String(AUDIO_BASE[consonant] + VOWEL_AUDIO_OFFSET[vowel]).padStart(2, '0');
+  return `/audio/${nn}_${syllable}.mp3`;
+}
+
+function combinedFor(syllable, consonant) {
+  if (consonant === 'ㅇ') return IEUNG_IMAGES[syllable];
+  if (COMBINED_OVERRIDE[syllable]) return COMBINED_OVERRIDE[syllable];
+  const prefix = CHARACTER_MAP[consonant].name.split(' ')[0]; // "고고 고양이" -> "고고"
+  return `/${prefix} ${syllable} 새시안.png`;
+}
+
+const SYLLABLES = {};
+function registerSyllable(syllable) {
+  if (SYLLABLES[syllable]) return;
+  const { consonant, vowel } = decompose(syllable);
+  SYLLABLES[syllable] = {
+    consonant,
+    vowel,
+    audio: audioFor(syllable, consonant, vowel),
+    combined: combinedFor(syllable, consonant)
+  };
+}
+
+// =====================================================================
+//  단계 & 레슨 구성 (모음 레슨 manifest와 동일한 흐름)
+// =====================================================================
+const STAGES = [
+  {
+    id: 'basic',
+    label: '기본 모음',
+    sub: 'ㅏ · ㅗ',
+    lessons: [
+      { id: 'lesson-01', short: '1', title: '1과 · 아오우', syllables: ['아', '오', '우'] },
+      { id: 'lesson-02', short: '2', title: '2과 · 가고나노', syllables: ['가', '고', '나', '노'] },
+      { id: 'lesson-03', short: '3', title: '3과 · 마모바보', syllables: ['마', '모', '바', '보'] },
+      { id: 'lesson-04', short: '4', title: '4과 · 다도라로', syllables: ['다', '도', '라', '로'] },
+      { id: 'lesson-05', short: '5', title: '5과 · 사소하호', syllables: ['사', '소', '하', '호'] },
+      { id: 'lesson-06', short: '6', title: '6과 · 자조차초', syllables: ['자', '조', '차', '초'] },
+      { id: 'lesson-07', short: '7', title: '7과 · 카코타토파포', syllables: ['카', '코', '타', '토', '파', '포'] },
+      { id: 'lesson-basic-all', short: '★', title: '기본 전체 섞기', mixed: true }
+    ]
+  },
+  {
+    id: 'expansion',
+    label: '확장 모음',
+    sub: 'ㅓ · ㅜ · ㅡ · ㅣ',
+    lessons: [
+      { id: 'lesson-08', short: '8', title: '8과 · 어우으이', syllables: ['어', '우', '으', '이'] },
+      { id: 'lesson-09', short: '9', title: '9과 · 거구그기 / 너누느니', syllables: ['거', '구', '그', '기', '너', '누', '느', '니'] },
+      { id: 'lesson-10', short: '10', title: '10과 · 머무므미 / 러루르리', syllables: ['머', '무', '므', '미', '러', '루', '르', '리'] },
+      { id: 'lesson-11', short: '11', title: '11과 · 더두드디 / 버부브비', syllables: ['더', '두', '드', '디', '버', '부', '브', '비'] },
+      { id: 'lesson-12', short: '12', title: '12과 · 서수스시 / 허후흐히', syllables: ['서', '수', '스', '시', '허', '후', '흐', '히'] },
+      { id: 'lesson-13', short: '13', title: '13과 · 저주즈지 / 처추츠치', syllables: ['저', '주', '즈', '지', '처', '추', '츠', '치'] },
+      { id: 'lesson-14', short: '14', title: '14과 · 커쿠크키 / 터투트티 / 퍼푸프피', syllables: ['커', '쿠', '크', '키', '터', '투', '트', '티', '퍼', '푸', '프', '피'] },
+      { id: 'lesson-expansion-all', short: '★', title: '확장 전체 섞기', mixed: true }
+    ]
+  }
 ];
+
+// 모든 레슨의 음절을 SYLLABLES에 등록
+STAGES.forEach(stage => stage.lessons.forEach(lesson => {
+  (lesson.syllables || []).forEach(registerSyllable);
+}));
 
 // 전체 섞기 모드에서 한 번에 푸는 문제 수
 const MIXED_ROUND_COUNT = 10;
 
+// 단계별 음절/자음/모음 풀
+function stageSyllables(stage) {
+  return uniqueValues(stage.lessons.filter(l => !l.mixed).flatMap(l => l.syllables));
+}
+function stageConsonants(stage) {
+  return uniqueValues(stageSyllables(stage).map(s => SYLLABLES[s].consonant));
+}
+function stageVowels(stage) {
+  return uniqueValues(stageSyllables(stage).map(s => SYLLABLES[s].vowel));
+}
+
 // --- 게임 상태 ---
 const state = {
-  currentLessonIndex: 0,
+  stageIndex: 0,
+  lessonIndex: 0,
+  currentStage: null,
   currentLesson: null,
   roundQueue: [],
   roundIndex: 0,
-  target: null,          // 현재 정답 음절 (문자열)
-  placed: { consonant: null, vowel: null }, // 슬롯에 놓인 값
+  target: null,
+  placed: { consonant: null, vowel: null },
   solvedCount: 0,
-  locked: false,         // 정답 처리/전환 중 드래그 잠금
+  locked: false,
   audioContext: null,
   audioContextActivated: false,
   currentPromptAudio: null
@@ -121,7 +185,6 @@ function playSuccessSynth() {
   const ctx = state.audioContext;
   const now = ctx.currentTime;
 
-  // 딩-동 (G5 -> C6)
   const osc1 = ctx.createOscillator();
   const gain1 = ctx.createGain();
   osc1.type = 'triangle';
@@ -155,7 +218,6 @@ function playFailSynth() {
   const ctx = state.audioContext;
   const now = ctx.currentTime;
 
-  // 띠용 (주파수 하강)
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();
   osc.type = 'sine';
@@ -190,29 +252,48 @@ function playPrompt() {
     .then(() => { state.currentPromptAudio = audio; })
     .catch(err => console.warn(`소리 재생 실패: ${data.audio}`, err));
 
-  // 스피커 버튼 살짝 튕기는 효과
   const btn = document.getElementById('btn-replay-sound');
   if (btn) {
     btn.classList.remove('pinging');
-    void btn.offsetWidth; // reflow로 애니메이션 재시작
+    void btn.offsetWidth;
     btn.classList.add('pinging');
   }
 }
 
 // =====================================================================
-//  레슨 선택 버튼 렌더링
+//  단계 탭 & 레슨 버튼
 // =====================================================================
+function renderStageTabs() {
+  const container = document.getElementById('stage-tabs');
+  container.innerHTML = '';
+  STAGES.forEach((stage, index) => {
+    const btn = document.createElement('button');
+    btn.className = `stage-tab ${index === state.stageIndex ? 'active' : ''}`;
+    btn.innerHTML = `<span class="stage-name">${stage.label}</span><span class="stage-sub">${stage.sub}</span>`;
+    btn.addEventListener('click', () => {
+      if (index === state.stageIndex) return;
+      state.stageIndex = index;
+      state.lessonIndex = 0;
+      renderStageTabs();
+      renderLessonButtons();
+      loadLesson();
+    });
+    container.appendChild(btn);
+  });
+}
+
 function renderLessonButtons() {
   const container = document.getElementById('lesson-buttons-container');
   container.innerHTML = '';
-
-  LESSONS.forEach((lesson, index) => {
+  STAGES[state.stageIndex].lessons.forEach((lesson, index) => {
     const btn = document.createElement('button');
-    btn.className = `btn-lesson ${index === state.currentLessonIndex ? 'active' : ''}`;
+    btn.className = `btn-lesson ${index === state.lessonIndex ? 'active' : ''}`;
     btn.textContent = lesson.short;
+    btn.title = lesson.title;
     btn.addEventListener('click', () => {
-      if (index === state.currentLessonIndex) return;
-      state.currentLessonIndex = index;
+      if (index === state.lessonIndex) return;
+      state.lessonIndex = index;
+      syncLessonButtons();
       loadLesson();
     });
     container.appendChild(btn);
@@ -221,7 +302,7 @@ function renderLessonButtons() {
 
 function syncLessonButtons() {
   document.querySelectorAll('.btn-lesson').forEach((btn, idx) => {
-    btn.classList.toggle('active', idx === state.currentLessonIndex);
+    btn.classList.toggle('active', idx === state.lessonIndex);
   });
 }
 
@@ -231,19 +312,21 @@ function syncLessonButtons() {
 async function loadLesson() {
   stopPromptAudio();
   showLoadingScreen();
-  syncLessonButtons();
 
-  state.currentLesson = LESSONS[state.currentLessonIndex];
+  state.currentStage = STAGES[state.stageIndex];
+  state.currentLesson = state.currentStage.lessons[state.lessonIndex];
   state.solvedCount = 0;
   state.roundIndex = 0;
 
-  // 라운드 큐 만들기
-  const all = state.currentLesson.syllables.slice();
-  shuffleArray(all);
-  if (state.currentLesson.isMixed) {
-    state.roundQueue = all.slice(0, Math.min(MIXED_ROUND_COUNT, all.length));
+  let pool;
+  if (state.currentLesson.mixed) {
+    pool = stageSyllables(state.currentStage).slice();
+    shuffleArray(pool);
+    state.roundQueue = pool.slice(0, Math.min(MIXED_ROUND_COUNT, pool.length));
   } else {
-    state.roundQueue = all;
+    pool = state.currentLesson.syllables.slice();
+    shuffleArray(pool);
+    state.roundQueue = pool;
   }
 
   // 이번 레슨에서 쓸 합쳐진 그림 프리로드
@@ -262,13 +345,12 @@ function startRound() {
   state.placed = { consonant: null, vowel: null };
   state.target = state.roundQueue[state.roundIndex];
 
+  document.getElementById('prompt-title').textContent = '소리를 잘 듣고 합쳐요!';
+
   renderStage();
   renderTrays();
-
-  // 진행 상황 표시 (동그라미 점)
   renderProgress(false);
 
-  // 소리 자동 재생 (오디오 컨텍스트가 활성화된 경우)
   if (state.audioContextActivated) {
     setTimeout(playPrompt, 400);
   }
@@ -277,31 +359,26 @@ function startRound() {
 // 현재 라운드에 보여줄 자음/모음 선택지 계산
 function buildChoices() {
   const target = SYLLABLES[state.target];
+  const lesson = state.currentLesson;
+  const stage = state.currentStage;
+  let consonants, vowels;
 
-  // --- 자음 선택지 ---
-  let consonants;
-  if (state.currentLesson.isMixed) {
-    // 정답 + 무작위 보기 (총 4개)
-    const pool = Object.keys(CHARACTER_MAP).filter(c => c !== target.consonant);
+  if (lesson.mixed) {
+    // 정답 + 같은 단계의 무작위 자음 보기 (총 4개)
+    const pool = stageConsonants(stage).filter(c => c !== target.consonant);
     shuffleArray(pool);
     consonants = [target.consonant, ...pool.slice(0, 3)];
+    vowels = stageVowels(stage).slice();
+    if (!vowels.includes(target.vowel)) vowels.push(target.vowel);
   } else {
-    // 이 레슨에 등장하는 자음들
-    consonants = uniqueValues(state.currentLesson.syllables.map(s => SYLLABLES[s].consonant));
+    consonants = uniqueValues(lesson.syllables.map(s => SYLLABLES[s].consonant));
     if (!consonants.includes(target.consonant)) consonants.push(target.consonant);
-  }
-  shuffleArray(consonants);
-
-  // --- 모음 선택지 ---
-  let vowels;
-  if (state.currentLesson.isMixed) {
-    vowels = Object.keys(VOWEL_TOOL_MAP); // ㅏ/ㅗ/ㅜ 전부
-  } else {
-    vowels = uniqueValues(state.currentLesson.syllables.map(s => SYLLABLES[s].vowel));
+    vowels = uniqueValues(lesson.syllables.map(s => SYLLABLES[s].vowel));
     if (!vowels.includes(target.vowel)) vowels.push(target.vowel);
   }
-  shuffleArray(vowels);
 
+  shuffleArray(consonants);
+  shuffleArray(vowels);
   return { consonants, vowels };
 }
 
@@ -338,15 +415,13 @@ function renderTrays() {
   consonants.forEach((c, i) => {
     const info = CHARACTER_MAP[c];
     if (!info) return;
-    const card = makeCard({ type: 'consonant', value: c, name: info.name, image: info.file, id: `c-${i}` });
-    consonantBank.appendChild(card);
+    consonantBank.appendChild(makeCard({ type: 'consonant', value: c, name: info.name, image: info.file, id: `c-${i}` }));
   });
 
   vowels.forEach((v, i) => {
     const info = VOWEL_TOOL_MAP[v];
     if (!info) return;
-    const card = makeCard({ type: 'vowel', value: v, name: info.name, image: info.file, id: `v-${i}` });
-    vowelBank.appendChild(card);
+    vowelBank.appendChild(makeCard({ type: 'vowel', value: v, name: info.name, image: info.file, id: `v-${i}` }));
   });
 }
 
@@ -376,10 +451,9 @@ function initCardDragging(cardEl, cardData) {
 
   function onPointerDown(e) {
     e.preventDefault();
-    if (activeDrag) return;          // 멀티터치 방지
-    if (state.locked) return;        // 전환 중에는 드래그 금지
+    if (activeDrag) return;
+    if (state.locked) return;
 
-    // iOS/사파리 오디오 컨텍스트 보장
     initAudioContext();
     resumeAudioContext();
 
@@ -437,7 +511,6 @@ function initCardDragging(cardEl, cardData) {
     if (placed) {
       dragEl.remove();
     } else {
-      // 트레이로 부드럽게 복귀
       const destRect = cardEl.getBoundingClientRect();
       dragEl.style.transition = 'all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)';
       dragEl.style.left = `${destRect.left}px`;
@@ -473,7 +546,6 @@ function findSlotUnder(x, y) {
   return null;
 }
 
-// 슬롯에 카드 놓기 (자음/모음)
 function placeInSlot(cardData) {
   const { type, value } = cardData;
   state.placed[type] = value;
@@ -522,28 +594,23 @@ function handleCorrect() {
   state.locked = true;
   playSuccessSynth();
 
-  // 결과 칸에 합쳐진 그림 공개
   const result = document.getElementById('result-box');
   const combined = SYLLABLES[state.target].combined;
   result.innerHTML = `<img src="${combined}" alt="${state.target}" draggable="false">`;
   result.classList.add('revealed');
   starBurst();
 
-  // 진행 점에서 현재 문제를 바로 완료 표시
   renderProgress(true);
 
   document.getElementById('prompt-title').textContent = `${state.target}! 정답이에요 🎉`;
 
-  // 소리 한 번 더 들려주기
   setTimeout(playPrompt, 450);
 
   state.solvedCount++;
 
-  // 다음 라운드 또는 완료
   setTimeout(() => {
     if (state.roundIndex < state.roundQueue.length - 1) {
       state.roundIndex++;
-      document.getElementById('prompt-title').textContent = '소리를 잘 듣고 합쳐요!';
       startRound();
     } else {
       showCelebration();
@@ -751,6 +818,7 @@ function uniqueValues(arr) {
 // =====================================================================
 async function init() {
   showLoadingScreen();
+  renderStageTabs();
   renderLessonButtons();
 
   // 공통 이미지(자음 캐릭터 + 모음 도구) 프리로드
@@ -762,14 +830,12 @@ async function init() {
 
   await loadLesson();
 
-  // 소리 다시 듣기 버튼
   document.getElementById('btn-replay-sound').addEventListener('click', () => {
     initAudioContext();
     resumeAudioContext();
     playPrompt();
   });
 
-  // 오디오 활성화 오버레이 (Safari/iOS 자동재생 정책 우회)
   const startGame = () => {
     initAudioContext();
     resumeAudioContext();
@@ -779,16 +845,23 @@ async function init() {
   document.getElementById('btn-start-game').addEventListener('click', startGame);
   document.getElementById('audio-init-overlay').addEventListener('pointerdown', startGame);
 
-  // 다시 하기
   document.getElementById('btn-replay').addEventListener('click', () => {
     hideCelebration();
     loadLesson();
   });
 
-  // 다음 레슨
+  // 다음 레슨: 현재 단계 안에서 진행, 단계 끝나면 다음 단계로
   document.getElementById('btn-next-lesson').addEventListener('click', () => {
     hideCelebration();
-    state.currentLessonIndex = (state.currentLessonIndex + 1) % LESSONS.length;
+    let s = state.stageIndex;
+    let l = state.lessonIndex + 1;
+    if (l >= STAGES[s].lessons.length) {
+      s = (s + 1) % STAGES.length;
+      l = 0;
+    }
+    state.stageIndex = s;
+    state.lessonIndex = l;
+    renderStageTabs();
     renderLessonButtons();
     loadLesson();
   });
