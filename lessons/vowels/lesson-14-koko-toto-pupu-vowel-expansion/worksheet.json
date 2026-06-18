@@ -1,0 +1,626 @@
+{
+  "title": "14레슨 코코와 토토와 푸푸: 커/쿠/크/키/터/투/트/티/퍼/푸/프/피를 만들어요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "코코와 토토와 푸푸가 새 모음을 넓혀요",
+      "read": "코코의 ㅋ 길, 토토의 ㅌ 길, 푸푸 풍선의 ㅍ 길이 네 가지 새 모음 도구를 만나요.",
+      "panels": [
+        {
+          "image": "../../../public/코코 커 새시안.png",
+          "caption": "ㅋ이 새 모음을 만나, 커부터 시작!"
+        },
+        {
+          "image": "../../../public/토토 터 새시안.png",
+          "caption": "ㅌ이 새 모음을 만나, 터부터 시작!"
+        },
+        {
+          "image": "../../../public/푸푸 퍼 새시안.png",
+          "caption": "ㅍ이 새 모음을 만나, 퍼부터 시작!"
+        }
+      ],
+      "teacherNote": "ㅋ/ㅌ/ㅍ의 센소리를 몸 길에서 찾고, 네 모음과 차례로 합쳐 읽는다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "코코와 토토와 푸푸"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㅋ과 ㅓ가 만나면 커",
+      "read": "코코의 ㅋ 소리, 크! 어어 풍선의 ㅓ 소리, 어! 합치면 커!",
+      "heroImage": "../../../public/코코 커 새시안.png",
+      "traceLetter": "커",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅋ",
+        "ㅓ",
+        "커"
+      ],
+      "soundSteps": [
+        {
+          "label": "코코의 ㅋ 소리",
+          "sound": "크!"
+        },
+        {
+          "label": "어어 풍선 ㅓ 소리",
+          "sound": "어!"
+        },
+        {
+          "label": "합치면",
+          "sound": "커!"
+        }
+      ],
+      "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 커를 읽는다.",
+      "footerLeft": "ㅋ + ㅓ = 커",
+      "footerRight": "코코 코알라와 커"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㅋ과 ㅜ가 만나면 쿠",
+      "read": "코코의 ㅋ 소리, 크! 우우 발판의 ㅜ 소리, 우! 합치면 쿠!",
+      "heroImage": "../../../public/코코 쿠 새시안.png",
+      "traceLetter": "쿠",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅋ",
+        "ㅜ",
+        "쿠"
+      ],
+      "soundSteps": [
+        {
+          "label": "코코의 ㅋ 소리",
+          "sound": "크!"
+        },
+        {
+          "label": "우우 발판 ㅜ 소리",
+          "sound": "우!"
+        },
+        {
+          "label": "합치면",
+          "sound": "쿠!"
+        }
+      ],
+      "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 쿠를 읽는다.",
+      "footerLeft": "ㅋ + ㅜ = 쿠",
+      "footerRight": "코코 코알라와 쿠"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "4장 / 소리 활동",
+      "title": "ㅋ과 ㅡ가 만나면 크",
+      "read": "코코의 ㅋ 소리, 크! 으으 쿠션의 ㅡ 소리, 으! 합치면 크!",
+      "heroImage": "../../../public/코코 크 새시안.png",
+      "traceLetter": "크",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅋ",
+        "ㅡ",
+        "크"
+      ],
+      "soundSteps": [
+        {
+          "label": "코코의 ㅋ 소리",
+          "sound": "크!"
+        },
+        {
+          "label": "으으 쿠션 ㅡ 소리",
+          "sound": "으!"
+        },
+        {
+          "label": "합치면",
+          "sound": "크!"
+        }
+      ],
+      "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 크를 읽는다.",
+      "footerLeft": "ㅋ + ㅡ = 크",
+      "footerRight": "코코 코알라와 크"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "5장 / 소리 활동",
+      "title": "ㅋ과 ㅣ가 만나면 키",
+      "read": "코코의 ㅋ 소리, 크! 이이 막대의 ㅣ 소리, 이! 합치면 키!",
+      "heroImage": "../../../public/코코 키 새시안.png",
+      "traceLetter": "키",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅋ",
+        "ㅣ",
+        "키"
+      ],
+      "soundSteps": [
+        {
+          "label": "코코의 ㅋ 소리",
+          "sound": "크!"
+        },
+        {
+          "label": "이이 막대 ㅣ 소리",
+          "sound": "이!"
+        },
+        {
+          "label": "합치면",
+          "sound": "키!"
+        }
+      ],
+      "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 키를 읽는다.",
+      "footerLeft": "ㅋ + ㅣ = 키",
+      "footerRight": "코코 코알라와 키"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "6장 / 소리 활동",
+      "title": "ㅌ과 ㅓ가 만나면 터",
+      "read": "토토의 ㅌ 소리, 트! 어어 풍선의 ㅓ 소리, 어! 합치면 터!",
+      "heroImage": "../../../public/토토 터 새시안.png",
+      "traceLetter": "터",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅌ",
+        "ㅓ",
+        "터"
+      ],
+      "soundSteps": [
+        {
+          "label": "토토의 ㅌ 소리",
+          "sound": "트!"
+        },
+        {
+          "label": "어어 풍선 ㅓ 소리",
+          "sound": "어!"
+        },
+        {
+          "label": "합치면",
+          "sound": "터!"
+        }
+      ],
+      "teacherNote": "토토 귀와 몸의 ㅌ 톡톡 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 터를 읽는다.",
+      "footerLeft": "ㅌ + ㅓ = 터",
+      "footerRight": "토토 토끼와 터"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "7장 / 소리 활동",
+      "title": "ㅌ과 ㅜ가 만나면 투",
+      "read": "토토의 ㅌ 소리, 트! 우우 발판의 ㅜ 소리, 우! 합치면 투!",
+      "heroImage": "../../../public/토토 투 새시안.png",
+      "traceLetter": "투",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅌ",
+        "ㅜ",
+        "투"
+      ],
+      "soundSteps": [
+        {
+          "label": "토토의 ㅌ 소리",
+          "sound": "트!"
+        },
+        {
+          "label": "우우 발판 ㅜ 소리",
+          "sound": "우!"
+        },
+        {
+          "label": "합치면",
+          "sound": "투!"
+        }
+      ],
+      "teacherNote": "토토 귀와 몸의 ㅌ 톡톡 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 투를 읽는다.",
+      "footerLeft": "ㅌ + ㅜ = 투",
+      "footerRight": "토토 토끼와 투"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "8장 / 소리 활동",
+      "title": "ㅌ과 ㅡ가 만나면 트",
+      "read": "토토의 ㅌ 소리, 트! 으으 쿠션의 ㅡ 소리, 으! 합치면 트!",
+      "heroImage": "../../../public/토토 트 새시안.png",
+      "traceLetter": "트",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅌ",
+        "ㅡ",
+        "트"
+      ],
+      "soundSteps": [
+        {
+          "label": "토토의 ㅌ 소리",
+          "sound": "트!"
+        },
+        {
+          "label": "으으 쿠션 ㅡ 소리",
+          "sound": "으!"
+        },
+        {
+          "label": "합치면",
+          "sound": "트!"
+        }
+      ],
+      "teacherNote": "토토 귀와 몸의 ㅌ 톡톡 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 트를 읽는다.",
+      "footerLeft": "ㅌ + ㅡ = 트",
+      "footerRight": "토토 토끼와 트"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "9장 / 소리 활동",
+      "title": "ㅌ과 ㅣ가 만나면 티",
+      "read": "토토의 ㅌ 소리, 트! 이이 막대의 ㅣ 소리, 이! 합치면 티!",
+      "heroImage": "../../../public/토토 티 새시안.png",
+      "traceLetter": "티",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅌ",
+        "ㅣ",
+        "티"
+      ],
+      "soundSteps": [
+        {
+          "label": "토토의 ㅌ 소리",
+          "sound": "트!"
+        },
+        {
+          "label": "이이 막대 ㅣ 소리",
+          "sound": "이!"
+        },
+        {
+          "label": "합치면",
+          "sound": "티!"
+        }
+      ],
+      "teacherNote": "토토 귀와 몸의 ㅌ 톡톡 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 티를 읽는다.",
+      "footerLeft": "ㅌ + ㅣ = 티",
+      "footerRight": "토토 토끼와 티"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "10장 / 소리 활동",
+      "title": "ㅍ과 ㅓ가 만나면 퍼",
+      "read": "푸푸의 ㅍ 소리, 프! 어어 풍선의 ㅓ 소리, 어! 합치면 퍼!",
+      "heroImage": "../../../public/푸푸 퍼 새시안.png",
+      "traceLetter": "퍼",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅍ",
+        "ㅓ",
+        "퍼"
+      ],
+      "soundSteps": [
+        {
+          "label": "푸푸의 ㅍ 소리",
+          "sound": "프!"
+        },
+        {
+          "label": "어어 풍선 ㅓ 소리",
+          "sound": "어!"
+        },
+        {
+          "label": "합치면",
+          "sound": "퍼!"
+        }
+      ],
+      "teacherNote": "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 퍼를 읽는다.",
+      "footerLeft": "ㅍ + ㅓ = 퍼",
+      "footerRight": "푸푸 풍선와 퍼"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "11장 / 소리 활동",
+      "title": "ㅍ과 ㅜ가 만나면 푸",
+      "read": "푸푸의 ㅍ 소리, 프! 우우 발판의 ㅜ 소리, 우! 합치면 푸!",
+      "heroImage": "../../../public/푸푸 푸 새시안.png",
+      "traceLetter": "푸",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅍ",
+        "ㅜ",
+        "푸"
+      ],
+      "soundSteps": [
+        {
+          "label": "푸푸의 ㅍ 소리",
+          "sound": "프!"
+        },
+        {
+          "label": "우우 발판 ㅜ 소리",
+          "sound": "우!"
+        },
+        {
+          "label": "합치면",
+          "sound": "푸!"
+        }
+      ],
+      "teacherNote": "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 푸를 읽는다.",
+      "footerLeft": "ㅍ + ㅜ = 푸",
+      "footerRight": "푸푸 풍선와 푸"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "12장 / 소리 활동",
+      "title": "ㅍ과 ㅡ가 만나면 프",
+      "read": "푸푸의 ㅍ 소리, 프! 으으 쿠션의 ㅡ 소리, 으! 합치면 프!",
+      "heroImage": "../../../public/푸푸 프 새시안.png",
+      "traceLetter": "프",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅍ",
+        "ㅡ",
+        "프"
+      ],
+      "soundSteps": [
+        {
+          "label": "푸푸의 ㅍ 소리",
+          "sound": "프!"
+        },
+        {
+          "label": "으으 쿠션 ㅡ 소리",
+          "sound": "으!"
+        },
+        {
+          "label": "합치면",
+          "sound": "프!"
+        }
+      ],
+      "teacherNote": "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 프를 읽는다.",
+      "footerLeft": "ㅍ + ㅡ = 프",
+      "footerRight": "푸푸 풍선와 프"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "13장 / 소리 활동",
+      "title": "ㅍ과 ㅣ가 만나면 피",
+      "read": "푸푸의 ㅍ 소리, 프! 이이 막대의 ㅣ 소리, 이! 합치면 피!",
+      "heroImage": "../../../public/푸푸 피 새시안.png",
+      "traceLetter": "피",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅍ",
+        "ㅣ",
+        "피"
+      ],
+      "soundSteps": [
+        {
+          "label": "푸푸의 ㅍ 소리",
+          "sound": "프!"
+        },
+        {
+          "label": "이이 막대 ㅣ 소리",
+          "sound": "이!"
+        },
+        {
+          "label": "합치면",
+          "sound": "피!"
+        }
+      ],
+      "teacherNote": "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 피를 읽는다.",
+      "footerLeft": "ㅍ + ㅣ = 피",
+      "footerRight": "푸푸 풍선와 피"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "소리 정리 1/3",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "커",
+          "answer": "커"
+        },
+        {
+          "label": "2번",
+          "sound": "쿠",
+          "answer": "쿠"
+        },
+        {
+          "label": "3번",
+          "sound": "크",
+          "answer": "크"
+        },
+        {
+          "label": "4번",
+          "sound": "키",
+          "answer": "키"
+        }
+      ],
+      "choices": [
+        {
+          "label": "커",
+          "image": "../../../public/코코 커 새시안.png",
+          "buildPieces": [
+            "ㅋ",
+            "ㅓ",
+            "커"
+          ]
+        },
+        {
+          "label": "쿠",
+          "image": "../../../public/코코 쿠 새시안.png",
+          "buildPieces": [
+            "ㅋ",
+            "ㅜ",
+            "쿠"
+          ]
+        },
+        {
+          "label": "크",
+          "image": "../../../public/코코 크 새시안.png",
+          "buildPieces": [
+            "ㅋ",
+            "ㅡ",
+            "크"
+          ]
+        },
+        {
+          "label": "키",
+          "image": "../../../public/코코 키 새시안.png",
+          "buildPieces": [
+            "ㅋ",
+            "ㅣ",
+            "키"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 커, 2번 쿠, 3번 크, 4번 키.",
+      "footerLeft": "소리 정리",
+      "footerRight": "코코와 토토와 푸푸"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "소리 정리 2/3",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "터",
+          "answer": "터"
+        },
+        {
+          "label": "2번",
+          "sound": "투",
+          "answer": "투"
+        },
+        {
+          "label": "3번",
+          "sound": "트",
+          "answer": "트"
+        },
+        {
+          "label": "4번",
+          "sound": "티",
+          "answer": "티"
+        }
+      ],
+      "choices": [
+        {
+          "label": "터",
+          "image": "../../../public/토토 터 새시안.png",
+          "buildPieces": [
+            "ㅌ",
+            "ㅓ",
+            "터"
+          ]
+        },
+        {
+          "label": "투",
+          "image": "../../../public/토토 투 새시안.png",
+          "buildPieces": [
+            "ㅌ",
+            "ㅜ",
+            "투"
+          ]
+        },
+        {
+          "label": "트",
+          "image": "../../../public/토토 트 새시안.png",
+          "buildPieces": [
+            "ㅌ",
+            "ㅡ",
+            "트"
+          ]
+        },
+        {
+          "label": "티",
+          "image": "../../../public/토토 티 새시안.png",
+          "buildPieces": [
+            "ㅌ",
+            "ㅣ",
+            "티"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 터, 2번 투, 3번 트, 4번 티.",
+      "footerLeft": "소리 정리",
+      "footerRight": "코코와 토토와 푸푸"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "소리 정리 3/3",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "퍼",
+          "answer": "퍼"
+        },
+        {
+          "label": "2번",
+          "sound": "푸",
+          "answer": "푸"
+        },
+        {
+          "label": "3번",
+          "sound": "프",
+          "answer": "프"
+        },
+        {
+          "label": "4번",
+          "sound": "피",
+          "answer": "피"
+        }
+      ],
+      "choices": [
+        {
+          "label": "퍼",
+          "image": "../../../public/푸푸 퍼 새시안.png",
+          "buildPieces": [
+            "ㅍ",
+            "ㅓ",
+            "퍼"
+          ]
+        },
+        {
+          "label": "푸",
+          "image": "../../../public/푸푸 푸 새시안.png",
+          "buildPieces": [
+            "ㅍ",
+            "ㅜ",
+            "푸"
+          ]
+        },
+        {
+          "label": "프",
+          "image": "../../../public/푸푸 프 새시안.png",
+          "buildPieces": [
+            "ㅍ",
+            "ㅡ",
+            "프"
+          ]
+        },
+        {
+          "label": "피",
+          "image": "../../../public/푸푸 피 새시안.png",
+          "buildPieces": [
+            "ㅍ",
+            "ㅣ",
+            "피"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 퍼, 2번 푸, 3번 프, 4번 피.",
+      "footerLeft": "소리 정리",
+      "footerRight": "코코와 토토와 푸푸"
+    }
+  ]
+}

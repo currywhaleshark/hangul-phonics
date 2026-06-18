@@ -77,6 +77,13 @@ assert.deepEqual(
     "lesson-06-jiji-chichi-combination",
     "lesson-07a-koko-toto-combination",
     "lesson-07b-pupu-combination",
+    "lesson-08-ieung-vowel-expansion",
+    "lesson-09-gogo-nana-vowel-expansion",
+    "lesson-10-mimi-rara-vowel-expansion",
+    "lesson-11-dodo-bubu-vowel-expansion",
+    "lesson-12-sasa-haha-vowel-expansion",
+    "lesson-13-jiji-chichi-vowel-expansion",
+    "lesson-14-koko-toto-pupu-vowel-expansion",
   ],
   "vowel manifest should expose grouped vowel and combination lessons for the editor catalog"
 );

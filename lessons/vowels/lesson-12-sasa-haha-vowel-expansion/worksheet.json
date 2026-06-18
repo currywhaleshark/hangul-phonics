@@ -1,0 +1,423 @@
+{
+  "title": "12레슨 사사와 하하: 서/수/스/시/허/후/흐/히를 만들어요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "사사와 하하가 새 모음을 넓혀요",
+      "read": "사사 뿔의 ㅅ 산 길과 하하 몸의 ㅎ 숨 길이 네 가지 새 모음 도구를 만나요.",
+      "panels": [
+        {
+          "image": "../../../public/사사 서 새시안.png",
+          "caption": "ㅅ이 새 모음을 만나, 서부터 시작!"
+        },
+        {
+          "image": "../../../public/하하 허 새시안.png",
+          "caption": "ㅎ이 새 모음을 만나, 허부터 시작!"
+        }
+      ],
+      "teacherNote": "ㅅ 산 길과 ㅎ 숨 길을 먼저 찾고, 바람 소리처럼 부드럽게 읽는다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "사사와 하하"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㅅ과 ㅓ가 만나면 서",
+      "read": "사사의 ㅅ 소리, 스! 어어 풍선의 ㅓ 소리, 어! 합치면 서!",
+      "heroImage": "../../../public/사사 서 새시안.png",
+      "traceLetter": "서",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅅ",
+        "ㅓ",
+        "서"
+      ],
+      "soundSteps": [
+        {
+          "label": "사사의 ㅅ 소리",
+          "sound": "스!"
+        },
+        {
+          "label": "어어 풍선 ㅓ 소리",
+          "sound": "어!"
+        },
+        {
+          "label": "합치면",
+          "sound": "서!"
+        }
+      ],
+      "teacherNote": "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 서를 읽는다.",
+      "footerLeft": "ㅅ + ㅓ = 서",
+      "footerRight": "사사 사슴와 서"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㅅ과 ㅜ가 만나면 수",
+      "read": "사사의 ㅅ 소리, 스! 우우 발판의 ㅜ 소리, 우! 합치면 수!",
+      "heroImage": "../../../public/사사 수 새시안.png",
+      "traceLetter": "수",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅅ",
+        "ㅜ",
+        "수"
+      ],
+      "soundSteps": [
+        {
+          "label": "사사의 ㅅ 소리",
+          "sound": "스!"
+        },
+        {
+          "label": "우우 발판 ㅜ 소리",
+          "sound": "우!"
+        },
+        {
+          "label": "합치면",
+          "sound": "수!"
+        }
+      ],
+      "teacherNote": "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 수를 읽는다.",
+      "footerLeft": "ㅅ + ㅜ = 수",
+      "footerRight": "사사 사슴와 수"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "4장 / 소리 활동",
+      "title": "ㅅ과 ㅡ가 만나면 스",
+      "read": "사사의 ㅅ 소리, 스! 으으 쿠션의 ㅡ 소리, 으! 합치면 스!",
+      "heroImage": "../../../public/사사 스 새시안.png",
+      "traceLetter": "스",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅅ",
+        "ㅡ",
+        "스"
+      ],
+      "soundSteps": [
+        {
+          "label": "사사의 ㅅ 소리",
+          "sound": "스!"
+        },
+        {
+          "label": "으으 쿠션 ㅡ 소리",
+          "sound": "으!"
+        },
+        {
+          "label": "합치면",
+          "sound": "스!"
+        }
+      ],
+      "teacherNote": "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 스를 읽는다.",
+      "footerLeft": "ㅅ + ㅡ = 스",
+      "footerRight": "사사 사슴와 스"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "5장 / 소리 활동",
+      "title": "ㅅ과 ㅣ가 만나면 시",
+      "read": "사사의 ㅅ 소리, 스! 이이 막대의 ㅣ 소리, 이! 합치면 시!",
+      "heroImage": "../../../public/사사 시 새시안.png",
+      "traceLetter": "시",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅅ",
+        "ㅣ",
+        "시"
+      ],
+      "soundSteps": [
+        {
+          "label": "사사의 ㅅ 소리",
+          "sound": "스!"
+        },
+        {
+          "label": "이이 막대 ㅣ 소리",
+          "sound": "이!"
+        },
+        {
+          "label": "합치면",
+          "sound": "시!"
+        }
+      ],
+      "teacherNote": "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 시를 읽는다.",
+      "footerLeft": "ㅅ + ㅣ = 시",
+      "footerRight": "사사 사슴와 시"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "6장 / 소리 활동",
+      "title": "ㅎ과 ㅓ가 만나면 허",
+      "read": "하하의 ㅎ 소리, 흐! 어어 풍선의 ㅓ 소리, 어! 합치면 허!",
+      "heroImage": "../../../public/하하 허 새시안.png",
+      "traceLetter": "허",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅎ",
+        "ㅓ",
+        "허"
+      ],
+      "soundSteps": [
+        {
+          "label": "하하의 ㅎ 소리",
+          "sound": "흐!"
+        },
+        {
+          "label": "어어 풍선 ㅓ 소리",
+          "sound": "어!"
+        },
+        {
+          "label": "합치면",
+          "sound": "허!"
+        }
+      ],
+      "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 허를 읽는다.",
+      "footerLeft": "ㅎ + ㅓ = 허",
+      "footerRight": "하하 하마와 허"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "7장 / 소리 활동",
+      "title": "ㅎ과 ㅜ가 만나면 후",
+      "read": "하하의 ㅎ 소리, 흐! 우우 발판의 ㅜ 소리, 우! 합치면 후!",
+      "heroImage": "../../../public/하하 후 새시안.png",
+      "traceLetter": "후",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅎ",
+        "ㅜ",
+        "후"
+      ],
+      "soundSteps": [
+        {
+          "label": "하하의 ㅎ 소리",
+          "sound": "흐!"
+        },
+        {
+          "label": "우우 발판 ㅜ 소리",
+          "sound": "우!"
+        },
+        {
+          "label": "합치면",
+          "sound": "후!"
+        }
+      ],
+      "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 후를 읽는다.",
+      "footerLeft": "ㅎ + ㅜ = 후",
+      "footerRight": "하하 하마와 후"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "8장 / 소리 활동",
+      "title": "ㅎ과 ㅡ가 만나면 흐",
+      "read": "하하의 ㅎ 소리, 흐! 으으 쿠션의 ㅡ 소리, 으! 합치면 흐!",
+      "heroImage": "../../../public/하하 흐 새시안.png",
+      "traceLetter": "흐",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅎ",
+        "ㅡ",
+        "흐"
+      ],
+      "soundSteps": [
+        {
+          "label": "하하의 ㅎ 소리",
+          "sound": "흐!"
+        },
+        {
+          "label": "으으 쿠션 ㅡ 소리",
+          "sound": "으!"
+        },
+        {
+          "label": "합치면",
+          "sound": "흐!"
+        }
+      ],
+      "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 흐를 읽는다.",
+      "footerLeft": "ㅎ + ㅡ = 흐",
+      "footerRight": "하하 하마와 흐"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "9장 / 소리 활동",
+      "title": "ㅎ과 ㅣ가 만나면 히",
+      "read": "하하의 ㅎ 소리, 흐! 이이 막대의 ㅣ 소리, 이! 합치면 히!",
+      "heroImage": "../../../public/하하 히 새시안.png",
+      "traceLetter": "히",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅎ",
+        "ㅣ",
+        "히"
+      ],
+      "soundSteps": [
+        {
+          "label": "하하의 ㅎ 소리",
+          "sound": "흐!"
+        },
+        {
+          "label": "이이 막대 ㅣ 소리",
+          "sound": "이!"
+        },
+        {
+          "label": "합치면",
+          "sound": "히!"
+        }
+      ],
+      "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 히를 읽는다.",
+      "footerLeft": "ㅎ + ㅣ = 히",
+      "footerRight": "하하 하마와 히"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "소리 정리 1/2",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "서",
+          "answer": "서"
+        },
+        {
+          "label": "2번",
+          "sound": "수",
+          "answer": "수"
+        },
+        {
+          "label": "3번",
+          "sound": "스",
+          "answer": "스"
+        },
+        {
+          "label": "4번",
+          "sound": "시",
+          "answer": "시"
+        }
+      ],
+      "choices": [
+        {
+          "label": "서",
+          "image": "../../../public/사사 서 새시안.png",
+          "buildPieces": [
+            "ㅅ",
+            "ㅓ",
+            "서"
+          ]
+        },
+        {
+          "label": "수",
+          "image": "../../../public/사사 수 새시안.png",
+          "buildPieces": [
+            "ㅅ",
+            "ㅜ",
+            "수"
+          ]
+        },
+        {
+          "label": "스",
+          "image": "../../../public/사사 스 새시안.png",
+          "buildPieces": [
+            "ㅅ",
+            "ㅡ",
+            "스"
+          ]
+        },
+        {
+          "label": "시",
+          "image": "../../../public/사사 시 새시안.png",
+          "buildPieces": [
+            "ㅅ",
+            "ㅣ",
+            "시"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 서, 2번 수, 3번 스, 4번 시.",
+      "footerLeft": "소리 정리",
+      "footerRight": "사사와 하하"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "소리 정리 2/2",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "허",
+          "answer": "허"
+        },
+        {
+          "label": "2번",
+          "sound": "후",
+          "answer": "후"
+        },
+        {
+          "label": "3번",
+          "sound": "흐",
+          "answer": "흐"
+        },
+        {
+          "label": "4번",
+          "sound": "히",
+          "answer": "히"
+        }
+      ],
+      "choices": [
+        {
+          "label": "허",
+          "image": "../../../public/하하 허 새시안.png",
+          "buildPieces": [
+            "ㅎ",
+            "ㅓ",
+            "허"
+          ]
+        },
+        {
+          "label": "후",
+          "image": "../../../public/하하 후 새시안.png",
+          "buildPieces": [
+            "ㅎ",
+            "ㅜ",
+            "후"
+          ]
+        },
+        {
+          "label": "흐",
+          "image": "../../../public/하하 흐 새시안.png",
+          "buildPieces": [
+            "ㅎ",
+            "ㅡ",
+            "흐"
+          ]
+        },
+        {
+          "label": "히",
+          "image": "../../../public/하하 히 새시안.png",
+          "buildPieces": [
+            "ㅎ",
+            "ㅣ",
+            "히"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 허, 2번 후, 3번 흐, 4번 히.",
+      "footerLeft": "소리 정리",
+      "footerRight": "사사와 하하"
+    }
+  ]
+}

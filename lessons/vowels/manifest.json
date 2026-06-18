@@ -56,6 +56,55 @@
       "letters": "ㅍ/ㅏ/ㅗ/파/포",
       "worksheetPath": "../lessons/vowels/lesson-07b-pupu-combination/worksheet.json",
       "htmlPath": "../lessons/vowels/lesson-07b-pupu-combination/worksheet.html"
+    },
+    {
+      "id": "lesson-08-ieung-vowel-expansion",
+      "title": "8레슨 ㅇ과 새 모음: 어/우/으/이를 만들어요",
+      "letters": "ㅇ/ㅓ/ㅜ/ㅡ/ㅣ/어/우/으/이",
+      "worksheetPath": "../lessons/vowels/lesson-08-ieung-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-08-ieung-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-09-gogo-nana-vowel-expansion",
+      "title": "9레슨 고고와 나나: 거/구/그/기/너/누/느/니를 만들어요",
+      "letters": "ㄱ/ㄴ/ㅓ/ㅜ/ㅡ/ㅣ/거/구/그/기/너/누/느/니",
+      "worksheetPath": "../lessons/vowels/lesson-09-gogo-nana-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-09-gogo-nana-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-10-mimi-rara-vowel-expansion",
+      "title": "10레슨 미미와 라라: 머/무/므/미/러/루/르/리를 만들어요",
+      "letters": "ㅁ/ㄹ/ㅓ/ㅜ/ㅡ/ㅣ/머/무/므/미/러/루/르/리",
+      "worksheetPath": "../lessons/vowels/lesson-10-mimi-rara-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-10-mimi-rara-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-11-dodo-bubu-vowel-expansion",
+      "title": "11레슨 도도와 부부: 더/두/드/디/버/부/브/비를 만들어요",
+      "letters": "ㄷ/ㅂ/ㅓ/ㅜ/ㅡ/ㅣ/더/두/드/디/버/부/브/비",
+      "worksheetPath": "../lessons/vowels/lesson-11-dodo-bubu-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-11-dodo-bubu-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-12-sasa-haha-vowel-expansion",
+      "title": "12레슨 사사와 하하: 서/수/스/시/허/후/흐/히를 만들어요",
+      "letters": "ㅅ/ㅎ/ㅓ/ㅜ/ㅡ/ㅣ/서/수/스/시/허/후/흐/히",
+      "worksheetPath": "../lessons/vowels/lesson-12-sasa-haha-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-12-sasa-haha-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-13-jiji-chichi-vowel-expansion",
+      "title": "13레슨 지지와 치치: 저/주/즈/지/처/추/츠/치를 만들어요",
+      "letters": "ㅈ/ㅊ/ㅓ/ㅜ/ㅡ/ㅣ/저/주/즈/지/처/추/츠/치",
+      "worksheetPath": "../lessons/vowels/lesson-13-jiji-chichi-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-13-jiji-chichi-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-14-koko-toto-pupu-vowel-expansion",
+      "title": "14레슨 코코와 토토와 푸푸: 커/쿠/크/키/터/투/트/티/퍼/푸/프/피를 만들어요",
+      "letters": "ㅋ/ㅌ/ㅍ/ㅓ/ㅜ/ㅡ/ㅣ/커/쿠/크/키/터/투/트/티/퍼/푸/프/피",
+      "worksheetPath": "../lessons/vowels/lesson-14-koko-toto-pupu-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-14-koko-toto-pupu-vowel-expansion/worksheet.html"
     }
   ]
 }

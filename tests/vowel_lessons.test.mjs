@@ -157,6 +157,160 @@ const expectedLessons = [
   },
 ];
 
+const expansionVowels = ["ㅓ", "ㅜ", "ㅡ", "ㅣ"];
+
+function expansionPageTypes(buildCount) {
+  return [
+    "story",
+    ...Array.from({ length: buildCount }, () => "vowel-activity"),
+    ...Array.from({ length: Math.ceil(buildCount / 4) }, () => "sound-choice"),
+  ];
+}
+
+function expansionBuilds(characters) {
+  return characters.flatMap((character) =>
+    character.results.map((result, index) => [character.consonant, expansionVowels[index], result])
+  );
+}
+
+function expansionImages(characters) {
+  return characters.map((character) => `${character.name} ${character.results[0]} 새시안.png`);
+}
+
+function expansionCaptions(characters) {
+  return characters.map((character) => `${character.consonant}이 새 모음을 만나, ${character.results[0]}부터 시작!`);
+}
+
+expectedLessons.push(
+  {
+    id: "lesson-08-ieung-vowel-expansion",
+    title: "8레슨 ㅇ과 새 모음: 어/우/으/이를 만들어요",
+    letters: "ㅇ/ㅓ/ㅜ/ㅡ/ㅣ/어/우/으/이",
+    pageTypes: expansionPageTypes(4),
+    storyImages: ["어어 풍선 시안2.png", "우우 발판 시안.png", "으으 쿠션 시안.png", "이이 막대 시안.png"],
+    storyCaptions: ["ㅇ이 ㅓ를 만나, 어!", "ㅇ이 ㅜ를 만나, 우!", "ㅇ이 ㅡ를 만나, 으!", "ㅇ이 ㅣ를 만나, 이!"],
+    builds: [["ㅇ", "ㅓ", "어"], ["ㅇ", "ㅜ", "우"], ["ㅇ", "ㅡ", "으"], ["ㅇ", "ㅣ", "이"]],
+    reviewSounds: ["어", "우", "으", "이"],
+  },
+  {
+    id: "lesson-09-gogo-nana-vowel-expansion",
+    title: "9레슨 고고와 나나: 거/구/그/기/너/누/느/니를 만들어요",
+    letters: "ㄱ/ㄴ/ㅓ/ㅜ/ㅡ/ㅣ/거/구/그/기/너/누/느/니",
+    pageTypes: expansionPageTypes(8),
+    storyImages: expansionImages([
+      { name: "고고", results: ["거", "구", "그", "기"] },
+      { name: "나나", results: ["너", "누", "느", "니"] },
+    ]),
+    storyCaptions: expansionCaptions([
+      { consonant: "ㄱ", results: ["거", "구", "그", "기"] },
+      { consonant: "ㄴ", results: ["너", "누", "느", "니"] },
+    ]),
+    builds: expansionBuilds([
+      { consonant: "ㄱ", results: ["거", "구", "그", "기"] },
+      { consonant: "ㄴ", results: ["너", "누", "느", "니"] },
+    ]),
+    reviewSounds: ["거", "구", "그", "기", "너", "누", "느", "니"],
+  },
+  {
+    id: "lesson-10-mimi-rara-vowel-expansion",
+    title: "10레슨 미미와 라라: 머/무/므/미/러/루/르/리를 만들어요",
+    letters: "ㅁ/ㄹ/ㅓ/ㅜ/ㅡ/ㅣ/머/무/므/미/러/루/르/리",
+    pageTypes: expansionPageTypes(8),
+    storyImages: expansionImages([
+      { name: "미미", results: ["머", "무", "므", "미"] },
+      { name: "라라", results: ["러", "루", "르", "리"] },
+    ]),
+    storyCaptions: expansionCaptions([
+      { consonant: "ㅁ", results: ["머", "무", "므", "미"] },
+      { consonant: "ㄹ", results: ["러", "루", "르", "리"] },
+    ]),
+    builds: expansionBuilds([
+      { consonant: "ㅁ", results: ["머", "무", "므", "미"] },
+      { consonant: "ㄹ", results: ["러", "루", "르", "리"] },
+    ]),
+    reviewSounds: ["머", "무", "므", "미", "러", "루", "르", "리"],
+  },
+  {
+    id: "lesson-11-dodo-bubu-vowel-expansion",
+    title: "11레슨 도도와 부부: 더/두/드/디/버/부/브/비를 만들어요",
+    letters: "ㄷ/ㅂ/ㅓ/ㅜ/ㅡ/ㅣ/더/두/드/디/버/부/브/비",
+    pageTypes: expansionPageTypes(8),
+    storyImages: expansionImages([
+      { name: "도도", results: ["더", "두", "드", "디"] },
+      { name: "부부", results: ["버", "부", "브", "비"] },
+    ]),
+    storyCaptions: expansionCaptions([
+      { consonant: "ㄷ", results: ["더", "두", "드", "디"] },
+      { consonant: "ㅂ", results: ["버", "부", "브", "비"] },
+    ]),
+    builds: expansionBuilds([
+      { consonant: "ㄷ", results: ["더", "두", "드", "디"] },
+      { consonant: "ㅂ", results: ["버", "부", "브", "비"] },
+    ]),
+    reviewSounds: ["더", "두", "드", "디", "버", "부", "브", "비"],
+  },
+  {
+    id: "lesson-12-sasa-haha-vowel-expansion",
+    title: "12레슨 사사와 하하: 서/수/스/시/허/후/흐/히를 만들어요",
+    letters: "ㅅ/ㅎ/ㅓ/ㅜ/ㅡ/ㅣ/서/수/스/시/허/후/흐/히",
+    pageTypes: expansionPageTypes(8),
+    storyImages: expansionImages([
+      { name: "사사", results: ["서", "수", "스", "시"] },
+      { name: "하하", results: ["허", "후", "흐", "히"] },
+    ]),
+    storyCaptions: expansionCaptions([
+      { consonant: "ㅅ", results: ["서", "수", "스", "시"] },
+      { consonant: "ㅎ", results: ["허", "후", "흐", "히"] },
+    ]),
+    builds: expansionBuilds([
+      { consonant: "ㅅ", results: ["서", "수", "스", "시"] },
+      { consonant: "ㅎ", results: ["허", "후", "흐", "히"] },
+    ]),
+    reviewSounds: ["서", "수", "스", "시", "허", "후", "흐", "히"],
+  },
+  {
+    id: "lesson-13-jiji-chichi-vowel-expansion",
+    title: "13레슨 지지와 치치: 저/주/즈/지/처/추/츠/치를 만들어요",
+    letters: "ㅈ/ㅊ/ㅓ/ㅜ/ㅡ/ㅣ/저/주/즈/지/처/추/츠/치",
+    pageTypes: expansionPageTypes(8),
+    storyImages: expansionImages([
+      { name: "지지", results: ["저", "주", "즈", "지"] },
+      { name: "치치", results: ["처", "추", "츠", "치"] },
+    ]),
+    storyCaptions: expansionCaptions([
+      { consonant: "ㅈ", results: ["저", "주", "즈", "지"] },
+      { consonant: "ㅊ", results: ["처", "추", "츠", "치"] },
+    ]),
+    builds: expansionBuilds([
+      { consonant: "ㅈ", results: ["저", "주", "즈", "지"] },
+      { consonant: "ㅊ", results: ["처", "추", "츠", "치"] },
+    ]),
+    reviewSounds: ["저", "주", "즈", "지", "처", "추", "츠", "치"],
+  },
+  {
+    id: "lesson-14-koko-toto-pupu-vowel-expansion",
+    title: "14레슨 코코와 토토와 푸푸: 커/쿠/크/키/터/투/트/티/퍼/푸/프/피를 만들어요",
+    letters: "ㅋ/ㅌ/ㅍ/ㅓ/ㅜ/ㅡ/ㅣ/커/쿠/크/키/터/투/트/티/퍼/푸/프/피",
+    pageTypes: expansionPageTypes(12),
+    storyImages: expansionImages([
+      { name: "코코", results: ["커", "쿠", "크", "키"] },
+      { name: "토토", results: ["터", "투", "트", "티"] },
+      { name: "푸푸", results: ["퍼", "푸", "프", "피"] },
+    ]),
+    storyCaptions: expansionCaptions([
+      { consonant: "ㅋ", results: ["커", "쿠", "크", "키"] },
+      { consonant: "ㅌ", results: ["터", "투", "트", "티"] },
+      { consonant: "ㅍ", results: ["퍼", "푸", "프", "피"] },
+    ]),
+    builds: expansionBuilds([
+      { consonant: "ㅋ", results: ["커", "쿠", "크", "키"] },
+      { consonant: "ㅌ", results: ["터", "투", "트", "티"] },
+      { consonant: "ㅍ", results: ["퍼", "푸", "프", "피"] },
+    ]),
+    reviewSounds: ["커", "쿠", "크", "키", "터", "투", "트", "티", "퍼", "푸", "프", "피"],
+  },
+);
+
 assert.ok(existsSync(root), "vowel lessons folder should exist");
 assert.ok(existsSync(path.join(root, "manifest.json")), "vowel manifest should exist");
 
@@ -201,12 +355,20 @@ for (const expected of expectedLessons) {
     assert.equal(page.soundSteps.at(-1).sound, `${page.traceLetter}!`);
   }
 
-  const reviewPage = worksheet.pages.at(-1);
-  assert.equal(reviewPage.type, "sound-choice");
-  assert.deepEqual(reviewPage.prompts.map((prompt) => prompt.sound), expected.reviewSounds);
-  assert.deepEqual(reviewPage.choices.map((choice) => choice.buildPieces), expected.builds);
-  assert.ok(reviewPage.choices.every((choice) => choice.image), `${expected.id} review choices should include picture cues`);
-  for (const choice of reviewPage.choices) {
+  const reviewPages = worksheet.pages.filter((page) => page.type === "sound-choice");
+  assert.deepEqual(
+    reviewPages.flatMap((page) => page.prompts.map((prompt) => prompt.sound)),
+    expected.reviewSounds
+  );
+  assert.deepEqual(
+    reviewPages.flatMap((page) => page.choices.map((choice) => choice.buildPieces)),
+    expected.builds
+  );
+  assert.ok(
+    reviewPages.every((page) => page.choices.every((choice) => choice.image)),
+    `${expected.id} review choices should include picture cues`
+  );
+  for (const choice of reviewPages.flatMap((page) => page.choices)) {
     assert.ok(existsSync(path.resolve(lessonDir, choice.image)), `${expected.id} review choice image ${choice.image} should exist`);
   }
 

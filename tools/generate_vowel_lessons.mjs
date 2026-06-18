@@ -37,11 +37,11 @@ function activity({
   };
 }
 
-function reviewPage({ sounds, builds, images = [], footerRight }) {
+function reviewPage({ sounds, builds, images = [], footerRight, kicker = "마지막 / 소리 정리" }) {
   return {
     type: "sound-choice",
     theme: "gogo",
-    kicker: "마지막 / 소리 정리",
+    kicker,
     title: "소리를 듣고 맞는 조합을 찾아요",
     read: "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
     activityTitle: "맞는 글자에 동그라미",
@@ -61,8 +61,8 @@ function reviewPage({ sounds, builds, images = [], footerRight }) {
   };
 }
 
-function combinationLesson({ folder, title, letters, storyTitle, storyRead, storyTeacherNote, footerRight, characters }) {
-  const panels = characters.flatMap((character) =>
+function combinationLesson({ folder, title, letters, storyTitle, storyRead, storyTeacherNote, footerRight, characters, storyPanels }) {
+  const panels = storyPanels || characters.flatMap((character) =>
     character.combos.map((combo) => ({
       image: combo.heroImage,
       caption: `${character.consonant}이 ${combo.vowel}를 만나, ${combo.result}!`,
@@ -110,6 +110,168 @@ function combinationLesson({ folder, title, letters, storyTitle, storyRead, stor
       footerRight,
     },
   };
+}
+
+function chunkItems(items, size) {
+  const chunks = [];
+  for (let index = 0; index < items.length; index += size) {
+    chunks.push(items.slice(index, index + size));
+  }
+  return chunks;
+}
+
+const expansionVowels = [
+  { vowel: "ㅓ", sound: "어", tool: "어어 풍선", tail: "오른쪽의 ㅓ 풍선을 붙여 읽는다." },
+  { vowel: "ㅜ", sound: "우", tool: "우우 발판", tail: "아래의 ㅜ 발판을 붙여 읽는다." },
+  { vowel: "ㅡ", sound: "으", tool: "으으 쿠션", tail: "아래의 ㅡ 쿠션을 붙여 읽는다." },
+  { vowel: "ㅣ", sound: "이", tool: "이이 막대", tail: "오른쪽의 ㅣ 막대를 붙여 읽는다." },
+];
+
+const vowelExpansionGroups = [
+  {
+    folder: "lesson-08-ieung-vowel-expansion",
+    title: "8레슨 ㅇ과 새 모음: 어/우/으/이를 만들어요",
+    letters: "ㅇ/ㅓ/ㅜ/ㅡ/ㅣ/어/우/으/이",
+    storyTitle: "ㅇ이 새 모음 친구를 만나요",
+    storyRead: "조용히 기다리는 ㅇ 자리에 어어 풍선, 우우 발판, 으으 쿠션, 이이 막대가 차례로 와요.",
+    storyTeacherNote: "ㅇ은 첫소리 자리에서 조용히 기다리고, 모음 소리를 길게 들려주며 어/우/으/이를 읽는다.",
+    footerRight: "ㅇ과 새 모음",
+    characters: [
+      {
+        fullName: "아아 아기",
+        shortName: "ㅇ",
+        consonant: "ㅇ",
+        sound: "조용",
+        teacherNoteStem: "ㅇ 자리를 손가락으로 짚고",
+        combos: [
+          { vowel: "ㅓ", result: "어", vowelSound: "어", vowelTool: "어어 풍선", heroImage: "../../../public/어어 풍선 시안2.png", teacherNoteTail: "오른쪽의 ㅓ 풍선을 붙여 어를 읽는다." },
+          { vowel: "ㅜ", result: "우", vowelSound: "우", vowelTool: "우우 발판", heroImage: "../../../public/우우 발판 시안.png", teacherNoteTail: "아래의 ㅜ 발판을 붙여 우를 읽는다." },
+          { vowel: "ㅡ", result: "으", vowelSound: "으", vowelTool: "으으 쿠션", heroImage: "../../../public/으으 쿠션 시안.png", teacherNoteTail: "아래의 ㅡ 쿠션을 붙여 으를 읽는다." },
+          { vowel: "ㅣ", result: "이", vowelSound: "이", vowelTool: "이이 막대", heroImage: "../../../public/이이 막대 시안.png", teacherNoteTail: "오른쪽의 ㅣ 막대를 붙여 이를 읽는다." },
+        ],
+      },
+    ],
+  },
+  {
+    folder: "lesson-09-gogo-nana-vowel-expansion",
+    title: "9레슨 고고와 나나: 거/구/그/기/너/누/느/니를 만들어요",
+    letters: "ㄱ/ㄴ/ㅓ/ㅜ/ㅡ/ㅣ/거/구/그/기/너/누/느/니",
+    storyTitle: "고고와 나나가 새 모음을 넓혀요",
+    storyRead: "고고의 ㄱ 길과 나나의 ㄴ 길이 네 가지 새 모음 도구를 만나요.",
+    storyTeacherNote: "ㄱ과 ㄴ 길을 먼저 찾고, 오른쪽 모음과 아래 모음을 나누어 붙여 읽는다.",
+    footerRight: "고고와 나나",
+    characters: [
+      { fullName: "고고 고양이", shortName: "고고", imageName: "고고", consonant: "ㄱ", sound: "그", teacherNoteStem: "고고 꼬리의 ㄱ 길을 손가락으로 따라가고", results: ["거", "구", "그", "기"] },
+      { fullName: "나나 나비", shortName: "나나", imageName: "나나", consonant: "ㄴ", sound: "느", teacherNoteStem: "나나가 앉은 ㄴ 길을 손가락으로 따라가고", results: ["너", "누", "느", "니"] },
+    ],
+  },
+  {
+    folder: "lesson-10-mimi-rara-vowel-expansion",
+    title: "10레슨 미미와 라라: 머/무/므/미/러/루/르/리를 만들어요",
+    letters: "ㅁ/ㄹ/ㅓ/ㅜ/ㅡ/ㅣ/머/무/므/미/러/루/르/리",
+    storyTitle: "미미와 라라가 새 모음을 넓혀요",
+    storyRead: "미미의 ㅁ 길과 라라 리본의 ㄹ 길이 네 가지 새 모음 도구를 만나요.",
+    storyTeacherNote: "ㅁ과 ㄹ 길을 먼저 찾고, 네 모음의 붙는 자리를 비교하며 읽는다.",
+    footerRight: "미미와 라라",
+    characters: [
+      { fullName: "미미 문어", shortName: "미미", imageName: "미미", consonant: "ㅁ", sound: "므", teacherNoteStem: "미미 어항의 ㅁ 길을 손가락으로 따라가고", results: ["머", "무", "므", "미"] },
+      { fullName: "라라 리본", shortName: "라라", imageName: "라라", consonant: "ㄹ", sound: "르", teacherNoteStem: "라라 리본의 ㄹ 길을 손가락으로 따라가고", results: ["러", "루", "르", "리"] },
+    ],
+  },
+  {
+    folder: "lesson-11-dodo-bubu-vowel-expansion",
+    title: "11레슨 도도와 부부: 더/두/드/디/버/부/브/비를 만들어요",
+    letters: "ㄷ/ㅂ/ㅓ/ㅜ/ㅡ/ㅣ/더/두/드/디/버/부/브/비",
+    storyTitle: "도도와 부부가 새 모음을 넓혀요",
+    storyRead: "도도 몸의 ㄷ 길과 부부 몸의 ㅂ 길이 네 가지 새 모음 도구를 만나요.",
+    storyTeacherNote: "ㄷ과 ㅂ 길을 먼저 찾고, 입 모양을 바꾸며 더/두/드/디와 버/부/브/비를 읽는다.",
+    footerRight: "도도와 부부",
+    characters: [
+      { fullName: "도도 도토리", shortName: "도도", imageName: "도도", consonant: "ㄷ", sound: "드", teacherNoteStem: "도도 몸의 ㄷ 길을 손가락으로 따라가고", results: ["더", "두", "드", "디"] },
+      { fullName: "부부 부엉이", shortName: "부부", imageName: "부부", consonant: "ㅂ", sound: "브", teacherNoteStem: "부부 몸의 ㅂ 길을 손가락으로 따라가고", results: ["버", "부", "브", "비"] },
+    ],
+  },
+  {
+    folder: "lesson-12-sasa-haha-vowel-expansion",
+    title: "12레슨 사사와 하하: 서/수/스/시/허/후/흐/히를 만들어요",
+    letters: "ㅅ/ㅎ/ㅓ/ㅜ/ㅡ/ㅣ/서/수/스/시/허/후/흐/히",
+    storyTitle: "사사와 하하가 새 모음을 넓혀요",
+    storyRead: "사사 뿔의 ㅅ 산 길과 하하 몸의 ㅎ 숨 길이 네 가지 새 모음 도구를 만나요.",
+    storyTeacherNote: "ㅅ 산 길과 ㅎ 숨 길을 먼저 찾고, 바람 소리처럼 부드럽게 읽는다.",
+    footerRight: "사사와 하하",
+    characters: [
+      { fullName: "사사 사슴", shortName: "사사", imageName: "사사", consonant: "ㅅ", sound: "스", teacherNoteStem: "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고", results: ["서", "수", "스", "시"] },
+      { fullName: "하하 하마", shortName: "하하", imageName: "하하", consonant: "ㅎ", sound: "흐", teacherNoteStem: "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고", results: ["허", "후", "흐", "히"] },
+    ],
+  },
+  {
+    folder: "lesson-13-jiji-chichi-vowel-expansion",
+    title: "13레슨 지지와 치치: 저/주/즈/지/처/추/츠/치를 만들어요",
+    letters: "ㅈ/ㅊ/ㅓ/ㅜ/ㅡ/ㅣ/저/주/즈/지/처/추/츠/치",
+    storyTitle: "지지와 치치가 새 모음을 넓혀요",
+    storyRead: "지지의 ㅈ 길과 치치의 ㅊ 칙칙 길이 네 가지 새 모음 도구를 만나요.",
+    storyTeacherNote: "ㅈ 길과 ㅊ 길을 먼저 찾고, 짧고 또렷하게 새 조합을 읽는다.",
+    footerRight: "지지와 치치",
+    characters: [
+      { fullName: "지지 지렁이", shortName: "지지", imageName: "지지", consonant: "ㅈ", sound: "즈", teacherNoteStem: "지지의 ㅈ 길을 손가락으로 따라가고", results: ["저", "주", "즈", "지"] },
+      { fullName: "치치 칙폭이", shortName: "치치", imageName: "치치", consonant: "ㅊ", sound: "츠", teacherNoteStem: "치치의 ㅊ 칙칙 길을 손가락으로 따라가고", results: ["처", "추", "츠", "치"] },
+    ],
+  },
+  {
+    folder: "lesson-14-koko-toto-pupu-vowel-expansion",
+    title: "14레슨 코코와 토토와 푸푸: 커/쿠/크/키/터/투/트/티/퍼/푸/프/피를 만들어요",
+    letters: "ㅋ/ㅌ/ㅍ/ㅓ/ㅜ/ㅡ/ㅣ/커/쿠/크/키/터/투/트/티/퍼/푸/프/피",
+    storyTitle: "코코와 토토와 푸푸가 새 모음을 넓혀요",
+    storyRead: "코코의 ㅋ 길, 토토의 ㅌ 길, 푸푸 풍선의 ㅍ 길이 네 가지 새 모음 도구를 만나요.",
+    storyTeacherNote: "ㅋ/ㅌ/ㅍ의 센소리를 몸 길에서 찾고, 네 모음과 차례로 합쳐 읽는다.",
+    footerRight: "코코와 토토와 푸푸",
+    characters: [
+      { fullName: "코코 코알라", shortName: "코코", imageName: "코코", consonant: "ㅋ", sound: "크", teacherNoteStem: "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고", results: ["커", "쿠", "크", "키"] },
+      { fullName: "토토 토끼", shortName: "토토", imageName: "토토", consonant: "ㅌ", sound: "트", teacherNoteStem: "토토 귀와 몸의 ㅌ 톡톡 길을 손가락으로 따라가고", results: ["터", "투", "트", "티"] },
+      { fullName: "푸푸 풍선", shortName: "푸푸", imageName: "푸푸", consonant: "ㅍ", sound: "프", teacherNoteStem: "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고", results: ["퍼", "푸", "프", "피"] },
+    ],
+  },
+];
+
+function combosFromResults(character) {
+  if (character.combos) return character.combos;
+  return expansionVowels.map((vowel, index) => ({
+    vowel: vowel.vowel,
+    vowelTool: vowel.tool,
+    vowelSound: vowel.sound,
+    result: character.results[index],
+    heroImage: `../../../public/${character.imageName} ${character.results[index]} 새시안.png`,
+    teacherNoteTail: vowel.tail.replace("읽는다", `${character.results[index]}를 읽는다`),
+  }));
+}
+
+function vowelExpansionLesson(group) {
+  const characters = group.characters.map((character) => ({
+    ...character,
+    combos: combosFromResults(character),
+  }));
+  const storyPanels = characters.length === 1
+    ? characters[0].combos.map((combo) => ({
+        image: combo.heroImage,
+        caption: `${characters[0].consonant}이 ${combo.vowel}를 만나, ${combo.result}!`,
+      }))
+    : characters.map((character) => {
+        const combo = character.combos[0];
+        return {
+          image: combo.heroImage,
+          caption: `${character.consonant}이 새 모음을 만나, ${combo.result}부터 시작!`,
+        };
+      });
+
+  return combinationLesson({
+    ...group,
+    characters,
+    storyPanels,
+    storyTitle: group.storyTitle,
+    storyRead: group.storyRead,
+    storyTeacherNote: group.storyTeacherNote,
+    footerRight: group.footerRight,
+  });
 }
 
 const lessons = [
@@ -605,8 +767,19 @@ const lessons = [
   }),
 ];
 
+lessons.push(...vowelExpansionGroups.map(vowelExpansionLesson));
+
 function worksheetForLesson(lesson) {
-  const reviewImages = lesson.activities.map((item) => item.heroImage);
+  const reviewChunks = chunkItems(lesson.activities, 4);
+  const reviewPages = reviewChunks.map((items, index) => reviewPage({
+    sounds: items.map((item) => item.traceLetter),
+    builds: items.map((item) => item.buildPieces),
+    images: items.map((item) => item.heroImage),
+    footerRight: lesson.review.footerRight,
+    kicker: reviewChunks.length === 1
+      ? "마지막 / 소리 정리"
+      : `소리 정리 ${index + 1}/${reviewChunks.length}`,
+  }));
 
   return {
     title: lesson.title,
@@ -637,7 +810,7 @@ function worksheetForLesson(lesson) {
         footerLeft: item.footerLeft,
         footerRight: item.footerRight,
       })),
-      reviewPage({ ...lesson.review, images: reviewImages }),
+      ...reviewPages,
     ],
   };
 }
