@@ -158,6 +158,92 @@
       "footerRight": "하하 하마와 호"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "사",
+      "title": "사/소/하/호가 들어가는 낱말",
+      "read": "사, 소, 하, 호가 들어 있는 생활 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "사슴",
+          "focus": "사",
+          "rest": "슴",
+          "image": "../../../worksheets/assets/word-sa-deer.png"
+        },
+        {
+          "word": "사다리",
+          "focus": "사",
+          "rest": "다리",
+          "image": "../../../worksheets/assets/word-sa-ladder.png"
+        },
+        {
+          "word": "사탕",
+          "focus": "사",
+          "rest": "탕",
+          "image": "../../../worksheets/assets/word-sa-candy.png"
+        },
+        {
+          "word": "소금",
+          "focus": "소",
+          "rest": "금",
+          "image": "../../../worksheets/assets/word-so-salt.png"
+        },
+        {
+          "word": "소",
+          "focus": "소",
+          "rest": "",
+          "image": "../../../worksheets/assets/word-so-cow.png"
+        },
+        {
+          "word": "소리",
+          "focus": "소",
+          "rest": "리",
+          "image": "../../../worksheets/assets/word-so-sound.png"
+        },
+        {
+          "word": "하마",
+          "focus": "하",
+          "rest": "마",
+          "image": "../../../worksheets/assets/word-ha-hippo.png"
+        },
+        {
+          "word": "하늘",
+          "focus": "하",
+          "rest": "늘",
+          "image": "../../../worksheets/assets/word-ha-sky.png"
+        },
+        {
+          "word": "하얀색",
+          "focus": "하",
+          "rest": "얀색",
+          "image": "../../../worksheets/assets/word-ha-white.png"
+        },
+        {
+          "word": "호랑이",
+          "focus": "호",
+          "rest": "랑이",
+          "image": "../../../worksheets/assets/word-ho-tiger.png"
+        },
+        {
+          "word": "호박",
+          "focus": "호",
+          "rest": "박",
+          "image": "../../../worksheets/assets/word-ho-pumpkin.png"
+        },
+        {
+          "word": "호두",
+          "focus": "호",
+          "rest": "두",
+          "image": "../../../worksheets/assets/word-ho-walnut.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+      "footerLeft": "배운 글자 사/소/하/호",
+      "footerRight": "사/소/하/호 낱말카드",
+      "kicker": "6장 / 글자 낱말"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "마지막 / 소리 정리",

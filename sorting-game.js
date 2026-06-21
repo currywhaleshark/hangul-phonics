@@ -16,6 +16,34 @@ const CHARACTER_MAP = {
   'ㅎ': { name: '하하 하마', file: '/하하 하마.png', theme: 'haha' }
 };
 
+const WORD_AUDIO_BASE_PATH = '/audio-gemini-candidates/consonant-words-gemini31';
+
+const CONSONANT_WORD_AUDIO_LESSONS = {
+  'lesson-01-gogo-nana': {
+    audioKey: 'lesson-01-gogo-nana',
+    words: ['강아지', '곰', '고기', '과자', '국수', '노란색', '너구리', '나무', '나비', '낮잠']
+  },
+  'lesson-02-mimi-bubu': {
+    audioKey: 'lesson-02-mimi-bubu',
+    words: ['모자', '문', '물', '무지개', '미끄럼틀', '바나나', '버스', '별', '비', '바구니']
+  },
+  'lesson-03-dodo-rara': {
+    audioKey: 'lesson-03-dodo-rara',
+    words: ['다람쥐', '달', '다리', '도넛', '도토리', '라면', '로봇', '리본', '라디오', '레몬']
+  },
+  'lesson-04-sasa-haha': {
+    audioKey: 'lesson-04-sasa-haha',
+    words: ['사과', '수박', '산', '손', '사탕', '해', '하트', '호랑이', '하모니카', '햄버거']
+  },
+  'lesson-05-jiji-chichi': {
+    audioKey: 'lesson-05-jiji-chichi',
+    words: ['자동차', '집', '주스', '지갑', '젤리', '치즈', '책', '초콜릿', '치마', '친구']
+  },
+  'lesson-06b-koko-toto-pupu-sounds': {
+    audioKey: 'lesson-06-koko-toto-pupu',
+    words: ['쿠키', '콩', '카드', '크레용', '코끼리', '토마토', '택시', '타조', '튤립', '토끼풀', '포도', '피자', '풀', '풍선', '파도']
+  }
+};
 // --- Application State ---
 const state = {
   lessons: [],
@@ -28,7 +56,8 @@ const state = {
   audioContext: null,
   audioContextActivated: false,
   currentAudioChant: null,
-  currentConsonantPlaying: null
+  currentConsonantPlaying: null,
+  currentWordAudio: null
 };
 
 const SORTING_LESSON_OVERRIDES = {
@@ -47,6 +76,17 @@ function getSortingGameLessons(lessons) {
 
 function getLessonButtonText(lesson) {
   return lesson.gameShortTitle || lesson.title.split(':')[0].trim();
+}
+
+function buildConsonantWordAudioPath(lessonId, word) {
+  const lessonAudio = CONSONANT_WORD_AUDIO_LESSONS[lessonId];
+  if (!lessonAudio) return '';
+
+  const wordIndex = lessonAudio.words.indexOf(word);
+  if (wordIndex === -1) return '';
+
+  const audioNumber = String(wordIndex + 1).padStart(2, '0');
+  return `${WORD_AUDIO_BASE_PATH}/${lessonAudio.audioKey}_${audioNumber}_${word}.mp3`;
 }
 
 // --- Web Audio API Synth Effects ---
@@ -134,6 +174,37 @@ function stopCurrentChant() {
     state.currentAudioChant = null;
     state.currentConsonantPlaying = null;
   }
+}
+
+function stopCurrentWordAudio() {
+  if (state.currentWordAudio) {
+    state.currentWordAudio.pause();
+    state.currentWordAudio.currentTime = 0;
+    state.currentWordAudio = null;
+  }
+}
+
+function playCardWordAudio(cardData) {
+  if (!cardData || !cardData.wordAudio) return;
+
+  stopCurrentChant();
+  stopCurrentWordAudio();
+
+  const audio = new Audio(encodeURI(cardData.wordAudio));
+  state.currentWordAudio = audio;
+
+  audio.play().catch(err => {
+    if (state.currentWordAudio === audio) {
+      state.currentWordAudio = null;
+    }
+    console.warn(`낱말 오디오를 재생할 수 없습니다: ${cardData.wordAudio}`, err);
+  });
+
+  audio.addEventListener('ended', () => {
+    if (state.currentWordAudio === audio) {
+      state.currentWordAudio = null;
+    }
+  });
 }
 
 function playChant(consonant, lessonId) {
@@ -253,6 +324,7 @@ function renderLessonButtons() {
 
 async function loadLessonData() {
   stopCurrentChant(); // Stop playing chant on lesson change
+  stopCurrentWordAudio();
   showLoadingScreen(); // Show preloader screen during lesson change
   
   const currentLesson = state.lessons[state.currentLessonIndex];
@@ -304,6 +376,7 @@ async function loadLessonData() {
         label: tile.label,
         image: imgPath,
         fill: tile.fill,
+        wordAudio: buildConsonantWordAudioPath(currentLesson.id, tile.label),
         answerChoseong: getChoseong(tile.label) // Calculate dynamic choseong as correct answer!
       };
     });
@@ -428,6 +501,8 @@ function initCardDragging(cardEl, cardData) {
     
     // Prevent dragging already placed card
     if (cardEl.classList.contains('placed')) return;
+
+    playCardWordAudio(cardData);
     
     cardEl.releasePointerCapture(e.pointerId);
     

@@ -122,6 +122,74 @@
       "footerRight": "아아 아기와 우"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "아",
+      "title": "아/오/우가 들어가는 낱말",
+      "read": "아, 오, 우가 들어 있는 생활 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "아기",
+          "focus": "아",
+          "rest": "기",
+          "image": "../../../worksheets/assets/baby.png"
+        },
+        {
+          "word": "아침",
+          "focus": "아",
+          "rest": "침",
+          "image": "../../../worksheets/assets/morning.png"
+        },
+        {
+          "word": "아이스크림",
+          "focus": "아",
+          "rest": "이스크림",
+          "image": "../../../worksheets/assets/ice-cream.png"
+        },
+        {
+          "word": "오이",
+          "focus": "오",
+          "rest": "이",
+          "image": "../../../worksheets/assets/cucumber.png"
+        },
+        {
+          "word": "오리",
+          "focus": "오",
+          "rest": "리",
+          "image": "../../../worksheets/assets/duck.png"
+        },
+        {
+          "word": "오랑우탄",
+          "focus": "오",
+          "rest": "랑우탄",
+          "image": "../../../worksheets/assets/orangutan.png"
+        },
+        {
+          "word": "우산",
+          "focus": "우",
+          "rest": "산",
+          "image": "../../../worksheets/assets/umbrella.png"
+        },
+        {
+          "word": "우유",
+          "focus": "우",
+          "rest": "유",
+          "image": "../../../worksheets/assets/milk.png"
+        },
+        {
+          "word": "우물",
+          "focus": "우",
+          "rest": "물",
+          "image": "../../../worksheets/assets/well.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+      "footerLeft": "배운 글자 아/오/우",
+      "footerRight": "아/오/우 낱말카드",
+      "kicker": "5장 / 글자 낱말"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "마지막 / 소리 정리",

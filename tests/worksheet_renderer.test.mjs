@@ -195,3 +195,87 @@ assert.match(soundChoicePage, /data-answer="아"/);
 assert.match(soundChoicePage, /class="sound-choice-card"/);
 assert.match(soundChoicePage, /ㅇ \+ ㅏ/);
 assert.doesNotMatch(soundChoicePage, /<strong>아<\/strong>[\s\S]*<div class="sound-choice-prompt-label">1번 소리/);
+const wordCardPage = renderWorksheetPage({
+  type: "word-card",
+  theme: "gogo",
+  kicker: "5장 / 글자 낱말",
+  title: "아/오/우가 들어가는 낱말",
+  read: "아, 오, 우가 들어 있는 생활 낱말을 그림으로 만나요.",
+  activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+  focus: "아",
+  cards: [
+    { word: "아기", focus: "아", rest: "기", image: "../../../worksheets/assets/baby.png" },
+    { word: "아침", focus: "아", rest: "침", image: "../../../worksheets/assets/morning.png" },
+    { word: "아이스크림", focus: "아", rest: "이스크림", image: "../../../worksheets/assets/ice-cream.png" },
+    { word: "오이", focus: "오", rest: "이", image: "../../../worksheets/assets/cucumber.png" },
+    { word: "오리", focus: "오", rest: "리", image: "../../../worksheets/assets/duck.png" },
+    { word: "오랑우탄", focus: "오", rest: "랑우탄", image: "../../../worksheets/assets/orangutan.png" },
+    { word: "우산", focus: "우", rest: "산", image: "../../../worksheets/assets/umbrella.png" },
+    { word: "우유", focus: "우", rest: "유", image: "../../../worksheets/assets/milk.png" },
+    { word: "우물", focus: "우", rest: "물", image: "../../../worksheets/assets/well.png" },
+  ],
+  teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+  footerLeft: "배운 글자 아/오/우",
+  footerRight: "아/오/우 낱말카드",
+});
+
+assert.match(wordCardPage, /class="word-card-grid word-card-grid-compact"/);
+assert.match(wordCardPage, /<span class="word-card-focus">아<\/span><span class="word-card-rest">기<\/span>/);
+assert.match(wordCardPage, /<span class="word-card-focus">아<\/span><span class="word-card-rest">침<\/span>/);
+assert.match(wordCardPage, /<span class="word-card-focus">아<\/span><span class="word-card-rest">이스크림<\/span>/);
+assert.match(wordCardPage, /<span class="word-card-focus">오<\/span><span class="word-card-rest">랑우탄<\/span>/);
+assert.match(wordCardPage, /<span class="word-card-focus">우<\/span><span class="word-card-rest">물<\/span>/);
+assert.match(wordCardPage, /src="..\/..\/..\/worksheets\/assets\/ice-cream\.png"/);
+assert.match(wordCardPage, /src="..\/..\/..\/worksheets\/assets\/well\.png"/);
+const repeatedFocusWordCardPage = renderWorksheetPage({
+  type: "word-card",
+  theme: "gogo",
+  kicker: "6장 / 글자 낱말",
+  title: "토로 시작하고 끝나는 낱말",
+  read: "토가 앞과 뒤에 있는 낱말을 그림으로 만나요.",
+  activityTitle: "토가 보이는 곳을 진하게 봐요",
+  cards: [
+    {
+      word: "토마토",
+      image: "../../../worksheets/assets/word-to-tomato.png",
+      parts: [
+        { text: "토", focus: true },
+        { text: "마" },
+        { text: "토", focus: true },
+      ],
+    },
+  ],
+  teacherNote: "처음과 끝의 토를 함께 찾아본다.",
+  footerLeft: "토마토",
+  footerRight: "토 낱말카드",
+});
+
+assert.match(repeatedFocusWordCardPage, /<span class="word-card-focus">토<\/span><span class="word-card-rest">마<\/span><span class="word-card-focus">토<\/span>/);
+const denseWordCardPage = renderWorksheetPage({
+  type: "word-card",
+  theme: "gogo",
+  kicker: "6장 / 글자 낱말",
+  title: "가/고/나/노가 들어가는 낱말",
+  read: "가, 고, 나, 노가 들어 있는 낱말을 그림으로 만나요.",
+  activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+  cards: [
+    { word: "가방", focus: "가", rest: "방", image: "../../../worksheets/assets/word-ga-bag.png" },
+    { word: "가지", focus: "가", rest: "지", image: "../../../worksheets/assets/word-ga-eggplant.png" },
+    { word: "가위", focus: "가", rest: "위", image: "../../../worksheets/assets/word-ga-scissors.png" },
+    { word: "고양이", focus: "고", rest: "양이", image: "../../../worksheets/assets/word-go-cat.png" },
+    { word: "고구마", focus: "고", rest: "구마", image: "../../../worksheets/assets/word-go-sweet-potato.png" },
+    { word: "고래", focus: "고", rest: "래", image: "../../../worksheets/assets/word-go-whale.png" },
+    { word: "나비", focus: "나", rest: "비", image: "../../../worksheets/assets/word-na-butterfly.png" },
+    { word: "나무", focus: "나", rest: "무", image: "../../../worksheets/assets/word-na-tree.png" },
+    { word: "나사", focus: "나", rest: "사", image: "../../../worksheets/assets/word-na-screw.png" },
+    { word: "노란색", focus: "노", rest: "란색", image: "../../../worksheets/assets/word-no-yellow.png" },
+    { word: "노래", focus: "노", rest: "래", image: "../../../worksheets/assets/word-no-song.png" },
+    { word: "노트", focus: "노", rest: "트", image: "../../../worksheets/assets/word-no-note.png" },
+  ],
+  teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+  footerLeft: "배운 글자 가/고/나/노",
+  footerRight: "가/고/나/노 낱말카드",
+});
+
+assert.match(denseWordCardPage, /class="word-card-grid word-card-grid-compact word-card-grid-dense"/);
+assert.match(denseWordCardPage, /<span class="word-card-focus">노<\/span><span class="word-card-rest">란색<\/span>/);

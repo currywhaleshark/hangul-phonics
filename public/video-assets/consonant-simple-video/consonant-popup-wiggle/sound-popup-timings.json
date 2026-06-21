@@ -1,0 +1,176 @@
+{
+  "sourceAudio": "C:/Users/yurib/Downloads/speech (2).wav",
+  "duration": 47.600272,
+  "popStyle": "large consonant popup on the final three sound repetitions",
+  "lines": [
+    {
+      "letter": "ㄱ",
+      "text": "고고 고양이 그, 그, 그",
+      "image": "ㄱ-gogo-cat.png",
+      "lineStart": 0.296,
+      "lineEnd": 3.525,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        1.996,
+        2.437,
+        2.901
+      ]
+    },
+    {
+      "letter": "ㄴ",
+      "text": "나나 나비 느, 느, 느",
+      "image": "ㄴ-nana-butterfly.png",
+      "lineStart": 3.525,
+      "lineEnd": 7.703,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        6.229,
+        6.729,
+        7.274
+      ]
+    },
+    {
+      "letter": "ㅁ",
+      "text": "미미 문어 므, 므, 므",
+      "image": "ㅁ-mimi-octopus.png",
+      "lineStart": 7.703,
+      "lineEnd": 11.486,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        9.992,
+        10.482,
+        11.043
+      ]
+    },
+    {
+      "letter": "ㅂ",
+      "text": "부부 부엉이 브, 브, 브",
+      "image": "ㅂ-bubu-owl.png",
+      "lineStart": 11.486,
+      "lineEnd": 15.262,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        13.784,
+        14.266,
+        14.801
+      ]
+    },
+    {
+      "letter": "ㄷ",
+      "text": "도도 도토리 드, 드, 드",
+      "image": "ㄷ-dodo-acorn.png",
+      "lineStart": 15.262,
+      "lineEnd": 18.901,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        17.045,
+        17.53,
+        18.011
+      ]
+    },
+    {
+      "letter": "ㄹ",
+      "text": "라라 리본 르, 르, 르",
+      "image": "ㄹ-rara-ribbon.png",
+      "lineStart": 18.901,
+      "lineEnd": 22.559,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        21.156,
+        21.635,
+        22.196
+      ]
+    },
+    {
+      "letter": "ㅅ",
+      "text": "사사 사슴 스, 스, 스",
+      "image": "ㅅ-sasa-deer.png",
+      "lineStart": 22.559,
+      "lineEnd": 26.297,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        24.82,
+        25.299,
+        25.848
+      ]
+    },
+    {
+      "letter": "ㅎ",
+      "text": "하하 하마 흐, 흐, 흐",
+      "image": "ㅎ-haha-hippo.png",
+      "lineStart": 26.297,
+      "lineEnd": 29.962,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        28.098,
+        28.538,
+        28.993
+      ]
+    },
+    {
+      "letter": "ㅈ",
+      "text": "지지 지렁이 즈, 즈, 즈",
+      "image": "ㅈ-jiji-worm.png",
+      "lineStart": 29.962,
+      "lineEnd": 34.077,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        32.682,
+        33.244,
+        33.595
+      ]
+    },
+    {
+      "letter": "ㅊ",
+      "text": "치치 칙폭이 츠, 츠, 츠",
+      "image": "ㅊ-chichi-train.png",
+      "lineStart": 34.077,
+      "lineEnd": 37.319,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        35.383,
+        35.851,
+        36.313
+      ]
+    },
+    {
+      "letter": "ㅋ",
+      "text": "코코 코알라 크, 크, 크",
+      "image": "ㅋ-koko-koala.png",
+      "lineStart": 37.319,
+      "lineEnd": 40.903,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        39.04,
+        39.492,
+        39.944
+      ]
+    },
+    {
+      "letter": "ㅌ",
+      "text": "토토 토끼 트, 트, 트",
+      "image": "ㅌ-toto-rabbit.png",
+      "lineStart": 40.903,
+      "lineEnd": 44.391,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        42.578,
+        43.017,
+        43.463
+      ]
+    },
+    {
+      "letter": "ㅍ",
+      "text": "푸푸 풍선 프, 프, 프",
+      "image": "ㅍ-pupu-balloon.png",
+      "lineStart": 44.391,
+      "lineEnd": 47.6,
+      "method": "silencedetect-last-three",
+      "popStarts": [
+        46.039,
+        46.473,
+        46.887
+      ]
+    }
+  ]
+}

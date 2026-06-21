@@ -9,7 +9,7 @@ const expectedLessons = [
     id: "lesson-01-aa-baby-vowel",
     title: "1레슨 아아 아기와 아/오/우: 모음 도구를 만나요",
     letters: "ㅇ/ㅏ/ㅗ/ㅜ/아/오/우",
-    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "sound-choice"],
+    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "word-card", "sound-choice"],
     storyImages: ["aa-story-01-silent.png", "aa-story-02-branch.png", "aa-story-03-ah.png"],
     storyCaptions: ["아아 아기는 조용조용.", "어? 나뭇가지다!", "나뭇가지를 들고, 아!"],
     builds: [
@@ -18,12 +18,22 @@ const expectedLessons = [
       ["ㅇ", "ㅜ", "우"],
     ],
     reviewSounds: ["아", "오", "우"],
-  },
+    wordCards: [
+      { word: "아기", focus: "아", rest: "기", image: "baby.png" },
+      { word: "아침", focus: "아", rest: "침", image: "morning.png" },
+      { word: "아이스크림", focus: "아", rest: "이스크림", image: "ice-cream.png" },
+      { word: "오이", focus: "오", rest: "이", image: "cucumber.png" },
+      { word: "오리", focus: "오", rest: "리", image: "duck.png" },
+      { word: "오랑우탄", focus: "오", rest: "랑우탄", image: "orangutan.png" },
+      { word: "우산", focus: "우", rest: "산", image: "umbrella.png" },
+      { word: "우유", focus: "우", rest: "유", image: "milk.png" },
+      { word: "우물", focus: "우", rest: "물", image: "well.png" },
+    ],  },
   {
     id: "lesson-02-gogo-nana-combination",
     title: "2레슨 고고와 나나: 가/고/나/노를 만들어요",
     letters: "ㄱ/ㄴ/ㅏ/ㅗ/가/고/나/노",
-    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "sound-choice"],
+    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "word-card", "sound-choice"],
     storyImages: [
       "고고 가 막대기 ㄱ폰트 크게 새시안.png",
       "고고 고 상자 ㄱ폰트 크게 새시안.png",
@@ -38,12 +48,25 @@ const expectedLessons = [
       ["ㄴ", "ㅗ", "노"],
     ],
     reviewSounds: ["가", "고", "나", "노"],
-  },
+    wordCards: [
+      { word: "가방", focus: "가", rest: "방", image: "word-ga-bag.png" },
+      { word: "가지", focus: "가", rest: "지", image: "word-ga-eggplant.png" },
+      { word: "가위", focus: "가", rest: "위", image: "word-ga-scissors.png" },
+      { word: "고양이", focus: "고", rest: "양이", image: "word-go-cat.png" },
+      { word: "고구마", focus: "고", rest: "구마", image: "word-go-sweet-potato.png" },
+      { word: "고래", focus: "고", rest: "래", image: "word-go-whale.png" },
+      { word: "나비", focus: "나", rest: "비", image: "word-na-butterfly.png" },
+      { word: "나무", focus: "나", rest: "무", image: "word-na-tree.png" },
+      { word: "나사", focus: "나", rest: "사", image: "word-na-screw.png" },
+      { word: "노란색", focus: "노", rest: "란색", image: "word-no-yellow.png" },
+      { word: "노래", focus: "노", rest: "래", image: "word-no-song.png" },
+      { word: "노트", focus: "노", rest: "트", image: "word-no-note.png" },
+    ],  },
   {
     id: "lesson-03-mimi-bubu-combination",
     title: "3레슨 미미와 부부: 마/모/바/보를 만들어요",
     letters: "ㅁ/ㅂ/ㅏ/ㅗ/마/모/바/보",
-    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "sound-choice"],
+    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "word-card", "sound-choice"],
     storyImages: [
       "미미 마 새시안.png",
       "미미 모 새시안.png",
@@ -58,12 +81,25 @@ const expectedLessons = [
       ["ㅂ", "ㅗ", "보"],
     ],
     reviewSounds: ["마", "모", "바", "보"],
-  },
-  {
+    wordCards: [
+      { word: "마늘", focus: "마", rest: "늘", image: "word-ma-garlic.png" },
+      { word: "마술사", focus: "마", rest: "술사", image: "word-ma-magician.png" },
+      { word: "마스크", focus: "마", rest: "스크", image: "word-ma-mask.png" },
+      { word: "모자", focus: "모", rest: "자", image: "word-mo-hat.png" },
+      { word: "모래", focus: "모", rest: "래", image: "word-mo-sand.png" },
+      { word: "모기", focus: "모", rest: "기", image: "word-mo-mosquito.png" },
+      { word: "바다", focus: "바", rest: "다", image: "word-ba-sea.png" },
+      { word: "바퀴", focus: "바", rest: "퀴", image: "word-ba-wheel.png" },
+      { word: "바나나", focus: "바", rest: "나나", image: "word-ba-banana.png" },
+      { word: "보라색", focus: "보", rest: "라색", image: "word-bo-purple.png" },
+      { word: "보름달", focus: "보", rest: "름달", image: "word-bo-full-moon.png" },
+      { word: "보물상자", focus: "보", rest: "물상자", image: "word-bo-treasure-chest.png" },
+    ],
+  },  {
     id: "lesson-04-dodo-rara-combination",
     title: "4레슨 도도와 라라: 다/도/라/로를 만들어요",
     letters: "ㄷ/ㄹ/ㅏ/ㅗ/다/도/라/로",
-    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "sound-choice"],
+    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "word-card", "sound-choice"],
     storyImages: [
       "도도 다 새시안.png",
       "도도 도 새시안.png",
@@ -78,12 +114,25 @@ const expectedLessons = [
       ["ㄹ", "ㅗ", "로"],
     ],
     reviewSounds: ["다", "도", "라", "로"],
-  },
-  {
+    wordCards: [
+      { word: "다람쥐", focus: "다", rest: "람쥐", image: "word-da-squirrel.png" },
+      { word: "다리미", focus: "다", rest: "리미", image: "word-da-iron.png" },
+      { word: "다리", focus: "다", rest: "리", image: "word-da-leg.png" },
+      { word: "도토리", focus: "도", rest: "토리", image: "word-do-acorn.png" },
+      { word: "도넛", focus: "도", rest: "넛", image: "word-do-donut.png" },
+      { word: "도깨비", focus: "도", rest: "깨비", image: "word-do-dokkaebi.png" },
+      { word: "라디오", focus: "라", rest: "디오", image: "word-ra-radio.png" },
+      { word: "라면", focus: "라", rest: "면", image: "word-ra-ramen.png" },
+      { word: "라켓", focus: "라", rest: "켓", image: "word-ra-racket.png" },
+      { word: "로봇", focus: "로", rest: "봇", image: "word-ro-robot.png" },
+      { word: "로켓", focus: "로", rest: "켓", image: "word-ro-rocket.png" },
+      { word: "로션", focus: "로", rest: "션", image: "word-ro-lotion.png" },
+    ],
+  },  {
     id: "lesson-05-sasa-haha-combination",
     title: "5레슨 사사와 하하: 사/소/하/호를 만들어요",
     letters: "ㅅ/ㅎ/ㅏ/ㅗ/사/소/하/호",
-    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "sound-choice"],
+    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "word-card", "sound-choice"],
     storyImages: [
       "사사 사 새시안.png",
       "사사 소 새시안.png",
@@ -98,12 +147,25 @@ const expectedLessons = [
       ["ㅎ", "ㅗ", "호"],
     ],
     reviewSounds: ["사", "소", "하", "호"],
-  },
-  {
+    wordCards: [
+      { word: "사슴", focus: "사", rest: "슴", image: "word-sa-deer.png" },
+      { word: "사다리", focus: "사", rest: "다리", image: "word-sa-ladder.png" },
+      { word: "사탕", focus: "사", rest: "탕", image: "word-sa-candy.png" },
+      { word: "소금", focus: "소", rest: "금", image: "word-so-salt.png" },
+      { word: "소", focus: "소", rest: "", image: "word-so-cow.png" },
+      { word: "소리", focus: "소", rest: "리", image: "word-so-sound.png" },
+      { word: "하마", focus: "하", rest: "마", image: "word-ha-hippo.png" },
+      { word: "하늘", focus: "하", rest: "늘", image: "word-ha-sky.png" },
+      { word: "하얀색", focus: "하", rest: "얀색", image: "word-ha-white.png" },
+      { word: "호랑이", focus: "호", rest: "랑이", image: "word-ho-tiger.png" },
+      { word: "호박", focus: "호", rest: "박", image: "word-ho-pumpkin.png" },
+      { word: "호두", focus: "호", rest: "두", image: "word-ho-walnut.png" },
+    ],
+  },  {
     id: "lesson-06-jiji-chichi-combination",
     title: "6레슨 지지와 치치: 자/조/차/초를 만들어요",
     letters: "ㅈ/ㅊ/ㅏ/ㅗ/자/조/차/초",
-    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "sound-choice"],
+    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "word-card", "sound-choice"],
     storyImages: [
       "지지 자 새시안.png",
       "지지 조 새시안.png",
@@ -118,12 +180,33 @@ const expectedLessons = [
       ["ㅊ", "ㅗ", "초"],
     ],
     reviewSounds: ["자", "조", "차", "초"],
+    wordCards: [
+      { word: "자전거", focus: "자", rest: "전거", image: "word-ja-bicycle.png" },
+      { word: "자석", focus: "자", rest: "석", image: "word-ja-magnet.png" },
+      { word: "자두", focus: "자", rest: "두", image: "word-ja-plum.png" },
+      { word: "조개", focus: "조", rest: "개", image: "word-jo-shell.png" },
+      { word: "조끼", focus: "조", rest: "끼", image: "word-jo-vest.png" },
+      { word: "조명", focus: "조", rest: "명", image: "word-jo-light.png" },
+      { word: "차", focus: "차", rest: "", image: "word-cha-tea.png" },
+      {
+        word: "자동차",
+        image: "word-cha-car.png",
+        parts: [
+          { text: "자동" },
+          { text: "차", focus: true },
+        ],
+      },
+      { word: "차례", focus: "차", rest: "례", image: "word-cha-turn.png" },
+      { word: "초콜릿", focus: "초", rest: "콜릿", image: "word-cho-chocolate.png" },
+      { word: "초승달", focus: "초", rest: "승달", image: "word-cho-crescent-moon.png" },
+      { word: "초록색", focus: "초", rest: "록색", image: "word-cho-green.png" },
+    ],
   },
   {
     id: "lesson-07a-koko-toto-combination",
     title: "7-A레슨 코코와 토토: 카/코/타/토를 만들어요",
     letters: "ㅋ/ㅌ/ㅏ/ㅗ/카/코/타/토",
-    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "sound-choice"],
+    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "word-card", "sound-choice"],
     storyImages: [
       "코코 카 새시안.png",
       "코코 코 새시안.png",
@@ -138,12 +221,48 @@ const expectedLessons = [
       ["ㅌ", "ㅗ", "토"],
     ],
     reviewSounds: ["카", "코", "타", "토"],
+    wordCards: [
+      { word: "카드", focus: "카", rest: "드", image: "word-ka-card.png" },
+      { word: "카메라", focus: "카", rest: "메라", image: "word-ka-camera.png" },
+      { word: "카트", focus: "카", rest: "트", image: "word-ka-cart.png" },
+      { word: "코알라", focus: "코", rest: "알라", image: "word-ko-koala.png" },
+      { word: "코끼리", focus: "코", rest: "끼리", image: "word-ko-elephant.png" },
+      { word: "코뿔소", focus: "코", rest: "뿔소", image: "word-ko-rhino.png" },
+      { word: "타조", focus: "타", rest: "조", image: "word-ta-ostrich.png" },
+      {
+        word: "치타",
+        image: "word-ta-cheetah.png",
+        parts: [
+          { text: "치" },
+          { text: "타", focus: true },
+        ],
+      },
+      {
+        word: "낙타",
+        image: "word-ta-camel.png",
+        parts: [
+          { text: "낙" },
+          { text: "타", focus: true },
+        ],
+      },
+      { word: "토끼", focus: "토", rest: "끼", image: "word-to-rabbit.png" },
+      {
+        word: "토마토",
+        image: "word-to-tomato.png",
+        parts: [
+          { text: "토", focus: true },
+          { text: "마" },
+          { text: "토", focus: true },
+        ],
+      },
+      { word: "토끼풀", focus: "토", rest: "끼풀", image: "word-to-clover.png" },
+    ],
   },
   {
     id: "lesson-07b-pupu-combination",
     title: "7-B레슨 푸푸: 파/포를 만들어요",
     letters: "ㅍ/ㅏ/ㅗ/파/포",
-    pageTypes: ["story", "vowel-activity", "vowel-activity", "sound-choice"],
+    pageTypes: ["story", "vowel-activity", "vowel-activity", "word-card", "sound-choice"],
     storyImages: [
       "푸푸 파 새시안.png",
       "푸푸 포 새시안.png",
@@ -154,6 +273,21 @@ const expectedLessons = [
       ["ㅍ", "ㅗ", "포"],
     ],
     reviewSounds: ["파", "포"],
+    wordCards: [
+      { word: "파란색", focus: "파", rest: "란색", image: "word-pa-blue.png" },
+      { word: "파이", focus: "파", rest: "이", image: "word-pa-pie.png" },
+      { word: "파인애플", focus: "파", rest: "인애플", image: "word-pa-pineapple.png" },
+      { word: "포도", focus: "포", rest: "도", image: "word-po-grapes.png" },
+      { word: "포크", focus: "포", rest: "크", image: "word-po-fork.png" },
+      {
+        word: "폭포",
+        image: "word-po-waterfall.png",
+        parts: [
+          { text: "폭" },
+          { text: "포", focus: true },
+        ],
+      },
+    ],
   },
 ];
 
@@ -345,6 +479,30 @@ for (const expected of expectedLessons) {
   }
   for (const panel of storyPage.panels) {
     assert.ok(existsSync(path.resolve(lessonDir, panel.image)), `${expected.id} story image ${panel.image} should exist`);
+  }
+
+  const wordCardPages = worksheet.pages.filter((page) => page.type === "word-card");
+  if (expected.wordCards) {
+    assert.equal(wordCardPages.length, 1, `${expected.id} should include one first-letter word card page`);
+    assert.deepEqual(
+      wordCardPages[0].cards.map((card) => {
+        const normalized = {
+          word: card.word,
+          image: path.basename(card.image),
+        };
+        if (card.focus !== undefined) normalized.focus = card.focus;
+        if (card.rest !== undefined) normalized.rest = card.rest;
+        if (card.parts !== undefined) normalized.parts = card.parts;
+        return normalized;
+      }),
+      expected.wordCards.map((card) => ({ ...card, image: path.basename(card.image) })),
+      `${expected.id} word cards should use the planned first-letter vocabulary`
+    );
+    for (const card of wordCardPages[0].cards) {
+      assert.ok(existsSync(path.resolve(lessonDir, card.image)), `${expected.id} word card image ${card.image} should exist`);
+    }
+  } else {
+    assert.equal(wordCardPages.length, 0, `${expected.id} should not include word card pages yet`);
   }
 
   const activityPages = worksheet.pages.filter((page) => page.type === "vowel-activity");

@@ -253,6 +253,51 @@ function renderVowelActivityPage(page) {
     </section>`;
 }
 
+function renderWordCardText(card, page) {
+  if (Array.isArray(card.parts) && card.parts.length > 0) {
+    return card.parts
+      .map((part) => {
+        const className = part.focus ? "word-card-focus" : "word-card-rest";
+        return `<span class="${className}">${escapeHtml(part.text || "")}</span>`;
+      })
+      .join("");
+  }
+
+  return `<span class="word-card-focus">${escapeHtml(card.focus || page.focus || "")}</span><span class="word-card-rest">${escapeHtml(card.rest || "")}</span>`;
+}
+
+function renderWordCardPage(page) {
+  const cardItems = page.cards || [];
+  const gridClasses = ["word-card-grid"];
+  if (cardItems.length >= 7) gridClasses.push("word-card-grid-compact");
+  if (cardItems.length >= 10) gridClasses.push("word-card-grid-dense");
+  const gridClass = gridClasses.join(" ");
+  const cards = cardItems
+    .map((card) => {
+      const word = card.word || (Array.isArray(card.parts) ? card.parts.map((part) => part.text || "").join("") : `${card.focus || page.focus || ""}${card.rest || ""}`);
+      return `
+            <div class="word-card-tile"${attr("data-asset", card.image || word)}>
+              <div class="word-card-picture"><img src="${escapeHtml(card.image)}" alt="${escapeHtml(word)} 그림"></div>
+              <div class="word-card-word">${renderWordCardText(card, page)}</div>
+            </div>`;
+    })
+    .join("");
+
+  return `
+    <section class="sheet theme-${escapeHtml(page.theme)} word-card-sheet">
+      <div class="sheet-inner">
+        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
+        <h1>${escapeHtml(page.title)}</h1>
+        <div class="read-box">${escapeHtml(page.read)}</div>
+        <div class="activity-box word-card-activity">
+          <div class="activity-title">${escapeHtml(page.activityTitle)}</div>
+          <div class="${gridClass}">${cards}</div>
+        </div>
+        <div class="teacher-note">${escapeHtml(page.teacherNote)}</div>
+        ${pageFooter(page)}
+      </div>
+    </section>`;
+}
 function renderSoundChoicePage(page) {
   const choices = page.choices || [];
   const prompts = page.prompts || [];
@@ -302,6 +347,7 @@ export function renderWorksheetPage(page) {
   if (page.type === "sorting") return renderSortingPage(page);
   if (page.type === "story") return renderStoryPage(page);
   if (page.type === "vowel-activity") return renderVowelActivityPage(page);
+  if (page.type === "word-card") return renderWordCardPage(page);
   if (page.type === "sound-choice") return renderSoundChoicePage(page);
   throw new Error(`Unsupported worksheet page type: ${page.type}`);
 }

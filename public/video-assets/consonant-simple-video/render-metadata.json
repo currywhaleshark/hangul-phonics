@@ -1,0 +1,145 @@
+[
+  {
+    "frame": "frame-01.png",
+    "image": "ㄱ-gogo-cat.png",
+    "start": 0.296,
+    "end": 3.525,
+    "duration": 3.229,
+    "drawX": 574,
+    "drawY": 130,
+    "drawWidth": 772,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-02.png",
+    "image": "ㄴ-nana-butterfly.png",
+    "start": 3.525,
+    "end": 7.703,
+    "duration": 4.178,
+    "drawX": 599,
+    "drawY": 130,
+    "drawWidth": 722,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-03.png",
+    "image": "ㅁ-mimi-octopus.png",
+    "start": 7.703,
+    "end": 11.486,
+    "duration": 3.783,
+    "drawX": 529,
+    "drawY": 130,
+    "drawWidth": 862,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-04.png",
+    "image": "ㅂ-bubu-owl.png",
+    "start": 11.486,
+    "end": 15.262,
+    "duration": 3.776,
+    "drawX": 545,
+    "drawY": 130,
+    "drawWidth": 830,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-05.png",
+    "image": "ㄷ-dodo-acorn.png",
+    "start": 15.262,
+    "end": 18.901,
+    "duration": 3.639,
+    "drawX": 551,
+    "drawY": 130,
+    "drawWidth": 818,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-06.png",
+    "image": "ㄹ-rara-ribbon.png",
+    "start": 18.901,
+    "end": 22.559,
+    "duration": 3.658,
+    "drawX": 616,
+    "drawY": 130,
+    "drawWidth": 687,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-07.png",
+    "image": "ㅅ-sasa-deer.png",
+    "start": 22.559,
+    "end": 26.297,
+    "duration": 3.738,
+    "drawX": 584,
+    "drawY": 130,
+    "drawWidth": 751,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-08.png",
+    "image": "ㅎ-haha-hippo.png",
+    "start": 26.297,
+    "end": 29.962,
+    "duration": 3.665,
+    "drawX": 548,
+    "drawY": 130,
+    "drawWidth": 825,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-09.png",
+    "image": "ㅈ-jiji-worm.png",
+    "start": 29.962,
+    "end": 34.077,
+    "duration": 4.115,
+    "drawX": 588,
+    "drawY": 130,
+    "drawWidth": 744,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-10.png",
+    "image": "ㅊ-chichi-train.png",
+    "start": 34.077,
+    "end": 37.319,
+    "duration": 3.242,
+    "drawX": 672,
+    "drawY": 130,
+    "drawWidth": 576,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-11.png",
+    "image": "ㅋ-koko-koala.png",
+    "start": 37.319,
+    "end": 40.903,
+    "duration": 3.584,
+    "drawX": 649,
+    "drawY": 130,
+    "drawWidth": 622,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-12.png",
+    "image": "ㅌ-toto-rabbit.png",
+    "start": 40.903,
+    "end": 44.391,
+    "duration": 3.488,
+    "drawX": 648,
+    "drawY": 130,
+    "drawWidth": 624,
+    "drawHeight": 760
+  },
+  {
+    "frame": "frame-13.png",
+    "image": "ㅍ-pupu-balloon.png",
+    "start": 44.391,
+    "end": 47.6,
+    "duration": 3.209,
+    "drawX": 570,
+    "drawY": 130,
+    "drawWidth": 781,
+    "drawHeight": 760
+  }
+]

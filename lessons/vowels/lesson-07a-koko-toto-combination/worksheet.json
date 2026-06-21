@@ -158,6 +158,117 @@
       "footerRight": "토토 토끼와 토"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "카",
+      "title": "카/코/타/토가 들어가는 낱말",
+      "read": "카, 코, 타, 토가 들어 있는 생활 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "카드",
+          "focus": "카",
+          "rest": "드",
+          "image": "../../../worksheets/assets/word-ka-card.png"
+        },
+        {
+          "word": "카메라",
+          "focus": "카",
+          "rest": "메라",
+          "image": "../../../worksheets/assets/word-ka-camera.png"
+        },
+        {
+          "word": "카트",
+          "focus": "카",
+          "rest": "트",
+          "image": "../../../worksheets/assets/word-ka-cart.png"
+        },
+        {
+          "word": "코알라",
+          "focus": "코",
+          "rest": "알라",
+          "image": "../../../worksheets/assets/word-ko-koala.png"
+        },
+        {
+          "word": "코끼리",
+          "focus": "코",
+          "rest": "끼리",
+          "image": "../../../worksheets/assets/word-ko-elephant.png"
+        },
+        {
+          "word": "코뿔소",
+          "focus": "코",
+          "rest": "뿔소",
+          "image": "../../../worksheets/assets/word-ko-rhino.png"
+        },
+        {
+          "word": "타조",
+          "focus": "타",
+          "rest": "조",
+          "image": "../../../worksheets/assets/word-ta-ostrich.png"
+        },
+        {
+          "word": "치타",
+          "image": "../../../worksheets/assets/word-ta-cheetah.png",
+          "parts": [
+            {
+              "text": "치"
+            },
+            {
+              "text": "타",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "낙타",
+          "image": "../../../worksheets/assets/word-ta-camel.png",
+          "parts": [
+            {
+              "text": "낙"
+            },
+            {
+              "text": "타",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "토끼",
+          "focus": "토",
+          "rest": "끼",
+          "image": "../../../worksheets/assets/word-to-rabbit.png"
+        },
+        {
+          "word": "토마토",
+          "image": "../../../worksheets/assets/word-to-tomato.png",
+          "parts": [
+            {
+              "text": "토",
+              "focus": true
+            },
+            {
+              "text": "마"
+            },
+            {
+              "text": "토",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "토끼풀",
+          "focus": "토",
+          "rest": "끼풀",
+          "image": "../../../worksheets/assets/word-to-clover.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다. 토마토는 처음과 끝의 토를 함께 찾아본다.",
+      "footerLeft": "배운 글자 카/코/타/토",
+      "footerRight": "카/코/타/토 낱말카드",
+      "kicker": "6장 / 글자 낱말"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "마지막 / 소리 정리",

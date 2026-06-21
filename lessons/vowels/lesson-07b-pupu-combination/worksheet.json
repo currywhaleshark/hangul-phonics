@@ -86,6 +86,63 @@
       "footerRight": "푸푸 풍선와 포"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "파",
+      "title": "파/포가 들어가는 낱말",
+      "read": "파, 포가 들어 있는 생활 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "파란색",
+          "focus": "파",
+          "rest": "란색",
+          "image": "../../../worksheets/assets/word-pa-blue.png"
+        },
+        {
+          "word": "파이",
+          "focus": "파",
+          "rest": "이",
+          "image": "../../../worksheets/assets/word-pa-pie.png"
+        },
+        {
+          "word": "파인애플",
+          "focus": "파",
+          "rest": "인애플",
+          "image": "../../../worksheets/assets/word-pa-pineapple.png"
+        },
+        {
+          "word": "포도",
+          "focus": "포",
+          "rest": "도",
+          "image": "../../../worksheets/assets/word-po-grapes.png"
+        },
+        {
+          "word": "포크",
+          "focus": "포",
+          "rest": "크",
+          "image": "../../../worksheets/assets/word-po-fork.png"
+        },
+        {
+          "word": "폭포",
+          "image": "../../../worksheets/assets/word-po-waterfall.png",
+          "parts": [
+            {
+              "text": "폭"
+            },
+            {
+              "text": "포",
+              "focus": true
+            }
+          ]
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+      "footerLeft": "배운 글자 파/포",
+      "footerRight": "파/포 낱말카드",
+      "kicker": "4장 / 글자 낱말"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "마지막 / 소리 정리",

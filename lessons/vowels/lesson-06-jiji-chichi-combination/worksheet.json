@@ -158,6 +158,99 @@
       "footerRight": "치치 칙폭이와 초"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "자",
+      "title": "자/조/차/초가 들어가는 낱말",
+      "read": "자, 조, 차, 초가 들어 있는 생활 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "자전거",
+          "focus": "자",
+          "rest": "전거",
+          "image": "../../../worksheets/assets/word-ja-bicycle.png"
+        },
+        {
+          "word": "자석",
+          "focus": "자",
+          "rest": "석",
+          "image": "../../../worksheets/assets/word-ja-magnet.png"
+        },
+        {
+          "word": "자두",
+          "focus": "자",
+          "rest": "두",
+          "image": "../../../worksheets/assets/word-ja-plum.png"
+        },
+        {
+          "word": "조개",
+          "focus": "조",
+          "rest": "개",
+          "image": "../../../worksheets/assets/word-jo-shell.png"
+        },
+        {
+          "word": "조끼",
+          "focus": "조",
+          "rest": "끼",
+          "image": "../../../worksheets/assets/word-jo-vest.png"
+        },
+        {
+          "word": "조명",
+          "focus": "조",
+          "rest": "명",
+          "image": "../../../worksheets/assets/word-jo-light.png"
+        },
+        {
+          "word": "차",
+          "focus": "차",
+          "rest": "",
+          "image": "../../../worksheets/assets/word-cha-tea.png"
+        },
+        {
+          "word": "자동차",
+          "image": "../../../worksheets/assets/word-cha-car.png",
+          "parts": [
+            {
+              "text": "자동"
+            },
+            {
+              "text": "차",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "차례",
+          "focus": "차",
+          "rest": "례",
+          "image": "../../../worksheets/assets/word-cha-turn.png"
+        },
+        {
+          "word": "초콜릿",
+          "focus": "초",
+          "rest": "콜릿",
+          "image": "../../../worksheets/assets/word-cho-chocolate.png"
+        },
+        {
+          "word": "초승달",
+          "focus": "초",
+          "rest": "승달",
+          "image": "../../../worksheets/assets/word-cho-crescent-moon.png"
+        },
+        {
+          "word": "초록색",
+          "focus": "초",
+          "rest": "록색",
+          "image": "../../../worksheets/assets/word-cho-green.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+      "footerLeft": "배운 글자 자/조/차/초",
+      "footerRight": "자/조/차/초 낱말카드",
+      "kicker": "6장 / 글자 낱말"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "마지막 / 소리 정리",

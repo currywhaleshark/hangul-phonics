@@ -1,0 +1,128 @@
+{
+  "sourceAudio": "C:/Users/yurib/Downloads/speech (2).wav",
+  "duration": 47.600272,
+  "method": "line-level alignment from ffmpeg silencedetect cues and provided script order",
+  "notes": [
+    "Timings are intended for simple video cuts, not phoneme-level subtitle accuracy.",
+    "Line boundaries use the strongest post-line pause available; several internal syllable pauses are intentionally grouped inside each line."
+  ],
+  "lines": [
+    {
+      "letter": "ㄱ",
+      "character": "고고 고양이",
+      "sound": "그",
+      "text": "고고 고양이 그, 그, 그",
+      "image": "ㄱ-gogo-cat.png",
+      "start": 0.296,
+      "end": 3.525
+    },
+    {
+      "letter": "ㄴ",
+      "character": "나나 나비",
+      "sound": "느",
+      "text": "나나 나비 느, 느, 느",
+      "image": "ㄴ-nana-butterfly.png",
+      "start": 3.525,
+      "end": 7.703
+    },
+    {
+      "letter": "ㅁ",
+      "character": "미미 문어",
+      "sound": "므",
+      "text": "미미 문어 므, 므, 므",
+      "image": "ㅁ-mimi-octopus.png",
+      "start": 7.703,
+      "end": 11.486
+    },
+    {
+      "letter": "ㅂ",
+      "character": "부부 부엉이",
+      "sound": "브",
+      "text": "부부 부엉이 브, 브, 브",
+      "image": "ㅂ-bubu-owl.png",
+      "start": 11.486,
+      "end": 15.262
+    },
+    {
+      "letter": "ㄷ",
+      "character": "도도 도토리",
+      "sound": "드",
+      "text": "도도 도토리 드, 드, 드",
+      "image": "ㄷ-dodo-acorn.png",
+      "start": 15.262,
+      "end": 18.901
+    },
+    {
+      "letter": "ㄹ",
+      "character": "라라 리본",
+      "sound": "르",
+      "text": "라라 리본 르, 르, 르",
+      "image": "ㄹ-rara-ribbon.png",
+      "start": 18.901,
+      "end": 22.559
+    },
+    {
+      "letter": "ㅅ",
+      "character": "사사 사슴",
+      "sound": "스",
+      "text": "사사 사슴 스, 스, 스",
+      "image": "ㅅ-sasa-deer.png",
+      "start": 22.559,
+      "end": 26.297
+    },
+    {
+      "letter": "ㅎ",
+      "character": "하하 하마",
+      "sound": "흐",
+      "text": "하하 하마 흐, 흐, 흐",
+      "image": "ㅎ-haha-hippo.png",
+      "start": 26.297,
+      "end": 29.962
+    },
+    {
+      "letter": "ㅈ",
+      "character": "지지 지렁이",
+      "sound": "즈",
+      "text": "지지 지렁이 즈, 즈, 즈",
+      "image": "ㅈ-jiji-worm.png",
+      "start": 29.962,
+      "end": 34.077
+    },
+    {
+      "letter": "ㅊ",
+      "character": "치치 칙폭이",
+      "sound": "츠",
+      "text": "치치 칙폭이 츠, 츠, 츠",
+      "image": "ㅊ-chichi-train.png",
+      "start": 34.077,
+      "end": 37.319
+    },
+    {
+      "letter": "ㅋ",
+      "character": "코코 코알라",
+      "sound": "크",
+      "text": "코코 코알라 크, 크, 크",
+      "image": "ㅋ-koko-koala.png",
+      "start": 37.319,
+      "end": 40.903
+    },
+    {
+      "letter": "ㅌ",
+      "character": "토토 토끼",
+      "sound": "트",
+      "text": "토토 토끼 트, 트, 트",
+      "image": "ㅌ-toto-rabbit.png",
+      "start": 40.903,
+      "end": 44.391
+    },
+    {
+      "letter": "ㅍ",
+      "character": "푸푸 풍선",
+      "sound": "프",
+      "text": "푸푸 풍선 프, 프, 프",
+      "image": "ㅍ-pupu-balloon.png",
+      "start": 44.391,
+      "end": 47.600
+    }
+  ]
+}

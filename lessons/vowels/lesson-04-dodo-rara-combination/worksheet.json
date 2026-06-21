@@ -158,6 +158,92 @@
       "footerRight": "라라 리본와 로"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "다",
+      "title": "다/도/라/로가 들어가는 낱말",
+      "read": "다, 도, 라, 로가 들어 있는 생활 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "다람쥐",
+          "focus": "다",
+          "rest": "람쥐",
+          "image": "../../../worksheets/assets/word-da-squirrel.png"
+        },
+        {
+          "word": "다리미",
+          "focus": "다",
+          "rest": "리미",
+          "image": "../../../worksheets/assets/word-da-iron.png"
+        },
+        {
+          "word": "다리",
+          "focus": "다",
+          "rest": "리",
+          "image": "../../../worksheets/assets/word-da-leg.png"
+        },
+        {
+          "word": "도토리",
+          "focus": "도",
+          "rest": "토리",
+          "image": "../../../worksheets/assets/word-do-acorn.png"
+        },
+        {
+          "word": "도넛",
+          "focus": "도",
+          "rest": "넛",
+          "image": "../../../worksheets/assets/word-do-donut.png"
+        },
+        {
+          "word": "도깨비",
+          "focus": "도",
+          "rest": "깨비",
+          "image": "../../../worksheets/assets/word-do-dokkaebi.png"
+        },
+        {
+          "word": "라디오",
+          "focus": "라",
+          "rest": "디오",
+          "image": "../../../worksheets/assets/word-ra-radio.png"
+        },
+        {
+          "word": "라면",
+          "focus": "라",
+          "rest": "면",
+          "image": "../../../worksheets/assets/word-ra-ramen.png"
+        },
+        {
+          "word": "라켓",
+          "focus": "라",
+          "rest": "켓",
+          "image": "../../../worksheets/assets/word-ra-racket.png"
+        },
+        {
+          "word": "로봇",
+          "focus": "로",
+          "rest": "봇",
+          "image": "../../../worksheets/assets/word-ro-robot.png"
+        },
+        {
+          "word": "로켓",
+          "focus": "로",
+          "rest": "켓",
+          "image": "../../../worksheets/assets/word-ro-rocket.png"
+        },
+        {
+          "word": "로션",
+          "focus": "로",
+          "rest": "션",
+          "image": "../../../worksheets/assets/word-ro-lotion.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+      "footerLeft": "배운 글자 다/도/라/로",
+      "footerRight": "다/도/라/로 낱말카드",
+      "kicker": "6장 / 글자 낱말"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "마지막 / 소리 정리",

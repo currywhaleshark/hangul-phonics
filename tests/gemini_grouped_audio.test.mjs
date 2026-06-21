@@ -128,3 +128,34 @@ assert.deepEqual(
     { start: 10.383, end: 10.971 },
   ]
 );
+
+const splitWordSilences = [
+  { start: 0, end: 0.282, duration: 0.282 },
+  { start: 1.206, end: 2.844, duration: 1.638 },
+  { start: 3.269, end: 5.429, duration: 2.16 },
+  { start: 6.13, end: 8.263, duration: 2.133 },
+  { start: 9.017, end: 11.137, duration: 2.12 },
+  { start: 11.826, end: 13.889, duration: 2.063 },
+  { start: 14.636, end: 16.285, duration: 1.649 },
+  { start: 17.107, end: 19.03, duration: 1.924 },
+  { start: 19.503, end: 21.631, duration: 2.128 },
+  { start: 22.313, end: 24.253, duration: 1.94 },
+  { start: 24.45, end: 24.748, duration: 0.298 },
+  { start: 25.018, end: 25.52, duration: 0.502 },
+];
+
+assert.deepEqual(
+  planSegments({ silences: splitWordSilences, duration: 25.52, expectedCount: 10, minSegmentDuration: 0.18 }),
+  [
+    { start: 0.282, end: 1.206 },
+    { start: 2.844, end: 3.269 },
+    { start: 5.429, end: 6.13 },
+    { start: 8.263, end: 9.017 },
+    { start: 11.137, end: 11.826 },
+    { start: 13.889, end: 14.636 },
+    { start: 16.285, end: 17.107 },
+    { start: 19.03, end: 19.503 },
+    { start: 21.631, end: 22.313 },
+    { start: 24.253, end: 25.018 },
+  ]
+);

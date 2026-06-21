@@ -23,6 +23,7 @@ function activity({
   soundSteps: steps,
   teacherNote,
   footerRight,
+  wordCards,
 }) {
   return {
     title,
@@ -34,6 +35,7 @@ function activity({
     teacherNote,
     footerLeft: `${buildPieces[0]} + ${buildPieces[1]} = ${buildPieces[2]}`,
     footerRight,
+    wordCards,
   };
 }
 
@@ -61,6 +63,20 @@ function reviewPage({ sounds, builds, images = [], footerRight, kicker = "마지
   };
 }
 
+function wordCardPage({ focus, title, read, activityTitle, cards, teacherNote, footerLeft, footerRight }) {
+  return {
+    type: "word-card",
+    theme: "gogo",
+    focus,
+    title,
+    read,
+    activityTitle,
+    cards,
+    teacherNote,
+    footerLeft,
+    footerRight,
+  };
+}
 function combinationLesson({ folder, title, letters, storyTitle, storyRead, storyTeacherNote, footerRight, characters, storyPanels }) {
   const panels = storyPanels || characters.flatMap((character) =>
     character.combos.map((combo) => ({
@@ -87,6 +103,7 @@ function combinationLesson({ folder, title, letters, storyTitle, storyRead, stor
         ),
         teacherNote: `${character.teacherNoteStem} ${combo.teacherNoteTail}`,
         footerRight: `${character.fullName}와 ${combo.result}`,
+        wordCards: combo.wordCards,
       })
     )
   );
@@ -333,6 +350,26 @@ const lessons = [
         ],
         teacherNote: "큰 글자 우를 손가락으로 따라간 뒤, ㅇ 아래에 ㅜ를 붙여 우를 만든다.",
         footerRight: "아아 아기와 우",
+        wordCards: {
+          focus: "아",
+          title: "아/오/우가 들어가는 낱말",
+          read: "아, 오, 우가 들어 있는 생활 낱말을 그림으로 만나요.",
+          activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+          cards: [
+            { word: "아기", focus: "아", rest: "기", image: "../../../worksheets/assets/baby.png" },
+            { word: "아침", focus: "아", rest: "침", image: "../../../worksheets/assets/morning.png" },
+            { word: "아이스크림", focus: "아", rest: "이스크림", image: "../../../worksheets/assets/ice-cream.png" },
+            { word: "오이", focus: "오", rest: "이", image: "../../../worksheets/assets/cucumber.png" },
+            { word: "오리", focus: "오", rest: "리", image: "../../../worksheets/assets/duck.png" },
+            { word: "오랑우탄", focus: "오", rest: "랑우탄", image: "../../../worksheets/assets/orangutan.png" },
+            { word: "우산", focus: "우", rest: "산", image: "../../../worksheets/assets/umbrella.png" },
+            { word: "우유", focus: "우", rest: "유", image: "../../../worksheets/assets/milk.png" },
+            { word: "우물", focus: "우", rest: "물", image: "../../../worksheets/assets/well.png" },
+          ],
+          teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+          footerLeft: "배운 글자 아/오/우",
+          footerRight: "아/오/우 낱말카드",
+        },
       }),
     ],
     review: {
@@ -402,6 +439,29 @@ const lessons = [
         soundSteps: soundSteps("나나의", "ㄴ", "느!", "오오 상자", "ㅗ", "오!", "노"),
         teacherNote: "나무의 ㄴ 모양을 유지하고, 아래의 ㅗ 상자를 붙여 노를 만든다.",
         footerRight: "나나 나비와 노",
+        wordCards: {
+          focus: "가",
+          title: "가/고/나/노가 들어가는 낱말",
+          read: "가, 고, 나, 노가 들어 있는 생활 낱말을 그림으로 만나요.",
+          activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+          cards: [
+            { word: "가방", focus: "가", rest: "방", image: "../../../worksheets/assets/word-ga-bag.png" },
+            { word: "가지", focus: "가", rest: "지", image: "../../../worksheets/assets/word-ga-eggplant.png" },
+            { word: "가위", focus: "가", rest: "위", image: "../../../worksheets/assets/word-ga-scissors.png" },
+            { word: "고양이", focus: "고", rest: "양이", image: "../../../worksheets/assets/word-go-cat.png" },
+            { word: "고구마", focus: "고", rest: "구마", image: "../../../worksheets/assets/word-go-sweet-potato.png" },
+            { word: "고래", focus: "고", rest: "래", image: "../../../worksheets/assets/word-go-whale.png" },
+            { word: "나비", focus: "나", rest: "비", image: "../../../worksheets/assets/word-na-butterfly.png" },
+            { word: "나무", focus: "나", rest: "무", image: "../../../worksheets/assets/word-na-tree.png" },
+            { word: "나사", focus: "나", rest: "사", image: "../../../worksheets/assets/word-na-screw.png" },
+            { word: "노란색", focus: "노", rest: "란색", image: "../../../worksheets/assets/word-no-yellow.png" },
+            { word: "노래", focus: "노", rest: "래", image: "../../../worksheets/assets/word-no-song.png" },
+            { word: "노트", focus: "노", rest: "트", image: "../../../worksheets/assets/word-no-note.png" },
+          ],
+          teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+          footerLeft: "배운 글자 가/고/나/노",
+          footerRight: "가/고/나/노 낱말카드",
+        },
       }),
     ],
     review: {
@@ -472,6 +532,29 @@ const lessons = [
         soundSteps: soundSteps("부부의", "ㅂ", "브!", "오오 상자", "ㅗ", "오!", "보"),
         teacherNote: "부부 몸의 ㅂ 모양을 유지하고, 아래의 ㅗ 상자를 붙여 보를 만든다.",
         footerRight: "부부 부엉이와 보",
+        wordCards: {
+          focus: "마",
+          title: "마/모/바/보가 들어가는 낱말",
+          read: "마, 모, 바, 보가 들어 있는 생활 낱말을 그림으로 만나요.",
+          activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+          cards: [
+            { word: "마늘", focus: "마", rest: "늘", image: "../../../worksheets/assets/word-ma-garlic.png" },
+            { word: "마술사", focus: "마", rest: "술사", image: "../../../worksheets/assets/word-ma-magician.png" },
+            { word: "마스크", focus: "마", rest: "스크", image: "../../../worksheets/assets/word-ma-mask.png" },
+            { word: "모자", focus: "모", rest: "자", image: "../../../worksheets/assets/word-mo-hat.png" },
+            { word: "모래", focus: "모", rest: "래", image: "../../../worksheets/assets/word-mo-sand.png" },
+            { word: "모기", focus: "모", rest: "기", image: "../../../worksheets/assets/word-mo-mosquito.png" },
+            { word: "바다", focus: "바", rest: "다", image: "../../../worksheets/assets/word-ba-sea.png" },
+            { word: "바퀴", focus: "바", rest: "퀴", image: "../../../worksheets/assets/word-ba-wheel.png" },
+            { word: "바나나", focus: "바", rest: "나나", image: "../../../worksheets/assets/word-ba-banana.png" },
+            { word: "보라색", focus: "보", rest: "라색", image: "../../../worksheets/assets/word-bo-purple.png" },
+            { word: "보름달", focus: "보", rest: "름달", image: "../../../worksheets/assets/word-bo-full-moon.png" },
+            { word: "보물상자", focus: "보", rest: "물상자", image: "../../../worksheets/assets/word-bo-treasure-chest.png" },
+          ],
+          teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+          footerLeft: "배운 글자 마/모/바/보",
+          footerRight: "마/모/바/보 낱말카드",
+        },
       }),
     ],
     review: {
@@ -541,6 +624,29 @@ const lessons = [
             result: "로",
             heroImage: "../../../public/라라 로 새시안.png",
             teacherNoteTail: "아래의 ㅗ 상자를 붙여 로를 읽는다.",
+            wordCards: {
+              focus: "다",
+              title: "다/도/라/로가 들어가는 낱말",
+              read: "다, 도, 라, 로가 들어 있는 생활 낱말을 그림으로 만나요.",
+              activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+              cards: [
+                { word: "다람쥐", focus: "다", rest: "람쥐", image: "../../../worksheets/assets/word-da-squirrel.png" },
+                { word: "다리미", focus: "다", rest: "리미", image: "../../../worksheets/assets/word-da-iron.png" },
+                { word: "다리", focus: "다", rest: "리", image: "../../../worksheets/assets/word-da-leg.png" },
+                { word: "도토리", focus: "도", rest: "토리", image: "../../../worksheets/assets/word-do-acorn.png" },
+                { word: "도넛", focus: "도", rest: "넛", image: "../../../worksheets/assets/word-do-donut.png" },
+                { word: "도깨비", focus: "도", rest: "깨비", image: "../../../worksheets/assets/word-do-dokkaebi.png" },
+                { word: "라디오", focus: "라", rest: "디오", image: "../../../worksheets/assets/word-ra-radio.png" },
+                { word: "라면", focus: "라", rest: "면", image: "../../../worksheets/assets/word-ra-ramen.png" },
+                { word: "라켓", focus: "라", rest: "켓", image: "../../../worksheets/assets/word-ra-racket.png" },
+                { word: "로봇", focus: "로", rest: "봇", image: "../../../worksheets/assets/word-ro-robot.png" },
+                { word: "로켓", focus: "로", rest: "켓", image: "../../../worksheets/assets/word-ro-rocket.png" },
+                { word: "로션", focus: "로", rest: "션", image: "../../../worksheets/assets/word-ro-lotion.png" },
+              ],
+              teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+              footerLeft: "배운 글자 다/도/라/로",
+              footerRight: "다/도/라/로 낱말카드",
+            },
           },
         ],
       },
@@ -602,6 +708,29 @@ const lessons = [
             result: "호",
             heroImage: "../../../public/하하 호 새시안.png",
             teacherNoteTail: "아래의 ㅗ 상자를 붙여 호를 읽는다.",
+            wordCards: {
+              focus: "사",
+              title: "사/소/하/호가 들어가는 낱말",
+              read: "사, 소, 하, 호가 들어 있는 생활 낱말을 그림으로 만나요.",
+              activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+              cards: [
+                { word: "사슴", focus: "사", rest: "슴", image: "../../../worksheets/assets/word-sa-deer.png" },
+                { word: "사다리", focus: "사", rest: "다리", image: "../../../worksheets/assets/word-sa-ladder.png" },
+                { word: "사탕", focus: "사", rest: "탕", image: "../../../worksheets/assets/word-sa-candy.png" },
+                { word: "소금", focus: "소", rest: "금", image: "../../../worksheets/assets/word-so-salt.png" },
+                { word: "소", focus: "소", rest: "", image: "../../../worksheets/assets/word-so-cow.png" },
+                { word: "소리", focus: "소", rest: "리", image: "../../../worksheets/assets/word-so-sound.png" },
+                { word: "하마", focus: "하", rest: "마", image: "../../../worksheets/assets/word-ha-hippo.png" },
+                { word: "하늘", focus: "하", rest: "늘", image: "../../../worksheets/assets/word-ha-sky.png" },
+                { word: "하얀색", focus: "하", rest: "얀색", image: "../../../worksheets/assets/word-ha-white.png" },
+                { word: "호랑이", focus: "호", rest: "랑이", image: "../../../worksheets/assets/word-ho-tiger.png" },
+                { word: "호박", focus: "호", rest: "박", image: "../../../worksheets/assets/word-ho-pumpkin.png" },
+                { word: "호두", focus: "호", rest: "두", image: "../../../worksheets/assets/word-ho-walnut.png" },
+              ],
+              teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+              footerLeft: "배운 글자 사/소/하/호",
+              footerRight: "사/소/하/호 낱말카드",
+            },
           },
         ],
       },
@@ -663,6 +792,36 @@ const lessons = [
             result: "초",
             heroImage: "../../../public/치치 초 새시안.png",
             teacherNoteTail: "아래의 ㅗ 상자를 붙여 초를 읽는다.",
+            wordCards: {
+              focus: "자",
+              title: "자/조/차/초가 들어가는 낱말",
+              read: "자, 조, 차, 초가 들어 있는 생활 낱말을 그림으로 만나요.",
+              activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+              cards: [
+                { word: "자전거", focus: "자", rest: "전거", image: "../../../worksheets/assets/word-ja-bicycle.png" },
+                { word: "자석", focus: "자", rest: "석", image: "../../../worksheets/assets/word-ja-magnet.png" },
+                { word: "자두", focus: "자", rest: "두", image: "../../../worksheets/assets/word-ja-plum.png" },
+                { word: "조개", focus: "조", rest: "개", image: "../../../worksheets/assets/word-jo-shell.png" },
+                { word: "조끼", focus: "조", rest: "끼", image: "../../../worksheets/assets/word-jo-vest.png" },
+                { word: "조명", focus: "조", rest: "명", image: "../../../worksheets/assets/word-jo-light.png" },
+                { word: "차", focus: "차", rest: "", image: "../../../worksheets/assets/word-cha-tea.png" },
+                {
+                  word: "자동차",
+                  image: "../../../worksheets/assets/word-cha-car.png",
+                  parts: [
+                    { text: "자동" },
+                    { text: "차", focus: true },
+                  ],
+                },
+                { word: "차례", focus: "차", rest: "례", image: "../../../worksheets/assets/word-cha-turn.png" },
+                { word: "초콜릿", focus: "초", rest: "콜릿", image: "../../../worksheets/assets/word-cho-chocolate.png" },
+                { word: "초승달", focus: "초", rest: "승달", image: "../../../worksheets/assets/word-cho-crescent-moon.png" },
+                { word: "초록색", focus: "초", rest: "록색", image: "../../../worksheets/assets/word-cho-green.png" },
+              ],
+              teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+              footerLeft: "배운 글자 자/조/차/초",
+              footerRight: "자/조/차/초 낱말카드",
+            },
           },
         ],
       },
@@ -724,6 +883,51 @@ const lessons = [
             result: "토",
             heroImage: "../../../public/토토 토 새시안.png",
             teacherNoteTail: "아래의 ㅗ 상자를 붙여 토를 읽는다.",
+            wordCards: {
+              focus: "카",
+              title: "카/코/타/토가 들어가는 낱말",
+              read: "카, 코, 타, 토가 들어 있는 생활 낱말을 그림으로 만나요.",
+              activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+              cards: [
+                { word: "카드", focus: "카", rest: "드", image: "../../../worksheets/assets/word-ka-card.png" },
+                { word: "카메라", focus: "카", rest: "메라", image: "../../../worksheets/assets/word-ka-camera.png" },
+                { word: "카트", focus: "카", rest: "트", image: "../../../worksheets/assets/word-ka-cart.png" },
+                { word: "코알라", focus: "코", rest: "알라", image: "../../../worksheets/assets/word-ko-koala.png" },
+                { word: "코끼리", focus: "코", rest: "끼리", image: "../../../worksheets/assets/word-ko-elephant.png" },
+                { word: "코뿔소", focus: "코", rest: "뿔소", image: "../../../worksheets/assets/word-ko-rhino.png" },
+                { word: "타조", focus: "타", rest: "조", image: "../../../worksheets/assets/word-ta-ostrich.png" },
+                {
+                  word: "치타",
+                  image: "../../../worksheets/assets/word-ta-cheetah.png",
+                  parts: [
+                    { text: "치" },
+                    { text: "타", focus: true },
+                  ],
+                },
+                {
+                  word: "낙타",
+                  image: "../../../worksheets/assets/word-ta-camel.png",
+                  parts: [
+                    { text: "낙" },
+                    { text: "타", focus: true },
+                  ],
+                },
+                { word: "토끼", focus: "토", rest: "끼", image: "../../../worksheets/assets/word-to-rabbit.png" },
+                {
+                  word: "토마토",
+                  image: "../../../worksheets/assets/word-to-tomato.png",
+                  parts: [
+                    { text: "토", focus: true },
+                    { text: "마" },
+                    { text: "토", focus: true },
+                  ],
+                },
+                { word: "토끼풀", focus: "토", rest: "끼풀", image: "../../../worksheets/assets/word-to-clover.png" },
+              ],
+              teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다. 토마토는 처음과 끝의 토를 함께 찾아본다.",
+              footerLeft: "배운 글자 카/코/타/토",
+              footerRight: "카/코/타/토 낱말카드",
+            },
           },
         ],
       },
@@ -760,6 +964,30 @@ const lessons = [
             result: "포",
             heroImage: "../../../public/푸푸 포 새시안.png",
             teacherNoteTail: "아래의 ㅗ 상자를 붙여 포를 읽는다.",
+            wordCards: {
+              focus: "파",
+              title: "파/포가 들어가는 낱말",
+              read: "파, 포가 들어 있는 생활 낱말을 그림으로 만나요.",
+              activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+              cards: [
+                { word: "파란색", focus: "파", rest: "란색", image: "../../../worksheets/assets/word-pa-blue.png" },
+                { word: "파이", focus: "파", rest: "이", image: "../../../worksheets/assets/word-pa-pie.png" },
+                { word: "파인애플", focus: "파", rest: "인애플", image: "../../../worksheets/assets/word-pa-pineapple.png" },
+                { word: "포도", focus: "포", rest: "도", image: "../../../worksheets/assets/word-po-grapes.png" },
+                { word: "포크", focus: "포", rest: "크", image: "../../../worksheets/assets/word-po-fork.png" },
+                {
+                  word: "폭포",
+                  image: "../../../worksheets/assets/word-po-waterfall.png",
+                  parts: [
+                    { text: "폭" },
+                    { text: "포", focus: true },
+                  ],
+                },
+              ],
+              teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 글자만 찾아본다.",
+              footerLeft: "배운 글자 파/포",
+              footerRight: "파/포 낱말카드",
+            },
           },
         ],
       },
@@ -781,6 +1009,35 @@ function worksheetForLesson(lesson) {
       : `소리 정리 ${index + 1}/${reviewChunks.length}`,
   }));
 
+  const activityPages = [];
+  let pageNumber = 2;
+  for (const item of lesson.activities) {
+    activityPages.push({
+      type: "vowel-activity",
+      theme: "gogo",
+      kicker: `${pageNumber}장 / 소리 활동`,
+      title: item.title,
+      read: item.read,
+      heroImage: item.heroImage,
+      traceLetter: item.traceLetter,
+      activityTitle: item.activityTitle || "보고 따라 그리고 붙여서 만들어요",
+      buildPieces: item.buildPieces,
+      soundSteps: item.soundSteps,
+      teacherNote: item.teacherNote,
+      footerLeft: item.footerLeft,
+      footerRight: item.footerRight,
+    });
+    pageNumber += 1;
+
+    if (item.wordCards) {
+      activityPages.push({
+        ...wordCardPage(item.wordCards),
+        kicker: `${pageNumber}장 / 글자 낱말`,
+      });
+      pageNumber += 1;
+    }
+  }
+
   return {
     title: lesson.title,
     pages: [
@@ -795,21 +1052,7 @@ function worksheetForLesson(lesson) {
         footerLeft: lesson.story.footerLeft,
         footerRight: lesson.story.footerRight,
       },
-      ...lesson.activities.map((item, index) => ({
-        type: "vowel-activity",
-        theme: "gogo",
-        kicker: `${index + 2}장 / 소리 활동`,
-        title: item.title,
-        read: item.read,
-        heroImage: item.heroImage,
-        traceLetter: item.traceLetter,
-        activityTitle: item.activityTitle || "보고 따라 그리고 붙여서 만들어요",
-        buildPieces: item.buildPieces,
-        soundSteps: item.soundSteps,
-        teacherNote: item.teacherNote,
-        footerLeft: item.footerLeft,
-        footerRight: item.footerRight,
-      })),
+      ...activityPages,
       ...reviewPages,
     ],
   };

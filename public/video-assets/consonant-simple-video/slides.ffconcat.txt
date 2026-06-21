@@ -1,0 +1,27 @@
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-01.png'
+duration 3.229
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-02.png'
+duration 4.178
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-03.png'
+duration 3.783
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-04.png'
+duration 3.776
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-05.png'
+duration 3.639
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-06.png'
+duration 3.658
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-07.png'
+duration 3.738
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-08.png'
+duration 3.665
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-09.png'
+duration 4.115
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-10.png'
+duration 3.242
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-11.png'
+duration 3.584
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-12.png'
+duration 3.488
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-13.png'
+duration 3.209
+file 'C:/Users/yurib/Documents/New project/hangul phonics/public/video-assets/consonant-simple-video/frames/frame-13.png'

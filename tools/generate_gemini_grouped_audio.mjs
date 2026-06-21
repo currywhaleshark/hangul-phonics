@@ -282,6 +282,26 @@ export function planSegments({ silences, duration, expectedCount, minSegmentDura
     segments.push({ start: roundTime(speechStart), end: roundTime(duration) });
   }
 
+  while (segments.length > expectedCount) {
+    let closestGapIndex = -1;
+    let closestGap = Infinity;
+
+    for (let index = 0; index < segments.length - 1; index += 1) {
+      const gap = segments[index + 1].start - segments[index].end;
+      if (gap < closestGap) {
+        closestGap = gap;
+        closestGapIndex = index;
+      }
+    }
+
+    if (closestGapIndex === -1 || closestGap > 0.45) break;
+
+    segments.splice(closestGapIndex, 2, {
+      start: segments[closestGapIndex].start,
+      end: segments[closestGapIndex + 1].end,
+    });
+  }
+
   if (segments.length !== expectedCount) {
     throw new Error(`Expected ${expectedCount} audio segments, detected ${segments.length}`);
   }

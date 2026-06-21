@@ -30,6 +30,36 @@ assert.match(
   "sorting game should use the filtered lesson list"
 );
 
+assert.match(
+  sortingGame,
+  /WORD_AUDIO_BASE_PATH\s*=\s*'\/audio-gemini-candidates\/consonant-words-gemini31'/,
+  "sorting game should use the Gemini 3.1 consonant word audio candidates"
+);
+assert.match(
+  sortingGame,
+  /lesson-06b-koko-toto-pupu-sounds[\s\S]*lesson-06-koko-toto-pupu/,
+  "sorting game should map playable lesson 6-B to the lesson 6 word-audio prefix"
+);
+assert.match(
+  sortingGame,
+  /function buildConsonantWordAudioPath\(lessonId,\s*word\)/,
+  "sorting game should build a word audio path from the lesson id and card label"
+);
+assert.match(
+  sortingGame,
+  /wordAudio:\s*buildConsonantWordAudioPath\(currentLesson\.id,\s*tile\.label\)/,
+  "sorting cards should carry their matching word audio path"
+);
+assert.match(
+  sortingGame,
+  /function playCardWordAudio\(cardData\)/,
+  "sorting game should have a dedicated card word audio player"
+);
+assert.match(
+  sortingGame,
+  /playCardWordAudio\(cardData\);/,
+  "sorting game should play word audio when the card is picked up"
+);
 assert.doesNotMatch(vowelGame, /lesson-07a/, "vowel game should not expose lesson 7-A as a separate choice");
 assert.doesNotMatch(vowelGame, /lesson-07b/, "vowel game should not expose lesson 7-B as a separate choice");
 assert.doesNotMatch(vowelGame, /short:\s*'7-A'/, "vowel game should not render a 7-A button");
