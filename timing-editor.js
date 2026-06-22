@@ -1,12 +1,16 @@
 import {
-  DEFAULT_GOGO_TIMING_FILE,
-  GOGO_TIMING_STORAGE_KEY,
+  CONSONANT_TIMING_PROJECTS,
+  DEFAULT_TIMING_PROJECT_ID,
+  MIN_CUE_LENGTH,
   clampTime,
-  createDefaultGogoTimingProject,
+  createDefaultTimingProject,
   formatClockTime,
   getCueAtTime,
+  getTimingExportFileName,
+  getTimingStorageKey,
   nudgeCueStart,
   parseTimingProject,
+  removeCue,
   serializeTimingProject,
   setCueEnd,
   setCuePosition,
@@ -14,7 +18,8 @@ import {
   sortCues,
 } from "./tools/timing-editor-core.js";
 
-const SUPPLIED_AUDIO_PATH = "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav";
+const FALLBACK_AUDIO_PATH = "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav";
+const SELECTED_PROJECT_STORAGE_KEY = "hangul-phonics:timing:selected-project";
 const FINE_NUDGE = 0.03;
 const NORMAL_NUDGE = 0.1;
 const LARGE_NUDGE = 1;
@@ -61,8 +66,17 @@ const importFileInput = document.querySelector("#import-file");
 const resetProjectButton = document.querySelector("#reset-project");
 const segmentStartButton = document.querySelector("#segment-start");
 const segmentEndButton = document.querySelector("#segment-end");
+const projectSelector = document.querySelector("#project-selector");
+const projectEyebrow = document.querySelector("#project-eyebrow");
+const projectTitle = document.querySelector("#project-title");
+const stageBackground = document.querySelector("#stage-background");
+const mascotImage = document.querySelector("#mascot-image");
+const letterBadge = document.querySelector("#letter-badge");
+const letterSection = document.querySelector("#letter-section");
+const letterSectionEyebrow = document.querySelector("#letter-section-eyebrow");
 
-let project = loadStoredProject();
+populateProjectSelector();
+let project = loadStoredProject(projectSelector.value);
 let selectedCueKind = "word";
 let selectedCueId = project.cues[0]?.id ?? project.letterCues[0]?.id ?? null;
 let lastLiveCueKey = null;
@@ -71,25 +85,59 @@ let dragState = null;
 applyAudioSource();
 renderAll();
 
-function loadStoredProject() {
-  const stored = window.localStorage.getItem(GOGO_TIMING_STORAGE_KEY);
+function populateProjectSelector() {
+  const storedProjectId = window.localStorage.getItem(SELECTED_PROJECT_STORAGE_KEY) || DEFAULT_TIMING_PROJECT_ID;
+  projectSelector.innerHTML = "";
+
+  CONSONANT_TIMING_PROJECTS.forEach((definition) => {
+    const option = document.createElement("option");
+    option.value = definition.id;
+    option.textContent = `${definition.character.letter} ${definition.character.name}`;
+    projectSelector.append(option);
+  });
+
+  const hasStoredProject = CONSONANT_TIMING_PROJECTS.some((definition) => definition.id === storedProjectId);
+  projectSelector.value = hasStoredProject ? storedProjectId : DEFAULT_TIMING_PROJECT_ID;
+}
+
+function loadStoredProject(projectId) {
+  const stored = window.localStorage.getItem(getTimingStorageKey(projectId));
   if (!stored) {
-    return createDefaultGogoTimingProject();
+    return createDefaultTimingProject(projectId);
   }
 
   try {
     const parsed = parseTimingProject(stored);
-    window.localStorage.setItem(GOGO_TIMING_STORAGE_KEY, serializeTimingProject(parsed));
+    window.localStorage.setItem(getTimingStorageKey(parsed), serializeTimingProject(parsed));
     return parsed;
   } catch (error) {
     console.warn(error);
-    return createDefaultGogoTimingProject();
+    return createDefaultTimingProject(projectId);
   }
+}
+
+function resetSelectedCue() {
+  selectedCueKind = "word";
+  selectedCueId = project.cues[0]?.id ?? project.letterCues[0]?.id ?? null;
+  lastLiveCueKey = null;
+}
+
+function switchProject(projectId) {
+  if (project?.id === projectId) {
+    return;
+  }
+
+  audio.pause();
+  project = loadStoredProject(projectId);
+  resetSelectedCue();
+  applyAudioSource();
+  renderAll();
+  setStatus(`${project.character.name} 불러옴`);
 }
 
 function applyAudioSource() {
   if (!project.audio?.src) {
-    project.audio = { ...project.audio, src: SUPPLIED_AUDIO_PATH };
+    project.audio = { ...project.audio, src: FALLBACK_AUDIO_PATH };
   }
 
   audio.src = new URL(project.audio.src, window.location.href).href;
@@ -98,13 +146,32 @@ function applyAudioSource() {
 }
 
 function saveProject() {
-  window.localStorage.setItem(GOGO_TIMING_STORAGE_KEY, serializeTimingProject(project));
+  window.localStorage.setItem(getTimingStorageKey(project), serializeTimingProject(project));
+  window.localStorage.setItem(SELECTED_PROJECT_STORAGE_KEY, project.id ?? DEFAULT_TIMING_PROJECT_ID);
 }
 
 function renderAll() {
+  renderProjectChrome();
   renderCueList();
   renderTimeline();
   updatePlaybackVisuals();
+}
+
+function renderProjectChrome() {
+  const character = project.character ?? {};
+  const letter = character.letter ?? "";
+  projectSelector.value = project.id ?? DEFAULT_TIMING_PROJECT_ID;
+  projectEyebrow.textContent = `${project.lessonId ?? "레슨"} · ${letter}`;
+  projectTitle.textContent = `${character.name ?? project.title} 카드 타이밍`;
+  document.title = `${character.name ?? "자음"} ${letter} 카드 타이밍 편집기`;
+  segmentStartButton.textContent = `${character.name ?? "구간"} 시작 찍기`;
+  segmentEndButton.textContent = `${character.name ?? "구간"} 끝 찍기`;
+  stageBackground.src = resolveAssetPath(project.render?.background ?? "public/video-assets/consonant-lesson-samples/gogo-g-background.png");
+  mascotImage.src = resolveAssetPath(character.image ?? "public/video-assets/characters/consonants/ㄱ-gogo-cat.png");
+  mascotImage.alt = character.name ?? "자음 캐릭터";
+  letterBadge.textContent = letter;
+  letterSection.setAttribute("aria-label", `${letter} 소리 팝업 타이밍`);
+  letterSectionEyebrow.textContent = `${letter} 소리`;
 }
 
 function renderCueList() {
@@ -133,6 +200,9 @@ function renderCueRow(cue, index, kind) {
   const visual = isLetter
     ? `<span class="letter-thumb" aria-hidden="true">${escapeHtml(cue.label)}</span>`
     : `<img src="${escapeHtml(resolveAssetPath(cue.image))}" alt="">`;
+  const removeButton = isLetter
+    ? ""
+    : `<button class="mini-button remove-card" type="button" data-action="remove" title="사용하지 않는 카드 빼기">빼기</button>`;
 
   row.innerHTML = `
     <button class="cue-select${isLetter ? " letter-select" : ""}" type="button" data-action="select">
@@ -142,6 +212,7 @@ function renderCueRow(cue, index, kind) {
     </button>
     <div class="cue-controls">
       <button class="mini-button" type="button" data-action="jump" title="이 큐 시작으로 이동">▶</button>
+      ${removeButton}
       <button class="mini-button" type="button" data-nudge="-${LARGE_NUDGE}" title="시작 -1초">-1</button>
       <button class="mini-button" type="button" data-nudge="-${NORMAL_NUDGE}" title="시작 -0.1초">-0.1</button>
       <button class="mini-button" type="button" data-nudge="-${FINE_NUDGE}" title="시작 -0.03초">-0.03</button>
@@ -343,9 +414,9 @@ function isSelectedCue(kind, cueId) {
 }
 
 function getCueSlot(cue) {
-  const fallback = CARD_SLOTS[cue.id] ?? { left: 50, top: 50, accent: "#087f8c" };
+  const fallback = CARD_SLOTS[cue.id] ?? { left: 50, top: 50, accent: cue.accent ?? "#087f8c" };
   const position = cue.position ?? fallback;
-  return { ...fallback, left: position.left, top: position.top };
+  return { ...fallback, left: position.left, top: position.top, accent: cue.accent ?? fallback.accent };
 }
 
 function getLetterSlot(cue) {
@@ -371,6 +442,33 @@ function selectCue(cueId, kind = "word") {
 function setAudioTime(time) {
   audio.currentTime = clampTime(time, 0, getAudioDuration());
   updatePlaybackVisuals();
+}
+
+function setSegmentBoundary(boundary) {
+  const duration = getAudioDuration();
+  const currentSegment = project.segment ?? { label: project.character?.name ?? "구간", start: 0, end: duration };
+  let nextStart = Number.isFinite(currentSegment.start) ? currentSegment.start : 0;
+  let nextEnd = Number.isFinite(currentSegment.end) ? currentSegment.end : duration;
+
+  if (boundary === "start") {
+    nextStart = clampTime(getCurrentTime(), 0, Math.max(0, nextEnd - MIN_CUE_LENGTH));
+  } else {
+    nextEnd = clampTime(getCurrentTime(), nextStart + MIN_CUE_LENGTH, duration);
+  }
+
+  project = {
+    ...project,
+    segment: {
+      ...currentSegment,
+      start: nextStart,
+      end: nextEnd,
+    },
+  };
+  saveProject();
+  renderAll();
+  const label = boundary === "start" ? "시작" : "끝";
+  const value = boundary === "start" ? nextStart : nextEnd;
+  setStatus(`${currentSegment.label} 구간 ${label} ${formatClockTime(value)}`);
 }
 
 function setCueStartNow(cueId = selectedCueId, kind = selectedCueKind) {
@@ -445,7 +543,7 @@ function exportProject() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = DEFAULT_GOGO_TIMING_FILE;
+  link.download = getTimingExportFileName(project);
   link.click();
   URL.revokeObjectURL(url);
   setStatus("JSON 저장됨");
@@ -458,9 +556,7 @@ async function importProject(file) {
 
   try {
     project = parseTimingProject(await file.text());
-    selectedCueKind = "word";
-    selectedCueId = project.cues[0]?.id ?? project.letterCues[0]?.id ?? null;
-    lastLiveCueKey = null;
+    resetSelectedCue();
     saveProject();
     applyAudioSource();
     renderAll();
@@ -473,11 +569,26 @@ async function importProject(file) {
   }
 }
 
+function removeWordCue(cueId) {
+  const cue = project.cues.find((item) => item.id === cueId);
+  if (!cue) {
+    return;
+  }
+
+  if (project.cues.length <= 1) {
+    setStatus("단어카드는 하나 이상 필요");
+    return;
+  }
+
+  project = removeCue(project, cue.id);
+  resetSelectedCue();
+  saveProject();
+  renderAll();
+  setStatus(`${cue.label} 카드 뺌`);
+}
 function resetProject() {
-  project = createDefaultGogoTimingProject();
-  selectedCueKind = "word";
-  selectedCueId = project.cues[0]?.id ?? project.letterCues[0]?.id ?? null;
-  lastLiveCueKey = null;
+  project = createDefaultTimingProject(project.id ?? projectSelector.value);
+  resetSelectedCue();
   saveProject();
   applyAudioSource();
   renderAll();
@@ -641,11 +752,11 @@ seekSlider.addEventListener("input", () => {
 });
 
 segmentStartButton.addEventListener("click", () => {
-  setAudioTime(project.segment.start);
+  setSegmentBoundary("start");
 });
 
 segmentEndButton.addEventListener("click", () => {
-  setAudioTime(project.segment.end);
+  setSegmentBoundary("end");
 });
 
 setSelectedNowButton.addEventListener("click", () => {
@@ -663,6 +774,10 @@ importFileInput.addEventListener("change", () => {
 });
 
 resetProjectButton.addEventListener("click", resetProject);
+
+projectSelector.addEventListener("change", () => {
+  switchProject(projectSelector.value);
+});
 
 function handleCueListClick(event) {
   const button = event.target.closest("button");
@@ -690,6 +805,11 @@ function handleCueListClick(event) {
     case "jump":
       selectCue(cueId, kind);
       setAudioTime(cue.start);
+      break;
+    case "remove":
+      if (kind === "word") {
+        removeWordCue(cueId);
+      }
       break;
     case "set-start":
       setCueStartNow(cueId, kind);
@@ -804,3 +924,5 @@ window.addEventListener("keydown", (event) => {
     selectCue(project.cues[number - 1].id, "word");
   }
 });
+
+

@@ -6,7 +6,7 @@ const timings = JSON.parse(
   readFileSync("lessons/consonants/lesson-01-gogo-nana/gogo-g-card-timings.json", "utf8"),
 );
 
-assert.match(renderer, /gogo-g-timed-lesson\.mp4/, "renderer should write the timed lesson video");
+assert.match(renderer, /resolve_audio_path/, "renderer should resolve audio from timing metadata");
 assert.match(renderer, /letterCues/, "renderer should read letter popup cues");
 assert.match(renderer, /cue\.end/, "renderer should keep popups visible until their end time");
 assert.match(renderer, /atrim=start=/, "renderer should trim the supplied intro audio");
@@ -28,3 +28,4 @@ assert.deepEqual(timings.cues[0].position, { left: 23.842, top: 28.222 });
 assert.equal(timings.letterCues.length, 9);
 assert.equal(timings.letterCues.at(-1).id, "g-repeat-6");
 assert.equal(timings.letterCues.at(-1).end, 32.427);
+

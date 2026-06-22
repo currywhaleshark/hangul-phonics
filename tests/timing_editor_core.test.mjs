@@ -1,10 +1,16 @@
 import assert from "node:assert/strict";
 
 import {
+  CONSONANT_TIMING_PROJECTS,
   clampTime,
   createDefaultGogoTimingProject,
+  createDefaultTimingProject,
   formatClockTime,
+  getTimingExportFileName,
+  getTimingProjectDefinition,
+  getTimingStorageKey,
   parseTimingProject,
+  removeCue,
   serializeTimingProject,
   setCueEnd,
   setCuePosition,
@@ -42,6 +48,83 @@ assert.equal(formatClockTime(14.2), "00:14.200");
   assert.equal(project.letterCues.at(-1).id, "g-repeat-6");
 }
 
+{
+  assert.ok(CONSONANT_TIMING_PROJECTS.length > 1);
+  assert.equal(getTimingProjectDefinition("mimi-m").character.letter, "ㅁ");
+  assert.equal(
+    getTimingProjectDefinition("mimi-m").audio.src,
+    getTimingProjectDefinition("bubu-b").audio.src,
+  );
+
+  const mimi = createDefaultTimingProject("mimi-m");
+  assert.equal(mimi.id, "mimi-m");
+  assert.equal(mimi.character.name, "미미 문어");
+  assert.equal(mimi.character.letter, "ㅁ");
+  assert.deepEqual(
+    mimi.cues.map((cue) => cue.label),
+    ["모자", "문", "물", "무지개", "미끄럼틀"],
+  );
+  assert.equal(getTimingStorageKey("mimi-m"), "hangul-phonics:timing:mimi-m");
+  assert.equal(getTimingExportFileName(mimi), "mimi-m-card-timings.json");
+  const nana = createDefaultTimingProject("nana-n");
+  assert.deepEqual(
+    nana.cues.map((cue) => cue.label),
+    ["노란색", "너구리", "나무", "낮잠"],
+  );
+  assert.equal(nana.cues.some((cue) => cue.label === "나비"), false);
+  assert.deepEqual(
+    nana.cues.map((cue) => cue.id),
+    ["nana-word-1", "nana-word-2", "nana-word-3", "nana-word-5"],
+  );
+  assert.deepEqual(nana.removedCueIds, { cues: ["nana-word-4"] });
+
+  const legacyNana = {
+    ...nana,
+    removedCueIds: undefined,
+    cues: [
+      ...nana.cues.slice(0, 3),
+      {
+        ...nana.cues[3],
+        id: "nana-word-4",
+        label: "나비",
+        image: "worksheets/assets/butterfly.png",
+      },
+      {
+        ...nana.cues[3],
+        id: "nana-word-5",
+        label: "낮잠",
+        image: "worksheets/assets/nap.png",
+      },
+    ],
+  };
+  const migratedNana = parseTimingProject(JSON.stringify(legacyNana));
+  assert.deepEqual(
+    migratedNana.cues.map((cue) => cue.label),
+    ["노란색", "너구리", "나무", "낮잠"],
+  );
+  assert.deepEqual(
+    migratedNana.cues.map((cue) => cue.id),
+    ["nana-word-1", "nana-word-2", "nana-word-3", "nana-word-5"],
+  );
+  assert.deepEqual(migratedNana.removedCueIds, { cues: ["nana-word-4"] });
+}
+
+{
+  const project = createDefaultGogoTimingProject();
+  const updated = removeCue(project, "bear");
+  const parsed = parseTimingProject(serializeTimingProject(updated));
+
+  assert.deepEqual(
+    updated.cues.map((cue) => cue.id),
+    ["dog", "meat", "snack", "noodles"],
+  );
+  assert.deepEqual(updated.removedCueIds, { cues: ["bear"] });
+  assert.deepEqual(
+    parsed.cues.map((cue) => cue.id),
+    ["dog", "meat", "snack", "noodles"],
+  );
+  assert.deepEqual(parsed.removedCueIds, { cues: ["bear"] });
+}
 {
   const project = createDefaultGogoTimingProject();
   const updated = setCueStart(project, "bear", 16.23456);
