@@ -3,301 +3,361 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>한글 파닉스 브로마이드 제작기</title>
-  <!-- Google Fonts: Outfit (English UI), Korean display/body font options -->
+  <title>한글 파닉스 제작 도구</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Dokdo&family=Dongle:wght@300;400;700&family=Gamja+Flower&family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Gugi&family=Hahmlet:wght@400;700&family=Jua&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700&family=Poor+Story&family=Single+Day&family=Song+Myung&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Gothic:wght@400;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #fffdfb;
+      --surface-strong: #ffffff;
+      --text: #3c332e;
+      --muted: #7c6552;
+      --line: #efebe4;
+      --primary: #f4ab46;
+      --primary-soft: #fff5e0;
+      --pink: #ff8e9e;
+      --green: #86a789;
+      --blue: #87a9c7;
+      --shadow: 0 18px 45px rgba(60, 51, 46, 0.09);
+      --radius: 8px;
+      font-family: "Outfit", "Nanum Gothic", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(255, 245, 224, 0.86), rgba(250, 248, 245, 0.92) 44%, #f3f6f2 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .hub-shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 32px 0 42px;
+    }
+
+    .hub-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #e7d7bd;
+      border-radius: var(--radius);
+      background: var(--surface-strong);
+      box-shadow: 0 8px 22px rgba(244, 171, 70, 0.14);
+      font-family: "Gowun Dodum", "Nanum Gothic", sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #5a412d;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .brand p,
+    .hub-meta {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) 360px;
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .hero-copy,
+    .hero-visual,
+    .tool-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 251, 0.92);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #9c6a2f;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .hero-copy h2 {
+      margin: 0;
+      max-width: 700px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .hero-copy p:last-child {
+      margin: 18px 0 0;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 245px;
+      overflow: hidden;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      background: linear-gradient(180deg, #ffffff, #fff5e0);
+    }
+
+    .hero-visual::before {
+      content: "ㄱ ㄴ ㄷ ㄹ ㅁ ㅂ ㅅ";
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      right: 22px;
+      color: rgba(60, 51, 46, 0.11);
+      font-family: "Gowun Dodum", "Nanum Gothic", sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 10px;
+      white-space: nowrap;
+    }
+
+    .hero-visual img {
+      position: relative;
+      width: min(78%, 270px);
+      height: auto;
+      filter: drop-shadow(0 18px 20px rgba(60, 51, 46, 0.14));
+    }
+
+    .tools-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 24px 0 12px;
+    }
+
+    .tools-header h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .tools-header span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .tool-card {
+      min-height: 210px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .tool-card:hover,
+    .tool-card:focus-visible {
+      outline: none;
+      transform: translateY(-3px);
+      border-color: var(--primary);
+      box-shadow: 0 24px 55px rgba(60, 51, 46, 0.13);
+    }
+
+    .tool-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--primary-soft);
+      color: #5a412d;
+      font-family: "Gowun Dodum", "Nanum Gothic", sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .tool-card:nth-child(2) .tool-icon { background: #edf5ee; color: #506b53; }
+    .tool-card:nth-child(3) .tool-icon { background: #eef5f8; color: #42677c; }
+    .tool-card:nth-child(4) .tool-icon { background: #fff0f2; color: #a74658; }
+    .tool-card:nth-child(5) .tool-icon { background: #eef5ee; color: #4f684f; }
+
+    .tool-card h3 {
+      margin: 18px 0 8px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .tool-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .tool-cta {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      color: #6a461e;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .tool-cta::after {
+      content: "→";
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .hub-footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 210px; }
+      .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 620px) {
+      .hub-shell { width: min(100% - 24px, 1180px); padding-top: 18px; }
+      .hub-topbar, .tools-header { align-items: start; flex-direction: column; }
+      .hero-copy { padding: 24px; }
+      .tool-grid { grid-template-columns: 1fr; }
+      .tool-card { min-height: 168px; }
+    }
+  </style>
 </head>
 <body>
-  <div class="app-container">
-    <!-- Header -->
-    <header class="app-header">
-      <div class="logo-area">
-        <span class="logo-icon">🎨</span>
-        <div class="logo-text">
-          <h1>한글 파닉스 브로마이드 제작기</h1>
-          <p>Hangul Phonics Bromide Maker</p>
+  <main class="hub-shell">
+    <header class="hub-topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">한</div>
+        <div>
+          <h1>한글 파닉스 제작 도구</h1>
+          <p>Hangul Phonics Maker Hub</p>
         </div>
       </div>
-      <div class="header-actions">
-        <a href="/sorting-game.html" class="btn btn-game" style="text-decoration: none; background: #FF8E9E; color: #FFFFFF; font-weight: bold; margin-right: 12px; padding: 10px 16px; border-radius: 8px; font-size: 14px; box-shadow: 0 4px 6px rgba(255, 142, 158, 0.2); transition: transform 0.2s, box-shadow 0.2s; display: inline-flex; align-items: center; gap: 6px;">
-          <span>🎮</span> 자음 분류 게임
-        </a>
-        <a href="/vowel-game.html" class="btn btn-game" style="text-decoration: none; background: #86A789; color: #FFFFFF; font-weight: bold; margin-right: 12px; padding: 10px 16px; border-radius: 8px; font-size: 14px; box-shadow: 0 4px 6px rgba(134, 167, 137, 0.25); transition: transform 0.2s, box-shadow 0.2s; display: inline-flex; align-items: center; gap: 6px;">
-          <span>🧩</span> 모음 합치기 게임
-        </a>
-        <button id="btn-reset" class="btn btn-secondary">
-          <span class="btn-icon">↺</span> 초기화
-        </button>
-        <button id="btn-download" class="btn btn-primary">
-          <span class="btn-icon">📥</span> 고해상도 인쇄용 PNG 저장 (A2)
-        </button>
-      </div>
+      <div class="hub-meta">로컬 제작 · 편집 · 놀이 도구</div>
     </header>
 
-    <!-- Main Content Grid -->
-    <main class="app-main">
-      <!-- Sidebar Control Panel -->
-      <aside class="sidebar">
-        <!-- Section: Layout Configuration -->
-        <section class="control-section">
-          <h2><span class="sec-icon">📐</span> 레이아웃 설정</h2>
-          <div class="control-group">
-            <label>기본 포맷</label>
-            <div class="preset-buttons">
-              <button id="layout-portrait" class="btn-preset active" data-layout="portrait">
-                <span class="preset-icon">📄</span>
-                <div class="preset-desc">
-                  <strong>세로형 (A2)</strong>
-                  <span>4 x 4 그리드</span>
-                </div>
-              </button>
-              <button id="layout-landscape" class="btn-preset" data-layout="landscape">
-                <span class="preset-icon">📑</span>
-                <div class="preset-desc">
-                  <strong>가로형 (A2)</strong>
-                  <span>7 x 2 그리드</span>
-                </div>
-              </button>
-            </div>
-          </div>
-          <div class="control-group row-group">
-            <div>
-              <label for="input-cols">열(가로) 개수</label>
-              <input type="number" id="input-cols" min="1" max="10" value="4">
-            </div>
-            <div>
-              <label for="input-rows">행(세로) 개수</label>
-              <input type="number" id="input-rows" min="1" max="10" value="4">
-            </div>
-          </div>
-        </section>
+    <section class="hero" aria-labelledby="hub-title">
+      <div class="hero-copy">
+        <p class="eyebrow">작업 시작</p>
+        <h2 id="hub-title">오늘 만들 도구를 선택하세요</h2>
+        <p>브로마이드, 학습지, 영상 타이밍, 자음 놀이와 합치기 놀이를 한 화면에서 시작합니다.</p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <img src="./public/video-assets/characters/consonants/ㄱ-gogo-cat.png" alt="">
+      </div>
+    </section>
 
-        <!-- Section: Design Style & Theme -->
-        <section class="control-section">
-          <h2><span class="sec-icon">🎨</span> 디자인 테마 및 색상</h2>
-          
-          <div class="control-group">
-            <label>추천 컬러 테마</label>
-            <div class="theme-presets">
-              <button class="theme-chip active" data-theme="warm" style="background: linear-gradient(135deg, #FFF5E0 50%, #F4AB46 50%);" title="클래식 웜"></button>
-              <button class="theme-chip" data-theme="pastel" style="background: linear-gradient(135deg, #F0F4F8 50%, #87A9C7 50%);" title="파스텔 스카이"></button>
-              <button class="theme-chip" data-theme="forest" style="background: linear-gradient(135deg, #EBF3E8 50%, #86A789 50%);" title="내추럴 포레스트"></button>
-              <button class="theme-chip" data-theme="strawberry" style="background: linear-gradient(135deg, #FFF0F0 50%, #FF8E9E 50%);" title="딸기 핑크"></button>
-              <button class="theme-chip" data-theme="dark" style="background: linear-gradient(135deg, #2D2727 50%, #D5B4B4 50%);" title="모던 다크"></button>
-            </div>
+    <section aria-labelledby="tool-list-title">
+      <div class="tools-header">
+        <h2 id="tool-list-title">도구</h2>
+        <span>새 도구는 이 목록에 추가하면 됩니다</span>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card" href="./bromide-editor.html">
+          <div>
+            <div class="tool-icon" aria-hidden="true">브</div>
+            <h3>브로마이드 편집기</h3>
+            <p>A2 인쇄용 한글 파닉스 브로마이드를 편집하고 PNG로 저장합니다.</p>
           </div>
+          <span class="tool-cta">시작</span>
+        </a>
+        <a class="tool-card" href="./worksheets/editor.html">
+          <div>
+            <div class="tool-icon" aria-hidden="true">학</div>
+            <h3>학습지 편집기</h3>
+            <p>자음/모음 레슨 학습지를 고르고 PNG/PDF 묶음으로 내보냅니다.</p>
+          </div>
+          <span class="tool-cta">시작</span>
+        </a>
+        <a class="tool-card" href="./timing-editor.html">
+          <div>
+            <div class="tool-icon" aria-hidden="true">초</div>
+            <h3>영상 타이밍 편집기</h3>
+            <p>캐릭터별 소개 음성 구간과 단어카드 팝업 타이밍을 맞춥니다.</p>
+          </div>
+          <span class="tool-cta">시작</span>
+        </a>
+        <a class="tool-card" href="./sorting-game.html">
+          <div>
+            <div class="tool-icon" aria-hidden="true">분</div>
+            <h3>자음게임</h3>
+            <p>첫소리 카드를 자음 집으로 보내며 소리를 구분합니다.</p>
+          </div>
+          <span class="tool-cta">시작</span>
+        </a>
+        <a class="tool-card" href="./vowel-game.html">
+          <div>
+            <div class="tool-icon" aria-hidden="true">합</div>
+            <h3>합치기게임</h3>
+            <p>자음과 모음을 합쳐 글자를 만들며 소리를 연결합니다.</p>
+          </div>
+          <span class="tool-cta">시작</span>
+        </a>
+      </div>
+    </section>
 
-          <div class="control-group color-pickers">
-            <div class="color-picker-item">
-              <label for="color-bg">배경색</label>
-              <div class="color-input-wrapper">
-                <input type="color" id="color-bg" value="#FFF5E0">
-                <span class="color-value">#FFF5E0</span>
-              </div>
-            </div>
-            <div class="color-picker-item">
-              <label for="color-border">테두리/선</label>
-              <div class="color-input-wrapper">
-                <input type="color" id="color-border" value="#F4AB46">
-                <span class="color-value">#F4AB46</span>
-              </div>
-            </div>
-            <div class="color-picker-item">
-              <label for="color-title">메인 타이틀 색상</label>
-              <div class="color-input-wrapper">
-                <input type="color" id="color-title" value="#392A22">
-                <span class="color-value">#392A22</span>
-              </div>
-            </div>
-            <div class="color-picker-item">
-              <label for="color-subtitle">서브 타이틀 색상</label>
-              <div class="color-input-wrapper">
-                <input type="color" id="color-subtitle" value="#7C6552">
-                <span class="color-value">#7C6552</span>
-              </div>
-            </div>
-            <div class="color-picker-item">
-              <label for="color-badge-bg">자음 배지 배경</label>
-              <div class="color-input-wrapper">
-                <input type="color" id="color-badge-bg" value="#F4AB46">
-                <span class="color-value">#F4AB46</span>
-              </div>
-            </div>
-            <div class="color-picker-item">
-              <label for="color-badge-text">자음 배지 글자</label>
-              <div class="color-input-wrapper">
-                <input type="color" id="color-badge-text" value="#FFFFFF">
-                <span class="color-value">#FFFFFF</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Section: Text & Typography Content -->
-        <section class="control-section">
-          <h2><span class="sec-icon">✍</span> 타이틀 및 폰트 설정</h2>
-          <div class="control-group">
-            <label for="select-font-family">폰트 스타일</label>
-            <select id="select-font-family">
-              <option value="'Gowun Dodum'" selected>고운 돋움 (둥근 고딕)</option>
-              <option value="'Noto Sans KR'">Noto Sans KR (깔끔한 고딕)</option>
-              <option value="'Nanum Gothic'">나눔 고딕 (기본 고딕)</option>
-              <option value="'Do Hyeon'">도현체 (굵은 제목용)</option>
-              <option value="'Black Han Sans'">Black Han Sans (강한 제목용)</option>
-              <option value="'Gowun Batang'">고운 바탕 (명조체)</option>
-              <option value="'Noto Serif KR'">Noto Serif KR (정돈된 명조)</option>
-              <option value="'Hahmlet'">함렛 (현대적인 명조체)</option>
-              <option value="'Song Myung'">송명체 (전통 명조)</option>
-              <option value="'Jua'">주아체 (배달의민족 동글동글)</option>
-              <option value="'Dongle'">동글체 (귀여운 손글씨)</option>
-              <option value="'Gamja Flower'">감자꽃체 (손글씨)</option>
-              <option value="'Poor Story'">푸어스토리 (동화 느낌)</option>
-              <option value="'Single Day'">싱글데이 (캐주얼 손글씨)</option>
-              <option value="'Gugi'">구기체 (개성 있는 제목)</option>
-              <option value="'Dokdo'">독도체 (붓글씨 느낌)</option>
-            </select>
-          </div>
-          <div class="control-group">
-            <label>타이틀 정렬</label>
-            <div class="segmented-control" id="title-align-controls" role="group" aria-label="타이틀 정렬">
-              <button type="button" class="segment-btn active" data-align="left">왼쪽</button>
-              <button type="button" class="segment-btn" data-align="center">가운데</button>
-              <button type="button" class="segment-btn" data-align="right">오른쪽</button>
-            </div>
-          </div>
-          <div class="control-group color-pickers text-color-pickers">
-            <div class="color-picker-item">
-              <label for="color-title-quick">메인 타이틀 색상</label>
-              <div class="color-input-wrapper">
-                <input type="color" id="color-title-quick" value="#392A22">
-                <span class="color-value">#392A22</span>
-              </div>
-            </div>
-            <div class="color-picker-item">
-              <label for="color-subtitle-quick">서브 타이틀 색상</label>
-              <div class="color-input-wrapper">
-                <input type="color" id="color-subtitle-quick" value="#7C6552">
-                <span class="color-value">#7C6552</span>
-              </div>
-            </div>
-          </div>
-          <div class="control-group">
-            <label for="input-title">메인 타이틀</label>
-            <input type="text" id="input-title" value="한글 파닉스" placeholder="메인 타이틀 입력">
-          </div>
-          <div class="control-group">
-            <div class="slider-header">
-              <label for="range-title-size">메인 타이틀 크기</label>
-              <span id="val-title-size">210px</span>
-            </div>
-            <input type="range" id="range-title-size" min="100" max="350" step="5" value="210">
-          </div>
-          <div class="control-group">
-            <label for="input-subtitle">서브 타이틀</label>
-            <input type="text" id="input-subtitle" value="자음순 브로마이드" placeholder="서브 타이틀 입력">
-          </div>
-          <div class="control-group">
-            <div class="slider-header">
-              <label for="range-subtitle-size">서브 타이틀 크기</label>
-              <span id="val-subtitle-size">72px</span>
-            </div>
-            <input type="range" id="range-subtitle-size" min="30" max="150" step="2" value="72">
-          </div>
-          <div class="control-group">
-            <div class="slider-header">
-              <label for="range-title-sub-gap">타이틀-서브타이틀 간격</label>
-              <span id="val-title-sub-gap">40px</span>
-            </div>
-            <input type="range" id="range-title-sub-gap" min="10" max="250" step="5" value="40">
-          </div>
-          <div class="control-group">
-            <div class="slider-header">
-              <label for="range-badge-size">자음 배지 글자 크기</label>
-              <span id="val-badge-size">84px</span>
-            </div>
-            <input type="range" id="range-badge-size" min="40" max="140" step="2" value="84">
-          </div>
-          <div class="control-group">
-            <div class="slider-header">
-              <label for="range-badge-bg-size">자음 배지 배경 크기</label>
-              <span id="val-badge-bg-size">100px</span>
-            </div>
-            <input type="range" id="range-badge-bg-size" min="60" max="200" step="5" value="100">
-          </div>
-        </section>
-
-        <!-- Section: Layout Details (Margins, Spacing) -->
-        <section class="control-section">
-          <h2><span class="sec-icon">📏</span> 상세 간격 및 조절</h2>
-          <div class="control-group">
-            <div class="slider-header">
-              <label for="range-margin">바깥 여백 (Margin)</label>
-              <span id="val-margin">250px</span>
-            </div>
-            <input type="range" id="range-margin" min="100" max="400" step="10" value="250">
-          </div>
-          <div class="control-group">
-            <div class="slider-header">
-              <label for="range-gap">카드 간격 (Gap)</label>
-              <span id="val-gap">56px</span>
-            </div>
-            <input type="range" id="range-gap" min="10" max="100" step="2" value="56">
-          </div>
-          <div class="control-group">
-            <div class="slider-header">
-              <label for="range-title-h">타이틀 영역 높이</label>
-              <span id="val-title-h">620px</span>
-            </div>
-            <input type="range" id="range-title-h" min="300" max="900" step="10" value="620">
-          </div>
-        </section>
-
-        <!-- Section: Card Order & Management -->
-        <section class="control-section cards-section">
-          <h2>
-            <span class="sec-icon">🗂</span> 카드 순서 편집
-            <span class="info-tooltip" title="마우스 드래그로 카드의 순서를 변경하거나 빈칸을 삽입하세요.">ⓘ</span>
-          </h2>
-          <div class="control-group">
-            <label>카드 구성</label>
-            <div class="segmented-control card-mode-control" id="card-mode-controls" role="group" aria-label="카드 구성">
-              <button type="button" class="segment-btn active" data-card-mode="consonants">자음만</button>
-              <button type="button" class="segment-btn" data-card-mode="vowels">모음만</button>
-              <button type="button" class="segment-btn" data-card-mode="all">자음모음 함께</button>
-            </div>
-          </div>
-          <div class="card-list-actions">
-            <button id="btn-add-blank" class="btn btn-small btn-secondary">+ 빈 칸 삽입</button>
-            <button id="btn-clear-blanks" class="btn btn-small btn-secondary">모든 빈칸 제거</button>
-          </div>
-          <div class="card-list-container">
-            <ul id="card-sortable-list" class="sortable-list">
-              <!-- Cards will be populated dynamically -->
-            </ul>
-          </div>
-        </section>
-      </aside>
-
-      <!-- Preview Area -->
-      <section class="preview-area">
-        <div class="preview-wrapper">
-          <div class="preview-status" id="preview-status">
-            <span class="spinner"></span> 이미지 렌더링 중...
-          </div>
-          <div class="canvas-container">
-            <canvas id="preview-canvas"></canvas>
-          </div>
-          <div class="canvas-dimensions-info">
-            실제 해상도: <span id="span-res">4961 x 7016 (A2 300 DPI)</span>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <script type="module" src="app.js"></script>
+    <p class="hub-footer">브라우저 뒤로가기로 언제든 이 허브로 돌아올 수 있습니다.</p>
+  </main>
 </body>
 </html>
+

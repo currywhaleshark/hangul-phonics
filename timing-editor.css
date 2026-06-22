@@ -16,7 +16,8 @@ body {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -72,6 +73,28 @@ button {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px;
+}
+.project-picker {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border: 1px solid #bdc9d8;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #4b5a68;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.project-picker select {
+  min-width: 150px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #17222b;
+  font-weight: 800;
 }
 
 .workspace {
@@ -433,6 +456,12 @@ button {
   border-color: #e8505b;
   background: #e8505b;
 }
+.mini-button.remove-card {
+  min-width: 48px;
+  color: #9a3412;
+  border-color: #f2b8a2;
+  background: #fff7ed;
+}
 
 .time-field {
   display: inline-grid;
@@ -672,3 +701,5 @@ button {
     width: 104px;
   }
 }
+
+

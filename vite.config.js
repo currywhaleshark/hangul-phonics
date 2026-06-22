@@ -9,6 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        bromideEditor: 'bromide-editor.html',
         timingEditor: 'timing-editor.html',
         sortingGame: 'sorting-game.html',
         vowelGame: 'vowel-game.html'
@@ -16,3 +17,4 @@ export default defineConfig({
     }
   }
 });
+

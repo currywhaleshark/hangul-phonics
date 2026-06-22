@@ -17,6 +17,9 @@ FRAME_DIR = OUT_DIR / "gogo-g-timed-frames"
 DEFAULT_TIMINGS = Path.home() / "Downloads" / "gogo-g-card-timings (4).json"
 DEFAULT_OUTPUT = OUT_DIR / "gogo-g-timed-lesson.mp4"
 DEFAULT_PREVIEW = OUT_DIR / "gogo-g-timed-lesson-preview.jpg"
+DEFAULT_AUDIO = ROOT / "lessons" / "consonants" / "lesson-01-gogo-nana" / "ㄱ, ㄴ 소개.wav"
+DEFAULT_BACKGROUND = OUT_DIR / "gogo-g-background.png"
+DEFAULT_CHARACTER = ROOT / "public" / "video-assets" / "characters" / "consonants" / "ㄱ-gogo-cat.png"
 
 WIDTH = 1920
 HEIGHT = 1080
@@ -55,6 +58,14 @@ WORD_META = {
     },
 }
 
+
+CARD_POSITIONS = [
+    {"left": 20, "top": 39, "accent": (255, 132, 112)},
+    {"left": 78, "top": 40, "accent": (255, 196, 80)},
+    {"left": 22, "top": 74, "accent": (106, 194, 255)},
+    {"left": 78, "top": 73, "accent": (121, 206, 145)},
+    {"left": 55, "top": 78, "accent": (178, 145, 255)},
+]
 LETTER_FALLBACKS = [
     {"left": 48, "top": 28},
     {"left": 56, "top": 26},
@@ -173,30 +184,75 @@ def cue_time(cue: dict, key: str, fallback: float) -> float:
         return fallback
 
 
+def resolve_repo_path(path: object, fallback: Path | None = None) -> Path:
+    if isinstance(path, str) and path:
+        candidate = Path(path)
+        return candidate if candidate.is_absolute() else ROOT / candidate
+    if fallback is None:
+        raise FileNotFoundError("Missing project path")
+    return fallback
+
+
+def parse_accent(value: object, fallback: tuple[int, int, int]) -> tuple[int, int, int]:
+    if isinstance(value, str) and value.startswith("#") and len(value) == 7:
+        try:
+            return tuple(int(value[index : index + 2], 16) for index in (1, 3, 5))
+        except ValueError:
+            return fallback
+    if isinstance(value, (list, tuple)) and len(value) >= 3:
+        try:
+            return tuple(max(0, min(255, int(part))) for part in value[:3])
+        except (TypeError, ValueError):
+            return fallback
+    return fallback
+
+
+def resolve_audio_path(project: dict) -> Path:
+    audio = project.get("audio") or {}
+    return resolve_repo_path(audio.get("src"), DEFAULT_AUDIO)
+
+
+def resolve_background_path(project: dict) -> Path:
+    render = project.get("render") or {}
+    return resolve_repo_path(render.get("background"), DEFAULT_BACKGROUND)
+
+
+def resolve_character_path(project: dict) -> Path:
+    character = project.get("character") or {}
+    return resolve_repo_path(character.get("image"), DEFAULT_CHARACTER)
+
+
+def project_letter(project: dict, letter_cues: list[Cue]) -> str:
+    character = project.get("character") or {}
+    if isinstance(character.get("letter"), str) and character["letter"]:
+        return character["letter"]
+    if letter_cues:
+        return letter_cues[0].label
+    return "ㄱ"
+
+
 def normalize_word_cues(project: dict) -> list[Cue]:
     raw_cues = project.get("cues") or project.get("wordCues") or []
     normalized: list[Cue] = []
-    for raw in raw_cues:
-        cue_id = str(raw.get("id", ""))
-        meta = WORD_META.get(cue_id)
-        if not meta:
-            continue
+    for index, raw in enumerate(raw_cues):
+        cue_id = str(raw.get("id", f"word-{index + 1}"))
+        fallback_position = WORD_META.get(cue_id, {}).get("position") or CARD_POSITIONS[index % len(CARD_POSITIONS)]
+        fallback_accent = WORD_META.get(cue_id, {}).get("accent") or CARD_POSITIONS[index % len(CARD_POSITIONS)]["accent"]
         start = cue_time(raw, "start", 0)
         end = cue_time(raw, "end", cue_time(raw, "duration", 1.2) + start)
         if end <= start:
             end = start + 1.2
-        default_position = meta["position"]
-        position = raw.get("position") or default_position
+        position = raw.get("position") or fallback_position
         normalized.append(
             Cue(
                 id=cue_id,
-                label=meta["label"],
+                label=str(raw.get("label") or WORD_META.get(cue_id, {}).get("label") or cue_id),
                 start=start,
                 end=end,
-                left=clamp_percent(position.get("left"), default_position["left"]),
-                top=clamp_percent(position.get("top"), default_position["top"]),
-                accent=meta["accent"],
-                image_path=ROOT / meta["image"],
+                left=clamp_percent(position.get("left"), fallback_position["left"]),
+                top=clamp_percent(position.get("top"), fallback_position["top"]),
+                accent=parse_accent(raw.get("accent"), fallback_accent),
+                image_path=resolve_repo_path(raw.get("image") or WORD_META.get(cue_id, {}).get("image")),
             )
         )
     return sorted(normalized, key=lambda cue: cue.start)
@@ -204,6 +260,8 @@ def normalize_word_cues(project: dict) -> list[Cue]:
 
 def normalize_letter_cues(project: dict) -> list[Cue]:
     raw_cues = project.get("letterCues") or []
+    character = project.get("character") or {}
+    default_label = character.get("letter") or "ㄱ"
     normalized: list[Cue] = []
     for index, raw in enumerate(raw_cues):
         fallback = LETTER_FALLBACKS[index % len(LETTER_FALLBACKS)]
@@ -215,7 +273,7 @@ def normalize_letter_cues(project: dict) -> list[Cue]:
         normalized.append(
             Cue(
                 id=str(raw.get("id", f"letter-{index + 1}")),
-                label="ㄱ",
+                label=str(raw.get("label") or default_label),
                 start=start,
                 end=end,
                 left=clamp_percent(position.get("left"), fallback["left"]),
@@ -225,22 +283,7 @@ def normalize_letter_cues(project: dict) -> list[Cue]:
     return sorted(normalized, key=lambda cue: cue.start)
 
 
-def find_gogo_cat() -> Path:
-    candidates = sorted((ROOT / "public" / "video-assets" / "characters" / "consonants").glob("*gogo-cat.png"))
-    if candidates:
-        return candidates[0]
-    return ROOT / "고고 고양이.png"
-
-
-def find_intro_audio() -> Path:
-    audio_dir = ROOT / "lessons" / "consonants" / "lesson-01-gogo-nana"
-    candidates = [path for path in audio_dir.glob("*.wav") if "," in path.name]
-    if candidates:
-        return candidates[0]
-    raise FileNotFoundError(f"Could not find the intro WAV in {audio_dir}")
-
-
-def make_word_card(cue: Cue, word_image: Image.Image) -> Image.Image:
+def make_word_card(cue: Cue, word_image: Image.Image, letter: str) -> Image.Image:
     card_w, card_h = 310, 330
     out = Image.new("RGBA", (card_w + 44, card_h + 54), (0, 0, 0, 0))
 
@@ -256,7 +299,7 @@ def make_word_card(cue: Cue, word_image: Image.Image) -> Image.Image:
         width=8,
     )
     draw.rounded_rectangle((21, 20, 82, 81), radius=8, fill=(255, 209, 102, 255), outline=(23, 34, 43, 255), width=4)
-    text_center(draw, (52, 51), "ㄱ", SMALL_FONT, (23, 34, 43, 255))
+    text_center(draw, (52, 51), letter, SMALL_FONT, (23, 34, 43, 255))
 
     image_box = Image.new("RGBA", (236, 176), (0, 0, 0, 0))
     fitted = contain_rgba(word_image, (224, 160))
@@ -275,7 +318,7 @@ def make_word_card(cue: Cue, word_image: Image.Image) -> Image.Image:
     return out
 
 
-def make_letter_popup() -> Image.Image:
+def make_letter_popup(label: str) -> Image.Image:
     size = 204
     out = Image.new("RGBA", (size + 48, size + 56), (0, 0, 0, 0))
     shadow = rounded_panel((size, size), 8, (25, 31, 43, 98)).filter(ImageFilter.GaussianBlur(15))
@@ -284,7 +327,7 @@ def make_letter_popup() -> Image.Image:
     panel = rounded_panel((size, size), 8, (255, 209, 102, 255))
     draw = ImageDraw.Draw(panel)
     draw.rounded_rectangle((5, 5, size - 6, size - 6), radius=8, outline=(23, 34, 43, 255), width=9)
-    text_center(draw, (size / 2 + 2, size / 2 + 1), "ㄱ", LETTER_FONT, (23, 34, 43, 255))
+    text_center(draw, (size / 2 + 2, size / 2 + 1), label, LETTER_FONT, (23, 34, 43, 255))
     out.alpha_composite(panel, (16, 8))
     return out
 
@@ -312,14 +355,14 @@ def cue_motion(cue: Cue, t: float, index: int) -> tuple[float, float, float, flo
     return scale, opacity, x_offset, y_offset, rotation
 
 
-def draw_letter_badge(canvas: Image.Image) -> None:
+def draw_letter_badge(canvas: Image.Image, letter: str) -> None:
     badge = Image.new("RGBA", (116, 116), (0, 0, 0, 0))
     shadow = rounded_panel((96, 96), 8, (25, 31, 43, 64)).filter(ImageFilter.GaussianBlur(8))
     badge.alpha_composite(shadow, (14, 16))
     panel = rounded_panel((96, 96), 8, (255, 209, 102, 255))
     draw = ImageDraw.Draw(panel)
     draw.rounded_rectangle((4, 4, 91, 91), radius=8, outline=(23, 34, 43, 255), width=5)
-    text_center(draw, (48, 48), "ㄱ", load_font(66, bold=True), (23, 34, 43, 255))
+    text_center(draw, (48, 48), letter, load_font(66, bold=True), (23, 34, 43, 255))
     badge.alpha_composite(panel, (6, 3))
     canvas.alpha_composite(badge, (62, 58))
 
@@ -339,24 +382,25 @@ def build_frames(
     duration = max(0.1, segment_end - segment_start)
     frame_count = math.ceil(duration * FPS)
 
-    bg = fit_cover(Image.open(OUT_DIR / "gogo-g-background.png"), (WIDTH, HEIGHT)).convert("RGBA")
-    cat = contain_rgba(Image.open(find_gogo_cat()), (560, 620))
+    bg = fit_cover(Image.open(resolve_background_path(project)), (WIDTH, HEIGHT)).convert("RGBA")
+    character_image = contain_rgba(Image.open(resolve_character_path(project)), (560, 620))
     word_cues = normalize_word_cues(project)
     letter_cues = normalize_letter_cues(project)
-    card_images = {cue.id: make_word_card(cue, Image.open(cue.image_path)) for cue in word_cues if cue.image_path}
-    letter_image = make_letter_popup()
+    lesson_letter = project_letter(project, letter_cues)
+    card_images = {cue.id: make_word_card(cue, Image.open(cue.image_path), lesson_letter) for cue in word_cues if cue.image_path}
+    letter_images = {cue.id: make_letter_popup(cue.label) for cue in letter_cues}
 
     for index in range(frame_count):
         elapsed = index / FPS
         t = segment_start + elapsed
         canvas = bg.copy()
         canvas.alpha_composite(Image.new("RGBA", (WIDTH, HEIGHT), (255, 250, 235, 42)))
-        draw_letter_badge(canvas)
+        draw_letter_badge(canvas, lesson_letter)
 
         cat_scale = (0.9 + 0.1 * ease_out_back(elapsed / 0.85)) * (1 + 0.012 * math.sin(elapsed * math.tau * 1.1))
         cat_x = WIDTH * 0.49 + 8 * math.sin(elapsed * math.tau * 0.56)
         cat_y = HEIGHT * 0.63 + 10 * math.sin(elapsed * math.tau * 0.72)
-        paste_center(canvas, cat, (cat_x, cat_y), cat_scale, opacity=ease_out_cubic(elapsed / 0.5))
+        paste_center(canvas, character_image, (cat_x, cat_y), cat_scale, opacity=ease_out_cubic(elapsed / 0.5))
 
         for cue_index, cue in enumerate(word_cues):
             motion = cue_motion(cue, t, cue_index)
@@ -374,7 +418,7 @@ def build_frames(
             scale, opacity, x_offset, y_offset, rotation = motion
             x = WIDTH * cue.left / 100 + x_offset
             y = HEIGHT * cue.top / 100 + y_offset
-            paste_center(canvas, letter_image, (x, y), scale, opacity, rotation)
+            paste_center(canvas, letter_images[cue.id], (x, y), scale, opacity, rotation)
 
         frame_path = FRAME_DIR / f"frame_{index + 1:04d}.jpg"
         canvas.convert("RGB").save(frame_path, quality=91, optimize=True)
@@ -450,7 +494,7 @@ def main() -> None:
     project = read_timing_project(args.timings)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     frames_dir, segment_start, duration = build_frames(project, args.output, keep_frames=args.keep_frames)
-    audio_path = find_intro_audio()
+    audio_path = resolve_audio_path(project)
     build_video(frames_dir, audio_path, args.output, segment_start, duration)
     build_preview(args.output, args.preview, args.preview_time)
     if not args.keep_frames and frames_dir.exists():
@@ -462,3 +506,6 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+
