@@ -9,6 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
+        timingEditor: 'timing-editor.html',
         sortingGame: 'sorting-game.html',
         vowelGame: 'vowel-game.html'
       }

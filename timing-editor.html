@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>고고 ㄱ 카드 타이밍 편집기</title>
+    <link rel="stylesheet" href="./timing-editor.css">
+  </head>
+  <body>
+    <main class="timing-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">레슨 1 · ㄱ</p>
+          <h1>고고 카드 타이밍</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="reset-project" class="button ghost" type="button">초기화</button>
+          <button id="import-json" class="button secondary" type="button">가져오기</button>
+          <button id="export-json" class="button primary" type="button">JSON 저장</button>
+          <input id="import-file" class="visually-hidden" type="file" accept="application/json,.json">
+        </div>
+      </header>
+
+      <section class="workspace">
+        <section class="stage-panel" aria-label="타이밍 미리보기">
+          <audio id="timing-audio" preload="metadata"></audio>
+
+          <div class="audio-strip">
+            <button id="play-toggle" class="round-button" type="button" title="재생/정지">▶</button>
+            <div class="clock-block">
+              <span id="current-time">00:00.000</span>
+              <span id="duration-time">00:00.000</span>
+            </div>
+            <input id="seek-slider" class="seek-slider" type="range" min="0" max="83.04" step="0.001" value="0" aria-label="오디오 위치">
+            <button id="segment-start" class="button compact" type="button">고고 시작</button>
+            <button id="segment-end" class="button compact" type="button">고고 끝</button>
+          </div>
+
+          <div class="lesson-stage">
+            <img class="stage-bg" src="./public/video-assets/consonant-lesson-samples/gogo-g-background.png" alt="">
+            <img class="mascot" src="./public/고고 고양이.png" alt="고고 고양이">
+            <div class="letter-badge">ㄱ</div>
+            <div id="stage-cards" class="stage-cards" aria-live="polite"></div>
+          </div>
+
+          <div id="timeline" class="timeline" aria-label="카드 타임라인">
+            <div id="segment-band" class="segment-band"></div>
+            <div id="timeline-markers" class="timeline-markers"></div>
+            <div id="playhead" class="playhead"></div>
+          </div>
+
+          <div class="status-line">
+            <span id="selected-card">강아지</span>
+            <span id="status-message">준비됨</span>
+          </div>
+        </section>
+
+        <aside class="cue-panel" aria-label="단어카드와 글자 타이밍">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">단어카드</p>
+              <h2>팝업 시작점</h2>
+            </div>
+            <button id="set-selected-now" class="button primary" type="button">현재로 찍기</button>
+          </div>
+
+          <div id="cue-list" class="cue-list"></div>
+
+          <section class="letter-section" aria-label="ㄱ 소리 팝업 타이밍">
+            <div class="panel-heading subheading">
+              <div>
+                <p class="eyebrow">ㄱ 소리</p>
+                <h2>글자 팝업</h2>
+              </div>
+            </div>
+            <div id="letter-cue-list" class="cue-list letter-cue-list"></div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script type="module" src="./timing-editor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "title": "고고 고양이 ㄱ 단어카드 타이밍",
+  "audio": {
+    "src": "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav",
+    "duration": 83.04
+  },
+  "segment": {
+    "label": "고고 고양이",
+    "start": 0,
+    "end": 35.37
+  },
+  "cues": [
+    {
+      "id": "dog",
+      "label": "강아지",
+      "image": "worksheets/assets/dog.png",
+      "start": 13.915,
+      "end": 22.741,
+      "position": {
+        "left": 23.842,
+        "top": 28.222
+      }
+    },
+    {
+      "id": "bear",
+      "label": "곰",
+      "image": "worksheets/assets/bear.png",
+      "start": 14.85,
+      "end": 22.741,
+      "position": {
+        "left": 20.474,
+        "top": 78.374
+      }
+    },
+    {
+      "id": "meat",
+      "label": "고기",
+      "image": "worksheets/assets/meat.png",
+      "start": 18.088,
+      "end": 22.741,
+      "position": {
+        "left": 73,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "snack",
+      "label": "과자",
+      "image": "worksheets/assets/snack.png",
+      "start": 19.126,
+      "end": 22.741,
+      "position": {
+        "left": 89.421,
+        "top": 47.31
+      }
+    },
+    {
+      "id": "noodles",
+      "label": "국수",
+      "image": "worksheets/assets/noodles.png",
+      "start": 20.476,
+      "end": 22.741,
+      "position": {
+        "left": 77.737,
+        "top": 82.491
+      }
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "g-intro-1",
+      "label": "ㄱ",
+      "start": 10.38,
+      "end": 13.467,
+      "position": {
+        "left": 19.632,
+        "top": 32.526
+      }
+    },
+    {
+      "id": "g-intro-2",
+      "label": "ㄱ",
+      "start": 11.383,
+      "end": 13.467,
+      "position": {
+        "left": 52.684,
+        "top": 16.433
+      }
+    },
+    {
+      "id": "g-intro-3",
+      "label": "ㄱ",
+      "start": 12.303,
+      "end": 13.467,
+      "position": {
+        "left": 85.316,
+        "top": 28.409
+      }
+    },
+    {
+      "id": "g-repeat-1",
+      "label": "ㄱ",
+      "start": 25.542,
+      "end": 29.267,
+      "position": {
+        "left": 20.263,
+        "top": 28.222
+      }
+    },
+    {
+      "id": "g-repeat-2",
+      "label": "ㄱ",
+      "start": 26.501,
+      "end": 29.267,
+      "position": {
+        "left": 51.316,
+        "top": 16.994
+      }
+    },
+    {
+      "id": "g-repeat-3",
+      "label": "ㄱ",
+      "start": 27.931,
+      "end": 29.267,
+      "position": {
+        "left": 86.368,
+        "top": 31.404
+      }
+    },
+    {
+      "id": "g-repeat-4",
+      "label": "ㄱ",
+      "start": 29.199,
+      "end": 32.427,
+      "position": {
+        "left": 22.579,
+        "top": 39.263
+      }
+    },
+    {
+      "id": "g-repeat-5",
+      "label": "ㄱ",
+      "start": 30.004,
+      "end": 32.427,
+      "position": {
+        "left": 52.158,
+        "top": 16.058
+      }
+    },
+    {
+      "id": "g-repeat-6",
+      "label": "ㄱ",
+      "start": 30.933,
+      "end": 32.427,
+      "position": {
+        "left": 80.474,
+        "top": 36.269
+      }
+    }
+  ]
+}
