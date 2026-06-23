@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import shutil
 import subprocess
 from dataclasses import dataclass
@@ -426,7 +427,29 @@ def build_frames(
     return FRAME_DIR, segment_start, duration
 
 
+def resolve_ffmpeg_binary() -> str:
+    explicit = os.environ.get("FFMPEG_BINARY")
+    if explicit:
+        explicit_path = Path(explicit)
+        if explicit_path.exists():
+            return str(explicit_path)
+
+    runtime_root = Path.home() / ".cache" / "codex-runtimes" / "codex-primary-runtime" / "dependencies" / "bin"
+    bundled = runtime_root / ("ffmpeg.exe" if os.name == "nt" else "ffmpeg")
+    if bundled.exists():
+        return str(bundled)
+
+    discovered = shutil.which("ffmpeg")
+    if discovered:
+        return discovered
+
+    raise FileNotFoundError(
+        "ffmpeg executable not found. Install ffmpeg, add it to PATH, or set FFMPEG_BINARY."
+    )
+
+
 def run_ffmpeg(command: list[str]) -> None:
+    command = [resolve_ffmpeg_binary(), *command[1:]]
     subprocess.run(command, cwd=ROOT, check=True)
 
 

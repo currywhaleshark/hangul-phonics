@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "bubu-b",
+  "lessonId": "lesson-02-mimi-bubu",
+  "title": "\ubd80\ubd80 \ubd80\uc5c9\uc774 \u3142 \ub2e8\uc5b4\uce74\ub4dc",
+  "character": {
+    "key": "bubu",
+    "name": "\ubd80\ubd80 \ubd80\uc5c9\uc774",
+    "letter": "\u3142",
+    "image": "public/video-assets/characters/consonants/\u3142-bubu-owl.png"
+  },
+  "audio": {
+    "src": "lessons/consonants/lesson-02-mimi-bubu/\u3141,\u3142 \uc18c\uac1c.wav",
+    "duration": 85.48
+  },
+  "segment": {
+    "label": "\ubd80\ubd80 \ubd80\uc5c9\uc774",
+    "start": 35,
+    "end": 70
+  },
+  "cues": [
+    {
+      "id": "bubu-word-1",
+      "label": "\ubc14\ub098\ub098",
+      "image": "worksheets/assets/banana.png",
+      "start": 50.63,
+      "end": 57.503,
+      "position": {
+        "left": 27.421,
+        "top": 32.713
+      },
+      "accent": "#ff8470"
+    },
+    {
+      "id": "bubu-word-2",
+      "label": "\ubc84\uc2a4",
+      "image": "worksheets/assets/bus.png",
+      "start": 51.64,
+      "end": 57.503,
+      "position": {
+        "left": 22.579,
+        "top": 72.573
+      },
+      "accent": "#ffc450"
+    },
+    {
+      "id": "bubu-word-3",
+      "label": "\ubcc4",
+      "image": "worksheets/assets/star.png",
+      "start": 53.08,
+      "end": 57.503,
+      "position": {
+        "left": 52.474,
+        "top": 25.977
+      },
+      "accent": "#6ac2ff"
+    },
+    {
+      "id": "bubu-word-4",
+      "label": "\ube44",
+      "image": "worksheets/assets/rain.png",
+      "start": 54.396,
+      "end": 57.503,
+      "position": {
+        "left": 83.316,
+        "top": 29.719
+      },
+      "accent": "#79ce91"
+    },
+    {
+      "id": "bubu-word-5",
+      "label": "\ubc14\uad6c\ub2c8",
+      "image": "worksheets/assets/basket.png",
+      "start": 55.626,
+      "end": 57.503,
+      "position": {
+        "left": 82.789,
+        "top": 74.257
+      },
+      "accent": "#b291ff"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "bubu-intro-1",
+      "label": "\u3142",
+      "start": 46.016,
+      "end": 49.371,
+      "position": {
+        "left": 16.895,
+        "top": 51.614
+      }
+    },
+    {
+      "id": "bubu-intro-2",
+      "label": "\u3142",
+      "start": 46.972,
+      "end": 49.371,
+      "position": {
+        "left": 54.158,
+        "top": 22.421
+      }
+    },
+    {
+      "id": "bubu-intro-3",
+      "label": "\u3142",
+      "start": 47.97,
+      "end": 49.371,
+      "position": {
+        "left": 82.789,
+        "top": 57.415
+      }
+    },
+    {
+      "id": "bubu-repeat-1",
+      "label": "\u3142",
+      "start": 60.084,
+      "end": 62.762,
+      "position": {
+        "left": 24.474,
+        "top": 58.912
+      }
+    },
+    {
+      "id": "bubu-repeat-2",
+      "label": "\u3142",
+      "start": 61.171,
+      "end": 62.762,
+      "position": {
+        "left": 56,
+        "top": 26
+      }
+    },
+    {
+      "id": "bubu-repeat-3",
+      "label": "\u3142",
+      "start": 61.943,
+      "end": 62.762,
+      "position": {
+        "left": 81.526,
+        "top": 64.713
+      }
+    },
+    {
+      "id": "bubu-repeat-4",
+      "label": "\u3142",
+      "start": 63.48,
+      "end": 66.501,
+      "position": {
+        "left": 25.947,
+        "top": 63.216
+      }
+    },
+    {
+      "id": "bubu-repeat-5",
+      "label": "\u3142",
+      "start": 64.714,
+      "end": 66.501,
+      "position": {
+        "left": 56,
+        "top": 26
+      }
+    },
+    {
+      "id": "bubu-repeat-6",
+      "label": "\u3142",
+      "start": 65.662,
+      "end": 66.501,
+      "position": {
+        "left": 83.211,
+        "top": 63.216
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/consonant-lesson-samples/gogo-g-background.png",
+    "outputSlug": "bubu-b",
+    "timingFile": "bubu-b-card-timings.json"
+  }
+}

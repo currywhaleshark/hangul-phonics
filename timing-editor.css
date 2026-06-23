@@ -702,4 +702,22 @@ button {
   }
 }
 
+.render-output {
+  display: flex;
+  min-height: 24px;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  color: #4b5a68;
+  font-size: 13px;
+  font-weight: 800;
+}
 
+.render-output a {
+  color: #276ef1;
+  text-decoration: none;
+}
+
+.render-output a:hover {
+  text-decoration: underline;
+}

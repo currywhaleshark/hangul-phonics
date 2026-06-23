@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "dodo-d",
+  "lessonId": "lesson-03-dodo-rara",
+  "title": "도도 도토리 ㄷ 단어카드",
+  "character": {
+    "key": "dodo",
+    "name": "도도 도토리",
+    "letter": "ㄷ",
+    "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png"
+  },
+  "audio": {
+    "src": "lessons/consonants/lesson-03-dodo-rara/ㄷ,ㄹ 소개(2).wav",
+    "duration": 89.72
+  },
+  "segment": {
+    "label": "도도 도토리",
+    "start": 0,
+    "end": 35.42
+  },
+  "cues": [
+    {
+      "id": "dodo-word-1",
+      "label": "다람쥐",
+      "image": "worksheets/assets/squirrel.png",
+      "start": 13.722,
+      "end": 24.562,
+      "position": {
+        "left": 20,
+        "top": 39
+      },
+      "accent": "#ff8470"
+    },
+    {
+      "id": "dodo-word-2",
+      "label": "달",
+      "image": "worksheets/assets/moon.png",
+      "start": 18.344,
+      "end": 24.562,
+      "position": {
+        "left": 23.737,
+        "top": 74.632
+      },
+      "accent": "#ffc450"
+    },
+    {
+      "id": "dodo-word-3",
+      "label": "다리",
+      "image": "worksheets/assets/bridge.png",
+      "start": 19.135,
+      "end": 24.562,
+      "position": {
+        "left": 52.053,
+        "top": 25.041
+      },
+      "accent": "#6ac2ff"
+    },
+    {
+      "id": "dodo-word-4",
+      "label": "도넛",
+      "image": "worksheets/assets/donut.png",
+      "start": 20.66,
+      "end": 24.562,
+      "position": {
+        "left": 81.421,
+        "top": 32.152
+      },
+      "accent": "#79ce91"
+    },
+    {
+      "id": "dodo-word-5",
+      "label": "도토리",
+      "image": "worksheets/assets/acorn.png",
+      "start": 22.405,
+      "end": 24.562,
+      "position": {
+        "left": 82.895,
+        "top": 76.316
+      },
+      "accent": "#b291ff"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "dodo-intro-1",
+      "label": "ㄷ",
+      "start": 10.643,
+      "end": 13.121,
+      "position": {
+        "left": 20.684,
+        "top": 67.146
+      }
+    },
+    {
+      "id": "dodo-intro-2",
+      "label": "ㄷ",
+      "start": 11.506,
+      "end": 13.121,
+      "position": {
+        "left": 56,
+        "top": 26
+      }
+    },
+    {
+      "id": "dodo-intro-3",
+      "label": "ㄷ",
+      "start": 12.326,
+      "end": 13.121,
+      "position": {
+        "left": 83.632,
+        "top": 69.392
+      }
+    },
+    {
+      "id": "dodo-repeat-1",
+      "label": "ㄷ",
+      "start": 27.344,
+      "end": 30.379,
+      "position": {
+        "left": 26.579,
+        "top": 55.17
+      }
+    },
+    {
+      "id": "dodo-repeat-2",
+      "label": "ㄷ",
+      "start": 28.722,
+      "end": 30.379,
+      "position": {
+        "left": 53.211,
+        "top": 23.731
+      }
+    },
+    {
+      "id": "dodo-repeat-3",
+      "label": "ㄷ",
+      "start": 29.527,
+      "end": 30.379,
+      "position": {
+        "left": 79.105,
+        "top": 60.222
+      }
+    },
+    {
+      "id": "dodo-repeat-4",
+      "label": "ㄷ",
+      "start": 31.031,
+      "end": 33.746,
+      "position": {
+        "left": 26.789,
+        "top": 53.298
+      }
+    },
+    {
+      "id": "dodo-repeat-5",
+      "label": "ㄷ",
+      "start": 31.821,
+      "end": 33.746,
+      "position": {
+        "left": 56,
+        "top": 26
+      }
+    },
+    {
+      "id": "dodo-repeat-6",
+      "label": "ㄷ",
+      "start": 32.552,
+      "end": 33.746,
+      "position": {
+        "left": 81.526,
+        "top": 59.099
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/consonant-lesson-samples/gogo-g-background.png",
+    "outputSlug": "dodo-d",
+    "timingFile": "dodo-d-card-timings.json"
+  }
+}

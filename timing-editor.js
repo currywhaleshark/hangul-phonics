@@ -61,6 +61,8 @@ const selectedCardLabel = document.querySelector("#selected-card");
 const statusMessage = document.querySelector("#status-message");
 const setSelectedNowButton = document.querySelector("#set-selected-now");
 const exportJsonButton = document.querySelector("#export-json");
+const renderVideoButton = document.querySelector("#render-video");
+const renderOutput = document.querySelector("#render-output");
 const importJsonButton = document.querySelector("#import-json");
 const importFileInput = document.querySelector("#import-file");
 const resetProjectButton = document.querySelector("#reset-project");
@@ -549,6 +551,51 @@ function exportProject() {
   setStatus("JSON 저장됨");
 }
 
+async function renderVideo() {
+  if (!renderVideoButton || !renderOutput) {
+    return;
+  }
+
+  saveProject();
+  renderVideoButton.disabled = true;
+  renderOutput.replaceChildren();
+  renderOutput.textContent = "영상 만드는 중...";
+  setStatus("영상 만드는 중...");
+
+  try {
+    const response = await fetch("/api/timing-render", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: serializeTimingProject(project),
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result.error || "영상 만들기 실패");
+    }
+
+    renderOutput.replaceChildren(
+      makeRenderLink(result.videoUrl, "MP4 열기"),
+      makeRenderLink(result.previewUrl, "미리보기 열기"),
+    );
+    setStatus("영상 생성 완료");
+  } catch (error) {
+    console.error(error);
+    renderOutput.textContent = error instanceof Error ? error.message : "영상 만들기 실패";
+    setStatus("영상 만들기 실패");
+  } finally {
+    renderVideoButton.disabled = false;
+  }
+}
+
+function makeRenderLink(href, label) {
+  const link = document.createElement("a");
+  link.href = href;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  link.textContent = label;
+  return link;
+}
+
 async function importProject(file) {
   if (!file) {
     return;
@@ -764,6 +811,7 @@ setSelectedNowButton.addEventListener("click", () => {
 });
 
 exportJsonButton.addEventListener("click", exportProject);
+renderVideoButton?.addEventListener("click", renderVideo);
 
 importJsonButton.addEventListener("click", () => {
   importFileInput.click();
