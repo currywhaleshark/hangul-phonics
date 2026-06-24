@@ -10,6 +10,8 @@ assert.match(renderer, /resolve_audio_path/, "renderer should resolve audio from
 assert.match(renderer, /resolve_ffmpeg_binary/, "renderer should resolve the ffmpeg executable before spawning it");
 assert.match(renderer, /FFMPEG_BINARY/, "renderer should accept an explicit ffmpeg binary path from the environment");
 assert.match(renderer, /shutil\.which\("ffmpeg"\)/, "renderer should fall back to ffmpeg on PATH");
+assert.match(renderer, /LOCALAPPDATA/, "renderer should search Winget package installs when PATH lacks ffmpeg");
+assert.match(renderer, /WinGet/, "renderer should know the Winget package directory name");
 assert.match(renderer, /letterCues/, "renderer should read letter popup cues");
 assert.match(renderer, /cue\.end/, "renderer should keep popups visible until their end time");
 assert.match(renderer, /atrim=start=/, "renderer should trim the supplied intro audio");

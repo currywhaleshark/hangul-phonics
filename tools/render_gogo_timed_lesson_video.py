@@ -439,6 +439,10 @@ def resolve_ffmpeg_binary() -> str:
     if bundled.exists():
         return str(bundled)
 
+    winget = resolve_winget_ffmpeg_binary()
+    if winget:
+        return winget
+
     discovered = shutil.which("ffmpeg")
     if discovered:
         return discovered
@@ -446,6 +450,33 @@ def resolve_ffmpeg_binary() -> str:
     raise FileNotFoundError(
         "ffmpeg executable not found. Install ffmpeg, add it to PATH, or set FFMPEG_BINARY."
     )
+
+
+def resolve_winget_ffmpeg_binary() -> str | None:
+    if os.name != "nt":
+        return None
+
+    roots: list[Path] = []
+    local_app_data = os.environ.get("LOCALAPPDATA")
+    if local_app_data:
+        roots.append(Path(local_app_data) / "Microsoft" / "WinGet" / "Packages")
+    roots.append(Path.home() / "AppData" / "Local" / "Microsoft" / "WinGet" / "Packages")
+
+    seen: set[Path] = set()
+    for root in roots:
+        try:
+            resolved_root = root.resolve()
+        except OSError:
+            continue
+        if resolved_root in seen:
+            continue
+        seen.add(resolved_root)
+        if not resolved_root.exists():
+            continue
+        for candidate in resolved_root.rglob("ffmpeg.exe"):
+            if candidate.is_file():
+                return str(candidate)
+    return None
 
 
 def run_ffmpeg(command: list[str]) -> None:
