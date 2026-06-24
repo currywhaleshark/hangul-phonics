@@ -33,7 +33,10 @@
               <span id="current-time">00:00.000</span>
               <span id="duration-time">00:00.000</span>
             </div>
-            <input id="seek-slider" class="seek-slider" type="range" min="0" max="83.04" step="0.001" value="0" aria-label="오디오 위치">
+            <div class="seek-track">
+              <canvas id="audio-waveform" class="audio-waveform" width="900" height="44" aria-hidden="true"></canvas>
+              <input id="seek-slider" class="seek-slider" type="range" min="0" max="83.04" step="0.001" value="0" aria-label="오디오 위치">
+            </div>
             <button id="segment-start" class="button compact" type="button">구간 시작 찍기</button>
             <button id="segment-end" class="button compact" type="button">구간 끝 찍기</button>
           </div>
@@ -66,6 +69,16 @@
             </div>
             <button id="set-selected-now" class="button primary" type="button">현재로 찍기</button>
           </div>
+
+          <section id="scene-section" class="letter-section scene-section" aria-label="?? ?? ???" hidden>
+            <div class="panel-heading subheading">
+              <div>
+                <p class="eyebrow">??</p>
+                <h2>? ??</h2>
+              </div>
+            </div>
+            <div id="scene-cue-list" class="cue-list scene-cue-list"></div>
+          </section>
 
           <div id="cue-list" class="cue-list"></div>
 

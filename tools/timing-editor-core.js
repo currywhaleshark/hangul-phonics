@@ -38,7 +38,30 @@ const LETTER_TIMES = [
   { id: "repeat-6", start: 32.15, end: 32.63, position: { left: 44, top: 27 } },
 ];
 
+const VOWEL_STORY_SCENE_TIMES = [
+  { start: 0, end: 5.2 },
+  { start: 5.2, end: 8.65 },
+  { start: 8.65, end: 12.95 },
+  { start: 12.95, end: 21.12 },
+];
+
+const VOWEL_STORY_WORD_TIMES = [
+  { start: 13.15, end: 15.35, position: { left: 20, top: 63 }, accent: "#ffb703" },
+  { start: 15.25, end: 17.35, position: { left: 50, top: 63 }, accent: "#8ecae6" },
+  { start: 17.25, end: 19.8, position: { left: 80, top: 63 }, accent: "#ff8fab" },
+];
+
+const VOWEL_STORY_LETTER_TIMES = [
+  { id: "intro-aa", start: 0.15, end: 1.25, position: { left: 18, top: 24 } },
+  { id: "branch-aa", start: 8.85, end: 10.05, position: { left: 18, top: 24 } },
+  { id: "final-a", start: 19.85, end: 21.05, position: { left: 50, top: 24 } },
+];
+
 const LESSON_AUDIO = {
+  "lesson-01-aa-baby-vowel": {
+    src: "lessons/vowels/lesson-01-aa-baby-vowel/\uC544.wav",
+    duration: 21.12,
+  },
   "lesson-01-gogo-nana": {
     src: "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav",
     duration: 83.040272,
@@ -62,6 +85,7 @@ const LESSON_AUDIO = {
 
 const asset = (file) => `worksheets/assets/${file}`;
 const characterAsset = (file) => `public/video-assets/characters/consonants/${file}`;
+const vowelStoryAsset = (file) => `lessons/vowels/lesson-01-aa-baby-vowel/${file}`;
 
 export const CONSONANT_TIMING_PROJECTS = [
   defineProject({
@@ -235,6 +259,33 @@ export const CONSONANT_TIMING_PROJECTS = [
   }),
 ];
 
+export const VOWEL_TIMING_PROJECTS = [
+  defineVowelStoryProject({
+    id: "aa-a",
+    lessonId: "lesson-01-aa-baby-vowel",
+    segment: { start: 0, end: 21.12 },
+    character: {
+      key: "aa",
+      name: "\uC544\uC544 \uC544\uAE30",
+      letter: "\uC544",
+      image: vowelStoryAsset("aa-story-01-silent.png"),
+    },
+    scenes: [
+      { id: "aa-silent", label: "\uC870\uC6A9\uC870\uC6A9", image: vowelStoryAsset("aa-story-01-silent.png") },
+      { id: "aa-branch", label: "\uB098\uBB47\uAC00\uC9C0", image: vowelStoryAsset("aa-story-02-branch.png") },
+      { id: "aa-ah", label: "\uC544!", image: vowelStoryAsset("aa-story-03-ah.png") },
+      { id: "aa-combined", label: "\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0", image: "\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0 \uC2DC\uC548.png" },
+    ],
+    words: [
+      { id: "aa-baby", label: "\uC544\uAE30", image: asset("baby.png") },
+      { id: "aa-morning", label: "\uC544\uCE68", image: asset("morning.png") },
+      { id: "aa-ice-cream", label: "\uC544\uC774\uC2A4\uD06C\uB9BC", image: asset("ice-cream.png") },
+    ],
+  }),
+];
+
+export const TIMING_PROJECTS = [...CONSONANT_TIMING_PROJECTS, ...VOWEL_TIMING_PROJECTS];
+
 export const DEFAULT_GOGO_TIMING_PROJECT = buildDefaultTimingProject(CONSONANT_TIMING_PROJECTS[0]);
 
 function defineProject({ id, lessonId, segment, character, words, removedCueIds }) {
@@ -256,17 +307,38 @@ function defineProject({ id, lessonId, segment, character, words, removedCueIds 
   });
 }
 
+function defineVowelStoryProject({ id, lessonId, segment, character, scenes, words }) {
+  const audio = LESSON_AUDIO[lessonId];
+  return buildDefaultTimingProject({
+    id,
+    lessonId,
+    template: "vowel-story",
+    title: `${character.name} ${character.letter} \uBAA8\uC74C \uC774\uC57C\uAE30`,
+    character,
+    audio,
+    segment: { label: character.name, ...segment },
+    words,
+    scenes,
+    render: {
+      outputSlug: id,
+      timingFile: `${id}-vowel-timings.json`,
+    },
+  });
+}
+
 function buildDefaultTimingProject(definition) {
   const project = {
     schemaVersion: TIMING_SCHEMA_VERSION,
     id: definition.id,
     lessonId: definition.lessonId,
     title: definition.title,
+    template: definition.template ?? "consonant-card",
     character: definition.character,
     audio: definition.audio,
     segment: definition.segment,
-    cues: makeWordCues(definition.words ?? [], definition.character.key, definition.segment.start),
-    letterCues: makeLetterCues(definition.character.letter, definition.character.key, definition.segment.start),
+    sceneCues: makeSceneCues(definition.scenes ?? [], definition.segment.start),
+    cues: makeWordCues(definition.words ?? [], definition.character.key, definition.segment.start, definition.template),
+    letterCues: makeLetterCues(definition.character.letter, definition.character.key, definition.segment.start, definition.template),
     removedCueIds: definition.removedCueIds,
     render: definition.render,
   };
@@ -274,10 +346,26 @@ function buildDefaultTimingProject(definition) {
   return clonePlainObject(project);
 }
 
-function makeWordCues(words, characterKey, segmentStart) {
+function makeSceneCues(scenes, segmentStart) {
+  return scenes.map((scene, index) => {
+    const timing = VOWEL_STORY_SCENE_TIMES[index] ?? { start: index * 4, end: index * 4 + 4 };
+    return {
+      id: scene.id ?? `scene-${index + 1}`,
+      label: scene.label,
+      image: scene.image,
+      start: catalogTime(segmentStart + timing.start),
+      end: catalogTime(segmentStart + timing.end),
+    };
+  });
+}
+
+function makeWordCues(words, characterKey, segmentStart, template = "consonant-card") {
   return words.map((word, index) => {
-    const slot = CARD_POSITIONS[index % CARD_POSITIONS.length];
-    const timing = WORD_TIMES[index] ?? { start: 14.2 + index * 1.2, end: 15.1 + index * 1.2 };
+    const vowelTiming = template === "vowel-story" ? VOWEL_STORY_WORD_TIMES[index] : null;
+    const slot = vowelTiming?.position
+      ? { ...vowelTiming.position, accent: vowelTiming.accent }
+      : CARD_POSITIONS[index % CARD_POSITIONS.length];
+    const timing = vowelTiming ?? WORD_TIMES[index] ?? { start: 14.2 + index * 1.2, end: 15.1 + index * 1.2 };
     return {
       id: word.id ?? `${characterKey}-word-${index + 1}`,
       label: word.label,
@@ -290,8 +378,9 @@ function makeWordCues(words, characterKey, segmentStart) {
   });
 }
 
-function makeLetterCues(letter, characterKey, segmentStart) {
-  return LETTER_TIMES.map((cue) => ({
+function makeLetterCues(letter, characterKey, segmentStart, template = "consonant-card") {
+  const timings = template === "vowel-story" ? VOWEL_STORY_LETTER_TIMES : LETTER_TIMES;
+  return timings.map((cue) => ({
     id: characterKey === "gogo" ? `g-${cue.id}` : `${characterKey}-${cue.id}`,
     label: letter,
     start: catalogTime(segmentStart + cue.start),
@@ -312,7 +401,7 @@ export function cloneTimingProject(project) {
 }
 
 export function getTimingProjectDefinition(projectId = DEFAULT_TIMING_PROJECT_ID) {
-  const definition = CONSONANT_TIMING_PROJECTS.find((project) => project.id === projectId);
+  const definition = TIMING_PROJECTS.find((project) => project.id === projectId);
   if (!definition) {
     throw new Error(`Unknown timing project id: ${projectId}`);
   }
@@ -338,7 +427,9 @@ export function getTimingExportFileName(projectOrId = DEFAULT_TIMING_PROJECT_ID)
   return project?.render?.timingFile ?? `${project?.id || DEFAULT_TIMING_PROJECT_ID}-card-timings.json`;
 }
 
-export function mergeTimingProjectDefaults(project) {
+export const TIMING_CUE_COLLECTIONS = ["cues", "letterCues", "sceneCues"];
+
+function mergeTimingProjectDefaults(project) {
   const projectId = project.id ?? DEFAULT_TIMING_PROJECT_ID;
   const defaults = createDefaultTimingProject(projectId);
   const removedCueIds = mergeRemovedCueIds(defaults.removedCueIds, project.removedCueIds);
@@ -363,6 +454,7 @@ export function mergeTimingProjectDefaults(project) {
       ...defaults.render,
       ...(project.render ?? {}),
     },
+    sceneCues: Array.isArray(project.sceneCues) ? mergeCueDefaults(project.sceneCues, defaults.sceneCues, removedCueIds.sceneCues) : defaults.sceneCues,
     cues: Array.isArray(project.cues) ? mergeCueDefaults(project.cues, defaults.cues, removedCueIds.cues) : defaults.cues,
     letterCues: Array.isArray(project.letterCues) ? mergeCueDefaults(project.letterCues, defaults.letterCues, removedCueIds.letterCues) : defaults.letterCues,
   };
@@ -414,7 +506,7 @@ function mergeRemovedCueIds(defaultRemovedCueIds, projectRemovedCueIds) {
   const merged = normalizeRemovedCueIds(defaultRemovedCueIds);
   const projectRemoved = normalizeRemovedCueIds(projectRemovedCueIds);
 
-  ["cues", "letterCues"].forEach((collectionName) => {
+  TIMING_CUE_COLLECTIONS.forEach((collectionName) => {
     const ids = new Set([...(merged[collectionName] ?? []), ...(projectRemoved[collectionName] ?? [])]);
     if (ids.size > 0) {
       merged[collectionName] = [...ids];
@@ -429,7 +521,7 @@ function normalizeRemovedCueIds(value) {
     return normalized;
   }
 
-  ["cues", "letterCues"].forEach((collectionName) => {
+  TIMING_CUE_COLLECTIONS.forEach((collectionName) => {
     if (!Array.isArray(value[collectionName])) {
       return;
     }

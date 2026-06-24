@@ -1,5 +1,6 @@
 import {
   CONSONANT_TIMING_PROJECTS,
+  TIMING_PROJECTS,
   DEFAULT_TIMING_PROJECT_ID,
   MIN_CUE_LENGTH,
   clampTime,
@@ -47,10 +48,13 @@ const LETTER_SLOTS = [
 const audio = document.querySelector("#timing-audio");
 const playToggle = document.querySelector("#play-toggle");
 const seekSlider = document.querySelector("#seek-slider");
+const seekTrack = document.querySelector(".seek-track");
+const audioWaveform = document.querySelector("#audio-waveform");
 const currentTimeLabel = document.querySelector("#current-time");
 const durationTimeLabel = document.querySelector("#duration-time");
 const cueList = document.querySelector("#cue-list");
 const letterCueList = document.querySelector("#letter-cue-list");
+const sceneCueList = document.querySelector("#scene-cue-list");
 const stageCards = document.querySelector("#stage-cards");
 const stage = document.querySelector(".lesson-stage");
 const timeline = document.querySelector("#timeline");
@@ -75,14 +79,22 @@ const stageBackground = document.querySelector("#stage-background");
 const mascotImage = document.querySelector("#mascot-image");
 const letterBadge = document.querySelector("#letter-badge");
 const letterSection = document.querySelector("#letter-section");
+const sceneSection = document.querySelector("#scene-section");
 const letterSectionEyebrow = document.querySelector("#letter-section-eyebrow");
 
 populateProjectSelector();
 let project = loadStoredProject(projectSelector.value);
 let selectedCueKind = "word";
-let selectedCueId = project.cues[0]?.id ?? project.letterCues[0]?.id ?? null;
+let selectedCueId = getInitialSelectedCueId(project);
 let lastLiveCueKey = null;
 let dragState = null;
+let waveformPeaks = [];
+let waveformRequestId = 0;
+
+const waveformResizeObserver = typeof ResizeObserver === "function" && seekTrack
+  ? new ResizeObserver(() => drawAudioWaveform())
+  : null;
+waveformResizeObserver?.observe(seekTrack);
 
 applyAudioSource();
 renderAll();
@@ -91,14 +103,14 @@ function populateProjectSelector() {
   const storedProjectId = window.localStorage.getItem(SELECTED_PROJECT_STORAGE_KEY) || DEFAULT_TIMING_PROJECT_ID;
   projectSelector.innerHTML = "";
 
-  CONSONANT_TIMING_PROJECTS.forEach((definition) => {
+  TIMING_PROJECTS.forEach((definition) => {
     const option = document.createElement("option");
     option.value = definition.id;
     option.textContent = `${definition.character.letter} ${definition.character.name}`;
     projectSelector.append(option);
   });
 
-  const hasStoredProject = CONSONANT_TIMING_PROJECTS.some((definition) => definition.id === storedProjectId);
+  const hasStoredProject = TIMING_PROJECTS.some((definition) => definition.id === storedProjectId);
   projectSelector.value = hasStoredProject ? storedProjectId : DEFAULT_TIMING_PROJECT_ID;
 }
 
@@ -118,9 +130,17 @@ function loadStoredProject(projectId) {
   }
 }
 
+function getInitialSelectedCueId(sourceProject) {
+  if (isVowelStoryProject(sourceProject)) {
+    return sourceProject.sceneCues?.[0]?.id ?? sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
+  }
+
+  return sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? sourceProject.sceneCues?.[0]?.id ?? null;
+}
+
 function resetSelectedCue() {
-  selectedCueKind = "word";
-  selectedCueId = project.cues[0]?.id ?? project.letterCues[0]?.id ?? null;
+  selectedCueKind = isVowelStoryProject() ? "scene" : "word";
+  selectedCueId = getInitialSelectedCueId(project);
   lastLiveCueKey = null;
 }
 
@@ -145,6 +165,135 @@ function applyAudioSource() {
   audio.src = new URL(project.audio.src, window.location.href).href;
   seekSlider.max = String(project.audio.duration ?? project.segment.end);
   durationTimeLabel.textContent = formatClockTime(project.audio.duration ?? project.segment.end);
+  loadAudioWaveform(audio.src);
+}
+
+async function loadAudioWaveform(source) {
+  const requestId = ++waveformRequestId;
+  waveformPeaks = [];
+  drawAudioWaveform();
+
+  const AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
+  if (!audioWaveform || !AudioContextConstructor || !source) {
+    return;
+  }
+
+  let context = null;
+  try {
+    const response = await fetch(source);
+    if (!response.ok || requestId !== waveformRequestId) {
+      return;
+    }
+
+    const encodedAudio = await response.arrayBuffer();
+    if (requestId !== waveformRequestId) {
+      return;
+    }
+
+    context = new AudioContextConstructor();
+    const decodedAudio = await context.decodeAudioData(encodedAudio);
+    if (requestId !== waveformRequestId) {
+      return;
+    }
+
+    waveformPeaks = extractWaveformPeaks(decodedAudio);
+    drawAudioWaveform();
+  } catch (error) {
+    console.warn("Could not draw audio waveform", error);
+    waveformPeaks = [];
+    drawAudioWaveform();
+  } finally {
+    await context?.close?.();
+  }
+}
+
+function extractWaveformPeaks(audioBuffer, peakCount = 1200) {
+  const channelCount = Math.max(1, Math.min(audioBuffer.numberOfChannels, 2));
+  const peaks = [];
+  const samplesPerPeak = Math.max(1, Math.floor(audioBuffer.length / peakCount));
+
+  for (let peakIndex = 0; peakIndex < peakCount; peakIndex += 1) {
+    const start = peakIndex * samplesPerPeak;
+    const end = peakIndex === peakCount - 1 ? audioBuffer.length : Math.min(audioBuffer.length, start + samplesPerPeak);
+    const stride = Math.max(1, Math.floor((end - start) / 72));
+    let peak = 0;
+
+    for (let channel = 0; channel < channelCount; channel += 1) {
+      const samples = audioBuffer.getChannelData(channel);
+      for (let sampleIndex = start; sampleIndex < end; sampleIndex += stride) {
+        peak = Math.max(peak, Math.abs(samples[sampleIndex] ?? 0));
+      }
+    }
+
+    peaks.push(peak);
+  }
+
+  return peaks;
+}
+
+function drawAudioWaveform() {
+  if (!audioWaveform || !seekTrack) {
+    return;
+  }
+
+  const rect = seekTrack.getBoundingClientRect();
+  const width = Math.max(1, Math.round(rect.width));
+  const height = Math.max(1, Math.round(rect.height));
+  const pixelRatio = window.devicePixelRatio || 1;
+  const canvasWidth = Math.round(width * pixelRatio);
+  const canvasHeight = Math.round(height * pixelRatio);
+
+  if (audioWaveform.width !== canvasWidth || audioWaveform.height !== canvasHeight) {
+    audioWaveform.width = canvasWidth;
+    audioWaveform.height = canvasHeight;
+  }
+
+  const context = audioWaveform.getContext("2d");
+  if (!context) {
+    return;
+  }
+
+  context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+  context.clearRect(0, 0, width, height);
+
+  const centerY = height / 2;
+  context.strokeStyle = "rgba(8, 127, 140, 0.18)";
+  context.lineWidth = 1;
+  context.beginPath();
+  context.moveTo(0, centerY);
+  context.lineTo(width, centerY);
+  context.stroke();
+
+  if (waveformPeaks.length === 0) {
+    return;
+  }
+
+  const progressWidth = width * (timeToPercent(getCurrentTime(), getAudioDuration()) / 100);
+  drawWaveformBars(context, width, height, waveformPeaks, "rgba(8, 127, 140, 0.24)", width);
+  drawWaveformBars(context, width, height, waveformPeaks, "rgba(8, 127, 140, 0.74)", progressWidth);
+}
+
+function drawWaveformBars(context, width, height, peaks, color, clipWidth) {
+  const loudest = Math.max(0.01, ...peaks);
+  const step = width / peaks.length;
+  const barWidth = Math.max(1, step * 0.72);
+  const centerY = height / 2;
+  const maxBarHeight = Math.max(2, height * 0.38);
+
+  context.save();
+  context.beginPath();
+  context.rect(0, 0, clipWidth, height);
+  context.clip();
+  context.fillStyle = color;
+
+  peaks.forEach((peak, index) => {
+    const value = Math.max(0.04, peak / loudest);
+    const barHeight = value * maxBarHeight;
+    const x = index * step;
+    context.fillRect(x, centerY - barHeight, barWidth, barHeight * 2);
+  });
+
+  context.restore();
 }
 
 function saveProject() {
@@ -159,16 +308,23 @@ function renderAll() {
   updatePlaybackVisuals();
 }
 
+function isVowelStoryProject(sourceProject = project) {
+  return sourceProject?.template === "vowel-story";
+}
+
 function renderProjectChrome() {
   const character = project.character ?? {};
   const letter = character.letter ?? "";
+  const isVowelStory = isVowelStoryProject();
   projectSelector.value = project.id ?? DEFAULT_TIMING_PROJECT_ID;
   projectEyebrow.textContent = `${project.lessonId ?? "레슨"} · ${letter}`;
   projectTitle.textContent = `${character.name ?? project.title} 카드 타이밍`;
   document.title = `${character.name ?? "자음"} ${letter} 카드 타이밍 편집기`;
   segmentStartButton.textContent = `${character.name ?? "구간"} 시작 찍기`;
   segmentEndButton.textContent = `${character.name ?? "구간"} 끝 찍기`;
-  stageBackground.src = resolveAssetPath(project.render?.background ?? "public/video-assets/consonant-lesson-samples/gogo-g-background.png");
+  stage.classList.toggle("is-vowel-story", isVowelStory);
+  sceneSection.hidden = !isVowelStory;
+  stageBackground.src = resolveAssetPath(isVowelStory ? project.sceneCues?.[0]?.image : project.render?.background ?? "public/video-assets/consonant-lesson-samples/gogo-g-background.png");
   mascotImage.src = resolveAssetPath(character.image ?? "public/video-assets/characters/consonants/ㄱ-gogo-cat.png");
   mascotImage.alt = character.name ?? "자음 캐릭터";
   letterBadge.textContent = letter;
@@ -177,6 +333,13 @@ function renderProjectChrome() {
 }
 
 function renderCueList() {
+  sceneCueList.innerHTML = "";
+  if (isVowelStoryProject()) {
+    (project.sceneCues ?? []).forEach((cue, index) => {
+      sceneCueList.append(renderCueRow(cue, index, "scene"));
+    });
+  }
+
   cueList.innerHTML = "";
   project.cues.forEach((cue, index) => {
     cueList.append(renderCueRow(cue, index, "word"));
@@ -192,9 +355,10 @@ function renderCueList() {
 
 function renderCueRow(cue, index, kind) {
   const isLetter = kind === "letter";
-  const slot = isLetter ? { accent: "#ffd166" } : getCueSlot(cue);
+  const isScene = kind === "scene";
+  const slot = isLetter ? { accent: "#ffd166" } : isScene ? { accent: "#7c3aed" } : getCueSlot(cue);
   const row = document.createElement("article");
-  row.className = `cue-row${isSelectedCue(kind, cue.id) ? " is-selected" : ""}${isLetter ? " cue-row-letter" : ""}`;
+  row.className = `cue-row${isSelectedCue(kind, cue.id) ? " is-selected" : ""}${isLetter ? " cue-row-letter" : ""}${isScene ? " cue-row-scene" : ""}`;
   row.dataset.cueId = cue.id;
   row.dataset.kind = kind;
   row.style.setProperty("--accent", slot.accent);
@@ -202,12 +366,12 @@ function renderCueRow(cue, index, kind) {
   const visual = isLetter
     ? `<span class="letter-thumb" aria-hidden="true">${escapeHtml(cue.label)}</span>`
     : `<img src="${escapeHtml(resolveAssetPath(cue.image))}" alt="">`;
-  const removeButton = isLetter
+  const removeButton = isLetter || isScene
     ? ""
     : `<button class="mini-button remove-card" type="button" data-action="remove" title="사용하지 않는 카드 빼기">빼기</button>`;
 
   row.innerHTML = `
-    <button class="cue-select${isLetter ? " letter-select" : ""}" type="button" data-action="select">
+    <button class="cue-select${isLetter ? " letter-select" : ""}${isScene ? " scene-select" : ""}" type="button" data-action="select">
       ${visual}
       <span class="cue-label">${escapeHtml(label)}</span>
       <span class="cue-time">${formatClockTime(cue.start)} - ${formatClockTime(cue.end)}</span>
@@ -237,6 +401,7 @@ function renderTimeline() {
   segmentBand.style.width = `${Math.max(0.5, segmentEnd - segmentStart)}%`;
   timelineMarkers.innerHTML = "";
 
+  project.sceneCues?.forEach((cue) => renderTimelineMarker(cue, "scene", duration));
   project.cues.forEach((cue) => renderTimelineMarker(cue, "word", duration));
   project.letterCues.forEach((cue) => renderTimelineMarker(cue, "letter", duration));
 
@@ -246,17 +411,35 @@ function renderTimeline() {
 function renderTimelineMarker(cue, kind, duration) {
   const marker = document.createElement("button");
   marker.type = "button";
-  marker.className = `timeline-marker${isSelectedCue(kind, cue.id) ? " is-selected" : ""}${kind === "letter" ? " is-letter" : ""}`;
+  marker.className = `timeline-marker${isSelectedCue(kind, cue.id) ? " is-selected" : ""}${kind === "letter" ? " is-letter" : ""}${kind === "scene" ? " is-scene" : ""}`;
   marker.dataset.cueId = cue.id;
   marker.dataset.kind = kind;
   marker.title = `${cueDisplayName(kind, cue)} ${formatClockTime(cue.start)} - ${formatClockTime(cue.end)}`;
   marker.style.left = `${timeToPercent(cue.start, duration)}%`;
-  marker.style.setProperty("--accent", kind === "letter" ? "#ffd166" : getCueSlot(cue).accent);
+  marker.style.setProperty("--accent", kind === "letter" ? "#ffd166" : kind === "scene" ? "#7c3aed" : getCueSlot(cue).accent);
   timelineMarkers.append(marker);
 }
 
 function renderStage() {
   const now = getCurrentTime();
+  if (isVowelStoryProject()) {
+    renderVowelStoryStage(now);
+    return;
+  }
+
+  renderStageOverlays(now);
+}
+
+function renderVowelStoryStage(now) {
+  const activeScene = activeSceneAtTime(now);
+  if (activeScene?.image) {
+    stageBackground.src = resolveAssetPath(activeScene.image);
+  }
+
+  renderStageOverlays(now);
+}
+
+function renderStageOverlays(now) {
   const visibleWords = activeCues(project.cues, now);
   const selectedEntry = getSelectedCueEntry();
   const fallbackWord = selectedEntry?.kind === "word" ? selectedEntry.cue : null;
@@ -275,7 +458,7 @@ function renderStage() {
     card.style.setProperty("--accent", slot.accent);
     card.dataset.stageCueId = cue.id;
     card.dataset.dragKind = "word";
-    card.title = "드래그해서 위치 조절";
+    card.title = "????? ?? ??";
     card.innerHTML = `
       <img src="${escapeHtml(resolveAssetPath(cue.image))}" alt="">
       <span>${escapeHtml(cue.label)}</span>
@@ -291,7 +474,7 @@ function renderStage() {
     popup.style.setProperty("--letter-top", `${slot.top}%`);
     popup.dataset.stageCueId = cue.id;
     popup.dataset.dragKind = "letter";
-    popup.title = "드래그해서 위치 조절";
+    popup.title = "????? ?? ??";
     popup.textContent = cue.label;
     stageCards.append(popup);
   });
@@ -308,6 +491,7 @@ function updatePlaybackVisuals() {
   playToggle.textContent = audio.paused ? "▶" : "⏸";
   renderPlayhead();
   renderStage();
+  drawAudioWaveform();
 
   const liveEntry = activeCueEntryAtTime(now);
   const liveKey = liveEntry ? cueKey(liveEntry.kind, liveEntry.cue.id) : null;
@@ -348,7 +532,7 @@ function timeToPercent(time, duration) {
 }
 
 function getCueCollectionName(kind) {
-  return kind === "letter" ? "letterCues" : "cues";
+  return kind === "scene" ? "sceneCues" : kind === "letter" ? "letterCues" : "cues";
 }
 
 function getCueCollection(kind) {
@@ -359,6 +543,12 @@ function getSelectedCueEntry() {
   const cue = getCueCollection(selectedCueKind).find((item) => item.id === selectedCueId);
   if (cue) {
     return { kind: selectedCueKind, cue };
+  }
+
+  if (isVowelStoryProject() && project.sceneCues?.[0]) {
+    selectedCueKind = "scene";
+    selectedCueId = project.sceneCues[0].id;
+    return { kind: "scene", cue: project.sceneCues[0] };
   }
 
   if (project.cues[0]) {
@@ -373,6 +563,12 @@ function getSelectedCueEntry() {
     return { kind: "letter", cue: project.letterCues[0] };
   }
 
+  if (project.sceneCues?.[0]) {
+    selectedCueKind = "scene";
+    selectedCueId = project.sceneCues[0].id;
+    return { kind: "scene", cue: project.sceneCues[0] };
+  }
+
   return null;
 }
 
@@ -383,7 +579,17 @@ function activeCueEntryAtTime(time) {
   }
 
   const wordCue = getCueAtTime(project, time);
-  return wordCue ? { kind: "word", cue: wordCue } : null;
+  if (wordCue) {
+    return { kind: "word", cue: wordCue };
+  }
+
+  const sceneCue = isVowelStoryProject() ? activeSceneAtTime(time) : null;
+  return sceneCue ? { kind: "scene", cue: sceneCue } : null;
+}
+
+function activeSceneAtTime(time) {
+  const scenes = sortCues(project.sceneCues ?? []);
+  return [...scenes].reverse().find((cue) => time >= cue.start) ?? scenes[0] ?? null;
 }
 
 function activeCues(cues, time) {
@@ -872,6 +1078,7 @@ function handleCueListClick(event) {
 
 cueList.addEventListener("click", handleCueListClick);
 letterCueList.addEventListener("click", handleCueListClick);
+sceneCueList.addEventListener("click", handleCueListClick);
 
 function handleCueListChange(event) {
   const input = event.target.closest("[data-start-input], [data-end-input]");
@@ -916,8 +1123,10 @@ function handleCueListInput(event) {
 
 cueList.addEventListener("input", handleCueListInput);
 letterCueList.addEventListener("input", handleCueListInput);
+sceneCueList.addEventListener("input", handleCueListInput);
 cueList.addEventListener("change", handleCueListChange);
 letterCueList.addEventListener("change", handleCueListChange);
+sceneCueList.addEventListener("change", handleCueListChange);
 
 timeline.addEventListener("click", (event) => {
   const marker = event.target.closest(".timeline-marker");

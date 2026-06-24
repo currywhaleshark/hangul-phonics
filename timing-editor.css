@@ -189,10 +189,75 @@ button {
   font-size: 12px;
 }
 
-.seek-slider {
+.seek-track {
+  position: relative;
+  display: flex;
+  height: 44px;
   min-width: 120px;
   flex: 1 1 auto;
+  align-items: center;
+}
+
+.audio-waveform {
+  position: absolute;
+  inset: 4px 0;
+  width: 100%;
+  height: 36px;
+  border: 1px solid #c4d0dd;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #f8fcff 0%, #eef6f8 100%);
+  pointer-events: none;
+}
+
+.seek-slider {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  margin: 0;
+  flex: 0 0 auto;
   accent-color: #087f8c;
+  appearance: none;
+  background: transparent;
+}
+
+.seek-slider::-webkit-slider-runnable-track {
+  height: 36px;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.seek-slider::-webkit-slider-thumb {
+  width: 16px;
+  height: 30px;
+  margin-top: 3px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  background: #087f8c;
+  box-shadow: 0 2px 8px rgb(23 34 43 / 26%);
+  appearance: none;
+}
+
+.seek-slider::-moz-range-track {
+  height: 36px;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.seek-slider::-moz-range-progress {
+  height: 36px;
+  border-radius: 8px 0 0 8px;
+  background: rgb(8 127 140 / 10%);
+}
+
+.seek-slider::-moz-range-thumb {
+  width: 16px;
+  height: 30px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  background: #087f8c;
+  box-shadow: 0 2px 8px rgb(23 34 43 / 26%);
 }
 
 .lesson-stage {
@@ -686,6 +751,10 @@ button {
     min-width: 0;
   }
 
+  .seek-track {
+    width: 100%;
+  }
+
   .letter-badge {
     width: 62px;
     height: 62px;
@@ -720,4 +789,47 @@ button {
 
 .render-output a:hover {
   text-decoration: underline;
+}
+
+.scene-cue-list {
+  gap: 8px;
+}
+
+.cue-row-scene {
+  background: #f7f3ff;
+}
+
+.cue-select.scene-select {
+  grid-template-columns: 52px 1fr;
+}
+
+.cue-select img.scene-thumb {
+  width: 52px;
+  height: 34px;
+  object-fit: cover;
+}
+
+.timeline-marker.is-scene {
+  top: 2px;
+  width: 8px;
+  height: 68px;
+  background: #7c3aed;
+}
+
+.lesson-stage.is-vowel-story {
+  background: #fffdf8;
+}
+
+.lesson-stage.is-vowel-story .stage-bg {
+  object-fit: contain;
+  background: #fffdf8;
+}
+
+.lesson-stage.is-vowel-story .mascot,
+.lesson-stage.is-vowel-story .letter-badge {
+  display: none;
+}
+
+.lesson-stage.is-vowel-story .stage-card {
+  width: clamp(120px, 12vw, 168px);
 }

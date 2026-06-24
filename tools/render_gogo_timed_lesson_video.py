@@ -284,6 +284,49 @@ def normalize_letter_cues(project: dict) -> list[Cue]:
     return sorted(normalized, key=lambda cue: cue.start)
 
 
+
+def normalize_scene_cues(project: dict) -> list[Cue]:
+    raw_cues = project.get("sceneCues") or []
+    segment = project.get("segment") or {}
+    segment_start = float(segment.get("start", 0))
+    segment_end = float(segment.get("end", segment_start + 10))
+    normalized: list[Cue] = []
+    for index, raw in enumerate(raw_cues):
+        start = cue_time(raw, "start", segment_start)
+        end = cue_time(raw, "end", segment_end)
+        if end <= start:
+            end = segment_end if segment_end > start else start + 1.0
+        normalized.append(
+            Cue(
+                id=str(raw.get("id", f"scene-{index + 1}")),
+                label=str(raw.get("label") or f"Scene {index + 1}"),
+                start=start,
+                end=end,
+                left=50,
+                top=50,
+                image_path=resolve_repo_path(raw.get("image")),
+            )
+        )
+    return sorted(normalized, key=lambda cue: cue.start)
+
+
+def active_story_scene(scene_cues: list[Cue], t: float) -> Cue | None:
+    active: Cue | None = None
+    for scene in scene_cues:
+        if t >= scene.start:
+            active = scene
+        elif active is not None:
+            break
+    return active or (scene_cues[0] if scene_cues else None)
+
+
+def make_vowel_story_background(scene_image: Image.Image) -> Image.Image:
+    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (255, 253, 248, 255))
+    fitted = contain_rgba(scene_image, (WIDTH, HEIGHT))
+    canvas.alpha_composite(fitted, ((WIDTH - fitted.width) // 2, (HEIGHT - fitted.height) // 2))
+    return canvas
+
+
 def make_word_card(cue: Cue, word_image: Image.Image, letter: str) -> Image.Image:
     card_w, card_h = 310, 330
     out = Image.new("RGBA", (card_w + 44, card_h + 54), (0, 0, 0, 0))
@@ -368,11 +411,76 @@ def draw_letter_badge(canvas: Image.Image, letter: str) -> None:
     canvas.alpha_composite(badge, (62, 58))
 
 
+
+def build_vowel_story_frames(
+    project: dict,
+    output: Path,
+    keep_frames: bool = False,
+) -> tuple[Path, float, float]:
+    if FRAME_DIR.exists():
+        shutil.rmtree(FRAME_DIR)
+    FRAME_DIR.mkdir(parents=True, exist_ok=True)
+
+    segment = project.get("segment") or {}
+    segment_start = float(segment.get("start", 0))
+    segment_end = float(segment.get("end", 21.12))
+    duration = max(0.1, segment_end - segment_start)
+    frame_count = math.ceil(duration * FPS)
+
+    scene_cues = normalize_scene_cues(project)
+    if not scene_cues:
+        raise ValueError("vowel-story projects require sceneCues")
+
+    word_cues = normalize_word_cues(project)
+    letter_cues = normalize_letter_cues(project)
+    lesson_letter = project_letter(project, letter_cues)
+    scene_images = {
+        cue.id: make_vowel_story_background(Image.open(cue.image_path))
+        for cue in scene_cues
+        if cue.image_path
+    }
+    card_images = {cue.id: make_word_card(cue, Image.open(cue.image_path), lesson_letter) for cue in word_cues if cue.image_path}
+    letter_images = {cue.id: make_letter_popup(cue.label) for cue in letter_cues}
+
+    for index in range(frame_count):
+        elapsed = index / FPS
+        t = segment_start + elapsed
+        active_scene = active_story_scene(scene_cues, t)
+        scene_background = scene_images.get(active_scene.id) if active_scene else None
+        canvas = scene_background.copy() if scene_background else Image.new("RGBA", (WIDTH, HEIGHT), (255, 253, 248, 255))
+
+        for cue_index, cue in enumerate(word_cues):
+            motion = cue_motion(cue, t, cue_index)
+            if not motion:
+                continue
+            scale, opacity, x_offset, y_offset, rotation = motion
+            x = WIDTH * cue.left / 100 + x_offset
+            y = HEIGHT * cue.top / 100 + y_offset
+            paste_center(canvas, card_images[cue.id], (x, y), scale, opacity, rotation)
+
+        for cue_index, cue in enumerate(letter_cues):
+            motion = cue_motion(cue, t, cue_index + 10)
+            if not motion:
+                continue
+            scale, opacity, x_offset, y_offset, rotation = motion
+            x = WIDTH * cue.left / 100 + x_offset
+            y = HEIGHT * cue.top / 100 + y_offset
+            paste_center(canvas, letter_images[cue.id], (x, y), scale, opacity, rotation)
+
+        frame_path = FRAME_DIR / f"frame_{index + 1:04d}.jpg"
+        canvas.convert("RGB").save(frame_path, quality=91, optimize=True)
+
+    return FRAME_DIR, segment_start, duration
+
+
 def build_frames(
     project: dict,
     output: Path,
     keep_frames: bool = False,
 ) -> tuple[Path, float, float]:
+    if project.get("template") == "vowel-story":
+        return build_vowel_story_frames(project, output, keep_frames)
+
     if FRAME_DIR.exists():
         shutil.rmtree(FRAME_DIR)
     FRAME_DIR.mkdir(parents=True, exist_ok=True)

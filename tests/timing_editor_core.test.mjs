@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 
 import {
   CONSONANT_TIMING_PROJECTS,
+  TIMING_PROJECTS,
   clampTime,
   createDefaultGogoTimingProject,
   createDefaultTimingProject,
@@ -245,3 +246,25 @@ assert.throws(
   },
   /cue end/,
 );
+
+{
+  const aa = createDefaultTimingProject("aa-a");
+
+  assert.equal(TIMING_PROJECTS.some((project) => project.id === "aa-a"), true);
+  assert.equal(aa.template, "vowel-story", "aa-a should use the vowel story template");
+  assert.equal(aa.audio.src, "lessons/vowels/lesson-01-aa-baby-vowel/\uC544.wav");
+  assert.equal(aa.segment.end, 21.12);
+  assert.deepEqual(
+    aa.sceneCues.map((cue) => cue.image),
+    [
+      "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-01-silent.png",
+      "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-02-branch.png",
+      "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-03-ah.png",
+      "\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0 \uC2DC\uC548.png",
+    ],
+  );
+  assert.deepEqual(aa.cues.map((cue) => cue.label), ["\uC544\uAE30", "\uC544\uCE68", "\uC544\uC774\uC2A4\uD06C\uB9BC"]);
+  assert.deepEqual(aa.letterCues.map((cue) => cue.label), ["\uC544", "\uC544", "\uC544"]);
+  assert.equal(getTimingExportFileName(aa), "aa-a-vowel-timings.json");
+  assert.equal(parseTimingProject(serializeTimingProject(aa)).sceneCues.length, 4);
+}

@@ -17,6 +17,9 @@ assert.match(renderer, /cue\.end/, "renderer should keep popups visible until th
 assert.match(renderer, /atrim=start=/, "renderer should trim the supplied intro audio");
 assert.match(renderer, /gogo-g-background\.png/, "renderer should reuse the generated lesson background");
 assert.match(renderer, /make_letter_popup/, "renderer should draw ㄱ letter popups");
+assert.match(renderer, /vowel-story/, "renderer should branch for vowel story timing projects");
+assert.match(renderer, /sceneCues/, "renderer should read vowel story scene cues");
+assert.match(renderer, /build_vowel_story_frames/, "renderer should render vowel story scenes separately from consonant cards");
 
 assert.equal(timings.audio.src, "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav");
 assert.deepEqual(
