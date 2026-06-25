@@ -268,3 +268,50 @@ assert.throws(
   assert.equal(getTimingExportFileName(aa), "aa-a-vowel-timings.json");
   assert.equal(parseTimingProject(serializeTimingProject(aa)).sceneCues.length, 4);
 }
+
+{
+  const oo = createDefaultTimingProject("oo-o");
+  const uu = createDefaultTimingProject("uu-u");
+
+  assert.equal(TIMING_PROJECTS.some((project) => project.id === "oo-o"), true);
+  assert.equal(TIMING_PROJECTS.some((project) => project.id === "uu-u"), true);
+  assert.equal(oo.template, "vowel-combine-story");
+  assert.equal(uu.template, "vowel-combine-story");
+  assert.equal(oo.audio.src, "lessons/vowels/lesson-01-aa-baby-vowel/\uC624.wav");
+  assert.equal(uu.audio.src, "lessons/vowels/lesson-01-aa-baby-vowel/\uC6B0.wav");
+  assert.equal(oo.segment.end, 19.4);
+  assert.equal(uu.segment.end, 16.28);
+  assert.deepEqual(oo.cues.map((cue) => cue.label), ["\uC624\uC774", "\uC624\uB9AC", "\uC624\uB791\uC6B0\uD0C4"]);
+  assert.deepEqual(uu.cues.map((cue) => cue.label), ["\uC6B0\uC0B0", "\uC6B0\uC720", "\uC6B0\uBB3C"]);
+  assert.deepEqual(oo.letterCues.map((cue) => cue.label), ["\uC624", "\uC624"]);
+  assert.deepEqual(uu.letterCues.map((cue) => cue.label), ["\uC6B0", "\uC6B0"]);
+  assert.deepEqual(
+    oo.combineCues.map((cue) => cue.assetKind),
+    ["baby", "tool", "combined"],
+  );
+  assert.deepEqual(
+    uu.combineCues.map((cue) => cue.image),
+    [
+      "public/video-assets/vowel-alpha/combined/\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0 \uC2DC\uC548-alpha.png",
+      "public/video-assets/vowel-alpha/tools/\uC6B0\uC6B0 \uBC1C\uD310-alpha.png",
+      "public/video-assets/vowel-alpha/combined/\uC6B0\uC6B0 \uBC1C\uD310 \uC2DC\uC548-alpha.png",
+    ],
+  );
+  assert.equal(getTimingExportFileName(oo), "oo-o-vowel-timings.json");
+  assert.equal(getTimingExportFileName(uu), "uu-u-vowel-timings.json");
+
+  const parsed = parseTimingProject(serializeTimingProject(oo));
+  assert.equal(parsed.combineCues.length, 3);
+  assert.deepEqual(parsed.combineCues[0].fromPosition, { left: 18, top: 56 });
+  assert.deepEqual(parsed.combineCues[0].toPosition, { left: 43, top: 56 });
+}
+
+{
+  const oo = createDefaultTimingProject("oo-o");
+  const moved = setCuePosition(oo, "oo-tool", { left: 61.2345, top: 55.6789 }, "combineCues");
+  assert.deepEqual(moved.combineCues.find((cue) => cue.id === "oo-tool").position, { left: 61.235, top: 55.679 });
+
+  const trimmed = removeCue(oo, "oo-tool", "combineCues");
+  assert.equal(trimmed.combineCues.some((cue) => cue.id === "oo-tool"), false);
+  assert.deepEqual(trimmed.removedCueIds.combineCues, ["oo-tool"]);
+}

@@ -57,10 +57,68 @@ const VOWEL_STORY_LETTER_TIMES = [
   { id: "final-a", start: 19.85, end: 21.05, position: { left: 50, top: 24 } },
 ];
 
+const VOWEL_COMBINE_TIMES = [
+  {
+    id: "baby",
+    label: "\uC544\uC544 \uC544\uAE30",
+    assetKind: "baby",
+    start: 0.2,
+    end: 5.8,
+    fromPosition: { left: 18, top: 56 },
+    toPosition: { left: 43, top: 56 },
+    position: { left: 43, top: 56 },
+    scale: 0.54,
+  },
+  {
+    id: "tool",
+    label: "\uBAA8\uC74C\uB3C4\uAD6C",
+    assetKind: "tool",
+    start: 0.2,
+    end: 5.8,
+    fromPosition: { left: 82, top: 57 },
+    toPosition: { left: 58, top: 57 },
+    position: { left: 58, top: 57 },
+    scale: 0.74,
+  },
+  {
+    id: "combined",
+    label: "\uD569\uCE5C \uC774\uBBF8\uC9C0",
+    assetKind: "combined",
+    start: 5.55,
+    end: 11.6,
+    fromPosition: { left: 50, top: 55 },
+    toPosition: { left: 50, top: 55 },
+    position: { left: 50, top: 55 },
+    scale: 0.62,
+  },
+];
+
+const VOWEL_COMBINE_WORD_TIMES = [
+  { start: 12.0, end: 13.25, position: { left: 24, top: 72 }, accent: "#ffb703" },
+  { start: 13.15, end: 14.4, position: { left: 50, top: 72 }, accent: "#8ecae6" },
+  { start: 14.3, end: 15.65, position: { left: 76, top: 72 }, accent: "#ff8fab" },
+];
+
+const VOWEL_COMBINE_LETTER_TIMES = [
+  { id: "say", start: 8.3, end: 10.0, position: { left: 50, top: 22 } },
+  { id: "final", start: 15.75, end: 18.8, position: { left: 50, top: 22 } },
+];
+
+const vowelAlphaToolAsset = (file) => `public/video-assets/vowel-alpha/tools/${file}`;
+const vowelAlphaCombinedAsset = (file) => `public/video-assets/vowel-alpha/combined/${file}`;
+
 const LESSON_AUDIO = {
   "lesson-01-aa-baby-vowel": {
     src: "lessons/vowels/lesson-01-aa-baby-vowel/\uC544.wav",
     duration: 21.12,
+  },
+  "lesson-01-aa-baby-vowel-o": {
+    src: "lessons/vowels/lesson-01-aa-baby-vowel/\uC624.wav",
+    duration: 19.400272,
+  },
+  "lesson-01-aa-baby-vowel-u": {
+    src: "lessons/vowels/lesson-01-aa-baby-vowel/\uC6B0.wav",
+    duration: 16.280272,
   },
   "lesson-01-gogo-nana": {
     src: "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav",
@@ -284,7 +342,48 @@ export const VOWEL_TIMING_PROJECTS = [
   }),
 ];
 
-export const TIMING_PROJECTS = [...CONSONANT_TIMING_PROJECTS, ...VOWEL_TIMING_PROJECTS];
+export const VOWEL_COMBINE_TIMING_PROJECTS = [
+  defineVowelCombineProject({
+    id: "oo-o",
+    lessonId: "lesson-01-aa-baby-vowel-o",
+    segment: { start: 0, end: 19.4 },
+    character: {
+      key: "oo",
+      name: "\uC624\uC624 \uC0C1\uC790",
+      letter: "\uC624",
+      image: vowelAlphaCombinedAsset("\uC624\uC624 \uC0C1\uC790 \uC2DC\uC548-alpha.png"),
+    },
+    toolLabel: "\uC624\uC624 \uC0C1\uC790",
+    toolImage: vowelAlphaToolAsset("\uC624\uC624 \uC0C1\uC790-alpha.png"),
+    combinedImage: vowelAlphaCombinedAsset("\uC624\uC624 \uC0C1\uC790 \uC2DC\uC548-alpha.png"),
+    words: [
+      { id: "oo-cucumber", label: "\uC624\uC774", image: asset("cucumber.png") },
+      { id: "oo-duck", label: "\uC624\uB9AC", image: asset("duck.png") },
+      { id: "oo-orangutan", label: "\uC624\uB791\uC6B0\uD0C4", image: asset("orangutan.png") },
+    ],
+  }),
+  defineVowelCombineProject({
+    id: "uu-u",
+    lessonId: "lesson-01-aa-baby-vowel-u",
+    segment: { start: 0, end: 16.28 },
+    character: {
+      key: "uu",
+      name: "\uC6B0\uC6B0 \uBC1C\uD310",
+      letter: "\uC6B0",
+      image: vowelAlphaCombinedAsset("\uC6B0\uC6B0 \uBC1C\uD310 \uC2DC\uC548-alpha.png"),
+    },
+    toolLabel: "\uC6B0\uC6B0 \uBC1C\uD310",
+    toolImage: vowelAlphaToolAsset("\uC6B0\uC6B0 \uBC1C\uD310-alpha.png"),
+    combinedImage: vowelAlphaCombinedAsset("\uC6B0\uC6B0 \uBC1C\uD310 \uC2DC\uC548-alpha.png"),
+    words: [
+      { id: "uu-umbrella", label: "\uC6B0\uC0B0", image: asset("umbrella.png") },
+      { id: "uu-milk", label: "\uC6B0\uC720", image: asset("milk.png") },
+      { id: "uu-well", label: "\uC6B0\uBB3C", image: asset("well.png") },
+    ],
+  }),
+];
+
+export const TIMING_PROJECTS = [...CONSONANT_TIMING_PROJECTS, ...VOWEL_TIMING_PROJECTS, ...VOWEL_COMBINE_TIMING_PROJECTS];
 
 export const DEFAULT_GOGO_TIMING_PROJECT = buildDefaultTimingProject(CONSONANT_TIMING_PROJECTS[0]);
 
@@ -326,6 +425,30 @@ function defineVowelStoryProject({ id, lessonId, segment, character, scenes, wor
   });
 }
 
+function defineVowelCombineProject({ id, lessonId, segment, character, toolLabel, toolImage, combinedImage, words }) {
+  const audio = LESSON_AUDIO[lessonId];
+  return buildDefaultTimingProject({
+    id,
+    lessonId,
+    template: "vowel-combine-story",
+    title: `${character.name} ${character.letter} \uBAA8\uC74C \uB9CC\uB0A8`,
+    character,
+    audio,
+    segment: { label: character.name, ...segment },
+    words,
+    combine: {
+      babyImage: vowelAlphaCombinedAsset("\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0 \uC2DC\uC548-alpha.png"),
+      toolLabel,
+      toolImage,
+      combinedImage,
+    },
+    render: {
+      outputSlug: id,
+      timingFile: `${id}-vowel-timings.json`,
+    },
+  });
+}
+
 function buildDefaultTimingProject(definition) {
   const project = {
     schemaVersion: TIMING_SCHEMA_VERSION,
@@ -337,6 +460,7 @@ function buildDefaultTimingProject(definition) {
     audio: definition.audio,
     segment: definition.segment,
     sceneCues: makeSceneCues(definition.scenes ?? [], definition.segment.start),
+    combineCues: makeCombineCues(definition.combine, definition.character.key, definition.segment.start, definition.template),
     cues: makeWordCues(definition.words ?? [], definition.character.key, definition.segment.start, definition.template),
     letterCues: makeLetterCues(definition.character.letter, definition.character.key, definition.segment.start, definition.template),
     removedCueIds: definition.removedCueIds,
@@ -359,9 +483,43 @@ function makeSceneCues(scenes, segmentStart) {
   });
 }
 
+function makeCombineCues(combine, characterKey, segmentStart, template = "consonant-card") {
+  if (template !== "vowel-combine-story" || !combine) {
+    return [];
+  }
+
+  const images = {
+    baby: combine.babyImage,
+    tool: combine.toolImage,
+    combined: combine.combinedImage,
+  };
+  const labels = {
+    baby: "\uC544\uAE30",
+    tool: combine.toolLabel,
+    combined: "\uD569\uCE5C \uC774\uBBF8\uC9C0",
+  };
+
+  return VOWEL_COMBINE_TIMES.map((timing) => ({
+    id: `${characterKey}-${timing.id}`,
+    label: labels[timing.assetKind],
+    assetKind: timing.assetKind,
+    image: images[timing.assetKind],
+    start: catalogTime(segmentStart + timing.start),
+    end: catalogTime(segmentStart + timing.end),
+    fromPosition: clonePlainObject(timing.fromPosition),
+    toPosition: clonePlainObject(timing.toPosition),
+    position: clonePlainObject(timing.position),
+    scale: timing.scale,
+  }));
+}
+
 function makeWordCues(words, characterKey, segmentStart, template = "consonant-card") {
   return words.map((word, index) => {
-    const vowelTiming = template === "vowel-story" ? VOWEL_STORY_WORD_TIMES[index] : null;
+    const vowelTiming = template === "vowel-story"
+      ? VOWEL_STORY_WORD_TIMES[index]
+      : template === "vowel-combine-story"
+        ? VOWEL_COMBINE_WORD_TIMES[index]
+        : null;
     const slot = vowelTiming?.position
       ? { ...vowelTiming.position, accent: vowelTiming.accent }
       : CARD_POSITIONS[index % CARD_POSITIONS.length];
@@ -379,7 +537,11 @@ function makeWordCues(words, characterKey, segmentStart, template = "consonant-c
 }
 
 function makeLetterCues(letter, characterKey, segmentStart, template = "consonant-card") {
-  const timings = template === "vowel-story" ? VOWEL_STORY_LETTER_TIMES : LETTER_TIMES;
+  const timings = template === "vowel-story"
+    ? VOWEL_STORY_LETTER_TIMES
+    : template === "vowel-combine-story"
+      ? VOWEL_COMBINE_LETTER_TIMES
+      : LETTER_TIMES;
   return timings.map((cue) => ({
     id: characterKey === "gogo" ? `g-${cue.id}` : `${characterKey}-${cue.id}`,
     label: letter,
@@ -427,7 +589,7 @@ export function getTimingExportFileName(projectOrId = DEFAULT_TIMING_PROJECT_ID)
   return project?.render?.timingFile ?? `${project?.id || DEFAULT_TIMING_PROJECT_ID}-card-timings.json`;
 }
 
-export const TIMING_CUE_COLLECTIONS = ["cues", "letterCues", "sceneCues"];
+export const TIMING_CUE_COLLECTIONS = ["cues", "letterCues", "sceneCues", "combineCues"];
 
 function mergeTimingProjectDefaults(project) {
   const projectId = project.id ?? DEFAULT_TIMING_PROJECT_ID;
@@ -455,6 +617,7 @@ function mergeTimingProjectDefaults(project) {
       ...(project.render ?? {}),
     },
     sceneCues: Array.isArray(project.sceneCues) ? mergeCueDefaults(project.sceneCues, defaults.sceneCues, removedCueIds.sceneCues) : defaults.sceneCues,
+    combineCues: Array.isArray(project.combineCues) ? mergeCueDefaults(project.combineCues, defaults.combineCues, removedCueIds.combineCues) : defaults.combineCues,
     cues: Array.isArray(project.cues) ? mergeCueDefaults(project.cues, defaults.cues, removedCueIds.cues) : defaults.cues,
     letterCues: Array.isArray(project.letterCues) ? mergeCueDefaults(project.letterCues, defaults.letterCues, removedCueIds.letterCues) : defaults.letterCues,
   };
@@ -768,6 +931,8 @@ export function parseTimingProject(input) {
 
   validateCues(project.cues);
   validateCues(project.letterCues);
+  validateCues(project.sceneCues);
+  validateCues(project.combineCues);
 
   return cloneTimingProject(project);
 }
