@@ -495,7 +495,7 @@ function renderVowelCombineStage(now) {
   combineCues.forEach((cue) => {
     const sprite = document.createElement("img");
     sprite.className = `combine-sprite is-draggable${cueMotionClass(cue, visibleCombineCues, now)}`;
-    const slot = combineSpriteSlot(cue, now);
+    const slot = combineSpriteSlot(cue, now, containsCue(visibleCombineCues, cue));
     sprite.src = resolveAssetPath(cue.image);
     sprite.alt = "";
     sprite.style.left = `${slot.left}%`;
@@ -510,7 +510,10 @@ function renderVowelCombineStage(now) {
   renderStageOverlays(now, { append: true });
 }
 
-function combineSpriteSlot(cue, now) {
+function combineSpriteSlot(cue, now, isLive = true) {
+  if (!isLive && cue.position) {
+    return cue.position;
+  }
   if (cue.assetKind === "combined") {
     return cue.position ?? cue.toPosition ?? { left: 50, top: 55 };
   }
@@ -667,6 +670,10 @@ function getSelectedCueEntry() {
 }
 
 function activeCueEntryAtTime(time) {
+  const letterCue = activeCues(project.letterCues, time)[0];
+  if (letterCue) {
+    return { kind: "letter", cue: letterCue };
+  }
   const wordCue = getCueAtTime(project, time);
   if (wordCue) {
     return { kind: "word", cue: wordCue };
@@ -676,11 +683,7 @@ function activeCueEntryAtTime(time) {
     return { kind: "combine", cue: combineCue };
   }
   const sceneCue = isVowelStoryProject() ? activeSceneAtTime(time) : null;
-  if (sceneCue) {
-    return { kind: "scene", cue: sceneCue };
-  }
-  const letterCue = activeCues(project.letterCues, time)[0];
-  return letterCue ? { kind: "letter", cue: letterCue } : null;
+  return sceneCue ? { kind: "scene", cue: sceneCue } : null;
 }
 
 function activeSceneAtTime(time) {
@@ -991,13 +994,35 @@ function moveStageElement(element, kind, position) {
   element.style.top = `${position.top}%`;
 }
 
+function updateCombineCuePosition(sourceProject, cueId, position) {
+  const positionedProject = setCuePosition(sourceProject, cueId, position, "combineCues");
+  return {
+    ...positionedProject,
+    combineCues: (positionedProject.combineCues ?? []).map((cue) => {
+      if (cue.id !== cueId) {
+        return cue;
+      }
+
+      const nextPosition = cue.position ?? position;
+      return {
+        ...cue,
+        position: nextPosition,
+        toPosition: nextPosition,
+      };
+    }),
+  };
+}
+
 function setDraggedCuePosition(event) {
   if (!dragState) {
     return;
   }
 
+  const nextPosition = stagePositionFromPointer(event);
   const collectionName = getCueCollectionName(dragState.kind);
-  project = setCuePosition(project, dragState.cueId, stagePositionFromPointer(event), collectionName);
+  project = dragState.kind === "combine"
+    ? updateCombineCuePosition(project, dragState.cueId, nextPosition)
+    : setCuePosition(project, dragState.cueId, nextPosition, collectionName);
   const cue = getCueCollection(dragState.kind).find((item) => item.id === dragState.cueId);
   if (!cue) {
     return;
