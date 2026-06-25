@@ -86,6 +86,16 @@ class Cue:
     image_path: Path | None = None
 
 
+@dataclass(frozen=True)
+class CombineCue(Cue):
+    asset_kind: str = "combined"
+    from_left: float = 50
+    from_top: float = 50
+    to_left: float = 50
+    to_top: float = 50
+    scale: float = 0.7
+
+
 def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
     candidates = [
         Path("C:/Windows/Fonts/malgunbd.ttf") if bold else Path("C:/Windows/Fonts/malgun.ttf"),
@@ -310,6 +320,55 @@ def normalize_scene_cues(project: dict) -> list[Cue]:
     return sorted(normalized, key=lambda cue: cue.start)
 
 
+def cue_position(raw: dict, key: str, fallback: dict[str, float]) -> dict[str, float]:
+    value = raw.get(key)
+    if not isinstance(value, dict):
+        value = fallback
+    return {
+        "left": clamp_percent(value.get("left"), fallback["left"]),
+        "top": clamp_percent(value.get("top"), fallback["top"]),
+    }
+
+
+def normalize_combine_cues(project: dict) -> list[CombineCue]:
+    raw_cues = project.get("combineCues") or []
+    segment = project.get("segment") or {}
+    segment_start = float(segment.get("start", 0))
+    segment_end = float(segment.get("end", segment_start + 10))
+    normalized: list[CombineCue] = []
+    for index, raw in enumerate(raw_cues):
+        start = cue_time(raw, "start", segment_start)
+        end = cue_time(raw, "end", segment_end)
+        if end <= start:
+            end = start + 1.0
+        position = cue_position(raw, "position", {"left": 50, "top": 55})
+        from_position = cue_position(raw, "fromPosition", position)
+        to_position = cue_position(raw, "toPosition", position)
+        try:
+            scale = float(raw.get("scale", 0.7))
+        except (TypeError, ValueError):
+            scale = 0.7
+        normalized.append(
+            CombineCue(
+                id=str(raw.get("id", f"combine-{index + 1}")),
+                label=str(raw.get("label") or f"Combine {index + 1}"),
+                start=start,
+                end=end,
+                left=position["left"],
+                top=position["top"],
+                accent=(20, 184, 166),
+                image_path=resolve_repo_path(raw.get("image")),
+                asset_kind=str(raw.get("assetKind") or "combined"),
+                from_left=from_position["left"],
+                from_top=from_position["top"],
+                to_left=to_position["left"],
+                to_top=to_position["top"],
+                scale=max(0.1, min(1.4, scale)),
+            )
+        )
+    return sorted(normalized, key=lambda cue: cue.start)
+
+
 def active_story_scene(scene_cues: list[Cue], t: float) -> Cue | None:
     active: Cue | None = None
     for scene in scene_cues:
@@ -412,6 +471,103 @@ def draw_letter_badge(canvas: Image.Image, letter: str) -> None:
 
 
 
+def make_vowel_combine_background() -> Image.Image:
+    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (255, 253, 248, 255))
+    glow = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(glow)
+    draw.ellipse((WIDTH * 0.16, -HEIGHT * 0.18, WIDTH * 0.84, HEIGHT * 0.78), fill=(255, 244, 197, 118))
+    draw.ellipse((WIDTH * 0.3, HEIGHT * 0.52, WIDTH * 0.72, HEIGHT * 1.04), fill=(217, 240, 255, 72))
+    canvas.alpha_composite(glow.filter(ImageFilter.GaussianBlur(70)))
+    return canvas
+
+
+def combine_sprite_motion(cue: CombineCue, t: float) -> tuple[float, float, float, float] | None:
+    if t < cue.start or t > cue.end:
+        return None
+    duration = max(0.001, cue.end - cue.start)
+    progress = max(0.0, min(1.0, (t - cue.start) / duration))
+    if cue.asset_kind == "combined":
+        entry = min(0.5, duration * 0.28)
+        entry_progress = max(0.0, min(1.0, (t - cue.start) / max(0.001, entry)))
+        scale = cue.scale * (0.72 + 0.28 * ease_out_back(entry_progress))
+        opacity = ease_out_cubic(entry_progress)
+        return cue.left, cue.top, scale, opacity
+
+    eased = ease_out_cubic(progress)
+    left = cue.from_left + (cue.to_left - cue.from_left) * eased
+    top = cue.from_top + (cue.to_top - cue.from_top) * eased
+    return left, top, cue.scale, 1.0
+
+
+def build_vowel_combine_story_frames(
+    project: dict,
+    output: Path,
+    keep_frames: bool = False,
+) -> tuple[Path, float, float]:
+    if FRAME_DIR.exists():
+        shutil.rmtree(FRAME_DIR)
+    FRAME_DIR.mkdir(parents=True, exist_ok=True)
+
+    segment = project.get("segment") or {}
+    segment_start = float(segment.get("start", 0))
+    segment_end = float(segment.get("end", 19.4))
+    duration = max(0.1, segment_end - segment_start)
+    frame_count = math.ceil(duration * FPS)
+
+    combine_cues = normalize_combine_cues(project)
+    if not combine_cues:
+        raise ValueError("vowel-combine-story projects require combineCues")
+
+    word_cues = normalize_word_cues(project)
+    letter_cues = normalize_letter_cues(project)
+    lesson_letter = project_letter(project, letter_cues)
+    background = make_vowel_combine_background()
+    sprite_images = {
+        cue.id: contain_rgba(Image.open(cue.image_path), (900, 820))
+        for cue in combine_cues
+        if cue.image_path
+    }
+    card_images = {cue.id: make_word_card(cue, Image.open(cue.image_path), lesson_letter) for cue in word_cues if cue.image_path}
+    letter_images = {cue.id: make_letter_popup(cue.label) for cue in letter_cues}
+
+    for index in range(frame_count):
+        elapsed = index / FPS
+        t = segment_start + elapsed
+        canvas = background.copy()
+
+        for cue in combine_cues:
+            motion = combine_sprite_motion(cue, t)
+            if not motion:
+                continue
+            left, top, scale, opacity = motion
+            x = WIDTH * left / 100
+            y = HEIGHT * top / 100
+            paste_center(canvas, sprite_images[cue.id], (x, y), scale, opacity)
+
+        for cue_index, cue in enumerate(word_cues):
+            motion = cue_motion(cue, t, cue_index)
+            if not motion:
+                continue
+            scale, opacity, x_offset, y_offset, rotation = motion
+            x = WIDTH * cue.left / 100 + x_offset
+            y = HEIGHT * cue.top / 100 + y_offset
+            paste_center(canvas, card_images[cue.id], (x, y), scale, opacity, rotation)
+
+        for cue_index, cue in enumerate(letter_cues):
+            motion = cue_motion(cue, t, cue_index + 10)
+            if not motion:
+                continue
+            scale, opacity, x_offset, y_offset, rotation = motion
+            x = WIDTH * cue.left / 100 + x_offset
+            y = HEIGHT * cue.top / 100 + y_offset
+            paste_center(canvas, letter_images[cue.id], (x, y), scale, opacity, rotation)
+
+        frame_path = FRAME_DIR / f"frame_{index + 1:04d}.jpg"
+        canvas.convert("RGB").save(frame_path, quality=91, optimize=True)
+
+    return FRAME_DIR, segment_start, duration
+
+
 def build_vowel_story_frames(
     project: dict,
     output: Path,
@@ -478,6 +634,9 @@ def build_frames(
     output: Path,
     keep_frames: bool = False,
 ) -> tuple[Path, float, float]:
+    if project.get("template") == "vowel-combine-story":
+        return build_vowel_combine_story_frames(project, output, keep_frames)
+
     if project.get("template") == "vowel-story":
         return build_vowel_story_frames(project, output, keep_frames)
 
@@ -668,6 +827,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-
-

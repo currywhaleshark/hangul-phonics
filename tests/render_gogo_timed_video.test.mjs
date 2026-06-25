@@ -20,6 +20,11 @@ assert.match(renderer, /make_letter_popup/, "renderer should draw ㄱ letter pop
 assert.match(renderer, /vowel-story/, "renderer should branch for vowel story timing projects");
 assert.match(renderer, /sceneCues/, "renderer should read vowel story scene cues");
 assert.match(renderer, /build_vowel_story_frames/, "renderer should render vowel story scenes separately from consonant cards");
+assert.match(renderer, /vowel-combine-story/, "renderer should branch for vowel combine story timing projects");
+assert.match(renderer, /combineCues/, "renderer should read vowel combine cue sprites");
+assert.match(renderer, /normalize_combine_cues/, "renderer should normalize combine cue metadata");
+assert.match(renderer, /build_vowel_combine_story_frames/, "renderer should render vowel combine story frames");
+assert.match(renderer, /combine_sprite_motion/, "renderer should animate baby and tool sprites toward the center");
 
 assert.equal(timings.audio.src, "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav");
 assert.deepEqual(
@@ -36,4 +41,3 @@ assert.deepEqual(timings.cues[0].position, { left: 23.842, top: 28.222 });
 assert.equal(timings.letterCues.length, 9);
 assert.equal(timings.letterCues.at(-1).id, "g-repeat-6");
 assert.equal(timings.letterCues.at(-1).end, 32.427);
-
