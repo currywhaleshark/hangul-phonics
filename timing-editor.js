@@ -483,7 +483,6 @@ function renderVowelStoryStage(now) {
 }
 
 function renderVowelCombineStage(now) {
-  stageBackground.removeAttribute("src");
   stageBackground.alt = "";
   stageCards.innerHTML = "";
 

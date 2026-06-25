@@ -850,40 +850,16 @@ button {
   background: #fff7e8;
 }
 
-.lesson-stage.is-vowel-combine-story::before,
-.lesson-stage.is-vowel-combine-story::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
-
-.lesson-stage.is-vowel-combine-story::before {
-  inset: 0 0 34%;
+.lesson-stage.is-vowel-combine-story .stage-bg {
+  display: block;
   z-index: 0;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 246, 225, 0.9)),
-    repeating-linear-gradient(90deg, rgba(244, 180, 116, 0.13) 0 2px, transparent 2px 190px),
-    linear-gradient(180deg, #fff8ea, #fff1d8);
-}
-
-.lesson-stage.is-vowel-combine-story::after {
-  left: -4%;
-  right: -4%;
-  bottom: -8%;
-  height: 45%;
-  z-index: 1;
-  clip-path: polygon(0 13%, 100% 0, 100% 100%, 0 100%);
-  background:
-    radial-gradient(ellipse at 50% 43%, rgba(255, 214, 126, 0.58) 0 31%, transparent 32%),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.28) 0 28px, transparent 28px 72px),
-    linear-gradient(180deg, #dff4ee 0%, #f7ead5 100%);
+  object-fit: cover;
 }
 
 .lesson-stage.is-vowel-combine-story .stage-cards {
   z-index: 2;
 }
 
-.lesson-stage.is-vowel-combine-story .stage-bg,
 .lesson-stage.is-vowel-combine-story .mascot,
 .lesson-stage.is-vowel-combine-story .letter-badge {
   display: none;

@@ -20,6 +20,7 @@ DEFAULT_OUTPUT = OUT_DIR / "gogo-g-timed-lesson.mp4"
 DEFAULT_PREVIEW = OUT_DIR / "gogo-g-timed-lesson-preview.jpg"
 DEFAULT_AUDIO = ROOT / "lessons" / "consonants" / "lesson-01-gogo-nana" / "ㄱ, ㄴ 소개.wav"
 DEFAULT_BACKGROUND = OUT_DIR / "gogo-g-background.png"
+DEFAULT_VOWEL_COMBINE_BACKGROUND = ROOT / "public" / "video-assets" / "vowel-backgrounds" / "vowel-combine-playroom.png"
 DEFAULT_CHARACTER = ROOT / "public" / "video-assets" / "characters" / "consonants" / "ㄱ-gogo-cat.png"
 
 WIDTH = 1920
@@ -471,51 +472,10 @@ def draw_letter_badge(canvas: Image.Image, letter: str) -> None:
 
 
 
-def draw_vowel_room_background(canvas: Image.Image) -> None:
-    draw = ImageDraw.Draw(canvas)
-    wall_height = round(HEIGHT * 0.66)
-    top = (255, 249, 234)
-    bottom = (255, 241, 216)
-    for y in range(wall_height):
-        ratio = y / max(1, wall_height - 1)
-        color = tuple(round(top[index] + (bottom[index] - top[index]) * ratio) for index in range(3))
-        draw.line((0, y, WIDTH, y), fill=(*color, 255))
-
-    for x in range(120, WIDTH, 240):
-        draw.rounded_rectangle((x, 126, x + 72, 134), radius=4, fill=(238, 174, 116, 34))
-        draw.rounded_rectangle((x + 96, 292, x + 144, 300), radius=4, fill=(126, 198, 190, 30))
-
-    glow = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-    glow_draw = ImageDraw.Draw(glow)
-    glow_draw.ellipse((WIDTH * 0.18, HEIGHT * 0.04, WIDTH * 0.82, HEIGHT * 0.62), fill=(255, 246, 201, 72))
-    canvas.alpha_composite(glow.filter(ImageFilter.GaussianBlur(74)))
-
-
-def draw_vowel_room_floor(canvas: Image.Image) -> None:
-    draw = ImageDraw.Draw(canvas)
-    floor_top_left = round(HEIGHT * 0.66)
-    floor_top_right = round(HEIGHT * 0.61)
-    draw.polygon(
-        ((0, floor_top_left), (WIDTH, floor_top_right), (WIDTH, HEIGHT), (0, HEIGHT)),
-        fill=(224, 244, 238, 255),
-    )
-    draw.line((0, floor_top_left, WIDTH, floor_top_right), fill=(199, 224, 216, 255), width=5)
-
-    mat = Image.new("RGBA", (1080, 260), (0, 0, 0, 0))
-    mat_draw = ImageDraw.Draw(mat)
-    mat_draw.rounded_rectangle((18, 34, 1062, 226), radius=78, fill=(255, 219, 134, 168))
-    mat_draw.rounded_rectangle((98, 82, 982, 178), radius=48, outline=(255, 247, 226, 116), width=18)
-    for x in range(180, 900, 160):
-        mat_draw.rounded_rectangle((x, 104, x + 58, 156), radius=22, fill=(255, 250, 234, 62))
-    mat = mat.filter(ImageFilter.GaussianBlur(0.4))
-    canvas.alpha_composite(mat, ((WIDTH - mat.width) // 2, round(HEIGHT * 0.73)))
-
-
-def make_vowel_combine_background() -> Image.Image:
-    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (255, 247, 232, 255))
-    draw_vowel_room_background(canvas)
-    draw_vowel_room_floor(canvas)
-    return canvas
+def make_vowel_combine_background(project: dict) -> Image.Image:
+    render = project.get("render") or {}
+    background_path = resolve_repo_path(render.get("background"), DEFAULT_VOWEL_COMBINE_BACKGROUND)
+    return fit_cover(Image.open(background_path), (WIDTH, HEIGHT)).convert("RGBA")
 
 
 def combine_sprite_motion(cue: CombineCue, t: float) -> tuple[float, float, float, float] | None:
@@ -558,7 +518,7 @@ def build_vowel_combine_story_frames(
     word_cues = normalize_word_cues(project)
     letter_cues = normalize_letter_cues(project)
     lesson_letter = project_letter(project, letter_cues)
-    background = make_vowel_combine_background()
+    background = make_vowel_combine_background(project)
     sprite_images = {
         cue.id: contain_rgba(Image.open(cue.image_path), (900, 820))
         for cue in combine_cues

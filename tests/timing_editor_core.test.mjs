@@ -305,6 +305,8 @@ assert.throws(
   );
   assert.equal(getTimingExportFileName(oo), "oo-o-vowel-timings.json");
   assert.equal(getTimingExportFileName(uu), "uu-u-vowel-timings.json");
+  assert.equal(oo.render.background, "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png");
+  assert.equal(uu.render.background, "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png");
 
   const parsed = parseTimingProject(serializeTimingProject(oo));
   assert.equal(parsed.combineCues.length, 3);

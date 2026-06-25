@@ -9,6 +9,7 @@ export const GOGO_TIMING_STORAGE_KEY = "hangul-phonics:gogo-g-card-timings";
 export const DEFAULT_GOGO_TIMING_FILE = "gogo-g-card-timings.json";
 
 const DEFAULT_BACKGROUND = "public/video-assets/consonant-lesson-samples/gogo-g-background.png";
+const VOWEL_COMBINE_BACKGROUND = "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png";
 
 const CARD_POSITIONS = [
   { left: 20, top: 39, accent: "#ff8470" },
@@ -444,6 +445,7 @@ function defineVowelCombineProject({ id, lessonId, segment, character, toolLabel
       combinedImage,
     },
     render: {
+      background: VOWEL_COMBINE_BACKGROUND,
       outputSlug: id,
       timingFile: `${id}-vowel-timings.json`,
     },

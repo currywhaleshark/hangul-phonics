@@ -24,8 +24,9 @@ assert.match(renderer, /vowel-combine-story/, "renderer should branch for vowel 
 assert.match(renderer, /combineCues/, "renderer should read vowel combine cue sprites");
 assert.match(renderer, /normalize_combine_cues/, "renderer should normalize combine cue metadata");
 assert.match(renderer, /build_vowel_combine_story_frames/, "renderer should render vowel combine story frames");
-assert.match(renderer, /draw_vowel_room_background/, "renderer should draw a dedicated vowel room background");
-assert.match(renderer, /draw_vowel_room_floor/, "renderer should draw a distinct vowel room floor");
+assert.match(renderer, /make_vowel_combine_background\(project/, "renderer should load the generated vowel combine background from timing metadata");
+assert.match(renderer, /vowel-combine-playroom\.png/, "renderer should know the generated vowel combine background asset");
+assert.doesNotMatch(renderer, /draw_vowel_room_background/, "renderer should not procedurally draw the vowel combine background");
 assert.match(renderer, /combine_sprite_motion/, "renderer should animate baby and tool sprites toward the center");
 
 assert.equal(timings.audio.src, "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav");
