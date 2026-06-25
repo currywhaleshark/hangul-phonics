@@ -86,7 +86,7 @@ const letterSectionEyebrow = document.querySelector("#letter-section-eyebrow");
 
 populateProjectSelector();
 let project = loadStoredProject(projectSelector.value);
-let selectedCueKind = "word";
+let selectedCueKind = getInitialSelectedCueKind(project);
 let selectedCueId = getInitialSelectedCueId(project);
 let lastLiveCueKey = null;
 let dragState = null;
@@ -132,6 +132,16 @@ function loadStoredProject(projectId) {
   }
 }
 
+function getInitialSelectedCueKind(sourceProject) {
+  if (sourceProject?.template === "vowel-story") {
+    return "scene";
+  }
+  if (sourceProject?.template === "vowel-combine-story") {
+    return "combine";
+  }
+  return "word";
+}
+
 function getInitialSelectedCueId(sourceProject) {
   if (sourceProject?.template === "vowel-story") {
     return sourceProject.sceneCues?.[0]?.id ?? sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
@@ -144,18 +154,8 @@ function getInitialSelectedCueId(sourceProject) {
 }
 
 function setDefaultSelection(sourceProject) {
-  if (sourceProject?.template === "vowel-story") {
-    selectedCueKind = "scene";
-    selectedCueId = sourceProject.sceneCues?.[0]?.id ?? sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
-    return;
-  }
-  if (sourceProject?.template === "vowel-combine-story") {
-    selectedCueKind = "combine";
-    selectedCueId = sourceProject.combineCues?.[0]?.id ?? sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
-    return;
-  }
-  selectedCueKind = "word";
-  selectedCueId = sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
+  selectedCueKind = getInitialSelectedCueKind(sourceProject);
+  selectedCueId = getInitialSelectedCueId(sourceProject);
 }
 
 function resetSelectedCue() {

@@ -42,6 +42,7 @@ assert.match(js, /letterCues/, "editor should edit ??popup timings");
 assert.match(js, /sceneCues/, "editor should edit vowel story scene timings");
 assert.match(js, /isVowelStoryProject/, "editor should branch preview behavior for vowel stories");
 assert.match(js, /isVowelCombineProject/, "editor should branch preview behavior for vowel combine stories");
+assert.match(js, /getInitialSelectedCueKind/, "editor should initialize the selected cue kind before first render");
 assert.match(js, /combineCues/, "editor should edit vowel combine story cues");
 assert.match(js, /renderVowelCombineStage/, "editor should render vowel combine story previews");
 assert.match(js, /combine-sprite/, "editor should render transparent combine sprites");
