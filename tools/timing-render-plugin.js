@@ -32,7 +32,7 @@ export function timingRenderPlugin() {
           const previewPath = path.join(SAMPLE_DIR, `${slug}-timed-lesson-preview.jpg`);
 
           await writeFile(timingPath, `${JSON.stringify(project, null, 2)}\n`, "utf8");
-          await runRenderer(timingPath, outputPath, previewPath);
+          await runRenderer(timingPath, outputPath, previewPath, getPreviewTime(project));
 
           sendJson(res, 200, {
             videoUrl: `/public/video-assets/consonant-lesson-samples/${slug}-timed-lesson.mp4`,
@@ -97,7 +97,12 @@ function validateProject(project, slug) {
   };
 }
 
-function runRenderer(timingPath, outputPath, previewPath) {
+export function getPreviewTime(project) {
+  const duration = project.segment.end - project.segment.start;
+  return String(Math.min(20.8, Math.max(0, duration - 0.1)));
+}
+
+function runRenderer(timingPath, outputPath, previewPath, previewTime) {
   const runtime = findBundledRuntime();
   const python = process.env.TIMING_RENDER_PYTHON || process.env.PYTHON || runtime.python || "python";
   const env = { ...process.env };
@@ -115,7 +120,7 @@ function runRenderer(timingPath, outputPath, previewPath) {
       "--preview",
       previewPath,
       "--preview-time",
-      "20.8",
+      previewTime,
     ],
     { cwd: ROOT, env, windowsHide: true },
   );
