@@ -298,10 +298,15 @@ assert.throws(
   assert.deepEqual(
     uu.combineCues.map((cue) => cue.image),
     [
-      "public/video-assets/vowel-alpha/combined/\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0 \uC2DC\uC548-alpha.png",
+      "public/video-assets/characters/consonants/\u3147-aa-baby.png",
       "public/video-assets/vowel-alpha/tools/\uC6B0\uC6B0 \uBC1C\uD310-alpha.png",
       "public/video-assets/vowel-alpha/combined-hero/\uC6B0\uC6B0 \uBC1C\uD310 \uC2DC\uC548-hero.png",
     ],
+  );
+  assert.doesNotMatch(
+    oo.combineCues.find((cue) => cue.assetKind === "baby").image,
+    /\uB098\uBB47\uAC00\uC9C0/,
+    "vowel combine baby cue should use the empty-handed baby artwork, not the branch image",
   );
   assert.equal(getTimingExportFileName(oo), "oo-o-vowel-timings.json");
   assert.equal(getTimingExportFileName(uu), "uu-u-vowel-timings.json");
@@ -314,6 +319,28 @@ assert.throws(
   assert.equal(parsed.combineCues.length, 3);
   assert.deepEqual(parsed.combineCues[0].fromPosition, { left: 18, top: 56 });
   assert.deepEqual(parsed.combineCues[0].toPosition, { left: 43, top: 56 });
+  const legacySavedOo = createDefaultTimingProject("oo-o");
+  legacySavedOo.combineCues[0].image = "public/video-assets/vowel-alpha/combined/\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0 \uC2DC\uC548-alpha.png";
+  legacySavedOo.combineCues[0].position.left = 41;
+  legacySavedOo.combineCues[2].image = "public/video-assets/vowel-alpha/combined/\uC624\uC624 \uC0C1\uC790 \uC2DC\uC548-alpha.png";
+  legacySavedOo.combineCues[2].scale = 0.9;
+
+  const migratedSavedOo = parseTimingProject(JSON.stringify(legacySavedOo));
+  assert.equal(
+    migratedSavedOo.combineCues.find((cue) => cue.assetKind === "baby").image,
+    "public/video-assets/characters/consonants/\u3147-aa-baby.png",
+  );
+  assert.equal(
+    migratedSavedOo.combineCues.find((cue) => cue.assetKind === "baby").position.left,
+    41,
+    "asset migration should keep hand-adjusted cue positions",
+  );
+  assert.equal(
+    migratedSavedOo.combineCues.find((cue) => cue.assetKind === "combined").image,
+    "public/video-assets/vowel-alpha/combined-hero/\uC624\uC624 \uC0C1\uC790 \uC2DC\uC548-hero.png",
+  );
+  assert.equal(migratedSavedOo.combineCues.find((cue) => cue.assetKind === "combined").scale, 1.05);
+
 }
 
 {

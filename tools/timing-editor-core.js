@@ -105,9 +105,18 @@ const VOWEL_COMBINE_LETTER_TIMES = [
   { id: "final", start: 15.75, end: 18.8, position: { left: 50, top: 22 } },
 ];
 
+const vowelAlphaBabyAsset = (file) => `public/video-assets/characters/consonants/${file}`;
 const vowelAlphaToolAsset = (file) => `public/video-assets/vowel-alpha/tools/${file}`;
 const vowelAlphaCombinedAsset = (file) => `public/video-assets/vowel-alpha/combined/${file}`;
 const vowelAlphaCombinedHeroAsset = (file) => `public/video-assets/vowel-alpha/combined-hero/${file}`;
+const VOWEL_COMBINE_BABY_IMAGE = vowelAlphaBabyAsset("\u3147-aa-baby.png");
+const LEGACY_VOWEL_COMBINE_BABY_IMAGES = new Set([
+  vowelAlphaCombinedAsset("\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0 \uC2DC\uC548-alpha.png"),
+]);
+const LEGACY_VOWEL_COMBINE_HERO_IMAGES = new Set([
+  vowelAlphaCombinedAsset("\uC624\uC624 \uC0C1\uC790 \uC2DC\uC548-alpha.png"),
+  vowelAlphaCombinedAsset("\uC6B0\uC6B0 \uBC1C\uD310 \uC2DC\uC548-alpha.png"),
+]);
 const VALID_COMBINE_ASSET_KINDS = new Set(["baby", "tool", "combined"]);
 
 const LESSON_AUDIO = {
@@ -440,7 +449,7 @@ function defineVowelCombineProject({ id, lessonId, segment, character, toolLabel
     segment: { label: character.name, ...segment },
     words,
     combine: {
-      babyImage: vowelAlphaCombinedAsset("\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0 \uC2DC\uC548-alpha.png"),
+      babyImage: VOWEL_COMBINE_BABY_IMAGE,
       toolLabel,
       toolImage,
       combinedImage,
@@ -649,8 +658,37 @@ function mergeTimingProjectDefaults(project) {
     delete merged.removedCueIds;
   }
 
+  migrateVowelCombineCueAssets(merged, defaults.combineCues);
   return merged;
 }
+
+function migrateVowelCombineCueAssets(project, defaultCombineCues = []) {
+  if (project.template !== "vowel-combine-story" || !Array.isArray(project.combineCues)) {
+    return project;
+  }
+
+  const defaultsById = new Map(defaultCombineCues.map((cue) => [cue.id, cue]));
+  project.combineCues = project.combineCues.map((cue) => {
+    const defaultCue = defaultsById.get(cue.id);
+    const migrated = { ...cue };
+
+    if (migrated.assetKind === "baby" && LEGACY_VOWEL_COMBINE_BABY_IMAGES.has(migrated.image)) {
+      migrated.image = defaultCue?.image ?? VOWEL_COMBINE_BABY_IMAGE;
+    }
+
+    if (migrated.assetKind === "combined" && LEGACY_VOWEL_COMBINE_HERO_IMAGES.has(migrated.image)) {
+      migrated.image = defaultCue?.image ?? migrated.image;
+      if (Number.isFinite(defaultCue?.scale) && (!Number.isFinite(migrated.scale) || migrated.scale < defaultCue.scale)) {
+        migrated.scale = defaultCue.scale;
+      }
+    }
+
+    return migrated;
+  });
+
+  return project;
+}
+
 function mergeCueDefaults(cues, defaultCues, removedCueIds = []) {
   const removedIds = new Set(removedCueIds);
   const mergedCues = cues.filter((cue) => !removedIds.has(cue.id)).map((cue, index) => {
