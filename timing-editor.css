@@ -878,6 +878,11 @@ button {
   z-index: 3;
 }
 
+.combine-sprite.is-combined {
+  width: min(46vw, 560px);
+  max-height: 82%;
+}
+
 .combine-sprite.is-entering {
   animation: card-pop 0.52s cubic-bezier(.2, .8, .2, 1.15);
 }

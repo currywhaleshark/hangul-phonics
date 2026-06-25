@@ -144,6 +144,18 @@ def contain_rgba(image: Image.Image, size: tuple[int, int]) -> Image.Image:
     return fitted
 
 
+def trim_alpha_padding(image: Image.Image, padding: int = 36) -> Image.Image:
+    fitted = image.convert("RGBA")
+    bbox = fitted.getchannel("A").getbbox()
+    if not bbox:
+        return fitted
+    left = max(0, bbox[0] - padding)
+    top = max(0, bbox[1] - padding)
+    right = min(fitted.width, bbox[2] + padding)
+    bottom = min(fitted.height, bbox[3] + padding)
+    return fitted.crop((left, top, right, bottom))
+
+
 def rounded_panel(size: tuple[int, int], radius: int, fill: tuple[int, int, int, int]) -> Image.Image:
     panel = Image.new("RGBA", size, (0, 0, 0, 0))
     draw = ImageDraw.Draw(panel)
@@ -478,6 +490,12 @@ def make_vowel_combine_background(project: dict) -> Image.Image:
     return fit_cover(Image.open(background_path), (WIDTH, HEIGHT)).convert("RGBA")
 
 
+def load_combine_sprite(cue: CombineCue) -> Image.Image:
+    source = trim_alpha_padding(Image.open(cue.image_path), padding=36)
+    bounds = (940, 900) if cue.asset_kind == "combined" else (900, 820)
+    return contain_rgba(source, bounds)
+
+
 def combine_sprite_motion(cue: CombineCue, t: float) -> tuple[float, float, float, float] | None:
     if t < cue.start or t > cue.end:
         return None
@@ -520,7 +538,7 @@ def build_vowel_combine_story_frames(
     lesson_letter = project_letter(project, letter_cues)
     background = make_vowel_combine_background(project)
     sprite_images = {
-        cue.id: contain_rgba(Image.open(cue.image_path), (900, 820))
+        cue.id: load_combine_sprite(cue)
         for cue in combine_cues
         if cue.image_path
     }

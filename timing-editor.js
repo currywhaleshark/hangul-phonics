@@ -493,7 +493,7 @@ function renderVowelCombineStage(now) {
 
   combineCues.forEach((cue) => {
     const sprite = document.createElement("img");
-    sprite.className = `combine-sprite is-draggable${cueMotionClass(cue, visibleCombineCues, now)}`;
+    sprite.className = `combine-sprite is-${cue.assetKind} is-draggable${cueMotionClass(cue, visibleCombineCues, now)}`;
     const slot = combineSpriteSlot(cue, now, containsCue(visibleCombineCues, cue));
     sprite.src = resolveAssetPath(cue.image);
     sprite.alt = "";

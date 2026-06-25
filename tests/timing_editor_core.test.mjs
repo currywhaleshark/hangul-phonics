@@ -290,7 +290,7 @@ assert.throws(
     ["baby", "tool", "combined"],
   );
   const combineScales = Object.fromEntries(oo.combineCues.map((cue) => [cue.assetKind, cue.scale]));
-  assert.ok(combineScales.combined >= 0.86, "combined vowel story sprite should use a larger hero scale");
+  assert.ok(combineScales.combined >= 1.05, "combined vowel story sprite should use a larger hero scale");
   assert.ok(
     combineScales.combined > combineScales.tool,
     "combined vowel story sprite should be larger than the standalone vowel tool",
@@ -300,13 +300,15 @@ assert.throws(
     [
       "public/video-assets/vowel-alpha/combined/\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0 \uC2DC\uC548-alpha.png",
       "public/video-assets/vowel-alpha/tools/\uC6B0\uC6B0 \uBC1C\uD310-alpha.png",
-      "public/video-assets/vowel-alpha/combined/\uC6B0\uC6B0 \uBC1C\uD310 \uC2DC\uC548-alpha.png",
+      "public/video-assets/vowel-alpha/combined-hero/\uC6B0\uC6B0 \uBC1C\uD310 \uC2DC\uC548-hero.png",
     ],
   );
   assert.equal(getTimingExportFileName(oo), "oo-o-vowel-timings.json");
   assert.equal(getTimingExportFileName(uu), "uu-u-vowel-timings.json");
   assert.equal(oo.render.background, "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png");
   assert.equal(uu.render.background, "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png");
+  assert.match(oo.combineCues.find((cue) => cue.assetKind === "combined").image, /combined-hero/);
+  assert.match(uu.combineCues.find((cue) => cue.assetKind === "combined").image, /combined-hero/);
 
   const parsed = parseTimingProject(serializeTimingProject(oo));
   assert.equal(parsed.combineCues.length, 3);

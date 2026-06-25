@@ -90,7 +90,7 @@ const VOWEL_COMBINE_TIMES = [
     fromPosition: { left: 50, top: 55 },
     toPosition: { left: 50, top: 55 },
     position: { left: 50, top: 55 },
-    scale: 0.9,
+    scale: 1.05,
   },
 ];
 
@@ -107,6 +107,7 @@ const VOWEL_COMBINE_LETTER_TIMES = [
 
 const vowelAlphaToolAsset = (file) => `public/video-assets/vowel-alpha/tools/${file}`;
 const vowelAlphaCombinedAsset = (file) => `public/video-assets/vowel-alpha/combined/${file}`;
+const vowelAlphaCombinedHeroAsset = (file) => `public/video-assets/vowel-alpha/combined-hero/${file}`;
 const VALID_COMBINE_ASSET_KINDS = new Set(["baby", "tool", "combined"]);
 
 const LESSON_AUDIO = {
@@ -357,7 +358,7 @@ export const VOWEL_COMBINE_TIMING_PROJECTS = [
     },
     toolLabel: "\uC624\uC624 \uC0C1\uC790",
     toolImage: vowelAlphaToolAsset("\uC624\uC624 \uC0C1\uC790-alpha.png"),
-    combinedImage: vowelAlphaCombinedAsset("\uC624\uC624 \uC0C1\uC790 \uC2DC\uC548-alpha.png"),
+    combinedImage: vowelAlphaCombinedHeroAsset("\uC624\uC624 \uC0C1\uC790 \uC2DC\uC548-hero.png"),
     words: [
       { id: "oo-cucumber", label: "\uC624\uC774", image: asset("cucumber.png") },
       { id: "oo-duck", label: "\uC624\uB9AC", image: asset("duck.png") },
@@ -376,7 +377,7 @@ export const VOWEL_COMBINE_TIMING_PROJECTS = [
     },
     toolLabel: "\uC6B0\uC6B0 \uBC1C\uD310",
     toolImage: vowelAlphaToolAsset("\uC6B0\uC6B0 \uBC1C\uD310-alpha.png"),
-    combinedImage: vowelAlphaCombinedAsset("\uC6B0\uC6B0 \uBC1C\uD310 \uC2DC\uC548-alpha.png"),
+    combinedImage: vowelAlphaCombinedHeroAsset("\uC6B0\uC6B0 \uBC1C\uD310 \uC2DC\uC548-hero.png"),
     words: [
       { id: "uu-umbrella", label: "\uC6B0\uC0B0", image: asset("umbrella.png") },
       { id: "uu-milk", label: "\uC6B0\uC720", image: asset("milk.png") },

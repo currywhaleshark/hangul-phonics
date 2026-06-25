@@ -69,6 +69,8 @@ assert.match(js, /renderVideoButton/, "editor should wire the render video butto
 assert.match(css, /\.lesson-stage/, "editor should provide a visual preview stage");
 assert.match(css, /\.combine-cue-list/, "editor should style combine timing rows");
 assert.match(css, /\.combine-sprite/, "editor should style combine sprites");
+assert.match(js, /is-\$\{cue\.assetKind\}/, "editor should mark combined sprites separately from baby and tool sprites");
+assert.match(css, /\.combine-sprite\.is-combined[\s\S]*width:\s*min\(46vw, 560px\)/, "editor should show the combined hero sprite larger than entry sprites");
 assert.match(css, /\.lesson-stage\.is-vowel-combine-story \.stage-bg[\s\S]*display:\s*block/, "vowel combine preview should show the generated background image");
 assert.doesNotMatch(js, /stageBackground\.removeAttribute\("src"\)/, "vowel combine preview should keep the generated background image src");
 assert.match(css, /\.audio-waveform/, "editor should style the waveform canvas behind the seek slider");

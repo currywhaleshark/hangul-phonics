@@ -28,6 +28,7 @@ assert.match(renderer, /make_vowel_combine_background\(project/, "renderer shoul
 assert.match(renderer, /vowel-combine-playroom\.png/, "renderer should know the generated vowel combine background asset");
 assert.doesNotMatch(renderer, /draw_vowel_room_background/, "renderer should not procedurally draw the vowel combine background");
 assert.match(renderer, /combine_sprite_motion/, "renderer should animate baby and tool sprites toward the center");
+assert.match(renderer, /trim_alpha_padding/, "renderer should crop transparent padding before sizing combine sprites");
 
 assert.equal(timings.audio.src, "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav");
 assert.deepEqual(
