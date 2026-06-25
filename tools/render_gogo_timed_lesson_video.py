@@ -471,13 +471,50 @@ def draw_letter_badge(canvas: Image.Image, letter: str) -> None:
 
 
 
-def make_vowel_combine_background() -> Image.Image:
-    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (255, 253, 248, 255))
+def draw_vowel_room_background(canvas: Image.Image) -> None:
+    draw = ImageDraw.Draw(canvas)
+    wall_height = round(HEIGHT * 0.66)
+    top = (255, 249, 234)
+    bottom = (255, 241, 216)
+    for y in range(wall_height):
+        ratio = y / max(1, wall_height - 1)
+        color = tuple(round(top[index] + (bottom[index] - top[index]) * ratio) for index in range(3))
+        draw.line((0, y, WIDTH, y), fill=(*color, 255))
+
+    for x in range(120, WIDTH, 240):
+        draw.rounded_rectangle((x, 126, x + 72, 134), radius=4, fill=(238, 174, 116, 34))
+        draw.rounded_rectangle((x + 96, 292, x + 144, 300), radius=4, fill=(126, 198, 190, 30))
+
     glow = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(glow)
-    draw.ellipse((WIDTH * 0.16, -HEIGHT * 0.18, WIDTH * 0.84, HEIGHT * 0.78), fill=(255, 244, 197, 118))
-    draw.ellipse((WIDTH * 0.3, HEIGHT * 0.52, WIDTH * 0.72, HEIGHT * 1.04), fill=(217, 240, 255, 72))
-    canvas.alpha_composite(glow.filter(ImageFilter.GaussianBlur(70)))
+    glow_draw = ImageDraw.Draw(glow)
+    glow_draw.ellipse((WIDTH * 0.18, HEIGHT * 0.04, WIDTH * 0.82, HEIGHT * 0.62), fill=(255, 246, 201, 72))
+    canvas.alpha_composite(glow.filter(ImageFilter.GaussianBlur(74)))
+
+
+def draw_vowel_room_floor(canvas: Image.Image) -> None:
+    draw = ImageDraw.Draw(canvas)
+    floor_top_left = round(HEIGHT * 0.66)
+    floor_top_right = round(HEIGHT * 0.61)
+    draw.polygon(
+        ((0, floor_top_left), (WIDTH, floor_top_right), (WIDTH, HEIGHT), (0, HEIGHT)),
+        fill=(224, 244, 238, 255),
+    )
+    draw.line((0, floor_top_left, WIDTH, floor_top_right), fill=(199, 224, 216, 255), width=5)
+
+    mat = Image.new("RGBA", (1080, 260), (0, 0, 0, 0))
+    mat_draw = ImageDraw.Draw(mat)
+    mat_draw.rounded_rectangle((18, 34, 1062, 226), radius=78, fill=(255, 219, 134, 168))
+    mat_draw.rounded_rectangle((98, 82, 982, 178), radius=48, outline=(255, 247, 226, 116), width=18)
+    for x in range(180, 900, 160):
+        mat_draw.rounded_rectangle((x, 104, x + 58, 156), radius=22, fill=(255, 250, 234, 62))
+    mat = mat.filter(ImageFilter.GaussianBlur(0.4))
+    canvas.alpha_composite(mat, ((WIDTH - mat.width) // 2, round(HEIGHT * 0.73)))
+
+
+def make_vowel_combine_background() -> Image.Image:
+    canvas = Image.new("RGBA", (WIDTH, HEIGHT), (255, 247, 232, 255))
+    draw_vowel_room_background(canvas)
+    draw_vowel_room_floor(canvas)
     return canvas
 
 

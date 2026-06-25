@@ -89,7 +89,7 @@ const VOWEL_COMBINE_TIMES = [
     fromPosition: { left: 50, top: 55 },
     toPosition: { left: 50, top: 55 },
     position: { left: 50, top: 55 },
-    scale: 0.62,
+    scale: 0.9,
   },
 ];
 

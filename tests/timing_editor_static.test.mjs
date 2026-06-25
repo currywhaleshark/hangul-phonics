@@ -69,6 +69,8 @@ assert.match(js, /renderVideoButton/, "editor should wire the render video butto
 assert.match(css, /\.lesson-stage/, "editor should provide a visual preview stage");
 assert.match(css, /\.combine-cue-list/, "editor should style combine timing rows");
 assert.match(css, /\.combine-sprite/, "editor should style combine sprites");
+assert.match(css, /\.lesson-stage\.is-vowel-combine-story::before/, "vowel combine preview should draw a distinct room wall layer");
+assert.match(css, /\.lesson-stage\.is-vowel-combine-story::after/, "vowel combine preview should draw a distinct room floor layer");
 assert.match(css, /\.audio-waveform/, "editor should style the waveform canvas behind the seek slider");
 assert.match(css, /\.seek-track/, "editor should style a combined waveform and seek track");
 assert.match(css, /\.timeline-marker/, "editor should render cue markers on a timeline");

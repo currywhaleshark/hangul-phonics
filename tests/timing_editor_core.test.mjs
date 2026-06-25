@@ -289,6 +289,12 @@ assert.throws(
     oo.combineCues.map((cue) => cue.assetKind),
     ["baby", "tool", "combined"],
   );
+  const combineScales = Object.fromEntries(oo.combineCues.map((cue) => [cue.assetKind, cue.scale]));
+  assert.ok(combineScales.combined >= 0.86, "combined vowel story sprite should use a larger hero scale");
+  assert.ok(
+    combineScales.combined > combineScales.tool,
+    "combined vowel story sprite should be larger than the standalone vowel tool",
+  );
   assert.deepEqual(
     uu.combineCues.map((cue) => cue.image),
     [
