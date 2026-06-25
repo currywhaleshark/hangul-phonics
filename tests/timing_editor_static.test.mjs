@@ -13,6 +13,8 @@ assert.match(html, /id="cue-list"/, "timing editor should expose editable cue ro
 assert.match(html, /id="letter-cue-list"/, "timing editor should expose editable letter popup cue rows");
 assert.match(css, /\.scene-cue-list/, "editor should style scene timing rows");
 assert.match(html, /id="scene-cue-list"/, "timing editor should expose scene timing rows for vowel stories");
+assert.match(html, /id="combine-section"/, "timing editor should expose combine story timing rows");
+assert.match(html, /id="combine-cue-list"/, "timing editor should expose combine cue rows");
 assert.match(html, /id="export-json"/, "timing editor should export timing JSON");
 assert.match(html, /id="import-json"/, "timing editor should import timing JSON");
 assert.match(html, /id="render-video"/, "timing editor should expose a render video button");
@@ -39,6 +41,10 @@ assert.match(js, /data-stage-cue-id/, "stage popups should expose cue ids for dr
 assert.match(js, /letterCues/, "editor should edit ??popup timings");
 assert.match(js, /sceneCues/, "editor should edit vowel story scene timings");
 assert.match(js, /isVowelStoryProject/, "editor should branch preview behavior for vowel stories");
+assert.match(js, /isVowelCombineProject/, "editor should branch preview behavior for vowel combine stories");
+assert.match(js, /combineCues/, "editor should edit vowel combine story cues");
+assert.match(js, /renderVowelCombineStage/, "editor should render vowel combine story previews");
+assert.match(js, /combine-sprite/, "editor should render transparent combine sprites");
 assert.match(js, /letter-popup/, "editor should render ??popup previews");
 assert.match(js, /cueMotionClass/, "editor should separate popup entry from hold motion");
 assert.match(js, /is-entering/, "editor should use a one-shot popup entry state");
@@ -58,6 +64,8 @@ assert.match(js, /serializeTimingProject\(project\)/, "editor should render the 
 assert.match(js, /renderVideoButton/, "editor should wire the render video button");
 
 assert.match(css, /\.lesson-stage/, "editor should provide a visual preview stage");
+assert.match(css, /\.combine-cue-list/, "editor should style combine timing rows");
+assert.match(css, /\.combine-sprite/, "editor should style combine sprites");
 assert.match(css, /\.audio-waveform/, "editor should style the waveform canvas behind the seek slider");
 assert.match(css, /\.seek-track/, "editor should style a combined waveform and seek track");
 assert.match(css, /\.timeline-marker/, "editor should render cue markers on a timeline");

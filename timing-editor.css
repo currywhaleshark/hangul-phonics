@@ -594,6 +594,17 @@ button {
   }
 }
 
+@keyframes card-float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(var(--sprite-scale, 0.7));
+  }
+
+  50% {
+    transform: translate(-50%, -51.5%) scale(var(--sprite-scale, 0.7));
+  }
+}
+
 @keyframes card-hold {
   0%,
   100% {
@@ -791,7 +802,8 @@ button {
   text-decoration: underline;
 }
 
-.scene-cue-list {
+.scene-cue-list,
+.combine-cue-list {
   gap: 8px;
 }
 
@@ -832,4 +844,47 @@ button {
 
 .lesson-stage.is-vowel-story .stage-card {
   width: clamp(120px, 12vw, 168px);
+}
+
+.lesson-stage.is-vowel-combine-story {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 245, 210, 0.92), rgba(255, 253, 248, 0.94) 58%, #fffdf8 100%),
+    linear-gradient(180deg, #fffaf0, #f7fbff);
+}
+
+.lesson-stage.is-vowel-combine-story .stage-bg,
+.lesson-stage.is-vowel-combine-story .mascot,
+.lesson-stage.is-vowel-combine-story .letter-badge {
+  display: none;
+}
+
+.combine-sprite {
+  position: absolute;
+  width: min(32vw, 360px);
+  max-height: 64%;
+  object-fit: contain;
+  transform: translate(-50%, -50%) scale(var(--sprite-scale, 0.7));
+  transform-origin: center;
+  filter: drop-shadow(0 18px 24px rgba(36, 28, 14, 0.14));
+  pointer-events: none;
+  user-select: none;
+  z-index: 3;
+}
+
+.combine-sprite.is-entering {
+  animation: card-pop 0.52s cubic-bezier(.2, .8, .2, 1.15);
+}
+
+.combine-sprite.is-holding {
+  animation: card-float 1.8s ease-in-out infinite alternate;
+}
+
+.combine-sprite.is-draggable {
+  cursor: grab;
+  pointer-events: auto;
+}
+
+.cue-row-combine .cue-select,
+.combine-cue-list .cue-select {
+  border-color: #14b8a6;
 }

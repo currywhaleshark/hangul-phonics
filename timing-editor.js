@@ -55,6 +55,8 @@ const durationTimeLabel = document.querySelector("#duration-time");
 const cueList = document.querySelector("#cue-list");
 const letterCueList = document.querySelector("#letter-cue-list");
 const sceneCueList = document.querySelector("#scene-cue-list");
+const combineSection = document.querySelector("#combine-section");
+const combineCueList = document.querySelector("#combine-cue-list");
 const stageCards = document.querySelector("#stage-cards");
 const stage = document.querySelector(".lesson-stage");
 const timeline = document.querySelector("#timeline");
@@ -131,16 +133,33 @@ function loadStoredProject(projectId) {
 }
 
 function getInitialSelectedCueId(sourceProject) {
-  if (isVowelStoryProject(sourceProject)) {
+  if (sourceProject?.template === "vowel-story") {
     return sourceProject.sceneCues?.[0]?.id ?? sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
   }
+  if (sourceProject?.template === "vowel-combine-story") {
+    return sourceProject.combineCues?.[0]?.id ?? sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
+  }
 
-  return sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? sourceProject.sceneCues?.[0]?.id ?? null;
+  return sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? sourceProject.sceneCues?.[0]?.id ?? sourceProject.combineCues?.[0]?.id ?? null;
+}
+
+function setDefaultSelection(sourceProject) {
+  if (sourceProject?.template === "vowel-story") {
+    selectedCueKind = "scene";
+    selectedCueId = sourceProject.sceneCues?.[0]?.id ?? sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
+    return;
+  }
+  if (sourceProject?.template === "vowel-combine-story") {
+    selectedCueKind = "combine";
+    selectedCueId = sourceProject.combineCues?.[0]?.id ?? sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
+    return;
+  }
+  selectedCueKind = "word";
+  selectedCueId = sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
 }
 
 function resetSelectedCue() {
-  selectedCueKind = isVowelStoryProject() ? "scene" : "word";
-  selectedCueId = getInitialSelectedCueId(project);
+  setDefaultSelection(project);
   lastLiveCueKey = null;
 }
 
@@ -312,10 +331,19 @@ function isVowelStoryProject(sourceProject = project) {
   return sourceProject?.template === "vowel-story";
 }
 
+function isVowelCombineProject(sourceProject = project) {
+  return sourceProject?.template === "vowel-combine-story";
+}
+
+function isVowelVisualProject() {
+  return isVowelStoryProject() || isVowelCombineProject();
+}
+
 function renderProjectChrome() {
   const character = project.character ?? {};
   const letter = character.letter ?? "";
   const isVowelStory = isVowelStoryProject();
+  const isVowelCombine = isVowelCombineProject();
   projectSelector.value = project.id ?? DEFAULT_TIMING_PROJECT_ID;
   projectEyebrow.textContent = `${project.lessonId ?? "레슨"} · ${letter}`;
   projectTitle.textContent = `${character.name ?? project.title} 카드 타이밍`;
@@ -323,7 +351,9 @@ function renderProjectChrome() {
   segmentStartButton.textContent = `${character.name ?? "구간"} 시작 찍기`;
   segmentEndButton.textContent = `${character.name ?? "구간"} 끝 찍기`;
   stage.classList.toggle("is-vowel-story", isVowelStory);
+  stage.classList.toggle("is-vowel-combine-story", isVowelCombine);
   sceneSection.hidden = !isVowelStory;
+  combineSection.hidden = !isVowelCombine;
   stageBackground.src = resolveAssetPath(isVowelStory ? project.sceneCues?.[0]?.image : project.render?.background ?? "public/video-assets/consonant-lesson-samples/gogo-g-background.png");
   mascotImage.src = resolveAssetPath(character.image ?? "public/video-assets/characters/consonants/ㄱ-gogo-cat.png");
   mascotImage.alt = character.name ?? "자음 캐릭터";
@@ -337,6 +367,13 @@ function renderCueList() {
   if (isVowelStoryProject()) {
     (project.sceneCues ?? []).forEach((cue, index) => {
       sceneCueList.append(renderCueRow(cue, index, "scene"));
+    });
+  }
+
+  combineCueList.innerHTML = "";
+  if (isVowelCombineProject()) {
+    (project.combineCues ?? []).forEach((cue, index) => {
+      combineCueList.append(renderCueRow(cue, index, "combine"));
     });
   }
 
@@ -356,9 +393,10 @@ function renderCueList() {
 function renderCueRow(cue, index, kind) {
   const isLetter = kind === "letter";
   const isScene = kind === "scene";
-  const slot = isLetter ? { accent: "#ffd166" } : isScene ? { accent: "#7c3aed" } : getCueSlot(cue);
+  const isCombine = kind === "combine";
+  const slot = isLetter ? { accent: "#ffd166" } : isScene ? { accent: "#7c3aed" } : isCombine ? { accent: "#14b8a6" } : getCueSlot(cue);
   const row = document.createElement("article");
-  row.className = `cue-row${isSelectedCue(kind, cue.id) ? " is-selected" : ""}${isLetter ? " cue-row-letter" : ""}${isScene ? " cue-row-scene" : ""}`;
+  row.className = `cue-row${isSelectedCue(kind, cue.id) ? " is-selected" : ""}${isLetter ? " cue-row-letter" : ""}${isScene ? " cue-row-scene" : ""}${isCombine ? " cue-row-combine" : ""}`;
   row.dataset.cueId = cue.id;
   row.dataset.kind = kind;
   row.style.setProperty("--accent", slot.accent);
@@ -366,12 +404,12 @@ function renderCueRow(cue, index, kind) {
   const visual = isLetter
     ? `<span class="letter-thumb" aria-hidden="true">${escapeHtml(cue.label)}</span>`
     : `<img src="${escapeHtml(resolveAssetPath(cue.image))}" alt="">`;
-  const removeButton = isLetter || isScene
+  const removeButton = isLetter || isScene || isCombine
     ? ""
     : `<button class="mini-button remove-card" type="button" data-action="remove" title="사용하지 않는 카드 빼기">빼기</button>`;
 
   row.innerHTML = `
-    <button class="cue-select${isLetter ? " letter-select" : ""}${isScene ? " scene-select" : ""}" type="button" data-action="select">
+    <button class="cue-select${isLetter ? " letter-select" : ""}${isScene ? " scene-select" : ""}${isCombine ? " combine-select" : ""}" type="button" data-action="select">
       ${visual}
       <span class="cue-label">${escapeHtml(label)}</span>
       <span class="cue-time">${formatClockTime(cue.start)} - ${formatClockTime(cue.end)}</span>
@@ -402,6 +440,7 @@ function renderTimeline() {
   timelineMarkers.innerHTML = "";
 
   project.sceneCues?.forEach((cue) => renderTimelineMarker(cue, "scene", duration));
+  project.combineCues?.forEach((cue) => renderTimelineMarker(cue, "combine", duration));
   project.cues.forEach((cue) => renderTimelineMarker(cue, "word", duration));
   project.letterCues.forEach((cue) => renderTimelineMarker(cue, "letter", duration));
 
@@ -411,17 +450,21 @@ function renderTimeline() {
 function renderTimelineMarker(cue, kind, duration) {
   const marker = document.createElement("button");
   marker.type = "button";
-  marker.className = `timeline-marker${isSelectedCue(kind, cue.id) ? " is-selected" : ""}${kind === "letter" ? " is-letter" : ""}${kind === "scene" ? " is-scene" : ""}`;
+  marker.className = `timeline-marker${isSelectedCue(kind, cue.id) ? " is-selected" : ""}${kind === "letter" ? " is-letter" : ""}${kind === "scene" ? " is-scene" : ""}${kind === "combine" ? " is-combine" : ""}`;
   marker.dataset.cueId = cue.id;
   marker.dataset.kind = kind;
   marker.title = `${cueDisplayName(kind, cue)} ${formatClockTime(cue.start)} - ${formatClockTime(cue.end)}`;
   marker.style.left = `${timeToPercent(cue.start, duration)}%`;
-  marker.style.setProperty("--accent", kind === "letter" ? "#ffd166" : kind === "scene" ? "#7c3aed" : getCueSlot(cue).accent);
+  marker.style.setProperty("--accent", kind === "letter" ? "#ffd166" : kind === "scene" ? "#7c3aed" : kind === "combine" ? "#14b8a6" : getCueSlot(cue).accent);
   timelineMarkers.append(marker);
 }
 
 function renderStage() {
   const now = getCurrentTime();
+  if (isVowelCombineProject()) {
+    renderVowelCombineStage(now);
+    return;
+  }
   if (isVowelStoryProject()) {
     renderVowelStoryStage(now);
     return;
@@ -439,7 +482,50 @@ function renderVowelStoryStage(now) {
   renderStageOverlays(now);
 }
 
-function renderStageOverlays(now) {
+function renderVowelCombineStage(now) {
+  stageBackground.removeAttribute("src");
+  stageBackground.alt = "";
+  stageCards.innerHTML = "";
+
+  const visibleCombineCues = activeCues(project.combineCues ?? [], now);
+  const selectedEntry = getSelectedCueEntry();
+  const fallbackCombine = selectedEntry?.kind === "combine" ? selectedEntry.cue : null;
+  const combineCues = visibleCombineCues.length > 0 ? visibleCombineCues : fallbackCombine ? [fallbackCombine] : [];
+
+  combineCues.forEach((cue) => {
+    const sprite = document.createElement("img");
+    sprite.className = `combine-sprite is-draggable${cueMotionClass(cue, visibleCombineCues, now)}`;
+    const slot = combineSpriteSlot(cue, now);
+    sprite.src = resolveAssetPath(cue.image);
+    sprite.alt = "";
+    sprite.style.left = `${slot.left}%`;
+    sprite.style.top = `${slot.top}%`;
+    sprite.style.setProperty("--sprite-scale", String(cue.scale ?? 0.7));
+    sprite.dataset.stageCueId = cue.id;
+    sprite.dataset.dragKind = "combine";
+    sprite.title = "모음 만남 위치 조정";
+    stageCards.append(sprite);
+  });
+
+  renderStageOverlays(now, { append: true });
+}
+
+function combineSpriteSlot(cue, now) {
+  if (cue.assetKind === "combined") {
+    return cue.position ?? cue.toPosition ?? { left: 50, top: 55 };
+  }
+  const start = cue.fromPosition ?? cue.position ?? { left: 50, top: 55 };
+  const end = cue.toPosition ?? cue.position ?? start;
+  const duration = Math.max(0.001, cue.end - cue.start);
+  const progress = Math.max(0, Math.min(1, (now - cue.start) / duration));
+  const eased = 1 - (1 - progress) ** 3;
+  return {
+    left: start.left + (end.left - start.left) * eased,
+    top: start.top + (end.top - start.top) * eased,
+  };
+}
+
+function renderStageOverlays(now, options = {}) {
   const visibleWords = activeCues(project.cues, now);
   const selectedEntry = getSelectedCueEntry();
   const fallbackWord = selectedEntry?.kind === "word" ? selectedEntry.cue : null;
@@ -448,7 +534,9 @@ function renderStageOverlays(now) {
   const fallbackLetter = selectedEntry?.kind === "letter" ? selectedEntry.cue : null;
   const letters = visibleLetters.length > 0 ? visibleLetters : fallbackLetter ? [fallbackLetter] : [];
 
-  stageCards.innerHTML = "";
+  if (!options.append) {
+    stageCards.innerHTML = "";
+  }
   words.forEach((cue) => {
     const slot = getCueSlot(cue);
     const card = document.createElement("div");
@@ -532,7 +620,7 @@ function timeToPercent(time, duration) {
 }
 
 function getCueCollectionName(kind) {
-  return kind === "scene" ? "sceneCues" : kind === "letter" ? "letterCues" : "cues";
+  return kind === "scene" ? "sceneCues" : kind === "letter" ? "letterCues" : kind === "combine" ? "combineCues" : "cues";
 }
 
 function getCueCollection(kind) {
@@ -549,6 +637,12 @@ function getSelectedCueEntry() {
     selectedCueKind = "scene";
     selectedCueId = project.sceneCues[0].id;
     return { kind: "scene", cue: project.sceneCues[0] };
+  }
+
+  if (isVowelCombineProject() && project.combineCues?.[0]) {
+    selectedCueKind = "combine";
+    selectedCueId = project.combineCues[0].id;
+    return { kind: "combine", cue: project.combineCues[0] };
   }
 
   if (project.cues[0]) {
@@ -573,18 +667,20 @@ function getSelectedCueEntry() {
 }
 
 function activeCueEntryAtTime(time) {
-  const letterCue = activeCues(project.letterCues, time)[0];
-  if (letterCue) {
-    return { kind: "letter", cue: letterCue };
-  }
-
   const wordCue = getCueAtTime(project, time);
   if (wordCue) {
     return { kind: "word", cue: wordCue };
   }
-
+  const combineCue = isVowelCombineProject() ? activeCues(project.combineCues ?? [], time).at(-1) : null;
+  if (combineCue) {
+    return { kind: "combine", cue: combineCue };
+  }
   const sceneCue = isVowelStoryProject() ? activeSceneAtTime(time) : null;
-  return sceneCue ? { kind: "scene", cue: sceneCue } : null;
+  if (sceneCue) {
+    return { kind: "scene", cue: sceneCue };
+  }
+  const letterCue = activeCues(project.letterCues, time)[0];
+  return letterCue ? { kind: "letter", cue: letterCue } : null;
 }
 
 function activeSceneAtTime(time) {
@@ -1079,6 +1175,7 @@ function handleCueListClick(event) {
 cueList.addEventListener("click", handleCueListClick);
 letterCueList.addEventListener("click", handleCueListClick);
 sceneCueList.addEventListener("click", handleCueListClick);
+combineCueList.addEventListener("click", handleCueListClick);
 
 function handleCueListChange(event) {
   const input = event.target.closest("[data-start-input], [data-end-input]");
@@ -1124,9 +1221,11 @@ function handleCueListInput(event) {
 cueList.addEventListener("input", handleCueListInput);
 letterCueList.addEventListener("input", handleCueListInput);
 sceneCueList.addEventListener("input", handleCueListInput);
+combineCueList.addEventListener("input", handleCueListInput);
 cueList.addEventListener("change", handleCueListChange);
 letterCueList.addEventListener("change", handleCueListChange);
 sceneCueList.addEventListener("change", handleCueListChange);
+combineCueList.addEventListener("change", handleCueListChange);
 
 timeline.addEventListener("click", (event) => {
   const marker = event.target.closest(".timeline-marker");
