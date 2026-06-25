@@ -315,3 +315,39 @@ assert.throws(
   assert.equal(trimmed.combineCues.some((cue) => cue.id === "oo-tool"), false);
   assert.deepEqual(trimmed.removedCueIds.combineCues, ["oo-tool"]);
 }
+
+{
+  for (const projectId of ["oo-o", "uu-u"]) {
+    const project = createDefaultTimingProject(projectId);
+    for (const collectionName of ["cues", "letterCues", "sceneCues", "combineCues"]) {
+      for (const cue of project[collectionName]) {
+        assert.ok(
+          cue.start >= project.segment.start,
+          `${projectId} ${collectionName} ${cue.id} starts before segment`,
+        );
+        assert.ok(
+          cue.end <= project.segment.end,
+          `${projectId} ${collectionName} ${cue.id} ends after segment`,
+        );
+      }
+    }
+  }
+}
+
+assert.throws(
+  () => {
+    const project = createDefaultTimingProject("oo-o");
+    project.combineCues[0].fromPosition.left = "near";
+    parseTimingProject(JSON.stringify(project));
+  },
+  /combine cue fromPosition/,
+);
+
+assert.throws(
+  () => {
+    const project = createDefaultTimingProject("oo-o");
+    project.combineCues[0].assetKind = "other";
+    parseTimingProject(JSON.stringify(project));
+  },
+  /combine cue assetKind/,
+);

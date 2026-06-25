@@ -106,6 +106,7 @@ const VOWEL_COMBINE_LETTER_TIMES = [
 
 const vowelAlphaToolAsset = (file) => `public/video-assets/vowel-alpha/tools/${file}`;
 const vowelAlphaCombinedAsset = (file) => `public/video-assets/vowel-alpha/combined/${file}`;
+const VALID_COMBINE_ASSET_KINDS = new Set(["baby", "tool", "combined"]);
 
 const LESSON_AUDIO = {
   "lesson-01-aa-baby-vowel": {
@@ -450,6 +451,7 @@ function defineVowelCombineProject({ id, lessonId, segment, character, toolLabel
 }
 
 function buildDefaultTimingProject(definition) {
+  const segment = definition.segment;
   const project = {
     schemaVersion: TIMING_SCHEMA_VERSION,
     id: definition.id,
@@ -458,11 +460,11 @@ function buildDefaultTimingProject(definition) {
     template: definition.template ?? "consonant-card",
     character: definition.character,
     audio: definition.audio,
-    segment: definition.segment,
-    sceneCues: makeSceneCues(definition.scenes ?? [], definition.segment.start),
-    combineCues: makeCombineCues(definition.combine, definition.character.key, definition.segment.start, definition.template),
-    cues: makeWordCues(definition.words ?? [], definition.character.key, definition.segment.start, definition.template),
-    letterCues: makeLetterCues(definition.character.letter, definition.character.key, definition.segment.start, definition.template),
+    segment,
+    sceneCues: clampCueCollectionToSegment(makeSceneCues(definition.scenes ?? [], segment.start), segment),
+    combineCues: clampCueCollectionToSegment(makeCombineCues(definition.combine, definition.character.key, segment.start, definition.template), segment),
+    cues: clampCueCollectionToSegment(makeWordCues(definition.words ?? [], definition.character.key, segment.start, definition.template), segment),
+    letterCues: clampCueCollectionToSegment(makeLetterCues(definition.character.letter, definition.character.key, segment.start, definition.template), segment),
     removedCueIds: definition.removedCueIds,
     render: definition.render,
   };
@@ -549,6 +551,22 @@ function makeLetterCues(letter, characterKey, segmentStart, template = "consonan
     end: catalogTime(segmentStart + cue.end),
     position: clonePlainObject(cue.position),
   }));
+}
+
+function clampCueCollectionToSegment(cues, segment) {
+  return cues.map((cue) => clampCueToSegment(cue, segment));
+}
+
+function clampCueToSegment(cue, segment) {
+  if (!Number.isFinite(segment.start) || !Number.isFinite(segment.end)) {
+    return cue;
+  }
+
+  const startMax = Math.max(segment.start, segment.end - MIN_CUE_LENGTH);
+  const start = Number.isFinite(cue.start) ? clampTime(cue.start, segment.start, startMax) : cue.start;
+  const minEnd = Number.isFinite(start) ? start + MIN_CUE_LENGTH : segment.start + MIN_CUE_LENGTH;
+  const end = Number.isFinite(cue.end) ? clampTime(cue.end, minEnd, segment.end) : cue.end;
+  return { ...cue, start, end };
 }
 
 function clonePlainObject(value) {
@@ -933,8 +951,35 @@ export function parseTimingProject(input) {
   validateCues(project.letterCues);
   validateCues(project.sceneCues);
   validateCues(project.combineCues);
+  validateCombineCues(project.combineCues);
 
   return cloneTimingProject(project);
+}
+
+function validateCombineCues(cues) {
+  cues.forEach((cue) => {
+    if (!VALID_COMBINE_ASSET_KINDS.has(cue.assetKind)) {
+      throw new Error("combine cue assetKind must be baby, tool, or combined");
+    }
+
+    if (typeof cue.image !== "string" || cue.image.length === 0) {
+      throw new Error("combine cue image is required");
+    }
+
+    validateMotionPosition(cue.fromPosition, "fromPosition");
+    validateMotionPosition(cue.toPosition, "toPosition");
+    validateMotionPosition(cue.position, "position");
+
+    if (cue.scale !== undefined && !Number.isFinite(cue.scale)) {
+      throw new Error("combine cue scale must be a finite number");
+    }
+  });
+}
+
+function validateMotionPosition(position, name) {
+  if (!position || !Number.isFinite(position.left) || !Number.isFinite(position.top)) {
+    throw new Error(`combine cue ${name} must include finite left and top values`);
+  }
 }
 
 function validateCues(cues) {
