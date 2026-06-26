@@ -19,7 +19,12 @@
       ],
       "teacherNote": "읽어주기: \"고고 고양이, 그 그 그\". 고고의 ㄱ 길은 꺾여 가는 길이다. 손가락으로 크게 따라가며 소리를 붙인다.",
       "footerLeft": "고고 고양이",
-      "footerRight": "1레슨 고고와 나나: ㄱ ㄴ 첫소리 친구"
+      "footerRight": "1레슨 고고와 나나: ㄱ ㄴ 첫소리 친구",
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=N7r2qrSWOQk",
+        "image": "../../../public/qr/youtube/N7r2qrSWOQk.png"
+      }
     },
     {
       "type": "spot",
@@ -77,7 +82,12 @@
       ],
       "teacherNote": "읽어주기: \"나나 나비, 느 느 느\". 나나의 ㄴ 길은 내려와서 옆으로 가는 길이다. 천천히 꺾는 움직임을 살린다.",
       "footerLeft": "나나 나비",
-      "footerRight": "1레슨 고고와 나나: ㄱ ㄴ 첫소리 친구"
+      "footerRight": "1레슨 고고와 나나: ㄱ ㄴ 첫소리 친구",
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=04iCkuQBEE0",
+        "image": "../../../public/qr/youtube/04iCkuQBEE0.png"
+      }
     },
     {
       "type": "spot",

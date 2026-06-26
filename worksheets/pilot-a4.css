@@ -119,6 +119,45 @@ h1 {
   text-shadow: 1px 1px 0 rgba(0,0,0,0.05);
 }
 
+.title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.video-qr {
+  width: 28mm;
+  min-height: 31mm;
+  padding: 5px;
+  border: 3px solid var(--theme);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--theme);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.1;
+  font-family: 'Malgun Gothic', sans-serif;
+}
+
+.video-qr img {
+  width: 22mm;
+  height: 22mm;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.video-qr span {
+  display: block;
+  white-space: nowrap;
+}
+
 h2 {
   margin: 0 0 8px;
   font-size: 28px;

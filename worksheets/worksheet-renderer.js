@@ -63,6 +63,31 @@ function pageFooter(page) {
   return `<div class="page-footer"><span>${escapeHtml(page.footerLeft)}</span><span>${escapeHtml(page.footerRight)}</span></div>`;
 }
 
+function renderVideoQr(page) {
+  const qr = page.videoQr;
+  if (!qr || !qr.image) return "";
+
+  const label = qr.label || "\uC601\uC0C1 \uBCF4\uAE30";
+  const image = `<img src="${escapeHtml(qr.image)}" alt="${escapeHtml(label)} QR">`;
+  const caption = `<span>${escapeHtml(label)}</span>`;
+  const content = `${image}${caption}`;
+
+  if (qr.url) {
+    return `<a class="video-qr" href="${escapeHtml(qr.url)}" target="_blank" rel="noopener">${content}</a>`;
+  }
+
+  return `<div class="video-qr">${content}</div>`;
+}
+
+function pageHeader(page) {
+  return `
+        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
+        <div class="title-row">
+          <h1>${escapeHtml(page.title)}</h1>
+          ${renderVideoQr(page)}
+        </div>`;
+}
+
 function imageOrFill(item) {
   if (item.image) {
     return `<div class="spot-image"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.label)}"></div>`;
@@ -79,8 +104,7 @@ function renderCharacterPage(page) {
   return `
     <section class="sheet theme-${escapeHtml(page.theme)}">
       <div class="sheet-inner">
-        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
-        <h1>${escapeHtml(page.title)}</h1>
+${pageHeader(page)}
         <div class="hero-grid">
           <div class="character-frame">
             <img src="${escapeHtml(page.image)}" alt="${escapeHtml(page.title)}">
@@ -116,8 +140,7 @@ function renderSpotPage(page) {
   return `
     <section class="sheet theme-${escapeHtml(page.theme)}">
       <div class="sheet-inner">
-        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
-        <h1>${escapeHtml(page.title)}</h1>
+${pageHeader(page)}
         <div class="read-box">${escapeHtml(page.read)}</div>
         <div class="activity-box">
           <div class="activity-title">${escapeHtml(page.activityTitle)}</div>
@@ -156,8 +179,7 @@ function renderSortingPage(page) {
   return `
     <section class="sheet theme-${escapeHtml(page.theme)}">
       <div class="sheet-inner${compactClass}">
-        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
-        <h1>${escapeHtml(page.title)}</h1>
+${pageHeader(page)}
         <div class="read-box">${escapeHtml(page.read)}</div>
         <div class="sorting-board" style="--house-count:${housesCount}">${houses}</div>
         <div class="activity-box">
@@ -185,8 +207,7 @@ function renderStoryPage(page) {
   return `
     <section class="sheet theme-${escapeHtml(page.theme)}">
       <div class="sheet-inner">
-        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
-        <h1>${escapeHtml(page.title)}</h1>
+${pageHeader(page)}
         <div class="read-box">${escapeHtml(page.read)}</div>
         <div class="${gridClass}">${panels}</div>
         <div class="teacher-note">${escapeHtml(page.teacherNote)}</div>
@@ -225,8 +246,7 @@ function renderVowelActivityPage(page) {
   return `
     <section class="sheet theme-${escapeHtml(page.theme)}${hasSoundSteps ? " has-sound-steps" : ""}">
       <div class="sheet-inner">
-        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
-        <h1>${escapeHtml(page.title)}</h1>
+${pageHeader(page)}
         <div class="read-box">${escapeHtml(page.read)}</div>
         <div class="activity-box">
           <div class="activity-title">${escapeHtml(page.activityTitle)}</div>
@@ -286,8 +306,7 @@ function renderWordCardPage(page) {
   return `
     <section class="sheet theme-${escapeHtml(page.theme)} word-card-sheet">
       <div class="sheet-inner">
-        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
-        <h1>${escapeHtml(page.title)}</h1>
+${pageHeader(page)}
         <div class="read-box">${escapeHtml(page.read)}</div>
         <div class="activity-box word-card-activity">
           <div class="activity-title">${escapeHtml(page.activityTitle)}</div>
@@ -328,8 +347,7 @@ function renderSoundChoicePage(page) {
   return `
     <section class="sheet theme-${escapeHtml(page.theme)} sound-choice-sheet">
       <div class="sheet-inner">
-        <div class="page-kicker">${escapeHtml(page.kicker)}</div>
-        <h1>${escapeHtml(page.title)}</h1>
+${pageHeader(page)}
         <div class="read-box">${escapeHtml(page.read)}</div>
         <div class="activity-box">
           <div class="activity-title">${escapeHtml(page.activityTitle)}</div>

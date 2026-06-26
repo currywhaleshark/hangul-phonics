@@ -19,7 +19,12 @@
       ],
       "teacherNote": "읽어주기: \"코코 코알라, 크 크 크\". ㅋ은 ㄱ보다 숨이 더 크게 나가는 친구처럼 놀이로만 느끼게 한다.",
       "footerLeft": "코코 코알라",
-      "footerRight": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기"
+      "footerRight": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기",
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=WT2v898ZpOs",
+        "image": "../../../public/qr/youtube/WT2v898ZpOs.png"
+      }
     },
     {
       "type": "character",
@@ -39,7 +44,12 @@
       ],
       "teacherNote": "읽어주기: \"토토 토끼, 트 트 트\". ㅌ은 ㄷ보다 톡 튀는 숨이 있는 친구처럼 손뼉 동작을 붙인다.",
       "footerLeft": "토토 토끼",
-      "footerRight": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기"
+      "footerRight": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기",
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=QgrjnfacHV0",
+        "image": "../../../public/qr/youtube/QgrjnfacHV0.png"
+      }
     },
     {
       "type": "character",
@@ -59,7 +69,12 @@
       ],
       "teacherNote": "읽어주기: \"푸푸 풍선, 프 프 프\". ㅍ은 바람이 퐁 나오는 친구처럼 입바람 놀이와 연결한다.",
       "footerLeft": "푸푸 풍선",
-      "footerRight": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기"
+      "footerRight": "6-A레슨 코코와 토토와 푸푸: 센 숨 친구 만나기",
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=WSbmbqNcWn8",
+        "image": "../../../public/qr/youtube/WSbmbqNcWn8.png"
+      }
     }
   ]
 }

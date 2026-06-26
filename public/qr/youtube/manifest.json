@@ -1,0 +1,195 @@
+{
+  "playlistId": "PL0u1NTgEz-xFjU8_KXoKUDf1AwcnOBfC0",
+  "feedUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=PL0u1NTgEz-xFjU8_KXoKUDf1AwcnOBfC0&max-results=50",
+  "entries": [
+    {
+      "videoId": "veGNGGLLHog",
+      "title": "아아 아기와 우우 발판, ㅇ+ㅜ=우",
+      "url": "https://www.youtube.com/watch?v=veGNGGLLHog",
+      "qrPng": "public/qr/youtube/veGNGGLLHog.png",
+      "qrSvg": "public/qr/youtube/veGNGGLLHog.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 1012
+    },
+    {
+      "videoId": "SM-5rr_zXMg",
+      "title": "아아 아기와 오오 상자, ㅇ+ㅗ=오",
+      "url": "https://www.youtube.com/watch?v=SM-5rr_zXMg",
+      "qrPng": "public/qr/youtube/SM-5rr_zXMg.png",
+      "qrSvg": "public/qr/youtube/SM-5rr_zXMg.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 5,
+      "penalty": 1071
+    },
+    {
+      "videoId": "jiq5R5GOnSY",
+      "title": "아아 아기와 아아 나뭇가지, ㅇ+ㅏ=아",
+      "url": "https://www.youtube.com/watch?v=jiq5R5GOnSY",
+      "qrPng": "public/qr/youtube/jiq5R5GOnSY.png",
+      "qrSvg": "public/qr/youtube/jiq5R5GOnSY.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 969
+    },
+    {
+      "videoId": "AljymcYJ6Rc",
+      "title": "한글 자음캐릭터 소리 합본",
+      "url": "https://www.youtube.com/watch?v=AljymcYJ6Rc",
+      "qrPng": "public/qr/youtube/AljymcYJ6Rc.png",
+      "qrSvg": "public/qr/youtube/AljymcYJ6Rc.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 961
+    },
+    {
+      "videoId": "WSbmbqNcWn8",
+      "title": "푸푸 풍선 ㅍ",
+      "url": "https://www.youtube.com/watch?v=WSbmbqNcWn8",
+      "qrPng": "public/qr/youtube/WSbmbqNcWn8.png",
+      "qrSvg": "public/qr/youtube/WSbmbqNcWn8.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 938
+    },
+    {
+      "videoId": "QgrjnfacHV0",
+      "title": "토토 토끼 ㅌ",
+      "url": "https://www.youtube.com/watch?v=QgrjnfacHV0",
+      "qrPng": "public/qr/youtube/QgrjnfacHV0.png",
+      "qrSvg": "public/qr/youtube/QgrjnfacHV0.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 962
+    },
+    {
+      "videoId": "WT2v898ZpOs",
+      "title": "코코 코알라 ㅋ",
+      "url": "https://www.youtube.com/watch?v=WT2v898ZpOs",
+      "qrPng": "public/qr/youtube/WT2v898ZpOs.png",
+      "qrSvg": "public/qr/youtube/WT2v898ZpOs.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 987
+    },
+    {
+      "videoId": "Z-kxqwLAlqI",
+      "title": "치치 칙폭이 ㅊ",
+      "url": "https://www.youtube.com/watch?v=Z-kxqwLAlqI",
+      "qrPng": "public/qr/youtube/Z-kxqwLAlqI.png",
+      "qrSvg": "public/qr/youtube/Z-kxqwLAlqI.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 1014
+    },
+    {
+      "videoId": "4Ra9valn7Bo",
+      "title": "지지 지렁이 ㅈ",
+      "url": "https://www.youtube.com/watch?v=4Ra9valn7Bo",
+      "qrPng": "public/qr/youtube/4Ra9valn7Bo.png",
+      "qrSvg": "public/qr/youtube/4Ra9valn7Bo.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 920
+    },
+    {
+      "videoId": "upWvAbNaMU8",
+      "title": "하하 하마 ㅎ",
+      "url": "https://www.youtube.com/watch?v=upWvAbNaMU8",
+      "qrPng": "public/qr/youtube/upWvAbNaMU8.png",
+      "qrSvg": "public/qr/youtube/upWvAbNaMU8.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 1004
+    },
+    {
+      "videoId": "fGREJFb7V50",
+      "title": "사사 사슴 ㅅ",
+      "url": "https://www.youtube.com/watch?v=fGREJFb7V50",
+      "qrPng": "public/qr/youtube/fGREJFb7V50.png",
+      "qrSvg": "public/qr/youtube/fGREJFb7V50.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 960
+    },
+    {
+      "videoId": "9ab6BAY9c_w",
+      "title": "라라 리본 ㄹ",
+      "url": "https://www.youtube.com/watch?v=9ab6BAY9c_w",
+      "qrPng": "public/qr/youtube/9ab6BAY9c_w.png",
+      "qrSvg": "public/qr/youtube/9ab6BAY9c_w.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 976
+    },
+    {
+      "videoId": "EGbu60mGhWM",
+      "title": "도도 도토리 ㄷ",
+      "url": "https://www.youtube.com/watch?v=EGbu60mGhWM",
+      "qrPng": "public/qr/youtube/EGbu60mGhWM.png",
+      "qrSvg": "public/qr/youtube/EGbu60mGhWM.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 1020
+    },
+    {
+      "videoId": "I7aMk9JULsA",
+      "title": "부부 부엉이 ㅂ",
+      "url": "https://www.youtube.com/watch?v=I7aMk9JULsA",
+      "qrPng": "public/qr/youtube/I7aMk9JULsA.png",
+      "qrSvg": "public/qr/youtube/I7aMk9JULsA.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 1001
+    },
+    {
+      "videoId": "uc8sECik0gQ",
+      "title": "미미 문어 ㅁ",
+      "url": "https://www.youtube.com/watch?v=uc8sECik0gQ",
+      "qrPng": "public/qr/youtube/uc8sECik0gQ.png",
+      "qrSvg": "public/qr/youtube/uc8sECik0gQ.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 997
+    },
+    {
+      "videoId": "N7r2qrSWOQk",
+      "title": "고고 고양이 ㄱ",
+      "url": "https://www.youtube.com/watch?v=N7r2qrSWOQk",
+      "qrPng": "public/qr/youtube/N7r2qrSWOQk.png",
+      "qrSvg": "public/qr/youtube/N7r2qrSWOQk.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 1010,
+      "source": "manual"
+    },
+    {
+      "videoId": "04iCkuQBEE0",
+      "title": "나나 나비 ㄴ",
+      "url": "https://www.youtube.com/watch?v=04iCkuQBEE0",
+      "qrPng": "public/qr/youtube/04iCkuQBEE0.png",
+      "qrSvg": "public/qr/youtube/04iCkuQBEE0.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 2,
+      "penalty": 1030,
+      "source": "manual"
+    }
+  ]
+}

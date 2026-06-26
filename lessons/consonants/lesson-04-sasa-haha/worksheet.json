@@ -19,7 +19,12 @@
       ],
       "teacherNote": "읽어주기: \"사사 사슴, 스 스 스\". ㅅ은 산처럼 올라갔다 내려오는 길로 몸동작과 연결한다.",
       "footerLeft": "사사 사슴",
-      "footerRight": "4레슨 사사와 하하: ㅅ ㅎ 숨과 바람 자음"
+      "footerRight": "4레슨 사사와 하하: ㅅ ㅎ 숨과 바람 자음",
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=fGREJFb7V50",
+        "image": "../../../public/qr/youtube/fGREJFb7V50.png"
+      }
     },
     {
       "type": "spot",
@@ -77,7 +82,12 @@
       ],
       "teacherNote": "읽어주기: \"하하 하마, 흐 흐 흐\". ㅎ은 따뜻한 숨이 나오는 친구처럼 손을 입 앞에 대고 느낀다.",
       "footerLeft": "하하 하마",
-      "footerRight": "4레슨 사사와 하하: ㅅ ㅎ 숨과 바람 자음"
+      "footerRight": "4레슨 사사와 하하: ㅅ ㅎ 숨과 바람 자음",
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=upWvAbNaMU8",
+        "image": "../../../public/qr/youtube/upWvAbNaMU8.png"
+      }
     },
     {
       "type": "spot",

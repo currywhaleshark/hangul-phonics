@@ -19,7 +19,12 @@
       ],
       "teacherNote": "읽어주기: \"지지 지렁이, 즈 즈 즈\". ㅈ은 ㅅ 위에 작은 길이 더 있는 친구처럼 보이되, 이름보다 소리 반복을 앞세운다.",
       "footerLeft": "지지 지렁이",
-      "footerRight": "5레슨 지지와 치치: ㅈ ㅊ 첫소리 친구"
+      "footerRight": "5레슨 지지와 치치: ㅈ ㅊ 첫소리 친구",
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=4Ra9valn7Bo",
+        "image": "../../../public/qr/youtube/4Ra9valn7Bo.png"
+      }
     },
     {
       "type": "spot",
@@ -77,7 +82,12 @@
       ],
       "teacherNote": "읽어주기: \"치치 칙폭이, 츠 츠 츠\". ㅊ은 기차 소리처럼 신나게 반복하되, 과하게 빠르지 않게 한다.",
       "footerLeft": "치치 칙폭이",
-      "footerRight": "5레슨 지지와 치치: ㅈ ㅊ 첫소리 친구"
+      "footerRight": "5레슨 지지와 치치: ㅈ ㅊ 첫소리 친구",
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Z-kxqwLAlqI",
+        "image": "../../../public/qr/youtube/Z-kxqwLAlqI.png"
+      }
     },
     {
       "type": "spot",

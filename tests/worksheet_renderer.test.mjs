@@ -47,6 +47,50 @@ assert.equal(
   "preview asset resolution should not mutate the editable worksheet data"
 );
 
+const qrPreviewHtml = renderWorksheetDocument(
+  {
+    title: "QR lesson",
+    pages: [
+      {
+        type: "character",
+        theme: "gogo",
+        kicker: "1",
+        title: "QR page",
+        image: "../../../public/sample-character.png",
+        panelTitle: "Letter",
+        letter: "\u3131",
+        sound: "\uADF8",
+        read: "read",
+        activityTitle: "trace",
+        trace: ["\u3131"],
+        teacherNote: "note",
+        footerLeft: "left",
+        footerRight: "right",
+        videoQr: {
+          label: "\uC601\uC0C1 \uBCF4\uAE30",
+          url: "https://www.youtube.com/watch?v=sample123",
+          image: "../../../public/qr/youtube/sample123.png",
+        },
+      },
+    ],
+  },
+  {
+    assetBaseHref: "../lessons/consonants/lesson-01-gogo-nana/worksheet.html",
+    documentHref: "http://127.0.0.1:3000/worksheets/editor.html",
+  }
+);
+
+assert.match(qrPreviewHtml, /class="title-row"/, "worksheet pages with video QR should use a title row");
+assert.match(qrPreviewHtml, /class="video-qr"/, "worksheet pages with video QR should render a QR block");
+assert.match(qrPreviewHtml, /href="https:\/\/www\.youtube\.com\/watch\?v=sample123"/, "QR block should link to the video");
+assert.match(
+  qrPreviewHtml,
+  /src="\/public\/qr\/youtube\/sample123\.png"/,
+  "editor preview HTML should resolve QR images from the lesson HTML path"
+);
+assert.match(worksheetCss, /\.title-row\s*{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s+auto/s);
+assert.match(worksheetCss, /\.video-qr\s*{[^}]*width:\s*28mm/s);
+
 const escaped = renderWorksheetPage({
   type: "spot",
   theme: "gogo",
