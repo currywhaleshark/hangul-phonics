@@ -1,0 +1,1624 @@
+{
+  "generatedAt": "2026-06-25T04:14:30.777267+00:00",
+  "sourceRoot": "public",
+  "outputRoot": "public/video-assets/vowel-alpha",
+  "tools": [
+    {
+      "source": "public/아아 나뭇가지.png",
+      "alpha": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "width": 410,
+      "height": 681,
+      "transparentRatio": 0.7091,
+      "partialAlphaRatio": 0.0,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ],
+      "objectOnly": true,
+      "removedCardTextAndBorder": true,
+      "keptComponentArea": 81225,
+      "keptComponentBox": [
+        380,
+        351,
+        741,
+        983
+      ],
+      "cropBox": [
+        356,
+        327,
+        765,
+        1007
+      ]
+    },
+    {
+      "source": "public/어어 풍선.png",
+      "alpha": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png",
+      "width": 504,
+      "height": 672,
+      "transparentRatio": 0.694,
+      "partialAlphaRatio": 0.0,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ],
+      "objectOnly": true,
+      "removedCardTextAndBorder": true,
+      "keptComponentArea": 103653,
+      "keptComponentBox": [
+        332,
+        386,
+        787,
+        1009
+      ],
+      "cropBox": [
+        308,
+        362,
+        811,
+        1033
+      ]
+    },
+    {
+      "source": "public/오오 상자.png",
+      "alpha": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "width": 790,
+      "height": 606,
+      "transparentRatio": 0.2062,
+      "partialAlphaRatio": 0.0,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ],
+      "objectOnly": true,
+      "removedCardTextAndBorder": true,
+      "keptComponentArea": 380031,
+      "keptComponentBox": [
+        191,
+        411,
+        932,
+        968
+      ],
+      "cropBox": [
+        167,
+        387,
+        956,
+        992
+      ]
+    },
+    {
+      "source": "public/요요 그네.png",
+      "alpha": "public/video-assets/vowel-alpha/tools/요요 그네-alpha.png",
+      "width": 757,
+      "height": 652,
+      "transparentRatio": 0.6939,
+      "partialAlphaRatio": 0.0,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ],
+      "objectOnly": true,
+      "removedCardTextAndBorder": true,
+      "keptComponentArea": 151079,
+      "keptComponentBox": [
+        205,
+        382,
+        913,
+        985
+      ],
+      "cropBox": [
+        181,
+        358,
+        937,
+        1009
+      ]
+    },
+    {
+      "source": "public/우우 발판.png",
+      "alpha": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "width": 836,
+      "height": 536,
+      "transparentRatio": 0.4407,
+      "partialAlphaRatio": 0.0,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ],
+      "objectOnly": true,
+      "removedCardTextAndBorder": true,
+      "keptComponentArea": 250633,
+      "keptComponentBox": [
+        167,
+        464,
+        954,
+        951
+      ],
+      "cropBox": [
+        143,
+        440,
+        978,
+        975
+      ]
+    },
+    {
+      "source": "public/유유 의자.png",
+      "alpha": "public/video-assets/vowel-alpha/tools/유유 의자-alpha.png",
+      "width": 805,
+      "height": 635,
+      "transparentRatio": 0.4582,
+      "partialAlphaRatio": 0.0,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ],
+      "objectOnly": true,
+      "removedCardTextAndBorder": true,
+      "keptComponentArea": 276933,
+      "keptComponentBox": [
+        182,
+        413,
+        938,
+        999
+      ],
+      "cropBox": [
+        158,
+        389,
+        962,
+        1023
+      ]
+    },
+    {
+      "source": "public/으으 쿠션.png",
+      "alpha": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "width": 871,
+      "height": 306,
+      "transparentRatio": 0.2617,
+      "partialAlphaRatio": 0.0,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ],
+      "objectOnly": true,
+      "removedCardTextAndBorder": true,
+      "keptComponentArea": 196788,
+      "keptComponentBox": [
+        147,
+        576,
+        969,
+        833
+      ],
+      "cropBox": [
+        123,
+        552,
+        993,
+        857
+      ]
+    },
+    {
+      "source": "public/이이 막대.png",
+      "alpha": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png",
+      "width": 259,
+      "height": 713,
+      "transparentRatio": 0.6158,
+      "partialAlphaRatio": 0.0,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ],
+      "objectOnly": true,
+      "removedCardTextAndBorder": true,
+      "keptComponentArea": 70957,
+      "keptComponentBox": [
+        460,
+        357,
+        670,
+        1021
+      ],
+      "cropBox": [
+        436,
+        333,
+        694,
+        1045
+      ]
+    }
+  ],
+  "combined": [
+    {
+      "source": "public/고고 가 막대기 ㄱ폰트 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 가 막대기 ㄱ폰트 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6823,
+      "partialAlphaRatio": 0.006,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/고고 가 막대기 ㄱ폰트 크게 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 가 막대기 ㄱ폰트 크게 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.666,
+      "partialAlphaRatio": 0.0061,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/고고 가 막대기 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 가 막대기 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7303,
+      "partialAlphaRatio": 0.0057,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/고고 거 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 거 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7002,
+      "partialAlphaRatio": 0.0051,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/고고 거 새시안2.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 거 새시안2-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7149,
+      "partialAlphaRatio": 0.0043,
+      "backgroundColor": [
+        253,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/고고 고 상자 ㄱ폰트 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 고 상자 ㄱ폰트 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5625,
+      "partialAlphaRatio": 0.0053,
+      "backgroundColor": [
+        252,
+        252,
+        252
+      ]
+    },
+    {
+      "source": "public/고고 고 상자 ㄱ폰트 크게 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 고 상자 ㄱ폰트 크게 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5442,
+      "partialAlphaRatio": 0.0052,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/고고 고 상자 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 고 상자 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5914,
+      "partialAlphaRatio": 0.0055,
+      "backgroundColor": [
+        254,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/고고 교 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 교 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.769,
+      "partialAlphaRatio": 0.0042,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/고고 교 새시안2.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 교 새시안2-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7123,
+      "partialAlphaRatio": 0.0056,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/고고 교 새시안3.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 교 새시안3-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6352,
+      "partialAlphaRatio": 0.0065,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/고고 구 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 구 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6885,
+      "partialAlphaRatio": 0.0035,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/고고 규 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 규 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6522,
+      "partialAlphaRatio": 0.0051,
+      "backgroundColor": [
+        253,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/고고 그 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 그 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6202,
+      "partialAlphaRatio": 0.0046,
+      "backgroundColor": [
+        252,
+        252,
+        252
+      ]
+    },
+    {
+      "source": "public/고고 기 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 기 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7001,
+      "partialAlphaRatio": 0.005,
+      "backgroundColor": [
+        253,
+        252,
+        252
+      ]
+    },
+    {
+      "source": "public/고고 기 새시안2.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 기 새시안2-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6839,
+      "partialAlphaRatio": 0.0046,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/고고 기 새시안3.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 기 새시안3-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5753,
+      "partialAlphaRatio": 0.0049,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/나나 나 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/나나 나 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7139,
+      "partialAlphaRatio": 0.0063,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/나나 너 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/나나 너 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6084,
+      "partialAlphaRatio": 0.0078,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/나나 노 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/나나 노 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.663,
+      "partialAlphaRatio": 0.0041,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/나나 누 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/나나 누 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6449,
+      "partialAlphaRatio": 0.0057,
+      "backgroundColor": [
+        253,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/나나 느 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/나나 느 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6441,
+      "partialAlphaRatio": 0.0058,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/나나 니 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/나나 니 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6179,
+      "partialAlphaRatio": 0.0063,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/도도 다 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/도도 다 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5577,
+      "partialAlphaRatio": 0.0074,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/도도 더 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/도도 더 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5753,
+      "partialAlphaRatio": 0.0049,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/도도 더 새시안2.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/도도 더 새시안2-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5973,
+      "partialAlphaRatio": 0.0057,
+      "backgroundColor": [
+        252,
+        252,
+        252
+      ]
+    },
+    {
+      "source": "public/도도 도 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/도도 도 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5772,
+      "partialAlphaRatio": 0.0046,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/도도 두 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/도도 두 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6237,
+      "partialAlphaRatio": 0.0048,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "source": "public/도도 드 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/도도 드 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5493,
+      "partialAlphaRatio": 0.0048,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/도도 디 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/도도 디 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5356,
+      "partialAlphaRatio": 0.006,
+      "backgroundColor": [
+        254,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/라라 라 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/라라 라 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.653,
+      "partialAlphaRatio": 0.0049,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/라라 러 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/라라 러 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6795,
+      "partialAlphaRatio": 0.0054,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/라라 로 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/라라 로 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.567,
+      "partialAlphaRatio": 0.0046,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/라라 루 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/라라 루 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6448,
+      "partialAlphaRatio": 0.0038,
+      "backgroundColor": [
+        252,
+        252,
+        252
+      ]
+    },
+    {
+      "source": "public/라라 르 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/라라 르 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5832,
+      "partialAlphaRatio": 0.0042,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/라라 리 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/라라 리 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6047,
+      "partialAlphaRatio": 0.0052,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/미미 마 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/미미 마 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6434,
+      "partialAlphaRatio": 0.0034,
+      "backgroundColor": [
+        253,
+        252,
+        251
+      ]
+    },
+    {
+      "source": "public/미미 머 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/미미 머 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5988,
+      "partialAlphaRatio": 0.0037,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/미미 모 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/미미 모 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.4964,
+      "partialAlphaRatio": 0.0033,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/미미 무 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/미미 무 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5679,
+      "partialAlphaRatio": 0.0029,
+      "backgroundColor": [
+        252,
+        252,
+        252
+      ]
+    },
+    {
+      "source": "public/미미 므 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/미미 므 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.532,
+      "partialAlphaRatio": 0.0032,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/미미 미 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/미미 미 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5986,
+      "partialAlphaRatio": 0.0037,
+      "backgroundColor": [
+        253,
+        252,
+        252
+      ]
+    },
+    {
+      "source": "public/부부 바 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/부부 바 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6927,
+      "partialAlphaRatio": 0.0053,
+      "backgroundColor": [
+        253,
+        252,
+        252
+      ]
+    },
+    {
+      "source": "public/부부 버 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/부부 버 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.578,
+      "partialAlphaRatio": 0.0059,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/부부 보 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/부부 보 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5629,
+      "partialAlphaRatio": 0.0039,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/부부 부 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/부부 부 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6115,
+      "partialAlphaRatio": 0.0034,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/부부 브 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/부부 브 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5744,
+      "partialAlphaRatio": 0.0037,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/부부 비 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/부부 비 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5174,
+      "partialAlphaRatio": 0.0054,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/사사 사 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/사사 사 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6223,
+      "partialAlphaRatio": 0.0058,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/사사 서 새시안-v2.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/사사 서 새시안-v2-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6969,
+      "partialAlphaRatio": 0.0057,
+      "backgroundColor": [
+        251,
+        251,
+        251
+      ]
+    },
+    {
+      "source": "public/사사 서 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/사사 서 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6732,
+      "partialAlphaRatio": 0.0059,
+      "backgroundColor": [
+        253,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/사사 소 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/사사 소 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6503,
+      "partialAlphaRatio": 0.0042,
+      "backgroundColor": [
+        252,
+        252,
+        252
+      ]
+    },
+    {
+      "source": "public/사사 수 새시안-v2.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/사사 수 새시안-v2-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6229,
+      "partialAlphaRatio": 0.0042,
+      "backgroundColor": [
+        253,
+        253,
+        252
+      ]
+    },
+    {
+      "source": "public/사사 수 새시안-v3.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/사사 수 새시안-v3-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7356,
+      "partialAlphaRatio": 0.0045,
+      "backgroundColor": [
+        253,
+        253,
+        252
+      ]
+    },
+    {
+      "source": "public/사사 수 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/사사 수 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7659,
+      "partialAlphaRatio": 0.004,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/사사 스 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/사사 스 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6804,
+      "partialAlphaRatio": 0.0046,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/사사 시 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/사사 시 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6747,
+      "partialAlphaRatio": 0.0055,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/아아 아기 나뭇가지 시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/아아 아기 나뭇가지 시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7521,
+      "partialAlphaRatio": 0.0039,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/어어 풍선 시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/어어 풍선 시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6738,
+      "partialAlphaRatio": 0.0046,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/어어 풍선 시안2.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/어어 풍선 시안2-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7129,
+      "partialAlphaRatio": 0.0046,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/오오 상자 시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/오오 상자 시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6544,
+      "partialAlphaRatio": 0.0031,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/요요 그네 시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/요요 그네 시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7076,
+      "partialAlphaRatio": 0.0047,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/요요 그네 시안2.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/요요 그네 시안2-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.692,
+      "partialAlphaRatio": 0.0048,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/우우 발판 시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/우우 발판 시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7495,
+      "partialAlphaRatio": 0.003,
+      "backgroundColor": [
+        253,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/유유 의자 시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/유유 의자 시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7618,
+      "partialAlphaRatio": 0.0037,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/으으 쿠션 시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/으으 쿠션 시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7311,
+      "partialAlphaRatio": 0.0031,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/이이 막대 시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/이이 막대 시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7012,
+      "partialAlphaRatio": 0.0034,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/지지 자 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/지지 자 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.709,
+      "partialAlphaRatio": 0.0067,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/지지 저 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/지지 저 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6855,
+      "partialAlphaRatio": 0.0067,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/지지 조 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/지지 조 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5789,
+      "partialAlphaRatio": 0.0056,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/지지 주 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/지지 주 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6668,
+      "partialAlphaRatio": 0.0052,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/지지 즈 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/지지 즈 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5912,
+      "partialAlphaRatio": 0.0055,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/지지 지 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/지지 지 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6884,
+      "partialAlphaRatio": 0.0066,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/치치 차 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/치치 차 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5361,
+      "partialAlphaRatio": 0.0051,
+      "backgroundColor": [
+        251,
+        251,
+        250
+      ]
+    },
+    {
+      "source": "public/치치 처 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/치치 처 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5463,
+      "partialAlphaRatio": 0.0048,
+      "backgroundColor": [
+        253,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/치치 초 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/치치 초 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5627,
+      "partialAlphaRatio": 0.003,
+      "backgroundColor": [
+        253,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/치치 추 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/치치 추 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.638,
+      "partialAlphaRatio": 0.0029,
+      "backgroundColor": [
+        253,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/치치 츠 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/치치 츠 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5524,
+      "partialAlphaRatio": 0.0042,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/치치 치 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/치치 치 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.4776,
+      "partialAlphaRatio": 0.0054,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/코코 카 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/코코 카 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5961,
+      "partialAlphaRatio": 0.0054,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/코코 커 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/코코 커 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5713,
+      "partialAlphaRatio": 0.0057,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/코코 코 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/코코 코 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6321,
+      "partialAlphaRatio": 0.0045,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/코코 쿠 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/코코 쿠 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6301,
+      "partialAlphaRatio": 0.0038,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/코코 크 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/코코 크 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5262,
+      "partialAlphaRatio": 0.0056,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/코코 키 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/코코 키 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5532,
+      "partialAlphaRatio": 0.0052,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/토토 타 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/토토 타 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6345,
+      "partialAlphaRatio": 0.0054,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/토토 터 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/토토 터 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.651,
+      "partialAlphaRatio": 0.0055,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/토토 토 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/토토 토 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5492,
+      "partialAlphaRatio": 0.0037,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/토토 투 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/토토 투 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6469,
+      "partialAlphaRatio": 0.0039,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/토토 트 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/토토 트 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5393,
+      "partialAlphaRatio": 0.005,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "source": "public/토토 티 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/토토 티 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6098,
+      "partialAlphaRatio": 0.0048,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/푸푸 파 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/푸푸 파 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7193,
+      "partialAlphaRatio": 0.0044,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "source": "public/푸푸 퍼 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/푸푸 퍼 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6918,
+      "partialAlphaRatio": 0.0047,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/푸푸 포 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/푸푸 포 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6592,
+      "partialAlphaRatio": 0.0042,
+      "backgroundColor": [
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "source": "public/푸푸 푸 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/푸푸 푸 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.7132,
+      "partialAlphaRatio": 0.0041,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/푸푸 프 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/푸푸 프 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6127,
+      "partialAlphaRatio": 0.0048,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/푸푸 피 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/푸푸 피 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6229,
+      "partialAlphaRatio": 0.0043,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/하하 하 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 하 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5687,
+      "partialAlphaRatio": 0.0047,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/하하 허 새시안-v2.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 허 새시안-v2-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6535,
+      "partialAlphaRatio": 0.0048,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/하하 허 새시안-v3.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 허 새시안-v3-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5286,
+      "partialAlphaRatio": 0.0051,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/하하 허 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 허 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6537,
+      "partialAlphaRatio": 0.0047,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/하하 호 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 호 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5953,
+      "partialAlphaRatio": 0.0034,
+      "backgroundColor": [
+        253,
+        253,
+        253
+      ]
+    },
+    {
+      "source": "public/하하 후 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 후 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6788,
+      "partialAlphaRatio": 0.0036,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/하하 흐 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 흐 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5843,
+      "partialAlphaRatio": 0.0041,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/하하 히 새시안-v2.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 히 새시안-v2-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6266,
+      "partialAlphaRatio": 0.0053,
+      "backgroundColor": [
+        253,
+        253,
+        252
+      ]
+    },
+    {
+      "source": "public/하하 히 새시안-v3.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 히 새시안-v3-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.5336,
+      "partialAlphaRatio": 0.0045,
+      "backgroundColor": [
+        254,
+        254,
+        254
+      ]
+    },
+    {
+      "source": "public/하하 히 새시안.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 히 새시안-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "transparentRatio": 0.6287,
+      "partialAlphaRatio": 0.0051,
+      "backgroundColor": [
+        253,
+        253,
+        252
+      ]
+    }
+  ]
+}
