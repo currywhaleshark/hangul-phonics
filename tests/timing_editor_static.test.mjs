@@ -37,11 +37,15 @@ assert.match(js, /setCuePosition/, "editor should save dragged popup positions")
 assert.match(js, /removeCue/, "editor should remove unused word cards");
 assert.match(js, /data-action="remove"/, "editor should expose a remove button per word card");
 assert.match(js, /pointerdown/, "editor should start dragging from the preview stage");
+assert.match(js, /elementsFromPoint/, "editor should search below transparent sprite boxes for draggable targets");
+assert.match(js, /getImageData/, "editor should sample sprite alpha before starting a drag");
+assert.match(js, /ALPHA_HIT_THRESHOLD/, "editor should ignore transparent pixels in drag hit testing");
 assert.match(js, /data-stage-cue-id/, "stage popups should expose cue ids for dragging");
 assert.match(js, /letterCues/, "editor should edit ??popup timings");
 assert.match(js, /sceneCues/, "editor should edit vowel story scene timings");
 assert.match(js, /isVowelStoryProject/, "editor should branch preview behavior for vowel stories");
 assert.match(js, /isVowelCombineProject/, "editor should branch preview behavior for vowel combine stories");
+assert.match(js, /syllable-combine-story/, "editor should branch preview behavior for syllable combine stories");
 assert.match(js, /getInitialSelectedCueKind/, "editor should initialize the selected cue kind before first render");
 assert.match(js, /combineCues/, "editor should edit vowel combine story cues");
 assert.match(js, /updateCombineCuePosition/, "editor should persist dragged combine cue positions into render positions");
@@ -84,11 +88,3 @@ assert.match(css, /\.is-draggable/, "editor should show draggable popups afforda
 assert.match(css, /\.letter-popup\.is-draggable[\s\S]*pointer-events:\s*auto/, "letter popup drag targets should receive pointer events");
 assert.match(css, /\.time-field/, "editor should style start and end timing fields");
 assert.match(css, /touch-action: none/, "drag targets should work on touch screens");
-
-
-
-
-
-
-
-

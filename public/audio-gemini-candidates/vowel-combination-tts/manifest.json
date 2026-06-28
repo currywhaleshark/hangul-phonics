@@ -1,0 +1,260 @@
+{
+  "model": "gemini-3.1-flash-tts-preview",
+  "voiceName": "Callirrhoe",
+  "style": "유아 대상 한국어 교사, 밝고 친절한 말투, 또박또박한 발음",
+  "trimFilter": "silenceremove=start_periods=1:start_duration=0:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_duration=0:start_threshold=-45dB,areverse",
+  "generatedAt": "2026-06-26T15:33:10.8551987Z",
+  "count": 26,
+  "items": [
+    {
+      "index": 1,
+      "slug": "ga",
+      "label": "가",
+      "text": "고고 고양이가 아아 나뭇가지를 들어요.\n고고의 소리, 그! 아아 나뭇가지의 소리, 아!\n그,아!\n둘이 합치면, 가!\n가방, 가지, 가위.\n가!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/01_가_ga.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/01_가_ga.wav",
+      "duration": 20.066
+    },
+    {
+      "index": 2,
+      "slug": "go",
+      "label": "고",
+      "text": "고고 고양이가 오오 상자에 올라갔어요.\n고고의 소리, 그! 오오 상자의 소리, 오!\n그,오!\n둘이 합치면, 고!\n고양이, 고구마, 고래.\n고!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/02_고_go.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/02_고_go.wav",
+      "duration": 23.754
+    },
+    {
+      "index": 3,
+      "slug": "na",
+      "label": "나",
+      "text": "나나 나비가 아아 나뭇가지를 들어요.\n나나의 소리, 느! 아아 나뭇가지의 소리, 아!\n느,아!\n둘이 합치면, 나!\n나비, 나무, 나사.\n나!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/03_나_na.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/03_나_na.wav",
+      "duration": 24.093
+    },
+    {
+      "index": 4,
+      "slug": "no",
+      "label": "노",
+      "text": "나나 나비가 오오 상자에 올라갔어요.\n나나의 소리, 느! 오오 상자의 소리, 오!\n느,오!\n둘이 합치면, 노!\n노란색, 노래, 노트.\n노!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/04_노_no.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/04_노_no.wav",
+      "duration": 22.358
+    },
+    {
+      "index": 5,
+      "slug": "ma",
+      "label": "마",
+      "text": "미미 문어가 아아 나뭇가지를 들어요.\n미미의 소리, 므! 아아 나뭇가지의 소리, 아!\n므,아!\n둘이 합치면, 마!\n마늘, 마술사, 마스크.\n마!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/05_마_ma.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/05_마_ma.wav",
+      "duration": 24.124
+    },
+    {
+      "index": 6,
+      "slug": "mo",
+      "label": "모",
+      "text": "미미 문어가 오오 상자에 올라갔어요.\n미미의 소리, 므! 오오 상자의 소리, 오!\n므,오!\n둘이 합치면, 모!\n모자, 모래, 모기.\n모!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/06_모_mo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/06_모_mo.wav",
+      "duration": 25.207
+    },
+    {
+      "index": 7,
+      "slug": "ba",
+      "label": "바",
+      "text": "부부 부엉이가 아아 나뭇가지를 들어요.\n부부의 소리, 브! 아아 나뭇가지의 소리, 아!\n브,아!\n둘이 합치면, 바!\n바다, 바퀴, 바나나.\n바!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/07_바_ba.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/07_바_ba.wav",
+      "duration": 25.881
+    },
+    {
+      "index": 8,
+      "slug": "bo",
+      "label": "보",
+      "text": "부부 부엉이가 오오 상자에 올라갔어요.\n부부의 소리, 브! 오오 상자의 소리, 오!\n브,오!\n둘이 합치면, 보!\n보라색, 보름달, 보물상자.\n보!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/08_보_bo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/08_보_bo.wav",
+      "duration": 23.289
+    },
+    {
+      "index": 9,
+      "slug": "da",
+      "label": "다",
+      "text": "도도 도토리가 아아 나뭇가지를 들어요.\n도도의 소리, 드! 아아 나뭇가지의 소리, 아!\n드,아!\n둘이 합치면, 다!\n다람쥐, 다리미, 다리.\n다!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/09_다_da.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/09_다_da.wav",
+      "duration": 22.017
+    },
+    {
+      "index": 10,
+      "slug": "do",
+      "label": "도",
+      "text": "도도 도토리가 오오 상자에 올라갔어요.\n도도의 소리, 드! 오오 상자의 소리, 오!\n드,오!\n둘이 합치면, 도!\n도토리, 도넛, 도깨비.\n도!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/10_도_do.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/10_도_do.wav",
+      "duration": 21.379
+    },
+    {
+      "index": 11,
+      "slug": "ra",
+      "label": "라",
+      "text": "라라 리본이 아아 나뭇가지를 들어요.\n라라의 소리, 르! 아아 나뭇가지의 소리, 아!\n르,아!\n둘이 합치면, 라!\n라디오, 라면, 라켓.\n라!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/11_라_ra.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/11_라_ra.wav",
+      "duration": 21.146
+    },
+    {
+      "index": 12,
+      "slug": "ro",
+      "label": "로",
+      "text": "라라 리본이 오오 상자에 올라갔어요.\n라라의 소리, 르! 오오 상자의 소리, 오!\n르,오!\n둘이 합치면, 로!\n로봇, 로켓, 로션.\n로!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/12_로_ro.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/12_로_ro.wav",
+      "duration": 19.045
+    },
+    {
+      "index": 13,
+      "slug": "sa",
+      "label": "사",
+      "text": "사사 사슴이 아아 나뭇가지를 들어요.\n사사의 소리, 스! 아아 나뭇가지의 소리, 아!\n스,아!\n둘이 합치면, 사!\n사슴, 사다리, 사탕.\n사!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/13_사_sa.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/13_사_sa.wav",
+      "duration": 25.054
+    },
+    {
+      "index": 14,
+      "slug": "so",
+      "label": "소",
+      "text": "사사 사슴이 오오 상자에 올라갔어요.\n사사의 소리, 스! 오오 상자의 소리, 오!\n스,오!\n둘이 합치면, 소!\n소금, 소, 소리.\n소!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/14_소_so.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/14_소_so.wav",
+      "duration": 21.354
+    },
+    {
+      "index": 15,
+      "slug": "ha",
+      "label": "하",
+      "text": "하하 하마가 아아 나뭇가지를 들어요.\n하하의 소리, 흐! 아아 나뭇가지의 소리, 아!\n흐,아!\n둘이 합치면, 하!\n하마, 하늘, 하얀색.\n하!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/15_하_ha.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/15_하_ha.wav",
+      "duration": 18.821
+    },
+    {
+      "index": 16,
+      "slug": "ho",
+      "label": "호",
+      "text": "하하 하마가 오오 상자에 올라갔어요.\n하하의 소리, 흐! 오오 상자의 소리, 오!\n흐,오!\n둘이 합치면, 호!\n호랑이, 호박, 호두.\n호!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/16_호_ho.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/16_호_ho.wav",
+      "duration": 22.484
+    },
+    {
+      "index": 17,
+      "slug": "ja",
+      "label": "자",
+      "text": "지지 지렁이가 아아 나뭇가지를 들어요.\n지지의 소리, 즈! 아아 나뭇가지의 소리, 아!\n즈,아!\n둘이 합치면, 자!\n자전거, 자석, 자두.\n자!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/17_자_ja.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/17_자_ja.wav",
+      "duration": 21.702,
+      "pronunciationGuide": [
+        "발음 주의: 자는 짜나 차가 아닙니다.",
+        "처음 ㅈ은 세게 누르지 말고, 거센 숨소리 없이 부드럽게 말해 주세요.",
+        "자전거, 자석, 자두도 짜전거나 차전거처럼 들리지 않게 해 주세요.",
+        "마지막 자!도 짧고 부드러운 평음으로 읽어 주세요."
+      ],
+      "regeneratedAt": "2026-06-26T15:28:47.413Z",
+      "manualReplacementSource": "C:\\Users\\yurib\\Downloads\\speech (4).wav",
+      "replacedAt": "2026-06-26T15:33:10.8512921Z"
+    },
+    {
+      "index": 18,
+      "slug": "jo",
+      "label": "조",
+      "text": "지지 지렁이가 오오 상자에 올라갔어요.\n지지의 소리, 즈! 오오 상자의 소리, 오!\n즈,오!\n둘이 합치면, 조!\n조개, 조끼, 조명.\n조!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/18_조_jo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/18_조_jo.wav",
+      "duration": 23.844,
+      "pronunciationGuide": [
+        "발음 주의: 조는 초나 쪼가 아닙니다.",
+        "처음 ㅈ은 거센 ㅊ처럼 숨을 세게 내지 말고, 된소리처럼 세게 누르지도 마세요.",
+        "조개, 조끼, 조명도 초개나 쪼끼처럼 들리지 않게 해 주세요.",
+        "마지막 조!도 부드러운 평음으로 읽어 주세요."
+      ],
+      "regeneratedAt": "2026-06-26T15:29:00.401Z"
+    },
+    {
+      "index": 19,
+      "slug": "cha",
+      "label": "차",
+      "text": "치치 칙폭이가 아아 나뭇가지를 들어요.\n치치의 소리, 츠! 아아 나뭇가지의 소리, 아!\n츠,아!\n둘이 합치면, 차!\n차, 자동차, 차례.\n차!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/19_차_cha.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/19_차_cha.wav",
+      "duration": 19.181
+    },
+    {
+      "index": 20,
+      "slug": "cho",
+      "label": "초",
+      "text": "치치 칙폭이가 오오 상자에 올라갔어요.\n치치의 소리, 츠! 오오 상자의 소리, 오!\n츠,오!\n둘이 합치면, 초!\n초콜릿, 초승달, 초록색.\n초!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/20_초_cho.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/20_초_cho.wav",
+      "duration": 20.087
+    },
+    {
+      "index": 21,
+      "slug": "ka",
+      "label": "카",
+      "text": "코코 코알라가 아아 나뭇가지를 들어요.\n코코의 소리, 크! 아아 나뭇가지의 소리, 아!\n크,아!\n둘이 합치면, 카!\n카드, 카메라, 카트.\n카!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/21_카_ka.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/21_카_ka.wav",
+      "duration": 24.939
+    },
+    {
+      "index": 22,
+      "slug": "ko",
+      "label": "코",
+      "text": "코코 코알라가 오오 상자에 올라갔어요.\n코코의 소리, 크! 오오 상자의 소리, 오!\n크,오!\n둘이 합치면, 코!\n코알라, 코끼리, 코뿔소.\n코!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/22_코_ko.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/22_코_ko.wav",
+      "duration": 20.711
+    },
+    {
+      "index": 23,
+      "slug": "ta",
+      "label": "타",
+      "text": "토토 토끼가 아아 나뭇가지를 들어요.\n토토의 소리, 트! 아아 나뭇가지의 소리, 아!\n트,아!\n둘이 합치면, 타!\n타조, 치타, 낙타.\n타!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/23_타_ta.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/23_타_ta.wav",
+      "duration": 21.324
+    },
+    {
+      "index": 24,
+      "slug": "to",
+      "label": "토",
+      "text": "토토 토끼가 오오 상자에 올라갔어요.\n토토의 소리, 트! 오오 상자의 소리, 오!\n트,오!\n둘이 합치면, 토!\n토끼, 토마토, 토끼풀.\n토!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/24_토_to.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/24_토_to.wav",
+      "duration": 22.503
+    },
+    {
+      "index": 25,
+      "slug": "pa",
+      "label": "파",
+      "text": "푸푸 풍선이 아아 나뭇가지를 들어요.\n푸푸의 소리, 프! 아아 나뭇가지의 소리, 아!\n프,아!\n둘이 합치면, 파!\n파란색, 파이, 파인애플.\n파!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/25_파_pa.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/25_파_pa.wav",
+      "duration": 22.073
+    },
+    {
+      "index": 26,
+      "slug": "po",
+      "label": "포",
+      "text": "푸푸 풍선이 오오 상자에 올라갔어요.\n푸푸의 소리, 프! 오오 상자의 소리, 오!\n프,오!\n둘이 합치면, 포!\n포도, 포크, 폭포.\n포!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/26_포_po.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/26_포_po.wav",
+      "duration": 21.171
+    }
+  ]
+}

@@ -649,7 +649,7 @@ def build_frames(
     output: Path,
     keep_frames: bool = False,
 ) -> tuple[Path, float, float]:
-    if project.get("template") == "vowel-combine-story":
+    if project.get("template") in {"vowel-combine-story", "syllable-combine-story"}:
         return build_vowel_combine_story_frames(project, output, keep_frames)
 
     if project.get("template") == "vowel-story":

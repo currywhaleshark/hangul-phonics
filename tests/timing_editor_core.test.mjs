@@ -344,6 +344,110 @@ assert.throws(
 }
 
 {
+  const expectedIds = [
+    "ga-a",
+    "go-o",
+    "na-a",
+    "no-o",
+    "ma-a",
+    "mo-o",
+    "ba-a",
+    "bo-o",
+    "da-a",
+    "do-o",
+    "ra-a",
+    "ro-o",
+    "sa-a",
+    "so-o",
+    "ha-a",
+    "ho-o",
+    "ja-a",
+    "jo-o",
+    "cha-a",
+    "cho-o",
+    "ka-a",
+    "ko-o",
+    "ta-a",
+    "to-o",
+    "pa-a",
+    "po-o",
+  ];
+
+  expectedIds.forEach((projectId) => {
+    assert.equal(TIMING_PROJECTS.some((project) => project.id === projectId), true, `${projectId} should exist`);
+  });
+
+  const ga = createDefaultTimingProject("ga-a");
+  assert.equal(ga.template, "syllable-combine-story");
+  assert.equal(ga.audio.src, "public/audio-gemini-candidates/vowel-combination-tts/01_가_ga.mp3");
+  assert.equal(ga.character.name, "고고 고양이");
+  assert.equal(ga.character.letter, "ㄱ");
+  assert.equal(ga.targetSyllable, "가");
+  assert.equal(ga.vowel.letter, "ㅏ");
+  assert.equal(ga.vowel.sound, "아");
+  assert.equal(ga.render.timingFile, "ga-a-syllable-timings.json");
+  assert.deepEqual(
+    ga.combineCues.map((cue) => [cue.assetKind, cue.label]),
+    [
+      ["character", "고고 고양이"],
+      ["tool", "아아 나뭇가지"],
+      ["combined", "가"],
+    ],
+  );
+  assert.deepEqual(
+    ga.letterCues.map((cue) => cue.label),
+    ["ㄱ", "ㅏ", "가", "가"],
+  );
+  assert.deepEqual(ga.cues.map((cue) => cue.label), ["가방", "가지", "가위"]);
+  assert.equal(ga.combineCues.find((cue) => cue.assetKind === "tool").image, "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png");
+  assert.match(ga.combineCues.find((cue) => cue.assetKind === "combined").image, /고고 가/);
+  assert.deepEqual(
+    ga.combineCues.map((cue) => [cue.assetKind, cue.position, cue.toPosition]),
+    [
+      ["character", { left: 43, top: 56 }, { left: 43, top: 56 }],
+      ["tool", { left: 58, top: 57 }, { left: 58, top: 57 }],
+      ["combined", { left: 52.895, top: 63.591 }, { left: 52.895, top: 63.591 }],
+    ],
+  );
+  assert.deepEqual(
+    ga.cues.map((cue) => cue.position),
+    [
+      { left: 16.579, top: 53.86 },
+      { left: 88.263, top: 31.965 },
+      { left: 88.263, top: 79.123 },
+    ],
+  );
+  assert.deepEqual(
+    ga.letterCues.map((cue) => cue.position),
+    [
+      { left: 26.789, top: 23.544 },
+      { left: 77.947, top: 25.789 },
+      { left: 52.263, top: 17.743 },
+      { left: 53.526, top: 18.491 },
+    ],
+  );
+
+  const go = createDefaultTimingProject("go-o");
+  assert.equal(go.audio.src, "public/audio-gemini-candidates/vowel-combination-tts/02_고_go.mp3");
+  assert.equal(go.vowel.letter, "ㅗ");
+  assert.deepEqual(go.letterCues.map((cue) => cue.label), ["ㄱ", "ㅗ", "고", "고"]);
+  assert.deepEqual(go.cues.map((cue) => cue.label), ["고양이", "고구마", "고래"]);
+  assert.deepEqual(go.cues.map((cue) => cue.position), ga.cues.map((cue) => cue.position));
+  assert.deepEqual(go.letterCues.map((cue) => cue.position), ga.letterCues.map((cue) => cue.position));
+
+  const ta = createDefaultTimingProject("ta-a");
+  assert.deepEqual(ta.cues.map((cue) => cue.label), ["타조", "치타", "낙타"]);
+  const to = createDefaultTimingProject("to-o");
+  assert.deepEqual(to.cues.map((cue) => cue.label), ["토끼", "토마토", "토끼풀"]);
+  const po = createDefaultTimingProject("po-o");
+  assert.deepEqual(po.cues.map((cue) => cue.label), ["포도", "포크", "폭포"]);
+
+  const parsed = parseTimingProject(serializeTimingProject(ga));
+  assert.equal(parsed.combineCues.length, 3);
+  assert.equal(parsed.letterCues.length, 4);
+  assert.equal(parsed.combineCues.find((cue) => cue.assetKind === "character").image, ga.character.image);
+}
+{
   const oo = createDefaultTimingProject("oo-o");
   const moved = setCuePosition(oo, "oo-tool", { left: 61.2345, top: 55.6789 }, "combineCues");
   assert.deepEqual(moved.combineCues.find((cue) => cue.id === "oo-tool").position, { left: 61.235, top: 55.679 });

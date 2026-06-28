@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "go-o",
+  "lessonId": "vowel-combination-go-o",
+  "title": "고고 고양이 고 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "gogo",
+    "name": "고고 고양이",
+    "letter": "ㄱ",
+    "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/02_고_go.mp3",
+    "duration": 23.754
+  },
+  "segment": {
+    "label": "고",
+    "start": 0,
+    "end": 23.754
+  },
+  "targetSyllable": "고",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "gogo-character",
+      "label": "고고 고양이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png",
+      "start": 0.2,
+      "end": 4.933,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "gogo-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 4.933,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "gogo-combined",
+      "label": "고",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/고고 고 상자 ㄱ폰트 크게 새시안-alpha.png",
+      "start": 4.933,
+      "end": 23.754,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 53.632,
+        "top": 68.643
+      },
+      "position": {
+        "left": 53.632,
+        "top": 68.643
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "go-o-word-1",
+      "label": "고양이",
+      "image": "worksheets/assets/word-go-cat.png",
+      "start": 17.999,
+      "end": 23.168,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "go-o-word-2",
+      "label": "고구마",
+      "image": "worksheets/assets/word-go-sweet-potato.png",
+      "start": 19.848,
+      "end": 23.168,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "go-o-word-3",
+      "label": "고래",
+      "image": "worksheets/assets/word-go-whale.png",
+      "start": 21.666,
+      "end": 23.168,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "go-o-initial",
+      "label": "ㄱ",
+      "start": 6.3,
+      "end": 15.589,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "go-o-vowel",
+      "label": "ㅗ",
+      "start": 9.959,
+      "end": 15.589,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "go-o-combined",
+      "label": "고",
+      "start": 15.589,
+      "end": 17.139,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "go-o-final",
+      "label": "고",
+      "start": 23.542,
+      "end": 23.754,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "go-o",
+    "timingFile": "go-o-card-timings.json"
+  }
+}

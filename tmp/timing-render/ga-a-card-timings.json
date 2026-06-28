@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ga-a",
+  "lessonId": "vowel-combination-ga-a",
+  "title": "고고 고양이 가 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "gogo",
+    "name": "고고 고양이",
+    "letter": "ㄱ",
+    "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/01_가_ga.mp3",
+    "duration": 20.066
+  },
+  "segment": {
+    "label": "가",
+    "start": 0,
+    "end": 20.066
+  },
+  "targetSyllable": "가",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "gogo-character",
+      "label": "고고 고양이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png",
+      "start": 0.2,
+      "end": 3.951,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "gogo-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 3.951,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "gogo-combined",
+      "label": "가",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/고고 가 막대기 ㄱ폰트 크게 새시안-alpha.png",
+      "start": 3.951,
+      "end": 20.066,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ga-a-word-1",
+      "label": "가방",
+      "image": "worksheets/assets/word-ga-bag.png",
+      "start": 15.738,
+      "end": 19.205,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ga-a-word-2",
+      "label": "가지",
+      "image": "worksheets/assets/word-ga-eggplant.png",
+      "start": 16.621,
+      "end": 19.205,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ga-a-word-3",
+      "label": "가위",
+      "image": "worksheets/assets/word-ga-scissors.png",
+      "start": 17.863,
+      "end": 19.205,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ga-a-initial",
+      "label": "ㄱ",
+      "start": 5.854,
+      "end": 14.165,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ga-a-vowel",
+      "label": "ㅏ",
+      "start": 9.076,
+      "end": 14.165,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ga-a-combined",
+      "label": "가",
+      "start": 14.613,
+      "end": 16.163,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ga-a-final",
+      "label": "가",
+      "start": 19.636,
+      "end": 20.066,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ga-a",
+    "timingFile": "ga-a-card-timings.json"
+  }
+}

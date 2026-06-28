@@ -24,6 +24,7 @@ const SELECTED_PROJECT_STORAGE_KEY = "hangul-phonics:timing:selected-project";
 const FINE_NUDGE = 0.03;
 const NORMAL_NUDGE = 0.1;
 const LARGE_NUDGE = 1;
+const ALPHA_HIT_THRESHOLD = 12;
 
 const CARD_SLOTS = {
   dog: { left: 20, top: 39, accent: "#ff8470" },
@@ -92,6 +93,9 @@ let lastLiveCueKey = null;
 let dragState = null;
 let waveformPeaks = [];
 let waveformRequestId = 0;
+let alphaHitCanvas = null;
+let alphaHitContext = null;
+const imageAlphaHitCache = new Map();
 
 const waveformResizeObserver = typeof ResizeObserver === "function" && seekTrack
   ? new ResizeObserver(() => drawAudioWaveform())
@@ -136,7 +140,7 @@ function getInitialSelectedCueKind(sourceProject) {
   if (sourceProject?.template === "vowel-story") {
     return "scene";
   }
-  if (sourceProject?.template === "vowel-combine-story") {
+  if (isVowelCombineProject(sourceProject)) {
     return "combine";
   }
   return "word";
@@ -146,7 +150,7 @@ function getInitialSelectedCueId(sourceProject) {
   if (sourceProject?.template === "vowel-story") {
     return sourceProject.sceneCues?.[0]?.id ?? sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
   }
-  if (sourceProject?.template === "vowel-combine-story") {
+  if (isVowelCombineProject(sourceProject)) {
     return sourceProject.combineCues?.[0]?.id ?? sourceProject.cues?.[0]?.id ?? sourceProject.letterCues?.[0]?.id ?? null;
   }
 
@@ -331,8 +335,12 @@ function isVowelStoryProject(sourceProject = project) {
   return sourceProject?.template === "vowel-story";
 }
 
+function isSyllableCombineProject(sourceProject = project) {
+  return sourceProject?.template === "syllable-combine-story";
+}
+
 function isVowelCombineProject(sourceProject = project) {
-  return sourceProject?.template === "vowel-combine-story";
+  return sourceProject?.template === "vowel-combine-story" || isSyllableCombineProject(sourceProject);
 }
 
 function isVowelVisualProject() {
@@ -1031,13 +1039,138 @@ function setDraggedCuePosition(event) {
   setStatus(`${cueDisplayName(dragState.kind, cue)} 위치 ${cue.position.left.toFixed(1)}, ${cue.position.top.toFixed(1)}`);
 }
 
+function getStageDragTargetFromPointer(event) {
+  const elements = typeof document.elementsFromPoint === "function"
+    ? document.elementsFromPoint(event.clientX, event.clientY)
+    : [event.target];
+  const seen = new Set();
+
+  for (const element of elements) {
+    const target = element.closest?.("[data-drag-kind][data-stage-cue-id]");
+    if (!target || seen.has(target) || !stage.contains(target)) {
+      continue;
+    }
+
+    seen.add(target);
+    if (isOpaqueDragTargetAtPoint(target, event.clientX, event.clientY)) {
+      return target;
+    }
+  }
+
+  return null;
+}
+
+function isOpaqueDragTargetAtPoint(target, clientX, clientY) {
+  if (!(target instanceof HTMLImageElement)) {
+    return true;
+  }
+
+  return isOpaqueImagePixelAtPoint(target, clientX, clientY);
+}
+
+function isOpaqueImagePixelAtPoint(image, clientX, clientY) {
+  if (!image.complete || image.naturalWidth <= 0 || image.naturalHeight <= 0) {
+    return true;
+  }
+
+  const pixel = imagePixelFromClientPoint(image, clientX, clientY);
+  if (!pixel) {
+    return false;
+  }
+
+  const alphaData = getImageAlphaData(image);
+  if (!alphaData) {
+    return true;
+  }
+
+  const alpha = alphaData.data[(pixel.y * alphaData.width + pixel.x) * 4 + 3] ?? 255;
+  return alpha > ALPHA_HIT_THRESHOLD;
+}
+
+function imagePixelFromClientPoint(image, clientX, clientY) {
+  const rect = image.getBoundingClientRect();
+  const naturalWidth = image.naturalWidth;
+  const naturalHeight = image.naturalHeight;
+  if (rect.width <= 0 || rect.height <= 0 || naturalWidth <= 0 || naturalHeight <= 0) {
+    return null;
+  }
+
+  const objectFit = getComputedStyle(image).objectFit;
+  let contentLeft = rect.left;
+  let contentTop = rect.top;
+  let contentWidth = rect.width;
+  let contentHeight = rect.height;
+
+  if (objectFit === "contain" || objectFit === "scale-down") {
+    const imageAspect = naturalWidth / naturalHeight;
+    const boxAspect = rect.width / rect.height;
+    if (imageAspect > boxAspect) {
+      contentHeight = rect.width / imageAspect;
+      contentTop += (rect.height - contentHeight) / 2;
+    } else {
+      contentWidth = rect.height * imageAspect;
+      contentLeft += (rect.width - contentWidth) / 2;
+    }
+  }
+
+  const localX = clientX - contentLeft;
+  const localY = clientY - contentTop;
+  if (localX < 0 || localY < 0 || localX > contentWidth || localY > contentHeight) {
+    return null;
+  }
+
+  return {
+    x: Math.min(naturalWidth - 1, Math.max(0, Math.floor((localX / contentWidth) * naturalWidth))),
+    y: Math.min(naturalHeight - 1, Math.max(0, Math.floor((localY / contentHeight) * naturalHeight))),
+  };
+}
+
+function getImageAlphaData(image) {
+  const source = image.currentSrc || image.src;
+  const cached = imageAlphaHitCache.get(source);
+  if (cached && cached.width === image.naturalWidth && cached.height === image.naturalHeight) {
+    return cached;
+  }
+
+  const context = getAlphaHitContext();
+  if (!context) {
+    return null;
+  }
+
+  try {
+    alphaHitCanvas.width = image.naturalWidth;
+    alphaHitCanvas.height = image.naturalHeight;
+    context.clearRect(0, 0, alphaHitCanvas.width, alphaHitCanvas.height);
+    context.drawImage(image, 0, 0);
+    const imageData = context.getImageData(0, 0, alphaHitCanvas.width, alphaHitCanvas.height);
+    const alphaData = { width: imageData.width, height: imageData.height, data: imageData.data };
+    if (imageAlphaHitCache.size > 48) {
+      imageAlphaHitCache.clear();
+    }
+    imageAlphaHitCache.set(source, alphaData);
+    return alphaData;
+  } catch (error) {
+    console.warn("Could not sample drag target alpha", error);
+    return null;
+  }
+}
+
+function getAlphaHitContext() {
+  if (!alphaHitCanvas) {
+    alphaHitCanvas = document.createElement("canvas");
+    alphaHitContext = alphaHitCanvas.getContext("2d", { willReadFrequently: true });
+  }
+
+  return alphaHitContext;
+}
+
 function startStageDrag(event) {
   if (event.button !== 0) {
     return;
   }
 
-  const target = event.target.closest("[data-drag-kind][data-stage-cue-id]");
-  if (!target || !stage.contains(target)) {
+  const target = getStageDragTargetFromPointer(event);
+  if (!target) {
     return;
   }
 

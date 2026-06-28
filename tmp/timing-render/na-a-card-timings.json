@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "na-a",
+  "lessonId": "vowel-combination-na-a",
+  "title": "나나 나비 나 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "nana",
+    "name": "나나 나비",
+    "letter": "ㄴ",
+    "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/03_나_na.mp3",
+    "duration": 24.093
+  },
+  "segment": {
+    "label": "나",
+    "start": 0,
+    "end": 24.093
+  },
+  "targetSyllable": "나",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "nana-character",
+      "label": "나나 나비",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png",
+      "start": 0.2,
+      "end": 5.55,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "nana-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 5.55,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "nana-combined",
+      "label": "나",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/나나 나 새시안-alpha.png",
+      "start": 5.55,
+      "end": 24.093,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 54.263,
+        "top": 67.895
+      },
+      "position": {
+        "left": 54.263,
+        "top": 67.895
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "na-a-word-1",
+      "label": "나비",
+      "image": "worksheets/assets/word-na-butterfly.png",
+      "start": 18.935,
+      "end": 23.211,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "na-a-word-2",
+      "label": "나무",
+      "image": "worksheets/assets/word-na-tree.png",
+      "start": 20.556,
+      "end": 23.211,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "na-a-word-3",
+      "label": "나사",
+      "image": "worksheets/assets/word-na-screw.png",
+      "start": 22.037,
+      "end": 23.211,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "na-a-initial",
+      "label": "ㄴ",
+      "start": 7.213,
+      "end": 17.56,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "na-a-vowel",
+      "label": "ㅏ",
+      "start": 12.084,
+      "end": 17.56,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "na-a-combined",
+      "label": "나",
+      "start": 17.56,
+      "end": 18.621,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "na-a-final",
+      "label": "나",
+      "start": 23.614,
+      "end": 24.093,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "na-a",
+    "timingFile": "na-a-card-timings.json"
+  }
+}
