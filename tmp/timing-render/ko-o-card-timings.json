@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ko-o",
+  "lessonId": "vowel-combination-ko-o",
+  "title": "코코 코알라 코 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "koko",
+    "name": "코코 코알라",
+    "letter": "ㅋ",
+    "image": "public/video-assets/characters/consonants/ㅋ-koko-koala.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/22_코_ko.mp3",
+    "duration": 20.711
+  },
+  "segment": {
+    "label": "코",
+    "start": 0,
+    "end": 20.711
+  },
+  "targetSyllable": "코",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "koko-character",
+      "label": "코코 코알라",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅋ-koko-koala.png",
+      "start": 0.2,
+      "end": 4.414,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "koko-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 4.414,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "koko-combined",
+      "label": "코",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/코코 코 새시안-alpha.png",
+      "start": 4.414,
+      "end": 20.711,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ko-o-word-1",
+      "label": "코알라",
+      "image": "worksheets/assets/word-ko-koala.png",
+      "start": 15.657,
+      "end": 19.927,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ko-o-word-2",
+      "label": "코끼리",
+      "image": "worksheets/assets/word-ko-elephant.png",
+      "start": 16.986,
+      "end": 19.927,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ko-o-word-3",
+      "label": "코뿔소",
+      "image": "worksheets/assets/word-ko-rhino.png",
+      "start": 18.541,
+      "end": 19.927,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ko-o-initial",
+      "label": "ㅋ",
+      "start": 6.3,
+      "end": 14.188,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ko-o-vowel",
+      "label": "ㅗ",
+      "start": 9.537,
+      "end": 14.188,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ko-o-combined",
+      "label": "코",
+      "start": 14.188,
+      "end": 15.657,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ko-o-final",
+      "label": "코",
+      "start": 19.927,
+      "end": 20.711,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ko-o",
+    "timingFile": "ko-o-card-timings.json"
+  }
+}

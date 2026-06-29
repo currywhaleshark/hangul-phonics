@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "chichi-ch",
+  "lessonId": "lesson-05-jiji-chichi",
+  "title": "치치 칙폭이 ㅊ 단어카드",
+  "character": {
+    "key": "chichi",
+    "name": "치치 칙폭이",
+    "letter": "ㅊ",
+    "image": "public/video-assets/characters/consonants/ㅊ-chichi-train.png"
+  },
+  "audio": {
+    "src": "lessons/consonants/lesson-05-jiji-chichi/ㅈ,ㅊ 소개.wav",
+    "duration": 87.28
+  },
+  "segment": {
+    "label": "치치 칙폭이",
+    "start": 35,
+    "end": 69.595
+  },
+  "cues": [
+    {
+      "id": "chichi-word-1",
+      "label": "치즈",
+      "image": "worksheets/assets/cheese.png",
+      "start": 50.532,
+      "end": 57.283,
+      "position": {
+        "left": 25.842,
+        "top": 73.883
+      },
+      "accent": "#ff8470"
+    },
+    {
+      "id": "chichi-word-2",
+      "label": "책",
+      "image": "worksheets/assets/book.png",
+      "start": 51.41,
+      "end": 57.283,
+      "position": {
+        "left": 27.947,
+        "top": 29.158
+      },
+      "accent": "#ffc450"
+    },
+    {
+      "id": "chichi-word-3",
+      "label": "초콜릿",
+      "image": "worksheets/assets/chocolate.png",
+      "start": 52.485,
+      "end": 57.283,
+      "position": {
+        "left": 53.842,
+        "top": 22.234
+      },
+      "accent": "#6ac2ff"
+    },
+    {
+      "id": "chichi-word-4",
+      "label": "치마",
+      "image": "worksheets/assets/skirt.png",
+      "start": 53.751,
+      "end": 57.283,
+      "position": {
+        "left": 78.684,
+        "top": 32.713
+      },
+      "accent": "#79ce91"
+    },
+    {
+      "id": "chichi-word-5",
+      "label": "친구",
+      "image": "worksheets/assets/friend.png",
+      "start": 55.099,
+      "end": 57.283,
+      "position": {
+        "left": 79.526,
+        "top": 75.193
+      },
+      "accent": "#b291ff"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "chichi-intro-1",
+      "label": "ㅊ",
+      "start": 44.816,
+      "end": 48.906,
+      "position": {
+        "left": 25.316,
+        "top": 70.327
+      }
+    },
+    {
+      "id": "chichi-intro-2",
+      "label": "ㅊ",
+      "start": 45.996,
+      "end": 48.906,
+      "position": {
+        "left": 51.737,
+        "top": 18.304
+      }
+    },
+    {
+      "id": "chichi-intro-3",
+      "label": "ㅊ",
+      "start": 47.203,
+      "end": 48.906,
+      "position": {
+        "left": 80.263,
+        "top": 68.83
+      }
+    },
+    {
+      "id": "chichi-repeat-1",
+      "label": "ㅊ",
+      "start": 59.801,
+      "end": 63.4,
+      "position": {
+        "left": 21.421,
+        "top": 70.702
+      }
+    },
+    {
+      "id": "chichi-repeat-2",
+      "label": "ㅊ",
+      "start": 60.795,
+      "end": 63.4,
+      "position": {
+        "left": 52.263,
+        "top": 18.491
+      }
+    },
+    {
+      "id": "chichi-repeat-3",
+      "label": "ㅊ",
+      "start": 61.925,
+      "end": 63.4,
+      "position": {
+        "left": 82.263,
+        "top": 70.889
+      }
+    },
+    {
+      "id": "chichi-repeat-4",
+      "label": "ㅊ",
+      "start": 63.837,
+      "end": 67.223,
+      "position": {
+        "left": 21.526,
+        "top": 69.579
+      }
+    },
+    {
+      "id": "chichi-repeat-5",
+      "label": "ㅊ",
+      "start": 64.696,
+      "end": 67.223,
+      "position": {
+        "left": 52.474,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "chichi-repeat-6",
+      "label": "ㅊ",
+      "start": 65.64,
+      "end": 67.223,
+      "position": {
+        "left": 78.263,
+        "top": 72.386
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/consonant-lesson-samples/gogo-g-background.png",
+    "outputSlug": "chichi-ch",
+    "timingFile": "chichi-ch-card-timings.json"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "mo-o",
+  "lessonId": "vowel-combination-mo-o",
+  "title": "미미 문어 모 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "mimi",
+    "name": "미미 문어",
+    "letter": "ㅁ",
+    "image": "public/video-assets/characters/consonants/ㅁ-mimi-octopus.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/06_모_mo.mp3",
+    "duration": 25.207
+  },
+  "segment": {
+    "label": "모",
+    "start": 0,
+    "end": 25.207
+  },
+  "targetSyllable": "모",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "mimi-character",
+      "label": "미미 문어",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅁ-mimi-octopus.png",
+      "start": 0.2,
+      "end": 4.524,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "mimi-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 4.524,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "mimi-combined",
+      "label": "모",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/미미 모 새시안-alpha.png",
+      "start": 4.524,
+      "end": 25.207,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "mo-o-word-1",
+      "label": "모자",
+      "image": "worksheets/assets/word-mo-hat.png",
+      "start": 18.595,
+      "end": 23.478,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "mo-o-word-2",
+      "label": "모래",
+      "image": "worksheets/assets/word-mo-sand.png",
+      "start": 20.631,
+      "end": 23.478,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "mo-o-word-3",
+      "label": "모기",
+      "image": "worksheets/assets/word-mo-mosquito.png",
+      "start": 22.249,
+      "end": 23.478,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "mo-o-initial",
+      "label": "ㅁ",
+      "start": 6.3,
+      "end": 16.479,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "mo-o-vowel",
+      "label": "ㅗ",
+      "start": 9.921,
+      "end": 16.479,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "mo-o-combined",
+      "label": "모",
+      "start": 16.479,
+      "end": 18.144,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "mo-o-final",
+      "label": "모",
+      "start": 23.963,
+      "end": 25.207,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "mo-o",
+    "timingFile": "mo-o-card-timings.json"
+  }
+}

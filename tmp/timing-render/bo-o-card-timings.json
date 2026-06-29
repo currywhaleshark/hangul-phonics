@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "bo-o",
+  "lessonId": "vowel-combination-bo-o",
+  "title": "부부 부엉이 보 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "bubu",
+    "name": "부부 부엉이",
+    "letter": "ㅂ",
+    "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/08_보_bo.mp3",
+    "duration": 23.289
+  },
+  "segment": {
+    "label": "보",
+    "start": 0,
+    "end": 23.289
+  },
+  "targetSyllable": "보",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "bubu-character",
+      "label": "부부 부엉이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png",
+      "start": 0.2,
+      "end": 4.671,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "bubu-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 4.671,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "bubu-combined",
+      "label": "보",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/부부 보 새시안-alpha.png",
+      "start": 4.671,
+      "end": 23.289,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "bo-o-word-1",
+      "label": "보라색",
+      "image": "worksheets/assets/word-bo-purple.png",
+      "start": 17.377,
+      "end": 22.51,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "bo-o-word-2",
+      "label": "보름달",
+      "image": "worksheets/assets/word-bo-full-moon.png",
+      "start": 18.77,
+      "end": 22.51,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "bo-o-word-3",
+      "label": "보물상자",
+      "image": "worksheets/assets/word-bo-treasure-chest.png",
+      "start": 20.586,
+      "end": 22.51,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "bo-o-initial",
+      "label": "ㅂ",
+      "start": 6.673,
+      "end": 15.633,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "bo-o-vowel",
+      "label": "ㅗ",
+      "start": 9.859,
+      "end": 15.633,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "bo-o-combined",
+      "label": "보",
+      "start": 15.633,
+      "end": 16.927,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "bo-o-final",
+      "label": "보",
+      "start": 22.754,
+      "end": 23.289,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "bo-o",
+    "timingFile": "bo-o-card-timings.json"
+  }
+}

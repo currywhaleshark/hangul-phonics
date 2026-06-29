@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "sa-a",
+  "lessonId": "vowel-combination-sa-a",
+  "title": "사사 사슴 사 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "sasa",
+    "name": "사사 사슴",
+    "letter": "ㅅ",
+    "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/13_사_sa.mp3",
+    "duration": 25.054
+  },
+  "segment": {
+    "label": "사",
+    "start": 0,
+    "end": 25.054
+  },
+  "targetSyllable": "사",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "sasa-character",
+      "label": "사사 사슴",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png",
+      "start": 0.2,
+      "end": 5.415,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "sasa-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 5.415,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "sasa-combined",
+      "label": "사",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/사사 사 새시안-alpha.png",
+      "start": 5.415,
+      "end": 25.054,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "sa-a-word-1",
+      "label": "사슴",
+      "image": "worksheets/assets/word-sa-deer.png",
+      "start": 19.645,
+      "end": 24.39,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "sa-a-word-2",
+      "label": "사다리",
+      "image": "worksheets/assets/word-sa-ladder.png",
+      "start": 21.139,
+      "end": 24.39,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "sa-a-word-3",
+      "label": "사탕",
+      "image": "worksheets/assets/word-sa-candy.png",
+      "start": 22.688,
+      "end": 24.39,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "sa-a-initial",
+      "label": "ㅅ",
+      "start": 8.229,
+      "end": 17.973,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "sa-a-vowel",
+      "label": "ㅏ",
+      "start": 12.103,
+      "end": 17.973,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "sa-a-combined",
+      "label": "사",
+      "start": 17.973,
+      "end": 19.645,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "sa-a-final",
+      "label": "사",
+      "start": 24.39,
+      "end": 25.054,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "sa-a",
+    "timingFile": "sa-a-card-timings.json"
+  }
+}

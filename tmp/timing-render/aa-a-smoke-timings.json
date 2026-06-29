@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "id": "aa-a",
+  "lessonId": "lesson-01-aa-baby-vowel",
+  "title": "아아 아기 아 모음 이야기",
+  "template": "vowel-story",
+  "character": {
+    "key": "aa",
+    "name": "아아 아기",
+    "letter": "아",
+    "image": "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-01-silent.png"
+  },
+  "audio": {
+    "src": "lessons/vowels/lesson-01-aa-baby-vowel/아.wav",
+    "duration": 1.2
+  },
+  "segment": {
+    "label": "아아 아기",
+    "start": 0,
+    "end": 1.2
+  },
+  "sceneCues": [
+    {
+      "id": "aa-silent",
+      "label": "조용조용",
+      "image": "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-01-silent.png",
+      "start": 0,
+      "end": 5.2
+    },
+    {
+      "id": "aa-branch",
+      "label": "나뭇가지",
+      "image": "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-02-branch.png",
+      "start": 5.2,
+      "end": 8.65
+    },
+    {
+      "id": "aa-ah",
+      "label": "아!",
+      "image": "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-03-ah.png",
+      "start": 8.65,
+      "end": 12.95
+    },
+    {
+      "id": "aa-combined",
+      "label": "아아 아기 나뭇가지",
+      "image": "아아 아기 나뭇가지 시안.png",
+      "start": 12.95,
+      "end": 21.12
+    }
+  ],
+  "cues": [
+    {
+      "id": "aa-baby",
+      "label": "아기",
+      "image": "worksheets/assets/baby.png",
+      "start": 13.15,
+      "end": 15.35,
+      "position": {
+        "left": 20,
+        "top": 63
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "aa-morning",
+      "label": "아침",
+      "image": "worksheets/assets/morning.png",
+      "start": 15.25,
+      "end": 17.35,
+      "position": {
+        "left": 50,
+        "top": 63
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "aa-ice-cream",
+      "label": "아이스크림",
+      "image": "worksheets/assets/ice-cream.png",
+      "start": 17.25,
+      "end": 19.8,
+      "position": {
+        "left": 80,
+        "top": 63
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "aa-intro-aa",
+      "label": "아",
+      "start": 0.15,
+      "end": 1.25,
+      "position": {
+        "left": 18,
+        "top": 24
+      }
+    },
+    {
+      "id": "aa-branch-aa",
+      "label": "아",
+      "start": 8.85,
+      "end": 10.05,
+      "position": {
+        "left": 18,
+        "top": 24
+      }
+    },
+    {
+      "id": "aa-final-a",
+      "label": "아",
+      "start": 19.85,
+      "end": 21.05,
+      "position": {
+        "left": 50,
+        "top": 24
+      }
+    }
+  ],
+  "render": {
+    "outputSlug": "aa-a",
+    "timingFile": "aa-a-vowel-timings.json"
+  }
+}

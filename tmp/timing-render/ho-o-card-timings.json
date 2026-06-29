@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ho-o",
+  "lessonId": "vowel-combination-ho-o",
+  "title": "하하 하마 호 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "haha",
+    "name": "하하 하마",
+    "letter": "ㅎ",
+    "image": "public/video-assets/characters/consonants/ㅎ-haha-hippo.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/16_호_ho.mp3",
+    "duration": 22.484
+  },
+  "segment": {
+    "label": "호",
+    "start": 0,
+    "end": 22.484
+  },
+  "targetSyllable": "호",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "haha-character",
+      "label": "하하 하마",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅎ-haha-hippo.png",
+      "start": 0.2,
+      "end": 5.01,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "haha-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 5.01,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "haha-combined",
+      "label": "호",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/하하 호 새시안-alpha.png",
+      "start": 5.01,
+      "end": 22.484,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ho-o-word-1",
+      "label": "호랑이",
+      "image": "worksheets/assets/word-ho-tiger.png",
+      "start": 18.076,
+      "end": 21.951,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ho-o-word-2",
+      "label": "호박",
+      "image": "worksheets/assets/word-ho-pumpkin.png",
+      "start": 19.344,
+      "end": 21.951,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ho-o-word-3",
+      "label": "호두",
+      "image": "worksheets/assets/word-ho-walnut.png",
+      "start": 20.654,
+      "end": 21.951,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ho-o-initial",
+      "label": "ㅎ",
+      "start": 7.415,
+      "end": 16.439,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ho-o-vowel",
+      "label": "ㅗ",
+      "start": 11.024,
+      "end": 16.439,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ho-o-combined",
+      "label": "호",
+      "start": 16.439,
+      "end": 18.076,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ho-o-final",
+      "label": "호",
+      "start": 21.951,
+      "end": 22.484,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ho-o",
+    "timingFile": "ho-o-card-timings.json"
+  }
+}

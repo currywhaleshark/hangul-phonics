@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ha-a",
+  "lessonId": "vowel-combination-ha-a",
+  "title": "하하 하마 하 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "haha",
+    "name": "하하 하마",
+    "letter": "ㅎ",
+    "image": "public/video-assets/characters/consonants/ㅎ-haha-hippo.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/15_하_ha.mp3",
+    "duration": 18.821
+  },
+  "segment": {
+    "label": "하",
+    "start": 0,
+    "end": 18.821
+  },
+  "targetSyllable": "하",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "haha-character",
+      "label": "하하 하마",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅎ-haha-hippo.png",
+      "start": 0.2,
+      "end": 4.017,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "haha-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 4.017,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "haha-combined",
+      "label": "하",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/하하 하 새시안-alpha.png",
+      "start": 4.017,
+      "end": 18.821,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ha-a-word-1",
+      "label": "하마",
+      "image": "worksheets/assets/word-ha-hippo.png",
+      "start": 14.448,
+      "end": 18.138,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ha-a-word-2",
+      "label": "하늘",
+      "image": "worksheets/assets/word-ha-sky.png",
+      "start": 15.856,
+      "end": 18.138,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ha-a-word-3",
+      "label": "하얀색",
+      "image": "worksheets/assets/word-ha-white.png",
+      "start": 16.991,
+      "end": 18.138,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ha-a-initial",
+      "label": "ㅎ",
+      "start": 5.658,
+      "end": 13.385,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ha-a-vowel",
+      "label": "ㅏ",
+      "start": 8.709,
+      "end": 13.385,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ha-a-combined",
+      "label": "하",
+      "start": 13.385,
+      "end": 14.448,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ha-a-final",
+      "label": "하",
+      "start": 18.138,
+      "end": 18.821,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ha-a",
+    "timingFile": "ha-a-card-timings.json"
+  }
+}

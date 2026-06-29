@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "koko-k",
+  "lessonId": "lesson-06a-koko-toto-pupu-meet",
+  "title": "코코 코알라 ㅋ 단어카드",
+  "character": {
+    "key": "koko",
+    "name": "코코 코알라",
+    "letter": "ㅋ",
+    "image": "public/video-assets/characters/consonants/ㅋ-koko-koala.png"
+  },
+  "audio": {
+    "src": "lessons/consonants/lesson-06a-koko-toto-pupu-meet/ㅋ,ㅌ,ㅍ 소개.wav",
+    "duration": 115.2
+  },
+  "segment": {
+    "label": "코코 코알라",
+    "start": 0,
+    "end": 31.657
+  },
+  "cues": [
+    {
+      "id": "koko-word-1",
+      "label": "쿠키",
+      "image": "worksheets/assets/cookie.png",
+      "start": 13.578,
+      "end": 21.353,
+      "position": {
+        "left": 19,
+        "top": 78
+      },
+      "accent": "#ff8470"
+    },
+    {
+      "id": "koko-word-2",
+      "label": "콩",
+      "image": "worksheets/assets/bean.png",
+      "start": 14.678,
+      "end": 21.353,
+      "position": {
+        "left": 28.895,
+        "top": 35.708
+      },
+      "accent": "#ffc450"
+    },
+    {
+      "id": "koko-word-3",
+      "label": "카드",
+      "image": "worksheets/assets/card.png",
+      "start": 16.074,
+      "end": 21.353,
+      "position": {
+        "left": 55.842,
+        "top": 19.053
+      },
+      "accent": "#6ac2ff"
+    },
+    {
+      "id": "koko-word-4",
+      "label": "크레용",
+      "image": "worksheets/assets/crayon.png",
+      "start": 17.452,
+      "end": 21.353,
+      "position": {
+        "left": 81.632,
+        "top": 33.275
+      },
+      "accent": "#79ce91"
+    },
+    {
+      "id": "koko-word-5",
+      "label": "코끼리",
+      "image": "worksheets/assets/elephant.png",
+      "start": 18.768,
+      "end": 21.353,
+      "position": {
+        "left": 86.368,
+        "top": 78.936
+      },
+      "accent": "#b291ff"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "koko-intro-1",
+      "label": "ㅋ",
+      "start": 9.449,
+      "end": 12.456,
+      "position": {
+        "left": 22.684,
+        "top": 66.585
+      }
+    },
+    {
+      "id": "koko-intro-2",
+      "label": "ㅋ",
+      "start": 10.297,
+      "end": 12.456,
+      "position": {
+        "left": 51.632,
+        "top": 18.491
+      }
+    },
+    {
+      "id": "koko-intro-3",
+      "label": "ㅋ",
+      "start": 11.179,
+      "end": 12.456,
+      "position": {
+        "left": 79.105,
+        "top": 61.906
+      }
+    },
+    {
+      "id": "koko-repeat-1",
+      "label": "ㅋ",
+      "start": 23.279,
+      "end": 26.739,
+      "position": {
+        "left": 21.737,
+        "top": 65.088
+      }
+    },
+    {
+      "id": "koko-repeat-2",
+      "label": "ㅋ",
+      "start": 24.592,
+      "end": 26.739,
+      "position": {
+        "left": 52.053,
+        "top": 18.865
+      }
+    },
+    {
+      "id": "koko-repeat-3",
+      "label": "ㅋ",
+      "start": 25.52,
+      "end": 26.739,
+      "position": {
+        "left": 78.579,
+        "top": 61.532
+      }
+    },
+    {
+      "id": "koko-repeat-4",
+      "label": "ㅋ",
+      "start": 27.053,
+      "end": 29.934,
+      "position": {
+        "left": 26.684,
+        "top": 64.901
+      }
+    },
+    {
+      "id": "koko-repeat-5",
+      "label": "ㅋ",
+      "start": 27.847,
+      "end": 29.934,
+      "position": {
+        "left": 51.526,
+        "top": 19.24
+      }
+    },
+    {
+      "id": "koko-repeat-6",
+      "label": "ㅋ",
+      "start": 28.657,
+      "end": 29.934,
+      "position": {
+        "left": 73.526,
+        "top": 67.895
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/consonant-lesson-samples/gogo-g-background.png",
+    "outputSlug": "koko-k",
+    "timingFile": "koko-k-card-timings.json"
+  }
+}

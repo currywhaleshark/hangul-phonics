@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "no-o",
+  "lessonId": "vowel-combination-no-o",
+  "title": "나나 나비 노 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "nana",
+    "name": "나나 나비",
+    "letter": "ㄴ",
+    "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/04_노_no.mp3",
+    "duration": 22.358
+  },
+  "segment": {
+    "label": "노",
+    "start": 0,
+    "end": 22.358
+  },
+  "targetSyllable": "노",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "nana-character",
+      "label": "나나 나비",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png",
+      "start": 0.2,
+      "end": 4.737,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "nana-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 4.737,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "nana-combined",
+      "label": "노",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/나나 노 새시안-alpha.png",
+      "start": 4.737,
+      "end": 22.358,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "no-o-word-1",
+      "label": "노란색",
+      "image": "worksheets/assets/word-no-yellow.png",
+      "start": 17.494,
+      "end": 21.358,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "no-o-word-2",
+      "label": "노래",
+      "image": "worksheets/assets/word-no-song.png",
+      "start": 18.907,
+      "end": 21.358,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "no-o-word-3",
+      "label": "노트",
+      "image": "worksheets/assets/word-no-note.png",
+      "start": 20.114,
+      "end": 21.358,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "no-o-initial",
+      "label": "ㄴ",
+      "start": 6.461,
+      "end": 15.823,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "no-o-vowel",
+      "label": "ㅗ",
+      "start": 10.062,
+      "end": 15.823,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "no-o-combined",
+      "label": "노",
+      "start": 15.823,
+      "end": 17.373,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "no-o-final",
+      "label": "노",
+      "start": 21.795,
+      "end": 22.358,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "no-o",
+    "timingFile": "no-o-card-timings.json"
+  }
+}

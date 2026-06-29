@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ma-a",
+  "lessonId": "vowel-combination-ma-a",
+  "title": "미미 문어 마 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "mimi",
+    "name": "미미 문어",
+    "letter": "ㅁ",
+    "image": "public/video-assets/characters/consonants/ㅁ-mimi-octopus.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/05_마_ma.mp3",
+    "duration": 24.124
+  },
+  "segment": {
+    "label": "마",
+    "start": 0,
+    "end": 24.124
+  },
+  "targetSyllable": "마",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "mimi-character",
+      "label": "미미 문어",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅁ-mimi-octopus.png",
+      "start": 0.2,
+      "end": 4.334,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "mimi-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 4.334,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "mimi-combined",
+      "label": "마",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/미미 마 새시안-alpha.png",
+      "start": 4.334,
+      "end": 24.124,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ma-a-word-1",
+      "label": "마늘",
+      "image": "worksheets/assets/word-ma-garlic.png",
+      "start": 18.683,
+      "end": 23.087,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ma-a-word-2",
+      "label": "마술사",
+      "image": "worksheets/assets/word-ma-magician.png",
+      "start": 20.228,
+      "end": 23.087,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ma-a-word-3",
+      "label": "마스크",
+      "image": "worksheets/assets/word-ma-mask.png",
+      "start": 21.976,
+      "end": 23.087,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ma-a-initial",
+      "label": "ㅁ",
+      "start": 6.3,
+      "end": 16.674,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ma-a-vowel",
+      "label": "ㅏ",
+      "start": 10.167,
+      "end": 16.674,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ma-a-combined",
+      "label": "마",
+      "start": 16.674,
+      "end": 18.279,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ma-a-final",
+      "label": "마",
+      "start": 23.495,
+      "end": 24.124,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ma-a",
+    "timingFile": "ma-a-card-timings.json"
+  }
+}

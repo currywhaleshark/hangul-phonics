@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ba-a",
+  "lessonId": "vowel-combination-ba-a",
+  "title": "부부 부엉이 바 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "bubu",
+    "name": "부부 부엉이",
+    "letter": "ㅂ",
+    "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/07_바_ba.mp3",
+    "duration": 25.881
+  },
+  "segment": {
+    "label": "바",
+    "start": 0,
+    "end": 25.881
+  },
+  "targetSyllable": "바",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "bubu-character",
+      "label": "부부 부엉이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png",
+      "start": 0.2,
+      "end": 5.133,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "bubu-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 5.133,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "bubu-combined",
+      "label": "바",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/부부 바 새시안-alpha.png",
+      "start": 5.133,
+      "end": 25.881,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ba-a-word-1",
+      "label": "바다",
+      "image": "worksheets/assets/word-ba-sea.png",
+      "start": 20.01,
+      "end": 24.232,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ba-a-word-2",
+      "label": "바퀴",
+      "image": "worksheets/assets/word-ba-wheel.png",
+      "start": 21.361,
+      "end": 24.232,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ba-a-word-3",
+      "label": "바나나",
+      "image": "worksheets/assets/word-ba-banana.png",
+      "start": 23.132,
+      "end": 24.232,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ba-a-initial",
+      "label": "ㅂ",
+      "start": 7.287,
+      "end": 18.087,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ba-a-vowel",
+      "label": "ㅏ",
+      "start": 11.323,
+      "end": 18.087,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ba-a-combined",
+      "label": "바",
+      "start": 18.087,
+      "end": 19.547,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ba-a-final",
+      "label": "바",
+      "start": 24.746,
+      "end": 25.881,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ba-a",
+    "timingFile": "ba-a-card-timings.json"
+  }
+}

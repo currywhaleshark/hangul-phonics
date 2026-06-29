@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "id": "aa-a",
+  "lessonId": "lesson-01-aa-baby-vowel",
+  "title": "아아 아기 아 모음 이야기",
+  "template": "vowel-story",
+  "character": {
+    "key": "aa",
+    "name": "아아 아기",
+    "letter": "아",
+    "image": "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-01-silent.png"
+  },
+  "audio": {
+    "src": "lessons/vowels/lesson-01-aa-baby-vowel/아.wav",
+    "duration": 21.12
+  },
+  "segment": {
+    "label": "아아 아기",
+    "start": 0,
+    "end": 21.12
+  },
+  "sceneCues": [
+    {
+      "id": "aa-silent",
+      "label": "조용조용",
+      "image": "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-01-silent.png",
+      "start": 0,
+      "end": 5.2
+    },
+    {
+      "id": "aa-branch",
+      "label": "나뭇가지",
+      "image": "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-02-branch.png",
+      "start": 4.413,
+      "end": 8.65
+    },
+    {
+      "id": "aa-ah",
+      "label": "아!",
+      "image": "lessons/vowels/lesson-01-aa-baby-vowel/aa-story-03-ah.png",
+      "start": 9.575,
+      "end": 12.95
+    },
+    {
+      "id": "aa-combined",
+      "label": "아아 아기 나뭇가지",
+      "image": "아아 아기 나뭇가지 시안.png",
+      "start": 12.549,
+      "end": 21.12
+    }
+  ],
+  "cues": [
+    {
+      "id": "aa-baby",
+      "label": "아기",
+      "image": "worksheets/assets/baby.png",
+      "start": 12.549,
+      "end": 19.535,
+      "position": {
+        "left": 71,
+        "top": 17.368
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "aa-morning",
+      "label": "아침",
+      "image": "worksheets/assets/morning.png",
+      "start": 15.24,
+      "end": 19.535,
+      "position": {
+        "left": 91,
+        "top": 45.626
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "aa-ice-cream",
+      "label": "아이스크림",
+      "image": "worksheets/assets/ice-cream.png",
+      "start": 17.797,
+      "end": 19.535,
+      "position": {
+        "left": 69.947,
+        "top": 78.374
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "aa-intro-aa",
+      "label": "아",
+      "start": 9.891,
+      "end": 10.991,
+      "position": {
+        "left": 18,
+        "top": 24
+      }
+    },
+    {
+      "id": "aa-branch-aa",
+      "label": "아",
+      "start": 12.507,
+      "end": 19.535,
+      "position": {
+        "left": 13.737,
+        "top": 19.988
+      }
+    },
+    {
+      "id": "aa-final-a",
+      "label": "아",
+      "start": 19.85,
+      "end": 21.05,
+      "position": {
+        "left": 72.263,
+        "top": 65.088
+      }
+    }
+  ],
+  "render": {
+    "outputSlug": "aa-a",
+    "timingFile": "aa-a-card-timings.json"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "cha-a",
+  "lessonId": "vowel-combination-cha-a",
+  "title": "치치 칙폭이 차 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "chichi",
+    "name": "치치 칙폭이",
+    "letter": "ㅊ",
+    "image": "public/video-assets/characters/consonants/ㅊ-chichi-train.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/19_차_cha.mp3",
+    "duration": 19.181
+  },
+  "segment": {
+    "label": "차",
+    "start": 0,
+    "end": 19.181
+  },
+  "targetSyllable": "차",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "chichi-character",
+      "label": "치치 칙폭이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅊ-chichi-train.png",
+      "start": 0.2,
+      "end": 3.989,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "chichi-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 3.989,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "chichi-combined",
+      "label": "차",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/치치 차 새시안-alpha.png",
+      "start": 3.989,
+      "end": 19.181,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "cha-a-word-1",
+      "label": "차",
+      "image": "worksheets/assets/word-cha-tea.png",
+      "start": 14.77,
+      "end": 18.631,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "cha-a-word-2",
+      "label": "자동차",
+      "image": "worksheets/assets/word-cha-car.png",
+      "start": 15.779,
+      "end": 18.631,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "cha-a-word-3",
+      "label": "차례",
+      "image": "worksheets/assets/word-cha-turn.png",
+      "start": 17.036,
+      "end": 18.631,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "cha-a-initial",
+      "label": "ㅊ",
+      "start": 5.486,
+      "end": 13.084,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "cha-a-vowel",
+      "label": "ㅏ",
+      "start": 8.407,
+      "end": 13.084,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "cha-a-combined",
+      "label": "차",
+      "start": 13.084,
+      "end": 14.77,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "cha-a-final",
+      "label": "차",
+      "start": 18.631,
+      "end": 19.181,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "cha-a",
+    "timingFile": "cha-a-card-timings.json"
+  }
+}

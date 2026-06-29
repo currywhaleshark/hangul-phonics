@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ro-o",
+  "lessonId": "vowel-combination-ro-o",
+  "title": "라라 리본 로 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "rara",
+    "name": "라라 리본",
+    "letter": "ㄹ",
+    "image": "public/video-assets/characters/consonants/ㄹ-rara-ribbon.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/12_로_ro.mp3",
+    "duration": 19.045
+  },
+  "segment": {
+    "label": "로",
+    "start": 0,
+    "end": 19.045
+  },
+  "targetSyllable": "로",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "rara-character",
+      "label": "라라 리본",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄹ-rara-ribbon.png",
+      "start": 0.2,
+      "end": 3.751,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "rara-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 3.751,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "rara-combined",
+      "label": "로",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/라라 로 새시안-alpha.png",
+      "start": 3.751,
+      "end": 19.045,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ro-o-word-1",
+      "label": "로봇",
+      "image": "worksheets/assets/word-ro-robot.png",
+      "start": 14.84,
+      "end": 18.471,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ro-o-word-2",
+      "label": "로켓",
+      "image": "worksheets/assets/word-ro-rocket.png",
+      "start": 16.202,
+      "end": 18.471,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ro-o-word-3",
+      "label": "로션",
+      "image": "worksheets/assets/word-ro-lotion.png",
+      "start": 17.43,
+      "end": 18.471,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ro-o-initial",
+      "label": "ㄹ",
+      "start": 5.623,
+      "end": 13.377,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ro-o-vowel",
+      "label": "ㅗ",
+      "start": 8.491,
+      "end": 13.377,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ro-o-combined",
+      "label": "로",
+      "start": 13.377,
+      "end": 14.84,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ro-o-final",
+      "label": "로",
+      "start": 18.471,
+      "end": 19.045,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ro-o",
+    "timingFile": "ro-o-card-timings.json"
+  }
+}

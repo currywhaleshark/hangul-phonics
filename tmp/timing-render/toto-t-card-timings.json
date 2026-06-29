@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "toto-t",
+  "lessonId": "lesson-06a-koko-toto-pupu-meet",
+  "title": "토토 토끼 ㅌ 단어카드",
+  "character": {
+    "key": "toto",
+    "name": "토토 토끼",
+    "letter": "ㅌ",
+    "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png"
+  },
+  "audio": {
+    "src": "lessons/consonants/lesson-06a-koko-toto-pupu-meet/ㅋ,ㅌ,ㅍ 소개.wav",
+    "duration": 115.2
+  },
+  "segment": {
+    "label": "토토 토끼",
+    "start": 32.188,
+    "end": 64.443
+  },
+  "cues": [
+    {
+      "id": "toto-word-1",
+      "label": "토마토",
+      "image": "worksheets/assets/tomato.png",
+      "start": 45.724,
+      "end": 53.014,
+      "position": {
+        "left": 21.737,
+        "top": 75.942
+      },
+      "accent": "#ff8470"
+    },
+    {
+      "id": "toto-word-2",
+      "label": "택시",
+      "image": "worksheets/assets/taxi.png",
+      "start": 47.07,
+      "end": 53.014,
+      "position": {
+        "left": 24.684,
+        "top": 35.708
+      },
+      "accent": "#ffc450"
+    },
+    {
+      "id": "toto-word-3",
+      "label": "타조",
+      "image": "worksheets/assets/ostrich.png",
+      "start": 48.394,
+      "end": 53.014,
+      "position": {
+        "left": 51.947,
+        "top": 20.924
+      },
+      "accent": "#6ac2ff"
+    },
+    {
+      "id": "toto-word-4",
+      "label": "튤립",
+      "image": "worksheets/assets/tulip.png",
+      "start": 49.628,
+      "end": 53.014,
+      "position": {
+        "left": 77,
+        "top": 37.766
+      },
+      "accent": "#79ce91"
+    },
+    {
+      "id": "toto-word-5",
+      "label": "토끼풀",
+      "image": "worksheets/assets/clover.png",
+      "start": 50.948,
+      "end": 53.014,
+      "position": {
+        "left": 80.579,
+        "top": 78.187
+      },
+      "accent": "#b291ff"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "toto-intro-1",
+      "label": "ㅌ",
+      "start": 41.495,
+      "end": 44.655,
+      "position": {
+        "left": 23.737,
+        "top": 73.135
+      }
+    },
+    {
+      "id": "toto-intro-2",
+      "label": "ㅌ",
+      "start": 42.432,
+      "end": 44.655,
+      "position": {
+        "left": 52.789,
+        "top": 18.678
+      }
+    },
+    {
+      "id": "toto-intro-3",
+      "label": "ㅌ",
+      "start": 43.345,
+      "end": 44.655,
+      "position": {
+        "left": 79.526,
+        "top": 68.082
+      }
+    },
+    {
+      "id": "toto-repeat-1",
+      "label": "ㅌ",
+      "start": 55.812,
+      "end": 58.898,
+      "position": {
+        "left": 21.842,
+        "top": 71.45
+      }
+    },
+    {
+      "id": "toto-repeat-2",
+      "label": "ㅌ",
+      "start": 56.683,
+      "end": 58.898,
+      "position": {
+        "left": 51.211,
+        "top": 19.427
+      }
+    },
+    {
+      "id": "toto-repeat-3",
+      "label": "ㅌ",
+      "start": 57.729,
+      "end": 58.898,
+      "position": {
+        "left": 81.632,
+        "top": 71.637
+      }
+    },
+    {
+      "id": "toto-repeat-4",
+      "label": "ㅌ",
+      "start": 59.322,
+      "end": 62.247,
+      "position": {
+        "left": 26.579,
+        "top": 69.392
+      }
+    },
+    {
+      "id": "toto-repeat-5",
+      "label": "ㅌ",
+      "start": 60.181,
+      "end": 62.247,
+      "position": {
+        "left": 51.421,
+        "top": 17.556
+      }
+    },
+    {
+      "id": "toto-repeat-6",
+      "label": "ㅌ",
+      "start": 61.036,
+      "end": 62.247,
+      "position": {
+        "left": 80.053,
+        "top": 63.778
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/consonant-lesson-samples/gogo-g-background.png",
+    "outputSlug": "toto-t",
+    "timingFile": "toto-t-card-timings.json"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ka-a",
+  "lessonId": "vowel-combination-ka-a",
+  "title": "코코 코알라 카 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "koko",
+    "name": "코코 코알라",
+    "letter": "ㅋ",
+    "image": "public/video-assets/characters/consonants/ㅋ-koko-koala.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/21_카_ka.mp3",
+    "duration": 24.939
+  },
+  "segment": {
+    "label": "카",
+    "start": 0,
+    "end": 24.939
+  },
+  "targetSyllable": "카",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "koko-character",
+      "label": "코코 코알라",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅋ-koko-koala.png",
+      "start": 0.2,
+      "end": 5.55,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "koko-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 5.8,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "koko-combined",
+      "label": "카",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/코코 카 새시안-alpha.png",
+      "start": 5.55,
+      "end": 24.939,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ka-a-word-1",
+      "label": "카드",
+      "image": "worksheets/assets/word-ka-card.png",
+      "start": 19.586,
+      "end": 24.453,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ka-a-word-2",
+      "label": "카메라",
+      "image": "worksheets/assets/word-ka-camera.png",
+      "start": 21.1,
+      "end": 24.453,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ka-a-word-3",
+      "label": "카트",
+      "image": "worksheets/assets/word-ka-cart.png",
+      "start": 22.854,
+      "end": 24.453,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ka-a-initial",
+      "label": "ㅋ",
+      "start": 7.742,
+      "end": 17.615,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ka-a-vowel",
+      "label": "ㅏ",
+      "start": 11.952,
+      "end": 17.615,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ka-a-combined",
+      "label": "카",
+      "start": 17.615,
+      "end": 19.586,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ka-a-final",
+      "label": "카",
+      "start": 24.453,
+      "end": 24.939,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ka-a",
+    "timingFile": "ka-a-card-timings.json"
+  }
+}

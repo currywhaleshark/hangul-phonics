@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "sasa-s",
+  "lessonId": "lesson-04-sasa-haha",
+  "title": "사사 사슴 ㅅ 단어카드",
+  "character": {
+    "key": "sasa",
+    "name": "사사 사슴",
+    "letter": "ㅅ",
+    "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png"
+  },
+  "audio": {
+    "src": "lessons/consonants/lesson-04-sasa-haha/ㅅ, ㅎ 소개.wav",
+    "duration": 78.88
+  },
+  "segment": {
+    "label": "사사 사슴",
+    "start": 0,
+    "end": 32.087
+  },
+  "cues": [
+    {
+      "id": "sasa-word-1",
+      "label": "사과",
+      "image": "worksheets/assets/apple.png",
+      "start": 13.977,
+      "end": 20.285,
+      "position": {
+        "left": 21.421,
+        "top": 73.322
+      },
+      "accent": "#ff8470"
+    },
+    {
+      "id": "sasa-word-2",
+      "label": "수박",
+      "image": "worksheets/assets/watermelon.png",
+      "start": 15.087,
+      "end": 20.285,
+      "position": {
+        "left": 23.842,
+        "top": 26.725
+      },
+      "accent": "#ffc450"
+    },
+    {
+      "id": "sasa-word-3",
+      "label": "산",
+      "image": "worksheets/assets/mountain.png",
+      "start": 16.04,
+      "end": 20.285,
+      "position": {
+        "left": 52.368,
+        "top": 20.924
+      },
+      "accent": "#6ac2ff"
+    },
+    {
+      "id": "sasa-word-4",
+      "label": "손",
+      "image": "worksheets/assets/hand.png",
+      "start": 17.213,
+      "end": 20.285,
+      "position": {
+        "left": 79.737,
+        "top": 28.222
+      },
+      "accent": "#79ce91"
+    },
+    {
+      "id": "sasa-word-5",
+      "label": "사탕",
+      "image": "worksheets/assets/candy.png",
+      "start": 18.241,
+      "end": 20.285,
+      "position": {
+        "left": 79.737,
+        "top": 76.316
+      },
+      "accent": "#b291ff"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "sasa-intro-1",
+      "label": "ㅅ",
+      "start": 9.499,
+      "end": 13.048,
+      "position": {
+        "left": 22.263,
+        "top": 63.965
+      }
+    },
+    {
+      "id": "sasa-intro-2",
+      "label": "ㅅ",
+      "start": 10.381,
+      "end": 13.048,
+      "position": {
+        "left": 53.526,
+        "top": 18.117
+      }
+    },
+    {
+      "id": "sasa-intro-3",
+      "label": "ㅅ",
+      "start": 11.43,
+      "end": 13.048,
+      "position": {
+        "left": 82.053,
+        "top": 72.573
+      }
+    },
+    {
+      "id": "sasa-repeat-1",
+      "label": "ㅅ",
+      "start": 22.74,
+      "end": 25.621,
+      "position": {
+        "left": 24.684,
+        "top": 52.363
+      }
+    },
+    {
+      "id": "sasa-repeat-2",
+      "label": "ㅅ",
+      "start": 23.931,
+      "end": 25.621,
+      "position": {
+        "left": 54.474,
+        "top": 21.485
+      }
+    },
+    {
+      "id": "sasa-repeat-3",
+      "label": "ㅅ",
+      "start": 24.69,
+      "end": 25.621,
+      "position": {
+        "left": 80.368,
+        "top": 60.596
+      }
+    },
+    {
+      "id": "sasa-repeat-4",
+      "label": "ㅅ",
+      "start": 26.219,
+      "end": 29.536,
+      "position": {
+        "left": 27.105,
+        "top": 61.719
+      }
+    },
+    {
+      "id": "sasa-repeat-5",
+      "label": "ㅅ",
+      "start": 27.344,
+      "end": 29.536,
+      "position": {
+        "left": 53.947,
+        "top": 21.86
+      }
+    },
+    {
+      "id": "sasa-repeat-6",
+      "label": "ㅅ",
+      "start": 28.046,
+      "end": 29.536,
+      "position": {
+        "left": 77.737,
+        "top": 60.035
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/consonant-lesson-samples/gogo-g-background.png",
+    "outputSlug": "sasa-s",
+    "timingFile": "sasa-s-card-timings.json"
+  }
+}

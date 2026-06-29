@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "da-a",
+  "lessonId": "vowel-combination-da-a",
+  "title": "도도 도토리 다 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "dodo",
+    "name": "도도 도토리",
+    "letter": "ㄷ",
+    "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/09_다_da.mp3",
+    "duration": 22.017
+  },
+  "segment": {
+    "label": "다",
+    "start": 0,
+    "end": 22.017
+  },
+  "targetSyllable": "다",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "dodo-character",
+      "label": "도도 도토리",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png",
+      "start": 0.2,
+      "end": 4.95,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "dodo-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 4.95,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "dodo-combined",
+      "label": "다",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/도도 다 새시안-alpha.png",
+      "start": 4.95,
+      "end": 22.017,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "da-a-word-1",
+      "label": "다람쥐",
+      "image": "worksheets/assets/word-da-squirrel.png",
+      "start": 17.529,
+      "end": 20.893,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "da-a-word-2",
+      "label": "다리미",
+      "image": "worksheets/assets/word-da-iron.png",
+      "start": 18.903,
+      "end": 20.893,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "da-a-word-3",
+      "label": "다리",
+      "image": "worksheets/assets/word-da-leg.png",
+      "start": 20.264,
+      "end": 20.893,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "da-a-initial",
+      "label": "ㄷ",
+      "start": 7.412,
+      "end": 16.18,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "da-a-vowel",
+      "label": "ㅏ",
+      "start": 11.143,
+      "end": 16.18,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "da-a-combined",
+      "label": "다",
+      "start": 16.18,
+      "end": 17.73,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "da-a-final",
+      "label": "다",
+      "start": 21.287,
+      "end": 22.017,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "da-a",
+    "timingFile": "da-a-card-timings.json"
+  }
+}

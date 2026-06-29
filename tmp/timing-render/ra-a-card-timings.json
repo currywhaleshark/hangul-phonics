@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ra-a",
+  "lessonId": "vowel-combination-ra-a",
+  "title": "라라 리본 라 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "rara",
+    "name": "라라 리본",
+    "letter": "ㄹ",
+    "image": "public/video-assets/characters/consonants/ㄹ-rara-ribbon.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/11_라_ra.mp3",
+    "duration": 21.146
+  },
+  "segment": {
+    "label": "라",
+    "start": 0,
+    "end": 21.146
+  },
+  "targetSyllable": "라",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "rara-character",
+      "label": "라라 리본",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄹ-rara-ribbon.png",
+      "start": 0.2,
+      "end": 4.717,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "rara-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 4.717,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "rara-combined",
+      "label": "라",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/라라 라 새시안-alpha.png",
+      "start": 4.717,
+      "end": 21.146,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ra-a-word-1",
+      "label": "라디오",
+      "image": "worksheets/assets/word-ra-radio.png",
+      "start": 16.672,
+      "end": 20.458,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ra-a-word-2",
+      "label": "라면",
+      "image": "worksheets/assets/word-ra-ramen.png",
+      "start": 17.977,
+      "end": 20.458,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ra-a-word-3",
+      "label": "라켓",
+      "image": "worksheets/assets/word-ra-racket.png",
+      "start": 19.215,
+      "end": 20.458,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ra-a-initial",
+      "label": "ㄹ",
+      "start": 6.3,
+      "end": 15.303,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ra-a-vowel",
+      "label": "ㅏ",
+      "start": 10.511,
+      "end": 15.303,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ra-a-combined",
+      "label": "라",
+      "start": 15.303,
+      "end": 16.672,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ra-a-final",
+      "label": "라",
+      "start": 20.458,
+      "end": 21.146,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ra-a",
+    "timingFile": "ra-a-card-timings.json"
+  }
+}

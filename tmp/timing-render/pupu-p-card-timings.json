@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "pupu-p",
+  "lessonId": "lesson-06a-koko-toto-pupu-meet",
+  "title": "푸푸 풍선 ㅍ 단어카드",
+  "character": {
+    "key": "pupu",
+    "name": "푸푸 풍선",
+    "letter": "ㅍ",
+    "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png"
+  },
+  "audio": {
+    "src": "lessons/consonants/lesson-06a-koko-toto-pupu-meet/ㅋ,ㅌ,ㅍ 소개.wav",
+    "duration": 115.2
+  },
+  "segment": {
+    "label": "푸푸 풍선",
+    "start": 64.615,
+    "end": 95.892
+  },
+  "cues": [
+    {
+      "id": "pupu-word-1",
+      "label": "포도",
+      "image": "worksheets/assets/grapes.png",
+      "start": 77.916,
+      "end": 84.589,
+      "position": {
+        "left": 20.684,
+        "top": 74.444
+      },
+      "accent": "#ff8470"
+    },
+    {
+      "id": "pupu-word-2",
+      "label": "피자",
+      "image": "worksheets/assets/pizza.png",
+      "start": 79.104,
+      "end": 84.589,
+      "position": {
+        "left": 29,
+        "top": 35.146
+      },
+      "accent": "#ffc450"
+    },
+    {
+      "id": "pupu-word-3",
+      "label": "풀",
+      "image": "worksheets/assets/grass.png",
+      "start": 80.265,
+      "end": 84.589,
+      "position": {
+        "left": 52.895,
+        "top": 26.351
+      },
+      "accent": "#6ac2ff"
+    },
+    {
+      "id": "pupu-word-4",
+      "label": "풍선",
+      "image": "worksheets/assets/balloon.png",
+      "start": 81.461,
+      "end": 84.589,
+      "position": {
+        "left": 78.474,
+        "top": 36.83
+      },
+      "accent": "#79ce91"
+    },
+    {
+      "id": "pupu-word-5",
+      "label": "파도",
+      "image": "worksheets/assets/wave.png",
+      "start": 82.731,
+      "end": 84.589,
+      "position": {
+        "left": 84.684,
+        "top": 75.38
+      },
+      "accent": "#b291ff"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "pupu-intro-1",
+      "label": "ㅍ",
+      "start": 73.709,
+      "end": 76.797,
+      "position": {
+        "left": 20.789,
+        "top": 67.708
+      }
+    },
+    {
+      "id": "pupu-intro-2",
+      "label": "ㅍ",
+      "start": 74.65,
+      "end": 76.797,
+      "position": {
+        "left": 51.632,
+        "top": 21.86
+      }
+    },
+    {
+      "id": "pupu-intro-3",
+      "label": "ㅍ",
+      "start": 75.505,
+      "end": 76.797,
+      "position": {
+        "left": 86.158,
+        "top": 63.029
+      }
+    },
+    {
+      "id": "pupu-repeat-1",
+      "label": "ㅍ",
+      "start": 87.158,
+      "end": 90.231,
+      "position": {
+        "left": 23.421,
+        "top": 70.327
+      }
+    },
+    {
+      "id": "pupu-repeat-2",
+      "label": "ㅍ",
+      "start": 88.206,
+      "end": 90.231,
+      "position": {
+        "left": 53.842,
+        "top": 21.673
+      }
+    },
+    {
+      "id": "pupu-repeat-3",
+      "label": "ㅍ",
+      "start": 89.275,
+      "end": 90.231,
+      "position": {
+        "left": 83.316,
+        "top": 69.205
+      }
+    },
+    {
+      "id": "pupu-repeat-4",
+      "label": "ㅍ",
+      "start": 90.575,
+      "end": 93.57,
+      "position": {
+        "left": 27.421,
+        "top": 72.573
+      }
+    },
+    {
+      "id": "pupu-repeat-5",
+      "label": "ㅍ",
+      "start": 91.43,
+      "end": 93.57,
+      "position": {
+        "left": 54.789,
+        "top": 23.17
+      }
+    },
+    {
+      "id": "pupu-repeat-6",
+      "label": "ㅍ",
+      "start": 92.451,
+      "end": 93.57,
+      "position": {
+        "left": 77.526,
+        "top": 75.193
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/consonant-lesson-samples/gogo-g-background.png",
+    "outputSlug": "pupu-p",
+    "timingFile": "pupu-p-card-timings.json"
+  }
+}

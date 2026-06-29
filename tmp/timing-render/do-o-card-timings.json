@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "do-o",
+  "lessonId": "vowel-combination-do-o",
+  "title": "도도 도토리 도 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "dodo",
+    "name": "도도 도토리",
+    "letter": "ㄷ",
+    "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/10_도_do.mp3",
+    "duration": 21.379
+  },
+  "segment": {
+    "label": "도",
+    "start": 0,
+    "end": 21.379
+  },
+  "targetSyllable": "도",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "dodo-character",
+      "label": "도도 도토리",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png",
+      "start": 0.2,
+      "end": 4.779,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "dodo-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 4.779,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "dodo-combined",
+      "label": "도",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/도도 도 새시안-alpha.png",
+      "start": 4.779,
+      "end": 21.379,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "do-o-word-1",
+      "label": "도토리",
+      "image": "worksheets/assets/word-do-acorn.png",
+      "start": 16.889,
+      "end": 20.247,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "do-o-word-2",
+      "label": "도넛",
+      "image": "worksheets/assets/word-do-donut.png",
+      "start": 18.375,
+      "end": 20.247,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "do-o-word-3",
+      "label": "도깨비",
+      "image": "worksheets/assets/word-do-dokkaebi.png",
+      "start": 19.324,
+      "end": 20.247,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "do-o-initial",
+      "label": "ㄷ",
+      "start": 6.3,
+      "end": 15.293,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "do-o-vowel",
+      "label": "ㅗ",
+      "start": 10.201,
+      "end": 15.293,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "do-o-combined",
+      "label": "도",
+      "start": 15.293,
+      "end": 16.668,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "do-o-final",
+      "label": "도",
+      "start": 20.576,
+      "end": 21.379,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "do-o",
+    "timingFile": "do-o-card-timings.json"
+  }
+}

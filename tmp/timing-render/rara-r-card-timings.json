@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "rara-r",
+  "lessonId": "lesson-03-dodo-rara",
+  "title": "라라 리본 ㄹ 단어카드",
+  "character": {
+    "key": "rara",
+    "name": "라라 리본",
+    "letter": "ㄹ",
+    "image": "public/video-assets/characters/consonants/ㄹ-rara-ribbon.png"
+  },
+  "audio": {
+    "src": "lessons/consonants/lesson-03-dodo-rara/ㄷ,ㄹ 소개(2).wav",
+    "duration": 89.72
+  },
+  "segment": {
+    "label": "라라 리본",
+    "start": 35.775,
+    "end": 72.594
+  },
+  "cues": [
+    {
+      "id": "rara-word-1",
+      "label": "라면",
+      "image": "worksheets/assets/ramen.png",
+      "start": 52.568,
+      "end": 61.285,
+      "position": {
+        "left": 23.105,
+        "top": 77.064
+      },
+      "accent": "#ff8470"
+    },
+    {
+      "id": "rara-word-2",
+      "label": "로봇",
+      "image": "worksheets/assets/robot.png",
+      "start": 53.833,
+      "end": 61.285,
+      "position": {
+        "left": 23.842,
+        "top": 30.842
+      },
+      "accent": "#ffc450"
+    },
+    {
+      "id": "rara-word-3",
+      "label": "리본",
+      "image": "worksheets/assets/ribbon.png",
+      "start": 55.319,
+      "end": 61.285,
+      "position": {
+        "left": 52.158,
+        "top": 19.427
+      },
+      "accent": "#6ac2ff"
+    },
+    {
+      "id": "rara-word-4",
+      "label": "라디오",
+      "image": "worksheets/assets/radio.png",
+      "start": 56.813,
+      "end": 61.285,
+      "position": {
+        "left": 81.105,
+        "top": 33.275
+      },
+      "accent": "#79ce91"
+    },
+    {
+      "id": "rara-word-5",
+      "label": "레몬",
+      "image": "worksheets/assets/lemon.png",
+      "start": 58.616,
+      "end": 61.285,
+      "position": {
+        "left": 81.526,
+        "top": 78.374
+      },
+      "accent": "#b291ff"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "rara-intro-1",
+      "label": "ㄹ",
+      "start": 47.644,
+      "end": 51.186,
+      "position": {
+        "left": 20.684,
+        "top": 67.895
+      }
+    },
+    {
+      "id": "rara-intro-2",
+      "label": "ㄹ",
+      "start": 48.859,
+      "end": 51.186,
+      "position": {
+        "left": 50.368,
+        "top": 18.117
+      }
+    },
+    {
+      "id": "rara-intro-3",
+      "label": "ㄹ",
+      "start": 49.685,
+      "end": 51.186,
+      "position": {
+        "left": 82.684,
+        "top": 74.819
+      }
+    },
+    {
+      "id": "rara-repeat-1",
+      "label": "ㄹ",
+      "start": 63.997,
+      "end": 67.289,
+      "position": {
+        "left": 20.158,
+        "top": 66.023
+      }
+    },
+    {
+      "id": "rara-repeat-2",
+      "label": "ㄹ",
+      "start": 65.195,
+      "end": 67.289,
+      "position": {
+        "left": 53.105,
+        "top": 17.556
+      }
+    },
+    {
+      "id": "rara-repeat-3",
+      "label": "ㄹ",
+      "start": 66.063,
+      "end": 67.289,
+      "position": {
+        "left": 77.947,
+        "top": 63.216
+      }
+    },
+    {
+      "id": "rara-repeat-4",
+      "label": "ㄹ",
+      "start": 67.648,
+      "end": 70,
+      "position": {
+        "left": 22.158,
+        "top": 64.526
+      }
+    },
+    {
+      "id": "rara-repeat-5",
+      "label": "ㄹ",
+      "start": 68.349,
+      "end": 70,
+      "position": {
+        "left": 51.526,
+        "top": 18.117
+      }
+    },
+    {
+      "id": "rara-repeat-6",
+      "label": "ㄹ",
+      "start": 69.139,
+      "end": 70,
+      "position": {
+        "left": 79.632,
+        "top": 66.772
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/consonant-lesson-samples/gogo-g-background.png",
+    "outputSlug": "rara-r",
+    "timingFile": "rara-r-card-timings.json"
+  }
+}

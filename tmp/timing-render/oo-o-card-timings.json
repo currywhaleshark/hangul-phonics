@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "id": "oo-o",
+  "lessonId": "lesson-01-aa-baby-vowel-o",
+  "title": "오오 상자 오 모음 만남",
+  "template": "vowel-combine-story",
+  "character": {
+    "key": "oo",
+    "name": "오오 상자",
+    "letter": "오",
+    "image": "public/video-assets/vowel-alpha/combined/오오 상자 시안-alpha.png"
+  },
+  "audio": {
+    "src": "lessons/vowels/lesson-01-aa-baby-vowel/오.wav",
+    "duration": 19.4
+  },
+  "segment": {
+    "label": "오오 상자",
+    "start": 0,
+    "end": 19.4
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "oo-baby",
+      "label": "아기",
+      "assetKind": "baby",
+      "image": "public/video-assets/characters/consonants/ㅇ-aa-baby.png",
+      "start": 0.2,
+      "end": 6.559,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.54
+    },
+    {
+      "id": "oo-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 6.559,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "oo-combined",
+      "label": "합친 이미지",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined-hero/오오 상자 시안-hero.png",
+      "start": 6.559,
+      "end": 19.4,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "position": {
+        "left": 50,
+        "top": 55
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "oo-cucumber",
+      "label": "오이",
+      "image": "worksheets/assets/cucumber.png",
+      "start": 13.16,
+      "end": 17.954,
+      "position": {
+        "left": 22.579,
+        "top": 22.047
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "oo-duck",
+      "label": "오리",
+      "image": "worksheets/assets/duck.png",
+      "start": 14.64,
+      "end": 17.954,
+      "position": {
+        "left": 21.947,
+        "top": 72.76
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "oo-orangutan",
+      "label": "오랑우탄",
+      "image": "worksheets/assets/orangutan.png",
+      "start": 16.238,
+      "end": 17.954,
+      "position": {
+        "left": 84.263,
+        "top": 77.064
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "oo-say",
+      "label": "오",
+      "start": 11.794,
+      "end": 12.712,
+      "position": {
+        "left": 17,
+        "top": 22.234
+      }
+    },
+    {
+      "id": "oo-final",
+      "label": "오",
+      "start": 18.325,
+      "end": 19.4,
+      "position": {
+        "left": 87.211,
+        "top": 20.55
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "oo-o",
+    "timingFile": "oo-o-card-timings.json"
+  }
+}

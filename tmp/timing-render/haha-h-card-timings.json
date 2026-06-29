@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "haha-h",
+  "lessonId": "lesson-04-sasa-haha",
+  "title": "하하 하마 ㅎ 단어카드",
+  "character": {
+    "key": "haha",
+    "name": "하하 하마",
+    "letter": "ㅎ",
+    "image": "public/video-assets/characters/consonants/ㅎ-haha-hippo.png"
+  },
+  "audio": {
+    "src": "lessons/consonants/lesson-04-sasa-haha/ㅅ, ㅎ 소개.wav",
+    "duration": 78.88
+  },
+  "segment": {
+    "label": "하하 하마",
+    "start": 31.549,
+    "end": 64.498
+  },
+  "cues": [
+    {
+      "id": "haha-word-1",
+      "label": "해",
+      "image": "worksheets/assets/sun.png",
+      "start": 45.465,
+      "end": 52.233,
+      "position": {
+        "left": 23.316,
+        "top": 75.193
+      },
+      "accent": "#ff8470"
+    },
+    {
+      "id": "haha-word-2",
+      "label": "하트",
+      "image": "worksheets/assets/heart.png",
+      "start": 46.471,
+      "end": 52.233,
+      "position": {
+        "left": 27,
+        "top": 31.216
+      },
+      "accent": "#ffc450"
+    },
+    {
+      "id": "haha-word-3",
+      "label": "호랑이",
+      "image": "worksheets/assets/tiger.png",
+      "start": 47.619,
+      "end": 52.233,
+      "position": {
+        "left": 53.316,
+        "top": 23.17
+      },
+      "accent": "#6ac2ff"
+    },
+    {
+      "id": "haha-word-4",
+      "label": "하모니카",
+      "image": "worksheets/assets/harmonica.png",
+      "start": 48.792,
+      "end": 52.233,
+      "position": {
+        "left": 78.579,
+        "top": 31.591
+      },
+      "accent": "#79ce91"
+    },
+    {
+      "id": "haha-word-5",
+      "label": "햄버거",
+      "image": "worksheets/assets/hamburger.png",
+      "start": 50.163,
+      "end": 52.233,
+      "position": {
+        "left": 78.895,
+        "top": 76.316
+      },
+      "accent": "#b291ff"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "haha-intro-1",
+      "label": "ㅎ",
+      "start": 40.706,
+      "end": 44.966,
+      "position": {
+        "left": 21.632,
+        "top": 66.959
+      }
+    },
+    {
+      "id": "haha-intro-2",
+      "label": "ㅎ",
+      "start": 41.879,
+      "end": 44.966,
+      "position": {
+        "left": 50.895,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "haha-intro-3",
+      "label": "ㅎ",
+      "start": 42.938,
+      "end": 44.966,
+      "position": {
+        "left": 79.632,
+        "top": 71.637
+      }
+    },
+    {
+      "id": "haha-repeat-1",
+      "label": "ㅎ",
+      "start": 54.702,
+      "end": 58.682,
+      "position": {
+        "left": 23.842,
+        "top": 56.105
+      }
+    },
+    {
+      "id": "haha-repeat-2",
+      "label": "ㅎ",
+      "start": 55.906,
+      "end": 58.682,
+      "position": {
+        "left": 55.737,
+        "top": 23.17
+      }
+    },
+    {
+      "id": "haha-repeat-3",
+      "label": "ㅎ",
+      "start": 56.963,
+      "end": 58.682,
+      "position": {
+        "left": 78.895,
+        "top": 57.789
+      }
+    },
+    {
+      "id": "haha-repeat-4",
+      "label": "ㅎ",
+      "start": 59.002,
+      "end": 62.498,
+      "position": {
+        "left": 23,
+        "top": 71.637
+      }
+    },
+    {
+      "id": "haha-repeat-5",
+      "label": "ㅎ",
+      "start": 59.815,
+      "end": 62.498,
+      "position": {
+        "left": 52.579,
+        "top": 24.48
+      }
+    },
+    {
+      "id": "haha-repeat-6",
+      "label": "ㅎ",
+      "start": 60.743,
+      "end": 62.498,
+      "position": {
+        "left": 78.368,
+        "top": 69.953
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/consonant-lesson-samples/gogo-g-background.png",
+    "outputSlug": "haha-h",
+    "timingFile": "haha-h-card-timings.json"
+  }
+}

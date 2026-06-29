@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "so-o",
+  "lessonId": "vowel-combination-so-o",
+  "title": "사사 사슴 소 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "sasa",
+    "name": "사사 사슴",
+    "letter": "ㅅ",
+    "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/14_소_so.mp3",
+    "duration": 21.354
+  },
+  "segment": {
+    "label": "소",
+    "start": 0,
+    "end": 21.354
+  },
+  "targetSyllable": "소",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "sasa-character",
+      "label": "사사 사슴",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png",
+      "start": 0.2,
+      "end": 5.8,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "sasa-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 5.8,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "sasa-combined",
+      "label": "소",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/사사 소 새시안-alpha.png",
+      "start": 5.55,
+      "end": 21.354,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "so-o-word-1",
+      "label": "소금",
+      "image": "worksheets/assets/word-so-salt.png",
+      "start": 17.579,
+      "end": 21.017,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "so-o-word-2",
+      "label": "소",
+      "image": "worksheets/assets/word-so-cow.png",
+      "start": 18.623,
+      "end": 21.017,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "so-o-word-3",
+      "label": "소리",
+      "image": "worksheets/assets/word-so-sound.png",
+      "start": 19.749,
+      "end": 21.017,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "so-o-initial",
+      "label": "ㅅ",
+      "start": 7.926,
+      "end": 16.424,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "so-o-vowel",
+      "label": "ㅗ",
+      "start": 11.167,
+      "end": 16.424,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "so-o-combined",
+      "label": "소",
+      "start": 16.424,
+      "end": 17.579,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "so-o-final",
+      "label": "소",
+      "start": 21.017,
+      "end": 21.354,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "so-o",
+    "timingFile": "so-o-card-timings.json"
+  }
+}

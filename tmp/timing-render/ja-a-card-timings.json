@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ja-a",
+  "lessonId": "vowel-combination-ja-a",
+  "title": "지지 지렁이 자 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "jiji",
+    "name": "지지 지렁이",
+    "letter": "ㅈ",
+    "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/17_자_ja.mp3",
+    "duration": 21.702
+  },
+  "segment": {
+    "label": "자",
+    "start": 0,
+    "end": 21.702
+  },
+  "targetSyllable": "자",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "jiji-character",
+      "label": "지지 지렁이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png",
+      "start": 0.2,
+      "end": 4.808,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "jiji-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 4.808,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "jiji-combined",
+      "label": "자",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/지지 자 새시안-alpha.png",
+      "start": 4.808,
+      "end": 21.702,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ja-a-word-1",
+      "label": "자전거",
+      "image": "worksheets/assets/word-ja-bicycle.png",
+      "start": 17.067,
+      "end": 21.142,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ja-a-word-2",
+      "label": "자석",
+      "image": "worksheets/assets/word-ja-magnet.png",
+      "start": 18.456,
+      "end": 21.142,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ja-a-word-3",
+      "label": "자두",
+      "image": "worksheets/assets/word-ja-plum.png",
+      "start": 19.656,
+      "end": 21.142,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ja-a-initial",
+      "label": "ㅈ",
+      "start": 6.832,
+      "end": 15.681,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ja-a-vowel",
+      "label": "ㅏ",
+      "start": 10.79,
+      "end": 15.681,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ja-a-combined",
+      "label": "자",
+      "start": 15.681,
+      "end": 17.067,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ja-a-final",
+      "label": "자",
+      "start": 21.142,
+      "end": 21.702,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ja-a",
+    "timingFile": "ja-a-card-timings.json"
+  }
+}

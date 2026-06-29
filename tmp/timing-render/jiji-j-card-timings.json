@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "id": "jiji-j",
+  "lessonId": "lesson-05-jiji-chichi",
+  "title": "지지 지렁이 ㅈ 단어카드",
+  "character": {
+    "key": "jiji",
+    "name": "지지 지렁이",
+    "letter": "ㅈ",
+    "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png"
+  },
+  "audio": {
+    "src": "lessons/consonants/lesson-05-jiji-chichi/ㅈ,ㅊ 소개.wav",
+    "duration": 87.28
+  },
+  "segment": {
+    "label": "지지 지렁이",
+    "start": 0,
+    "end": 34.04
+  },
+  "cues": [
+    {
+      "id": "jiji-word-1",
+      "label": "자동차",
+      "image": "worksheets/assets/car.png",
+      "start": 13.901,
+      "end": 21.064,
+      "position": {
+        "left": 22.579,
+        "top": 70.889
+      },
+      "accent": "#ff8470"
+    },
+    {
+      "id": "jiji-word-2",
+      "label": "집",
+      "image": "worksheets/assets/house.png",
+      "start": 15.254,
+      "end": 21.064,
+      "position": {
+        "left": 25.737,
+        "top": 31.965
+      },
+      "accent": "#ffc450"
+    },
+    {
+      "id": "jiji-word-3",
+      "label": "주스",
+      "image": "worksheets/assets/juice.png",
+      "start": 16.505,
+      "end": 21.064,
+      "position": {
+        "left": 53.632,
+        "top": 24.292
+      },
+      "accent": "#6ac2ff"
+    },
+    {
+      "id": "jiji-word-4",
+      "label": "지갑",
+      "image": "worksheets/assets/wallet.png",
+      "start": 17.852,
+      "end": 21.064,
+      "position": {
+        "left": 80.263,
+        "top": 29.719
+      },
+      "accent": "#79ce91"
+    },
+    {
+      "id": "jiji-word-5",
+      "label": "젤리",
+      "image": "worksheets/assets/jelly.png",
+      "start": 19.181,
+      "end": 21.064,
+      "position": {
+        "left": 80.789,
+        "top": 71.45
+      },
+      "accent": "#b291ff"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "jiji-intro-1",
+      "label": "ㅈ",
+      "start": 8.718,
+      "end": 12.418,
+      "position": {
+        "left": 17,
+        "top": 68.082
+      }
+    },
+    {
+      "id": "jiji-intro-2",
+      "label": "ㅈ",
+      "start": 9.761,
+      "end": 12.418,
+      "position": {
+        "left": 51.947,
+        "top": 21.673
+      }
+    },
+    {
+      "id": "jiji-intro-3",
+      "label": "ㅈ",
+      "start": 10.901,
+      "end": 12.418,
+      "position": {
+        "left": 81.105,
+        "top": 61.906
+      }
+    },
+    {
+      "id": "jiji-repeat-1",
+      "label": "ㅈ",
+      "start": 23.411,
+      "end": 27.129,
+      "position": {
+        "left": 24.053,
+        "top": 69.392
+      }
+    },
+    {
+      "id": "jiji-repeat-2",
+      "label": "ㅈ",
+      "start": 24.612,
+      "end": 27.129,
+      "position": {
+        "left": 51.632,
+        "top": 23.918
+      }
+    },
+    {
+      "id": "jiji-repeat-3",
+      "label": "ㅈ",
+      "start": 25.781,
+      "end": 27.129,
+      "position": {
+        "left": 78.263,
+        "top": 69.579
+      }
+    },
+    {
+      "id": "jiji-repeat-4",
+      "label": "ㅈ",
+      "start": 27.453,
+      "end": 31.164,
+      "position": {
+        "left": 24.368,
+        "top": 67.708
+      }
+    },
+    {
+      "id": "jiji-repeat-5",
+      "label": "ㅈ",
+      "start": 28.579,
+      "end": 31.164,
+      "position": {
+        "left": 52.158,
+        "top": 21.298
+      }
+    },
+    {
+      "id": "jiji-repeat-6",
+      "label": "ㅈ",
+      "start": 29.771,
+      "end": 31.164,
+      "position": {
+        "left": 77.947,
+        "top": 67.333
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/consonant-lesson-samples/gogo-g-background.png",
+    "outputSlug": "jiji-j",
+    "timingFile": "jiji-j-card-timings.json"
+  }
+}

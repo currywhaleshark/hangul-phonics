@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "jo-o",
+  "lessonId": "vowel-combination-jo-o",
+  "title": "지지 지렁이 조 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "jiji",
+    "name": "지지 지렁이",
+    "letter": "ㅈ",
+    "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/18_조_jo.mp3",
+    "duration": 23.844
+  },
+  "segment": {
+    "label": "조",
+    "start": 0,
+    "end": 23.844
+  },
+  "targetSyllable": "조",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "jiji-character",
+      "label": "지지 지렁이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png",
+      "start": 0.2,
+      "end": 5.275,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "jiji-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 5.275,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "jiji-combined",
+      "label": "조",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/지지 조 새시안-alpha.png",
+      "start": 5.275,
+      "end": 23.844,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "jo-o-word-1",
+      "label": "조개",
+      "image": "worksheets/assets/word-jo-shell.png",
+      "start": 19.012,
+      "end": 23.278,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "jo-o-word-2",
+      "label": "조끼",
+      "image": "worksheets/assets/word-jo-vest.png",
+      "start": 20.419,
+      "end": 23.278,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "jo-o-word-3",
+      "label": "조명",
+      "image": "worksheets/assets/word-jo-light.png",
+      "start": 21.81,
+      "end": 23.278,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "jo-o-initial",
+      "label": "ㅈ",
+      "start": 7.864,
+      "end": 17.433,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "jo-o-vowel",
+      "label": "ㅗ",
+      "start": 11.584,
+      "end": 17.433,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "jo-o-combined",
+      "label": "조",
+      "start": 17.433,
+      "end": 19.012,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "jo-o-final",
+      "label": "조",
+      "start": 23.278,
+      "end": 23.844,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "jo-o",
+    "timingFile": "jo-o-card-timings.json"
+  }
+}

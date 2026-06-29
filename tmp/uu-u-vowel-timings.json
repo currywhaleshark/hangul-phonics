@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "id": "uu-u",
+  "lessonId": "lesson-01-aa-baby-vowel-u",
+  "title": "우우 발판 우 모음 만남",
+  "template": "vowel-combine-story",
+  "character": {
+    "key": "uu",
+    "name": "우우 발판",
+    "letter": "우",
+    "image": "public/video-assets/vowel-alpha/combined/우우 발판 시안-alpha.png"
+  },
+  "audio": {
+    "src": "lessons/vowels/lesson-01-aa-baby-vowel/우.wav",
+    "duration": 16.280272
+  },
+  "segment": {
+    "label": "우우 발판",
+    "start": 0,
+    "end": 16.28
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "uu-baby",
+      "label": "아기",
+      "assetKind": "baby",
+      "image": "public/video-assets/characters/consonants/ㅇ-aa-baby.png",
+      "start": 0.2,
+      "end": 5.8,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.54
+    },
+    {
+      "id": "uu-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 5.8,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "uu-combined",
+      "label": "합친 이미지",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined-hero/우우 발판 시안-hero.png",
+      "start": 5.55,
+      "end": 11.6,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "position": {
+        "left": 50,
+        "top": 55
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "uu-umbrella",
+      "label": "우산",
+      "image": "worksheets/assets/umbrella.png",
+      "start": 12,
+      "end": 13.25,
+      "position": {
+        "left": 24,
+        "top": 72
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "uu-milk",
+      "label": "우유",
+      "image": "worksheets/assets/milk.png",
+      "start": 13.15,
+      "end": 14.4,
+      "position": {
+        "left": 50,
+        "top": 72
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "uu-well",
+      "label": "우물",
+      "image": "worksheets/assets/well.png",
+      "start": 14.3,
+      "end": 15.65,
+      "position": {
+        "left": 76,
+        "top": 72
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "uu-say",
+      "label": "우",
+      "start": 8.3,
+      "end": 10,
+      "position": {
+        "left": 50,
+        "top": 22
+      }
+    },
+    {
+      "id": "uu-final",
+      "label": "우",
+      "start": 15.75,
+      "end": 16.28,
+      "position": {
+        "left": 50,
+        "top": 22
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "uu-u",
+    "timingFile": "uu-u-vowel-timings.json"
+  }
+}
