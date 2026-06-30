@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "pa-a",
+  "lessonId": "vowel-combination-pa-a",
+  "title": "푸푸 풍선 파 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "pupu",
+    "name": "푸푸 풍선",
+    "letter": "ㅍ",
+    "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/25_파_pa.mp3",
+    "duration": 22.073
+  },
+  "segment": {
+    "label": "파",
+    "start": 0,
+    "end": 22.073
+  },
+  "targetSyllable": "파",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "pupu-character",
+      "label": "푸푸 풍선",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png",
+      "start": 0.2,
+      "end": 4.702,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "pupu-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 4.702,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "pupu-combined",
+      "label": "파",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/푸푸 파 새시안-alpha.png",
+      "start": 4.702,
+      "end": 22.073,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "pa-a-word-1",
+      "label": "파란색",
+      "image": "worksheets/assets/word-pa-blue.png",
+      "start": 17.294,
+      "end": 21.597,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "pa-a-word-2",
+      "label": "파이",
+      "image": "worksheets/assets/word-pa-pie.png",
+      "start": 18.956,
+      "end": 21.597,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "pa-a-word-3",
+      "label": "파인애플",
+      "image": "worksheets/assets/word-pa-pineapple.png",
+      "start": 19.873,
+      "end": 21.597,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "pa-a-initial",
+      "label": "ㅍ",
+      "start": 6.889,
+      "end": 16.04,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "pa-a-vowel",
+      "label": "ㅏ",
+      "start": 10.786,
+      "end": 16.04,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "pa-a-combined",
+      "label": "파",
+      "start": 16.04,
+      "end": 17.294,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "pa-a-final",
+      "label": "파",
+      "start": 21.597,
+      "end": 22.073,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "pa-a",
+    "timingFile": "pa-a-card-timings.json"
+  }
+}

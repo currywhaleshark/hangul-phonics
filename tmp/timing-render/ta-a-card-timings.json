@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "ta-a",
+  "lessonId": "vowel-combination-ta-a",
+  "title": "토토 토끼 타 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "toto",
+    "name": "토토 토끼",
+    "letter": "ㅌ",
+    "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/23_타_ta.mp3",
+    "duration": 21.324
+  },
+  "segment": {
+    "label": "타",
+    "start": 0,
+    "end": 21.324
+  },
+  "targetSyllable": "타",
+  "vowel": {
+    "key": "aa",
+    "letter": "ㅏ",
+    "sound": "아",
+    "toolLabel": "아아 나뭇가지",
+    "toolImage": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "toto-character",
+      "label": "토토 토끼",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png",
+      "start": 0.2,
+      "end": 3.926,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "toto-tool",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 3.926,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "toto-combined",
+      "label": "타",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/토토 타 새시안-alpha.png",
+      "start": 3.926,
+      "end": 21.324,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ta-a-word-1",
+      "label": "타조",
+      "image": "worksheets/assets/word-ta-ostrich.png",
+      "start": 16.297,
+      "end": 20.922,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ta-a-word-2",
+      "label": "치타",
+      "image": "worksheets/assets/word-ta-cheetah.png",
+      "start": 17.722,
+      "end": 20.922,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "ta-a-word-3",
+      "label": "낙타",
+      "image": "worksheets/assets/word-ta-camel.png",
+      "start": 19.184,
+      "end": 20.922,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ta-a-initial",
+      "label": "ㅌ",
+      "start": 6.3,
+      "end": 14.676,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ta-a-vowel",
+      "label": "ㅏ",
+      "start": 9.506,
+      "end": 14.676,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ta-a-combined",
+      "label": "타",
+      "start": 14.676,
+      "end": 16.297,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ta-a-final",
+      "label": "타",
+      "start": 20.922,
+      "end": 21.324,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ta-a",
+    "timingFile": "ta-a-card-timings.json"
+  }
+}

@@ -7,3 +7,7 @@ dist/
 worksheets/*.log
 worksheets/*.pid
 worksheets/*.jobid
+secrets/
+client_secret*.json
+*oauth*token*.json
+youtube-token*.json

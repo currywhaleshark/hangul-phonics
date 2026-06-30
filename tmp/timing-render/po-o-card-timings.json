@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "po-o",
+  "lessonId": "vowel-combination-po-o",
+  "title": "푸푸 풍선 포 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "pupu",
+    "name": "푸푸 풍선",
+    "letter": "ㅍ",
+    "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/26_포_po.mp3",
+    "duration": 21.171
+  },
+  "segment": {
+    "label": "포",
+    "start": 0,
+    "end": 21.171
+  },
+  "targetSyllable": "포",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "pupu-character",
+      "label": "푸푸 풍선",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png",
+      "start": 0.078,
+      "end": 4.119,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "pupu-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 4.089,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "pupu-combined",
+      "label": "포",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/푸푸 포 새시안-alpha.png",
+      "start": 4.089,
+      "end": 21.171,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "po-o-word-1",
+      "label": "포도",
+      "image": "worksheets/assets/word-po-grapes.png",
+      "start": 16.5,
+      "end": 20.737,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "po-o-word-2",
+      "label": "포크",
+      "image": "worksheets/assets/word-po-fork.png",
+      "start": 17.609,
+      "end": 20.737,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "po-o-word-3",
+      "label": "폭포",
+      "image": "worksheets/assets/word-po-waterfall.png",
+      "start": 19.164,
+      "end": 20.737,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "po-o-initial",
+      "label": "ㅍ",
+      "start": 6.83,
+      "end": 14.872,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "po-o-vowel",
+      "label": "ㅗ",
+      "start": 9.791,
+      "end": 14.872,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "po-o-combined",
+      "label": "포",
+      "start": 14.872,
+      "end": 16.5,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "po-o-final",
+      "label": "포",
+      "start": 20.737,
+      "end": 21.171,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "po-o",
+    "timingFile": "po-o-card-timings.json"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "id": "to-o",
+  "lessonId": "vowel-combination-to-o",
+  "title": "토토 토끼 토 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "toto",
+    "name": "토토 토끼",
+    "letter": "ㅌ",
+    "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/24_토_to.mp3",
+    "duration": 22.503
+  },
+  "segment": {
+    "label": "토",
+    "start": 0,
+    "end": 22.503
+  },
+  "targetSyllable": "토",
+  "vowel": {
+    "key": "oo",
+    "letter": "ㅗ",
+    "sound": "오",
+    "toolLabel": "오오 상자",
+    "toolImage": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "toto-character",
+      "label": "토토 토끼",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png",
+      "start": 0.2,
+      "end": 4.621,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "toto-tool",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 4.621,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "toto-combined",
+      "label": "토",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/토토 토 새시안-alpha.png",
+      "start": 4.621,
+      "end": 22.503,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "to-o-word-1",
+      "label": "토끼",
+      "image": "worksheets/assets/word-to-rabbit.png",
+      "start": 17.539,
+      "end": 21.892,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "to-o-word-2",
+      "label": "토마토",
+      "image": "worksheets/assets/word-to-tomato.png",
+      "start": 18.725,
+      "end": 21.892,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "to-o-word-3",
+      "label": "토끼풀",
+      "image": "worksheets/assets/word-to-clover.png",
+      "start": 20.075,
+      "end": 21.892,
+      "position": {
+        "left": 88.263,
+        "top": 79.123
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "to-o-initial",
+      "label": "ㅌ",
+      "start": 6.541,
+      "end": 15.576,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "to-o-vowel",
+      "label": "ㅗ",
+      "start": 10.006,
+      "end": 15.576,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "to-o-combined",
+      "label": "토",
+      "start": 15.576,
+      "end": 17.539,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "to-o-final",
+      "label": "토",
+      "start": 21.892,
+      "end": 22.503,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "to-o",
+    "timingFile": "to-o-card-timings.json"
+  }
+}
