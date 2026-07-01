@@ -462,7 +462,7 @@ expectedLessons.push(
     title: "15레슨 아아 아기와 새 모음: 야/여/요/유를 만들어요",
     letters: "ㅇ/ㅑ/ㅕ/ㅛ/ㅠ/야/여/요/유",
     pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "word-card", "sound-choice"],
-    storyImages: ["아아 아기 야 시안.png", "아아 아기 여 시안.png", "요요 그네 시안.png", "유유 의자 시안.png"],
+    storyImages: ["아아 아기 야 나뭇가지 노드방출 생성.png", "아아 아기 여 풍선 노드방출 생성.png", "요요 그네 시안.png", "유유 의자 시안.png"],
     storyCaptions: ["ㅇ이 ㅑ를 만나, 야!", "ㅇ이 ㅕ를 만나, 여!", "ㅇ이 ㅛ를 만나, 요!", "ㅇ이 ㅠ를 만나, 유!"],
     builds: [["ㅇ", "ㅑ", "야"], ["ㅇ", "ㅕ", "여"], ["ㅇ", "ㅛ", "요"], ["ㅇ", "ㅠ", "유"]],
     reviewSounds: ["야", "여", "요", "유"],
@@ -577,3 +577,4 @@ for (const expected of expectedLessons) {
   assert.match(html, /sound-choice-grid/);
   assert.match(html, /sound-choice-image/);
 }
+

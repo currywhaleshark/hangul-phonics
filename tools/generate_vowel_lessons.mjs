@@ -1047,8 +1047,8 @@ lessons.push({
     title: "아아 아기가 새 모음 친구를 만나요",
     read: "조용히 기다리는 ㅇ 자리에 ㅑ, ㅕ, ㅛ, ㅠ 모음 친구들이 차례로 와요. 입 모양을 바꾸며 야, 여, 요, 유를 말해요.",
     panels: [
-      { image: "../../../public/아아 아기 야 시안.png", caption: "ㅇ이 ㅑ를 만나, 야!" },
-      { image: "../../../public/아아 아기 여 시안.png", caption: "ㅇ이 ㅕ를 만나, 여!" },
+      { image: "../../../public/아아 아기 야 나뭇가지 노드방출 생성.png", caption: "ㅇ이 ㅑ를 만나, 야!" },
+      { image: "../../../public/아아 아기 여 풍선 노드방출 생성.png", caption: "ㅇ이 ㅕ를 만나, 여!" },
       { image: "../../../public/요요 그네 시안.png", caption: "ㅇ이 ㅛ를 만나, 요!" },
       { image: "../../../public/유유 의자 시안.png", caption: "ㅇ이 ㅠ를 만나, 유!" },
     ],
@@ -1060,7 +1060,7 @@ lessons.push({
     activity({
       title: "ㅇ과 ㅑ가 만나면 야",
       read: "아아 아기가 야야 두 나뭇가지를 만나 야! 입을 크게 열고 같이 말해요.",
-      heroImage: "../../../public/아아 아기 야 시안.png",
+      heroImage: "../../../public/아아 아기 야 나뭇가지 노드방출 생성.png",
       traceLetter: "야",
       buildPieces: ["ㅇ", "ㅑ", "야"],
       soundSteps: [
@@ -1074,7 +1074,7 @@ lessons.push({
     activity({
       title: "ㅇ과 ㅕ가 만나면 여",
       read: "아아 아기가 여여 두 풍선을 만나 여! 입을 부드럽게 열고 같이 말해요.",
-      heroImage: "../../../public/아아 아기 여 시안.png",
+      heroImage: "../../../public/아아 아기 여 풍선 노드방출 생성.png",
       traceLetter: "여",
       buildPieces: ["ㅇ", "ㅕ", "여"],
       soundSteps: [
@@ -1243,3 +1243,4 @@ for (const lesson of lessons) {
 await writeManifest();
 
 console.log(`Wrote ${lessons.length} grouped vowel lesson folders to ${root}`);
+
