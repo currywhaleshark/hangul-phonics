@@ -57,6 +57,11 @@
           "sound": "카!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=RfswEZUIwD8",
+        "image": "../../../public/qr/youtube/RfswEZUIwD8.png"
+      },
       "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고, 오른쪽의 ㅏ를 붙여 카를 읽는다.",
       "footerLeft": "ㅋ + ㅏ = 카",
       "footerRight": "코코 코알라와 카"
@@ -89,6 +94,11 @@
           "sound": "코!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=s3-kXgPOD5w",
+        "image": "../../../public/qr/youtube/s3-kXgPOD5w.png"
+      },
       "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고, 아래의 ㅗ 상자를 붙여 코를 읽는다.",
       "footerLeft": "ㅋ + ㅗ = 코",
       "footerRight": "코코 코알라와 코"
@@ -121,6 +131,11 @@
           "sound": "타!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=A0xCq0A_p7Q",
+        "image": "../../../public/qr/youtube/A0xCq0A_p7Q.png"
+      },
       "teacherNote": "토토 몸의 ㅌ 톡톡 길을 손가락으로 따라가고, 오른쪽의 ㅏ를 붙여 타를 읽는다.",
       "footerLeft": "ㅌ + ㅏ = 타",
       "footerRight": "토토 토끼와 타"
@@ -153,6 +168,11 @@
           "sound": "토!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=XJ6BeuG5usk",
+        "image": "../../../public/qr/youtube/XJ6BeuG5usk.png"
+      },
       "teacherNote": "토토 몸의 ㅌ 톡톡 길을 손가락으로 따라가고, 아래의 ㅗ 상자를 붙여 토를 읽는다.",
       "footerLeft": "ㅌ + ㅗ = 토",
       "footerRight": "토토 토끼와 토"

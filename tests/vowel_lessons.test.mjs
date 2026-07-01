@@ -1,9 +1,23 @@
 import assert from "node:assert/strict";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = path.resolve("lessons", "vowels");
+
+function pngSize(filePath) {
+  const png = readFileSync(filePath);
+  assert.ok(png.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])), `${filePath} should be a PNG`);
+  return [png.readUInt32BE(16), png.readUInt32BE(20)];
+}
+
+assert.ok(
+  existsSync(path.resolve("tools", "compose_aa_baby_y_vowel_heroes.mjs")),
+  "ya/yeo baby hero images should be reproducible from reference PNGs"
+);
+for (const imageName of ["\uc544\uc544 \uc544\uae30 \uc57c \uc2dc\uc548.png", "\uc544\uc544 \uc544\uae30 \uc5ec \uc2dc\uc548.png"]) {
+  assert.deepEqual(pngSize(path.resolve("public", imageName)), [1254, 1254], `${imageName} should match worksheet hero size`);
+}
 const expectedLessons = [
   {
     id: "lesson-01-aa-baby-vowel",
@@ -443,7 +457,30 @@ expectedLessons.push(
     ]),
     reviewSounds: ["커", "쿠", "크", "키", "터", "투", "트", "티", "퍼", "푸", "프", "피"],
   },
-);
+  {
+    id: "lesson-15-ya-yeo-yo-yu-vowel",
+    title: "15레슨 아아 아기와 새 모음: 야/여/요/유를 만들어요",
+    letters: "ㅇ/ㅑ/ㅕ/ㅛ/ㅠ/야/여/요/유",
+    pageTypes: ["story", "vowel-activity", "vowel-activity", "vowel-activity", "vowel-activity", "word-card", "sound-choice"],
+    storyImages: ["아아 아기 야 시안.png", "아아 아기 여 시안.png", "요요 그네 시안.png", "유유 의자 시안.png"],
+    storyCaptions: ["ㅇ이 ㅑ를 만나, 야!", "ㅇ이 ㅕ를 만나, 여!", "ㅇ이 ㅛ를 만나, 요!", "ㅇ이 ㅠ를 만나, 유!"],
+    builds: [["ㅇ", "ㅑ", "야"], ["ㅇ", "ㅕ", "여"], ["ㅇ", "ㅛ", "요"], ["ㅇ", "ㅠ", "유"]],
+    reviewSounds: ["야", "여", "요", "유"],
+    wordCards: [
+      { word: "야구공", focus: "야", rest: "구공", image: "word-ya-baseball.png" },
+      { word: "야채", focus: "야", rest: "채", image: "word-ya-vegetables.png" },
+      { word: "야자", focus: "야", rest: "자", image: "word-ya-palm.png" },
+      { word: "여우", focus: "여", rest: "우", image: "word-yeo-fox.png" },
+      { word: "여름", focus: "여", rest: "름", image: "word-yeo-summer.png" },
+      { word: "여자", focus: "여", rest: "자", image: "word-yeo-woman.png" },
+      { word: "요리", focus: "요", rest: "리", image: "word-yo-cooking.png" },
+      { word: "요정", focus: "요", rest: "정", image: "word-yo-fairy.png" },
+      { word: "요구르트", focus: "요", rest: "구르트", image: "word-yo-yogurt.png" },
+      { word: "유리", focus: "유", rest: "리", image: "word-yu-glass.png" },
+      { word: "유치원", focus: "유", rest: "치원", image: "word-yu-kindergarten.png" },
+      { word: "유령", focus: "유", rest: "령", image: "word-yu-ghost.png" },
+    ],
+  },);
 
 assert.ok(existsSync(root), "vowel lessons folder should exist");
 assert.ok(existsSync(path.join(root, "manifest.json")), "vowel manifest should exist");

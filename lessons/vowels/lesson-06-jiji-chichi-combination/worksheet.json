@@ -57,6 +57,11 @@
           "sound": "자!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=uEHrSncgf4c",
+        "image": "../../../public/qr/youtube/uEHrSncgf4c.png"
+      },
       "teacherNote": "지지의 ㅈ 길을 손가락으로 따라가고, 오른쪽의 ㅏ를 붙여 자를 읽는다.",
       "footerLeft": "ㅈ + ㅏ = 자",
       "footerRight": "지지 지렁이와 자"
@@ -89,6 +94,11 @@
           "sound": "조!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=K5d67yqyz38",
+        "image": "../../../public/qr/youtube/K5d67yqyz38.png"
+      },
       "teacherNote": "지지의 ㅈ 길을 손가락으로 따라가고, 아래의 ㅗ 상자를 붙여 조를 읽는다.",
       "footerLeft": "ㅈ + ㅗ = 조",
       "footerRight": "지지 지렁이와 조"
@@ -121,6 +131,11 @@
           "sound": "차!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=wz-3bVHwoK0",
+        "image": "../../../public/qr/youtube/wz-3bVHwoK0.png"
+      },
       "teacherNote": "치치의 ㅊ 칙칙 길을 손가락으로 따라가고, 오른쪽의 ㅏ를 붙여 차를 읽는다.",
       "footerLeft": "ㅊ + ㅏ = 차",
       "footerRight": "치치 칙폭이와 차"
@@ -153,6 +168,11 @@
           "sound": "초!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=0R79bKEtWyY",
+        "image": "../../../public/qr/youtube/0R79bKEtWyY.png"
+      },
       "teacherNote": "치치의 ㅊ 칙칙 길을 손가락으로 따라가고, 아래의 ㅗ 상자를 붙여 초를 읽는다.",
       "footerLeft": "ㅊ + ㅗ = 초",
       "footerRight": "치치 칙폭이와 초"

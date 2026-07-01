@@ -6,6 +6,49 @@ import { renderWorksheetDocument } from "../worksheets/worksheet-renderer.js";
 const root = path.resolve("lessons", "vowels");
 const cssHref = "../../../worksheets/pilot-a4.css";
 
+const youtubeVideoIdsByTraceLetter = new Map([
+  ["\uC544", "jiq5R5GOnSY"],
+  ["\uC624", "SM-5rr_zXMg"],
+  ["\uC6B0", "veGNGGLLHog"],
+  ["\uAC00", "kelf8prIzZs"],
+  ["\uACE0", "sE3Jg8d3sVY"],
+  ["\uB098", "pyCIALZkmWE"],
+  ["\uB178", "KCIuIU02VY0"],
+  ["\uB9C8", "Hn75Y3buYKM"],
+  ["\uBAA8", "MvawirDWxi0"],
+  ["\uBC14", "_gwoud3LLY0"],
+  ["\uBCF4", "Mrc6LVK_cCo"],
+  ["\uB2E4", "HbqQr3GkrM4"],
+  ["\uB3C4", "u9MoqgDZVrM"],
+  ["\uB77C", "BorMu32CkVg"],
+  ["\uB85C", "u87LLzQ1LD4"],
+  ["\uC0AC", "pw8Y4tBPc8g"],
+  ["\uC18C", "uH7yFiacwhI"],
+  ["\uD558", "E-A_L0fKROs"],
+  ["\uD638", "90LTsoehtEE"],
+  ["\uC790", "uEHrSncgf4c"],
+  ["\uC870", "K5d67yqyz38"],
+  ["\uCC28", "wz-3bVHwoK0"],
+  ["\uCD08", "0R79bKEtWyY"],
+  ["\uCE74", "RfswEZUIwD8"],
+  ["\uCF54", "s3-kXgPOD5w"],
+  ["\uD0C0", "A0xCq0A_p7Q"],
+  ["\uD1A0", "XJ6BeuG5usk"],
+  ["\uD30C", "EfK79cZhmh4"],
+  ["\uD3EC", "f0DpJkwnBiM"],
+]);
+
+function videoQrForTraceLetter(traceLetter) {
+  const videoId = youtubeVideoIdsByTraceLetter.get(traceLetter);
+  if (!videoId) return undefined;
+
+  return {
+    label: "\uC601\uC0C1 \uBCF4\uAE30",
+    url: `https://www.youtube.com/watch?v=${videoId}`,
+    image: `../../../public/qr/youtube/${videoId}.png`,
+  };
+}
+
 function soundSteps(name, consonant, consonantSound, vowelTool, vowel, vowelSound, result) {
   return [
     { label: `${name} ${consonant} 소리`, sound: consonantSound },
@@ -996,6 +1039,110 @@ const lessons = [
 ];
 
 lessons.push(...vowelExpansionGroups.map(vowelExpansionLesson));
+lessons.push({
+  folder: "lesson-15-ya-yeo-yo-yu-vowel",
+  title: "15레슨 아아 아기와 새 모음: 야/여/요/유를 만들어요",
+  letters: "ㅇ/ㅑ/ㅕ/ㅛ/ㅠ/야/여/요/유",
+  story: {
+    title: "아아 아기가 새 모음 친구를 만나요",
+    read: "조용히 기다리는 ㅇ 자리에 ㅑ, ㅕ, ㅛ, ㅠ 모음 친구들이 차례로 와요. 입 모양을 바꾸며 야, 여, 요, 유를 말해요.",
+    panels: [
+      { image: "../../../public/아아 아기 야 시안.png", caption: "ㅇ이 ㅑ를 만나, 야!" },
+      { image: "../../../public/아아 아기 여 시안.png", caption: "ㅇ이 ㅕ를 만나, 여!" },
+      { image: "../../../public/요요 그네 시안.png", caption: "ㅇ이 ㅛ를 만나, 요!" },
+      { image: "../../../public/유유 의자 시안.png", caption: "ㅇ이 ㅠ를 만나, 유!" },
+    ],
+    teacherNote: "ㅇ은 첫소리 자리에서 조용히 기다리고, 오른쪽에 붙는 ㅑ/ㅕ와 아래에 붙는 ㅛ/ㅠ의 자리를 비교하며 야/여/요/유를 읽는다.",
+    footerLeft: "그림 이야기",
+    footerRight: "아아 아기와 야/여/요/유",
+  },
+  activities: [
+    activity({
+      title: "ㅇ과 ㅑ가 만나면 야",
+      read: "아아 아기가 야야 두 나뭇가지를 만나 야! 입을 크게 열고 같이 말해요.",
+      heroImage: "../../../public/아아 아기 야 시안.png",
+      traceLetter: "야",
+      buildPieces: ["ㅇ", "ㅑ", "야"],
+      soundSteps: [
+        { label: "아아 아기 자리", sound: "쉿!" },
+        { label: "야야 두 나뭇가지 ㅑ 소리", sound: "야!" },
+        { label: "합치면", sound: "야!" },
+      ],
+      teacherNote: "큰 글자 야를 손가락으로 천천히 따라간 뒤, ㅇ 오른쪽에 ㅑ를 붙여 야를 만든다.",
+      footerRight: "아아 아기와 야",
+    }),
+    activity({
+      title: "ㅇ과 ㅕ가 만나면 여",
+      read: "아아 아기가 여여 두 풍선을 만나 여! 입을 부드럽게 열고 같이 말해요.",
+      heroImage: "../../../public/아아 아기 여 시안.png",
+      traceLetter: "여",
+      buildPieces: ["ㅇ", "ㅕ", "여"],
+      soundSteps: [
+        { label: "아아 아기 자리", sound: "쉿!" },
+        { label: "여여 두 풍선 ㅕ 소리", sound: "여!" },
+        { label: "합치면", sound: "여!" },
+      ],
+      teacherNote: "큰 글자 여를 손가락으로 천천히 따라간 뒤, ㅇ 오른쪽에 ㅕ를 붙여 여를 만든다.",
+      footerRight: "아아 아기와 여",
+    }),
+    activity({
+      title: "ㅇ과 ㅛ가 만나면 요",
+      read: "아아 아기가 요요 그네를 만나 요! 입을 동그랗게 하고 같이 말해요.",
+      heroImage: "../../../public/요요 그네 시안.png",
+      traceLetter: "요",
+      buildPieces: ["ㅇ", "ㅛ", "요"],
+      soundSteps: [
+        { label: "아아 아기 자리", sound: "쉿!" },
+        { label: "요요 그네 ㅛ 소리", sound: "요!" },
+        { label: "합치면", sound: "요!" },
+      ],
+      teacherNote: "큰 글자 요를 손가락으로 천천히 따라간 뒤, ㅇ 아래에 ㅛ를 붙여 요를 만든다.",
+      footerRight: "아아 아기와 요",
+    }),
+    activity({
+      title: "ㅇ과 ㅠ가 만나면 유",
+      read: "아아 아기가 유유 의자를 만나 유! 입을 앞으로 모으고 같이 말해요.",
+      heroImage: "../../../public/유유 의자 시안.png",
+      traceLetter: "유",
+      buildPieces: ["ㅇ", "ㅠ", "유"],
+      soundSteps: [
+        { label: "아아 아기 자리", sound: "쉿!" },
+        { label: "유유 의자 ㅠ 소리", sound: "유!" },
+        { label: "합치면", sound: "유!" },
+      ],
+      teacherNote: "큰 글자 유를 손가락으로 천천히 따라간 뒤, ㅇ 아래에 ㅠ를 붙여 유를 만든다.",
+      footerRight: "아아 아기와 유",
+      wordCards: {
+        focus: "야",
+        title: "야/여/요/유가 들어가는 낱말",
+        read: "야, 여, 요, 유가 들어 있는 쉬운 낱말을 그림으로 만나요.",
+        activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+        cards: [
+          { word: "야구공", focus: "야", rest: "구공", image: "../../../worksheets/assets/word-ya-baseball.png" },
+          { word: "야채", focus: "야", rest: "채", image: "../../../worksheets/assets/word-ya-vegetables.png" },
+          { word: "야자", focus: "야", rest: "자", image: "../../../worksheets/assets/word-ya-palm.png" },
+          { word: "여우", focus: "여", rest: "우", image: "../../../worksheets/assets/word-yeo-fox.png" },
+          { word: "여름", focus: "여", rest: "름", image: "../../../worksheets/assets/word-yeo-summer.png" },
+          { word: "여자", focus: "여", rest: "자", image: "../../../worksheets/assets/word-yeo-woman.png" },
+          { word: "요리", focus: "요", rest: "리", image: "../../../worksheets/assets/word-yo-cooking.png" },
+          { word: "요정", focus: "요", rest: "정", image: "../../../worksheets/assets/word-yo-fairy.png" },
+          { word: "요구르트", focus: "요", rest: "구르트", image: "../../../worksheets/assets/word-yo-yogurt.png" },
+          { word: "유리", focus: "유", rest: "리", image: "../../../worksheets/assets/word-yu-glass.png" },
+          { word: "유치원", focus: "유", rest: "치원", image: "../../../worksheets/assets/word-yu-kindergarten.png" },
+          { word: "유령", focus: "유", rest: "령", image: "../../../worksheets/assets/word-yu-ghost.png" },
+        ],
+        teacherNote: "낱말 전체 읽기를 요구하지 않고 오늘 배운 야/여/요/유 음절만 찾아본다.",
+        footerLeft: "배운 글자 야/여/요/유",
+        footerRight: "야/여/요/유 낱말카드",
+      },
+    }),
+  ],
+  review: {
+    sounds: ["야", "여", "요", "유"],
+    builds: [["ㅇ", "ㅑ", "야"], ["ㅇ", "ㅕ", "여"], ["ㅇ", "ㅛ", "요"], ["ㅇ", "ㅠ", "유"]],
+    footerRight: "아아 아기와 야/여/요/유",
+  },
+});
 
 function worksheetForLesson(lesson) {
   const reviewChunks = chunkItems(lesson.activities, 4);
@@ -1023,6 +1170,7 @@ function worksheetForLesson(lesson) {
       activityTitle: item.activityTitle || "보고 따라 그리고 붙여서 만들어요",
       buildPieces: item.buildPieces,
       soundSteps: item.soundSteps,
+      videoQr: videoQrForTraceLetter(item.traceLetter),
       teacherNote: item.teacherNote,
       footerLeft: item.footerLeft,
       footerRight: item.footerRight,

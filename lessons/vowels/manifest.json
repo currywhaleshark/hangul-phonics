@@ -105,6 +105,13 @@
       "letters": "ㅋ/ㅌ/ㅍ/ㅓ/ㅜ/ㅡ/ㅣ/커/쿠/크/키/터/투/트/티/퍼/푸/프/피",
       "worksheetPath": "../lessons/vowels/lesson-14-koko-toto-pupu-vowel-expansion/worksheet.json",
       "htmlPath": "../lessons/vowels/lesson-14-koko-toto-pupu-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-15-ya-yeo-yo-yu-vowel",
+      "title": "15레슨 아아 아기와 새 모음: 야/여/요/유를 만들어요",
+      "letters": "ㅇ/ㅑ/ㅕ/ㅛ/ㅠ/야/여/요/유",
+      "worksheetPath": "../lessons/vowels/lesson-15-ya-yeo-yo-yu-vowel/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-15-ya-yeo-yo-yu-vowel/worksheet.html"
     }
   ]
 }

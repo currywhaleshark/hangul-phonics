@@ -57,6 +57,11 @@
           "sound": "가!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=kelf8prIzZs",
+        "image": "../../../public/qr/youtube/kelf8prIzZs.png"
+      },
       "teacherNote": "고고 꼬리 위의 ㄱ을 손가락으로 짚고, 오른쪽의 ㅏ를 붙여 가를 읽는다.",
       "footerLeft": "ㄱ + ㅏ = 가",
       "footerRight": "고고 고양이와 가"
@@ -89,6 +94,11 @@
           "sound": "고!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=sE3Jg8d3sVY",
+        "image": "../../../public/qr/youtube/sE3Jg8d3sVY.png"
+      },
       "teacherNote": "고고 꼬리의 ㄱ 모양을 유지하고, 아래의 ㅗ 상자를 붙여 고를 만든다.",
       "footerLeft": "ㄱ + ㅗ = 고",
       "footerRight": "고고 고양이와 고"
@@ -121,6 +131,11 @@
           "sound": "나!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=pyCIALZkmWE",
+        "image": "../../../public/qr/youtube/pyCIALZkmWE.png"
+      },
       "teacherNote": "나나가 앉은 ㄴ 모양 나무를 따라가고, 오른쪽의 ㅏ를 붙여 나를 읽는다.",
       "footerLeft": "ㄴ + ㅏ = 나",
       "footerRight": "나나 나비와 나"
@@ -153,6 +168,11 @@
           "sound": "노!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=KCIuIU02VY0",
+        "image": "../../../public/qr/youtube/KCIuIU02VY0.png"
+      },
       "teacherNote": "나무의 ㄴ 모양을 유지하고, 아래의 ㅗ 상자를 붙여 노를 만든다.",
       "footerLeft": "ㄴ + ㅗ = 노",
       "footerRight": "나나 나비와 노"

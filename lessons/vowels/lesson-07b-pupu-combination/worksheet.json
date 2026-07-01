@@ -49,6 +49,11 @@
           "sound": "파!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=EfK79cZhmh4",
+        "image": "../../../public/qr/youtube/EfK79cZhmh4.png"
+      },
       "teacherNote": "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고, 오른쪽의 ㅏ를 붙여 파를 읽는다.",
       "footerLeft": "ㅍ + ㅏ = 파",
       "footerRight": "푸푸 풍선와 파"
@@ -81,6 +86,11 @@
           "sound": "포!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=f0DpJkwnBiM",
+        "image": "../../../public/qr/youtube/f0DpJkwnBiM.png"
+      },
       "teacherNote": "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고, 아래의 ㅗ 상자를 붙여 포를 읽는다.",
       "footerLeft": "ㅍ + ㅗ = 포",
       "footerRight": "푸푸 풍선와 포"

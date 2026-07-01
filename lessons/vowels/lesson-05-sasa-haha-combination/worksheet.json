@@ -57,6 +57,11 @@
           "sound": "사!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=pw8Y4tBPc8g",
+        "image": "../../../public/qr/youtube/pw8Y4tBPc8g.png"
+      },
       "teacherNote": "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고, 오른쪽의 ㅏ를 붙여 사를 읽는다.",
       "footerLeft": "ㅅ + ㅏ = 사",
       "footerRight": "사사 사슴와 사"
@@ -89,6 +94,11 @@
           "sound": "소!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=uH7yFiacwhI",
+        "image": "../../../public/qr/youtube/uH7yFiacwhI.png"
+      },
       "teacherNote": "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고, 아래의 ㅗ 상자를 붙여 소를 읽는다.",
       "footerLeft": "ㅅ + ㅗ = 소",
       "footerRight": "사사 사슴와 소"
@@ -121,6 +131,11 @@
           "sound": "하!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=E-A_L0fKROs",
+        "image": "../../../public/qr/youtube/E-A_L0fKROs.png"
+      },
       "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고, 오른쪽의 ㅏ를 붙여 하를 읽는다.",
       "footerLeft": "ㅎ + ㅏ = 하",
       "footerRight": "하하 하마와 하"
@@ -153,6 +168,11 @@
           "sound": "호!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=90LTsoehtEE",
+        "image": "../../../public/qr/youtube/90LTsoehtEE.png"
+      },
       "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고, 아래의 ㅗ 상자를 붙여 호를 읽는다.",
       "footerLeft": "ㅎ + ㅗ = 호",
       "footerRight": "하하 하마와 호"

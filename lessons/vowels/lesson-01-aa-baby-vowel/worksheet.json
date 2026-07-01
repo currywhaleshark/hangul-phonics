@@ -53,14 +53,14 @@
           "sound": "아!"
         }
       ],
-      "teacherNote": "큰 글자 아를 손가락으로 천천히 따라간 뒤, ㅇ 옆에 ㅏ를 붙여 아를 만든다.",
-      "footerLeft": "ㅇ + ㅏ = 아",
-      "footerRight": "아아 아기와 아",
       "videoQr": {
         "label": "영상 보기",
         "url": "https://www.youtube.com/watch?v=jiq5R5GOnSY",
         "image": "../../../public/qr/youtube/jiq5R5GOnSY.png"
-      }
+      },
+      "teacherNote": "큰 글자 아를 손가락으로 천천히 따라간 뒤, ㅇ 옆에 ㅏ를 붙여 아를 만든다.",
+      "footerLeft": "ㅇ + ㅏ = 아",
+      "footerRight": "아아 아기와 아"
     },
     {
       "type": "vowel-activity",
@@ -90,14 +90,14 @@
           "sound": "오!"
         }
       ],
-      "teacherNote": "큰 글자 오를 손가락으로 따라간 뒤, ㅇ 아래에 ㅗ를 붙여 오를 만든다.",
-      "footerLeft": "ㅇ + ㅗ = 오",
-      "footerRight": "아아 아기와 오",
       "videoQr": {
         "label": "영상 보기",
         "url": "https://www.youtube.com/watch?v=SM-5rr_zXMg",
         "image": "../../../public/qr/youtube/SM-5rr_zXMg.png"
-      }
+      },
+      "teacherNote": "큰 글자 오를 손가락으로 따라간 뒤, ㅇ 아래에 ㅗ를 붙여 오를 만든다.",
+      "footerLeft": "ㅇ + ㅗ = 오",
+      "footerRight": "아아 아기와 오"
     },
     {
       "type": "vowel-activity",
@@ -127,14 +127,14 @@
           "sound": "우!"
         }
       ],
-      "teacherNote": "큰 글자 우를 손가락으로 따라간 뒤, ㅇ 아래에 ㅜ를 붙여 우를 만든다.",
-      "footerLeft": "ㅇ + ㅜ = 우",
-      "footerRight": "아아 아기와 우",
       "videoQr": {
         "label": "영상 보기",
         "url": "https://www.youtube.com/watch?v=veGNGGLLHog",
         "image": "../../../public/qr/youtube/veGNGGLLHog.png"
-      }
+      },
+      "teacherNote": "큰 글자 우를 손가락으로 따라간 뒤, ㅇ 아래에 ㅜ를 붙여 우를 만든다.",
+      "footerLeft": "ㅇ + ㅜ = 우",
+      "footerRight": "아아 아기와 우"
     },
     {
       "type": "word-card",

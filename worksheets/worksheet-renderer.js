@@ -80,14 +80,14 @@ function renderVideoQr(page) {
 }
 
 function pageHeader(page) {
+  const videoQr = renderVideoQr(page);
   return `
         <div class="page-kicker">${escapeHtml(page.kicker)}</div>
         <div class="title-row">
-          <h1>${escapeHtml(page.title)}</h1>
-          ${renderVideoQr(page)}
+          <h1>${escapeHtml(page.title)}</h1>${videoQr ? `
+          ${videoQr}` : ""}
         </div>`;
 }
-
 function imageOrFill(item) {
   if (item.image) {
     return `<div class="spot-image"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.label)}"></div>`;

@@ -89,6 +89,11 @@
           "sound": "우!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=veGNGGLLHog",
+        "image": "../../../public/qr/youtube/veGNGGLLHog.png"
+      },
       "teacherNote": "ㅇ 자리를 손가락으로 짚고 아래의 ㅜ 발판을 붙여 우를 읽는다.",
       "footerLeft": "ㅇ + ㅜ = 우",
       "footerRight": "아아 아기와 우"

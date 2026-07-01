@@ -90,6 +90,29 @@ assert.match(
 );
 assert.match(worksheetCss, /\.title-row\s*{[^}]*grid-template-columns:\s*minmax\(0,\s*1fr\)\s+auto/s);
 assert.match(worksheetCss, /\.video-qr\s*{[^}]*width:\s*28mm/s);
+assert.match(
+  worksheetCss,
+  /\.finger-trace-letter\s*{[^}]*font-size:\s*220px/s,
+  "vowel finger-trace letters should nearly fill the trace box"
+);
+
+const noQrPageHtml = renderWorksheetPage({
+  type: "character",
+  theme: "gogo",
+  kicker: "1",
+  title: "No QR page",
+  image: "../../../public/sample-character.png",
+  panelTitle: "Letter",
+  letter: "A",
+  sound: "a",
+  read: "read",
+  activityTitle: "trace",
+  trace: ["A"],
+  teacherNote: "note",
+  footerLeft: "left",
+  footerRight: "right",
+});
+assert.doesNotMatch(noQrPageHtml, /[ \t]+$/m, "worksheet pages without QR should not render whitespace-only title row lines");
 
 const escaped = renderWorksheetPage({
   type: "spot",

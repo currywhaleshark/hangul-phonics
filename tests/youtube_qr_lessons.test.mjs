@@ -74,3 +74,60 @@ for (const page of vowelWorksheet.pages.filter((item) => item.type === "vowel-ac
 }
 
 assert.equal(vowelMatches, expectedVowelVideos.size, "all available vowel videos should be attached to activity pages");
+
+const expectedSyllableVideos = new Map([
+  ["\uAC00", "kelf8prIzZs"],
+  ["\uACE0", "sE3Jg8d3sVY"],
+  ["\uB098", "pyCIALZkmWE"],
+  ["\uB178", "KCIuIU02VY0"],
+  ["\uB9C8", "Hn75Y3buYKM"],
+  ["\uBAA8", "MvawirDWxi0"],
+  ["\uBC14", "_gwoud3LLY0"],
+  ["\uBCF4", "Mrc6LVK_cCo"],
+  ["\uB2E4", "HbqQr3GkrM4"],
+  ["\uB3C4", "u9MoqgDZVrM"],
+  ["\uB77C", "BorMu32CkVg"],
+  ["\uB85C", "u87LLzQ1LD4"],
+  ["\uC0AC", "pw8Y4tBPc8g"],
+  ["\uC18C", "uH7yFiacwhI"],
+  ["\uD558", "E-A_L0fKROs"],
+  ["\uD638", "90LTsoehtEE"],
+  ["\uC790", "uEHrSncgf4c"],
+  ["\uC870", "K5d67yqyz38"],
+  ["\uCC28", "wz-3bVHwoK0"],
+  ["\uCD08", "0R79bKEtWyY"],
+  ["\uCE74", "RfswEZUIwD8"],
+  ["\uCF54", "s3-kXgPOD5w"],
+  ["\uD0C0", "A0xCq0A_p7Q"],
+  ["\uD1A0", "XJ6BeuG5usk"],
+  ["\uD30C", "EfK79cZhmh4"],
+  ["\uD3EC", "f0DpJkwnBiM"],
+]);
+const syllableLessonIds = [
+  "lesson-02-gogo-nana-combination",
+  "lesson-03-mimi-bubu-combination",
+  "lesson-04-dodo-rara-combination",
+  "lesson-05-sasa-haha-combination",
+  "lesson-06-jiji-chichi-combination",
+  "lesson-07a-koko-toto-combination",
+  "lesson-07b-pupu-combination",
+];
+let syllableMatches = 0;
+
+for (const lessonId of syllableLessonIds) {
+  const worksheet = JSON.parse(await readFile(new URL(`../lessons/vowels/${lessonId}/worksheet.json`, import.meta.url), "utf8"));
+  for (const page of worksheet.pages.filter((item) => item.type === "vowel-activity")) {
+    const videoId = expectedSyllableVideos.get(page.traceLetter);
+    if (!videoId) continue;
+    const entry = entriesById.get(videoId);
+    assert.ok(entry, `manifest should include video ${videoId}`);
+    assert.deepEqual(page.videoQr, {
+      label,
+      url: entry.url,
+      image: `../../../public/qr/youtube/${videoId}.png`,
+    });
+    syllableMatches += 1;
+  }
+}
+
+assert.equal(syllableMatches, expectedSyllableVideos.size, "all available syllable videos should be attached to vowel activity pages");

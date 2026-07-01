@@ -57,6 +57,11 @@
           "sound": "마!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Hn75Y3buYKM",
+        "image": "../../../public/qr/youtube/Hn75Y3buYKM.png"
+      },
       "teacherNote": "어항의 ㅁ 네모 길을 한 바퀴 따라가고, 오른쪽의 ㅏ를 붙여 마를 읽는다.",
       "footerLeft": "ㅁ + ㅏ = 마",
       "footerRight": "미미 문어와 마"
@@ -89,6 +94,11 @@
           "sound": "모!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=MvawirDWxi0",
+        "image": "../../../public/qr/youtube/MvawirDWxi0.png"
+      },
       "teacherNote": "어항의 ㅁ 모양을 유지하고, 아래의 ㅗ 상자를 붙여 모를 만든다.",
       "footerLeft": "ㅁ + ㅗ = 모",
       "footerRight": "미미 문어와 모"
@@ -121,6 +131,11 @@
           "sound": "바!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=_gwoud3LLY0",
+        "image": "../../../public/qr/youtube/_gwoud3LLY0.png"
+      },
       "teacherNote": "부부 몸의 ㅂ 두 방 길을 짚고, 오른쪽의 ㅏ를 붙여 바를 읽는다.",
       "footerLeft": "ㅂ + ㅏ = 바",
       "footerRight": "부부 부엉이와 바"
@@ -153,6 +168,11 @@
           "sound": "보!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Mrc6LVK_cCo",
+        "image": "../../../public/qr/youtube/Mrc6LVK_cCo.png"
+      },
       "teacherNote": "부부 몸의 ㅂ 모양을 유지하고, 아래의 ㅗ 상자를 붙여 보를 만든다.",
       "footerLeft": "ㅂ + ㅗ = 보",
       "footerRight": "부부 부엉이와 보"

@@ -57,6 +57,11 @@
           "sound": "다!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=HbqQr3GkrM4",
+        "image": "../../../public/qr/youtube/HbqQr3GkrM4.png"
+      },
       "teacherNote": "도도 몸의 ㄷ 길을 손가락으로 따라가고, 오른쪽의 ㅏ를 붙여 다를 읽는다.",
       "footerLeft": "ㄷ + ㅏ = 다",
       "footerRight": "도도 도토리와 다"
@@ -89,6 +94,11 @@
           "sound": "도!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=u9MoqgDZVrM",
+        "image": "../../../public/qr/youtube/u9MoqgDZVrM.png"
+      },
       "teacherNote": "도도 몸의 ㄷ 길을 손가락으로 따라가고, 아래의 ㅗ 상자를 붙여 도를 읽는다.",
       "footerLeft": "ㄷ + ㅗ = 도",
       "footerRight": "도도 도토리와 도"
@@ -121,6 +131,11 @@
           "sound": "라!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=BorMu32CkVg",
+        "image": "../../../public/qr/youtube/BorMu32CkVg.png"
+      },
       "teacherNote": "라라 리본의 ㄹ 꼬불길을 손가락으로 따라가고, 오른쪽의 ㅏ를 붙여 라를 읽는다.",
       "footerLeft": "ㄹ + ㅏ = 라",
       "footerRight": "라라 리본와 라"
@@ -153,6 +168,11 @@
           "sound": "로!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=u87LLzQ1LD4",
+        "image": "../../../public/qr/youtube/u87LLzQ1LD4.png"
+      },
       "teacherNote": "라라 리본의 ㄹ 꼬불길을 손가락으로 따라가고, 아래의 ㅗ 상자를 붙여 로를 읽는다.",
       "footerLeft": "ㄹ + ㅗ = 로",
       "footerRight": "라라 리본와 로"
