@@ -346,3 +346,32 @@ const denseWordCardPage = renderWorksheetPage({
 
 assert.match(denseWordCardPage, /class="word-card-grid word-card-grid-compact word-card-grid-dense"/);
 assert.match(denseWordCardPage, /<span class="word-card-focus">노<\/span><span class="word-card-rest">란색<\/span>/);
+
+const firstLetterFestivalPage = renderWorksheetPage({
+  type: "first-letter-festival",
+  theme: "gogo",
+  kicker: "마무리 / 1권 복습",
+  title: "소리나라 첫 글자 축제 준비",
+  read: "좋아하는 첫 글자와 그림 낱말을 골라 나만의 첫 글자 책을 만들어요.",
+  activityTitle: "내가 만든 첫 글자 책 준비물",
+  letterSlots: ["가", "나", "마", "사", "아", "와"],
+  wordSlots: ["그림 낱말", "첫 글자", "내 목소리", "가족 칭찬"],
+  bookTitle: "나만의 첫 글자 책",
+  bookPages: [
+    { title: "표지", prompt: "내 이름을 써요" },
+    { title: "내가 고른 첫 글자", prompt: "좋아하는 글자를 붙여요" },
+    { title: "그림 낱말", prompt: "그림 한 장을 붙여요" },
+    { title: "축제 스티커", prompt: "칭찬 스티커를 붙여요" },
+  ],
+  teacherNote: "새 글자 진도가 아니라 1권에서 만난 첫 글자와 그림 낱말을 고르는 복습 활동이다.",
+  footerLeft: "1권 마무리",
+  footerRight: "소리나라 첫 글자 축제",
+});
+
+assert.match(firstLetterFestivalPage, /class="sheet theme-gogo first-letter-festival-sheet"/);
+assert.match(firstLetterFestivalPage, /소리나라 첫 글자 축제 준비/);
+assert.match(firstLetterFestivalPage, /나만의 첫 글자 책/);
+assert.match(firstLetterFestivalPage, /class="festival-letter-slot"/);
+assert.match(firstLetterFestivalPage, /<strong>와<\/strong>/);
+assert.match(firstLetterFestivalPage, /그림 낱말/);
+assert.match(firstLetterFestivalPage, /축제 스티커/);

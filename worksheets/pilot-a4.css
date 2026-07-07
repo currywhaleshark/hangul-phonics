@@ -906,6 +906,120 @@ p {
   font-weight: 900;
 }
 
+.first-letter-festival-sheet .read-box {
+  font-size: 25px;
+}
+
+.first-letter-festival-activity {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.first-letter-festival-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 11px;
+}
+
+.festival-panel {
+  border: 4px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 0 var(--line);
+}
+
+.festival-panel h2 {
+  margin: 0 0 8px;
+  color: var(--theme);
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.festival-letter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.festival-letter-slot {
+  min-height: 31mm;
+  border: 3px dashed var(--theme);
+  border-radius: 16px;
+  background: #fffaf0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.festival-letter-slot strong {
+  color: var(--ink);
+  font-family: 'Malgun Gothic', sans-serif;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.festival-letter-slot span,
+.festival-word-slot span,
+.mini-book-page span {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.festival-word-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.festival-word-slot {
+  min-height: 20mm;
+  border: 3px dashed var(--line);
+  border-radius: 15px;
+  background: #fffaf0;
+  display: grid;
+  grid-template-columns: 32mm minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+}
+
+.festival-word-slot div {
+  height: 12mm;
+  border-bottom: 3px solid var(--line);
+}
+
+.festival-book-panel {
+  grid-column: 1 / -1;
+}
+
+.mini-book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.mini-book-page {
+  min-height: 34mm;
+  border: 3px solid var(--theme);
+  border-radius: 16px;
+  background: #fffaf0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 9px;
+}
+
+.mini-book-page strong {
+  color: var(--ink);
+  font-size: 21px;
+  line-height: 1.15;
+}
+
 .page-footer {
   margin-top: auto;
   display: flex;

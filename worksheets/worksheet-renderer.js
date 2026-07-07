@@ -359,6 +359,66 @@ ${pageHeader(page)}
     </section>`;
 }
 
+function renderFirstLetterFestivalPage(page) {
+  const letterSlots = page.letterSlots || [];
+  const wordSlots = page.wordSlots || [];
+  const bookPages = page.bookPages || [];
+  const letters = letterSlots
+    .map(
+      (letter) => `
+              <div class="festival-letter-slot">
+                <strong>${escapeHtml(letter)}</strong>
+                <span>첫 글자</span>
+              </div>`
+    )
+    .join("");
+  const words = wordSlots
+    .map(
+      (slot) => `
+              <div class="festival-word-slot">
+                <span>${escapeHtml(slot)}</span>
+                <div></div>
+              </div>`
+    )
+    .join("");
+  const book = bookPages
+    .map(
+      (item) => `
+              <div class="mini-book-page">
+                <strong>${escapeHtml(item.title || "")}</strong>
+                <span>${escapeHtml(item.prompt || "")}</span>
+              </div>`
+    )
+    .join("");
+
+  return `
+    <section class="sheet theme-${escapeHtml(page.theme)} first-letter-festival-sheet">
+      <div class="sheet-inner">
+${pageHeader(page)}
+        <div class="read-box">${escapeHtml(page.read)}</div>
+        <div class="activity-box first-letter-festival-activity">
+          <div class="activity-title">${escapeHtml(page.activityTitle)}</div>
+          <div class="first-letter-festival-grid">
+            <div class="festival-panel festival-letter-panel">
+              <h2>좋아하는 첫 글자</h2>
+              <div class="festival-letter-grid">${letters}</div>
+            </div>
+            <div class="festival-panel festival-word-panel">
+              <h2>축제 준비물</h2>
+              <div class="festival-word-grid">${words}</div>
+            </div>
+            <div class="festival-panel festival-book-panel">
+              <h2>${escapeHtml(page.bookTitle || "")}</h2>
+              <div class="mini-book-grid">${book}</div>
+            </div>
+          </div>
+        </div>
+        <div class="teacher-note">${escapeHtml(page.teacherNote)}</div>
+        ${pageFooter(page)}
+      </div>
+    </section>`;
+}
+
 export function renderWorksheetPage(page) {
   if (page.type === "character") return renderCharacterPage(page);
   if (page.type === "spot") return renderSpotPage(page);
@@ -367,6 +427,7 @@ export function renderWorksheetPage(page) {
   if (page.type === "vowel-activity") return renderVowelActivityPage(page);
   if (page.type === "word-card") return renderWordCardPage(page);
   if (page.type === "sound-choice") return renderSoundChoicePage(page);
+  if (page.type === "first-letter-festival") return renderFirstLetterFestivalPage(page);
   throw new Error(`Unsupported worksheet page type: ${page.type}`);
 }
 

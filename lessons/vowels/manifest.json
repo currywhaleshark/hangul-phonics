@@ -107,11 +107,25 @@
       "htmlPath": "../lessons/vowels/lesson-14-koko-toto-pupu-vowel-expansion/worksheet.html"
     },
     {
-      "id": "lesson-15-ya-yeo-yo-yu-vowel",
-      "title": "15레슨 아아 아기와 새 모음: 야/여/요/유를 만들어요",
-      "letters": "ㅇ/ㅑ/ㅕ/ㅛ/ㅠ/야/여/요/유",
-      "worksheetPath": "../lessons/vowels/lesson-15-ya-yeo-yo-yu-vowel/worksheet.json",
-      "htmlPath": "../lessons/vowels/lesson-15-ya-yeo-yo-yu-vowel/worksheet.html"
+      "id": "lesson-15-ya-yeo-vowel",
+      "title": "15레슨 두 줄 세로 모음: 야/여/겨/녀/벼/혀를 만들어요",
+      "letters": "ㅇ/ㅑ/ㅕ/야/여/겨/녀/벼/혀",
+      "worksheetPath": "../lessons/vowels/lesson-15-ya-yeo-vowel/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-15-ya-yeo-vowel/worksheet.html"
+    },
+    {
+      "id": "lesson-16-yo-yu-vowel",
+      "title": "16레슨 두 줄 가로 모음: 요/유/교/규/표/퓨/휴를 만들어요",
+      "letters": "ㅇ/ㅛ/ㅠ/요/유/교/규/표/퓨/휴",
+      "worksheetPath": "../lessons/vowels/lesson-16-yo-yu-vowel/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-16-yo-yu-vowel/worksheet.html"
+    },
+    {
+      "id": "lesson-17-wa-vowel",
+      "title": "17레슨 오오 상자와 아아 나뭇가지: 와/과를 만들어요",
+      "letters": "ㅗ/ㅏ/ㅘ/와/과",
+      "worksheetPath": "../lessons/vowels/lesson-17-wa-vowel/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-17-wa-vowel/worksheet.html"
     }
   ]
 }

@@ -1,0 +1,396 @@
+{
+  "title": "15레슨 두 줄 세로 모음: 야/여/겨/녀/벼/혀를 만들어요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "오른쪽에 두 줄 모음이 붙어요",
+      "read": "오른쪽에 두 줄이 있는 ㅑ와 ㅕ가 와요. ㅇ은 야, 여가 되고, 다른 친구들도 겨, 녀, 벼, 혀로 바뀌어요.",
+      "panels": [
+        {
+          "image": "../../../public/아아 아기 야 나뭇가지 노드방출 생성.png",
+          "caption": "ㅇ이 ㅑ를 만나, 야!"
+        },
+        {
+          "image": "../../../public/아아 아기 여 풍선 노드방출 생성.png",
+          "caption": "ㅇ이 ㅕ를 만나, 여!"
+        },
+        {
+          "image": "../../../public/고고 겨 풍선.png",
+          "caption": "ㄱ이 ㅕ를 만나, 겨!"
+        },
+        {
+          "image": "../../../public/하하 혀 풍선.png",
+          "caption": "ㅎ이 ㅕ를 만나, 혀!"
+        }
+      ],
+      "teacherNote": "이 레슨에서는 오른쪽에 붙는 ㅑ/ㅕ만 다룬다. ㅛ/ㅠ는 다음 레슨에서 따로 소개한다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "두 줄 세로 모음 ㅑ/ㅕ"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㅇ과 ㅑ가 만나면 야",
+      "read": "아아 아기가 야야 두 나뭇가지를 만나 야! 입을 크게 열고 같이 말해요.",
+      "heroImage": "../../../public/아아 아기 야 나뭇가지 노드방출 생성.png",
+      "traceLetter": "야",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅇ",
+        "ㅑ",
+        "야"
+      ],
+      "soundSteps": [
+        {
+          "label": "아아 아기 자리",
+          "sound": "쉿!"
+        },
+        {
+          "label": "야야 두 나뭇가지 ㅑ 소리",
+          "sound": "야!"
+        },
+        {
+          "label": "합치면",
+          "sound": "야!"
+        }
+      ],
+      "teacherNote": "큰 글자 야를 손가락으로 천천히 따라간 뒤, ㅇ 오른쪽에 ㅑ를 붙여 야를 만든다.",
+      "footerLeft": "ㅇ + ㅑ = 야",
+      "footerRight": "아아 아기와 야"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㅇ과 ㅕ가 만나면 여",
+      "read": "아아 아기가 여여 두 풍선을 만나 여! 입을 부드럽게 열고 같이 말해요.",
+      "heroImage": "../../../public/아아 아기 여 풍선 노드방출 생성.png",
+      "traceLetter": "여",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅇ",
+        "ㅕ",
+        "여"
+      ],
+      "soundSteps": [
+        {
+          "label": "아아 아기 자리",
+          "sound": "쉿!"
+        },
+        {
+          "label": "여여 두 풍선 ㅕ 소리",
+          "sound": "여!"
+        },
+        {
+          "label": "합치면",
+          "sound": "여!"
+        }
+      ],
+      "teacherNote": "큰 글자 여를 손가락으로 천천히 따라간 뒤, ㅇ 오른쪽에 ㅕ를 붙여 여를 만든다.",
+      "footerLeft": "ㅇ + ㅕ = 여",
+      "footerRight": "아아 아기와 여"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "4장 / 소리 활동",
+      "title": "ㄱ과 ㅕ가 만나면 겨",
+      "read": "고고 고양이가 여여 두 풍선을 만나 겨! 겨, 겨, 같이 말해요.",
+      "heroImage": "../../../public/고고 겨 풍선.png",
+      "traceLetter": "겨",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㄱ",
+        "ㅕ",
+        "겨"
+      ],
+      "soundSteps": [
+        {
+          "label": "고고 고양이 ㄱ 소리",
+          "sound": "그!"
+        },
+        {
+          "label": "여여 두 풍선 ㅕ 소리",
+          "sound": "여!"
+        },
+        {
+          "label": "합치면",
+          "sound": "겨!"
+        }
+      ],
+      "teacherNote": "ㄱ 오른쪽에 ㅕ를 붙여 겨를 만든다. ㄱ은 짧게, 겨는 한 번에 읽는다.",
+      "footerLeft": "ㄱ + ㅕ = 겨",
+      "footerRight": "고고와 겨"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "5장 / 소리 활동",
+      "title": "ㄴ과 ㅕ가 만나면 녀",
+      "read": "나나 나비가 여여 두 풍선을 만나 녀! 녀, 녀, 같이 말해요.",
+      "heroImage": "../../../public/나나 녀 풍선.png",
+      "traceLetter": "녀",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㄴ",
+        "ㅕ",
+        "녀"
+      ],
+      "soundSteps": [
+        {
+          "label": "나나 나비 ㄴ 소리",
+          "sound": "느!"
+        },
+        {
+          "label": "여여 두 풍선 ㅕ 소리",
+          "sound": "여!"
+        },
+        {
+          "label": "합치면",
+          "sound": "녀!"
+        }
+      ],
+      "teacherNote": "ㄴ 오른쪽에 ㅕ를 붙여 녀를 만든다. 소녀 낱말에서는 두 번째 글자 녀만 찾아본다.",
+      "footerLeft": "ㄴ + ㅕ = 녀",
+      "footerRight": "나나와 녀"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "6장 / 소리 활동",
+      "title": "ㅂ과 ㅕ가 만나면 벼",
+      "read": "부부 부엉이가 여여 두 풍선을 만나 벼! 벼, 벼, 같이 말해요.",
+      "heroImage": "../../../public/부부 벼 풍선.png",
+      "traceLetter": "벼",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅂ",
+        "ㅕ",
+        "벼"
+      ],
+      "soundSteps": [
+        {
+          "label": "부부 부엉이 ㅂ 소리",
+          "sound": "브!"
+        },
+        {
+          "label": "여여 두 풍선 ㅕ 소리",
+          "sound": "여!"
+        },
+        {
+          "label": "합치면",
+          "sound": "벼!"
+        }
+      ],
+      "teacherNote": "ㅂ 오른쪽에 ㅕ를 붙여 벼를 만든다. 아이가 낱말 그림에서 벼를 먼저 가리키게 한다.",
+      "footerLeft": "ㅂ + ㅕ = 벼",
+      "footerRight": "부부와 벼"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "7장 / 소리 활동",
+      "title": "ㅎ과 ㅕ가 만나면 혀",
+      "read": "하하 하마가 여여 두 풍선을 만나 혀! 혀, 혀, 같이 말해요.",
+      "heroImage": "../../../public/하하 혀 풍선.png",
+      "traceLetter": "혀",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅎ",
+        "ㅕ",
+        "혀"
+      ],
+      "soundSteps": [
+        {
+          "label": "하하 하마 ㅎ 소리",
+          "sound": "흐!"
+        },
+        {
+          "label": "여여 두 풍선 ㅕ 소리",
+          "sound": "여!"
+        },
+        {
+          "label": "합치면",
+          "sound": "혀!"
+        }
+      ],
+      "teacherNote": "ㅎ 오른쪽에 ㅕ를 붙여 혀를 만든다. 혀를 너무 오래 내미는 놀이보다 글자 모양 찾기에 집중한다.",
+      "footerLeft": "ㅎ + ㅕ = 혀",
+      "footerRight": "하하와 혀"
+    },
+    {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "ㅑ/ㅕ",
+      "title": "야/여/겨/녀/벼/혀가 들어가는 낱말",
+      "read": "오늘 배운 야, 여, 겨, 녀, 벼, 혀가 들어 있는 쉬운 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "야구공",
+          "focus": "야",
+          "rest": "구공",
+          "image": "../../../worksheets/assets/word-ya-baseball.png"
+        },
+        {
+          "word": "여우",
+          "focus": "여",
+          "rest": "우",
+          "image": "../../../worksheets/assets/word-yeo-fox.png"
+        },
+        {
+          "word": "겨울",
+          "focus": "겨",
+          "rest": "울",
+          "image": "../../../worksheets/assets/word-gyeo-winter.png"
+        },
+        {
+          "word": "소녀",
+          "image": "../../../worksheets/assets/word-nyeo-girl.png",
+          "parts": [
+            {
+              "text": "소"
+            },
+            {
+              "text": "녀",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "벼",
+          "focus": "벼",
+          "rest": "",
+          "image": "../../../worksheets/assets/word-byeo-rice.png"
+        },
+        {
+          "word": "혀",
+          "focus": "혀",
+          "rest": "",
+          "image": "../../../worksheets/assets/word-hyeo-tongue.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 오늘 배운 야/여/겨/녀/벼/혀 음절만 찾아본다.",
+      "footerLeft": "배운 글자 야/여/겨/녀/벼/혀",
+      "footerRight": "ㅑ/ㅕ 낱말카드",
+      "kicker": "8장 / 글자 낱말"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "소리 정리 1/2",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "야",
+          "answer": "야"
+        },
+        {
+          "label": "2번",
+          "sound": "여",
+          "answer": "여"
+        },
+        {
+          "label": "3번",
+          "sound": "겨",
+          "answer": "겨"
+        },
+        {
+          "label": "4번",
+          "sound": "녀",
+          "answer": "녀"
+        }
+      ],
+      "choices": [
+        {
+          "label": "야",
+          "image": "../../../public/아아 아기 야 나뭇가지 노드방출 생성.png",
+          "buildPieces": [
+            "ㅇ",
+            "ㅑ",
+            "야"
+          ]
+        },
+        {
+          "label": "여",
+          "image": "../../../public/아아 아기 여 풍선 노드방출 생성.png",
+          "buildPieces": [
+            "ㅇ",
+            "ㅕ",
+            "여"
+          ]
+        },
+        {
+          "label": "겨",
+          "image": "../../../public/고고 겨 풍선.png",
+          "buildPieces": [
+            "ㄱ",
+            "ㅕ",
+            "겨"
+          ]
+        },
+        {
+          "label": "녀",
+          "image": "../../../public/나나 녀 풍선.png",
+          "buildPieces": [
+            "ㄴ",
+            "ㅕ",
+            "녀"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 야, 2번 여, 3번 겨, 4번 녀.",
+      "footerLeft": "소리 정리",
+      "footerRight": "두 줄 세로 모음 ㅑ/ㅕ"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "소리 정리 2/2",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "벼",
+          "answer": "벼"
+        },
+        {
+          "label": "2번",
+          "sound": "혀",
+          "answer": "혀"
+        }
+      ],
+      "choices": [
+        {
+          "label": "벼",
+          "image": "../../../public/부부 벼 풍선.png",
+          "buildPieces": [
+            "ㅂ",
+            "ㅕ",
+            "벼"
+          ]
+        },
+        {
+          "label": "혀",
+          "image": "../../../public/하하 혀 풍선.png",
+          "buildPieces": [
+            "ㅎ",
+            "ㅕ",
+            "혀"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 벼, 2번 혀.",
+      "footerLeft": "소리 정리",
+      "footerRight": "두 줄 세로 모음 ㅑ/ㅕ"
+    }
+  ]
+}

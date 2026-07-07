@@ -1,0 +1,236 @@
+{
+  "title": "17레슨 오오 상자와 아아 나뭇가지: 와/과를 만들어요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "오와 아가 만나 와가 돼요",
+      "read": "오오 상자 위에 아아 아기가 올라가 나뭇가지를 들어요. 오, 아, 둘이 합쳐 와! 하고 말해요.",
+      "panels": [
+        {
+          "image": "../../../public/오오 상자 시안.png",
+          "caption": "오오 상자가 아래에 있어요."
+        },
+        {
+          "image": "../../../public/아아 아기 나뭇가지 시안.png",
+          "caption": "아아 아기가 나뭇가지를 들어요."
+        },
+        {
+          "image": "../../../public/아아 아기 와 오오상자 나뭇가지.png",
+          "caption": "오와 아가 만나, 와!"
+        }
+      ],
+      "teacherNote": "ㅘ는 ㅗ와 ㅏ가 합쳐진 모음임을 그림으로만 가볍게 보여 준다. 분석보다 '오, 아, 와'의 입 움직임을 따라 말하는 데 집중한다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "오 + 아 = 와"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㅇ과 ㅘ가 만나면 와",
+      "read": "오오 상자 위에 아아 나뭇가지가 올라가 와! 오, 아, 와를 차례로 말해요.",
+      "heroImage": "../../../public/아아 아기 와 오오상자 나뭇가지.png",
+      "traceLetter": "와",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅇ",
+        "ㅘ",
+        "와"
+      ],
+      "soundSteps": [
+        {
+          "label": "오오 상자 ㅗ 소리",
+          "sound": "오!"
+        },
+        {
+          "label": "아아 나뭇가지 ㅏ 소리",
+          "sound": "아!"
+        },
+        {
+          "label": "합치면",
+          "sound": "와!"
+        }
+      ],
+      "teacherNote": "큰 글자 와를 손가락으로 따라가며 ㅗ와 ㅏ가 붙은 모양을 본다. 쓰기보다 '오-아-와' 소리 합치기를 먼저 한다.",
+      "footerLeft": "ㅇ + ㅘ = 와",
+      "footerRight": "오오 상자와 아아 나뭇가지"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㄱ과 ㅘ가 만나면 과",
+      "read": "고고 고양이도 오오 상자 위에서 아아 나뭇가지를 들어 과! 그, 와, 과를 차례로 말해요.",
+      "heroImage": "../../../public/고고 과 오오상자 나뭇가지.png",
+      "traceLetter": "과",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㄱ",
+        "ㅘ",
+        "과"
+      ],
+      "soundSteps": [
+        {
+          "label": "고고 고양이 ㄱ 소리",
+          "sound": "그!"
+        },
+        {
+          "label": "오와 아가 합친 ㅘ 소리",
+          "sound": "와!"
+        },
+        {
+          "label": "합치면",
+          "sound": "과!"
+        }
+      ],
+      "teacherNote": "ㄱ 오른쪽에 ㅘ를 붙여 과를 만든다. 와를 먼저 읽고 과로 이어 읽으며 같은 ㅘ 모양을 찾아본다.",
+      "footerLeft": "ㄱ + ㅘ = 과",
+      "footerRight": "고고와 ㅘ"
+    },
+    {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "ㅘ",
+      "title": "와/과가 들어가는 낱말",
+      "read": "와와 과가 들어 있는 쉬운 낱말을 그림으로 만나요.",
+      "activityTitle": "ㅘ가 들어간 글자를 진하게 봐요",
+      "cards": [
+        {
+          "word": "와플",
+          "focus": "와",
+          "rest": "플",
+          "image": "../../../worksheets/assets/word-wa-waffle.png"
+        },
+        {
+          "word": "치와와",
+          "image": "../../../worksheets/assets/word-wa-chihuahua.png",
+          "parts": [
+            {
+              "text": "치"
+            },
+            {
+              "text": "와",
+              "focus": true
+            },
+            {
+              "text": "와",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "과자",
+          "focus": "과",
+          "rest": "자",
+          "image": "../../../worksheets/assets/word-gwa-snack.png"
+        },
+        {
+          "word": "사과",
+          "image": "../../../worksheets/assets/word-gwa-apple.png",
+          "parts": [
+            {
+              "text": "사"
+            },
+            {
+              "text": "과",
+              "focus": true
+            }
+          ]
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 와/과 안에 들어 있는 ㅘ 모양만 찾아본다.",
+      "footerLeft": "배운 글자 와/과",
+      "footerRight": "ㅘ 낱말카드",
+      "kicker": "4장 / 글자 낱말"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "마지막 / 소리 정리",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "와",
+          "answer": "와"
+        },
+        {
+          "label": "2번",
+          "sound": "과",
+          "answer": "과"
+        }
+      ],
+      "choices": [
+        {
+          "label": "와",
+          "image": "../../../public/아아 아기 와 오오상자 나뭇가지.png",
+          "buildPieces": [
+            "ㅇ",
+            "ㅘ",
+            "와"
+          ]
+        },
+        {
+          "label": "과",
+          "image": "../../../public/고고 과 오오상자 나뭇가지.png",
+          "buildPieces": [
+            "ㄱ",
+            "ㅘ",
+            "과"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 와, 2번 과.",
+      "footerLeft": "소리 정리",
+      "footerRight": "ㅘ 소리 정리"
+    },
+    {
+      "type": "first-letter-festival",
+      "theme": "gogo",
+      "kicker": "마무리 / 1권 복습",
+      "title": "소리나라 첫 글자 축제 준비",
+      "read": "좋아하는 첫 글자와 그림 낱말을 골라 나만의 첫 글자 책을 만들어요.",
+      "activityTitle": "내가 만든 첫 글자 책 준비물",
+      "letterSlots": [
+        "가",
+        "나",
+        "마",
+        "사",
+        "아",
+        "와"
+      ],
+      "wordSlots": [
+        "그림 낱말",
+        "첫 글자",
+        "내 목소리",
+        "가족 칭찬"
+      ],
+      "bookTitle": "나만의 첫 글자 책",
+      "bookPages": [
+        {
+          "title": "표지",
+          "prompt": "내 이름을 써요"
+        },
+        {
+          "title": "내가 고른 첫 글자",
+          "prompt": "좋아하는 글자를 붙여요"
+        },
+        {
+          "title": "그림 낱말",
+          "prompt": "그림 한 장을 붙여요"
+        },
+        {
+          "title": "축제 스티커",
+          "prompt": "칭찬 스티커를 붙여요"
+        }
+      ],
+      "teacherNote": "새 글자 진도가 아니라 1권에서 만난 첫 글자와 그림 낱말을 고르는 복습 활동이다. 글자를 모두 읽게 하기보다 아이가 좋아하는 소리를 고르게 한다.",
+      "footerLeft": "1권 마무리",
+      "footerRight": "소리나라 첫 글자 축제"
+    }
+  ]
+}
