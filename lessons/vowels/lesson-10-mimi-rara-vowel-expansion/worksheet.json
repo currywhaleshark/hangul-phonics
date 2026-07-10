@@ -278,6 +278,120 @@
       "footerRight": "라라 리본와 리"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "머리",
+          "focus": "머",
+          "rest": "리",
+          "image": "../../../worksheets/assets/word-meo-head.png"
+        },
+        {
+          "word": "주머니",
+          "image": "../../../worksheets/assets/word-meo-pocket.png",
+          "parts": [
+            {
+              "text": "주"
+            },
+            {
+              "text": "머",
+              "focus": true
+            },
+            {
+              "text": "니"
+            }
+          ]
+        },
+        {
+          "word": "무지개",
+          "focus": "무",
+          "rest": "지개",
+          "image": "../../../worksheets/assets/rainbow.png"
+        },
+        {
+          "word": "무당벌레",
+          "focus": "무",
+          "rest": "당벌레",
+          "image": "../../../worksheets/assets/word-mu-ladybug.png"
+        },
+        {
+          "word": "미끄럼틀",
+          "focus": "미",
+          "rest": "끄럼틀",
+          "image": "../../../worksheets/assets/slide.png"
+        },
+        {
+          "word": "미역",
+          "focus": "미",
+          "rest": "역",
+          "image": "../../../worksheets/assets/word-mi-seaweed.png"
+        },
+        {
+          "word": "루돌프",
+          "focus": "루",
+          "rest": "돌프",
+          "image": "../../../worksheets/assets/word-ru-rudolph.png"
+        },
+        {
+          "word": "빗자루",
+          "image": "../../../worksheets/assets/word-ru-broom.png",
+          "parts": [
+            {
+              "text": "빗자"
+            },
+            {
+              "text": "루",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "요구르트",
+          "image": "../../../worksheets/assets/word-yo-yogurt.png",
+          "parts": [
+            {
+              "text": "요구"
+            },
+            {
+              "text": "르",
+              "focus": true
+            },
+            {
+              "text": "트"
+            }
+          ]
+        },
+        {
+          "word": "리본",
+          "focus": "리",
+          "rest": "본",
+          "image": "../../../worksheets/assets/ribbon.png"
+        },
+        {
+          "word": "병아리",
+          "image": "../../../worksheets/assets/word-ri-chick.png",
+          "parts": [
+            {
+              "text": "병아"
+            },
+            {
+              "text": "리",
+              "focus": true
+            }
+          ]
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "10장 / 글자 낱말"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "소리 정리 1/2",

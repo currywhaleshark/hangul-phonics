@@ -18,7 +18,7 @@ const worksheet = JSON.parse(await readFile(path.join(lessonDir, "worksheet.json
 
 assert.deepEqual(
   worksheet.pages.map((page) => page.type),
-  ["story", "vowel-activity", "vowel-activity", "word-card", "sound-choice", "first-letter-festival"]
+  ["story", "vowel-activity", "vowel-activity", "word-card", "sound-choice", "first-letter-festival", "first-letter-book"]
 );
 
 const story = worksheet.pages[0];
@@ -53,14 +53,25 @@ const reviewSounds = worksheet.pages
 assert.deepEqual(reviewSounds, ["와", "과"]);
 
 const festival = worksheet.pages.find((page) => page.type === "first-letter-festival");
-assert.equal(festival.title, "소리나라 첫 글자 축제 준비");
-assert.equal(festival.bookTitle, "나만의 첫 글자 책");
-assert.deepEqual(festival.letterSlots, ["가", "나", "마", "사", "아", "와"]);
-assert.deepEqual(festival.wordSlots, ["그림 낱말", "첫 글자", "내 목소리", "가족 칭찬"]);
+assert.equal(festival.title, "소리나라 마지막 무대");
 assert.deepEqual(
-  festival.bookPages.map((page) => page.title),
-  ["표지", "내가 고른 첫 글자", "그림 낱말", "축제 스티커"]
+  festival.pictureTickets.map((ticket) => ticket.word),
+  ["가방", "나비", "마늘", "사탕", "아기", "와플"]
 );
+assert.deepEqual(festival.buildTickets.map((ticket) => ticket.pieces), [
+  ["ㄱ", "ㅏ", "가"],
+  ["ㄴ", "ㅏ", "나"],
+  ["ㅁ", "ㅏ", "마"],
+  ["ㅅ", "ㅏ", "사"],
+  ["ㅇ", "ㅏ", "아"],
+  ["ㅇ", "ㅘ", "와"],
+]);
+
+const firstLetterBook = worksheet.pages.find((page) => page.type === "first-letter-book");
+assert.equal(firstLetterBook.title, "나만의 첫 글자 한 장책");
+assert.equal(firstLetterBook.bookTitle, "나의 첫 글자 책");
+assert.deepEqual(firstLetterBook.buildSlots, ["친구", "모음 도구", "첫 글자"]);
+assert.equal(firstLetterBook.badgeText, "1권 완성");
 
 const wordCards = worksheet.pages.find((page) => page.type === "word-card").cards;
 assert.deepEqual(

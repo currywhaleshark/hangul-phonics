@@ -192,44 +192,149 @@
       "type": "first-letter-festival",
       "theme": "gogo",
       "kicker": "마무리 / 1권 복습",
-      "title": "소리나라 첫 글자 축제 준비",
-      "read": "좋아하는 첫 글자와 그림 낱말을 골라 나만의 첫 글자 책을 만들어요.",
-      "activityTitle": "내가 만든 첫 글자 책 준비물",
-      "letterSlots": [
-        "가",
-        "나",
-        "마",
-        "사",
-        "아",
-        "와"
-      ],
-      "wordSlots": [
-        "그림 낱말",
-        "첫 글자",
-        "내 목소리",
-        "가족 칭찬"
-      ],
-      "bookTitle": "나만의 첫 글자 책",
-      "bookPages": [
+      "title": "소리나라 마지막 무대",
+      "read": "그림 하나를 고르고, 첫 글자를 찾아 소리 내어 말해요.",
+      "activityTitle": "내가 고른 그림의 첫 글자는?",
+      "pictureTickets": [
         {
-          "title": "표지",
-          "prompt": "내 이름을 써요"
+          "word": "가방",
+          "focus": "가",
+          "rest": "방",
+          "image": "../../../worksheets/assets/word-ga-bag.png",
+          "options": [
+            "가",
+            "나"
+          ]
         },
         {
-          "title": "내가 고른 첫 글자",
-          "prompt": "좋아하는 글자를 붙여요"
+          "word": "나비",
+          "focus": "나",
+          "rest": "비",
+          "image": "../../../worksheets/assets/word-na-butterfly.png",
+          "options": [
+            "나",
+            "마"
+          ]
         },
         {
-          "title": "그림 낱말",
-          "prompt": "그림 한 장을 붙여요"
+          "word": "마늘",
+          "focus": "마",
+          "rest": "늘",
+          "image": "../../../worksheets/assets/word-ma-garlic.png",
+          "options": [
+            "마",
+            "사"
+          ]
         },
         {
-          "title": "축제 스티커",
-          "prompt": "칭찬 스티커를 붙여요"
+          "word": "사탕",
+          "focus": "사",
+          "rest": "탕",
+          "image": "../../../worksheets/assets/word-sa-candy.png",
+          "options": [
+            "사",
+            "아"
+          ]
+        },
+        {
+          "word": "아기",
+          "focus": "아",
+          "rest": "기",
+          "image": "../../../worksheets/assets/baby.png",
+          "options": [
+            "아",
+            "가"
+          ]
+        },
+        {
+          "word": "와플",
+          "focus": "와",
+          "rest": "플",
+          "image": "../../../worksheets/assets/word-wa-waffle.png",
+          "options": [
+            "와",
+            "과"
+          ]
         }
       ],
-      "teacherNote": "새 글자 진도가 아니라 1권에서 만난 첫 글자와 그림 낱말을 고르는 복습 활동이다. 글자를 모두 읽게 하기보다 아이가 좋아하는 소리를 고르게 한다.",
+      "buildTickets": [
+        {
+          "answer": "가",
+          "pieces": [
+            "ㄱ",
+            "ㅏ",
+            "가"
+          ]
+        },
+        {
+          "answer": "나",
+          "pieces": [
+            "ㄴ",
+            "ㅏ",
+            "나"
+          ]
+        },
+        {
+          "answer": "마",
+          "pieces": [
+            "ㅁ",
+            "ㅏ",
+            "마"
+          ]
+        },
+        {
+          "answer": "사",
+          "pieces": [
+            "ㅅ",
+            "ㅏ",
+            "사"
+          ]
+        },
+        {
+          "answer": "아",
+          "pieces": [
+            "ㅇ",
+            "ㅏ",
+            "아"
+          ]
+        },
+        {
+          "answer": "와",
+          "pieces": [
+            "ㅇ",
+            "ㅘ",
+            "와"
+          ]
+        }
+      ],
+      "stageCallout": "첫 글자! 그림 낱말! 무대에서 함께 읽어요.",
+      "teacherNote": "그림 이름을 함께 말한 뒤 두 글자 중 첫 글자를 고르게 한다. 아이가 고른 그림표와 같은 글자 만들기 표 한 장만 오려 다음 장에 붙인다.",
       "footerLeft": "1권 마무리",
+      "footerRight": "소리나라 마지막 무대"
+    },
+    {
+      "type": "first-letter-book",
+      "theme": "gogo",
+      "kicker": "마무리 산출물 / 오려서 접어요",
+      "title": "나만의 첫 글자 한 장책",
+      "foldNote": "바깥선을 오리고 세로 점선을 따라 지그재그로 접어요.",
+      "bookTitle": "나의 첫 글자 책",
+      "namePrompt": "이름",
+      "pictureTitle": "내가 고른 그림",
+      "picturePrompt": "그림표를 붙여요",
+      "buildTitle": "내가 만든 첫 글자",
+      "buildSlots": [
+        "친구",
+        "모음 도구",
+        "첫 글자"
+      ],
+      "buildPrompt": "글자 만들기 표를 붙여요",
+      "stageTitle": "내가 읽어요",
+      "sayPrompt": "첫 글자! 그림 낱말!",
+      "badgeText": "1권 완성",
+      "badgePrompt": "칭찬 도장 또는 스티커",
+      "teacherNote": "아이의 쓰기를 요구하지 않는다. 붙인 그림과 글자를 가리키며 말하면 교사가 함께 읽고 마지막 칸에 도장이나 스티커로 축하한다.",
+      "footerLeft": "나만의 첫 글자 책",
       "footerRight": "소리나라 첫 글자 축제"
     }
   ]

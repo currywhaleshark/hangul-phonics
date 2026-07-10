@@ -278,6 +278,132 @@
       "footerRight": "부부 부엉이와 비"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "더위",
+          "focus": "더",
+          "rest": "위",
+          "image": "../../../worksheets/assets/word-deo-hot-weather.png"
+        },
+        {
+          "word": "더럽다",
+          "focus": "더",
+          "rest": "럽다",
+          "image": "../../../worksheets/assets/word-deo-dirty.png"
+        },
+        {
+          "word": "두더지",
+          "focus": "두",
+          "rest": "더지",
+          "image": "../../../worksheets/assets/word-du-mole.png"
+        },
+        {
+          "word": "호두",
+          "image": "../../../worksheets/assets/word-ho-walnut.png",
+          "parts": [
+            {
+              "text": "호"
+            },
+            {
+              "text": "두",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "카드",
+          "image": "../../../worksheets/assets/card.png",
+          "parts": [
+            {
+              "text": "카"
+            },
+            {
+              "text": "드",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "드레스",
+          "focus": "드",
+          "rest": "레스",
+          "image": "../../../worksheets/assets/word-deu-dress.png"
+        },
+        {
+          "word": "버스",
+          "focus": "버",
+          "rest": "스",
+          "image": "../../../worksheets/assets/bus.png"
+        },
+        {
+          "word": "버섯",
+          "focus": "버",
+          "rest": "섯",
+          "image": "../../../worksheets/assets/word-beo-mushroom.png"
+        },
+        {
+          "word": "부엉이",
+          "focus": "부",
+          "rest": "엉이",
+          "image": "../../../worksheets/assets/word-bu-owl.png"
+        },
+        {
+          "word": "부채",
+          "focus": "부",
+          "rest": "채",
+          "image": "../../../worksheets/assets/word-bu-fan.png"
+        },
+        {
+          "word": "브로콜리",
+          "focus": "브",
+          "rest": "로콜리",
+          "image": "../../../worksheets/assets/word-beu-broccoli.png"
+        },
+        {
+          "word": "브라키오사우루스",
+          "focus": "브",
+          "rest": "라키오사우루스",
+          "image": "../../../worksheets/assets/word-beu-brachiosaurus.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "10장 / 글자 낱말 1/2"
+    },
+    {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "비닐봉지",
+          "focus": "비",
+          "rest": "닐봉지",
+          "image": "../../../worksheets/assets/word-bi-plastic-bag.png"
+        },
+        {
+          "word": "비빔밥",
+          "focus": "비",
+          "rest": "빔밥",
+          "image": "../../../worksheets/assets/word-bi-bibimbap.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "11장 / 글자 낱말 2/2"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "소리 정리 1/2",

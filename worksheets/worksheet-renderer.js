@@ -295,10 +295,16 @@ function renderWordCardPage(page) {
   const cards = cardItems
     .map((card) => {
       const word = card.word || (Array.isArray(card.parts) ? card.parts.map((part) => part.text || "").join("") : `${card.focus || page.focus || ""}${card.rest || ""}`);
+      const wordLength = Array.from(word).length;
+      const wordClass = [
+        "word-card-word",
+        wordLength >= 6 ? "word-card-word-long" : "",
+        wordLength >= 8 ? "word-card-word-xlong" : "",
+      ].filter(Boolean).join(" ");
       return `
             <div class="word-card-tile"${attr("data-asset", card.image || word)}>
               <div class="word-card-picture"><img src="${escapeHtml(card.image)}" alt="${escapeHtml(word)} 그림"></div>
-              <div class="word-card-word">${renderWordCardText(card, page)}</div>
+              <div class="${wordClass}">${renderWordCardText(card, page)}</div>
             </div>`;
     })
     .join("");
@@ -360,33 +366,28 @@ ${pageHeader(page)}
 }
 
 function renderFirstLetterFestivalPage(page) {
-  const letterSlots = page.letterSlots || [];
-  const wordSlots = page.wordSlots || [];
-  const bookPages = page.bookPages || [];
-  const letters = letterSlots
+  const pictureTickets = (page.pictureTickets || [])
     .map(
-      (letter) => `
-              <div class="festival-letter-slot">
-                <strong>${escapeHtml(letter)}</strong>
-                <span>첫 글자</span>
+      (ticket) => `
+              <div class="festival-picture-ticket">
+                <div class="festival-ticket-image">
+                  <img src="${escapeHtml(ticket.image)}" alt="${escapeHtml(ticket.word)}">
+                </div>
+                <div class="festival-ticket-word"><strong>${escapeHtml(ticket.focus)}</strong>${escapeHtml(ticket.rest)}</div>
+                <div class="festival-ticket-options">
+                  ${(ticket.options || []).map((option) => `<span>${escapeHtml(option)}</span>`).join("")}
+                </div>
               </div>`
     )
     .join("");
-  const words = wordSlots
+
+  const buildTickets = (page.buildTickets || [])
     .map(
-      (slot) => `
-              <div class="festival-word-slot">
-                <span>${escapeHtml(slot)}</span>
-                <div></div>
-              </div>`
-    )
-    .join("");
-  const book = bookPages
-    .map(
-      (item) => `
-              <div class="mini-book-page">
-                <strong>${escapeHtml(item.title || "")}</strong>
-                <span>${escapeHtml(item.prompt || "")}</span>
+      (ticket) => `
+              <div class="festival-build-ticket">
+                ${(ticket.pieces || [])
+                  .map((piece, index) => `${index ? `<span class="festival-build-symbol">${index === 1 ? "+" : "="}</span>` : ""}<strong>${escapeHtml(piece)}</strong>`)
+                  .join("")}
               </div>`
     )
     .join("");
@@ -398,19 +399,55 @@ ${pageHeader(page)}
         <div class="read-box">${escapeHtml(page.read)}</div>
         <div class="activity-box first-letter-festival-activity">
           <div class="activity-title">${escapeHtml(page.activityTitle)}</div>
-          <div class="first-letter-festival-grid">
-            <div class="festival-panel festival-letter-panel">
-              <h2>좋아하는 첫 글자</h2>
-              <div class="festival-letter-grid">${letters}</div>
-            </div>
-            <div class="festival-panel festival-word-panel">
-              <h2>축제 준비물</h2>
-              <div class="festival-word-grid">${words}</div>
-            </div>
-            <div class="festival-panel festival-book-panel">
-              <h2>${escapeHtml(page.bookTitle || "")}</h2>
-              <div class="mini-book-grid">${book}</div>
-            </div>
+          <div class="festival-section-label">1. 그림 하나를 골라 첫 글자에 동그라미 해요.</div>
+          <div class="festival-picture-grid">${pictureTickets}</div>
+          <div class="festival-section-label">2. 같은 첫 글자의 글자 만들기 표를 찾아 오려요.</div>
+          <div class="festival-build-grid">${buildTickets}</div>
+          <div class="festival-stage-callout">
+            <strong>${escapeHtml(page.stageCallout || "첫 글자와 그림 낱말을 소리 내어 말해요!")}</strong>
+          </div>
+        </div>
+        <div class="teacher-note">${escapeHtml(page.teacherNote)}</div>
+        ${pageFooter(page)}
+      </div>
+    </section>`;
+}
+
+function renderFirstLetterBookPage(page) {
+  const buildSlots = (page.buildSlots || ["친구", "모음 도구", "첫 글자"])
+    .map(
+      (slot, index) => `${index ? `<span class="fold-book-symbol">${index === 1 ? "+" : "="}</span>` : ""}
+                <div class="fold-book-build-slot"><span>${escapeHtml(slot)}</span></div>`
+    )
+    .join("");
+
+  return `
+    <section class="sheet landscape-sheet theme-${escapeHtml(page.theme)} first-letter-book-sheet">
+      <div class="sheet-inner">
+${pageHeader(page)}
+        <div class="fold-book-guide">${escapeHtml(page.foldNote)}</div>
+        <div class="fold-book-strip">
+          <div class="fold-book-panel fold-book-cover">
+            <span class="fold-book-step">표지</span>
+            <h2>${escapeHtml(page.bookTitle)}</h2>
+            <div class="fold-book-name"><span>${escapeHtml(page.namePrompt || "이름")}</span><div></div></div>
+          </div>
+          <div class="fold-book-panel">
+            <span class="fold-book-step">1</span>
+            <h2>${escapeHtml(page.pictureTitle)}</h2>
+            <div class="fold-book-paste-zone"><span>${escapeHtml(page.picturePrompt)}</span></div>
+          </div>
+          <div class="fold-book-panel">
+            <span class="fold-book-step">2</span>
+            <h2>${escapeHtml(page.buildTitle)}</h2>
+            <div class="fold-book-build-row">${buildSlots}</div>
+            <p>${escapeHtml(page.buildPrompt)}</p>
+          </div>
+          <div class="fold-book-panel fold-book-stage-panel">
+            <span class="fold-book-step">3</span>
+            <h2>${escapeHtml(page.stageTitle)}</h2>
+            <div class="fold-book-speech">${escapeHtml(page.sayPrompt)}</div>
+            <div class="fold-book-badge"><strong>${escapeHtml(page.badgeText)}</strong><span>${escapeHtml(page.badgePrompt)}</span></div>
           </div>
         </div>
         <div class="teacher-note">${escapeHtml(page.teacherNote)}</div>
@@ -428,6 +465,7 @@ export function renderWorksheetPage(page) {
   if (page.type === "word-card") return renderWordCardPage(page);
   if (page.type === "sound-choice") return renderSoundChoicePage(page);
   if (page.type === "first-letter-festival") return renderFirstLetterFestivalPage(page);
+  if (page.type === "first-letter-book") return renderFirstLetterBookPage(page);
   throw new Error(`Unsupported worksheet page type: ${page.type}`);
 }
 

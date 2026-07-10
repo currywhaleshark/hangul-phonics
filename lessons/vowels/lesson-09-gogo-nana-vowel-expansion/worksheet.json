@@ -278,6 +278,165 @@
       "footerRight": "나나 나비와 니"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "거북이",
+          "focus": "거",
+          "rest": "북이",
+          "image": "../../../worksheets/assets/word-geo-turtle.png"
+        },
+        {
+          "word": "거위",
+          "focus": "거",
+          "rest": "위",
+          "image": "../../../worksheets/assets/word-geo-goose.png"
+        },
+        {
+          "word": "구름",
+          "focus": "구",
+          "rest": "름",
+          "image": "../../../worksheets/assets/word-gu-cloud.png"
+        },
+        {
+          "word": "축구공",
+          "image": "../../../worksheets/assets/word-gu-soccer-ball.png",
+          "parts": [
+            {
+              "text": "축"
+            },
+            {
+              "text": "구",
+              "focus": true
+            },
+            {
+              "text": "공"
+            }
+          ]
+        },
+        {
+          "word": "그림",
+          "focus": "그",
+          "rest": "림",
+          "image": "../../../worksheets/assets/word-geu-drawing.png"
+        },
+        {
+          "word": "그네",
+          "focus": "그",
+          "rest": "네",
+          "image": "../../../worksheets/assets/word-geu-swing.png"
+        },
+        {
+          "word": "기린",
+          "focus": "기",
+          "rest": "린",
+          "image": "../../../worksheets/assets/word-gi-giraffe.png"
+        },
+        {
+          "word": "기차",
+          "focus": "기",
+          "rest": "차",
+          "image": "../../../worksheets/assets/word-gi-train.png"
+        },
+        {
+          "word": "너구리",
+          "focus": "너",
+          "rest": "구리",
+          "image": "../../../worksheets/assets/raccoon-dog.png"
+        },
+        {
+          "word": "비누",
+          "image": "../../../worksheets/assets/word-nu-soap.png",
+          "parts": [
+            {
+              "text": "비"
+            },
+            {
+              "text": "누",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "누룽지",
+          "focus": "누",
+          "rest": "룽지",
+          "image": "../../../worksheets/assets/word-nu-scorched-rice.png"
+        },
+        {
+          "word": "지느러미",
+          "image": "../../../worksheets/assets/word-neu-fin.png",
+          "parts": [
+            {
+              "text": "지"
+            },
+            {
+              "text": "느",
+              "focus": true
+            },
+            {
+              "text": "러미"
+            }
+          ]
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "10장 / 글자 낱말 1/2"
+    },
+    {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "느리다",
+          "focus": "느",
+          "rest": "리다",
+          "image": "../../../worksheets/assets/word-neu-slow.png"
+        },
+        {
+          "word": "고니",
+          "image": "../../../worksheets/assets/word-ni-swan.png",
+          "parts": [
+            {
+              "text": "고"
+            },
+            {
+              "text": "니",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "할머니",
+          "image": "../../../worksheets/assets/word-ni-grandmother.png",
+          "parts": [
+            {
+              "text": "할머"
+            },
+            {
+              "text": "니",
+              "focus": true
+            }
+          ]
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "11장 / 글자 낱말 2/2"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "소리 정리 1/2",

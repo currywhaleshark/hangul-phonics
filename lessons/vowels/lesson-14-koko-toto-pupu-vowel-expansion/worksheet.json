@@ -410,6 +410,221 @@
       "footerRight": "푸푸 풍선와 피"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "놀이터",
+          "image": "../../../worksheets/assets/word-teo-playground.png",
+          "parts": [
+            {
+              "text": "놀이"
+            },
+            {
+              "text": "터",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "터널",
+          "focus": "터",
+          "rest": "널",
+          "image": "../../../worksheets/assets/word-teo-tunnel.png"
+        },
+        {
+          "word": "투구게",
+          "focus": "투",
+          "rest": "구게",
+          "image": "../../../worksheets/assets/word-tu-horseshoe-crab.png"
+        },
+        {
+          "word": "요트",
+          "image": "../../../worksheets/assets/word-teu-yacht.png",
+          "parts": [
+            {
+              "text": "요"
+            },
+            {
+              "text": "트",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "마트",
+          "image": "../../../worksheets/assets/word-teu-supermarket.png",
+          "parts": [
+            {
+              "text": "마"
+            },
+            {
+              "text": "트",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "티셔츠",
+          "focus": "티",
+          "rest": "셔츠",
+          "image": "../../../worksheets/assets/word-ti-tshirt.png"
+        },
+        {
+          "word": "티라노사우루스",
+          "focus": "티",
+          "rest": "라노사우루스",
+          "image": "../../../worksheets/assets/word-ti-tyrannosaurus.png"
+        },
+        {
+          "word": "커피",
+          "focus": "커",
+          "rest": "피",
+          "image": "../../../worksheets/assets/word-keo-coffee.png"
+        },
+        {
+          "word": "커튼",
+          "focus": "커",
+          "rest": "튼",
+          "image": "../../../worksheets/assets/word-keo-curtain.png"
+        },
+        {
+          "word": "쿠키",
+          "focus": "쿠",
+          "rest": "키",
+          "image": "../../../worksheets/assets/cookie.png"
+        },
+        {
+          "word": "쿠션",
+          "focus": "쿠",
+          "rest": "션",
+          "image": "../../../worksheets/assets/word-ku-cushion.png"
+        },
+        {
+          "word": "크레파스",
+          "focus": "크",
+          "rest": "레파스",
+          "image": "../../../worksheets/assets/crayon.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "14장 / 글자 낱말 1/2"
+    },
+    {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "크림",
+          "focus": "크",
+          "rest": "림",
+          "image": "../../../worksheets/assets/word-keu-cream.png"
+        },
+        {
+          "word": "키위",
+          "focus": "키",
+          "rest": "위",
+          "image": "../../../worksheets/assets/word-ki-kiwi.png"
+        },
+        {
+          "word": "스키",
+          "image": "../../../worksheets/assets/word-ki-ski.png",
+          "parts": [
+            {
+              "text": "스"
+            },
+            {
+              "text": "키",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "퍼즐",
+          "focus": "퍼",
+          "rest": "즐",
+          "image": "../../../worksheets/assets/word-peo-puzzle.png"
+        },
+        {
+          "word": "지퍼",
+          "image": "../../../worksheets/assets/word-peo-zipper.png",
+          "parts": [
+            {
+              "text": "지"
+            },
+            {
+              "text": "퍼",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "푸들",
+          "focus": "푸",
+          "rest": "들",
+          "image": "../../../worksheets/assets/word-pu-poodle.png"
+        },
+        {
+          "word": "샴푸",
+          "image": "../../../worksheets/assets/word-pu-shampoo.png",
+          "parts": [
+            {
+              "text": "샴"
+            },
+            {
+              "text": "푸",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "프테라노돈",
+          "focus": "프",
+          "rest": "테라노돈",
+          "image": "../../../worksheets/assets/word-peu-pteranodon.png"
+        },
+        {
+          "word": "점프",
+          "image": "../../../worksheets/assets/word-peu-jump.png",
+          "parts": [
+            {
+              "text": "점"
+            },
+            {
+              "text": "프",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "피아노",
+          "focus": "피",
+          "rest": "아노",
+          "image": "../../../worksheets/assets/word-pi-piano.png"
+        },
+        {
+          "word": "피자",
+          "focus": "피",
+          "rest": "자",
+          "image": "../../../worksheets/assets/pizza.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "15장 / 글자 낱말 2/2"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "소리 정리 1/3",

@@ -293,6 +293,131 @@ const vowelExpansionGroups = [
   },
 ];
 
+const expansionWordAsset = (filename) => `../../../worksheets/assets/${filename}`;
+const expansionCard = (word, focus, rest, filename) => ({
+  word,
+  focus,
+  rest,
+  image: expansionWordAsset(filename),
+});
+const expansionPartsCard = (word, filename, parts) => ({
+  word,
+  image: expansionWordAsset(filename),
+  parts: parts.map(([text, focus = false]) => ({ text, ...(focus ? { focus: true } : {}) })),
+});
+
+const expansionWordCardsByFolder = new Map([
+  ["lesson-08-ieung-vowel-expansion", [
+    expansionCard("어항", "어", "항", "word-eo-fish-tank.png"),
+    expansionPartsCard("상어", "word-eo-shark.png", [["상"], ["어", true]]),
+    expansionCard("우유", "우", "유", "milk.png"),
+    expansionCard("우산", "우", "산", "umbrella.png"),
+    expansionCard("으르렁", "으", "르렁", "word-eu-growl.png"),
+    expansionCard("으쓱", "으", "쓱", "word-eu-shrug.png"),
+    expansionCard("이불", "이", "불", "word-i-blanket.png"),
+    expansionCard("이빨", "이", "빨", "word-i-tooth.png"),
+  ]],
+  ["lesson-09-gogo-nana-vowel-expansion", [
+    expansionCard("거북이", "거", "북이", "word-geo-turtle.png"),
+    expansionCard("거위", "거", "위", "word-geo-goose.png"),
+    expansionCard("구름", "구", "름", "word-gu-cloud.png"),
+    expansionPartsCard("축구공", "word-gu-soccer-ball.png", [["축"], ["구", true], ["공"]]),
+    expansionCard("그림", "그", "림", "word-geu-drawing.png"),
+    expansionCard("그네", "그", "네", "word-geu-swing.png"),
+    expansionCard("기린", "기", "린", "word-gi-giraffe.png"),
+    expansionCard("기차", "기", "차", "word-gi-train.png"),
+    expansionCard("너구리", "너", "구리", "raccoon-dog.png"),
+    expansionPartsCard("비누", "word-nu-soap.png", [["비"], ["누", true]]),
+    expansionCard("누룽지", "누", "룽지", "word-nu-scorched-rice.png"),
+    expansionPartsCard("지느러미", "word-neu-fin.png", [["지"], ["느", true], ["러미"]]),
+    expansionCard("느리다", "느", "리다", "word-neu-slow.png"),
+    expansionPartsCard("고니", "word-ni-swan.png", [["고"], ["니", true]]),
+    expansionPartsCard("할머니", "word-ni-grandmother.png", [["할머"], ["니", true]]),
+  ]],
+  ["lesson-10-mimi-rara-vowel-expansion", [
+    expansionCard("머리", "머", "리", "word-meo-head.png"),
+    expansionPartsCard("주머니", "word-meo-pocket.png", [["주"], ["머", true], ["니"]]),
+    expansionCard("무지개", "무", "지개", "rainbow.png"),
+    expansionCard("무당벌레", "무", "당벌레", "word-mu-ladybug.png"),
+    expansionCard("미끄럼틀", "미", "끄럼틀", "slide.png"),
+    expansionCard("미역", "미", "역", "word-mi-seaweed.png"),
+    expansionCard("루돌프", "루", "돌프", "word-ru-rudolph.png"),
+    expansionPartsCard("빗자루", "word-ru-broom.png", [["빗자"], ["루", true]]),
+    expansionPartsCard("요구르트", "word-yo-yogurt.png", [["요구"], ["르", true], ["트"]]),
+    expansionCard("리본", "리", "본", "ribbon.png"),
+    expansionPartsCard("병아리", "word-ri-chick.png", [["병아"], ["리", true]]),
+  ]],
+  ["lesson-11-dodo-bubu-vowel-expansion", [
+    expansionCard("더위", "더", "위", "word-deo-hot-weather.png"),
+    expansionCard("더럽다", "더", "럽다", "word-deo-dirty.png"),
+    expansionCard("두더지", "두", "더지", "word-du-mole.png"),
+    expansionPartsCard("호두", "word-ho-walnut.png", [["호"], ["두", true]]),
+    expansionPartsCard("카드", "card.png", [["카"], ["드", true]]),
+    expansionCard("드레스", "드", "레스", "word-deu-dress.png"),
+    expansionCard("버스", "버", "스", "bus.png"),
+    expansionCard("버섯", "버", "섯", "word-beo-mushroom.png"),
+    expansionCard("부엉이", "부", "엉이", "word-bu-owl.png"),
+    expansionCard("부채", "부", "채", "word-bu-fan.png"),
+    expansionCard("브로콜리", "브", "로콜리", "word-beu-broccoli.png"),
+    expansionCard("브라키오사우루스", "브", "라키오사우루스", "word-beu-brachiosaurus.png"),
+    expansionCard("비닐봉지", "비", "닐봉지", "word-bi-plastic-bag.png"),
+    expansionCard("비빔밥", "비", "빔밥", "word-bi-bibimbap.png"),
+  ]],
+  ["lesson-12-sasa-haha-vowel-expansion", [
+    expansionCard("서랍", "서", "랍", "word-seo-drawer.png"),
+    expansionPartsCard("도서관", "word-seo-library.png", [["도"], ["서", true], ["관"]]),
+    expansionCard("수박", "수", "박", "watermelon.png"),
+    expansionCard("수영장", "수", "영장", "word-su-swimming-pool.png"),
+    expansionPartsCard("주스", "juice.png", [["주"], ["스", true]]),
+    expansionCard("스티커", "스", "티커", "word-seu-sticker.png"),
+    expansionCard("시계", "시", "계", "word-si-clock.png"),
+    expansionCard("시소", "시", "소", "word-si-seesaw.png"),
+    expansionCard("허리", "허", "리", "word-heo-waist.png"),
+    expansionCard("허수아비", "허", "수아비", "word-heo-scarecrow.png"),
+    expansionCard("후추", "후", "추", "word-hu-pepper.png"),
+    expansionCard("후라이팬", "후", "라이팬", "word-hu-frying-pan.png"),
+  ]],
+  ["lesson-13-jiji-chichi-vowel-expansion", [
+    expansionCard("저울", "저", "울", "word-jeo-scale.png"),
+    expansionCard("저금통", "저", "금통", "word-jeo-piggy-bank.png"),
+    expansionCard("주황색", "주", "황색", "word-ju-orange-color.png"),
+    expansionCard("주머니", "주", "머니", "word-meo-pocket.png"),
+    expansionPartsCard("치즈", "cheese.png", [["치"], ["즈", true]]),
+    expansionPartsCard("마요네즈", "word-jeu-mayonnaise.png", [["마요네"], ["즈", true]]),
+    expansionCard("지렁이", "지", "렁이", "word-ji-earthworm.png"),
+    expansionCard("지하철", "지", "하철", "word-ji-subway.png"),
+    expansionPartsCard("후추", "word-hu-pepper.png", [["후"], ["추", true]]),
+    expansionPartsCard("배추", "word-chu-napa-cabbage.png", [["배"], ["추", true]]),
+    expansionCard("치즈", "치", "즈", "cheese.png"),
+    expansionPartsCard("곰치", "word-chi-moray-eel.png", [["곰"], ["치", true]]),
+  ]],
+  ["lesson-14-koko-toto-pupu-vowel-expansion", [
+    expansionPartsCard("놀이터", "word-teo-playground.png", [["놀이"], ["터", true]]),
+    expansionCard("터널", "터", "널", "word-teo-tunnel.png"),
+    expansionCard("투구게", "투", "구게", "word-tu-horseshoe-crab.png"),
+    expansionPartsCard("요트", "word-teu-yacht.png", [["요"], ["트", true]]),
+    expansionPartsCard("마트", "word-teu-supermarket.png", [["마"], ["트", true]]),
+    expansionCard("티셔츠", "티", "셔츠", "word-ti-tshirt.png"),
+    expansionCard("티라노사우루스", "티", "라노사우루스", "word-ti-tyrannosaurus.png"),
+    expansionCard("커피", "커", "피", "word-keo-coffee.png"),
+    expansionCard("커튼", "커", "튼", "word-keo-curtain.png"),
+    expansionCard("쿠키", "쿠", "키", "cookie.png"),
+    expansionCard("쿠션", "쿠", "션", "word-ku-cushion.png"),
+    expansionCard("크레파스", "크", "레파스", "crayon.png"),
+    expansionCard("크림", "크", "림", "word-keu-cream.png"),
+    expansionCard("키위", "키", "위", "word-ki-kiwi.png"),
+    expansionPartsCard("스키", "word-ki-ski.png", [["스"], ["키", true]]),
+    expansionCard("퍼즐", "퍼", "즐", "word-peo-puzzle.png"),
+    expansionPartsCard("지퍼", "word-peo-zipper.png", [["지"], ["퍼", true]]),
+    expansionCard("푸들", "푸", "들", "word-pu-poodle.png"),
+    expansionPartsCard("샴푸", "word-pu-shampoo.png", [["샴"], ["푸", true]]),
+    expansionCard("프테라노돈", "프", "테라노돈", "word-peu-pteranodon.png"),
+    expansionPartsCard("점프", "word-peu-jump.png", [["점"], ["프", true]]),
+    expansionCard("피아노", "피", "아노", "word-pi-piano.png"),
+    expansionCard("피자", "피", "자", "pizza.png"),
+  ]],
+]);
+
 function combosFromResults(character) {
   if (character.combos) return character.combos;
   return expansionVowels.map((vowel, index) => ({
@@ -323,15 +448,18 @@ function vowelExpansionLesson(group) {
         };
       });
 
-  return combinationLesson({
-    ...group,
-    characters,
-    storyPanels,
+  return {
+    ...combinationLesson({
+      ...group,
+      characters,
+      storyPanels,
     storyTitle: group.storyTitle,
     storyRead: group.storyRead,
     storyTeacherNote: group.storyTeacherNote,
-    footerRight: group.footerRight,
-  });
+      footerRight: group.footerRight,
+    }),
+    wordCards: expansionWordCardsByFolder.get(group.folder) || [],
+  };
 }
 
 const lessons = [
@@ -1394,26 +1522,57 @@ lessons.push({
     builds: [["ㅇ", "ㅘ", "와"], ["ㄱ", "ㅘ", "과"]],
     footerRight: "ㅘ 소리 정리",
   },
-  closing: {
-    type: "first-letter-festival",
-    theme: "gogo",
-    kicker: "마무리 / 1권 복습",
-    title: "소리나라 첫 글자 축제 준비",
-    read: "좋아하는 첫 글자와 그림 낱말을 골라 나만의 첫 글자 책을 만들어요.",
-    activityTitle: "내가 만든 첫 글자 책 준비물",
-    letterSlots: ["가", "나", "마", "사", "아", "와"],
-    wordSlots: ["그림 낱말", "첫 글자", "내 목소리", "가족 칭찬"],
-    bookTitle: "나만의 첫 글자 책",
-    bookPages: [
-      { title: "표지", prompt: "내 이름을 써요" },
-      { title: "내가 고른 첫 글자", prompt: "좋아하는 글자를 붙여요" },
-      { title: "그림 낱말", prompt: "그림 한 장을 붙여요" },
-      { title: "축제 스티커", prompt: "칭찬 스티커를 붙여요" },
-    ],
-    teacherNote: "새 글자 진도가 아니라 1권에서 만난 첫 글자와 그림 낱말을 고르는 복습 활동이다. 글자를 모두 읽게 하기보다 아이가 좋아하는 소리를 고르게 한다.",
-    footerLeft: "1권 마무리",
-    footerRight: "소리나라 첫 글자 축제",
-  },
+  closing: [
+    {
+      type: "first-letter-festival",
+      theme: "gogo",
+      kicker: "마무리 / 1권 복습",
+      title: "소리나라 마지막 무대",
+      read: "그림 하나를 고르고, 첫 글자를 찾아 소리 내어 말해요.",
+      activityTitle: "내가 고른 그림의 첫 글자는?",
+      pictureTickets: [
+        { word: "가방", focus: "가", rest: "방", image: "../../../worksheets/assets/word-ga-bag.png", options: ["가", "나"] },
+        { word: "나비", focus: "나", rest: "비", image: "../../../worksheets/assets/word-na-butterfly.png", options: ["나", "마"] },
+        { word: "마늘", focus: "마", rest: "늘", image: "../../../worksheets/assets/word-ma-garlic.png", options: ["마", "사"] },
+        { word: "사탕", focus: "사", rest: "탕", image: "../../../worksheets/assets/word-sa-candy.png", options: ["사", "아"] },
+        { word: "아기", focus: "아", rest: "기", image: "../../../worksheets/assets/baby.png", options: ["아", "가"] },
+        { word: "와플", focus: "와", rest: "플", image: "../../../worksheets/assets/word-wa-waffle.png", options: ["와", "과"] },
+      ],
+      buildTickets: [
+        { answer: "가", pieces: ["ㄱ", "ㅏ", "가"] },
+        { answer: "나", pieces: ["ㄴ", "ㅏ", "나"] },
+        { answer: "마", pieces: ["ㅁ", "ㅏ", "마"] },
+        { answer: "사", pieces: ["ㅅ", "ㅏ", "사"] },
+        { answer: "아", pieces: ["ㅇ", "ㅏ", "아"] },
+        { answer: "와", pieces: ["ㅇ", "ㅘ", "와"] },
+      ],
+      stageCallout: "첫 글자! 그림 낱말! 무대에서 함께 읽어요.",
+      teacherNote: "그림 이름을 함께 말한 뒤 두 글자 중 첫 글자를 고르게 한다. 아이가 고른 그림표와 같은 글자 만들기 표 한 장만 오려 다음 장에 붙인다.",
+      footerLeft: "1권 마무리",
+      footerRight: "소리나라 마지막 무대",
+    },
+    {
+      type: "first-letter-book",
+      theme: "gogo",
+      kicker: "마무리 산출물 / 오려서 접어요",
+      title: "나만의 첫 글자 한 장책",
+      foldNote: "바깥선을 오리고 세로 점선을 따라 지그재그로 접어요.",
+      bookTitle: "나의 첫 글자 책",
+      namePrompt: "이름",
+      pictureTitle: "내가 고른 그림",
+      picturePrompt: "그림표를 붙여요",
+      buildTitle: "내가 만든 첫 글자",
+      buildSlots: ["친구", "모음 도구", "첫 글자"],
+      buildPrompt: "글자 만들기 표를 붙여요",
+      stageTitle: "내가 읽어요",
+      sayPrompt: "첫 글자! 그림 낱말!",
+      badgeText: "1권 완성",
+      badgePrompt: "칭찬 도장 또는 스티커",
+      teacherNote: "아이의 쓰기를 요구하지 않는다. 붙인 그림과 글자를 가리키며 말하면 교사가 함께 읽고 마지막 칸에 도장이나 스티커로 축하한다.",
+      footerLeft: "나만의 첫 글자 책",
+      footerRight: "소리나라 첫 글자 축제",
+    },
+  ],
 });
 
 function worksheetForLesson(lesson) {
@@ -1458,6 +1617,24 @@ function worksheetForLesson(lesson) {
     }
   }
 
+  const standaloneWordCardPages = chunkItems(lesson.wordCards || [], 12).map((cards, index, chunks) => {
+    const page = wordCardPage({
+      focus: "",
+      title: "새 모음이 들어가는 낱말",
+      read: "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      activityTitle: "배운 글자가 들어간 곳을 진하게 봐요",
+      cards,
+      teacherNote: "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      footerLeft: "새 모음 낱말",
+      footerRight: "새 모음 낱말카드",
+    });
+    page.kicker = chunks.length === 1
+      ? `${pageNumber}장 / 글자 낱말`
+      : `${pageNumber}장 / 글자 낱말 ${index + 1}/${chunks.length}`;
+    pageNumber += 1;
+    return page;
+  });
+
   return {
     title: lesson.title,
     pages: [
@@ -1473,8 +1650,9 @@ function worksheetForLesson(lesson) {
         footerRight: lesson.story.footerRight,
       },
       ...activityPages,
+      ...standaloneWordCardPages,
       ...reviewPages,
-      ...(lesson.closing ? [lesson.closing] : []),
+      ...(lesson.closing ? (Array.isArray(lesson.closing) ? lesson.closing : [lesson.closing]) : []),
     ],
   };
 }

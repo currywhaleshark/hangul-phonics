@@ -307,10 +307,11 @@ const expectedLessons = [
 
 const expansionVowels = ["ㅓ", "ㅜ", "ㅡ", "ㅣ"];
 
-function expansionPageTypes(buildCount) {
+function expansionPageTypes(buildCount, wordCardPageCount = 0) {
   return [
     "story",
     ...Array.from({ length: buildCount }, () => "vowel-activity"),
+    ...Array.from({ length: wordCardPageCount }, () => "word-card"),
     ...Array.from({ length: Math.ceil(buildCount / 4) }, () => "sound-choice"),
   ];
 }
@@ -334,7 +335,8 @@ expectedLessons.push(
     id: "lesson-08-ieung-vowel-expansion",
     title: "8레슨 ㅇ과 새 모음: 어/우/으/이를 만들어요",
     letters: "ㅇ/ㅓ/ㅜ/ㅡ/ㅣ/어/우/으/이",
-    pageTypes: expansionPageTypes(4),
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
     storyImages: ["어어 풍선 시안2.png", "우우 발판 시안.png", "으으 쿠션 시안.png", "이이 막대 시안.png"],
     storyCaptions: ["ㅇ이 ㅓ를 만나, 어!", "ㅇ이 ㅜ를 만나, 우!", "ㅇ이 ㅡ를 만나, 으!", "ㅇ이 ㅣ를 만나, 이!"],
     builds: [["ㅇ", "ㅓ", "어"], ["ㅇ", "ㅜ", "우"], ["ㅇ", "ㅡ", "으"], ["ㅇ", "ㅣ", "이"]],
@@ -344,7 +346,8 @@ expectedLessons.push(
     id: "lesson-09-gogo-nana-vowel-expansion",
     title: "9레슨 고고와 나나: 거/구/그/기/너/누/느/니를 만들어요",
     letters: "ㄱ/ㄴ/ㅓ/ㅜ/ㅡ/ㅣ/거/구/그/기/너/누/느/니",
-    pageTypes: expansionPageTypes(8),
+    pageTypes: expansionPageTypes(8, 2),
+    wordCardPageCount: 2,
     storyImages: expansionImages([
       { name: "고고", results: ["거", "구", "그", "기"] },
       { name: "나나", results: ["너", "누", "느", "니"] },
@@ -363,7 +366,8 @@ expectedLessons.push(
     id: "lesson-10-mimi-rara-vowel-expansion",
     title: "10레슨 미미와 라라: 머/무/므/미/러/루/르/리를 만들어요",
     letters: "ㅁ/ㄹ/ㅓ/ㅜ/ㅡ/ㅣ/머/무/므/미/러/루/르/리",
-    pageTypes: expansionPageTypes(8),
+    pageTypes: expansionPageTypes(8, 1),
+    wordCardPageCount: 1,
     storyImages: expansionImages([
       { name: "미미", results: ["머", "무", "므", "미"] },
       { name: "라라", results: ["러", "루", "르", "리"] },
@@ -382,7 +386,8 @@ expectedLessons.push(
     id: "lesson-11-dodo-bubu-vowel-expansion",
     title: "11레슨 도도와 부부: 더/두/드/디/버/부/브/비를 만들어요",
     letters: "ㄷ/ㅂ/ㅓ/ㅜ/ㅡ/ㅣ/더/두/드/디/버/부/브/비",
-    pageTypes: expansionPageTypes(8),
+    pageTypes: expansionPageTypes(8, 2),
+    wordCardPageCount: 2,
     storyImages: expansionImages([
       { name: "도도", results: ["더", "두", "드", "디"] },
       { name: "부부", results: ["버", "부", "브", "비"] },
@@ -401,7 +406,8 @@ expectedLessons.push(
     id: "lesson-12-sasa-haha-vowel-expansion",
     title: "12레슨 사사와 하하: 서/수/스/시/허/후/흐/히를 만들어요",
     letters: "ㅅ/ㅎ/ㅓ/ㅜ/ㅡ/ㅣ/서/수/스/시/허/후/흐/히",
-    pageTypes: expansionPageTypes(8),
+    pageTypes: expansionPageTypes(8, 1),
+    wordCardPageCount: 1,
     storyImages: expansionImages([
       { name: "사사", results: ["서", "수", "스", "시"] },
       { name: "하하", results: ["허", "후", "흐", "히"] },
@@ -420,7 +426,8 @@ expectedLessons.push(
     id: "lesson-13-jiji-chichi-vowel-expansion",
     title: "13레슨 지지와 치치: 저/주/즈/지/처/추/츠/치를 만들어요",
     letters: "ㅈ/ㅊ/ㅓ/ㅜ/ㅡ/ㅣ/저/주/즈/지/처/추/츠/치",
-    pageTypes: expansionPageTypes(8),
+    pageTypes: expansionPageTypes(8, 1),
+    wordCardPageCount: 1,
     storyImages: expansionImages([
       { name: "지지", results: ["저", "주", "즈", "지"] },
       { name: "치치", results: ["처", "추", "츠", "치"] },
@@ -439,7 +446,8 @@ expectedLessons.push(
     id: "lesson-14-koko-toto-pupu-vowel-expansion",
     title: "14레슨 코코와 토토와 푸푸: 커/쿠/크/키/터/투/트/티/퍼/푸/프/피를 만들어요",
     letters: "ㅋ/ㅌ/ㅍ/ㅓ/ㅜ/ㅡ/ㅣ/커/쿠/크/키/터/투/트/티/퍼/푸/프/피",
-    pageTypes: expansionPageTypes(12),
+    pageTypes: expansionPageTypes(12, 2),
+    wordCardPageCount: 2,
     storyImages: expansionImages([
       { name: "코코", results: ["커", "쿠", "크", "키"] },
       { name: "토토", results: ["터", "투", "트", "티"] },
@@ -505,7 +513,7 @@ expectedLessons.push(
     id: "lesson-17-wa-vowel",
     title: "17레슨 오오 상자와 아아 나뭇가지: 와/과를 만들어요",
     letters: "ㅗ/ㅏ/ㅘ/와/과",
-    pageTypes: ["story", "vowel-activity", "vowel-activity", "word-card", "sound-choice", "first-letter-festival"],
+    pageTypes: ["story", "vowel-activity", "vowel-activity", "word-card", "sound-choice", "first-letter-festival", "first-letter-book"],
     storyImages: ["오오 상자 시안.png", "아아 아기 나뭇가지 시안.png", "아아 아기 와 오오상자 나뭇가지.png"],
     storyCaptions: ["오오 상자가 아래에 있어요.", "아아 아기가 나뭇가지를 들어요.", "오와 아가 만나, 와!"],
     builds: [["ㅇ", "ㅘ", "와"], ["ㄱ", "ㅘ", "과"]],
@@ -587,6 +595,12 @@ for (const expected of expectedLessons) {
       `${expected.id} word cards should use the planned first-letter vocabulary`
     );
     for (const card of wordCardPages[0].cards) {
+      assert.ok(existsSync(path.resolve(lessonDir, card.image)), `${expected.id} word card image ${card.image} should exist`);
+    }
+  } else if (expected.wordCardPageCount) {
+    assert.equal(wordCardPages.length, expected.wordCardPageCount, `${expected.id} should split expansion word cards into planned pages`);
+    assert.ok(wordCardPages.every((page) => page.cards.length <= 12), `${expected.id} word card pages should contain at most 12 cards`);
+    for (const card of wordCardPages.flatMap((page) => page.cards)) {
       assert.ok(existsSync(path.resolve(lessonDir, card.image)), `${expected.id} word card image ${card.image} should exist`);
     }
   } else {

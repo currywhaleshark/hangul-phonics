@@ -163,6 +163,75 @@
       "footerRight": "아아 아기와 이"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "어항",
+          "focus": "어",
+          "rest": "항",
+          "image": "../../../worksheets/assets/word-eo-fish-tank.png"
+        },
+        {
+          "word": "상어",
+          "image": "../../../worksheets/assets/word-eo-shark.png",
+          "parts": [
+            {
+              "text": "상"
+            },
+            {
+              "text": "어",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "우유",
+          "focus": "우",
+          "rest": "유",
+          "image": "../../../worksheets/assets/milk.png"
+        },
+        {
+          "word": "우산",
+          "focus": "우",
+          "rest": "산",
+          "image": "../../../worksheets/assets/umbrella.png"
+        },
+        {
+          "word": "으르렁",
+          "focus": "으",
+          "rest": "르렁",
+          "image": "../../../worksheets/assets/word-eu-growl.png"
+        },
+        {
+          "word": "으쓱",
+          "focus": "으",
+          "rest": "쓱",
+          "image": "../../../worksheets/assets/word-eu-shrug.png"
+        },
+        {
+          "word": "이불",
+          "focus": "이",
+          "rest": "불",
+          "image": "../../../worksheets/assets/word-i-blanket.png"
+        },
+        {
+          "word": "이빨",
+          "focus": "이",
+          "rest": "빨",
+          "image": "../../../worksheets/assets/word-i-tooth.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "6장 / 글자 낱말"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "마지막 / 소리 정리",

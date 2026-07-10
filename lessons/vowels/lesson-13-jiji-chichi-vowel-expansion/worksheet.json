@@ -278,6 +278,127 @@
       "footerRight": "치치 칙폭이와 치"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "저울",
+          "focus": "저",
+          "rest": "울",
+          "image": "../../../worksheets/assets/word-jeo-scale.png"
+        },
+        {
+          "word": "저금통",
+          "focus": "저",
+          "rest": "금통",
+          "image": "../../../worksheets/assets/word-jeo-piggy-bank.png"
+        },
+        {
+          "word": "주황색",
+          "focus": "주",
+          "rest": "황색",
+          "image": "../../../worksheets/assets/word-ju-orange-color.png"
+        },
+        {
+          "word": "주머니",
+          "focus": "주",
+          "rest": "머니",
+          "image": "../../../worksheets/assets/word-meo-pocket.png"
+        },
+        {
+          "word": "치즈",
+          "image": "../../../worksheets/assets/cheese.png",
+          "parts": [
+            {
+              "text": "치"
+            },
+            {
+              "text": "즈",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "마요네즈",
+          "image": "../../../worksheets/assets/word-jeu-mayonnaise.png",
+          "parts": [
+            {
+              "text": "마요네"
+            },
+            {
+              "text": "즈",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "지렁이",
+          "focus": "지",
+          "rest": "렁이",
+          "image": "../../../worksheets/assets/word-ji-earthworm.png"
+        },
+        {
+          "word": "지하철",
+          "focus": "지",
+          "rest": "하철",
+          "image": "../../../worksheets/assets/word-ji-subway.png"
+        },
+        {
+          "word": "후추",
+          "image": "../../../worksheets/assets/word-hu-pepper.png",
+          "parts": [
+            {
+              "text": "후"
+            },
+            {
+              "text": "추",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "배추",
+          "image": "../../../worksheets/assets/word-chu-napa-cabbage.png",
+          "parts": [
+            {
+              "text": "배"
+            },
+            {
+              "text": "추",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "치즈",
+          "focus": "치",
+          "rest": "즈",
+          "image": "../../../worksheets/assets/cheese.png"
+        },
+        {
+          "word": "곰치",
+          "image": "../../../worksheets/assets/word-chi-moray-eel.png",
+          "parts": [
+            {
+              "text": "곰"
+            },
+            {
+              "text": "치",
+              "focus": true
+            }
+          ]
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "10장 / 글자 낱말"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "소리 정리 1/2",

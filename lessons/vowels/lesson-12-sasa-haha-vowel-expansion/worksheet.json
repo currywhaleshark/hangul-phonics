@@ -278,6 +278,109 @@
       "footerRight": "하하 하마와 히"
     },
     {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "서랍",
+          "focus": "서",
+          "rest": "랍",
+          "image": "../../../worksheets/assets/word-seo-drawer.png"
+        },
+        {
+          "word": "도서관",
+          "image": "../../../worksheets/assets/word-seo-library.png",
+          "parts": [
+            {
+              "text": "도"
+            },
+            {
+              "text": "서",
+              "focus": true
+            },
+            {
+              "text": "관"
+            }
+          ]
+        },
+        {
+          "word": "수박",
+          "focus": "수",
+          "rest": "박",
+          "image": "../../../worksheets/assets/watermelon.png"
+        },
+        {
+          "word": "수영장",
+          "focus": "수",
+          "rest": "영장",
+          "image": "../../../worksheets/assets/word-su-swimming-pool.png"
+        },
+        {
+          "word": "주스",
+          "image": "../../../worksheets/assets/juice.png",
+          "parts": [
+            {
+              "text": "주"
+            },
+            {
+              "text": "스",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "스티커",
+          "focus": "스",
+          "rest": "티커",
+          "image": "../../../worksheets/assets/word-seu-sticker.png"
+        },
+        {
+          "word": "시계",
+          "focus": "시",
+          "rest": "계",
+          "image": "../../../worksheets/assets/word-si-clock.png"
+        },
+        {
+          "word": "시소",
+          "focus": "시",
+          "rest": "소",
+          "image": "../../../worksheets/assets/word-si-seesaw.png"
+        },
+        {
+          "word": "허리",
+          "focus": "허",
+          "rest": "리",
+          "image": "../../../worksheets/assets/word-heo-waist.png"
+        },
+        {
+          "word": "허수아비",
+          "focus": "허",
+          "rest": "수아비",
+          "image": "../../../worksheets/assets/word-heo-scarecrow.png"
+        },
+        {
+          "word": "후추",
+          "focus": "후",
+          "rest": "추",
+          "image": "../../../worksheets/assets/word-hu-pepper.png"
+        },
+        {
+          "word": "후라이팬",
+          "focus": "후",
+          "rest": "라이팬",
+          "image": "../../../worksheets/assets/word-hu-frying-pan.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "10장 / 글자 낱말"
+    },
+    {
       "type": "sound-choice",
       "theme": "gogo",
       "kicker": "소리 정리 1/2",
