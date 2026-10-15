@@ -42,20 +42,29 @@ export function detectSpeechSegments(audioPath, { noise, duration }) {
 const length = (segment) => segment.end - segment.start;
 
 export function mapTailPhrases(segments, wordCount) {
-  const tailCount = TAIL_PHRASES_BEFORE_WORDS + wordCount + 1;
-  if (segments.length < tailCount + FRONT_PHRASE_COUNT + 1) {
-    return null;
-  }
+  // The repeated "X,V!" is sometimes read as one breath, so accept it as one or two phrases.
+  for (const repeatCount of [2, 1]) {
+    const beforeWords = TAIL_PHRASES_BEFORE_WORDS - 2 + repeatCount;
+    const tailCount = beforeWords + wordCount + 1;
+    if (segments.length < tailCount + FRONT_PHRASE_COUNT + 1) {
+      continue;
+    }
 
-  const tail = segments.slice(segments.length - tailCount);
-  const [vowelSound, , , blend, target] = tail;
-  const final = tail.at(-1);
-  const shortSounds = [vowelSound, tail[1], tail[2], target, final];
-  if (!shortSounds.every((segment) => length(segment) < 0.8) || length(blend) < 0.5) {
-    return null;
+    const tail = segments.slice(segments.length - tailCount);
+    const vowelSound = tail[0];
+    const repeats = tail.slice(1, 1 + repeatCount);
+    const [blend, target] = tail.slice(1 + repeatCount);
+    const final = tail.at(-1);
+    const repeatMax = repeatCount === 2 ? 0.8 : 1.2;
+    const plausible =
+      [vowelSound, target, final].every((segment) => length(segment) < 0.8) &&
+      repeats.every((segment) => length(segment) < repeatMax) &&
+      length(blend) >= 0.5;
+    if (plausible) {
+      return { vowelSound, blend, target, words: tail.slice(beforeWords, beforeWords + wordCount), final };
+    }
   }
-
-  return { vowelSound, blend, target, words: tail.slice(TAIL_PHRASES_BEFORE_WORDS, TAIL_PHRASES_BEFORE_WORDS + wordCount), final };
+  return null;
 }
 
 export function mapFrontPhrases(segments, vowelSoundStart) {

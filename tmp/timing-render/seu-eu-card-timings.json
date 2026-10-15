@@ -12,12 +12,12 @@
   },
   "audio": {
     "src": "public/audio-gemini-candidates/vowel-combination-tts/56_스_seu.mp3",
-    "duration": 23.709
+    "duration": 25.051
   },
   "segment": {
     "label": "스",
     "start": 0,
-    "end": 23.709
+    "end": 25.051
   },
   "targetSyllable": "스",
   "vowel": {
@@ -35,7 +35,7 @@
       "assetKind": "character",
       "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png",
       "start": 0.2,
-      "end": 7.015,
+      "end": 6.097,
       "fromPosition": {
         "left": 18,
         "top": 56
@@ -56,7 +56,7 @@
       "assetKind": "tool",
       "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
       "start": 0.2,
-      "end": 7.015,
+      "end": 6.097,
       "fromPosition": {
         "left": 82,
         "top": 57
@@ -76,8 +76,8 @@
       "label": "스",
       "assetKind": "combined",
       "image": "public/video-assets/vowel-alpha/combined/사사 스 새시안-alpha.png",
-      "start": 7.015,
-      "end": 23.709,
+      "start": 6.097,
+      "end": 25.051,
       "fromPosition": {
         "left": 50,
         "top": 55
@@ -98,8 +98,8 @@
       "id": "seu-eu-word-1",
       "label": "주스",
       "image": "worksheets/assets/juice.png",
-      "start": 20.246,
-      "end": 23.158,
+      "start": 21.31,
+      "end": 24.37,
       "position": {
         "left": 16.579,
         "top": 53.86
@@ -110,8 +110,8 @@
       "id": "seu-eu-word-2",
       "label": "스티커",
       "image": "worksheets/assets/word-seu-sticker.png",
-      "start": 21.598,
-      "end": 23.158,
+      "start": 22.778,
+      "end": 24.37,
       "position": {
         "left": 88.263,
         "top": 31.965
@@ -123,8 +123,8 @@
     {
       "id": "seu-eu-initial",
       "label": "ㅅ",
-      "start": 9.069,
-      "end": 18.432,
+      "start": 8.188,
+      "end": 19.063,
       "position": {
         "left": 26.789,
         "top": 23.544
@@ -133,8 +133,8 @@
     {
       "id": "seu-eu-vowel",
       "label": "ㅡ",
-      "start": 12.743,
-      "end": 18.432,
+      "start": 12.243,
+      "end": 19.063,
       "position": {
         "left": 77.947,
         "top": 25.789
@@ -143,8 +143,8 @@
     {
       "id": "seu-eu-combined",
       "label": "스",
-      "start": 18.432,
-      "end": 19.982,
+      "start": 19.063,
+      "end": 20.613,
       "position": {
         "left": 22,
         "top": 30
@@ -153,8 +153,8 @@
     {
       "id": "seu-eu-final",
       "label": "스",
-      "start": 23.408,
-      "end": 23.709,
+      "start": 24.62,
+      "end": 25.051,
       "position": {
         "left": 22,
         "top": 30

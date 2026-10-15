@@ -3,7 +3,7 @@
   "voiceName": "Callirrhoe",
   "style": "유아 대상 한국어 교사, 밝고 친절한 말투, 또박또박한 발음",
   "trimFilter": "silenceremove=start_periods=1:start_duration=0:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_duration=0:start_threshold=-45dB,areverse",
-  "generatedAt": "2026-10-15T04:27:54.960Z",
+  "generatedAt": "2026-10-15T14:48:45.730Z",
   "count": 74,
   "items": [
     {
@@ -524,7 +524,7 @@
       "text": "사사 사슴이 으으 쿠션에 앉았어요.\n사사의 소리, 스! 으으 쿠션의 소리, 으!\n스,으!\n둘이 합치면, 스!\n주스, 스티커.\n스!",
       "mp3": "public/audio-gemini-candidates/vowel-combination-tts/56_스_seu.mp3",
       "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/56_스_seu.wav",
-      "duration": 23.709
+      "duration": 25.051
     },
     {
       "index": 57,
@@ -533,7 +533,7 @@
       "text": "지지 지렁이가 으으 쿠션에 앉았어요.\n지지의 소리, 즈! 으으 쿠션의 소리, 으!\n즈,으!\n둘이 합치면, 즈!\n치즈, 마요네즈.\n즈!",
       "mp3": "public/audio-gemini-candidates/vowel-combination-tts/57_즈_jeu.mp3",
       "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/57_즈_jeu.wav",
-      "duration": 22.355
+      "duration": 22.891
     },
     {
       "index": 58,
@@ -614,7 +614,7 @@
       "text": "사사 사슴이 이이 막대를 잡고 섰어요.\n사사의 소리, 스! 이이 막대의 소리, 이!\n스,이!\n둘이 합치면, 시!\n시계, 시소.\n시!",
       "mp3": "public/audio-gemini-candidates/vowel-combination-tts/66_시_si.mp3",
       "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/66_시_si.wav",
-      "duration": 25.732
+      "duration": 22.841
     },
     {
       "index": 67,
@@ -677,7 +677,7 @@
       "text": "아아 아기가\n으으 쿠션을 만나\n으! 입을 옆으로 쭉 당기고 같이 말해요.\n으!\n으르렁, 으쓱.\n으!",
       "mp3": "public/audio-gemini-candidates/vowel-combination-tts/vowel_으_eu.mp3",
       "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/vowel_으_eu.wav",
-      "duration": 18.29
+      "duration": 15.534
     },
     {
       "index": 103,

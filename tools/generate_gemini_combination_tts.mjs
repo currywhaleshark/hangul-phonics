@@ -145,7 +145,7 @@ export function combinationFileName(item) {
 export function selectItems(args) {
   const requested = args.flatMap((arg) => arg.split(",")).map((arg) => arg.trim()).filter(Boolean);
   if (requested.length === 0) {
-    throw new Error("Pass slugs (e.g. gu nu), syllables (e.g. 구), a vowel key (e.g. u), intro, or all");
+    throw new Error("Pass slugs (e.g. gu nu), syllables (e.g. 구), a vowel key (e.g. u), intro, intro-<slug> (e.g. intro-eu), or all");
   }
   if (requested.includes("all")) {
     return COMBINATION_TTS_ITEMS;
@@ -155,6 +155,13 @@ export function selectItems(args) {
   }
 
   return requested.flatMap((key) => {
+    if (key.startsWith("intro-")) {
+      const intro = VOWEL_INTRO_TTS_ITEMS.find((candidate) => `intro-${candidate.slug}` === key);
+      if (!intro) {
+        throw new Error(`Unknown vowel intro item: ${key}`);
+      }
+      return [intro];
+    }
     if (COMBINATION_VOWELS[key]) {
       return COMBINATION_TTS_ITEMS.filter((item) => item.vowelKey === key);
     }

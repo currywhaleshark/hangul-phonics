@@ -110,6 +110,7 @@ def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
 
 
 CARD_FONT = load_font(48, bold=True)
+CARD_FONT_MIN_SIZE = 24
 SMALL_FONT = load_font(42, bold=True)
 LETTER_FONT = load_font(152, bold=True)
 
@@ -399,6 +400,21 @@ def make_vowel_story_background(scene_image: Image.Image) -> Image.Image:
     return canvas
 
 
+def fit_card_font(draw: ImageDraw.ImageDraw, label: str, max_width: int) -> ImageFont.FreeTypeFont:
+    """Shrink long word labels (e.g. 브라키오사우루스) so they stay inside the card."""
+    font = CARD_FONT
+    size = getattr(CARD_FONT, "size", None)
+    if size is None:
+        return font
+    while size > CARD_FONT_MIN_SIZE:
+        bbox = draw.textbbox((0, 0), label, font=font)
+        if bbox[2] - bbox[0] <= max_width:
+            break
+        size -= 2
+        font = load_font(size, bold=True)
+    return font
+
+
 def make_word_card(cue: Cue, word_image: Image.Image, letter: str) -> Image.Image:
     card_w, card_h = 310, 330
     out = Image.new("RGBA", (card_w + 44, card_h + 54), (0, 0, 0, 0))
@@ -422,11 +438,12 @@ def make_word_card(cue: Cue, word_image: Image.Image, letter: str) -> Image.Imag
     image_box.alpha_composite(fitted, ((image_box.width - fitted.width) // 2, 8))
     panel.alpha_composite(image_box, ((card_w - image_box.width) // 2, 82))
 
-    bbox = draw.textbbox((0, 0), cue.label, font=CARD_FONT)
+    label_font = fit_card_font(draw, cue.label, card_w - 56)
+    bbox = draw.textbbox((0, 0), cue.label, font=label_font)
     text_x = card_w / 2
     text_y = 276
-    text_center(draw, (text_x + 3, text_y + 3), cue.label, CARD_FONT, (0, 0, 0, 48))
-    text_center(draw, (text_x, text_y), cue.label, CARD_FONT, (45, 54, 65, 255))
+    text_center(draw, (text_x + 3, text_y + 3), cue.label, label_font, (0, 0, 0, 48))
+    text_center(draw, (text_x, text_y), cue.label, label_font, (45, 54, 65, 255))
     if bbox[2] - bbox[0] > card_w - 56:
         draw.line((36, 306, card_w - 36, 306), fill=cue.accent + (230,), width=7)
 

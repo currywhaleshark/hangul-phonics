@@ -66,3 +66,14 @@ const intro = mapVowelIntroPhrases(introSegments, 2);
 assert.equal(intro.say.start, 14.24);
 assert.deepEqual(intro.words.map((word) => word.start), [16.42, 18.12]);
 assert.equal(intro.combineSwitch, (5.76 + 7.26) / 2);
+
+// Pauses detected in 57_즈_jeu.mp3, where the repeated "즈,으!" is read in one breath.
+const mergedRepeat = [
+  [0, 1.28], [2.35, 4.55], [5.53, 6.5], [7.35, 7.6], [8.94, 10.51], [11.38, 11.59], [12.95, 13.73],
+  [15.0, 16.01], [16.9, 17.16], [18.58, 19.29], [20.61, 21.4], [22.64, 22.89],
+].map(([start, end]) => ({ start, end }));
+const mergedTail = mapTailPhrases(mergedRepeat, 2);
+assert.equal(mergedTail.vowelSound.start, 11.38);
+assert.equal(mergedTail.target.start, 16.9);
+assert.deepEqual(mergedTail.words.map((word) => word.start), [18.58, 20.61]);
+assert.equal(mapFrontPhrases(mergedRepeat, mergedTail.vowelSound.start).initialSound.start, 7.35);

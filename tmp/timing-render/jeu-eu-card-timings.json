@@ -12,12 +12,12 @@
   },
   "audio": {
     "src": "public/audio-gemini-candidates/vowel-combination-tts/57_즈_jeu.mp3",
-    "duration": 22.355
+    "duration": 22.891
   },
   "segment": {
     "label": "즈",
     "start": 0,
-    "end": 22.355
+    "end": 22.891
   },
   "targetSyllable": "즈",
   "vowel": {
@@ -35,7 +35,7 @@
       "assetKind": "character",
       "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png",
       "start": 0.2,
-      "end": 4.858,
+      "end": 5.04,
       "fromPosition": {
         "left": 18,
         "top": 56
@@ -56,7 +56,7 @@
       "assetKind": "tool",
       "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
       "start": 0.2,
-      "end": 4.858,
+      "end": 5.04,
       "fromPosition": {
         "left": 82,
         "top": 57
@@ -76,8 +76,8 @@
       "label": "즈",
       "assetKind": "combined",
       "image": "public/video-assets/vowel-alpha/combined/지지 즈 새시안-alpha.png",
-      "start": 4.858,
-      "end": 22.355,
+      "start": 5.04,
+      "end": 22.891,
       "fromPosition": {
         "left": 50,
         "top": 55
@@ -98,8 +98,8 @@
       "id": "jeu-eu-word-1",
       "label": "치즈",
       "image": "worksheets/assets/cheese.png",
-      "start": 18.619,
-      "end": 21.697,
+      "start": 18.429,
+      "end": 22.295,
       "position": {
         "left": 16.579,
         "top": 53.86
@@ -110,8 +110,8 @@
       "id": "jeu-eu-word-2",
       "label": "마요네즈",
       "image": "worksheets/assets/word-jeu-mayonnaise.png",
-      "start": 19.981,
-      "end": 21.697,
+      "start": 20.461,
+      "end": 22.295,
       "position": {
         "left": 88.263,
         "top": 31.965
@@ -123,8 +123,8 @@
     {
       "id": "jeu-eu-initial",
       "label": "ㅈ",
-      "start": 6.675,
-      "end": 16.388,
+      "start": 6.6,
+      "end": 16.163,
       "position": {
         "left": 26.789,
         "top": 23.544
@@ -133,8 +133,8 @@
     {
       "id": "jeu-eu-vowel",
       "label": "ㅡ",
-      "start": 10.541,
-      "end": 16.388,
+      "start": 10.609,
+      "end": 16.163,
       "position": {
         "left": 77.947,
         "top": 25.789
@@ -143,8 +143,8 @@
     {
       "id": "jeu-eu-combined",
       "label": "즈",
-      "start": 16.388,
-      "end": 17.938,
+      "start": 16.163,
+      "end": 17.713,
       "position": {
         "left": 22,
         "top": 30
@@ -153,8 +153,8 @@
     {
       "id": "jeu-eu-final",
       "label": "즈",
-      "start": 21.947,
-      "end": 22.355,
+      "start": 22.545,
+      "end": 22.891,
       "position": {
         "left": 22,
         "top": 30
