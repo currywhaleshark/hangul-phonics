@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -6,37 +7,12 @@ import { renderWorksheetDocument } from "../worksheets/worksheet-renderer.js";
 const root = path.resolve("lessons", "vowels");
 const cssHref = "../../../worksheets/pilot-a4.css";
 
-const youtubeVideoIdsByTraceLetter = new Map([
-  ["\uC544", "jiq5R5GOnSY"],
-  ["\uC624", "SM-5rr_zXMg"],
-  ["\uC6B0", "veGNGGLLHog"],
-  ["\uAC00", "kelf8prIzZs"],
-  ["\uACE0", "sE3Jg8d3sVY"],
-  ["\uB098", "pyCIALZkmWE"],
-  ["\uB178", "KCIuIU02VY0"],
-  ["\uB9C8", "Hn75Y3buYKM"],
-  ["\uBAA8", "MvawirDWxi0"],
-  ["\uBC14", "_gwoud3LLY0"],
-  ["\uBCF4", "Mrc6LVK_cCo"],
-  ["\uB2E4", "HbqQr3GkrM4"],
-  ["\uB3C4", "u9MoqgDZVrM"],
-  ["\uB77C", "BorMu32CkVg"],
-  ["\uB85C", "u87LLzQ1LD4"],
-  ["\uC0AC", "pw8Y4tBPc8g"],
-  ["\uC18C", "uH7yFiacwhI"],
-  ["\uD558", "E-A_L0fKROs"],
-  ["\uD638", "90LTsoehtEE"],
-  ["\uC790", "uEHrSncgf4c"],
-  ["\uC870", "K5d67yqyz38"],
-  ["\uCC28", "wz-3bVHwoK0"],
-  ["\uCD08", "0R79bKEtWyY"],
-  ["\uCE74", "RfswEZUIwD8"],
-  ["\uCF54", "s3-kXgPOD5w"],
-  ["\uD0C0", "A0xCq0A_p7Q"],
-  ["\uD1A0", "XJ6BeuG5usk"],
-  ["\uD30C", "EfK79cZhmh4"],
-  ["\uD3EC", "f0DpJkwnBiM"],
-]);
+// Lesson videos end their title with "=<syllable>" (e.g. "고고 고양이와 우우 발판 | ㄱ+ㅜ=구").
+const youtubeVideoIdsByTraceLetter = new Map(
+  JSON.parse(readFileSync(path.resolve("public", "qr", "youtube", "manifest.json"), "utf8"))
+    .entries.map((entry) => [entry.title.match(/=([가-힣])$/u)?.[1], entry.videoId])
+    .filter(([syllable]) => syllable),
+);
 
 function videoQrForTraceLetter(traceLetter) {
   const videoId = youtubeVideoIdsByTraceLetter.get(traceLetter);

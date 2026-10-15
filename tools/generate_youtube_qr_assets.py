@@ -17,6 +17,7 @@ PLAYLIST_ID = "PL0u1NTgEz-xFjU8_KXoKUDf1AwcnOBfC0"
 FEED_URL = f"https://www.youtube.com/feeds/videos.xml?playlist_id={PLAYLIST_ID}&max-results=50"
 QR_DIR = Path("public/qr/youtube")
 MANIFEST_PATH = QR_DIR / "manifest.json"
+UPLOAD_STATE_PATH = Path("secrets/youtube-upload-state.json")
 
 SYLLABLE_VIDEO_ENTRIES = [
     ("kelf8prIzZs", "고고 고양이와 아아 나뭇가지 | ㄱ+ㅏ=가"),
@@ -112,6 +113,14 @@ def build_entry(video_id: str, title: str) -> dict[str, object]:
     }
 
 
+def uploaded_video_entries() -> list[tuple[str, str]]:
+    """Videos uploaded by tools/upload-youtube-videos.mjs, which also covers unlisted ones the feed hides."""
+    if not UPLOAD_STATE_PATH.exists():
+        return []
+    uploads = json.loads(UPLOAD_STATE_PATH.read_text(encoding="utf-8")).get("uploads", {})
+    return [(upload["videoId"], upload["title"]) for upload in uploads.values() if upload.get("videoId")]
+
+
 def load_manifest() -> dict[str, object]:
     if MANIFEST_PATH.exists():
         return json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
@@ -128,7 +137,8 @@ def main() -> None:
     entries_by_id = {entry["videoId"]: entry for entry in existing_entries}
     ordered_ids = [entry["videoId"] for entry in existing_entries]
 
-    for video_id, title in SYLLABLE_VIDEO_ENTRIES:
+    video_entries = list(dict.fromkeys(SYLLABLE_VIDEO_ENTRIES + uploaded_video_entries()))
+    for video_id, title in video_entries:
         generated = build_entry(video_id, title)
         if video_id not in entries_by_id:
             ordered_ids.append(video_id)
@@ -136,7 +146,7 @@ def main() -> None:
 
     manifest["entries"] = [entries_by_id[video_id] for video_id in ordered_ids]
     MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {len(SYLLABLE_VIDEO_ENTRIES)} syllable QR entries to {MANIFEST_PATH}")
+    print(f"Wrote {len(video_entries)} syllable QR entries to {MANIFEST_PATH}")
 
 
 if __name__ == "__main__":

@@ -57,6 +57,11 @@
           "sound": "어!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=0VLWxUPgX7E",
+        "image": "../../../public/qr/youtube/0VLWxUPgX7E.png"
+      },
       "teacherNote": "ㅇ 자리를 손가락으로 짚고 오른쪽의 ㅓ 풍선을 붙여 어를 읽는다.",
       "footerLeft": "ㅇ + ㅓ = 어",
       "footerRight": "아아 아기와 어"
@@ -126,6 +131,11 @@
           "sound": "으!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=PXfvPwHNEfU",
+        "image": "../../../public/qr/youtube/PXfvPwHNEfU.png"
+      },
       "teacherNote": "ㅇ 자리를 손가락으로 짚고 아래의 ㅡ 쿠션을 붙여 으를 읽는다.",
       "footerLeft": "ㅇ + ㅡ = 으",
       "footerRight": "아아 아기와 으"
@@ -158,6 +168,11 @@
           "sound": "이!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=2rVLrJmqLuI",
+        "image": "../../../public/qr/youtube/2rVLrJmqLuI.png"
+      },
       "teacherNote": "ㅇ 자리를 손가락으로 짚고 오른쪽의 ㅣ 막대를 붙여 이를 읽는다.",
       "footerLeft": "ㅇ + ㅣ = 이",
       "footerRight": "아아 아기와 이"

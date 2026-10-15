@@ -49,6 +49,11 @@
           "sound": "거!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=G8GJ4ftuTUY",
+        "image": "../../../public/qr/youtube/G8GJ4ftuTUY.png"
+      },
       "teacherNote": "고고 꼬리의 ㄱ 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 거를 읽는다.",
       "footerLeft": "ㄱ + ㅓ = 거",
       "footerRight": "고고 고양이와 거"
@@ -81,6 +86,11 @@
           "sound": "구!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=MhXxJZ0J0qU",
+        "image": "../../../public/qr/youtube/MhXxJZ0J0qU.png"
+      },
       "teacherNote": "고고 꼬리의 ㄱ 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 구를 읽는다.",
       "footerLeft": "ㄱ + ㅜ = 구",
       "footerRight": "고고 고양이와 구"
@@ -113,6 +123,11 @@
           "sound": "그!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=7WMfjk6hxVY",
+        "image": "../../../public/qr/youtube/7WMfjk6hxVY.png"
+      },
       "teacherNote": "고고 꼬리의 ㄱ 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 그를 읽는다.",
       "footerLeft": "ㄱ + ㅡ = 그",
       "footerRight": "고고 고양이와 그"
@@ -145,6 +160,11 @@
           "sound": "기!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=-4LCfm0YwAo",
+        "image": "../../../public/qr/youtube/-4LCfm0YwAo.png"
+      },
       "teacherNote": "고고 꼬리의 ㄱ 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 기를 읽는다.",
       "footerLeft": "ㄱ + ㅣ = 기",
       "footerRight": "고고 고양이와 기"
@@ -177,6 +197,11 @@
           "sound": "너!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=QHWrLq_rWSI",
+        "image": "../../../public/qr/youtube/QHWrLq_rWSI.png"
+      },
       "teacherNote": "나나가 앉은 ㄴ 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 너를 읽는다.",
       "footerLeft": "ㄴ + ㅓ = 너",
       "footerRight": "나나 나비와 너"
@@ -209,6 +234,11 @@
           "sound": "누!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=8KwgFtvbVL4",
+        "image": "../../../public/qr/youtube/8KwgFtvbVL4.png"
+      },
       "teacherNote": "나나가 앉은 ㄴ 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 누를 읽는다.",
       "footerLeft": "ㄴ + ㅜ = 누",
       "footerRight": "나나 나비와 누"
@@ -241,6 +271,11 @@
           "sound": "느!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=oAOOLj0J3NQ",
+        "image": "../../../public/qr/youtube/oAOOLj0J3NQ.png"
+      },
       "teacherNote": "나나가 앉은 ㄴ 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 느를 읽는다.",
       "footerLeft": "ㄴ + ㅡ = 느",
       "footerRight": "나나 나비와 느"
@@ -273,6 +308,11 @@
           "sound": "니!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=AMpDKudqYYc",
+        "image": "../../../public/qr/youtube/AMpDKudqYYc.png"
+      },
       "teacherNote": "나나가 앉은 ㄴ 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 니를 읽는다.",
       "footerLeft": "ㄴ + ㅣ = 니",
       "footerRight": "나나 나비와 니"

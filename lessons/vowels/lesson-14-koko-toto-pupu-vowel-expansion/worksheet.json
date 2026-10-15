@@ -53,6 +53,11 @@
           "sound": "커!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=gfEY-aNTKHc",
+        "image": "../../../public/qr/youtube/gfEY-aNTKHc.png"
+      },
       "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 커를 읽는다.",
       "footerLeft": "ㅋ + ㅓ = 커",
       "footerRight": "코코 코알라와 커"
@@ -85,6 +90,11 @@
           "sound": "쿠!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=wZsOsdUonFc",
+        "image": "../../../public/qr/youtube/wZsOsdUonFc.png"
+      },
       "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 쿠를 읽는다.",
       "footerLeft": "ㅋ + ㅜ = 쿠",
       "footerRight": "코코 코알라와 쿠"
@@ -117,6 +127,11 @@
           "sound": "크!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=ysnwbj3qQgQ",
+        "image": "../../../public/qr/youtube/ysnwbj3qQgQ.png"
+      },
       "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 크를 읽는다.",
       "footerLeft": "ㅋ + ㅡ = 크",
       "footerRight": "코코 코알라와 크"
@@ -149,6 +164,11 @@
           "sound": "키!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=63rh8aK2xAs",
+        "image": "../../../public/qr/youtube/63rh8aK2xAs.png"
+      },
       "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 키를 읽는다.",
       "footerLeft": "ㅋ + ㅣ = 키",
       "footerRight": "코코 코알라와 키"
@@ -181,6 +201,11 @@
           "sound": "터!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=9Wi9ftwzSGY",
+        "image": "../../../public/qr/youtube/9Wi9ftwzSGY.png"
+      },
       "teacherNote": "토토 귀와 몸의 ㅌ 톡톡 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 터를 읽는다.",
       "footerLeft": "ㅌ + ㅓ = 터",
       "footerRight": "토토 토끼와 터"
@@ -213,6 +238,11 @@
           "sound": "투!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=_jUZrEPDJ7s",
+        "image": "../../../public/qr/youtube/_jUZrEPDJ7s.png"
+      },
       "teacherNote": "토토 귀와 몸의 ㅌ 톡톡 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 투를 읽는다.",
       "footerLeft": "ㅌ + ㅜ = 투",
       "footerRight": "토토 토끼와 투"
@@ -245,6 +275,11 @@
           "sound": "트!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=4eQPryckUwE",
+        "image": "../../../public/qr/youtube/4eQPryckUwE.png"
+      },
       "teacherNote": "토토 귀와 몸의 ㅌ 톡톡 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 트를 읽는다.",
       "footerLeft": "ㅌ + ㅡ = 트",
       "footerRight": "토토 토끼와 트"
@@ -277,6 +312,11 @@
           "sound": "티!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=BoF2foEdY_c",
+        "image": "../../../public/qr/youtube/BoF2foEdY_c.png"
+      },
       "teacherNote": "토토 귀와 몸의 ㅌ 톡톡 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 티를 읽는다.",
       "footerLeft": "ㅌ + ㅣ = 티",
       "footerRight": "토토 토끼와 티"
@@ -309,6 +349,11 @@
           "sound": "퍼!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=KG4rCGUSEE4",
+        "image": "../../../public/qr/youtube/KG4rCGUSEE4.png"
+      },
       "teacherNote": "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 퍼를 읽는다.",
       "footerLeft": "ㅍ + ㅓ = 퍼",
       "footerRight": "푸푸 풍선와 퍼"
@@ -341,6 +386,11 @@
           "sound": "푸!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Nr7rv2nNZnE",
+        "image": "../../../public/qr/youtube/Nr7rv2nNZnE.png"
+      },
       "teacherNote": "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 푸를 읽는다.",
       "footerLeft": "ㅍ + ㅜ = 푸",
       "footerRight": "푸푸 풍선와 푸"
@@ -373,6 +423,11 @@
           "sound": "프!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=-0gJVT_FmTU",
+        "image": "../../../public/qr/youtube/-0gJVT_FmTU.png"
+      },
       "teacherNote": "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 프를 읽는다.",
       "footerLeft": "ㅍ + ㅡ = 프",
       "footerRight": "푸푸 풍선와 프"
@@ -405,6 +460,11 @@
           "sound": "피!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=aV4zNpbjy_0",
+        "image": "../../../public/qr/youtube/aV4zNpbjy_0.png"
+      },
       "teacherNote": "푸푸 풍선 몸의 ㅍ 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 피를 읽는다.",
       "footerLeft": "ㅍ + ㅣ = 피",
       "footerRight": "푸푸 풍선와 피"

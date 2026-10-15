@@ -49,6 +49,11 @@
           "sound": "서!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=p1ZJwizMIxc",
+        "image": "../../../public/qr/youtube/p1ZJwizMIxc.png"
+      },
       "teacherNote": "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 서를 읽는다.",
       "footerLeft": "ㅅ + ㅓ = 서",
       "footerRight": "사사 사슴와 서"
@@ -81,6 +86,11 @@
           "sound": "수!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=OdL3wLZ6B5k",
+        "image": "../../../public/qr/youtube/OdL3wLZ6B5k.png"
+      },
       "teacherNote": "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 수를 읽는다.",
       "footerLeft": "ㅅ + ㅜ = 수",
       "footerRight": "사사 사슴와 수"
@@ -113,6 +123,11 @@
           "sound": "스!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Xxkxo0aW-Yc",
+        "image": "../../../public/qr/youtube/Xxkxo0aW-Yc.png"
+      },
       "teacherNote": "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 스를 읽는다.",
       "footerLeft": "ㅅ + ㅡ = 스",
       "footerRight": "사사 사슴와 스"
@@ -145,6 +160,11 @@
           "sound": "시!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=KK3CrVfVwj8",
+        "image": "../../../public/qr/youtube/KK3CrVfVwj8.png"
+      },
       "teacherNote": "사사 뿔의 ㅅ 산 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 시를 읽는다.",
       "footerLeft": "ㅅ + ㅣ = 시",
       "footerRight": "사사 사슴와 시"
@@ -177,6 +197,11 @@
           "sound": "허!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Pe-0vl5STq4",
+        "image": "../../../public/qr/youtube/Pe-0vl5STq4.png"
+      },
       "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 허를 읽는다.",
       "footerLeft": "ㅎ + ㅓ = 허",
       "footerRight": "하하 하마와 허"
@@ -209,6 +234,11 @@
           "sound": "후!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=ZV1ZqbfGsTY",
+        "image": "../../../public/qr/youtube/ZV1ZqbfGsTY.png"
+      },
       "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 후를 읽는다.",
       "footerLeft": "ㅎ + ㅜ = 후",
       "footerRight": "하하 하마와 후"

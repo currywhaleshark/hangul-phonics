@@ -25,13 +25,29 @@ export function isSyllableCombineUploadProject(project) {
     && Boolean(project.render?.outputSlug);
 }
 
+// 아아 아기 + vowel tool intro videos. 아/오/우 were uploaded by hand before this tool existed.
+const MANUALLY_UPLOADED_PROJECT_IDS = new Set(["aa-a", "oo-o", "uu-u"]);
+const VOWEL_JAMO = ["ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ", "ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ"];
+
+export function isVowelIntroUploadProject(project) {
+  return project?.template === "vowel-combine-story"
+    && !MANUALLY_UPLOADED_PROJECT_IDS.has(project.id)
+    && Boolean(project.character?.letter)
+    && Boolean(project.combineCues?.some((cue) => cue.assetKind === "tool"))
+    && Boolean(project.render?.outputSlug);
+}
+
+export function isUploadProject(project) {
+  return isSyllableCombineUploadProject(project) || isVowelIntroUploadProject(project);
+}
+
 export function syllableCombineUploadProjects(projects = TIMING_PROJECTS) {
-  return projects.filter(isSyllableCombineUploadProject);
+  return projects.filter(isUploadProject);
 }
 
 export function makeUploadEntry(project, options = {}) {
-  if (!isSyllableCombineUploadProject(project)) {
-    throw new Error(`Not a syllable combine upload project: ${project?.id ?? "unknown"}`);
+  if (!isUploadProject(project)) {
+    throw new Error(`Not an uploadable lesson project: ${project?.id ?? "unknown"}`);
   }
 
   const videoDir = options.videoDir ?? DEFAULT_VIDEO_DIR;
@@ -42,7 +58,7 @@ export function makeUploadEntry(project, options = {}) {
     file: path.posix.join(normalizeSlashes(videoDir), `${slug}-timed-lesson.mp4`),
     title,
     description: options.description ?? DEFAULT_DESCRIPTION,
-    tags: [...DEFAULT_TAGS, project.targetSyllable],
+    tags: [...DEFAULT_TAGS, project.targetSyllable ?? project.character.letter],
     categoryId: options.categoryId ?? DEFAULT_CATEGORY_ID,
     privacyStatus: options.privacyStatus ?? DEFAULT_PRIVACY_STATUS,
     selfDeclaredMadeForKids: options.selfDeclaredMadeForKids ?? true,
@@ -55,7 +71,7 @@ export function buildUploadManifest(options = {}) {
   const projects = options.projects ?? syllableCombineUploadProjects();
   const fileExists = options.fileExists ?? existsSync;
   const entries = projects
-    .filter(isSyllableCombineUploadProject)
+    .filter(isUploadProject)
     .map((project) => makeUploadEntry(project, options))
     .filter((entry) => fileExists(entry.file));
 
@@ -68,6 +84,12 @@ export function buildUploadManifest(options = {}) {
 }
 
 export function buildYoutubeTitle(project) {
+  if (isVowelIntroUploadProject(project)) {
+    const syllable = project.character.letter;
+    const vowel = VOWEL_JAMO[Math.floor(((syllable.codePointAt(0) - 0xac00) % 588) / 28)];
+    const tool = project.combineCues.find((cue) => cue.assetKind === "tool").label;
+    return `아아 아기와 ${tool} | ㅇ+${vowel}=${syllable}`;
+  }
   const particle = hasFinalConsonant(project.character.name) ? "과" : "와";
   return `${project.character.name}${particle} ${project.vowel.toolLabel} | ${project.character.letter}+${project.vowel.letter}=${project.targetSyllable}`;
 }

@@ -49,6 +49,11 @@
           "sound": "저!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=p0MpNcgw4J0",
+        "image": "../../../public/qr/youtube/p0MpNcgw4J0.png"
+      },
       "teacherNote": "지지의 ㅈ 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 저를 읽는다.",
       "footerLeft": "ㅈ + ㅓ = 저",
       "footerRight": "지지 지렁이와 저"
@@ -81,6 +86,11 @@
           "sound": "주!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=T_cUiZbIvS0",
+        "image": "../../../public/qr/youtube/T_cUiZbIvS0.png"
+      },
       "teacherNote": "지지의 ㅈ 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 주를 읽는다.",
       "footerLeft": "ㅈ + ㅜ = 주",
       "footerRight": "지지 지렁이와 주"
@@ -113,6 +123,11 @@
           "sound": "즈!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=xLdnyfGDYEo",
+        "image": "../../../public/qr/youtube/xLdnyfGDYEo.png"
+      },
       "teacherNote": "지지의 ㅈ 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 즈를 읽는다.",
       "footerLeft": "ㅈ + ㅡ = 즈",
       "footerRight": "지지 지렁이와 즈"
@@ -145,6 +160,11 @@
           "sound": "지!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=tdPJ3dnB4Cg",
+        "image": "../../../public/qr/youtube/tdPJ3dnB4Cg.png"
+      },
       "teacherNote": "지지의 ㅈ 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 지를 읽는다.",
       "footerLeft": "ㅈ + ㅣ = 지",
       "footerRight": "지지 지렁이와 지"
@@ -209,6 +229,11 @@
           "sound": "추!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=oLHsVForTEg",
+        "image": "../../../public/qr/youtube/oLHsVForTEg.png"
+      },
       "teacherNote": "치치의 ㅊ 칙칙 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 추를 읽는다.",
       "footerLeft": "ㅊ + ㅜ = 추",
       "footerRight": "치치 칙폭이와 추"
@@ -273,6 +298,11 @@
           "sound": "치!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=hqOhTxo47bQ",
+        "image": "../../../public/qr/youtube/hqOhTxo47bQ.png"
+      },
       "teacherNote": "치치의 ㅊ 칙칙 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 치를 읽는다.",
       "footerLeft": "ㅊ + ㅣ = 치",
       "footerRight": "치치 칙폭이와 치"

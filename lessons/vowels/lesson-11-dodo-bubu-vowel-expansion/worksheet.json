@@ -49,6 +49,11 @@
           "sound": "더!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=5nH8dCnvA0o",
+        "image": "../../../public/qr/youtube/5nH8dCnvA0o.png"
+      },
       "teacherNote": "도도 몸의 ㄷ 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 더를 읽는다.",
       "footerLeft": "ㄷ + ㅓ = 더",
       "footerRight": "도도 도토리와 더"
@@ -81,6 +86,11 @@
           "sound": "두!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=gw3AERn8ylg",
+        "image": "../../../public/qr/youtube/gw3AERn8ylg.png"
+      },
       "teacherNote": "도도 몸의 ㄷ 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 두를 읽는다.",
       "footerLeft": "ㄷ + ㅜ = 두",
       "footerRight": "도도 도토리와 두"
@@ -113,6 +123,11 @@
           "sound": "드!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=dTtkidi9OFc",
+        "image": "../../../public/qr/youtube/dTtkidi9OFc.png"
+      },
       "teacherNote": "도도 몸의 ㄷ 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 드를 읽는다.",
       "footerLeft": "ㄷ + ㅡ = 드",
       "footerRight": "도도 도토리와 드"
@@ -177,6 +192,11 @@
           "sound": "버!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Y0C9B56yOYM",
+        "image": "../../../public/qr/youtube/Y0C9B56yOYM.png"
+      },
       "teacherNote": "부부 몸의 ㅂ 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 버를 읽는다.",
       "footerLeft": "ㅂ + ㅓ = 버",
       "footerRight": "부부 부엉이와 버"
@@ -209,6 +229,11 @@
           "sound": "부!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=pCW2w-uXcvw",
+        "image": "../../../public/qr/youtube/pCW2w-uXcvw.png"
+      },
       "teacherNote": "부부 몸의 ㅂ 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 부를 읽는다.",
       "footerLeft": "ㅂ + ㅜ = 부",
       "footerRight": "부부 부엉이와 부"
@@ -241,6 +266,11 @@
           "sound": "브!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=oBruSnRO7CI",
+        "image": "../../../public/qr/youtube/oBruSnRO7CI.png"
+      },
       "teacherNote": "부부 몸의 ㅂ 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 브를 읽는다.",
       "footerLeft": "ㅂ + ㅡ = 브",
       "footerRight": "부부 부엉이와 브"
@@ -273,6 +303,11 @@
           "sound": "비!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=jem4Htl-iZM",
+        "image": "../../../public/qr/youtube/jem4Htl-iZM.png"
+      },
       "teacherNote": "부부 몸의 ㅂ 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 비를 읽는다.",
       "footerLeft": "ㅂ + ㅣ = 비",
       "footerRight": "부부 부엉이와 비"

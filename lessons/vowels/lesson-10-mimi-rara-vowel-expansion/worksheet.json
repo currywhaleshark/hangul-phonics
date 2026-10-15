@@ -49,6 +49,11 @@
           "sound": "머!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=_psetHildbA",
+        "image": "../../../public/qr/youtube/_psetHildbA.png"
+      },
       "teacherNote": "미미 어항의 ㅁ 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 머를 읽는다.",
       "footerLeft": "ㅁ + ㅓ = 머",
       "footerRight": "미미 문어와 머"
@@ -81,6 +86,11 @@
           "sound": "무!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=AW9ABNI-M10",
+        "image": "../../../public/qr/youtube/AW9ABNI-M10.png"
+      },
       "teacherNote": "미미 어항의 ㅁ 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 무를 읽는다.",
       "footerLeft": "ㅁ + ㅜ = 무",
       "footerRight": "미미 문어와 무"
@@ -145,6 +155,11 @@
           "sound": "미!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Zf9_T8ySyK8",
+        "image": "../../../public/qr/youtube/Zf9_T8ySyK8.png"
+      },
       "teacherNote": "미미 어항의 ㅁ 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 미를 읽는다.",
       "footerLeft": "ㅁ + ㅣ = 미",
       "footerRight": "미미 문어와 미"
@@ -209,6 +224,11 @@
           "sound": "루!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=E2Gi389t2oI",
+        "image": "../../../public/qr/youtube/E2Gi389t2oI.png"
+      },
       "teacherNote": "라라 리본의 ㄹ 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 루를 읽는다.",
       "footerLeft": "ㄹ + ㅜ = 루",
       "footerRight": "라라 리본와 루"
@@ -241,6 +261,11 @@
           "sound": "르!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=GobDtt38t5g",
+        "image": "../../../public/qr/youtube/GobDtt38t5g.png"
+      },
       "teacherNote": "라라 리본의 ㄹ 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 르를 읽는다.",
       "footerLeft": "ㄹ + ㅡ = 르",
       "footerRight": "라라 리본와 르"
@@ -273,6 +298,11 @@
           "sound": "리!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=4dypxLnfFyM",
+        "image": "../../../public/qr/youtube/4dypxLnfFyM.png"
+      },
       "teacherNote": "라라 리본의 ㄹ 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 리를 읽는다.",
       "footerLeft": "ㄹ + ㅣ = 리",
       "footerRight": "라라 리본와 리"
