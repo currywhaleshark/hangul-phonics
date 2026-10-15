@@ -9,6 +9,7 @@ import {
   DEFAULT_SCOPES,
   buildBrowserOpenCommand,
   buildPlaylistInsertBody,
+  buildPublishStatusBody,
   buildUploadManifest,
   buildVideoInsertBody,
   filterUploadEntries,
@@ -21,11 +22,16 @@ const TOKEN_URL = "https://oauth2.googleapis.com/token";
 const VIDEO_UPLOAD_URL = "https://www.googleapis.com/upload/youtube/v3/videos?part=snippet,status&uploadType=resumable";
 const PLAYLISTS_URL = "https://www.googleapis.com/youtube/v3/playlists";
 const PLAYLIST_ITEMS_URL = "https://www.googleapis.com/youtube/v3/playlistItems";
+const VIDEOS_URL = "https://www.googleapis.com/youtube/v3/videos";
 const TOKEN_FILE_HINT = "secrets/youtube-oauth-token.json";
 const STATE_FILE_HINT = "secrets/youtube-upload-state.json";
 
 async function main() {
   const args = parseUploadArgs(process.argv.slice(2));
+  if (args.publishUnlisted) {
+    await publishUnlistedUploads(args);
+    return;
+  }
   const manifest = buildUploadManifest({
     videoDir: args.videoDir,
     playlistTitle: args.playlistTitle,
@@ -312,6 +318,38 @@ async function insertPlaylistItem(videoId, playlistId, accessToken) {
     method: "POST",
     body: buildPlaylistInsertBody(videoId, playlistId),
   });
+}
+
+// Switches videos recorded in the upload state from unlisted to public; private ones are left alone.
+async function publishUnlistedUploads(args) {
+  const state = await readJsonIfExists(args.stateFile, { uploads: {} });
+  const uploads = Object.entries(state.uploads ?? {}).filter(([projectId, upload]) =>
+    upload.videoId && (args.only.length === 0 || args.only.includes(projectId)));
+  const oauthClient = await readOAuthClient(args.clientFile);
+  const token = await getAccessToken(oauthClient, args);
+
+  const videos = [];
+  for (let index = 0; index < uploads.length; index += 50) {
+    const ids = uploads.slice(index, index + 50).map(([, upload]) => upload.videoId).join(",");
+    const listed = await fetchJson(`${VIDEOS_URL}?part=status&id=${ids}`, { accessToken: token.access_token });
+    videos.push(...(listed.items ?? []));
+  }
+
+  const unlisted = videos.filter((video) => video.status?.privacyStatus === "unlisted");
+  console.log(`${unlisted.length}/${uploads.length} uploaded videos are unlisted${args.dryRun ? " (dry run)" : ""}`);
+  for (const video of unlisted) {
+    const title = uploads.find(([, upload]) => upload.videoId === video.id)?.[1].title ?? video.id;
+    if (args.dryRun) {
+      console.log(`- would publish ${title}`);
+      continue;
+    }
+    await fetchJson(`${VIDEOS_URL}?part=status`, {
+      method: "PUT",
+      accessToken: token.access_token,
+      body: buildPublishStatusBody(video),
+    });
+    console.log(`Published ${title}: https://www.youtube.com/watch?v=${video.id}`);
+  }
 }
 
 async function fetchJson(url, options = {}) {

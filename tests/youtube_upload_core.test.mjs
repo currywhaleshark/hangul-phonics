@@ -145,3 +145,19 @@ import {
   assert.equal(args.reauth, true);
   assert.equal(args.dryRun, true);
 }
+
+{
+  const { buildPublishStatusBody, parseUploadArgs: parse, isVowelIntroUploadProject, buildYoutubeTitle: title } = await import("../tools/youtube-upload-core.mjs");
+  const { createDefaultTimingProject: create } = await import("../tools/timing-editor-core.js");
+  assert.deepEqual(
+    buildPublishStatusBody({
+      id: "abc",
+      status: { privacyStatus: "unlisted", uploadStatus: "processed", embeddable: true, selfDeclaredMadeForKids: true, madeForKids: true },
+    }),
+    { id: "abc", status: { embeddable: true, selfDeclaredMadeForKids: true, privacyStatus: "public" } },
+  );
+  assert.equal(parse(["--publish-unlisted"]).publishUnlisted, true);
+  assert.equal(isVowelIntroUploadProject(create("eo-eo")), true);
+  assert.equal(isVowelIntroUploadProject(create("uu-u")), false);
+  assert.equal(title(create("eo-eo")), "아아 아기와 어어 풍선 | ㅇ+ㅓ=어");
+}

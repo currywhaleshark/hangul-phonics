@@ -110,6 +110,19 @@ export function buildVideoInsertBody(entry) {
   };
 }
 
+// Keeps the writable status fields and flips only the privacy, for videos.update(part=status).
+export function buildPublishStatusBody(video, privacyStatus = "public") {
+  const status = video.status ?? {};
+  const writable = ["embeddable", "license", "publicStatsViewable", "selfDeclaredMadeForKids", "containsSyntheticMedia"];
+  return {
+    id: video.id,
+    status: {
+      ...Object.fromEntries(writable.filter((key) => key in status).map((key) => [key, status[key]])),
+      privacyStatus,
+    },
+  };
+}
+
 export function findPlaylistByTitle(playlists, title) {
   const normalizedTitle = normalizeTitle(title);
   return playlists.find((playlist) => normalizeTitle(playlist?.snippet?.title) === normalizedTitle) ?? null;
@@ -130,6 +143,7 @@ export function buildPlaylistInsertBody(videoId, playlistId) {
 export function parseUploadArgs(argv) {
   const args = {
     upload: false,
+    publishUnlisted: false,
     dryRun: true,
     openBrowser: false,
     force: false,
@@ -164,6 +178,8 @@ export function parseUploadArgs(argv) {
     } else if (arg === "--only") {
       args.only = readArgValue(argv, index, arg).split(",").map((item) => item.trim()).filter(Boolean);
       index += 1;
+    } else if (arg === "--publish-unlisted") {
+      args.publishUnlisted = true;
     } else if (arg === "--privacy") {
       args.privacyStatus = readArgValue(argv, index, arg);
       index += 1;
