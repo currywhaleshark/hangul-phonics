@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "mi-i",
+  "lessonId": "vowel-combination-mi-i",
+  "title": "미미 문어 미 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "mimi",
+    "name": "미미 문어",
+    "letter": "ㅁ",
+    "image": "public/video-assets/characters/consonants/ㅁ-mimi-octopus.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/63_미_mi.mp3",
+    "duration": 19.939
+  },
+  "segment": {
+    "label": "미",
+    "start": 0,
+    "end": 19.939
+  },
+  "targetSyllable": "미",
+  "vowel": {
+    "key": "ii",
+    "letter": "ㅣ",
+    "sound": "이",
+    "toolLabel": "이이 막대",
+    "toolImage": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "mimi-character",
+      "label": "미미 문어",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅁ-mimi-octopus.png",
+      "start": 0.2,
+      "end": 4.249,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "mimi-tool",
+      "label": "이이 막대",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png",
+      "start": 0.2,
+      "end": 4.249,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "mimi-combined",
+      "label": "미",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/미미 미 새시안-alpha.png",
+      "start": 4.249,
+      "end": 19.939,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "mi-i-word-1",
+      "label": "미끄럼틀",
+      "image": "worksheets/assets/slide.png",
+      "start": 16.504,
+      "end": 19.245,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "mi-i-word-2",
+      "label": "미역",
+      "image": "worksheets/assets/word-mi-seaweed.png",
+      "start": 18.138,
+      "end": 19.245,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "mi-i-initial",
+      "label": "ㅁ",
+      "start": 5.785,
+      "end": 14.572,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "mi-i-vowel",
+      "label": "ㅣ",
+      "start": 9.002,
+      "end": 14.572,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "mi-i-combined",
+      "label": "미",
+      "start": 14.572,
+      "end": 16.122,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "mi-i-final",
+      "label": "미",
+      "start": 19.495,
+      "end": 19.939,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "mi-i",
+    "timingFile": "mi-i-card-timings.json"
+  }
+}

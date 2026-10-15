@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "keu-eu",
+  "lessonId": "vowel-combination-keu-eu",
+  "title": "코코 코알라 크 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "koko",
+    "name": "코코 코알라",
+    "letter": "ㅋ",
+    "image": "public/video-assets/characters/consonants/ㅋ-koko-koala.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/58_크_keu.mp3",
+    "duration": 19.468
+  },
+  "segment": {
+    "label": "크",
+    "start": 0,
+    "end": 19.468
+  },
+  "targetSyllable": "크",
+  "vowel": {
+    "key": "eu",
+    "letter": "ㅡ",
+    "sound": "으",
+    "toolLabel": "으으 쿠션",
+    "toolImage": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "koko-character",
+      "label": "코코 코알라",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅋ-koko-koala.png",
+      "start": 0.2,
+      "end": 4.386,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "koko-tool",
+      "label": "으으 쿠션",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "start": 0.2,
+      "end": 4.386,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "koko-combined",
+      "label": "크",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/코코 크 새시안-alpha.png",
+      "start": 4.386,
+      "end": 19.468,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 58
+      },
+      "position": {
+        "left": 50,
+        "top": 58
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "keu-eu-word-1",
+      "label": "크레파스",
+      "image": "worksheets/assets/crayon.png",
+      "start": 16.271,
+      "end": 18.893,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "keu-eu-word-2",
+      "label": "크림",
+      "image": "worksheets/assets/word-keu-cream.png",
+      "start": 17.685,
+      "end": 18.893,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "keu-eu-initial",
+      "label": "ㅋ",
+      "start": 5.814,
+      "end": 14.429,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "keu-eu-vowel",
+      "label": "ㅡ",
+      "start": 8.963,
+      "end": 14.429,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "keu-eu-combined",
+      "label": "크",
+      "start": 14.429,
+      "end": 15.979,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "keu-eu-final",
+      "label": "크",
+      "start": 19.143,
+      "end": 19.468,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "keu-eu",
+    "timingFile": "keu-eu-card-timings.json"
+  }
+}

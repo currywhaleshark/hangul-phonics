@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "bi-i",
+  "lessonId": "vowel-combination-bi-i",
+  "title": "부부 부엉이 비 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "bubu",
+    "name": "부부 부엉이",
+    "letter": "ㅂ",
+    "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/64_비_bi.mp3",
+    "duration": 20.829
+  },
+  "segment": {
+    "label": "비",
+    "start": 0,
+    "end": 20.829
+  },
+  "targetSyllable": "비",
+  "vowel": {
+    "key": "ii",
+    "letter": "ㅣ",
+    "sound": "이",
+    "toolLabel": "이이 막대",
+    "toolImage": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "bubu-character",
+      "label": "부부 부엉이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png",
+      "start": 0.2,
+      "end": 4.877,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "bubu-tool",
+      "label": "이이 막대",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png",
+      "start": 0.2,
+      "end": 4.877,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "bubu-combined",
+      "label": "비",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/부부 비 새시안-alpha.png",
+      "start": 4.877,
+      "end": 20.829,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "bi-i-word-1",
+      "label": "비닐봉지",
+      "image": "worksheets/assets/word-bi-plastic-bag.png",
+      "start": 17.149,
+      "end": 20.26,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "bi-i-word-2",
+      "label": "비빔밥",
+      "image": "worksheets/assets/word-bi-bibimbap.png",
+      "start": 18.86,
+      "end": 20.26,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "bi-i-initial",
+      "label": "ㅂ",
+      "start": 6.399,
+      "end": 15.319,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "bi-i-vowel",
+      "label": "ㅣ",
+      "start": 9.847,
+      "end": 15.319,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "bi-i-combined",
+      "label": "비",
+      "start": 15.319,
+      "end": 16.869,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "bi-i-final",
+      "label": "비",
+      "start": 20.51,
+      "end": 20.829,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "bi-i",
+    "timingFile": "bi-i-card-timings.json"
+  }
+}

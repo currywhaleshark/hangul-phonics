@@ -442,6 +442,27 @@ assert.throws(
   const po = createDefaultTimingProject("po-o");
   assert.deepEqual(po.cues.map((cue) => cue.label), ["포도", "포크", "폭포"]);
 
+  const gu = createDefaultTimingProject("gu-u");
+  assert.equal(gu.audio.src, "public/audio-gemini-candidates/vowel-combination-tts/27_구_gu.mp3");
+  assert.equal(gu.vowel.letter, "ㅜ");
+  assert.equal(gu.combineCues.find((cue) => cue.assetKind === "tool").image, "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png");
+  assert.deepEqual(gu.letterCues.map((cue) => cue.label), ["ㄱ", "ㅜ", "구", "구"]);
+  assert.deepEqual(gu.cues.map((cue) => cue.label), ["구름", "축구공"]);
+  for (const projectId of ["nu-u", "pu-u", "geo-eo", "peo-eo", "geu-eu", "peu-eu", "gi-i", "pi-i"]) {
+    assert.equal(TIMING_PROJECTS.some((project) => project.id === projectId), true, `${projectId} should exist`);
+  }
+  for (const missing of ["meu-eu", "di-i", "reo-eo", "cheo-eo", "cheu-eu", "heu-eu", "hi-i"]) {
+    assert.equal(TIMING_PROJECTS.some((project) => project.id === missing), false, `${missing} has no words yet`);
+  }
+  const gi = createDefaultTimingProject("gi-i");
+  assert.equal(gi.vowel.letter, "ㅣ");
+  assert.deepEqual(gi.letterCues.map((cue) => cue.label), ["ㄱ", "ㅣ", "기", "기"]);
+  assert.match(gi.combineCues.find((cue) => cue.assetKind === "combined").image, /고고 기 새시안3/);
+  const guCombined = gu.combineCues.find((cue) => cue.assetKind === "combined");
+  assert.equal(guCombined.scale, 0.95);
+  assert.deepEqual(guCombined.position, { left: 50, top: 57 });
+  assert.deepEqual(gu.letterCues.slice(2).map((cue) => cue.position), [{ left: 22, top: 30 }, { left: 22, top: 30 }]);
+
   const parsed = parseTimingProject(serializeTimingProject(ga));
   assert.equal(parsed.combineCues.length, 3);
   assert.equal(parsed.letterCues.length, 4);
@@ -458,7 +479,15 @@ assert.throws(
 }
 
 {
-  for (const projectId of ["oo-o", "uu-u"]) {
+  const eo = createDefaultTimingProject("eo-eo");
+  assert.equal(eo.template, "vowel-combine-story");
+  assert.equal(eo.audio.src, "public/audio-gemini-candidates/vowel-combination-tts/vowel_어_eo.mp3");
+  assert.deepEqual(eo.cues.map((cue) => [cue.label, cue.position]), [
+    ["어항", { left: 19.316, top: 74.632 }],
+    ["상어", { left: 84.474, top: 77.813 }],
+  ]);
+
+  for (const projectId of ["oo-o", "uu-u", "eo-eo", "eu-eu", "ii-i"]) {
     const project = createDefaultTimingProject(projectId);
     for (const collectionName of ["cues", "letterCues", "sceneCues", "combineCues"]) {
       for (const cue of project[collectionName]) {

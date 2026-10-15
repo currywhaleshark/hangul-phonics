@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "su-u",
+  "lessonId": "vowel-combination-su-u",
+  "title": "사사 사슴 수 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "sasa",
+    "name": "사사 사슴",
+    "letter": "ㅅ",
+    "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/33_수_su.mp3",
+    "duration": 22.003
+  },
+  "segment": {
+    "label": "수",
+    "start": 0,
+    "end": 22.003
+  },
+  "targetSyllable": "수",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "sasa-character",
+      "label": "사사 사슴",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png",
+      "start": 0.2,
+      "end": 6.034,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "sasa-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 6.034,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "sasa-combined",
+      "label": "수",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/사사 수 새시안-v3-alpha.png",
+      "start": 6.034,
+      "end": 22.003,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "su-u-word-1",
+      "label": "수박",
+      "image": "worksheets/assets/watermelon.png",
+      "start": 18.934,
+      "end": 21.33,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "su-u-word-2",
+      "label": "수영장",
+      "image": "worksheets/assets/word-su-swimming-pool.png",
+      "start": 20.009,
+      "end": 21.33,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "su-u-initial",
+      "label": "ㅅ",
+      "start": 8.263,
+      "end": 17.354,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "su-u-vowel",
+      "label": "ㅜ",
+      "start": 12.22,
+      "end": 17.354,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "su-u-combined",
+      "label": "수",
+      "start": 17.354,
+      "end": 18.884,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "su-u-final",
+      "label": "수",
+      "start": 21.58,
+      "end": 22.003,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "su-u",
+    "timingFile": "su-u-card-timings.json"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "nu-u",
+  "lessonId": "vowel-combination-nu-u",
+  "title": "나나 나비 누 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "nana",
+    "name": "나나 나비",
+    "letter": "ㄴ",
+    "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/28_누_nu.mp3",
+    "duration": 20.153
+  },
+  "segment": {
+    "label": "누",
+    "start": 0,
+    "end": 20.153
+  },
+  "targetSyllable": "누",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "nana-character",
+      "label": "나나 나비",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png",
+      "start": 0.2,
+      "end": 4.024,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "nana-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 4.024,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "nana-combined",
+      "label": "누",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/나나 누 새시안-alpha.png",
+      "start": 4.024,
+      "end": 20.153,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "nu-u-word-1",
+      "label": "비누",
+      "image": "worksheets/assets/word-nu-soap.png",
+      "start": 16.598,
+      "end": 19.492,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "nu-u-word-2",
+      "label": "누룽지",
+      "image": "worksheets/assets/word-nu-scorched-rice.png",
+      "start": 17.937,
+      "end": 19.492,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "nu-u-initial",
+      "label": "ㄴ",
+      "start": 5.595,
+      "end": 14.852,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "nu-u-vowel",
+      "label": "ㅜ",
+      "start": 9.159,
+      "end": 14.852,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "nu-u-combined",
+      "label": "누",
+      "start": 14.852,
+      "end": 16.402,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "nu-u-final",
+      "label": "누",
+      "start": 19.742,
+      "end": 20.153,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "nu-u",
+    "timingFile": "nu-u-card-timings.json"
+  }
+}

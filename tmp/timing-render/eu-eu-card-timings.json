@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "eu-eu",
+  "lessonId": "lesson-01-aa-baby-vowel-eu",
+  "title": "으으 쿠션 으 모음 만남",
+  "template": "vowel-combine-story",
+  "character": {
+    "key": "eu",
+    "name": "으으 쿠션",
+    "letter": "으",
+    "image": "public/video-assets/vowel-alpha/combined/으으 쿠션 시안-alpha.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/vowel_으_eu.mp3",
+    "duration": 18.29
+  },
+  "segment": {
+    "label": "으으 쿠션",
+    "start": 0,
+    "end": 18.29
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "eu-baby",
+      "label": "아기",
+      "assetKind": "baby",
+      "image": "public/video-assets/characters/consonants/ㅇ-aa-baby.png",
+      "start": 0.2,
+      "end": 7.869,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.54
+    },
+    {
+      "id": "eu-tool",
+      "label": "으으 쿠션",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "start": 0.2,
+      "end": 7.869,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "eu-combined",
+      "label": "합친 이미지",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined-hero/으으 쿠션 시안-hero.png",
+      "start": 7.869,
+      "end": 18.29,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "position": {
+        "left": 50,
+        "top": 55
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "eu-growl",
+      "label": "으르렁",
+      "image": "worksheets/assets/word-eu-growl.png",
+      "start": 14.177,
+      "end": 17.406,
+      "position": {
+        "left": 19.316,
+        "top": 74.632
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "eu-shrug",
+      "label": "으쓱",
+      "image": "worksheets/assets/word-eu-shrug.png",
+      "start": 15.912,
+      "end": 17.406,
+      "position": {
+        "left": 84.474,
+        "top": 77.813
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "eu-say",
+      "label": "으",
+      "start": 12.78,
+      "end": 13.652,
+      "position": {
+        "left": 17.526,
+        "top": 20.737
+      }
+    },
+    {
+      "id": "eu-final",
+      "label": "으",
+      "start": 17.656,
+      "end": 18.29,
+      "position": {
+        "left": 87.105,
+        "top": 21.485
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "eu-eu",
+    "timingFile": "eu-eu-card-timings.json"
+  }
+}

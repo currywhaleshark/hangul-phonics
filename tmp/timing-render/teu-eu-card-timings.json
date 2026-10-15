@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "teu-eu",
+  "lessonId": "vowel-combination-teu-eu",
+  "title": "토토 토끼 트 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "toto",
+    "name": "토토 토끼",
+    "letter": "ㅌ",
+    "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/59_트_teu.mp3",
+    "duration": 23.034
+  },
+  "segment": {
+    "label": "트",
+    "start": 0,
+    "end": 23.034
+  },
+  "targetSyllable": "트",
+  "vowel": {
+    "key": "eu",
+    "letter": "ㅡ",
+    "sound": "으",
+    "toolLabel": "으으 쿠션",
+    "toolImage": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "toto-character",
+      "label": "토토 토끼",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png",
+      "start": 0.2,
+      "end": 4.969,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "toto-tool",
+      "label": "으으 쿠션",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "start": 0.2,
+      "end": 4.969,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "toto-combined",
+      "label": "트",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/토토 트 새시안-alpha.png",
+      "start": 4.969,
+      "end": 23.034,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 58
+      },
+      "position": {
+        "left": 50,
+        "top": 58
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "teu-eu-word-1",
+      "label": "요트",
+      "image": "worksheets/assets/word-teu-yacht.png",
+      "start": 19.15,
+      "end": 22.513,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "teu-eu-word-2",
+      "label": "마트",
+      "image": "worksheets/assets/word-teu-supermarket.png",
+      "start": 20.631,
+      "end": 22.513,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "teu-eu-initial",
+      "label": "ㅌ",
+      "start": 6.541,
+      "end": 16.727,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "teu-eu-vowel",
+      "label": "ㅡ",
+      "start": 10.453,
+      "end": 16.727,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "teu-eu-combined",
+      "label": "트",
+      "start": 16.727,
+      "end": 18.277,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "teu-eu-final",
+      "label": "트",
+      "start": 22.763,
+      "end": 23.034,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "teu-eu",
+    "timingFile": "teu-eu-card-timings.json"
+  }
+}

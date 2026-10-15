@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "pi-i",
+  "lessonId": "vowel-combination-pi-i",
+  "title": "푸푸 풍선 피 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "pupu",
+    "name": "푸푸 풍선",
+    "letter": "ㅍ",
+    "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/71_피_pi.mp3",
+    "duration": 22.955
+  },
+  "segment": {
+    "label": "피",
+    "start": 0,
+    "end": 22.955
+  },
+  "targetSyllable": "피",
+  "vowel": {
+    "key": "ii",
+    "letter": "ㅣ",
+    "sound": "이",
+    "toolLabel": "이이 막대",
+    "toolImage": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "pupu-character",
+      "label": "푸푸 풍선",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png",
+      "start": 0.2,
+      "end": 6.035,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "pupu-tool",
+      "label": "이이 막대",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png",
+      "start": 0.2,
+      "end": 6.035,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "pupu-combined",
+      "label": "피",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/푸푸 피 새시안-alpha.png",
+      "start": 6.035,
+      "end": 22.955,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "pi-i-word-1",
+      "label": "피아노",
+      "image": "worksheets/assets/word-pi-piano.png",
+      "start": 19.709,
+      "end": 22.155,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "pi-i-word-2",
+      "label": "피자",
+      "image": "worksheets/assets/pizza.png",
+      "start": 21.07,
+      "end": 22.155,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "pi-i-initial",
+      "label": "ㅍ",
+      "start": 8.197,
+      "end": 17.9,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "pi-i-vowel",
+      "label": "ㅣ",
+      "start": 11.926,
+      "end": 17.9,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "pi-i-combined",
+      "label": "피",
+      "start": 17.9,
+      "end": 19.45,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "pi-i-final",
+      "label": "피",
+      "start": 22.405,
+      "end": 22.955,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "pi-i",
+    "timingFile": "pi-i-card-timings.json"
+  }
+}

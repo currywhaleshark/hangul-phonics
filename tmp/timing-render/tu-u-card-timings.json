@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "tu-u",
+  "lessonId": "vowel-combination-tu-u",
+  "title": "토토 토끼 투 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "toto",
+    "name": "토토 토끼",
+    "letter": "ㅌ",
+    "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/38_투_tu.mp3",
+    "duration": 20.376
+  },
+  "segment": {
+    "label": "투",
+    "start": 0,
+    "end": 20.376
+  },
+  "targetSyllable": "투",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "toto-character",
+      "label": "토토 토끼",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png",
+      "start": 0.2,
+      "end": 4.788,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "toto-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 4.788,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "toto-combined",
+      "label": "투",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/토토 투 새시안-alpha.png",
+      "start": 4.788,
+      "end": 20.376,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "tu-u-word-1",
+      "label": "투구게",
+      "image": "worksheets/assets/word-tu-horseshoe-crab.png",
+      "start": 17.257,
+      "end": 19.805,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "tu-u-initial",
+      "label": "ㅌ",
+      "start": 6.154,
+      "end": 14.834,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "tu-u-vowel",
+      "label": "ㅜ",
+      "start": 9.559,
+      "end": 14.834,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "tu-u-combined",
+      "label": "투",
+      "start": 14.834,
+      "end": 16.384,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "tu-u-final",
+      "label": "투",
+      "start": 20.055,
+      "end": 20.376,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "tu-u",
+    "timingFile": "tu-u-card-timings.json"
+  }
+}

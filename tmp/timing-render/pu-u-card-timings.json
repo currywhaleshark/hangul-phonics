@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "pu-u",
+  "lessonId": "vowel-combination-pu-u",
+  "title": "푸푸 풍선 푸 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "pupu",
+    "name": "푸푸 풍선",
+    "letter": "ㅍ",
+    "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/39_푸_pu.mp3",
+    "duration": 22.693
+  },
+  "segment": {
+    "label": "푸",
+    "start": 0,
+    "end": 22.693
+  },
+  "targetSyllable": "푸",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "pupu-character",
+      "label": "푸푸 풍선",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png",
+      "start": 0.2,
+      "end": 5.527,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "pupu-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 5.527,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "pupu-combined",
+      "label": "푸",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/푸푸 푸 새시안-alpha.png",
+      "start": 5.527,
+      "end": 22.693,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "pu-u-word-1",
+      "label": "푸들",
+      "image": "worksheets/assets/word-pu-poodle.png",
+      "start": 19.036,
+      "end": 22.141,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "pu-u-word-2",
+      "label": "샴푸",
+      "image": "worksheets/assets/word-pu-shampoo.png",
+      "start": 20.503,
+      "end": 22.141,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "pu-u-initial",
+      "label": "ㅍ",
+      "start": 7.287,
+      "end": 17.189,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "pu-u-vowel",
+      "label": "ㅜ",
+      "start": 11.194,
+      "end": 17.189,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "pu-u-combined",
+      "label": "푸",
+      "start": 17.189,
+      "end": 18.739,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "pu-u-final",
+      "label": "푸",
+      "start": 22.391,
+      "end": 22.693,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "pu-u",
+    "timingFile": "pu-u-card-timings.json"
+  }
+}

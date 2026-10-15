@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "id": "neo-eo",
+  "lessonId": "vowel-combination-neo-eo",
+  "title": "나나 나비 너 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "nana",
+    "name": "나나 나비",
+    "letter": "ㄴ",
+    "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/41_너_neo.mp3",
+    "duration": 21.438
+  },
+  "segment": {
+    "label": "너",
+    "start": 0,
+    "end": 21.438
+  },
+  "targetSyllable": "너",
+  "vowel": {
+    "key": "eo",
+    "letter": "ㅓ",
+    "sound": "어",
+    "toolLabel": "어어 풍선",
+    "toolImage": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "nana-character",
+      "label": "나나 나비",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png",
+      "start": 0.2,
+      "end": 4.323,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "nana-tool",
+      "label": "어어 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png",
+      "start": 0.2,
+      "end": 4.323,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "nana-combined",
+      "label": "너",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/나나 너 새시안-alpha.png",
+      "start": 4.323,
+      "end": 21.438,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "neo-eo-word-1",
+      "label": "너구리",
+      "image": "worksheets/assets/raccoon-dog.png",
+      "start": 19.192,
+      "end": 20.85,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "neo-eo-initial",
+      "label": "ㄴ",
+      "start": 5.99,
+      "end": 16.88,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "neo-eo-vowel",
+      "label": "ㅓ",
+      "start": 10.101,
+      "end": 16.88,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "neo-eo-combined",
+      "label": "너",
+      "start": 16.88,
+      "end": 18.43,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "neo-eo-final",
+      "label": "너",
+      "start": 21.1,
+      "end": 21.438,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "neo-eo",
+    "timingFile": "neo-eo-card-timings.json"
+  }
+}

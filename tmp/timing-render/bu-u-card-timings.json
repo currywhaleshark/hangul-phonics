@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "bu-u",
+  "lessonId": "vowel-combination-bu-u",
+  "title": "부부 부엉이 부 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "bubu",
+    "name": "부부 부엉이",
+    "letter": "ㅂ",
+    "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/30_부_bu.mp3",
+    "duration": 24.78
+  },
+  "segment": {
+    "label": "부",
+    "start": 0,
+    "end": 24.78
+  },
+  "targetSyllable": "부",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "bubu-character",
+      "label": "부부 부엉이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png",
+      "start": 0.2,
+      "end": 5.797,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "bubu-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 5.797,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "bubu-combined",
+      "label": "부",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/부부 부 새시안-alpha.png",
+      "start": 5.797,
+      "end": 24.78,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "bu-u-word-1",
+      "label": "부엉이",
+      "image": "worksheets/assets/word-bu-owl.png",
+      "start": 21.124,
+      "end": 24.04,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "bu-u-word-2",
+      "label": "부채",
+      "image": "worksheets/assets/word-bu-fan.png",
+      "start": 22.697,
+      "end": 24.04,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "bu-u-initial",
+      "label": "ㅂ",
+      "start": 7.738,
+      "end": 18.758,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "bu-u-vowel",
+      "label": "ㅜ",
+      "start": 12.413,
+      "end": 18.758,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "bu-u-combined",
+      "label": "부",
+      "start": 18.758,
+      "end": 20.308,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "bu-u-final",
+      "label": "부",
+      "start": 24.29,
+      "end": 24.78,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "bu-u",
+    "timingFile": "bu-u-card-timings.json"
+  }
+}

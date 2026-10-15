@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "ji-i",
+  "lessonId": "vowel-combination-ji-i",
+  "title": "지지 지렁이 지 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "jiji",
+    "name": "지지 지렁이",
+    "letter": "ㅈ",
+    "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/67_지_ji.mp3",
+    "duration": 21.921
+  },
+  "segment": {
+    "label": "지",
+    "start": 0,
+    "end": 21.921
+  },
+  "targetSyllable": "지",
+  "vowel": {
+    "key": "ii",
+    "letter": "ㅣ",
+    "sound": "이",
+    "toolLabel": "이이 막대",
+    "toolImage": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "jiji-character",
+      "label": "지지 지렁이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png",
+      "start": 0.2,
+      "end": 5.58,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "jiji-tool",
+      "label": "이이 막대",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png",
+      "start": 0.2,
+      "end": 5.58,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "jiji-combined",
+      "label": "지",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/지지 지 새시안-alpha.png",
+      "start": 5.58,
+      "end": 21.921,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ji-i-word-1",
+      "label": "지렁이",
+      "image": "worksheets/assets/word-ji-earthworm.png",
+      "start": 18.507,
+      "end": 21.292,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ji-i-word-2",
+      "label": "지하철",
+      "image": "worksheets/assets/word-ji-subway.png",
+      "start": 19.907,
+      "end": 21.292,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ji-i-initial",
+      "label": "ㅈ",
+      "start": 7.383,
+      "end": 16.743,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ji-i-vowel",
+      "label": "ㅣ",
+      "start": 10.981,
+      "end": 16.743,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ji-i-combined",
+      "label": "지",
+      "start": 16.743,
+      "end": 18.293,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ji-i-final",
+      "label": "지",
+      "start": 21.542,
+      "end": 21.921,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ji-i",
+    "timingFile": "ji-i-card-timings.json"
+  }
+}

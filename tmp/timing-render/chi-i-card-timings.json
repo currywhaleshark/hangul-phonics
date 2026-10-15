@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "chi-i",
+  "lessonId": "vowel-combination-chi-i",
+  "title": "치치 칙폭이 치 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "chichi",
+    "name": "치치 칙폭이",
+    "letter": "ㅊ",
+    "image": "public/video-assets/characters/consonants/ㅊ-chichi-train.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/68_치_chi.mp3",
+    "duration": 23.519
+  },
+  "segment": {
+    "label": "치",
+    "start": 0,
+    "end": 23.519
+  },
+  "targetSyllable": "치",
+  "vowel": {
+    "key": "ii",
+    "letter": "ㅣ",
+    "sound": "이",
+    "toolLabel": "이이 막대",
+    "toolImage": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "chichi-character",
+      "label": "치치 칙폭이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅊ-chichi-train.png",
+      "start": 0.2,
+      "end": 5.753,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "chichi-tool",
+      "label": "이이 막대",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png",
+      "start": 0.2,
+      "end": 5.753,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "chichi-combined",
+      "label": "치",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/치치 치 새시안-alpha.png",
+      "start": 5.753,
+      "end": 23.519,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "chi-i-word-1",
+      "label": "치즈",
+      "image": "worksheets/assets/cheese.png",
+      "start": 19.808,
+      "end": 22.871,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "chi-i-word-2",
+      "label": "곰치",
+      "image": "worksheets/assets/word-chi-moray-eel.png",
+      "start": 21.279,
+      "end": 22.871,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "chi-i-initial",
+      "label": "ㅊ",
+      "start": 7.508,
+      "end": 17.613,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "chi-i-vowel",
+      "label": "ㅣ",
+      "start": 11.451,
+      "end": 17.613,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "chi-i-combined",
+      "label": "치",
+      "start": 17.613,
+      "end": 19.163,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "chi-i-final",
+      "label": "치",
+      "start": 23.121,
+      "end": 23.519,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "chi-i",
+    "timingFile": "chi-i-card-timings.json"
+  }
+}

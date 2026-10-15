@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "mu-u",
+  "lessonId": "vowel-combination-mu-u",
+  "title": "미미 문어 무 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "mimi",
+    "name": "미미 문어",
+    "letter": "ㅁ",
+    "image": "public/video-assets/characters/consonants/ㅁ-mimi-octopus.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/29_무_mu.mp3",
+    "duration": 20.222
+  },
+  "segment": {
+    "label": "무",
+    "start": 0,
+    "end": 20.222
+  },
+  "targetSyllable": "무",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "mimi-character",
+      "label": "미미 문어",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅁ-mimi-octopus.png",
+      "start": 0.2,
+      "end": 4.547,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "mimi-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 4.547,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "mimi-combined",
+      "label": "무",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/미미 무 새시안-alpha.png",
+      "start": 4.547,
+      "end": 20.222,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "mu-u-word-1",
+      "label": "무지개",
+      "image": "worksheets/assets/rainbow.png",
+      "start": 16.351,
+      "end": 19.513,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "mu-u-word-2",
+      "label": "무당벌레",
+      "image": "worksheets/assets/word-mu-ladybug.png",
+      "start": 17.879,
+      "end": 19.513,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "mu-u-initial",
+      "label": "ㅁ",
+      "start": 6.2,
+      "end": 14.483,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "mu-u-vowel",
+      "label": "ㅜ",
+      "start": 9.594,
+      "end": 14.483,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "mu-u-combined",
+      "label": "무",
+      "start": 14.483,
+      "end": 16.033,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "mu-u-final",
+      "label": "무",
+      "start": 19.763,
+      "end": 20.222,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "mu-u",
+    "timingFile": "mu-u-card-timings.json"
+  }
+}

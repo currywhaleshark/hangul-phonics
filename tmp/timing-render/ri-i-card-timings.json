@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "ri-i",
+  "lessonId": "vowel-combination-ri-i",
+  "title": "라라 리본 리 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "rara",
+    "name": "라라 리본",
+    "letter": "ㄹ",
+    "image": "public/video-assets/characters/consonants/ㄹ-rara-ribbon.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/65_리_ri.mp3",
+    "duration": 20.963
+  },
+  "segment": {
+    "label": "리",
+    "start": 0,
+    "end": 20.963
+  },
+  "targetSyllable": "리",
+  "vowel": {
+    "key": "ii",
+    "letter": "ㅣ",
+    "sound": "이",
+    "toolLabel": "이이 막대",
+    "toolImage": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "rara-character",
+      "label": "라라 리본",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄹ-rara-ribbon.png",
+      "start": 0.2,
+      "end": 4.708,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "rara-tool",
+      "label": "이이 막대",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png",
+      "start": 0.2,
+      "end": 4.708,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "rara-combined",
+      "label": "리",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/라라 리 새시안-alpha.png",
+      "start": 4.708,
+      "end": 20.963,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ri-i-word-1",
+      "label": "리본",
+      "image": "worksheets/assets/ribbon.png",
+      "start": 17.462,
+      "end": 20.293,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ri-i-word-2",
+      "label": "병아리",
+      "image": "worksheets/assets/word-ri-chick.png",
+      "start": 18.863,
+      "end": 20.293,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ri-i-initial",
+      "label": "ㄹ",
+      "start": 6.444,
+      "end": 15.48,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ri-i-vowel",
+      "label": "ㅣ",
+      "start": 9.985,
+      "end": 15.48,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ri-i-combined",
+      "label": "리",
+      "start": 15.48,
+      "end": 17.03,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ri-i-final",
+      "label": "리",
+      "start": 20.543,
+      "end": 20.963,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ri-i",
+    "timingFile": "ri-i-card-timings.json"
+  }
+}

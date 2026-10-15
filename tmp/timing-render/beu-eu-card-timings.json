@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "beu-eu",
+  "lessonId": "vowel-combination-beu-eu",
+  "title": "부부 부엉이 브 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "bubu",
+    "name": "부부 부엉이",
+    "letter": "ㅂ",
+    "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/53_브_beu.mp3",
+    "duration": 22.034
+  },
+  "segment": {
+    "label": "브",
+    "start": 0,
+    "end": 22.034
+  },
+  "targetSyllable": "브",
+  "vowel": {
+    "key": "eu",
+    "letter": "ㅡ",
+    "sound": "으",
+    "toolLabel": "으으 쿠션",
+    "toolImage": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "bubu-character",
+      "label": "부부 부엉이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png",
+      "start": 0.2,
+      "end": 5.026,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "bubu-tool",
+      "label": "으으 쿠션",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "start": 0.2,
+      "end": 5.026,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "bubu-combined",
+      "label": "브",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/부부 브 새시안-alpha.png",
+      "start": 5.026,
+      "end": 22.034,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 58
+      },
+      "position": {
+        "left": 50,
+        "top": 58
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "beu-eu-word-1",
+      "label": "브로콜리",
+      "image": "worksheets/assets/word-beu-broccoli.png",
+      "start": 17.795,
+      "end": 21.428,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "beu-eu-word-2",
+      "label": "브라키오사우루스",
+      "image": "worksheets/assets/word-beu-brachiosaurus.png",
+      "start": 19.445,
+      "end": 21.428,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "beu-eu-initial",
+      "label": "ㅂ",
+      "start": 6.467,
+      "end": 15.703,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "beu-eu-vowel",
+      "label": "ㅡ",
+      "start": 10.195,
+      "end": 15.703,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "beu-eu-combined",
+      "label": "브",
+      "start": 15.703,
+      "end": 17.253,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "beu-eu-final",
+      "label": "브",
+      "start": 21.678,
+      "end": 22.034,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "beu-eu",
+    "timingFile": "beu-eu-card-timings.json"
+  }
+}

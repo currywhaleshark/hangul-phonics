@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "du-u",
+  "lessonId": "vowel-combination-du-u",
+  "title": "도도 도토리 두 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "dodo",
+    "name": "도도 도토리",
+    "letter": "ㄷ",
+    "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/31_두_du.mp3",
+    "duration": 23.262
+  },
+  "segment": {
+    "label": "두",
+    "start": 0,
+    "end": 23.262
+  },
+  "targetSyllable": "두",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "dodo-character",
+      "label": "도도 도토리",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png",
+      "start": 0.2,
+      "end": 5.031,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "dodo-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 5.031,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "dodo-combined",
+      "label": "두",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/도도 두 새시안-alpha.png",
+      "start": 5.031,
+      "end": 23.262,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "du-u-word-1",
+      "label": "두더지",
+      "image": "worksheets/assets/word-du-mole.png",
+      "start": 19.295,
+      "end": 22.264,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "du-u-word-2",
+      "label": "호두",
+      "image": "worksheets/assets/word-ho-walnut.png",
+      "start": 20.878,
+      "end": 22.264,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "du-u-initial",
+      "label": "ㄷ",
+      "start": 6.739,
+      "end": 17.034,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "du-u-vowel",
+      "label": "ㅜ",
+      "start": 10.254,
+      "end": 17.034,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "du-u-combined",
+      "label": "두",
+      "start": 17.034,
+      "end": 18.584,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "du-u-final",
+      "label": "두",
+      "start": 22.514,
+      "end": 23.262,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "du-u",
+    "timingFile": "du-u-card-timings.json"
+  }
+}

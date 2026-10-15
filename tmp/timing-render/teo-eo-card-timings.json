@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "teo-eo",
+  "lessonId": "vowel-combination-teo-eo",
+  "title": "토토 토끼 터 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "toto",
+    "name": "토토 토끼",
+    "letter": "ㅌ",
+    "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/49_터_teo.mp3",
+    "duration": 25.83
+  },
+  "segment": {
+    "label": "터",
+    "start": 0,
+    "end": 25.83
+  },
+  "targetSyllable": "터",
+  "vowel": {
+    "key": "eo",
+    "letter": "ㅓ",
+    "sound": "어",
+    "toolLabel": "어어 풍선",
+    "toolImage": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "toto-character",
+      "label": "토토 토끼",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅌ-toto-rabbit.png",
+      "start": 0.2,
+      "end": 5.658,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "toto-tool",
+      "label": "어어 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png",
+      "start": 0.2,
+      "end": 5.658,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "toto-combined",
+      "label": "터",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/토토 터 새시안-alpha.png",
+      "start": 5.658,
+      "end": 25.83,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "teo-eo-word-1",
+      "label": "놀이터",
+      "image": "worksheets/assets/word-teo-playground.png",
+      "start": 21.623,
+      "end": 25.215,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "teo-eo-word-2",
+      "label": "터널",
+      "image": "worksheets/assets/word-teo-tunnel.png",
+      "start": 23.494,
+      "end": 25.215,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "teo-eo-initial",
+      "label": "ㅌ",
+      "start": 7.527,
+      "end": 19.153,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "teo-eo-vowel",
+      "label": "ㅓ",
+      "start": 12.466,
+      "end": 19.153,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "teo-eo-combined",
+      "label": "터",
+      "start": 19.153,
+      "end": 20.703,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "teo-eo-final",
+      "label": "터",
+      "start": 25.465,
+      "end": 25.83,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "teo-eo",
+    "timingFile": "teo-eo-card-timings.json"
+  }
+}

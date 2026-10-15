@@ -100,9 +100,15 @@ const VOWEL_COMBINE_WORD_TIMES = [
   { start: 14.3, end: 15.65, position: { left: 76, top: 72 }, accent: "#ff8fab" },
 ];
 
+// Matches the side layout hand-tuned in the 오/우 intro videos, so cards stay clear of the hero.
+const VOWEL_COMBINE_TWO_WORD_POSITIONS = [
+  { left: 19.316, top: 74.632 },
+  { left: 84.474, top: 77.813 },
+];
+
 const VOWEL_COMBINE_LETTER_TIMES = [
-  { id: "say", start: 8.3, end: 10.0, position: { left: 50, top: 22 } },
-  { id: "final", start: 15.75, end: 18.8, position: { left: 50, top: 22 } },
+  { id: "say", start: 8.3, end: 10.0, position: { left: 17.526, top: 20.737 } },
+  { id: "final", start: 15.75, end: 18.8, position: { left: 87.105, top: 21.485 } },
 ];
 
 const SYLLABLE_COMBINE_TIMES = [
@@ -188,6 +194,18 @@ const LESSON_AUDIO = {
   "lesson-01-aa-baby-vowel-u": {
     src: "lessons/vowels/lesson-01-aa-baby-vowel/\uC6B0.wav",
     duration: 16.280272,
+  },
+  "lesson-01-aa-baby-vowel-eo": {
+    src: "public/audio-gemini-candidates/vowel-combination-tts/vowel_어_eo.mp3",
+    duration: 20.286,
+  },
+  "lesson-01-aa-baby-vowel-eu": {
+    src: "public/audio-gemini-candidates/vowel-combination-tts/vowel_으_eu.mp3",
+    duration: 18.29,
+  },
+  "lesson-01-aa-baby-vowel-i": {
+    src: "public/audio-gemini-candidates/vowel-combination-tts/vowel_이_i.mp3",
+    duration: 20.714,
   },
   "lesson-01-gogo-nana": {
     src: "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav",
@@ -450,6 +468,60 @@ export const VOWEL_COMBINE_TIMING_PROJECTS = [
       { id: "uu-well", label: "\uC6B0\uBB3C", image: asset("well.png") },
     ],
   }),
+  defineVowelCombineProject({
+    id: "eo-eo",
+    lessonId: "lesson-01-aa-baby-vowel-eo",
+    segment: { start: 0, end: 20.286 },
+    character: {
+      key: "eo",
+      name: "어어 풍선",
+      letter: "어",
+      image: vowelAlphaCombinedAsset("어어 풍선 시안2-alpha.png"),
+    },
+    toolLabel: "어어 풍선",
+    toolImage: vowelAlphaToolAsset("어어 풍선-alpha.png"),
+    combinedImage: vowelAlphaCombinedHeroAsset("어어 풍선 시안2-hero.png"),
+    words: [
+      { id: "eo-fishbowl", label: "어항", image: asset("word-eo-fish-tank.png") },
+      { id: "eo-shark", label: "상어", image: asset("word-eo-shark.png") },
+    ],
+  }),
+  defineVowelCombineProject({
+    id: "eu-eu",
+    lessonId: "lesson-01-aa-baby-vowel-eu",
+    segment: { start: 0, end: 18.29 },
+    character: {
+      key: "eu",
+      name: "으으 쿠션",
+      letter: "으",
+      image: vowelAlphaCombinedAsset("으으 쿠션 시안-alpha.png"),
+    },
+    toolLabel: "으으 쿠션",
+    toolImage: vowelAlphaToolAsset("으으 쿠션-alpha.png"),
+    combinedImage: vowelAlphaCombinedHeroAsset("으으 쿠션 시안-hero.png"),
+    words: [
+      { id: "eu-growl", label: "으르렁", image: asset("word-eu-growl.png") },
+      { id: "eu-shrug", label: "으쓱", image: asset("word-eu-shrug.png") },
+    ],
+  }),
+  defineVowelCombineProject({
+    id: "ii-i",
+    lessonId: "lesson-01-aa-baby-vowel-i",
+    segment: { start: 0, end: 20.714 },
+    character: {
+      key: "ii",
+      name: "이이 막대",
+      letter: "이",
+      image: vowelAlphaCombinedAsset("이이 막대 시안-alpha.png"),
+    },
+    toolLabel: "이이 막대",
+    toolImage: vowelAlphaToolAsset("이이 막대-alpha.png"),
+    combinedImage: vowelAlphaCombinedHeroAsset("이이 막대 시안-hero.png"),
+    words: [
+      { id: "ii-blanket", label: "이불", image: asset("word-i-blanket.png") },
+      { id: "ii-tooth", label: "이빨", image: asset("word-i-tooth.png") },
+    ],
+  }),
 ];
 
 
@@ -472,6 +544,23 @@ const SYLLABLE_COMBINE_CHARACTERS = {
 const SYLLABLE_COMBINE_VOWELS = {
   a: { key: "aa", letter: "ㅏ", sound: "아", toolLabel: "아아 나뭇가지", toolImage: vowelAlphaToolAsset("아아 나뭇가지-alpha.png") },
   o: { key: "oo", letter: "ㅗ", sound: "오", toolLabel: "오오 상자", toolImage: vowelAlphaToolAsset("오오 상자-alpha.png") },
+  u: { key: "uu", letter: "ㅜ", sound: "우", toolLabel: "우우 발판", toolImage: vowelAlphaToolAsset("우우 발판-alpha.png") },
+  eo: { key: "eo", letter: "ㅓ", sound: "어", toolLabel: "어어 풍선", toolImage: vowelAlphaToolAsset("어어 풍선-alpha.png") },
+  eu: { key: "eu", letter: "ㅡ", sound: "으", toolLabel: "으으 쿠션", toolImage: vowelAlphaToolAsset("으으 쿠션-alpha.png") },
+  i: { key: "ii", letter: "ㅣ", sound: "이", toolLabel: "이이 막대", toolImage: vowelAlphaToolAsset("이이 막대-alpha.png") },
+};
+
+// Vowels stacked under the consonant (ㅜ, ㅡ) make the combined sprite much taller, so it is shrunk to stay on screen
+// and the syllable cards move beside it instead of overlapping its top stroke.
+const SYLLABLE_COMBINE_VOWEL_LAYOUTS = {
+  u: {
+    combined: { fromPosition: { left: 50, top: 54 }, position: { left: 50, top: 57 }, scale: 0.95 },
+    letters: { combined: { left: 22, top: 30 }, final: { left: 22, top: 30 } },
+  },
+  eu: {
+    combined: { fromPosition: { left: 50, top: 55 }, position: { left: 50, top: 58 }, scale: 0.95 },
+    letters: { combined: { left: 22, top: 30 }, final: { left: 22, top: 30 } },
+  },
 };
 
 const SYLLABLE_COMBINE_ITEMS = [
@@ -501,6 +590,51 @@ const SYLLABLE_COMBINE_ITEMS = [
   { id: "to-o", index: 24, audioFile: "24_토_to.mp3", duration: 22.503, characterKey: "toto", vowelKey: "o", targetSyllable: "토", combinedImage: vowelAlphaCombinedAsset("토토 토 새시안-alpha.png"), words: [["토끼", "word-to-rabbit.png"], ["토마토", "word-to-tomato.png"], ["토끼풀", "word-to-clover.png"]] },
   { id: "pa-a", index: 25, audioFile: "25_파_pa.mp3", duration: 22.073, characterKey: "pupu", vowelKey: "a", targetSyllable: "파", combinedImage: vowelAlphaCombinedAsset("푸푸 파 새시안-alpha.png"), words: [["파란색", "word-pa-blue.png"], ["파이", "word-pa-pie.png"], ["파인애플", "word-pa-pineapple.png"]] },
   { id: "po-o", index: 26, audioFile: "26_포_po.mp3", duration: 21.171, characterKey: "pupu", vowelKey: "o", targetSyllable: "포", combinedImage: vowelAlphaCombinedAsset("푸푸 포 새시안-alpha.png"), words: [["포도", "word-po-grapes.png"], ["포크", "word-po-fork.png"], ["폭포", "word-po-waterfall.png"]] },
+  { id: "gu-u", index: 27, audioFile: "27_구_gu.mp3", duration: 20.405, characterKey: "gogo", vowelKey: "u", targetSyllable: "구", combinedImage: vowelAlphaCombinedAsset("고고 구 새시안-alpha.png"), words: [["구름", "word-gu-cloud.png"], ["축구공", "word-gu-soccer-ball.png"]] },
+  { id: "nu-u", index: 28, audioFile: "28_누_nu.mp3", duration: 20.153, characterKey: "nana", vowelKey: "u", targetSyllable: "누", combinedImage: vowelAlphaCombinedAsset("나나 누 새시안-alpha.png"), words: [["비누", "word-nu-soap.png"], ["누룽지", "word-nu-scorched-rice.png"]] },
+  { id: "mu-u", index: 29, audioFile: "29_무_mu.mp3", duration: 20.222, characterKey: "mimi", vowelKey: "u", targetSyllable: "무", combinedImage: vowelAlphaCombinedAsset("미미 무 새시안-alpha.png"), words: [["무지개", "rainbow.png"], ["무당벌레", "word-mu-ladybug.png"]] },
+  { id: "bu-u", index: 30, audioFile: "30_부_bu.mp3", duration: 24.78, characterKey: "bubu", vowelKey: "u", targetSyllable: "부", combinedImage: vowelAlphaCombinedAsset("부부 부 새시안-alpha.png"), words: [["부엉이", "word-bu-owl.png"], ["부채", "word-bu-fan.png"]] },
+  { id: "du-u", index: 31, audioFile: "31_두_du.mp3", duration: 23.262, characterKey: "dodo", vowelKey: "u", targetSyllable: "두", combinedImage: vowelAlphaCombinedAsset("도도 두 새시안-alpha.png"), words: [["두더지", "word-du-mole.png"], ["호두", "word-ho-walnut.png"]] },
+  { id: "ru-u", index: 32, audioFile: "32_루_ru.mp3", duration: 19.354, characterKey: "rara", vowelKey: "u", targetSyllable: "루", combinedImage: vowelAlphaCombinedAsset("라라 루 새시안-alpha.png"), words: [["루돌프", "word-ru-rudolph.png"], ["빗자루", "word-ru-broom.png"]] },
+  { id: "su-u", index: 33, audioFile: "33_수_su.mp3", duration: 22.003, characterKey: "sasa", vowelKey: "u", targetSyllable: "수", combinedImage: vowelAlphaCombinedAsset("사사 수 새시안-v3-alpha.png"), words: [["수박", "watermelon.png"], ["수영장", "word-su-swimming-pool.png"]] },
+  { id: "hu-u", index: 34, audioFile: "34_후_hu.mp3", duration: 21.639, characterKey: "haha", vowelKey: "u", targetSyllable: "후", combinedImage: vowelAlphaCombinedAsset("하하 후 새시안-alpha.png"), words: [["후추", "word-hu-pepper.png"], ["후라이팬", "word-hu-frying-pan.png"]] },
+  { id: "ju-u", index: 35, audioFile: "35_주_ju.mp3", duration: 24.182, characterKey: "jiji", vowelKey: "u", targetSyllable: "주", combinedImage: vowelAlphaCombinedAsset("지지 주 새시안-alpha.png"), words: [["주황색", "word-ju-orange-color.png"], ["주머니", "word-meo-pocket.png"]] },
+  { id: "chu-u", index: 36, audioFile: "36_추_chu.mp3", duration: 21.272, characterKey: "chichi", vowelKey: "u", targetSyllable: "추", combinedImage: vowelAlphaCombinedAsset("치치 추 새시안-alpha.png"), words: [["후추", "word-hu-pepper.png"], ["배추", "word-chu-napa-cabbage.png"]] },
+  { id: "ku-u", index: 37, audioFile: "37_쿠_ku.mp3", duration: 26.913, characterKey: "koko", vowelKey: "u", targetSyllable: "쿠", combinedImage: vowelAlphaCombinedAsset("코코 쿠 새시안-alpha.png"), words: [["쿠키", "cookie.png"], ["쿠션", "word-ku-cushion.png"]] },
+  { id: "tu-u", index: 38, audioFile: "38_투_tu.mp3", duration: 20.375, characterKey: "toto", vowelKey: "u", targetSyllable: "투", combinedImage: vowelAlphaCombinedAsset("토토 투 새시안-alpha.png"), words: [["투구게", "word-tu-horseshoe-crab.png"]] },
+  { id: "pu-u", index: 39, audioFile: "39_푸_pu.mp3", duration: 22.693, characterKey: "pupu", vowelKey: "u", targetSyllable: "푸", combinedImage: vowelAlphaCombinedAsset("푸푸 푸 새시안-alpha.png"), words: [["푸들", "word-pu-poodle.png"], ["샴푸", "word-pu-shampoo.png"]] },
+  { id: "geo-eo", index: 40, audioFile: "40_거_geo.mp3", duration: 21.276, characterKey: "gogo", vowelKey: "eo", targetSyllable: "거", combinedImage: vowelAlphaCombinedAsset("고고 거 새시안-alpha.png"), words: [["거북이", "word-geo-turtle.png"], ["거위", "word-geo-goose.png"]] },
+  { id: "neo-eo", index: 41, audioFile: "41_너_neo.mp3", duration: 21.438, characterKey: "nana", vowelKey: "eo", targetSyllable: "너", combinedImage: vowelAlphaCombinedAsset("나나 너 새시안-alpha.png"), words: [["너구리", "raccoon-dog.png"]] },
+  { id: "meo-eo", index: 42, audioFile: "42_머_meo.mp3", duration: 19.867, characterKey: "mimi", vowelKey: "eo", targetSyllable: "머", combinedImage: vowelAlphaCombinedAsset("미미 머 새시안-alpha.png"), words: [["머리", "word-meo-head.png"], ["주머니", "word-meo-pocket.png"]] },
+  { id: "beo-eo", index: 43, audioFile: "43_버_beo.mp3", duration: 21.825, characterKey: "bubu", vowelKey: "eo", targetSyllable: "버", combinedImage: vowelAlphaCombinedAsset("부부 버 새시안-alpha.png"), words: [["버스", "bus.png"], ["버섯", "word-beo-mushroom.png"]] },
+  { id: "deo-eo", index: 44, audioFile: "44_더_deo.mp3", duration: 19.659, characterKey: "dodo", vowelKey: "eo", targetSyllable: "더", combinedImage: vowelAlphaCombinedAsset("도도 더 새시안2-alpha.png"), words: [["더위", "word-deo-hot-weather.png"], ["더럽다", "word-deo-dirty.png"]] },
+  { id: "seo-eo", index: 45, audioFile: "45_서_seo.mp3", duration: 24.652, characterKey: "sasa", vowelKey: "eo", targetSyllable: "서", combinedImage: vowelAlphaCombinedAsset("사사 서 새시안-alpha.png"), words: [["서랍", "word-seo-drawer.png"], ["도서관", "word-seo-library.png"]] },
+  { id: "heo-eo", index: 46, audioFile: "46_허_heo.mp3", duration: 20.029, characterKey: "haha", vowelKey: "eo", targetSyllable: "허", combinedImage: vowelAlphaCombinedAsset("하하 허 새시안-v3-alpha.png"), words: [["허리", "word-heo-waist.png"], ["허수아비", "word-heo-scarecrow.png"]] },
+  { id: "jeo-eo", index: 47, audioFile: "47_저_jeo.mp3", duration: 22.074, characterKey: "jiji", vowelKey: "eo", targetSyllable: "저", combinedImage: vowelAlphaCombinedAsset("지지 저 새시안-alpha.png"), words: [["저울", "word-jeo-scale.png"], ["저금통", "word-jeo-piggy-bank.png"]] },
+  { id: "keo-eo", index: 48, audioFile: "48_커_keo.mp3", duration: 21.842, characterKey: "koko", vowelKey: "eo", targetSyllable: "커", combinedImage: vowelAlphaCombinedAsset("코코 커 새시안-alpha.png"), words: [["커피", "word-keo-coffee.png"], ["커튼", "word-keo-curtain.png"]] },
+  { id: "teo-eo", index: 49, audioFile: "49_터_teo.mp3", duration: 25.83, characterKey: "toto", vowelKey: "eo", targetSyllable: "터", combinedImage: vowelAlphaCombinedAsset("토토 터 새시안-alpha.png"), words: [["놀이터", "word-teo-playground.png"], ["터널", "word-teo-tunnel.png"]] },
+  { id: "peo-eo", index: 50, audioFile: "50_퍼_peo.mp3", duration: 22.16, characterKey: "pupu", vowelKey: "eo", targetSyllable: "퍼", combinedImage: vowelAlphaCombinedAsset("푸푸 퍼 새시안-alpha.png"), words: [["퍼즐", "word-peo-puzzle.png"], ["지퍼", "word-peo-zipper.png"]] },
+  { id: "geu-eu", index: 51, audioFile: "51_그_geu.mp3", duration: 21.582, characterKey: "gogo", vowelKey: "eu", targetSyllable: "그", combinedImage: vowelAlphaCombinedAsset("고고 그 새시안-alpha.png"), words: [["그림", "word-geu-drawing.png"], ["그네", "word-geu-swing.png"]] },
+  { id: "neu-eu", index: 52, audioFile: "52_느_neu.mp3", duration: 24.308, characterKey: "nana", vowelKey: "eu", targetSyllable: "느", combinedImage: vowelAlphaCombinedAsset("나나 느 새시안-alpha.png"), words: [["지느러미", "word-neu-fin.png"], ["느리다", "word-neu-slow.png"]] },
+  { id: "beu-eu", index: 53, audioFile: "53_브_beu.mp3", duration: 22.034, characterKey: "bubu", vowelKey: "eu", targetSyllable: "브", combinedImage: vowelAlphaCombinedAsset("부부 브 새시안-alpha.png"), words: [["브로콜리", "word-beu-broccoli.png"], ["브라키오사우루스", "word-beu-brachiosaurus.png"]] },
+  { id: "deu-eu", index: 54, audioFile: "54_드_deu.mp3", duration: 23.649, characterKey: "dodo", vowelKey: "eu", targetSyllable: "드", combinedImage: vowelAlphaCombinedAsset("도도 드 새시안-alpha.png"), words: [["카드", "card.png"], ["드레스", "word-deu-dress.png"]] },
+  { id: "reu-eu", index: 55, audioFile: "55_르_reu.mp3", duration: 22.361, characterKey: "rara", vowelKey: "eu", targetSyllable: "르", combinedImage: vowelAlphaCombinedAsset("라라 르 새시안-alpha.png"), words: [["요구르트", "word-yo-yogurt.png"]] },
+  { id: "seu-eu", index: 56, audioFile: "56_스_seu.mp3", duration: 23.709, characterKey: "sasa", vowelKey: "eu", targetSyllable: "스", combinedImage: vowelAlphaCombinedAsset("사사 스 새시안-alpha.png"), words: [["주스", "juice.png"], ["스티커", "word-seu-sticker.png"]] },
+  { id: "jeu-eu", index: 57, audioFile: "57_즈_jeu.mp3", duration: 22.355, characterKey: "jiji", vowelKey: "eu", targetSyllable: "즈", combinedImage: vowelAlphaCombinedAsset("지지 즈 새시안-alpha.png"), words: [["치즈", "cheese.png"], ["마요네즈", "word-jeu-mayonnaise.png"]] },
+  { id: "keu-eu", index: 58, audioFile: "58_크_keu.mp3", duration: 19.468, characterKey: "koko", vowelKey: "eu", targetSyllable: "크", combinedImage: vowelAlphaCombinedAsset("코코 크 새시안-alpha.png"), words: [["크레파스", "crayon.png"], ["크림", "word-keu-cream.png"]] },
+  { id: "teu-eu", index: 59, audioFile: "59_트_teu.mp3", duration: 23.034, characterKey: "toto", vowelKey: "eu", targetSyllable: "트", combinedImage: vowelAlphaCombinedAsset("토토 트 새시안-alpha.png"), words: [["요트", "word-teu-yacht.png"], ["마트", "word-teu-supermarket.png"]] },
+  { id: "peu-eu", index: 60, audioFile: "60_프_peu.mp3", duration: 22.596, characterKey: "pupu", vowelKey: "eu", targetSyllable: "프", combinedImage: vowelAlphaCombinedAsset("푸푸 프 새시안-alpha.png"), words: [["프테라노돈", "word-peu-pteranodon.png"], ["점프", "word-peu-jump.png"]] },
+  { id: "gi-i", index: 61, audioFile: "61_기_gi.mp3", duration: 25.956, characterKey: "gogo", vowelKey: "i", targetSyllable: "기", combinedImage: vowelAlphaCombinedAsset("고고 기 새시안3-alpha.png"), words: [["기린", "word-gi-giraffe.png"], ["기차", "word-gi-train.png"]] },
+  { id: "ni-i", index: 62, audioFile: "62_니_ni.mp3", duration: 23.168, characterKey: "nana", vowelKey: "i", targetSyllable: "니", combinedImage: vowelAlphaCombinedAsset("나나 니 새시안-alpha.png"), words: [["고니", "word-ni-swan.png"], ["할머니", "word-ni-grandmother.png"]] },
+  { id: "mi-i", index: 63, audioFile: "63_미_mi.mp3", duration: 19.939, characterKey: "mimi", vowelKey: "i", targetSyllable: "미", combinedImage: vowelAlphaCombinedAsset("미미 미 새시안-alpha.png"), words: [["미끄럼틀", "slide.png"], ["미역", "word-mi-seaweed.png"]] },
+  { id: "bi-i", index: 64, audioFile: "64_비_bi.mp3", duration: 20.829, characterKey: "bubu", vowelKey: "i", targetSyllable: "비", combinedImage: vowelAlphaCombinedAsset("부부 비 새시안-alpha.png"), words: [["비닐봉지", "word-bi-plastic-bag.png"], ["비빔밥", "word-bi-bibimbap.png"]] },
+  { id: "ri-i", index: 65, audioFile: "65_리_ri.mp3", duration: 20.963, characterKey: "rara", vowelKey: "i", targetSyllable: "리", combinedImage: vowelAlphaCombinedAsset("라라 리 새시안-alpha.png"), words: [["리본", "ribbon.png"], ["병아리", "word-ri-chick.png"]] },
+  { id: "si-i", index: 66, audioFile: "66_시_si.mp3", duration: 25.732, characterKey: "sasa", vowelKey: "i", targetSyllable: "시", combinedImage: vowelAlphaCombinedAsset("사사 시 새시안-alpha.png"), words: [["시계", "word-si-clock.png"], ["시소", "word-si-seesaw.png"]] },
+  { id: "ji-i", index: 67, audioFile: "67_지_ji.mp3", duration: 21.921, characterKey: "jiji", vowelKey: "i", targetSyllable: "지", combinedImage: vowelAlphaCombinedAsset("지지 지 새시안-alpha.png"), words: [["지렁이", "word-ji-earthworm.png"], ["지하철", "word-ji-subway.png"]] },
+  { id: "chi-i", index: 68, audioFile: "68_치_chi.mp3", duration: 23.519, characterKey: "chichi", vowelKey: "i", targetSyllable: "치", combinedImage: vowelAlphaCombinedAsset("치치 치 새시안-alpha.png"), words: [["치즈", "cheese.png"], ["곰치", "word-chi-moray-eel.png"]] },
+  { id: "ki-i", index: 69, audioFile: "69_키_ki.mp3", duration: 23.854, characterKey: "koko", vowelKey: "i", targetSyllable: "키", combinedImage: vowelAlphaCombinedAsset("코코 키 새시안-alpha.png"), words: [["키위", "word-ki-kiwi.png"], ["스키", "word-ki-ski.png"]] },
+  { id: "ti-i", index: 70, audioFile: "70_티_ti.mp3", duration: 28.927, characterKey: "toto", vowelKey: "i", targetSyllable: "티", combinedImage: vowelAlphaCombinedAsset("토토 티 새시안-alpha.png"), words: [["티셔츠", "word-ti-tshirt.png"], ["티라노사우루스", "word-ti-tyrannosaurus.png"]] },
+  { id: "pi-i", index: 71, audioFile: "71_피_pi.mp3", duration: 22.955, characterKey: "pupu", vowelKey: "i", targetSyllable: "피", combinedImage: vowelAlphaCombinedAsset("푸푸 피 새시안-alpha.png"), words: [["피아노", "word-pi-piano.png"], ["피자", "pizza.png"]] },
 ];
 
 export const SYLLABLE_COMBINE_TIMING_PROJECTS = SYLLABLE_COMBINE_ITEMS.map((item) => defineSyllableCombineProject(item));
@@ -579,7 +713,7 @@ function defineSyllableCombineProject({ id, audioFile, duration, characterKey, v
     throw new Error(`Unknown syllable combine setup: ${id}`);
   }
 
-  return buildDefaultTimingProject({
+  const project = buildDefaultTimingProject({
     id,
     lessonId: `vowel-combination-${id}`,
     template: "syllable-combine-story",
@@ -607,6 +741,29 @@ function defineSyllableCombineProject({ id, audioFile, duration, characterKey, v
       timingFile: `${id}-syllable-timings.json`,
     },
   });
+  return applySyllableCombineVowelLayout(project, SYLLABLE_COMBINE_VOWEL_LAYOUTS[vowelKey]);
+}
+
+function applySyllableCombineVowelLayout(project, layout) {
+  if (!layout) {
+    return project;
+  }
+
+  for (const cue of project.combineCues) {
+    if (cue.assetKind === "combined") {
+      cue.fromPosition = clonePlainObject(layout.combined.fromPosition);
+      cue.toPosition = clonePlainObject(layout.combined.position);
+      cue.position = clonePlainObject(layout.combined.position);
+      cue.scale = layout.combined.scale;
+    }
+  }
+  for (const cue of project.letterCues) {
+    const position = layout.letters[cue.id.slice(project.id.length + 1)];
+    if (position) {
+      cue.position = clonePlainObject(position);
+    }
+  }
+  return project;
 }
 
 function buildDefaultTimingProject(definition) {
@@ -688,8 +845,9 @@ function makeWordCues(words, characterKey, segmentStart, template = "consonant-c
         : template === "syllable-combine-story"
           ? SYLLABLE_COMBINE_WORD_TIMES[index]
           : null;
+    const twoWordPosition = template === "vowel-combine-story" && words.length === 2 ? VOWEL_COMBINE_TWO_WORD_POSITIONS[index] : null;
     const slot = vowelTiming?.position
-      ? { ...vowelTiming.position, accent: vowelTiming.accent }
+      ? { ...(twoWordPosition ?? vowelTiming.position), accent: vowelTiming.accent }
       : CARD_POSITIONS[index % CARD_POSITIONS.length];
     const timing = vowelTiming ?? WORD_TIMES[index] ?? { start: 14.2 + index * 1.2, end: 15.1 + index * 1.2 };
     return {

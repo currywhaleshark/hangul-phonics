@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "ii-i",
+  "lessonId": "lesson-01-aa-baby-vowel-i",
+  "title": "이이 막대 이 모음 만남",
+  "template": "vowel-combine-story",
+  "character": {
+    "key": "ii",
+    "name": "이이 막대",
+    "letter": "이",
+    "image": "public/video-assets/vowel-alpha/combined/이이 막대 시안-alpha.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/vowel_이_i.mp3",
+    "duration": 20.714
+  },
+  "segment": {
+    "label": "이이 막대",
+    "start": 0,
+    "end": 20.714
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "ii-baby",
+      "label": "아기",
+      "assetKind": "baby",
+      "image": "public/video-assets/characters/consonants/ㅇ-aa-baby.png",
+      "start": 0.2,
+      "end": 6.508,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.54
+    },
+    {
+      "id": "ii-tool",
+      "label": "이이 막대",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png",
+      "start": 0.2,
+      "end": 6.508,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "ii-combined",
+      "label": "합친 이미지",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined-hero/이이 막대 시안-hero.png",
+      "start": 6.508,
+      "end": 20.714,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "position": {
+        "left": 50,
+        "top": 55
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ii-blanket",
+      "label": "이불",
+      "image": "worksheets/assets/word-i-blanket.png",
+      "start": 16.269,
+      "end": 19.615,
+      "position": {
+        "left": 19.316,
+        "top": 74.632
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ii-tooth",
+      "label": "이빨",
+      "image": "worksheets/assets/word-i-tooth.png",
+      "start": 17.973,
+      "end": 19.615,
+      "position": {
+        "left": 84.474,
+        "top": 77.813
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ii-say",
+      "label": "이",
+      "start": 14.136,
+      "end": 15.215,
+      "position": {
+        "left": 17.526,
+        "top": 20.737
+      }
+    },
+    {
+      "id": "ii-final",
+      "label": "이",
+      "start": 19.865,
+      "end": 20.714,
+      "position": {
+        "left": 87.105,
+        "top": 21.485
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ii-i",
+    "timingFile": "ii-i-card-timings.json"
+  }
+}

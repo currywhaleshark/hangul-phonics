@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "beo-eo",
+  "lessonId": "vowel-combination-beo-eo",
+  "title": "부부 부엉이 버 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "bubu",
+    "name": "부부 부엉이",
+    "letter": "ㅂ",
+    "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/43_버_beo.mp3",
+    "duration": 21.825
+  },
+  "segment": {
+    "label": "버",
+    "start": 0,
+    "end": 21.825
+  },
+  "targetSyllable": "버",
+  "vowel": {
+    "key": "eo",
+    "letter": "ㅓ",
+    "sound": "어",
+    "toolLabel": "어어 풍선",
+    "toolImage": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "bubu-character",
+      "label": "부부 부엉이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png",
+      "start": 0.2,
+      "end": 5.525,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "bubu-tool",
+      "label": "어어 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png",
+      "start": 0.2,
+      "end": 5.525,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "bubu-combined",
+      "label": "버",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/부부 버 새시안-alpha.png",
+      "start": 5.525,
+      "end": 21.825,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "beo-eo-word-1",
+      "label": "버스",
+      "image": "worksheets/assets/bus.png",
+      "start": 18.481,
+      "end": 21.25,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "beo-eo-word-2",
+      "label": "버섯",
+      "image": "worksheets/assets/word-beo-mushroom.png",
+      "start": 19.892,
+      "end": 21.25,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "beo-eo-initial",
+      "label": "ㅂ",
+      "start": 7.165,
+      "end": 16.565,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "beo-eo-vowel",
+      "label": "ㅓ",
+      "start": 11.176,
+      "end": 16.565,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "beo-eo-combined",
+      "label": "버",
+      "start": 16.565,
+      "end": 18.115,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "beo-eo-final",
+      "label": "버",
+      "start": 21.5,
+      "end": 21.825,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "beo-eo",
+    "timingFile": "beo-eo-card-timings.json"
+  }
+}

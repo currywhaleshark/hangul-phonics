@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "ru-u",
+  "lessonId": "vowel-combination-ru-u",
+  "title": "라라 리본 루 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "rara",
+    "name": "라라 리본",
+    "letter": "ㄹ",
+    "image": "public/video-assets/characters/consonants/ㄹ-rara-ribbon.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/32_루_ru.mp3",
+    "duration": 19.354
+  },
+  "segment": {
+    "label": "루",
+    "start": 0,
+    "end": 19.354
+  },
+  "targetSyllable": "루",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "rara-character",
+      "label": "라라 리본",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄹ-rara-ribbon.png",
+      "start": 0.2,
+      "end": 4.147,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "rara-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 4.147,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "rara-combined",
+      "label": "루",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/라라 루 새시안-alpha.png",
+      "start": 4.147,
+      "end": 19.354,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "ru-u-word-1",
+      "label": "루돌프",
+      "image": "worksheets/assets/word-ru-rudolph.png",
+      "start": 15.867,
+      "end": 18.781,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ru-u-word-2",
+      "label": "빗자루",
+      "image": "worksheets/assets/word-ru-broom.png",
+      "start": 17.297,
+      "end": 18.781,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ru-u-initial",
+      "label": "ㄹ",
+      "start": 5.717,
+      "end": 14.309,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ru-u-vowel",
+      "label": "ㅜ",
+      "start": 9.084,
+      "end": 14.309,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ru-u-combined",
+      "label": "루",
+      "start": 14.309,
+      "end": 15.817,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "ru-u-final",
+      "label": "루",
+      "start": 19.031,
+      "end": 19.354,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ru-u",
+    "timingFile": "ru-u-card-timings.json"
+  }
+}

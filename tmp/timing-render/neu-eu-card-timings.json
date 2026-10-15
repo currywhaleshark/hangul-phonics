@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "neu-eu",
+  "lessonId": "vowel-combination-neu-eu",
+  "title": "나나 나비 느 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "nana",
+    "name": "나나 나비",
+    "letter": "ㄴ",
+    "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/52_느_neu.mp3",
+    "duration": 24.308
+  },
+  "segment": {
+    "label": "느",
+    "start": 0,
+    "end": 24.308
+  },
+  "targetSyllable": "느",
+  "vowel": {
+    "key": "eu",
+    "letter": "ㅡ",
+    "sound": "으",
+    "toolLabel": "으으 쿠션",
+    "toolImage": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "nana-character",
+      "label": "나나 나비",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png",
+      "start": 0.2,
+      "end": 6.738,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "nana-tool",
+      "label": "으으 쿠션",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "start": 0.2,
+      "end": 6.738,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "nana-combined",
+      "label": "느",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/나나 느 새시안-alpha.png",
+      "start": 6.738,
+      "end": 24.308,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 58
+      },
+      "position": {
+        "left": 50,
+        "top": 58
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "neu-eu-word-1",
+      "label": "지느러미",
+      "image": "worksheets/assets/word-neu-fin.png",
+      "start": 20.707,
+      "end": 23.672,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "neu-eu-word-2",
+      "label": "느리다",
+      "image": "worksheets/assets/word-neu-slow.png",
+      "start": 22.236,
+      "end": 23.672,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "neu-eu-initial",
+      "label": "ㄴ",
+      "start": 8.365,
+      "end": 18.386,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "neu-eu-vowel",
+      "label": "ㅡ",
+      "start": 12.074,
+      "end": 18.386,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "neu-eu-combined",
+      "label": "느",
+      "start": 18.386,
+      "end": 19.936,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "neu-eu-final",
+      "label": "느",
+      "start": 23.922,
+      "end": 24.308,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "neu-eu",
+    "timingFile": "neu-eu-card-timings.json"
+  }
+}

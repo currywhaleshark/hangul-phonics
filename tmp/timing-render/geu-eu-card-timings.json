@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "geu-eu",
+  "lessonId": "vowel-combination-geu-eu",
+  "title": "고고 고양이 그 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "gogo",
+    "name": "고고 고양이",
+    "letter": "ㄱ",
+    "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/51_그_geu.mp3",
+    "duration": 21.582
+  },
+  "segment": {
+    "label": "그",
+    "start": 0,
+    "end": 21.582
+  },
+  "targetSyllable": "그",
+  "vowel": {
+    "key": "eu",
+    "letter": "ㅡ",
+    "sound": "으",
+    "toolLabel": "으으 쿠션",
+    "toolImage": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "gogo-character",
+      "label": "고고 고양이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png",
+      "start": 0.2,
+      "end": 5.528,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "gogo-tool",
+      "label": "으으 쿠션",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "start": 0.2,
+      "end": 5.528,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "gogo-combined",
+      "label": "그",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/고고 그 새시안-alpha.png",
+      "start": 5.528,
+      "end": 21.582,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 58
+      },
+      "position": {
+        "left": 50,
+        "top": 58
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "geu-eu-word-1",
+      "label": "그림",
+      "image": "worksheets/assets/word-geu-drawing.png",
+      "start": 17.948,
+      "end": 21.023,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "geu-eu-word-2",
+      "label": "그네",
+      "image": "worksheets/assets/word-geu-swing.png",
+      "start": 19.597,
+      "end": 21.023,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "geu-eu-initial",
+      "label": "ㄱ",
+      "start": 7.16,
+      "end": 16.231,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "geu-eu-vowel",
+      "label": "ㅡ",
+      "start": 10.687,
+      "end": 16.231,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "geu-eu-combined",
+      "label": "그",
+      "start": 16.231,
+      "end": 17.781,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "geu-eu-final",
+      "label": "그",
+      "start": 21.273,
+      "end": 21.582,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "geu-eu",
+    "timingFile": "geu-eu-card-timings.json"
+  }
+}

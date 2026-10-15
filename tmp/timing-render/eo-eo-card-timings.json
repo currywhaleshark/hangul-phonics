@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "eo-eo",
+  "lessonId": "lesson-01-aa-baby-vowel-eo",
+  "title": "어어 풍선 어 모음 만남",
+  "template": "vowel-combine-story",
+  "character": {
+    "key": "eo",
+    "name": "어어 풍선",
+    "letter": "어",
+    "image": "public/video-assets/vowel-alpha/combined/어어 풍선 시안2-alpha.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/vowel_어_eo.mp3",
+    "duration": 20.286
+  },
+  "segment": {
+    "label": "어어 풍선",
+    "start": 0,
+    "end": 20.286
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "eo-baby",
+      "label": "아기",
+      "assetKind": "baby",
+      "image": "public/video-assets/characters/consonants/ㅇ-aa-baby.png",
+      "start": 0.2,
+      "end": 8.901,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.54
+    },
+    {
+      "id": "eo-tool",
+      "label": "어어 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png",
+      "start": 0.2,
+      "end": 8.901,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "eo-combined",
+      "label": "합친 이미지",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined-hero/어어 풍선 시안2-hero.png",
+      "start": 8.901,
+      "end": 20.286,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "position": {
+        "left": 50,
+        "top": 55
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "eo-fishbowl",
+      "label": "어항",
+      "image": "worksheets/assets/word-eo-fish-tank.png",
+      "start": 15.65,
+      "end": 19.494,
+      "position": {
+        "left": 19.316,
+        "top": 74.632
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "eo-shark",
+      "label": "상어",
+      "image": "worksheets/assets/word-eo-shark.png",
+      "start": 17.625,
+      "end": 19.494,
+      "position": {
+        "left": 84.474,
+        "top": 77.813
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "eo-say",
+      "label": "어",
+      "start": 14.081,
+      "end": 14.894,
+      "position": {
+        "left": 17.526,
+        "top": 20.737
+      }
+    },
+    {
+      "id": "eo-final",
+      "label": "어",
+      "start": 19.744,
+      "end": 20.286,
+      "position": {
+        "left": 87.105,
+        "top": 21.485
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "eo-eo",
+    "timingFile": "eo-eo-card-timings.json"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "gu-u",
+  "lessonId": "vowel-combination-gu-u",
+  "title": "고고 고양이 구 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "gogo",
+    "name": "고고 고양이",
+    "letter": "ㄱ",
+    "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/27_구_gu.mp3",
+    "duration": 20.405
+  },
+  "segment": {
+    "label": "구",
+    "start": 0,
+    "end": 20.405
+  },
+  "targetSyllable": "구",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "gogo-character",
+      "label": "고고 고양이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png",
+      "start": 0.2,
+      "end": 4.969,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "gogo-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 4.969,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "gogo-combined",
+      "label": "구",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/고고 구 새시안-alpha.png",
+      "start": 4.969,
+      "end": 20.405,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "gu-u-word-1",
+      "label": "구름",
+      "image": "worksheets/assets/word-gu-cloud.png",
+      "start": 17.146,
+      "end": 19.814,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "gu-u-word-2",
+      "label": "축구공",
+      "image": "worksheets/assets/word-gu-soccer-ball.png",
+      "start": 18.525,
+      "end": 19.814,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "gu-u-initial",
+      "label": "ㄱ",
+      "start": 6.524,
+      "end": 15.315,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "gu-u-vowel",
+      "label": "ㅜ",
+      "start": 9.966,
+      "end": 15.315,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "gu-u-combined",
+      "label": "구",
+      "start": 15.315,
+      "end": 16.865,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "gu-u-final",
+      "label": "구",
+      "start": 20.064,
+      "end": 20.405,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "gu-u",
+    "timingFile": "gu-u-card-timings.json"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "seo-eo",
+  "lessonId": "vowel-combination-seo-eo",
+  "title": "사사 사슴 서 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "sasa",
+    "name": "사사 사슴",
+    "letter": "ㅅ",
+    "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/45_서_seo.mp3",
+    "duration": 24.652
+  },
+  "segment": {
+    "label": "서",
+    "start": 0,
+    "end": 24.652
+  },
+  "targetSyllable": "서",
+  "vowel": {
+    "key": "eo",
+    "letter": "ㅓ",
+    "sound": "어",
+    "toolLabel": "어어 풍선",
+    "toolImage": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "sasa-character",
+      "label": "사사 사슴",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png",
+      "start": 0.2,
+      "end": 7.209,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "sasa-tool",
+      "label": "어어 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png",
+      "start": 0.2,
+      "end": 7.209,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "sasa-combined",
+      "label": "서",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/사사 서 새시안-alpha.png",
+      "start": 7.209,
+      "end": 24.652,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "seo-eo-word-1",
+      "label": "서랍",
+      "image": "worksheets/assets/word-seo-drawer.png",
+      "start": 20.884,
+      "end": 23.932,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "seo-eo-word-2",
+      "label": "도서관",
+      "image": "worksheets/assets/word-seo-library.png",
+      "start": 22.435,
+      "end": 23.932,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "seo-eo-initial",
+      "label": "ㅅ",
+      "start": 9.209,
+      "end": 18.792,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "seo-eo-vowel",
+      "label": "ㅓ",
+      "start": 12.593,
+      "end": 18.792,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "seo-eo-combined",
+      "label": "서",
+      "start": 18.792,
+      "end": 20.342,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "seo-eo-final",
+      "label": "서",
+      "start": 24.182,
+      "end": 24.652,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "seo-eo",
+    "timingFile": "seo-eo-card-timings.json"
+  }
+}

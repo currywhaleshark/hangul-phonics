@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "heo-eo",
+  "lessonId": "vowel-combination-heo-eo",
+  "title": "하하 하마 허 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "haha",
+    "name": "하하 하마",
+    "letter": "ㅎ",
+    "image": "public/video-assets/characters/consonants/ㅎ-haha-hippo.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/46_허_heo.mp3",
+    "duration": 20.03
+  },
+  "segment": {
+    "label": "허",
+    "start": 0,
+    "end": 20.03
+  },
+  "targetSyllable": "허",
+  "vowel": {
+    "key": "eo",
+    "letter": "ㅓ",
+    "sound": "어",
+    "toolLabel": "어어 풍선",
+    "toolImage": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "haha-character",
+      "label": "하하 하마",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅎ-haha-hippo.png",
+      "start": 0.2,
+      "end": 4.593,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "haha-tool",
+      "label": "어어 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png",
+      "start": 0.2,
+      "end": 4.593,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "haha-combined",
+      "label": "허",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/하하 허 새시안-v3-alpha.png",
+      "start": 4.593,
+      "end": 20.03,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "heo-eo-word-1",
+      "label": "허리",
+      "image": "worksheets/assets/word-heo-waist.png",
+      "start": 16.818,
+      "end": 19.416,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "heo-eo-word-2",
+      "label": "허수아비",
+      "image": "worksheets/assets/word-heo-scarecrow.png",
+      "start": 18.162,
+      "end": 19.416,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "heo-eo-initial",
+      "label": "ㅎ",
+      "start": 6.335,
+      "end": 15.062,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "heo-eo-vowel",
+      "label": "ㅓ",
+      "start": 9.755,
+      "end": 15.062,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "heo-eo-combined",
+      "label": "허",
+      "start": 15.062,
+      "end": 16.612,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "heo-eo-final",
+      "label": "허",
+      "start": 19.666,
+      "end": 20.03,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "heo-eo",
+    "timingFile": "heo-eo-card-timings.json"
+  }
+}

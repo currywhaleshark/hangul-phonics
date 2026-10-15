@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "peu-eu",
+  "lessonId": "vowel-combination-peu-eu",
+  "title": "푸푸 풍선 프 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "pupu",
+    "name": "푸푸 풍선",
+    "letter": "ㅍ",
+    "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/60_프_peu.mp3",
+    "duration": 22.596
+  },
+  "segment": {
+    "label": "프",
+    "start": 0,
+    "end": 22.596
+  },
+  "targetSyllable": "프",
+  "vowel": {
+    "key": "eu",
+    "letter": "ㅡ",
+    "sound": "으",
+    "toolLabel": "으으 쿠션",
+    "toolImage": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "pupu-character",
+      "label": "푸푸 풍선",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png",
+      "start": 0.2,
+      "end": 5.687,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "pupu-tool",
+      "label": "으으 쿠션",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "start": 0.2,
+      "end": 5.687,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "pupu-combined",
+      "label": "프",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/푸푸 프 새시안-alpha.png",
+      "start": 5.687,
+      "end": 22.596,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 58
+      },
+      "position": {
+        "left": 50,
+        "top": 58
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "peu-eu-word-1",
+      "label": "프테라노돈",
+      "image": "worksheets/assets/word-peu-pteranodon.png",
+      "start": 19.067,
+      "end": 22.018,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "peu-eu-word-2",
+      "label": "점프",
+      "image": "worksheets/assets/word-peu-jump.png",
+      "start": 20.818,
+      "end": 22.018,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "peu-eu-initial",
+      "label": "ㅍ",
+      "start": 7.559,
+      "end": 16.934,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "peu-eu-vowel",
+      "label": "ㅡ",
+      "start": 11.307,
+      "end": 16.934,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "peu-eu-combined",
+      "label": "프",
+      "start": 16.934,
+      "end": 18.484,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "peu-eu-final",
+      "label": "프",
+      "start": 22.268,
+      "end": 22.596,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "peu-eu",
+    "timingFile": "peu-eu-card-timings.json"
+  }
+}

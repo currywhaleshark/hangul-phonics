@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "seu-eu",
+  "lessonId": "vowel-combination-seu-eu",
+  "title": "사사 사슴 스 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "sasa",
+    "name": "사사 사슴",
+    "letter": "ㅅ",
+    "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/56_스_seu.mp3",
+    "duration": 23.709
+  },
+  "segment": {
+    "label": "스",
+    "start": 0,
+    "end": 23.709
+  },
+  "targetSyllable": "스",
+  "vowel": {
+    "key": "eu",
+    "letter": "ㅡ",
+    "sound": "으",
+    "toolLabel": "으으 쿠션",
+    "toolImage": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "sasa-character",
+      "label": "사사 사슴",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅅ-sasa-deer.png",
+      "start": 0.2,
+      "end": 7.015,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "sasa-tool",
+      "label": "으으 쿠션",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "start": 0.2,
+      "end": 7.015,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "sasa-combined",
+      "label": "스",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/사사 스 새시안-alpha.png",
+      "start": 7.015,
+      "end": 23.709,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 58
+      },
+      "position": {
+        "left": 50,
+        "top": 58
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "seu-eu-word-1",
+      "label": "주스",
+      "image": "worksheets/assets/juice.png",
+      "start": 20.246,
+      "end": 23.158,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "seu-eu-word-2",
+      "label": "스티커",
+      "image": "worksheets/assets/word-seu-sticker.png",
+      "start": 21.598,
+      "end": 23.158,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "seu-eu-initial",
+      "label": "ㅅ",
+      "start": 9.069,
+      "end": 18.432,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "seu-eu-vowel",
+      "label": "ㅡ",
+      "start": 12.743,
+      "end": 18.432,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "seu-eu-combined",
+      "label": "스",
+      "start": 18.432,
+      "end": 19.982,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "seu-eu-final",
+      "label": "스",
+      "start": 23.408,
+      "end": 23.709,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "seu-eu",
+    "timingFile": "seu-eu-card-timings.json"
+  }
+}

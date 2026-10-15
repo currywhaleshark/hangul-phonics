@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "chu-u",
+  "lessonId": "vowel-combination-chu-u",
+  "title": "치치 칙폭이 추 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "chichi",
+    "name": "치치 칙폭이",
+    "letter": "ㅊ",
+    "image": "public/video-assets/characters/consonants/ㅊ-chichi-train.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/36_추_chu.mp3",
+    "duration": 21.272
+  },
+  "segment": {
+    "label": "추",
+    "start": 0,
+    "end": 21.272
+  },
+  "targetSyllable": "추",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "chichi-character",
+      "label": "치치 칙폭이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅊ-chichi-train.png",
+      "start": 0.2,
+      "end": 4.709,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "chichi-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 4.709,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "chichi-combined",
+      "label": "추",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/치치 추 새시안-alpha.png",
+      "start": 4.709,
+      "end": 21.272,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "chu-u-word-1",
+      "label": "후추",
+      "image": "worksheets/assets/word-hu-pepper.png",
+      "start": 17.215,
+      "end": 20.586,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "chu-u-word-2",
+      "label": "배추",
+      "image": "worksheets/assets/word-chu-napa-cabbage.png",
+      "start": 19.04,
+      "end": 20.586,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "chu-u-initial",
+      "label": "ㅊ",
+      "start": 6.3,
+      "end": 15.312,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "chu-u-vowel",
+      "label": "ㅜ",
+      "start": 9.711,
+      "end": 15.312,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "chu-u-combined",
+      "label": "추",
+      "start": 15.312,
+      "end": 16.862,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "chu-u-final",
+      "label": "추",
+      "start": 20.836,
+      "end": 21.272,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "chu-u",
+    "timingFile": "chu-u-card-timings.json"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "deu-eu",
+  "lessonId": "vowel-combination-deu-eu",
+  "title": "도도 도토리 드 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "dodo",
+    "name": "도도 도토리",
+    "letter": "ㄷ",
+    "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/54_드_deu.mp3",
+    "duration": 23.65
+  },
+  "segment": {
+    "label": "드",
+    "start": 0,
+    "end": 23.65
+  },
+  "targetSyllable": "드",
+  "vowel": {
+    "key": "eu",
+    "letter": "ㅡ",
+    "sound": "으",
+    "toolLabel": "으으 쿠션",
+    "toolImage": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "dodo-character",
+      "label": "도도 도토리",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png",
+      "start": 0.2,
+      "end": 5.114,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "dodo-tool",
+      "label": "으으 쿠션",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "start": 0.2,
+      "end": 5.114,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "dodo-combined",
+      "label": "드",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/도도 드 새시안-alpha.png",
+      "start": 5.114,
+      "end": 23.65,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 58
+      },
+      "position": {
+        "left": 50,
+        "top": 58
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "deu-eu-word-1",
+      "label": "카드",
+      "image": "worksheets/assets/card.png",
+      "start": 19.29,
+      "end": 23.002,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "deu-eu-word-2",
+      "label": "드레스",
+      "image": "worksheets/assets/word-deu-dress.png",
+      "start": 20.966,
+      "end": 23.002,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "deu-eu-initial",
+      "label": "ㄷ",
+      "start": 6.812,
+      "end": 16.91,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "deu-eu-vowel",
+      "label": "ㅡ",
+      "start": 10.495,
+      "end": 16.91,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "deu-eu-combined",
+      "label": "드",
+      "start": 16.91,
+      "end": 18.46,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "deu-eu-final",
+      "label": "드",
+      "start": 23.252,
+      "end": 23.65,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "deu-eu",
+    "timingFile": "deu-eu-card-timings.json"
+  }
+}

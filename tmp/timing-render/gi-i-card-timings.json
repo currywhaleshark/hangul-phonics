@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "gi-i",
+  "lessonId": "vowel-combination-gi-i",
+  "title": "고고 고양이 기 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "gogo",
+    "name": "고고 고양이",
+    "letter": "ㄱ",
+    "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/61_기_gi.mp3",
+    "duration": 25.956
+  },
+  "segment": {
+    "label": "기",
+    "start": 0,
+    "end": 25.956
+  },
+  "targetSyllable": "기",
+  "vowel": {
+    "key": "ii",
+    "letter": "ㅣ",
+    "sound": "이",
+    "toolLabel": "이이 막대",
+    "toolImage": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "gogo-character",
+      "label": "고고 고양이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png",
+      "start": 0.2,
+      "end": 6.799,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "gogo-tool",
+      "label": "이이 막대",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png",
+      "start": 0.2,
+      "end": 6.799,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "gogo-combined",
+      "label": "기",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/고고 기 새시안3-alpha.png",
+      "start": 6.799,
+      "end": 25.956,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "gi-i-word-1",
+      "label": "기린",
+      "image": "worksheets/assets/word-gi-giraffe.png",
+      "start": 21.572,
+      "end": 25.348,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "gi-i-word-2",
+      "label": "기차",
+      "image": "worksheets/assets/word-gi-train.png",
+      "start": 23.489,
+      "end": 25.348,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "gi-i-initial",
+      "label": "ㄱ",
+      "start": 8.559,
+      "end": 18.935,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "gi-i-vowel",
+      "label": "ㅣ",
+      "start": 12.685,
+      "end": 18.935,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "gi-i-combined",
+      "label": "기",
+      "start": 18.935,
+      "end": 20.485,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "gi-i-final",
+      "label": "기",
+      "start": 25.598,
+      "end": 25.956,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "gi-i",
+    "timingFile": "gi-i-card-timings.json"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "ni-i",
+  "lessonId": "vowel-combination-ni-i",
+  "title": "나나 나비 니 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "nana",
+    "name": "나나 나비",
+    "letter": "ㄴ",
+    "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/62_니_ni.mp3",
+    "duration": 23.168
+  },
+  "segment": {
+    "label": "니",
+    "start": 0,
+    "end": 23.168
+  },
+  "targetSyllable": "니",
+  "vowel": {
+    "key": "ii",
+    "letter": "ㅣ",
+    "sound": "이",
+    "toolLabel": "이이 막대",
+    "toolImage": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "nana-character",
+      "label": "나나 나비",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png",
+      "start": 0.2,
+      "end": 5.812,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "nana-tool",
+      "label": "이이 막대",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/이이 막대-alpha.png",
+      "start": 0.2,
+      "end": 5.812,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "nana-combined",
+      "label": "니",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/나나 니 새시안-alpha.png",
+      "start": 5.812,
+      "end": 23.168,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ni-i-word-1",
+      "label": "고니",
+      "image": "worksheets/assets/word-ni-swan.png",
+      "start": 19.16,
+      "end": 22.504,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ni-i-word-2",
+      "label": "할머니",
+      "image": "worksheets/assets/word-ni-grandmother.png",
+      "start": 20.865,
+      "end": 22.504,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ni-i-initial",
+      "label": "ㄴ",
+      "start": 7.685,
+      "end": 17.207,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ni-i-vowel",
+      "label": "ㅣ",
+      "start": 11.305,
+      "end": 17.207,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ni-i-combined",
+      "label": "니",
+      "start": 17.207,
+      "end": 18.757,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "ni-i-final",
+      "label": "니",
+      "start": 22.754,
+      "end": 23.168,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ni-i",
+    "timingFile": "ni-i-card-timings.json"
+  }
+}

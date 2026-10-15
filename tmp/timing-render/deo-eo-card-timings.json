@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "deo-eo",
+  "lessonId": "vowel-combination-deo-eo",
+  "title": "도도 도토리 더 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "dodo",
+    "name": "도도 도토리",
+    "letter": "ㄷ",
+    "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/44_더_deo.mp3",
+    "duration": 19.659
+  },
+  "segment": {
+    "label": "더",
+    "start": 0,
+    "end": 19.659
+  },
+  "targetSyllable": "더",
+  "vowel": {
+    "key": "eo",
+    "letter": "ㅓ",
+    "sound": "어",
+    "toolLabel": "어어 풍선",
+    "toolImage": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "dodo-character",
+      "label": "도도 도토리",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄷ-dodo-acorn.png",
+      "start": 0.2,
+      "end": 4.886,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "dodo-tool",
+      "label": "어어 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/어어 풍선-alpha.png",
+      "start": 0.2,
+      "end": 4.886,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "dodo-combined",
+      "label": "더",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/도도 더 새시안2-alpha.png",
+      "start": 4.886,
+      "end": 19.659,
+      "fromPosition": {
+        "left": 50,
+        "top": 53
+      },
+      "toPosition": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "position": {
+        "left": 52.895,
+        "top": 63.591
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "deo-eo-word-1",
+      "label": "더위",
+      "image": "worksheets/assets/word-deo-hot-weather.png",
+      "start": 16.319,
+      "end": 19.066,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "deo-eo-word-2",
+      "label": "더럽다",
+      "image": "worksheets/assets/word-deo-dirty.png",
+      "start": 17.639,
+      "end": 19.066,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "deo-eo-initial",
+      "label": "ㄷ",
+      "start": 6.446,
+      "end": 14.759,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "deo-eo-vowel",
+      "label": "ㅓ",
+      "start": 9.89,
+      "end": 14.759,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "deo-eo-combined",
+      "label": "더",
+      "start": 14.759,
+      "end": 16.269,
+      "position": {
+        "left": 52.263,
+        "top": 17.743
+      }
+    },
+    {
+      "id": "deo-eo-final",
+      "label": "더",
+      "start": 19.316,
+      "end": 19.659,
+      "position": {
+        "left": 53.526,
+        "top": 18.491
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "deo-eo",
+    "timingFile": "deo-eo-card-timings.json"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "jeu-eu",
+  "lessonId": "vowel-combination-jeu-eu",
+  "title": "지지 지렁이 즈 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "jiji",
+    "name": "지지 지렁이",
+    "letter": "ㅈ",
+    "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/57_즈_jeu.mp3",
+    "duration": 22.355
+  },
+  "segment": {
+    "label": "즈",
+    "start": 0,
+    "end": 22.355
+  },
+  "targetSyllable": "즈",
+  "vowel": {
+    "key": "eu",
+    "letter": "ㅡ",
+    "sound": "으",
+    "toolLabel": "으으 쿠션",
+    "toolImage": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "jiji-character",
+      "label": "지지 지렁이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png",
+      "start": 0.2,
+      "end": 4.858,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "jiji-tool",
+      "label": "으으 쿠션",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/으으 쿠션-alpha.png",
+      "start": 0.2,
+      "end": 4.858,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "jiji-combined",
+      "label": "즈",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/지지 즈 새시안-alpha.png",
+      "start": 4.858,
+      "end": 22.355,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 58
+      },
+      "position": {
+        "left": 50,
+        "top": 58
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "jeu-eu-word-1",
+      "label": "치즈",
+      "image": "worksheets/assets/cheese.png",
+      "start": 18.619,
+      "end": 21.697,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "jeu-eu-word-2",
+      "label": "마요네즈",
+      "image": "worksheets/assets/word-jeu-mayonnaise.png",
+      "start": 19.981,
+      "end": 21.697,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "jeu-eu-initial",
+      "label": "ㅈ",
+      "start": 6.675,
+      "end": 16.388,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "jeu-eu-vowel",
+      "label": "ㅡ",
+      "start": 10.541,
+      "end": 16.388,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "jeu-eu-combined",
+      "label": "즈",
+      "start": 16.388,
+      "end": 17.938,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "jeu-eu-final",
+      "label": "즈",
+      "start": 21.947,
+      "end": 22.355,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "jeu-eu",
+    "timingFile": "jeu-eu-card-timings.json"
+  }
+}

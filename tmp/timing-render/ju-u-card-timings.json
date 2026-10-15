@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "id": "ju-u",
+  "lessonId": "vowel-combination-ju-u",
+  "title": "지지 지렁이 주 글자 만남",
+  "template": "syllable-combine-story",
+  "character": {
+    "key": "jiji",
+    "name": "지지 지렁이",
+    "letter": "ㅈ",
+    "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/35_주_ju.mp3",
+    "duration": 24.182
+  },
+  "segment": {
+    "label": "주",
+    "start": 0,
+    "end": 24.182
+  },
+  "targetSyllable": "주",
+  "vowel": {
+    "key": "uu",
+    "letter": "ㅜ",
+    "sound": "우",
+    "toolLabel": "우우 발판",
+    "toolImage": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png"
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "jiji-character",
+      "label": "지지 지렁이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅈ-jiji-worm.png",
+      "start": 0.2,
+      "end": 5.701,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "jiji-tool",
+      "label": "우우 발판",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/우우 발판-alpha.png",
+      "start": 0.2,
+      "end": 5.701,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "jiji-combined",
+      "label": "주",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/지지 주 새시안-alpha.png",
+      "start": 5.701,
+      "end": 24.182,
+      "fromPosition": {
+        "left": 50,
+        "top": 54
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 57
+      },
+      "position": {
+        "left": 50,
+        "top": 57
+      },
+      "scale": 0.95
+    }
+  ],
+  "cues": [
+    {
+      "id": "ju-u-word-1",
+      "label": "주황색",
+      "image": "worksheets/assets/word-ju-orange-color.png",
+      "start": 19.856,
+      "end": 23.245,
+      "position": {
+        "left": 16.579,
+        "top": 53.86
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ju-u-word-2",
+      "label": "주머니",
+      "image": "worksheets/assets/word-meo-pocket.png",
+      "start": 21.609,
+      "end": 23.245,
+      "position": {
+        "left": 88.263,
+        "top": 31.965
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ju-u-initial",
+      "label": "ㅈ",
+      "start": 7.629,
+      "end": 17.683,
+      "position": {
+        "left": 26.789,
+        "top": 23.544
+      }
+    },
+    {
+      "id": "ju-u-vowel",
+      "label": "ㅜ",
+      "start": 11.363,
+      "end": 17.683,
+      "position": {
+        "left": 77.947,
+        "top": 25.789
+      }
+    },
+    {
+      "id": "ju-u-combined",
+      "label": "주",
+      "start": 17.683,
+      "end": 19.233,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    },
+    {
+      "id": "ju-u-final",
+      "label": "주",
+      "start": 23.495,
+      "end": 24.182,
+      "position": {
+        "left": 22,
+        "top": 30
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ju-u",
+    "timingFile": "ju-u-card-timings.json"
+  }
+}

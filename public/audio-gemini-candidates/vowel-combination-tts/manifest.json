@@ -3,8 +3,8 @@
   "voiceName": "Callirrhoe",
   "style": "유아 대상 한국어 교사, 밝고 친절한 말투, 또박또박한 발음",
   "trimFilter": "silenceremove=start_periods=1:start_duration=0:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_duration=0:start_threshold=-45dB,areverse",
-  "generatedAt": "2026-06-26T15:33:10.8551987Z",
-  "count": 26,
+  "generatedAt": "2026-10-15T04:27:54.960Z",
+  "count": 74,
   "items": [
     {
       "index": 1,
@@ -255,6 +255,438 @@
       "mp3": "public/audio-gemini-candidates/vowel-combination-tts/26_포_po.mp3",
       "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/26_포_po.wav",
       "duration": 21.171
+    },
+    {
+      "index": 27,
+      "slug": "gu",
+      "label": "구",
+      "text": "고고 고양이가 우우 발판에 앉았어요.\n고고의 소리, 그! 우우 발판의 소리, 우!\n그,우!\n둘이 합치면, 구!\n구름, 축구공.\n구!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/27_구_gu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/27_구_gu.wav",
+      "duration": 20.405
+    },
+    {
+      "index": 28,
+      "slug": "nu",
+      "label": "누",
+      "text": "나나 나비가 우우 발판에 앉았어요.\n나나의 소리, 느! 우우 발판의 소리, 우!\n느,우!\n둘이 합치면, 누!\n비누, 누룽지.\n누!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/28_누_nu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/28_누_nu.wav",
+      "duration": 20.153
+    },
+    {
+      "index": 29,
+      "slug": "mu",
+      "label": "무",
+      "text": "미미 문어가 우우 발판에 앉았어요.\n미미의 소리, 므! 우우 발판의 소리, 우!\n므,우!\n둘이 합치면, 무!\n무지개, 무당벌레.\n무!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/29_무_mu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/29_무_mu.wav",
+      "duration": 20.222
+    },
+    {
+      "index": 30,
+      "slug": "bu",
+      "label": "부",
+      "text": "부부 부엉이가 우우 발판에 앉았어요.\n부부의 소리, 브! 우우 발판의 소리, 우!\n브,우!\n둘이 합치면, 부!\n부엉이, 부채.\n부!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/30_부_bu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/30_부_bu.wav",
+      "duration": 24.78
+    },
+    {
+      "index": 31,
+      "slug": "du",
+      "label": "두",
+      "text": "도도 도토리가 우우 발판에 앉았어요.\n도도의 소리, 드! 우우 발판의 소리, 우!\n드,우!\n둘이 합치면, 두!\n두더지, 호두.\n두!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/31_두_du.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/31_두_du.wav",
+      "duration": 23.262
+    },
+    {
+      "index": 32,
+      "slug": "ru",
+      "label": "루",
+      "text": "라라 리본이 우우 발판에 앉았어요.\n라라의 소리, 르! 우우 발판의 소리, 우!\n르,우!\n둘이 합치면, 루!\n루돌프, 빗자루.\n루!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/32_루_ru.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/32_루_ru.wav",
+      "duration": 19.354
+    },
+    {
+      "index": 33,
+      "slug": "su",
+      "label": "수",
+      "text": "사사 사슴이 우우 발판에 앉았어요.\n사사의 소리, 스! 우우 발판의 소리, 우!\n스,우!\n둘이 합치면, 수!\n수박, 수영장.\n수!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/33_수_su.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/33_수_su.wav",
+      "duration": 22.003
+    },
+    {
+      "index": 34,
+      "slug": "hu",
+      "label": "후",
+      "text": "하하 하마가 우우 발판에 앉았어요.\n하하의 소리, 흐! 우우 발판의 소리, 우!\n흐,우!\n둘이 합치면, 후!\n후추, 후라이팬.\n후!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/34_후_hu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/34_후_hu.wav",
+      "duration": 21.639
+    },
+    {
+      "index": 35,
+      "slug": "ju",
+      "label": "주",
+      "text": "지지 지렁이가 우우 발판에 앉았어요.\n지지의 소리, 즈! 우우 발판의 소리, 우!\n즈,우!\n둘이 합치면, 주!\n주황색, 주머니.\n주!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/35_주_ju.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/35_주_ju.wav",
+      "duration": 24.182
+    },
+    {
+      "index": 36,
+      "slug": "chu",
+      "label": "추",
+      "text": "치치 칙폭이가 우우 발판에 앉았어요.\n치치의 소리, 츠! 우우 발판의 소리, 우!\n츠,우!\n둘이 합치면, 추!\n후추, 배추.\n추!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/36_추_chu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/36_추_chu.wav",
+      "duration": 21.272
+    },
+    {
+      "index": 37,
+      "slug": "ku",
+      "label": "쿠",
+      "text": "코코 코알라가 우우 발판에 앉았어요.\n코코의 소리, 크! 우우 발판의 소리, 우!\n크,우!\n둘이 합치면, 쿠!\n쿠키, 쿠션.\n쿠!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/37_쿠_ku.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/37_쿠_ku.wav",
+      "duration": 26.913
+    },
+    {
+      "index": 38,
+      "slug": "tu",
+      "label": "투",
+      "text": "토토 토끼가 우우 발판에 앉았어요.\n토토의 소리, 트! 우우 발판의 소리, 우!\n트,우!\n둘이 합치면, 투!\n투구게.\n투!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/38_투_tu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/38_투_tu.wav",
+      "duration": 20.375
+    },
+    {
+      "index": 39,
+      "slug": "pu",
+      "label": "푸",
+      "text": "푸푸 풍선이 우우 발판에 앉았어요.\n푸푸의 소리, 프! 우우 발판의 소리, 우!\n프,우!\n둘이 합치면, 푸!\n푸들, 샴푸.\n푸!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/39_푸_pu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/39_푸_pu.wav",
+      "duration": 22.693
+    },
+    {
+      "index": 40,
+      "slug": "geo",
+      "label": "거",
+      "text": "고고 고양이가 어어 풍선을 잡았어요.\n고고의 소리, 그! 어어 풍선의 소리, 어!\n그,어!\n둘이 합치면, 거!\n거북이, 거위.\n거!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/40_거_geo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/40_거_geo.wav",
+      "duration": 21.276
+    },
+    {
+      "index": 41,
+      "slug": "neo",
+      "label": "너",
+      "text": "나나 나비가 어어 풍선을 잡았어요.\n나나의 소리, 느! 어어 풍선의 소리, 어!\n느,어!\n둘이 합치면, 너!\n너구리.\n너!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/41_너_neo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/41_너_neo.wav",
+      "duration": 21.438
+    },
+    {
+      "index": 42,
+      "slug": "meo",
+      "label": "머",
+      "text": "미미 문어가 어어 풍선을 잡았어요.\n미미의 소리, 므! 어어 풍선의 소리, 어!\n므,어!\n둘이 합치면, 머!\n머리, 주머니.\n머!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/42_머_meo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/42_머_meo.wav",
+      "duration": 19.867
+    },
+    {
+      "index": 43,
+      "slug": "beo",
+      "label": "버",
+      "text": "부부 부엉이가 어어 풍선을 잡았어요.\n부부의 소리, 브! 어어 풍선의 소리, 어!\n브,어!\n둘이 합치면, 버!\n버스, 버섯.\n버!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/43_버_beo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/43_버_beo.wav",
+      "duration": 21.825
+    },
+    {
+      "index": 44,
+      "slug": "deo",
+      "label": "더",
+      "text": "도도 도토리가 어어 풍선을 잡았어요.\n도도의 소리, 드! 어어 풍선의 소리, 어!\n드,어!\n둘이 합치면, 더!\n더위, 더럽다.\n더!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/44_더_deo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/44_더_deo.wav",
+      "duration": 19.659
+    },
+    {
+      "index": 45,
+      "slug": "seo",
+      "label": "서",
+      "text": "사사 사슴이 어어 풍선을 잡았어요.\n사사의 소리, 스! 어어 풍선의 소리, 어!\n스,어!\n둘이 합치면, 서!\n서랍, 도서관.\n서!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/45_서_seo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/45_서_seo.wav",
+      "duration": 24.652
+    },
+    {
+      "index": 46,
+      "slug": "heo",
+      "label": "허",
+      "text": "하하 하마가 어어 풍선을 잡았어요.\n하하의 소리, 흐! 어어 풍선의 소리, 어!\n흐,어!\n둘이 합치면, 허!\n허리, 허수아비.\n허!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/46_허_heo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/46_허_heo.wav",
+      "duration": 20.029
+    },
+    {
+      "index": 47,
+      "slug": "jeo",
+      "label": "저",
+      "text": "지지 지렁이가 어어 풍선을 잡았어요.\n지지의 소리, 즈! 어어 풍선의 소리, 어!\n즈,어!\n둘이 합치면, 저!\n저울, 저금통.\n저!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/47_저_jeo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/47_저_jeo.wav",
+      "duration": 22.074
+    },
+    {
+      "index": 48,
+      "slug": "keo",
+      "label": "커",
+      "text": "코코 코알라가 어어 풍선을 잡았어요.\n코코의 소리, 크! 어어 풍선의 소리, 어!\n크,어!\n둘이 합치면, 커!\n커피, 커튼.\n커!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/48_커_keo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/48_커_keo.wav",
+      "duration": 21.842
+    },
+    {
+      "index": 49,
+      "slug": "teo",
+      "label": "터",
+      "text": "토토 토끼가 어어 풍선을 잡았어요.\n토토의 소리, 트! 어어 풍선의 소리, 어!\n트,어!\n둘이 합치면, 터!\n놀이터, 터널.\n터!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/49_터_teo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/49_터_teo.wav",
+      "duration": 25.83
+    },
+    {
+      "index": 50,
+      "slug": "peo",
+      "label": "퍼",
+      "text": "푸푸 풍선이 어어 풍선을 잡았어요.\n푸푸의 소리, 프! 어어 풍선의 소리, 어!\n프,어!\n둘이 합치면, 퍼!\n퍼즐, 지퍼.\n퍼!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/50_퍼_peo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/50_퍼_peo.wav",
+      "duration": 22.16
+    },
+    {
+      "index": 51,
+      "slug": "geu",
+      "label": "그",
+      "text": "고고 고양이가 으으 쿠션에 앉았어요.\n고고의 소리, 그! 으으 쿠션의 소리, 으!\n그,으!\n둘이 합치면, 그!\n그림, 그네.\n그!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/51_그_geu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/51_그_geu.wav",
+      "duration": 21.582
+    },
+    {
+      "index": 52,
+      "slug": "neu",
+      "label": "느",
+      "text": "나나 나비가 으으 쿠션에 앉았어요.\n나나의 소리, 느! 으으 쿠션의 소리, 으!\n느,으!\n둘이 합치면, 느!\n지느러미, 느리다.\n느!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/52_느_neu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/52_느_neu.wav",
+      "duration": 24.308
+    },
+    {
+      "index": 53,
+      "slug": "beu",
+      "label": "브",
+      "text": "부부 부엉이가 으으 쿠션에 앉았어요.\n부부의 소리, 브! 으으 쿠션의 소리, 으!\n브,으!\n둘이 합치면, 브!\n브로콜리, 브라키오사우루스.\n브!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/53_브_beu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/53_브_beu.wav",
+      "duration": 22.034
+    },
+    {
+      "index": 54,
+      "slug": "deu",
+      "label": "드",
+      "text": "도도 도토리가 으으 쿠션에 앉았어요.\n도도의 소리, 드! 으으 쿠션의 소리, 으!\n드,으!\n둘이 합치면, 드!\n카드, 드레스.\n드!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/54_드_deu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/54_드_deu.wav",
+      "duration": 23.649
+    },
+    {
+      "index": 55,
+      "slug": "reu",
+      "label": "르",
+      "text": "라라 리본이 으으 쿠션에 앉았어요.\n라라의 소리, 르! 으으 쿠션의 소리, 으!\n르,으!\n둘이 합치면, 르!\n요구르트.\n르!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/55_르_reu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/55_르_reu.wav",
+      "duration": 22.361
+    },
+    {
+      "index": 56,
+      "slug": "seu",
+      "label": "스",
+      "text": "사사 사슴이 으으 쿠션에 앉았어요.\n사사의 소리, 스! 으으 쿠션의 소리, 으!\n스,으!\n둘이 합치면, 스!\n주스, 스티커.\n스!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/56_스_seu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/56_스_seu.wav",
+      "duration": 23.709
+    },
+    {
+      "index": 57,
+      "slug": "jeu",
+      "label": "즈",
+      "text": "지지 지렁이가 으으 쿠션에 앉았어요.\n지지의 소리, 즈! 으으 쿠션의 소리, 으!\n즈,으!\n둘이 합치면, 즈!\n치즈, 마요네즈.\n즈!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/57_즈_jeu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/57_즈_jeu.wav",
+      "duration": 22.355
+    },
+    {
+      "index": 58,
+      "slug": "keu",
+      "label": "크",
+      "text": "코코 코알라가 으으 쿠션에 앉았어요.\n코코의 소리, 크! 으으 쿠션의 소리, 으!\n크,으!\n둘이 합치면, 크!\n크레파스, 크림.\n크!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/58_크_keu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/58_크_keu.wav",
+      "duration": 19.468
+    },
+    {
+      "index": 59,
+      "slug": "teu",
+      "label": "트",
+      "text": "토토 토끼가 으으 쿠션에 앉았어요.\n토토의 소리, 트! 으으 쿠션의 소리, 으!\n트,으!\n둘이 합치면, 트!\n요트, 마트.\n트!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/59_트_teu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/59_트_teu.wav",
+      "duration": 23.034
+    },
+    {
+      "index": 60,
+      "slug": "peu",
+      "label": "프",
+      "text": "푸푸 풍선이 으으 쿠션에 앉았어요.\n푸푸의 소리, 프! 으으 쿠션의 소리, 으!\n프,으!\n둘이 합치면, 프!\n프테라노돈, 점프.\n프!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/60_프_peu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/60_프_peu.wav",
+      "duration": 22.596
+    },
+    {
+      "index": 61,
+      "slug": "gi",
+      "label": "기",
+      "text": "고고 고양이가 이이 막대를 잡고 섰어요.\n고고의 소리, 그! 이이 막대의 소리, 이!\n그,이!\n둘이 합치면, 기!\n기린, 기차.\n기!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/61_기_gi.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/61_기_gi.wav",
+      "duration": 25.956
+    },
+    {
+      "index": 62,
+      "slug": "ni",
+      "label": "니",
+      "text": "나나 나비가 이이 막대를 잡고 섰어요.\n나나의 소리, 느! 이이 막대의 소리, 이!\n느,이!\n둘이 합치면, 니!\n고니, 할머니.\n니!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/62_니_ni.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/62_니_ni.wav",
+      "duration": 23.168
+    },
+    {
+      "index": 63,
+      "slug": "mi",
+      "label": "미",
+      "text": "미미 문어가 이이 막대를 잡고 섰어요.\n미미의 소리, 므! 이이 막대의 소리, 이!\n므,이!\n둘이 합치면, 미!\n미끄럼틀, 미역.\n미!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/63_미_mi.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/63_미_mi.wav",
+      "duration": 19.939
+    },
+    {
+      "index": 64,
+      "slug": "bi",
+      "label": "비",
+      "text": "부부 부엉이가 이이 막대를 잡고 섰어요.\n부부의 소리, 브! 이이 막대의 소리, 이!\n브,이!\n둘이 합치면, 비!\n비닐봉지, 비빔밥.\n비!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/64_비_bi.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/64_비_bi.wav",
+      "duration": 20.829
+    },
+    {
+      "index": 65,
+      "slug": "ri",
+      "label": "리",
+      "text": "라라 리본이 이이 막대를 잡고 섰어요.\n라라의 소리, 르! 이이 막대의 소리, 이!\n르,이!\n둘이 합치면, 리!\n리본, 병아리.\n리!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/65_리_ri.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/65_리_ri.wav",
+      "duration": 20.963
+    },
+    {
+      "index": 66,
+      "slug": "si",
+      "label": "시",
+      "text": "사사 사슴이 이이 막대를 잡고 섰어요.\n사사의 소리, 스! 이이 막대의 소리, 이!\n스,이!\n둘이 합치면, 시!\n시계, 시소.\n시!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/66_시_si.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/66_시_si.wav",
+      "duration": 25.732
+    },
+    {
+      "index": 67,
+      "slug": "ji",
+      "label": "지",
+      "text": "지지 지렁이가 이이 막대를 잡고 섰어요.\n지지의 소리, 즈! 이이 막대의 소리, 이!\n즈,이!\n둘이 합치면, 지!\n지렁이, 지하철.\n지!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/67_지_ji.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/67_지_ji.wav",
+      "duration": 21.921
+    },
+    {
+      "index": 68,
+      "slug": "chi",
+      "label": "치",
+      "text": "치치 칙폭이가 이이 막대를 잡고 섰어요.\n치치의 소리, 츠! 이이 막대의 소리, 이!\n츠,이!\n둘이 합치면, 치!\n치즈, 곰치.\n치!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/68_치_chi.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/68_치_chi.wav",
+      "duration": 23.519
+    },
+    {
+      "index": 69,
+      "slug": "ki",
+      "label": "키",
+      "text": "코코 코알라가 이이 막대를 잡고 섰어요.\n코코의 소리, 크! 이이 막대의 소리, 이!\n크,이!\n둘이 합치면, 키!\n키위, 스키.\n키!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/69_키_ki.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/69_키_ki.wav",
+      "duration": 23.854
+    },
+    {
+      "index": 70,
+      "slug": "ti",
+      "label": "티",
+      "text": "토토 토끼가 이이 막대를 잡고 섰어요.\n토토의 소리, 트! 이이 막대의 소리, 이!\n트,이!\n둘이 합치면, 티!\n티셔츠, 티라노사우루스.\n티!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/70_티_ti.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/70_티_ti.wav",
+      "duration": 28.927
+    },
+    {
+      "index": 71,
+      "slug": "pi",
+      "label": "피",
+      "text": "푸푸 풍선이 이이 막대를 잡고 섰어요.\n푸푸의 소리, 프! 이이 막대의 소리, 이!\n프,이!\n둘이 합치면, 피!\n피아노, 피자.\n피!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/71_피_pi.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/71_피_pi.wav",
+      "duration": 22.955
+    },
+    {
+      "index": 101,
+      "slug": "eo",
+      "label": "어",
+      "text": "아아 아기가\n어어 풍선을 만나\n어! 입을 크게 벌리고 같이 말해요.\n어!\n어항, 상어.\n어!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/vowel_어_eo.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/vowel_어_eo.wav",
+      "duration": 20.286
+    },
+    {
+      "index": 102,
+      "slug": "eu",
+      "label": "으",
+      "text": "아아 아기가\n으으 쿠션을 만나\n으! 입을 옆으로 쭉 당기고 같이 말해요.\n으!\n으르렁, 으쓱.\n으!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/vowel_으_eu.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/vowel_으_eu.wav",
+      "duration": 18.29
+    },
+    {
+      "index": 103,
+      "slug": "i",
+      "label": "이",
+      "text": "아아 아기가\n이이 막대를 만나\n이! 입을 옆으로 활짝 벌리고 같이 말해요.\n이!\n이불, 이빨.\n이!",
+      "mp3": "public/audio-gemini-candidates/vowel-combination-tts/vowel_이_i.mp3",
+      "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/vowel_이_i.wav",
+      "duration": 20.714
     }
   ]
 }
