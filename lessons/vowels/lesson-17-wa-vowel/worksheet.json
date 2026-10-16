@@ -155,13 +155,13 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "와",
-          "answer": "와"
+          "sound": "과",
+          "answer": "과"
         },
         {
           "label": "2번",
-          "sound": "과",
-          "answer": "과"
+          "sound": "와",
+          "answer": "와"
         }
       ],
       "choices": [
@@ -184,7 +184,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 와, 2번 과.",
+      "teacherNote": "교사용 소리 순서: 1번 과, 2번 와.",
       "footerLeft": "소리 정리",
       "footerRight": "ㅘ 소리 정리"
     },

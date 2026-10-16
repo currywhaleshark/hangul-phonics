@@ -280,23 +280,23 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "자",
-          "answer": "자"
+          "sound": "초",
+          "answer": "초"
         },
         {
           "label": "2번",
-          "sound": "조",
-          "answer": "조"
-        },
-        {
-          "label": "3번",
           "sound": "차",
           "answer": "차"
         },
         {
+          "label": "3번",
+          "sound": "조",
+          "answer": "조"
+        },
+        {
           "label": "4번",
-          "sound": "초",
-          "answer": "초"
+          "sound": "자",
+          "answer": "자"
         }
       ],
       "choices": [
@@ -337,7 +337,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 자, 2번 조, 3번 차, 4번 초.",
+      "teacherNote": "교사용 소리 순서: 1번 초, 2번 차, 3번 조, 4번 자.",
       "footerLeft": "소리 정리",
       "footerRight": "지지와 치치"
     }

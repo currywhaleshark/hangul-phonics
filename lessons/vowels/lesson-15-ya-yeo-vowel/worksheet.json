@@ -288,23 +288,23 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "야",
-          "answer": "야"
-        },
-        {
-          "label": "2번",
-          "sound": "여",
-          "answer": "여"
-        },
-        {
-          "label": "3번",
           "sound": "겨",
           "answer": "겨"
         },
         {
-          "label": "4번",
+          "label": "2번",
+          "sound": "야",
+          "answer": "야"
+        },
+        {
+          "label": "3번",
           "sound": "녀",
           "answer": "녀"
+        },
+        {
+          "label": "4번",
+          "sound": "여",
+          "answer": "여"
         }
       ],
       "choices": [
@@ -345,7 +345,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 야, 2번 여, 3번 겨, 4번 녀.",
+      "teacherNote": "교사용 소리 순서: 1번 겨, 2번 야, 3번 녀, 4번 여.",
       "footerLeft": "소리 정리",
       "footerRight": "두 줄 세로 모음 ㅑ/ㅕ"
     },
@@ -359,13 +359,13 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "벼",
-          "answer": "벼"
+          "sound": "혀",
+          "answer": "혀"
         },
         {
           "label": "2번",
-          "sound": "혀",
-          "answer": "혀"
+          "sound": "벼",
+          "answer": "벼"
         }
       ],
       "choices": [
@@ -388,7 +388,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 벼, 2번 혀.",
+      "teacherNote": "교사용 소리 순서: 1번 혀, 2번 벼.",
       "footerLeft": "소리 정리",
       "footerRight": "두 줄 세로 모음 ㅑ/ㅕ"
     }

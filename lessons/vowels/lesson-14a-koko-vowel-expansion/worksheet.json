@@ -1,0 +1,321 @@
+{
+  "title": "14-A레슨 코코: 커/쿠/키/크를 만들어요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "코코가 새 모음을 만나요",
+      "read": "코코 코알라의 ㅋ 길이 어어 풍선, 우우 발판, 이이 막대, 으으 쿠션을 차례로 만나요.",
+      "panels": [
+        {
+          "image": "../../../public/코코 커 새시안.png",
+          "caption": "ㅋ이 ㅓ를 만나, 커!"
+        },
+        {
+          "image": "../../../public/코코 쿠 새시안.png",
+          "caption": "ㅋ이 ㅜ를 만나, 쿠!"
+        },
+        {
+          "image": "../../../public/코코 키 새시안.png",
+          "caption": "ㅋ이 ㅣ를 만나, 키!"
+        },
+        {
+          "image": "../../../public/코코 크 새시안.png",
+          "caption": "ㅋ이 ㅡ를 만나, 크!"
+        }
+      ],
+      "teacherNote": "ㅋ 길을 먼저 찾고, 카의 ㅏ가 반대쪽을 보면 커, 코의 ㅗ가 아래로 뒤집히면 쿠라고 배운 글자와 견주어 읽은 뒤 키, 크까지 붙여 읽는다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "코코 코알라"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㅋ과 ㅓ가 만나면 커",
+      "read": "코코의 ㅋ 소리, 크! 어어 풍선의 ㅓ 소리, 어! 합치면 커!",
+      "heroImage": "../../../public/코코 커 새시안.png",
+      "traceLetter": "커",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅋ",
+        "ㅓ",
+        "커"
+      ],
+      "soundSteps": [
+        {
+          "label": "코코의 ㅋ 소리",
+          "sound": "크!"
+        },
+        {
+          "label": "어어 풍선 ㅓ 소리",
+          "sound": "어!"
+        },
+        {
+          "label": "합치면",
+          "sound": "커!"
+        }
+      ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=gfEY-aNTKHc",
+        "image": "../../../public/qr/youtube/gfEY-aNTKHc.png"
+      },
+      "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 커를 읽는다.",
+      "footerLeft": "ㅋ + ㅓ = 커",
+      "footerRight": "코코 코알라와 커"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㅋ과 ㅜ가 만나면 쿠",
+      "read": "코코의 ㅋ 소리, 크! 우우 발판의 ㅜ 소리, 우! 합치면 쿠!",
+      "heroImage": "../../../public/코코 쿠 새시안.png",
+      "traceLetter": "쿠",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅋ",
+        "ㅜ",
+        "쿠"
+      ],
+      "soundSteps": [
+        {
+          "label": "코코의 ㅋ 소리",
+          "sound": "크!"
+        },
+        {
+          "label": "우우 발판 ㅜ 소리",
+          "sound": "우!"
+        },
+        {
+          "label": "합치면",
+          "sound": "쿠!"
+        }
+      ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=wZsOsdUonFc",
+        "image": "../../../public/qr/youtube/wZsOsdUonFc.png"
+      },
+      "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 쿠를 읽는다.",
+      "footerLeft": "ㅋ + ㅜ = 쿠",
+      "footerRight": "코코 코알라와 쿠"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "4장 / 소리 활동",
+      "title": "ㅋ과 ㅣ가 만나면 키",
+      "read": "코코의 ㅋ 소리, 크! 이이 막대의 ㅣ 소리, 이! 합치면 키!",
+      "heroImage": "../../../public/코코 키 새시안.png",
+      "traceLetter": "키",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅋ",
+        "ㅣ",
+        "키"
+      ],
+      "soundSteps": [
+        {
+          "label": "코코의 ㅋ 소리",
+          "sound": "크!"
+        },
+        {
+          "label": "이이 막대 ㅣ 소리",
+          "sound": "이!"
+        },
+        {
+          "label": "합치면",
+          "sound": "키!"
+        }
+      ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=63rh8aK2xAs",
+        "image": "../../../public/qr/youtube/63rh8aK2xAs.png"
+      },
+      "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 키를 읽는다.",
+      "footerLeft": "ㅋ + ㅣ = 키",
+      "footerRight": "코코 코알라와 키"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "5장 / 소리 활동",
+      "title": "ㅋ과 ㅡ가 만나면 크",
+      "read": "코코의 ㅋ 소리, 크! 으으 쿠션의 ㅡ 소리, 으! 합치면 크!",
+      "heroImage": "../../../public/코코 크 새시안.png",
+      "traceLetter": "크",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅋ",
+        "ㅡ",
+        "크"
+      ],
+      "soundSteps": [
+        {
+          "label": "코코의 ㅋ 소리",
+          "sound": "크!"
+        },
+        {
+          "label": "으으 쿠션 ㅡ 소리",
+          "sound": "으!"
+        },
+        {
+          "label": "합치면",
+          "sound": "크!"
+        }
+      ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=ysnwbj3qQgQ",
+        "image": "../../../public/qr/youtube/ysnwbj3qQgQ.png"
+      },
+      "teacherNote": "코코 몸의 ㅋ 큰 숨 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 크를 읽는다.",
+      "footerLeft": "ㅋ + ㅡ = 크",
+      "footerRight": "코코 코알라와 크"
+    },
+    {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "커피",
+          "focus": "커",
+          "rest": "피",
+          "image": "../../../worksheets/assets/word-keo-coffee.png"
+        },
+        {
+          "word": "커튼",
+          "focus": "커",
+          "rest": "튼",
+          "image": "../../../worksheets/assets/word-keo-curtain.png"
+        },
+        {
+          "word": "쿠키",
+          "focus": "쿠",
+          "rest": "키",
+          "image": "../../../worksheets/assets/cookie.png"
+        },
+        {
+          "word": "쿠션",
+          "focus": "쿠",
+          "rest": "션",
+          "image": "../../../worksheets/assets/word-ku-cushion.png"
+        },
+        {
+          "word": "키위",
+          "focus": "키",
+          "rest": "위",
+          "image": "../../../worksheets/assets/word-ki-kiwi.png"
+        },
+        {
+          "word": "스키",
+          "image": "../../../worksheets/assets/word-ki-ski.png",
+          "parts": [
+            {
+              "text": "스"
+            },
+            {
+              "text": "키",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "크레파스",
+          "focus": "크",
+          "rest": "레파스",
+          "image": "../../../worksheets/assets/crayon.png"
+        },
+        {
+          "word": "크림",
+          "focus": "크",
+          "rest": "림",
+          "image": "../../../worksheets/assets/word-keu-cream.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "6장 / 글자 낱말"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "마지막 / 소리 정리",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "크",
+          "answer": "크"
+        },
+        {
+          "label": "2번",
+          "sound": "키",
+          "answer": "키"
+        },
+        {
+          "label": "3번",
+          "sound": "커",
+          "answer": "커"
+        },
+        {
+          "label": "4번",
+          "sound": "쿠",
+          "answer": "쿠"
+        }
+      ],
+      "choices": [
+        {
+          "label": "커",
+          "image": "../../../public/코코 커 새시안.png",
+          "buildPieces": [
+            "ㅋ",
+            "ㅓ",
+            "커"
+          ]
+        },
+        {
+          "label": "쿠",
+          "image": "../../../public/코코 쿠 새시안.png",
+          "buildPieces": [
+            "ㅋ",
+            "ㅜ",
+            "쿠"
+          ]
+        },
+        {
+          "label": "키",
+          "image": "../../../public/코코 키 새시안.png",
+          "buildPieces": [
+            "ㅋ",
+            "ㅣ",
+            "키"
+          ]
+        },
+        {
+          "label": "크",
+          "image": "../../../public/코코 크 새시안.png",
+          "buildPieces": [
+            "ㅋ",
+            "ㅡ",
+            "크"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 크, 2번 키, 3번 커, 4번 쿠.",
+      "footerLeft": "소리 정리",
+      "footerRight": "코코 코알라"
+    }
+  ]
+}

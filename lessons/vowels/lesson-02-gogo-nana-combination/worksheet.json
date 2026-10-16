@@ -273,23 +273,23 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "가",
-          "answer": "가"
-        },
-        {
-          "label": "2번",
           "sound": "고",
           "answer": "고"
         },
         {
+          "label": "2번",
+          "sound": "노",
+          "answer": "노"
+        },
+        {
           "label": "3번",
-          "sound": "나",
-          "answer": "나"
+          "sound": "가",
+          "answer": "가"
         },
         {
           "label": "4번",
-          "sound": "노",
-          "answer": "노"
+          "sound": "나",
+          "answer": "나"
         }
       ],
       "choices": [
@@ -330,7 +330,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 가, 2번 고, 3번 나, 4번 노.",
+      "teacherNote": "교사용 소리 순서: 1번 고, 2번 노, 3번 가, 4번 나.",
       "footerLeft": "소리 정리",
       "footerRight": "고고와 나나"
     }

@@ -273,23 +273,23 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "다",
-          "answer": "다"
-        },
-        {
-          "label": "2번",
           "sound": "도",
           "answer": "도"
         },
         {
+          "label": "2번",
+          "sound": "로",
+          "answer": "로"
+        },
+        {
           "label": "3번",
-          "sound": "라",
-          "answer": "라"
+          "sound": "다",
+          "answer": "다"
         },
         {
           "label": "4번",
-          "sound": "로",
-          "answer": "로"
+          "sound": "라",
+          "answer": "라"
         }
       ],
       "choices": [
@@ -330,7 +330,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 다, 2번 도, 3번 라, 4번 로.",
+      "teacherNote": "교사용 소리 순서: 1번 도, 2번 로, 3번 다, 4번 라.",
       "footerLeft": "소리 정리",
       "footerRight": "도도와 라라"
     }

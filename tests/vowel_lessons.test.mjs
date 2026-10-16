@@ -305,7 +305,7 @@ const expectedLessons = [
   },
 ];
 
-const expansionVowels = ["ㅓ", "ㅜ", "ㅡ", "ㅣ"];
+const expansionVowels = ["ㅓ", "ㅜ", "ㅣ", "ㅡ"];
 
 function expansionPageTypes(buildCount, wordCardPageCount = 0) {
   return [
@@ -322,148 +322,162 @@ function expansionBuilds(characters) {
   );
 }
 
-function expansionImages(characters) {
-  return characters.map((character) => `${character.name} ${character.results[0]} 새시안.png`);
-}
 
-function expansionCaptions(characters) {
-  return characters.map((character) => `${character.consonant}이 새 모음을 만나, ${character.results[0]}부터 시작!`);
-}
 
 expectedLessons.push(
   {
     id: "lesson-08-ieung-vowel-expansion",
-    title: "8레슨 ㅇ과 새 모음: 어/우/으/이를 만들어요",
-    letters: "ㅇ/ㅓ/ㅜ/ㅡ/ㅣ/어/우/으/이",
+    title: "8레슨 ㅇ과 새 모음: 어/우/이/으를 만들어요",
+    letters: "ㅇ/ㅓ/ㅜ/ㅣ/ㅡ/어/우/이/으",
     pageTypes: expansionPageTypes(4, 1),
     wordCardPageCount: 1,
-    storyImages: ["어어 풍선 시안2.png", "우우 발판 시안.png", "으으 쿠션 시안.png", "이이 막대 시안.png"],
-    storyCaptions: ["ㅇ이 ㅓ를 만나, 어!", "ㅇ이 ㅜ를 만나, 우!", "ㅇ이 ㅡ를 만나, 으!", "ㅇ이 ㅣ를 만나, 이!"],
-    builds: [["ㅇ", "ㅓ", "어"], ["ㅇ", "ㅜ", "우"], ["ㅇ", "ㅡ", "으"], ["ㅇ", "ㅣ", "이"]],
-    reviewSounds: ["어", "우", "으", "이"],
+    storyImages: ["어어 풍선 시안2.png", "우우 발판 시안.png", "이이 막대 시안.png", "으으 쿠션 시안.png"],
+    storyCaptions: ["ㅇ이 ㅓ를 만나, 어!", "ㅇ이 ㅜ를 만나, 우!", "ㅇ이 ㅣ를 만나, 이!", "ㅇ이 ㅡ를 만나, 으!"],
+    builds: [["ㅇ", "ㅓ", "어"], ["ㅇ", "ㅜ", "우"], ["ㅇ", "ㅣ", "이"], ["ㅇ", "ㅡ", "으"]],
+    reviewSounds: ["어", "우", "이", "으"],
   },
   {
-    id: "lesson-09-gogo-nana-vowel-expansion",
-    title: "9레슨 고고와 나나: 거/구/그/기/너/누/느/니를 만들어요",
-    letters: "ㄱ/ㄴ/ㅓ/ㅜ/ㅡ/ㅣ/거/구/그/기/너/누/느/니",
-    pageTypes: expansionPageTypes(8, 2),
-    wordCardPageCount: 2,
-    storyImages: expansionImages([
-      { name: "고고", results: ["거", "구", "그", "기"] },
-      { name: "나나", results: ["너", "누", "느", "니"] },
-    ]),
-    storyCaptions: expansionCaptions([
-      { consonant: "ㄱ", results: ["거", "구", "그", "기"] },
-      { consonant: "ㄴ", results: ["너", "누", "느", "니"] },
-    ]),
-    builds: expansionBuilds([
-      { consonant: "ㄱ", results: ["거", "구", "그", "기"] },
-      { consonant: "ㄴ", results: ["너", "누", "느", "니"] },
-    ]),
-    reviewSounds: ["거", "구", "그", "기", "너", "누", "느", "니"],
-  },
-  {
-    id: "lesson-10-mimi-rara-vowel-expansion",
-    title: "10레슨 미미와 라라: 머/무/므/미/러/루/르/리를 만들어요",
-    letters: "ㅁ/ㄹ/ㅓ/ㅜ/ㅡ/ㅣ/머/무/므/미/러/루/르/리",
-    pageTypes: expansionPageTypes(8, 1),
+    id: "lesson-09a-gogo-vowel-expansion",
+    title: "9-A레슨 고고: 거/구/기/그를 만들어요",
+    letters: "ㄱ/ㅓ/ㅜ/ㅣ/ㅡ/거/구/기/그",
+    pageTypes: expansionPageTypes(4, 1),
     wordCardPageCount: 1,
-    storyImages: expansionImages([
-      { name: "미미", results: ["머", "무", "므", "미"] },
-      { name: "라라", results: ["러", "루", "르", "리"] },
-    ]),
-    storyCaptions: expansionCaptions([
-      { consonant: "ㅁ", results: ["머", "무", "므", "미"] },
-      { consonant: "ㄹ", results: ["러", "루", "르", "리"] },
-    ]),
-    builds: expansionBuilds([
-      { consonant: "ㅁ", results: ["머", "무", "므", "미"] },
-      { consonant: "ㄹ", results: ["러", "루", "르", "리"] },
-    ]),
-    reviewSounds: ["머", "무", "므", "미", "러", "루", "르", "리"],
+    storyImages: ["거", "구", "기", "그"].map((result) => `고고 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㄱ이 ${vowel}를 만나, ${["거", "구", "기", "그"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㄱ", results: ["거", "구", "기", "그"] }]),
+    reviewSounds: ["거", "구", "기", "그"],
   },
   {
-    id: "lesson-11-dodo-bubu-vowel-expansion",
-    title: "11레슨 도도와 부부: 더/두/드/디/버/부/브/비를 만들어요",
-    letters: "ㄷ/ㅂ/ㅓ/ㅜ/ㅡ/ㅣ/더/두/드/디/버/부/브/비",
-    pageTypes: expansionPageTypes(8, 2),
-    wordCardPageCount: 2,
-    storyImages: expansionImages([
-      { name: "도도", results: ["더", "두", "드", "디"] },
-      { name: "부부", results: ["버", "부", "브", "비"] },
-    ]),
-    storyCaptions: expansionCaptions([
-      { consonant: "ㄷ", results: ["더", "두", "드", "디"] },
-      { consonant: "ㅂ", results: ["버", "부", "브", "비"] },
-    ]),
-    builds: expansionBuilds([
-      { consonant: "ㄷ", results: ["더", "두", "드", "디"] },
-      { consonant: "ㅂ", results: ["버", "부", "브", "비"] },
-    ]),
-    reviewSounds: ["더", "두", "드", "디", "버", "부", "브", "비"],
-  },
-  {
-    id: "lesson-12-sasa-haha-vowel-expansion",
-    title: "12레슨 사사와 하하: 서/수/스/시/허/후/흐/히를 만들어요",
-    letters: "ㅅ/ㅎ/ㅓ/ㅜ/ㅡ/ㅣ/서/수/스/시/허/후/흐/히",
-    pageTypes: expansionPageTypes(8, 1),
+    id: "lesson-09b-nana-vowel-expansion",
+    title: "9-B레슨 나나: 너/누/니/느를 만들어요",
+    letters: "ㄴ/ㅓ/ㅜ/ㅣ/ㅡ/너/누/니/느",
+    pageTypes: expansionPageTypes(4, 1),
     wordCardPageCount: 1,
-    storyImages: expansionImages([
-      { name: "사사", results: ["서", "수", "스", "시"] },
-      { name: "하하", results: ["허", "후", "흐", "히"] },
-    ]),
-    storyCaptions: expansionCaptions([
-      { consonant: "ㅅ", results: ["서", "수", "스", "시"] },
-      { consonant: "ㅎ", results: ["허", "후", "흐", "히"] },
-    ]),
-    builds: expansionBuilds([
-      { consonant: "ㅅ", results: ["서", "수", "스", "시"] },
-      { consonant: "ㅎ", results: ["허", "후", "흐", "히"] },
-    ]),
-    reviewSounds: ["서", "수", "스", "시", "허", "후", "흐", "히"],
+    storyImages: ["너", "누", "니", "느"].map((result) => `나나 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㄴ이 ${vowel}를 만나, ${["너", "누", "니", "느"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㄴ", results: ["너", "누", "니", "느"] }]),
+    reviewSounds: ["너", "누", "니", "느"],
   },
   {
-    id: "lesson-13-jiji-chichi-vowel-expansion",
-    title: "13레슨 지지와 치치: 저/주/즈/지/처/추/츠/치를 만들어요",
-    letters: "ㅈ/ㅊ/ㅓ/ㅜ/ㅡ/ㅣ/저/주/즈/지/처/추/츠/치",
-    pageTypes: expansionPageTypes(8, 1),
+    id: "lesson-10a-mimi-vowel-expansion",
+    title: "10-A레슨 미미: 머/무/미/므를 만들어요",
+    letters: "ㅁ/ㅓ/ㅜ/ㅣ/ㅡ/머/무/미/므",
+    pageTypes: expansionPageTypes(4, 1),
     wordCardPageCount: 1,
-    storyImages: expansionImages([
-      { name: "지지", results: ["저", "주", "즈", "지"] },
-      { name: "치치", results: ["처", "추", "츠", "치"] },
-    ]),
-    storyCaptions: expansionCaptions([
-      { consonant: "ㅈ", results: ["저", "주", "즈", "지"] },
-      { consonant: "ㅊ", results: ["처", "추", "츠", "치"] },
-    ]),
-    builds: expansionBuilds([
-      { consonant: "ㅈ", results: ["저", "주", "즈", "지"] },
-      { consonant: "ㅊ", results: ["처", "추", "츠", "치"] },
-    ]),
-    reviewSounds: ["저", "주", "즈", "지", "처", "추", "츠", "치"],
+    storyImages: ["머", "무", "미", "므"].map((result) => `미미 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㅁ이 ${vowel}를 만나, ${["머", "무", "미", "므"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㅁ", results: ["머", "무", "미", "므"] }]),
+    reviewSounds: ["머", "무", "미", "므"],
   },
   {
-    id: "lesson-14-koko-toto-pupu-vowel-expansion",
-    title: "14레슨 코코와 토토와 푸푸: 커/쿠/크/키/터/투/트/티/퍼/푸/프/피를 만들어요",
-    letters: "ㅋ/ㅌ/ㅍ/ㅓ/ㅜ/ㅡ/ㅣ/커/쿠/크/키/터/투/트/티/퍼/푸/프/피",
-    pageTypes: expansionPageTypes(12, 2),
-    wordCardPageCount: 2,
-    storyImages: expansionImages([
-      { name: "코코", results: ["커", "쿠", "크", "키"] },
-      { name: "토토", results: ["터", "투", "트", "티"] },
-      { name: "푸푸", results: ["퍼", "푸", "프", "피"] },
-    ]),
-    storyCaptions: expansionCaptions([
-      { consonant: "ㅋ", results: ["커", "쿠", "크", "키"] },
-      { consonant: "ㅌ", results: ["터", "투", "트", "티"] },
-      { consonant: "ㅍ", results: ["퍼", "푸", "프", "피"] },
-    ]),
-    builds: expansionBuilds([
-      { consonant: "ㅋ", results: ["커", "쿠", "크", "키"] },
-      { consonant: "ㅌ", results: ["터", "투", "트", "티"] },
-      { consonant: "ㅍ", results: ["퍼", "푸", "프", "피"] },
-    ]),
-    reviewSounds: ["커", "쿠", "크", "키", "터", "투", "트", "티", "퍼", "푸", "프", "피"],
+    id: "lesson-10b-rara-vowel-expansion",
+    title: "10-B레슨 라라: 러/루/리/르를 만들어요",
+    letters: "ㄹ/ㅓ/ㅜ/ㅣ/ㅡ/러/루/리/르",
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
+    storyImages: ["러", "루", "리", "르"].map((result) => `라라 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㄹ이 ${vowel}를 만나, ${["러", "루", "리", "르"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㄹ", results: ["러", "루", "리", "르"] }]),
+    reviewSounds: ["러", "루", "리", "르"],
+  },
+  {
+    id: "lesson-11a-dodo-vowel-expansion",
+    title: "11-A레슨 도도: 더/두/디/드를 만들어요",
+    letters: "ㄷ/ㅓ/ㅜ/ㅣ/ㅡ/더/두/디/드",
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
+    storyImages: ["도도 더 새시안2.png", "도도 두 새시안.png", "도도 디 새시안.png", "도도 드 새시안.png"],
+    storyCaptions: expansionVowels.map((vowel, index) => `ㄷ이 ${vowel}를 만나, ${["더", "두", "디", "드"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㄷ", results: ["더", "두", "디", "드"] }]),
+    reviewSounds: ["더", "두", "디", "드"],
+  },
+  {
+    id: "lesson-11b-bubu-vowel-expansion",
+    title: "11-B레슨 부부: 버/부/비/브를 만들어요",
+    letters: "ㅂ/ㅓ/ㅜ/ㅣ/ㅡ/버/부/비/브",
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
+    storyImages: ["버", "부", "비", "브"].map((result) => `부부 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㅂ이 ${vowel}를 만나, ${["버", "부", "비", "브"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㅂ", results: ["버", "부", "비", "브"] }]),
+    reviewSounds: ["버", "부", "비", "브"],
+  },
+  {
+    id: "lesson-12a-sasa-vowel-expansion",
+    title: "12-A레슨 사사: 서/수/시/스를 만들어요",
+    letters: "ㅅ/ㅓ/ㅜ/ㅣ/ㅡ/서/수/시/스",
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
+    storyImages: ["서", "수", "시", "스"].map((result) => `사사 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㅅ이 ${vowel}를 만나, ${["서", "수", "시", "스"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㅅ", results: ["서", "수", "시", "스"] }]),
+    reviewSounds: ["서", "수", "시", "스"],
+  },
+  {
+    id: "lesson-12b-haha-vowel-expansion",
+    title: "12-B레슨 하하: 허/후/히/흐를 만들어요",
+    letters: "ㅎ/ㅓ/ㅜ/ㅣ/ㅡ/허/후/히/흐",
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
+    storyImages: ["허", "후", "히", "흐"].map((result) => `하하 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㅎ이 ${vowel}를 만나, ${["허", "후", "히", "흐"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㅎ", results: ["허", "후", "히", "흐"] }]),
+    reviewSounds: ["허", "후", "히", "흐"],
+  },
+  {
+    id: "lesson-13a-jiji-vowel-expansion",
+    title: "13-A레슨 지지: 저/주/지/즈를 만들어요",
+    letters: "ㅈ/ㅓ/ㅜ/ㅣ/ㅡ/저/주/지/즈",
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
+    storyImages: ["저", "주", "지", "즈"].map((result) => `지지 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㅈ이 ${vowel}를 만나, ${["저", "주", "지", "즈"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㅈ", results: ["저", "주", "지", "즈"] }]),
+    reviewSounds: ["저", "주", "지", "즈"],
+  },
+  {
+    id: "lesson-13b-chichi-vowel-expansion",
+    title: "13-B레슨 치치: 처/추/치/츠를 만들어요",
+    letters: "ㅊ/ㅓ/ㅜ/ㅣ/ㅡ/처/추/치/츠",
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
+    storyImages: ["처", "추", "치", "츠"].map((result) => `치치 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㅊ이 ${vowel}를 만나, ${["처", "추", "치", "츠"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㅊ", results: ["처", "추", "치", "츠"] }]),
+    reviewSounds: ["처", "추", "치", "츠"],
+  },
+  {
+    id: "lesson-14a-koko-vowel-expansion",
+    title: "14-A레슨 코코: 커/쿠/키/크를 만들어요",
+    letters: "ㅋ/ㅓ/ㅜ/ㅣ/ㅡ/커/쿠/키/크",
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
+    storyImages: ["커", "쿠", "키", "크"].map((result) => `코코 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㅋ이 ${vowel}를 만나, ${["커", "쿠", "키", "크"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㅋ", results: ["커", "쿠", "키", "크"] }]),
+    reviewSounds: ["커", "쿠", "키", "크"],
+  },
+  {
+    id: "lesson-14b-toto-vowel-expansion",
+    title: "14-B레슨 토토: 터/투/티/트를 만들어요",
+    letters: "ㅌ/ㅓ/ㅜ/ㅣ/ㅡ/터/투/티/트",
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
+    storyImages: ["터", "투", "티", "트"].map((result) => `토토 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㅌ이 ${vowel}를 만나, ${["터", "투", "티", "트"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㅌ", results: ["터", "투", "티", "트"] }]),
+    reviewSounds: ["터", "투", "티", "트"],
+  },
+  {
+    id: "lesson-14c-pupu-vowel-expansion",
+    title: "14-C레슨 푸푸: 퍼/푸/피/프를 만들어요",
+    letters: "ㅍ/ㅓ/ㅜ/ㅣ/ㅡ/퍼/푸/피/프",
+    pageTypes: expansionPageTypes(4, 1),
+    wordCardPageCount: 1,
+    storyImages: ["퍼", "푸", "피", "프"].map((result) => `푸푸 ${result} 새시안.png`),
+    storyCaptions: expansionVowels.map((vowel, index) => `ㅍ이 ${vowel}를 만나, ${["퍼", "푸", "피", "프"][index]}!`),
+    builds: expansionBuilds([{ consonant: "ㅍ", results: ["퍼", "푸", "피", "프"] }]),
+    reviewSounds: ["퍼", "푸", "피", "프"],
   },
   {
     id: "lesson-15-ya-yeo-vowel",
@@ -617,9 +631,18 @@ for (const expected of expectedLessons) {
 
   const reviewPages = worksheet.pages.filter((page) => page.type === "sound-choice");
   assert.deepEqual(
-    reviewPages.flatMap((page) => page.prompts.map((prompt) => prompt.sound)),
-    expected.reviewSounds
+    reviewPages.flatMap((page) => page.prompts.map((prompt) => prompt.sound)).sort(),
+    [...expected.reviewSounds].sort()
   );
+  for (const page of reviewPages) {
+    const choiceLabels = page.choices.map((choice) => choice.label);
+    if (choiceLabels.length > 1) {
+      assert.ok(
+        page.prompts.every((prompt, index) => prompt.answer !== choiceLabels[index]),
+        `${expected.id} review answers should not line up with their own choice column`
+      );
+    }
+  }
   assert.deepEqual(
     reviewPages.flatMap((page) => page.choices.map((choice) => choice.buildPieces)),
     expected.builds

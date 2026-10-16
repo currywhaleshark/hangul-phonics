@@ -59,52 +59,101 @@
     },
     {
       "id": "lesson-08-ieung-vowel-expansion",
-      "title": "8레슨 ㅇ과 새 모음: 어/우/으/이를 만들어요",
-      "letters": "ㅇ/ㅓ/ㅜ/ㅡ/ㅣ/어/우/으/이",
+      "title": "8레슨 ㅇ과 새 모음: 어/우/이/으를 만들어요",
+      "letters": "ㅇ/ㅓ/ㅜ/ㅣ/ㅡ/어/우/이/으",
       "worksheetPath": "../lessons/vowels/lesson-08-ieung-vowel-expansion/worksheet.json",
       "htmlPath": "../lessons/vowels/lesson-08-ieung-vowel-expansion/worksheet.html"
     },
     {
-      "id": "lesson-09-gogo-nana-vowel-expansion",
-      "title": "9레슨 고고와 나나: 거/구/그/기/너/누/느/니를 만들어요",
-      "letters": "ㄱ/ㄴ/ㅓ/ㅜ/ㅡ/ㅣ/거/구/그/기/너/누/느/니",
-      "worksheetPath": "../lessons/vowels/lesson-09-gogo-nana-vowel-expansion/worksheet.json",
-      "htmlPath": "../lessons/vowels/lesson-09-gogo-nana-vowel-expansion/worksheet.html"
+      "id": "lesson-09a-gogo-vowel-expansion",
+      "title": "9-A레슨 고고: 거/구/기/그를 만들어요",
+      "letters": "ㄱ/ㅓ/ㅜ/ㅣ/ㅡ/거/구/기/그",
+      "worksheetPath": "../lessons/vowels/lesson-09a-gogo-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-09a-gogo-vowel-expansion/worksheet.html"
     },
     {
-      "id": "lesson-10-mimi-rara-vowel-expansion",
-      "title": "10레슨 미미와 라라: 머/무/므/미/러/루/르/리를 만들어요",
-      "letters": "ㅁ/ㄹ/ㅓ/ㅜ/ㅡ/ㅣ/머/무/므/미/러/루/르/리",
-      "worksheetPath": "../lessons/vowels/lesson-10-mimi-rara-vowel-expansion/worksheet.json",
-      "htmlPath": "../lessons/vowels/lesson-10-mimi-rara-vowel-expansion/worksheet.html"
+      "id": "lesson-09b-nana-vowel-expansion",
+      "title": "9-B레슨 나나: 너/누/니/느를 만들어요",
+      "letters": "ㄴ/ㅓ/ㅜ/ㅣ/ㅡ/너/누/니/느",
+      "worksheetPath": "../lessons/vowels/lesson-09b-nana-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-09b-nana-vowel-expansion/worksheet.html"
     },
     {
-      "id": "lesson-11-dodo-bubu-vowel-expansion",
-      "title": "11레슨 도도와 부부: 더/두/드/디/버/부/브/비를 만들어요",
-      "letters": "ㄷ/ㅂ/ㅓ/ㅜ/ㅡ/ㅣ/더/두/드/디/버/부/브/비",
-      "worksheetPath": "../lessons/vowels/lesson-11-dodo-bubu-vowel-expansion/worksheet.json",
-      "htmlPath": "../lessons/vowels/lesson-11-dodo-bubu-vowel-expansion/worksheet.html"
+      "id": "lesson-10a-mimi-vowel-expansion",
+      "title": "10-A레슨 미미: 머/무/미/므를 만들어요",
+      "letters": "ㅁ/ㅓ/ㅜ/ㅣ/ㅡ/머/무/미/므",
+      "worksheetPath": "../lessons/vowels/lesson-10a-mimi-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-10a-mimi-vowel-expansion/worksheet.html"
     },
     {
-      "id": "lesson-12-sasa-haha-vowel-expansion",
-      "title": "12레슨 사사와 하하: 서/수/스/시/허/후/흐/히를 만들어요",
-      "letters": "ㅅ/ㅎ/ㅓ/ㅜ/ㅡ/ㅣ/서/수/스/시/허/후/흐/히",
-      "worksheetPath": "../lessons/vowels/lesson-12-sasa-haha-vowel-expansion/worksheet.json",
-      "htmlPath": "../lessons/vowels/lesson-12-sasa-haha-vowel-expansion/worksheet.html"
+      "id": "lesson-10b-rara-vowel-expansion",
+      "title": "10-B레슨 라라: 러/루/리/르를 만들어요",
+      "letters": "ㄹ/ㅓ/ㅜ/ㅣ/ㅡ/러/루/리/르",
+      "worksheetPath": "../lessons/vowels/lesson-10b-rara-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-10b-rara-vowel-expansion/worksheet.html"
     },
     {
-      "id": "lesson-13-jiji-chichi-vowel-expansion",
-      "title": "13레슨 지지와 치치: 저/주/즈/지/처/추/츠/치를 만들어요",
-      "letters": "ㅈ/ㅊ/ㅓ/ㅜ/ㅡ/ㅣ/저/주/즈/지/처/추/츠/치",
-      "worksheetPath": "../lessons/vowels/lesson-13-jiji-chichi-vowel-expansion/worksheet.json",
-      "htmlPath": "../lessons/vowels/lesson-13-jiji-chichi-vowel-expansion/worksheet.html"
+      "id": "lesson-11a-dodo-vowel-expansion",
+      "title": "11-A레슨 도도: 더/두/디/드를 만들어요",
+      "letters": "ㄷ/ㅓ/ㅜ/ㅣ/ㅡ/더/두/디/드",
+      "worksheetPath": "../lessons/vowels/lesson-11a-dodo-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-11a-dodo-vowel-expansion/worksheet.html"
     },
     {
-      "id": "lesson-14-koko-toto-pupu-vowel-expansion",
-      "title": "14레슨 코코와 토토와 푸푸: 커/쿠/크/키/터/투/트/티/퍼/푸/프/피를 만들어요",
-      "letters": "ㅋ/ㅌ/ㅍ/ㅓ/ㅜ/ㅡ/ㅣ/커/쿠/크/키/터/투/트/티/퍼/푸/프/피",
-      "worksheetPath": "../lessons/vowels/lesson-14-koko-toto-pupu-vowel-expansion/worksheet.json",
-      "htmlPath": "../lessons/vowels/lesson-14-koko-toto-pupu-vowel-expansion/worksheet.html"
+      "id": "lesson-11b-bubu-vowel-expansion",
+      "title": "11-B레슨 부부: 버/부/비/브를 만들어요",
+      "letters": "ㅂ/ㅓ/ㅜ/ㅣ/ㅡ/버/부/비/브",
+      "worksheetPath": "../lessons/vowels/lesson-11b-bubu-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-11b-bubu-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-12a-sasa-vowel-expansion",
+      "title": "12-A레슨 사사: 서/수/시/스를 만들어요",
+      "letters": "ㅅ/ㅓ/ㅜ/ㅣ/ㅡ/서/수/시/스",
+      "worksheetPath": "../lessons/vowels/lesson-12a-sasa-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-12a-sasa-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-12b-haha-vowel-expansion",
+      "title": "12-B레슨 하하: 허/후/히/흐를 만들어요",
+      "letters": "ㅎ/ㅓ/ㅜ/ㅣ/ㅡ/허/후/히/흐",
+      "worksheetPath": "../lessons/vowels/lesson-12b-haha-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-12b-haha-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-13a-jiji-vowel-expansion",
+      "title": "13-A레슨 지지: 저/주/지/즈를 만들어요",
+      "letters": "ㅈ/ㅓ/ㅜ/ㅣ/ㅡ/저/주/지/즈",
+      "worksheetPath": "../lessons/vowels/lesson-13a-jiji-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-13a-jiji-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-13b-chichi-vowel-expansion",
+      "title": "13-B레슨 치치: 처/추/치/츠를 만들어요",
+      "letters": "ㅊ/ㅓ/ㅜ/ㅣ/ㅡ/처/추/치/츠",
+      "worksheetPath": "../lessons/vowels/lesson-13b-chichi-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-13b-chichi-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-14a-koko-vowel-expansion",
+      "title": "14-A레슨 코코: 커/쿠/키/크를 만들어요",
+      "letters": "ㅋ/ㅓ/ㅜ/ㅣ/ㅡ/커/쿠/키/크",
+      "worksheetPath": "../lessons/vowels/lesson-14a-koko-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-14a-koko-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-14b-toto-vowel-expansion",
+      "title": "14-B레슨 토토: 터/투/티/트를 만들어요",
+      "letters": "ㅌ/ㅓ/ㅜ/ㅣ/ㅡ/터/투/티/트",
+      "worksheetPath": "../lessons/vowels/lesson-14b-toto-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-14b-toto-vowel-expansion/worksheet.html"
+    },
+    {
+      "id": "lesson-14c-pupu-vowel-expansion",
+      "title": "14-C레슨 푸푸: 퍼/푸/피/프를 만들어요",
+      "letters": "ㅍ/ㅓ/ㅜ/ㅣ/ㅡ/퍼/푸/피/프",
+      "worksheetPath": "../lessons/vowels/lesson-14c-pupu-vowel-expansion/worksheet.json",
+      "htmlPath": "../lessons/vowels/lesson-14c-pupu-vowel-expansion/worksheet.html"
     },
     {
       "id": "lesson-15-ya-yeo-vowel",

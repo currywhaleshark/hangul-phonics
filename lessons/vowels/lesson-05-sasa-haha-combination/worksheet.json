@@ -273,23 +273,23 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "사",
-          "answer": "사"
-        },
-        {
-          "label": "2번",
           "sound": "소",
           "answer": "소"
         },
         {
+          "label": "2번",
+          "sound": "호",
+          "answer": "호"
+        },
+        {
           "label": "3번",
-          "sound": "하",
-          "answer": "하"
+          "sound": "사",
+          "answer": "사"
         },
         {
           "label": "4번",
-          "sound": "호",
-          "answer": "호"
+          "sound": "하",
+          "answer": "하"
         }
       ],
       "choices": [
@@ -330,7 +330,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 사, 2번 소, 3번 하, 4번 호.",
+      "teacherNote": "교사용 소리 순서: 1번 소, 2번 호, 3번 사, 4번 하.",
       "footerLeft": "소리 정리",
       "footerRight": "사사와 하하"
     }

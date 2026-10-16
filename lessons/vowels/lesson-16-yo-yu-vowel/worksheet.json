@@ -319,23 +319,23 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "요",
-          "answer": "요"
-        },
-        {
-          "label": "2번",
-          "sound": "유",
-          "answer": "유"
-        },
-        {
-          "label": "3번",
           "sound": "교",
           "answer": "교"
         },
         {
-          "label": "4번",
+          "label": "2번",
           "sound": "규",
           "answer": "규"
+        },
+        {
+          "label": "3번",
+          "sound": "유",
+          "answer": "유"
+        },
+        {
+          "label": "4번",
+          "sound": "요",
+          "answer": "요"
         }
       ],
       "choices": [
@@ -376,7 +376,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 요, 2번 유, 3번 교, 4번 규.",
+      "teacherNote": "교사용 소리 순서: 1번 교, 2번 규, 3번 유, 4번 요.",
       "footerLeft": "소리 정리",
       "footerRight": "두 줄 가로 모음 ㅛ/ㅠ"
     },
@@ -390,18 +390,18 @@
       "prompts": [
         {
           "label": "1번",
+          "sound": "휴",
+          "answer": "휴"
+        },
+        {
+          "label": "2번",
           "sound": "표",
           "answer": "표"
         },
         {
-          "label": "2번",
+          "label": "3번",
           "sound": "퓨",
           "answer": "퓨"
-        },
-        {
-          "label": "3번",
-          "sound": "휴",
-          "answer": "휴"
         }
       ],
       "choices": [
@@ -433,7 +433,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 표, 2번 퓨, 3번 휴.",
+      "teacherNote": "교사용 소리 순서: 1번 휴, 2번 표, 3번 퓨.",
       "footerLeft": "소리 정리",
       "footerRight": "두 줄 가로 모음 ㅛ/ㅠ"
     }

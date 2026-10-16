@@ -49,7 +49,7 @@ assert.deepEqual(
 
 const reviewSounds = worksheet.pages
   .filter((page) => page.type === "sound-choice")
-  .flatMap((page) => page.prompts.map((prompt) => prompt.sound));
+  .flatMap((page) => page.choices.map((choice) => choice.label));
 assert.deepEqual(reviewSounds, ["와", "과"]);
 
 const festival = worksheet.pages.find((page) => page.type === "first-letter-festival");

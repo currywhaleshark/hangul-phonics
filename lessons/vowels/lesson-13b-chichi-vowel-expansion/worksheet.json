@@ -1,0 +1,301 @@
+{
+  "title": "13-B레슨 치치: 처/추/치/츠를 만들어요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "치치가 새 모음을 만나요",
+      "read": "치치 칙폭이의 ㅊ 길이 어어 풍선, 우우 발판, 이이 막대, 으으 쿠션을 차례로 만나요.",
+      "panels": [
+        {
+          "image": "../../../public/치치 처 새시안.png",
+          "caption": "ㅊ이 ㅓ를 만나, 처!"
+        },
+        {
+          "image": "../../../public/치치 추 새시안.png",
+          "caption": "ㅊ이 ㅜ를 만나, 추!"
+        },
+        {
+          "image": "../../../public/치치 치 새시안.png",
+          "caption": "ㅊ이 ㅣ를 만나, 치!"
+        },
+        {
+          "image": "../../../public/치치 츠 새시안.png",
+          "caption": "ㅊ이 ㅡ를 만나, 츠!"
+        }
+      ],
+      "teacherNote": "ㅊ 길을 먼저 찾고, 차의 ㅏ가 반대쪽을 보면 처, 초의 ㅗ가 아래로 뒤집히면 추라고 배운 글자와 견주어 읽은 뒤 치, 츠까지 붙여 읽는다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "치치 칙폭이"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㅊ과 ㅓ가 만나면 처",
+      "read": "치치의 ㅊ 소리, 츠! 어어 풍선의 ㅓ 소리, 어! 합치면 처!",
+      "heroImage": "../../../public/치치 처 새시안.png",
+      "traceLetter": "처",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅊ",
+        "ㅓ",
+        "처"
+      ],
+      "soundSteps": [
+        {
+          "label": "치치의 ㅊ 소리",
+          "sound": "츠!"
+        },
+        {
+          "label": "어어 풍선 ㅓ 소리",
+          "sound": "어!"
+        },
+        {
+          "label": "합치면",
+          "sound": "처!"
+        }
+      ],
+      "teacherNote": "치치의 ㅊ 칙칙 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 처를 읽는다.",
+      "footerLeft": "ㅊ + ㅓ = 처",
+      "footerRight": "치치 칙폭이와 처"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㅊ과 ㅜ가 만나면 추",
+      "read": "치치의 ㅊ 소리, 츠! 우우 발판의 ㅜ 소리, 우! 합치면 추!",
+      "heroImage": "../../../public/치치 추 새시안.png",
+      "traceLetter": "추",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅊ",
+        "ㅜ",
+        "추"
+      ],
+      "soundSteps": [
+        {
+          "label": "치치의 ㅊ 소리",
+          "sound": "츠!"
+        },
+        {
+          "label": "우우 발판 ㅜ 소리",
+          "sound": "우!"
+        },
+        {
+          "label": "합치면",
+          "sound": "추!"
+        }
+      ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=oLHsVForTEg",
+        "image": "../../../public/qr/youtube/oLHsVForTEg.png"
+      },
+      "teacherNote": "치치의 ㅊ 칙칙 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 추를 읽는다.",
+      "footerLeft": "ㅊ + ㅜ = 추",
+      "footerRight": "치치 칙폭이와 추"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "4장 / 소리 활동",
+      "title": "ㅊ과 ㅣ가 만나면 치",
+      "read": "치치의 ㅊ 소리, 츠! 이이 막대의 ㅣ 소리, 이! 합치면 치!",
+      "heroImage": "../../../public/치치 치 새시안.png",
+      "traceLetter": "치",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅊ",
+        "ㅣ",
+        "치"
+      ],
+      "soundSteps": [
+        {
+          "label": "치치의 ㅊ 소리",
+          "sound": "츠!"
+        },
+        {
+          "label": "이이 막대 ㅣ 소리",
+          "sound": "이!"
+        },
+        {
+          "label": "합치면",
+          "sound": "치!"
+        }
+      ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=hqOhTxo47bQ",
+        "image": "../../../public/qr/youtube/hqOhTxo47bQ.png"
+      },
+      "teacherNote": "치치의 ㅊ 칙칙 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 치를 읽는다.",
+      "footerLeft": "ㅊ + ㅣ = 치",
+      "footerRight": "치치 칙폭이와 치"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "5장 / 소리 활동",
+      "title": "ㅊ과 ㅡ가 만나면 츠",
+      "read": "치치의 ㅊ 소리, 츠! 으으 쿠션의 ㅡ 소리, 으! 합치면 츠!",
+      "heroImage": "../../../public/치치 츠 새시안.png",
+      "traceLetter": "츠",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅊ",
+        "ㅡ",
+        "츠"
+      ],
+      "soundSteps": [
+        {
+          "label": "치치의 ㅊ 소리",
+          "sound": "츠!"
+        },
+        {
+          "label": "으으 쿠션 ㅡ 소리",
+          "sound": "으!"
+        },
+        {
+          "label": "합치면",
+          "sound": "츠!"
+        }
+      ],
+      "teacherNote": "치치의 ㅊ 칙칙 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 츠를 읽는다.",
+      "footerLeft": "ㅊ + ㅡ = 츠",
+      "footerRight": "치치 칙폭이와 츠"
+    },
+    {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "후추",
+          "image": "../../../worksheets/assets/word-hu-pepper.png",
+          "parts": [
+            {
+              "text": "후"
+            },
+            {
+              "text": "추",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "배추",
+          "image": "../../../worksheets/assets/word-chu-napa-cabbage.png",
+          "parts": [
+            {
+              "text": "배"
+            },
+            {
+              "text": "추",
+              "focus": true
+            }
+          ]
+        },
+        {
+          "word": "치즈",
+          "focus": "치",
+          "rest": "즈",
+          "image": "../../../worksheets/assets/cheese.png"
+        },
+        {
+          "word": "곰치",
+          "image": "../../../worksheets/assets/word-chi-moray-eel.png",
+          "parts": [
+            {
+              "text": "곰"
+            },
+            {
+              "text": "치",
+              "focus": true
+            }
+          ]
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "6장 / 글자 낱말"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "마지막 / 소리 정리",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "추",
+          "answer": "추"
+        },
+        {
+          "label": "2번",
+          "sound": "처",
+          "answer": "처"
+        },
+        {
+          "label": "3번",
+          "sound": "츠",
+          "answer": "츠"
+        },
+        {
+          "label": "4번",
+          "sound": "치",
+          "answer": "치"
+        }
+      ],
+      "choices": [
+        {
+          "label": "처",
+          "image": "../../../public/치치 처 새시안.png",
+          "buildPieces": [
+            "ㅊ",
+            "ㅓ",
+            "처"
+          ]
+        },
+        {
+          "label": "추",
+          "image": "../../../public/치치 추 새시안.png",
+          "buildPieces": [
+            "ㅊ",
+            "ㅜ",
+            "추"
+          ]
+        },
+        {
+          "label": "치",
+          "image": "../../../public/치치 치 새시안.png",
+          "buildPieces": [
+            "ㅊ",
+            "ㅣ",
+            "치"
+          ]
+        },
+        {
+          "label": "츠",
+          "image": "../../../public/치치 츠 새시안.png",
+          "buildPieces": [
+            "ㅊ",
+            "ㅡ",
+            "츠"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 추, 2번 처, 3번 츠, 4번 치.",
+      "footerLeft": "소리 정리",
+      "footerRight": "치치 칙폭이"
+    }
+  ]
+}

@@ -273,23 +273,23 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "마",
-          "answer": "마"
-        },
-        {
-          "label": "2번",
-          "sound": "모",
-          "answer": "모"
-        },
-        {
-          "label": "3번",
           "sound": "바",
           "answer": "바"
         },
         {
-          "label": "4번",
+          "label": "2번",
           "sound": "보",
           "answer": "보"
+        },
+        {
+          "label": "3번",
+          "sound": "모",
+          "answer": "모"
+        },
+        {
+          "label": "4번",
+          "sound": "마",
+          "answer": "마"
         }
       ],
       "choices": [
@@ -330,7 +330,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 마, 2번 모, 3번 바, 4번 보.",
+      "teacherNote": "교사용 소리 순서: 1번 바, 2번 보, 3번 모, 4번 마.",
       "footerLeft": "소리 정리",
       "footerRight": "미미와 부부"
     }

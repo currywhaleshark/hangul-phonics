@@ -1,0 +1,280 @@
+{
+  "title": "12-B레슨 하하: 허/후/히/흐를 만들어요",
+  "pages": [
+    {
+      "type": "story",
+      "theme": "gogo",
+      "kicker": "1장 / 그림 이야기",
+      "title": "하하가 새 모음을 만나요",
+      "read": "하하 하마의 ㅎ 길이 어어 풍선, 우우 발판, 이이 막대, 으으 쿠션을 차례로 만나요.",
+      "panels": [
+        {
+          "image": "../../../public/하하 허 새시안.png",
+          "caption": "ㅎ이 ㅓ를 만나, 허!"
+        },
+        {
+          "image": "../../../public/하하 후 새시안.png",
+          "caption": "ㅎ이 ㅜ를 만나, 후!"
+        },
+        {
+          "image": "../../../public/하하 히 새시안.png",
+          "caption": "ㅎ이 ㅣ를 만나, 히!"
+        },
+        {
+          "image": "../../../public/하하 흐 새시안.png",
+          "caption": "ㅎ이 ㅡ를 만나, 흐!"
+        }
+      ],
+      "teacherNote": "ㅎ 길을 먼저 찾고, 하의 ㅏ가 반대쪽을 보면 허, 호의 ㅗ가 아래로 뒤집히면 후라고 배운 글자와 견주어 읽은 뒤 히, 흐까지 붙여 읽는다.",
+      "footerLeft": "그림 이야기",
+      "footerRight": "하하 하마"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "2장 / 소리 활동",
+      "title": "ㅎ과 ㅓ가 만나면 허",
+      "read": "하하의 ㅎ 소리, 흐! 어어 풍선의 ㅓ 소리, 어! 합치면 허!",
+      "heroImage": "../../../public/하하 허 새시안.png",
+      "traceLetter": "허",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅎ",
+        "ㅓ",
+        "허"
+      ],
+      "soundSteps": [
+        {
+          "label": "하하의 ㅎ 소리",
+          "sound": "흐!"
+        },
+        {
+          "label": "어어 풍선 ㅓ 소리",
+          "sound": "어!"
+        },
+        {
+          "label": "합치면",
+          "sound": "허!"
+        }
+      ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Pe-0vl5STq4",
+        "image": "../../../public/qr/youtube/Pe-0vl5STq4.png"
+      },
+      "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고 오른쪽의 ㅓ 풍선을 붙여 허를 읽는다.",
+      "footerLeft": "ㅎ + ㅓ = 허",
+      "footerRight": "하하 하마와 허"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "3장 / 소리 활동",
+      "title": "ㅎ과 ㅜ가 만나면 후",
+      "read": "하하의 ㅎ 소리, 흐! 우우 발판의 ㅜ 소리, 우! 합치면 후!",
+      "heroImage": "../../../public/하하 후 새시안.png",
+      "traceLetter": "후",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅎ",
+        "ㅜ",
+        "후"
+      ],
+      "soundSteps": [
+        {
+          "label": "하하의 ㅎ 소리",
+          "sound": "흐!"
+        },
+        {
+          "label": "우우 발판 ㅜ 소리",
+          "sound": "우!"
+        },
+        {
+          "label": "합치면",
+          "sound": "후!"
+        }
+      ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=ZV1ZqbfGsTY",
+        "image": "../../../public/qr/youtube/ZV1ZqbfGsTY.png"
+      },
+      "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고 아래의 ㅜ 발판을 붙여 후를 읽는다.",
+      "footerLeft": "ㅎ + ㅜ = 후",
+      "footerRight": "하하 하마와 후"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "4장 / 소리 활동",
+      "title": "ㅎ과 ㅣ가 만나면 히",
+      "read": "하하의 ㅎ 소리, 흐! 이이 막대의 ㅣ 소리, 이! 합치면 히!",
+      "heroImage": "../../../public/하하 히 새시안.png",
+      "traceLetter": "히",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅎ",
+        "ㅣ",
+        "히"
+      ],
+      "soundSteps": [
+        {
+          "label": "하하의 ㅎ 소리",
+          "sound": "흐!"
+        },
+        {
+          "label": "이이 막대 ㅣ 소리",
+          "sound": "이!"
+        },
+        {
+          "label": "합치면",
+          "sound": "히!"
+        }
+      ],
+      "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고 오른쪽의 ㅣ 막대를 붙여 히를 읽는다.",
+      "footerLeft": "ㅎ + ㅣ = 히",
+      "footerRight": "하하 하마와 히"
+    },
+    {
+      "type": "vowel-activity",
+      "theme": "gogo",
+      "kicker": "5장 / 소리 활동",
+      "title": "ㅎ과 ㅡ가 만나면 흐",
+      "read": "하하의 ㅎ 소리, 흐! 으으 쿠션의 ㅡ 소리, 으! 합치면 흐!",
+      "heroImage": "../../../public/하하 흐 새시안.png",
+      "traceLetter": "흐",
+      "activityTitle": "보고 따라 그리고 붙여서 만들어요",
+      "buildPieces": [
+        "ㅎ",
+        "ㅡ",
+        "흐"
+      ],
+      "soundSteps": [
+        {
+          "label": "하하의 ㅎ 소리",
+          "sound": "흐!"
+        },
+        {
+          "label": "으으 쿠션 ㅡ 소리",
+          "sound": "으!"
+        },
+        {
+          "label": "합치면",
+          "sound": "흐!"
+        }
+      ],
+      "teacherNote": "하하 몸의 ㅎ 숨 길을 손가락으로 따라가고 아래의 ㅡ 쿠션을 붙여 흐를 읽는다.",
+      "footerLeft": "ㅎ + ㅡ = 흐",
+      "footerRight": "하하 하마와 흐"
+    },
+    {
+      "type": "word-card",
+      "theme": "gogo",
+      "focus": "",
+      "title": "새 모음이 들어가는 낱말",
+      "read": "배운 글자가 들어 있는 낱말을 그림으로 만나요.",
+      "activityTitle": "배운 글자가 들어간 곳을 진하게 봐요",
+      "cards": [
+        {
+          "word": "허리",
+          "focus": "허",
+          "rest": "리",
+          "image": "../../../worksheets/assets/word-heo-waist.png"
+        },
+        {
+          "word": "허수아비",
+          "focus": "허",
+          "rest": "수아비",
+          "image": "../../../worksheets/assets/word-heo-scarecrow.png"
+        },
+        {
+          "word": "후추",
+          "focus": "후",
+          "rest": "추",
+          "image": "../../../worksheets/assets/word-hu-pepper.png"
+        },
+        {
+          "word": "후라이팬",
+          "focus": "후",
+          "rest": "라이팬",
+          "image": "../../../worksheets/assets/word-hu-frying-pan.png"
+        }
+      ],
+      "teacherNote": "낱말 전체 읽기를 요구하지 않고 이번 레슨에서 배운 글자만 찾아본다.",
+      "footerLeft": "새 모음 낱말",
+      "footerRight": "새 모음 낱말카드",
+      "kicker": "6장 / 글자 낱말"
+    },
+    {
+      "type": "sound-choice",
+      "theme": "gogo",
+      "kicker": "마지막 / 소리 정리",
+      "title": "소리를 듣고 맞는 조합을 찾아요",
+      "read": "선생님이 말하는 소리를 듣고 알맞은 조합 카드를 찾아 동그라미해요.",
+      "activityTitle": "맞는 글자에 동그라미",
+      "prompts": [
+        {
+          "label": "1번",
+          "sound": "후",
+          "answer": "후"
+        },
+        {
+          "label": "2번",
+          "sound": "흐",
+          "answer": "흐"
+        },
+        {
+          "label": "3번",
+          "sound": "허",
+          "answer": "허"
+        },
+        {
+          "label": "4번",
+          "sound": "히",
+          "answer": "히"
+        }
+      ],
+      "choices": [
+        {
+          "label": "허",
+          "image": "../../../public/하하 허 새시안.png",
+          "buildPieces": [
+            "ㅎ",
+            "ㅓ",
+            "허"
+          ]
+        },
+        {
+          "label": "후",
+          "image": "../../../public/하하 후 새시안.png",
+          "buildPieces": [
+            "ㅎ",
+            "ㅜ",
+            "후"
+          ]
+        },
+        {
+          "label": "히",
+          "image": "../../../public/하하 히 새시안.png",
+          "buildPieces": [
+            "ㅎ",
+            "ㅣ",
+            "히"
+          ]
+        },
+        {
+          "label": "흐",
+          "image": "../../../public/하하 흐 새시안.png",
+          "buildPieces": [
+            "ㅎ",
+            "ㅡ",
+            "흐"
+          ]
+        }
+      ],
+      "teacherNote": "교사용 소리 순서: 1번 후, 2번 흐, 3번 허, 4번 히.",
+      "footerLeft": "소리 정리",
+      "footerRight": "하하 하마"
+    }
+  ]
+}

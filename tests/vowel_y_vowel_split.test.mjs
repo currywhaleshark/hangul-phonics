@@ -18,7 +18,7 @@ function activityLetters(worksheet) {
 function reviewLetters(worksheet) {
   return worksheet.pages
     .filter((page) => page.type === "sound-choice")
-    .flatMap((page) => page.prompts.map((prompt) => prompt.sound));
+    .flatMap((page) => page.choices.map((choice) => choice.label));
 }
 
 function wordCardWords(worksheet) {

@@ -162,13 +162,13 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "파",
-          "answer": "파"
+          "sound": "포",
+          "answer": "포"
         },
         {
           "label": "2번",
-          "sound": "포",
-          "answer": "포"
+          "sound": "파",
+          "answer": "파"
         }
       ],
       "choices": [
@@ -191,7 +191,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 파, 2번 포.",
+      "teacherNote": "교사용 소리 순서: 1번 포, 2번 파.",
       "footerLeft": "소리 정리",
       "footerRight": "푸푸"
     }

@@ -214,18 +214,18 @@
       "prompts": [
         {
           "label": "1번",
-          "sound": "아",
-          "answer": "아"
-        },
-        {
-          "label": "2번",
           "sound": "오",
           "answer": "오"
         },
         {
-          "label": "3번",
+          "label": "2번",
           "sound": "우",
           "answer": "우"
+        },
+        {
+          "label": "3번",
+          "sound": "아",
+          "answer": "아"
         }
       ],
       "choices": [
@@ -257,7 +257,7 @@
           ]
         }
       ],
-      "teacherNote": "교사용 소리 순서: 1번 아, 2번 오, 3번 우.",
+      "teacherNote": "교사용 소리 순서: 1번 오, 2번 우, 3번 아.",
       "footerLeft": "소리 정리",
       "footerRight": "아아 아기와 아/오/우"
     }
