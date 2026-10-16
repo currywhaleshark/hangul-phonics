@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "ya-ya",
+  "lessonId": "lesson-01-aa-baby-vowel-ya",
+  "title": "야야 두 나뭇가지 야 모음 만남",
+  "template": "vowel-combine-story",
+  "character": {
+    "key": "ya",
+    "name": "야야 두 나뭇가지",
+    "letter": "야",
+    "image": "public/video-assets/vowel-alpha/combined/아아 아기 야 나뭇가지-alpha.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/vowel_야_ya.mp3",
+    "duration": 16.586
+  },
+  "segment": {
+    "label": "야야 두 나뭇가지",
+    "start": 0,
+    "end": 16.586
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "ya-baby",
+      "label": "아기",
+      "assetKind": "baby",
+      "image": "public/video-assets/characters/consonants/ㅇ-aa-baby.png",
+      "start": 0.2,
+      "end": 6.41,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.54
+    },
+    {
+      "id": "ya-tool",
+      "label": "야야 두 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/야야 두 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 6.41,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "ya-combined",
+      "label": "합친 이미지",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined-hero/아아 아기 야 나뭇가지-hero.png",
+      "start": 6.41,
+      "end": 16.586,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "position": {
+        "left": 50,
+        "top": 55
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "ya-baseball",
+      "label": "야구공",
+      "image": "worksheets/assets/word-ya-baseball.png",
+      "start": 13.037,
+      "end": 15.844,
+      "position": {
+        "left": 19.316,
+        "top": 74.632
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "ya-vegetables",
+      "label": "야채",
+      "image": "worksheets/assets/word-ya-vegetables.png",
+      "start": 14.535,
+      "end": 15.844,
+      "position": {
+        "left": 84.474,
+        "top": 77.813
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "ya-say",
+      "label": "야",
+      "start": 11.363,
+      "end": 12.108,
+      "position": {
+        "left": 17.526,
+        "top": 20.737
+      }
+    },
+    {
+      "id": "ya-final",
+      "label": "야",
+      "start": 16.094,
+      "end": 16.586,
+      "position": {
+        "left": 87.105,
+        "top": 21.485
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "ya-ya",
+    "timingFile": "ya-ya-card-timings.json"
+  }
+}

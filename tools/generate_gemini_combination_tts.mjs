@@ -1,7 +1,9 @@
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+
+import { SYLLABLE_GROUP_DEFINITIONS, groupAudioFile, groupNarrationLines } from "./syllable-group-projects.mjs";
 
 const model = "gemini-3.1-flash-tts-preview";
 const voiceName = "Callirrhoe";
@@ -91,6 +93,10 @@ export const VOWEL_INTRO_TTS_ITEMS = [
   { index: 101, slug: "eo", label: "어", intro: true, toolObject: "어어 풍선을", mouth: "입을 크게 벌리고", words: ["어항", "상어"] },
   { index: 102, slug: "eu", label: "으", intro: true, toolObject: "으으 쿠션을", mouth: "입을 옆으로 쭉 당기고", words: ["으르렁", "으쓱"] },
   { index: 103, slug: "i", label: "이", intro: true, toolObject: "이이 막대를", mouth: "입을 옆으로 활짝 벌리고", words: ["이불", "이빨"] },
+  { index: 104, slug: "ya", label: "야", intro: true, toolObject: "야야 두 나뭇가지를", mouth: "입을 크게 열고", words: ["야구공", "야채"] },
+  { index: 105, slug: "yeo", label: "여", intro: true, toolObject: "여여 두 풍선을", mouth: "입을 부드럽게 열고", words: ["여우", "여름"] },
+  { index: 106, slug: "yo", label: "요", intro: true, toolObject: "요요 그네를", mouth: "입을 동그랗게 하고", words: ["요리", "요정"] },
+  { index: 107, slug: "yu", label: "유", intro: true, toolObject: "유유 의자를", mouth: "입을 앞으로 모으고", words: ["유리", "유치원"] },
 ];
 
 export function buildVowelIntroText(item) {
@@ -145,16 +151,25 @@ export function combinationFileName(item) {
 export function selectItems(args) {
   const requested = args.flatMap((arg) => arg.split(",")).map((arg) => arg.trim()).filter(Boolean);
   if (requested.length === 0) {
-    throw new Error("Pass slugs (e.g. gu nu), syllables (e.g. 구), a vowel key (e.g. u), intro, intro-<slug> (e.g. intro-eu), or all");
+    throw new Error("Pass slugs (e.g. gu nu), syllables (e.g. 구), a vowel key (e.g. u), intro, intro-<slug> (e.g. intro-eu), groups, group-<id> (e.g. group-yeo-group), or all");
   }
-  if (requested.includes("all")) {
-    return COMBINATION_TTS_ITEMS;
-  }
-  if (requested.includes("intro")) {
-    return VOWEL_INTRO_TTS_ITEMS;
-  }
-
   return requested.flatMap((key) => {
+    if (key === "all") {
+      return COMBINATION_TTS_ITEMS;
+    }
+    if (key === "intro") {
+      return VOWEL_INTRO_TTS_ITEMS;
+    }
+    if (key === "groups") {
+      return SYLLABLE_GROUP_DEFINITIONS.map((definition) => ({ group: definition }));
+    }
+    if (key.startsWith("group-")) {
+      const definition = SYLLABLE_GROUP_DEFINITIONS.find((candidate) => candidate.id === key.slice("group-".length));
+      if (!definition) {
+        throw new Error(`Unknown group item: ${key}`);
+      }
+      return [{ group: definition }];
+    }
     if (key.startsWith("intro-")) {
       const intro = VOWEL_INTRO_TTS_ITEMS.find((candidate) => `intro-${candidate.slug}` === key);
       if (!intro) {
@@ -251,6 +266,80 @@ async function readManifest(manifestPath) {
   }
 }
 
+const GROUP_LINE_GAP = 0.6;
+// Gemini pauses 2-3s at each comma in short lines; keep pauses at about 0.7s so blocks stay snappy.
+const GROUP_PAUSE_CAP = "silenceremove=stop_periods=-1:stop_duration=0.35:stop_threshold=-40dB:stop_silence=0.35";
+
+function speechSegments(audioPath) {
+  const result = spawnSync("ffmpeg", ["-hide_banner", "-i", audioPath, "-af", "silencedetect=noise=-40dB:d=0.2", "-f", "null", "-"], { encoding: "utf8" });
+  const output = `${result.stdout || ""}\n${result.stderr || ""}`;
+  const total = probeDuration(audioPath);
+  const segments = [];
+  let speechStart = 0;
+  for (const line of output.split(/\r?\n/u)) {
+    const start = line.match(/silence_start:\s*([0-9.]+)/u);
+    if (start && Number(start[1]) > speechStart) segments.push({ start: speechStart, end: Number(start[1]) });
+    const end = line.match(/silence_end:\s*([0-9.]+)/u);
+    if (end) speechStart = Number(end[1]);
+  }
+  if (total > speechStart) segments.push({ start: speechStart, end: total });
+  return segments.filter((segment) => segment.end - segment.start >= 0.12);
+}
+
+// Each narration line is generated on its own and joined with a fixed pause, so every scene
+// change in the grouped video lands on a known time instead of a guessed pause.
+async function generateGroup({ definition, endpoint, token, force, root, targetDir, wavDir }) {
+  const lineDir = path.join(wavDir, "group", definition.id);
+  await mkdir(lineDir, { recursive: true });
+  const texts = groupNarrationLines(definition);
+  const trimmedPaths = [];
+  for (const [index, text] of texts.entries()) {
+    const rawPath = path.join(lineDir, `${String(index + 1).padStart(2, "0")}.wav`);
+    if (force || !(await hasUsableFile(rawPath))) {
+      console.log(`${definition.id} line ${index + 1}: generating`);
+      await writeFile(rawPath, await generateAudio({ endpoint, token, prompt: buildCombinationPrompt(text), label: `${definition.id}-${index + 1}` }));
+    }
+    const trimmedPath = path.join(lineDir, `${String(index + 1).padStart(2, "0")}-trimmed.wav`);
+    run("ffmpeg", ["-y", "-v", "error", "-i", rawPath, "-af", `${trimFilter},${GROUP_PAUSE_CAP}`, "-ac", "1", "-ar", String(sampleRate), trimmedPath]);
+    trimmedPaths.push(trimmedPath);
+  }
+
+  const lines = [];
+  let cursor = 0;
+  for (const [index, trimmedPath] of trimmedPaths.entries()) {
+    const duration = probeDuration(trimmedPath);
+    const segments = speechSegments(trimmedPath);
+    lines.push({
+      text: texts[index],
+      start: Number(cursor.toFixed(3)),
+      end: Number((cursor + duration).toFixed(3)),
+      lastPhraseStart: Number((cursor + (segments.at(-1)?.start ?? 0)).toFixed(3)),
+    });
+    cursor += duration + GROUP_LINE_GAP;
+  }
+
+  const gapPath = path.join(lineDir, "gap.wav");
+  run("ffmpeg", ["-y", "-v", "error", "-f", "lavfi", "-i", `anullsrc=r=${sampleRate}:cl=mono`, "-t", String(GROUP_LINE_GAP), gapPath]);
+  const listPath = path.join(lineDir, "concat.txt");
+  const listLines = trimmedPaths.flatMap((file, index) => [`file '${file.replaceAll("\\", "/")}'`, ...(index < trimmedPaths.length - 1 ? [`file '${gapPath.replaceAll("\\", "/")}'`] : [])]);
+  await writeFile(listPath, `${listLines.join("\n")}\n`, "utf8");
+  const mp3Path = path.join(targetDir, groupAudioFile(definition));
+  run("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", listPath, "-ac", "1", "-ar", String(sampleRate), "-b:a", "160k", mp3Path]);
+  const duration = Number(probeDuration(mp3Path).toFixed(3));
+  console.log(`${path.basename(mp3Path)}: ${duration}s`);
+
+  return {
+    index: definition.index,
+    slug: definition.id,
+    label: definition.blocks.map((block) => block.syllable).join(""),
+    text: texts.join("\n"),
+    mp3: path.relative(root, mp3Path).replaceAll(path.sep, "/"),
+    wav: path.relative(root, lineDir).replaceAll(path.sep, "/"),
+    duration,
+    lines,
+  };
+}
+
 export async function main(argv = process.argv.slice(2)) {
   const root = process.cwd();
   const targetDir = path.join(root, outputDir);
@@ -268,6 +357,11 @@ export async function main(argv = process.argv.slice(2)) {
   const manifest = await readManifest(manifestPath);
 
   for (const item of items) {
+    if (item.group) {
+      const entry = await generateGroup({ definition: item.group, endpoint, token, force, root, targetDir, wavDir });
+      manifest.items = [...manifest.items.filter((existing) => existing.index !== entry.index), entry].sort((a, b) => a.index - b.index);
+      continue;
+    }
     const baseName = combinationFileName(item);
     const wavPath = path.join(wavDir, `${baseName}.wav`);
     const mp3Path = path.join(targetDir, `${baseName}.mp3`);

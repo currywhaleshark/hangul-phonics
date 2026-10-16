@@ -7,11 +7,18 @@ import { renderWorksheetDocument } from "../worksheets/worksheet-renderer.js";
 const root = path.resolve("lessons", "vowels");
 const cssHref = "../../../worksheets/pilot-a4.css";
 
-// Lesson videos end their title with "=<syllable>" (e.g. "고고 고양이와 우우 발판 | ㄱ+ㅜ=구").
+// Lesson videos end their title with "=<syllable>" (e.g. "고고 고양이와 우우 발판 | ㄱ+ㅜ=구");
+// grouped videos list every syllable they cover (e.g. "여여 두 풍선과 자음 친구들 | 겨·녀·벼·혀").
+function syllablesInVideoTitle(title) {
+  const single = title.match(/=([가-힣])$/u);
+  if (single) return [single[1]];
+  const group = title.match(/\| ([가-힣](?:·[가-힣])+)$/u);
+  return group ? group[1].split("·") : [];
+}
+
 const youtubeVideoIdsByTraceLetter = new Map(
   JSON.parse(readFileSync(path.resolve("public", "qr", "youtube", "manifest.json"), "utf8"))
-    .entries.map((entry) => [entry.title.match(/=([가-힣])$/u)?.[1], entry.videoId])
-    .filter(([syllable]) => syllable),
+    .entries.flatMap((entry) => syllablesInVideoTitle(entry.title).map((syllable) => [syllable, entry.videoId])),
 );
 
 function videoQrForTraceLetter(traceLetter) {

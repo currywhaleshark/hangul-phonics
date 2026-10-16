@@ -85,6 +85,7 @@ class Cue:
     top: float
     accent: tuple[int, int, int] = (255, 209, 102)
     image_path: Path | None = None
+    badge: str | None = None
 
 
 @dataclass(frozen=True)
@@ -278,6 +279,7 @@ def normalize_word_cues(project: dict) -> list[Cue]:
                 top=clamp_percent(position.get("top"), fallback_position["top"]),
                 accent=parse_accent(raw.get("accent"), fallback_accent),
                 image_path=resolve_repo_path(raw.get("image") or WORD_META.get(cue_id, {}).get("image")),
+                badge=str(raw["badge"]) if raw.get("badge") else None,
             )
         )
     return sorted(normalized, key=lambda cue: cue.start)
@@ -559,7 +561,11 @@ def build_vowel_combine_story_frames(
         for cue in combine_cues
         if cue.image_path
     }
-    card_images = {cue.id: make_word_card(cue, Image.open(cue.image_path), lesson_letter) for cue in word_cues if cue.image_path}
+    card_images = {
+        cue.id: make_word_card(cue, Image.open(cue.image_path), cue.badge or lesson_letter)
+        for cue in word_cues
+        if cue.image_path
+    }
     letter_images = {cue.id: make_letter_popup(cue.label) for cue in letter_cues}
 
     for index in range(frame_count):
@@ -666,7 +672,7 @@ def build_frames(
     output: Path,
     keep_frames: bool = False,
 ) -> tuple[Path, float, float]:
-    if project.get("template") in {"vowel-combine-story", "syllable-combine-story"}:
+    if project.get("template") in {"vowel-combine-story", "syllable-combine-story", "syllable-group-story"}:
         return build_vowel_combine_story_frames(project, output, keep_frames)
 
     if project.get("template") == "vowel-story":

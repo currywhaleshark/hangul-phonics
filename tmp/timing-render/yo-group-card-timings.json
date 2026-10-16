@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "id": "yo-group",
+  "lessonId": "vowel-group-yo-group",
+  "title": "요요 그네와 자음 친구들 | 교·표",
+  "template": "syllable-group-story",
+  "character": {
+    "key": "yo-group",
+    "name": "요요 그네",
+    "letter": "ㅛ"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/group_교표_yo-group.mp3",
+    "duration": 18.066
+  },
+  "segment": {
+    "label": "ㅛ",
+    "start": 0,
+    "end": 18.066
+  },
+  "syllables": [
+    "교",
+    "표"
+  ],
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "yo-group-tool-1-intro",
+      "label": "요요 그네",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/요요 그네-alpha.png",
+      "start": 0.2,
+      "end": 4.085,
+      "fromPosition": {
+        "left": 84,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yo-group-교-tool-1",
+      "label": "요요 그네",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/요요 그네-alpha.png",
+      "start": 4.085,
+      "end": 7.666,
+      "fromPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yo-group-교-character",
+      "label": "고고 고양이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png",
+      "start": 4.085,
+      "end": 7.666,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "yo-group-교-combined",
+      "label": "교",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/고고 교 새시안3-alpha.png",
+      "start": 7.666,
+      "end": 8.725,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    },
+    {
+      "id": "yo-group-표-tool-1",
+      "label": "요요 그네",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/요요 그네-alpha.png",
+      "start": 8.725,
+      "end": 12.653,
+      "fromPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yo-group-표-character",
+      "label": "푸푸 풍선",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png",
+      "start": 8.725,
+      "end": 12.653,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "yo-group-표-combined",
+      "label": "표",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/푸푸 표 그네 새시안-alpha.png",
+      "start": 12.653,
+      "end": 13.737,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    }
+  ],
+  "cues": [
+    {
+      "id": "yo-group-word-1",
+      "label": "교실",
+      "badge": "교",
+      "image": "worksheets/assets/word-gyo-classroom.png",
+      "start": 13.637,
+      "end": 18.066,
+      "position": {
+        "left": 40,
+        "top": 64
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "yo-group-word-2",
+      "label": "표범",
+      "badge": "표",
+      "image": "worksheets/assets/word-pyo-leopard.png",
+      "start": 14.087,
+      "end": 18.066,
+      "position": {
+        "left": 60,
+        "top": 64
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "yo-group-교",
+      "label": "교",
+      "start": 7.666,
+      "end": 18.066,
+      "position": {
+        "left": 42.5,
+        "top": 15
+      }
+    },
+    {
+      "id": "yo-group-표",
+      "label": "표",
+      "start": 12.653,
+      "end": 18.066,
+      "position": {
+        "left": 57.5,
+        "top": 15
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "yo-group",
+    "timingFile": "yo-group-card-timings.json"
+  }
+}

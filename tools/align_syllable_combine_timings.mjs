@@ -1,8 +1,10 @@
 import { execFileSync, spawnSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
+import { buildSyllableGroupProject, getSyllableGroupDefinition, groupAudioFile } from "./syllable-group-projects.mjs";
 import { SYLLABLE_COMBINE_TIMING_PROJECTS, createDefaultTimingProject, roundTime } from "./timing-editor-core.js";
 
 const TIMING_WORK_DIR = path.join("tmp", "timing-render");
@@ -200,7 +202,23 @@ function alignVowelIntroProject(project) {
   throw new Error(`${project.id}: could not match the vowel intro narration to pauses`);
 }
 
+const TTS_MANIFEST = path.join("public", "audio-gemini-candidates", "vowel-combination-tts", "manifest.json");
+
+// Grouped videos record each narration line's timing when the audio is generated.
+function alignGroupProject(definition) {
+  const manifest = JSON.parse(readFileSync(TTS_MANIFEST, "utf8"));
+  const entry = manifest.items.find((item) => item.mp3?.endsWith(groupAudioFile(definition)));
+  if (!entry?.lines) {
+    throw new Error(`${definition.id}: generate the group narration first (node tools/generate_gemini_combination_tts.mjs group-${definition.id})`);
+  }
+  return { project: buildSyllableGroupProject(definition, entry.lines, entry.duration), params: { noise: "lines", duration: entry.lines.length } };
+}
+
 export function alignProject(projectId) {
+  const groupDefinition = getSyllableGroupDefinition(projectId);
+  if (groupDefinition) {
+    return alignGroupProject(groupDefinition);
+  }
   const project = createDefaultTimingProject(projectId);
   if (project.template === "vowel-combine-story") {
     return alignVowelIntroProject(project);

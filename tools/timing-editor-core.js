@@ -9,7 +9,7 @@ export const GOGO_TIMING_STORAGE_KEY = "hangul-phonics:gogo-g-card-timings";
 export const DEFAULT_GOGO_TIMING_FILE = "gogo-g-card-timings.json";
 
 const DEFAULT_BACKGROUND = "public/video-assets/consonant-lesson-samples/gogo-g-background.png";
-const VOWEL_COMBINE_BACKGROUND = "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png";
+export const VOWEL_COMBINE_BACKGROUND = "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png";
 
 const CARD_POSITIONS = [
   { left: 20, top: 39, accent: "#ff8470" },
@@ -172,7 +172,7 @@ const vowelAlphaToolAsset = (file) => `public/video-assets/vowel-alpha/tools/${f
 const vowelAlphaCombinedAsset = (file) => `public/video-assets/vowel-alpha/combined/${file}`;
 const vowelAlphaCombinedHeroAsset = (file) => `public/video-assets/vowel-alpha/combined-hero/${file}`;
 const vowelCombinationAudioAsset = (file) => `public/audio-gemini-candidates/vowel-combination-tts/${file}`;
-const VOWEL_COMBINE_BABY_IMAGE = vowelAlphaBabyAsset("\u3147-aa-baby.png");
+export const VOWEL_COMBINE_BABY_IMAGE = vowelAlphaBabyAsset("\u3147-aa-baby.png");
 const LEGACY_VOWEL_COMBINE_BABY_IMAGES = new Set([
   vowelAlphaCombinedAsset("\uC544\uC544 \uC544\uAE30 \uB098\uBB47\uAC00\uC9C0 \uC2DC\uC548-alpha.png"),
 ]);
@@ -206,6 +206,22 @@ const LESSON_AUDIO = {
   "lesson-01-aa-baby-vowel-i": {
     src: "public/audio-gemini-candidates/vowel-combination-tts/vowel_이_i.mp3",
     duration: 20.714,
+  },
+  "lesson-01-aa-baby-vowel-ya": {
+    src: "public/audio-gemini-candidates/vowel-combination-tts/vowel_야_ya.mp3",
+    duration: 16.586,
+  },
+  "lesson-01-aa-baby-vowel-yeo": {
+    src: "public/audio-gemini-candidates/vowel-combination-tts/vowel_여_yeo.mp3",
+    duration: 18.546,
+  },
+  "lesson-01-aa-baby-vowel-yo": {
+    src: "public/audio-gemini-candidates/vowel-combination-tts/vowel_요_yo.mp3",
+    duration: 17.631,
+  },
+  "lesson-01-aa-baby-vowel-yu": {
+    src: "public/audio-gemini-candidates/vowel-combination-tts/vowel_유_yu.mp3",
+    duration: 16.938,
   },
   "lesson-01-gogo-nana": {
     src: "lessons/consonants/lesson-01-gogo-nana/ㄱ, ㄴ 소개.wav",
@@ -522,10 +538,82 @@ export const VOWEL_COMBINE_TIMING_PROJECTS = [
       { id: "ii-tooth", label: "이빨", image: asset("word-i-tooth.png") },
     ],
   }),
+  defineVowelCombineProject({
+    id: "ya-ya",
+    lessonId: "lesson-01-aa-baby-vowel-ya",
+    segment: { start: 0, end: 16.586 },
+    character: {
+      key: "ya",
+      name: "야야 두 나뭇가지",
+      letter: "야",
+      image: vowelAlphaCombinedAsset("아아 아기 야 나뭇가지-alpha.png"),
+    },
+    toolLabel: "야야 두 나뭇가지",
+    toolImage: vowelAlphaToolAsset("야야 두 나뭇가지-alpha.png"),
+    combinedImage: vowelAlphaCombinedHeroAsset("아아 아기 야 나뭇가지-hero.png"),
+    words: [
+      { id: "ya-baseball", label: "야구공", image: asset("word-ya-baseball.png") },
+      { id: "ya-vegetables", label: "야채", image: asset("word-ya-vegetables.png") },
+    ],
+  }),
+  defineVowelCombineProject({
+    id: "yeo-yeo",
+    lessonId: "lesson-01-aa-baby-vowel-yeo",
+    segment: { start: 0, end: 18.546 },
+    character: {
+      key: "yeo",
+      name: "여여 두 풍선",
+      letter: "여",
+      image: vowelAlphaCombinedAsset("아아 아기 여 풍선-alpha.png"),
+    },
+    toolLabel: "여여 두 풍선",
+    toolImage: vowelAlphaToolAsset("여여 두 풍선-alpha.png"),
+    combinedImage: vowelAlphaCombinedHeroAsset("아아 아기 여 풍선-hero.png"),
+    words: [
+      { id: "yeo-fox", label: "여우", image: asset("word-yeo-fox.png") },
+      { id: "yeo-summer", label: "여름", image: asset("word-yeo-summer.png") },
+    ],
+  }),
+  defineVowelCombineProject({
+    id: "yo-yo",
+    lessonId: "lesson-01-aa-baby-vowel-yo",
+    segment: { start: 0, end: 17.631 },
+    character: {
+      key: "yo",
+      name: "요요 그네",
+      letter: "요",
+      image: vowelAlphaCombinedAsset("요요 그네 시안-alpha.png"),
+    },
+    toolLabel: "요요 그네",
+    toolImage: vowelAlphaToolAsset("요요 그네-alpha.png"),
+    combinedImage: vowelAlphaCombinedHeroAsset("요요 그네 시안-hero.png"),
+    words: [
+      { id: "yo-cooking", label: "요리", image: asset("word-yo-cooking.png") },
+      { id: "yo-fairy", label: "요정", image: asset("word-yo-fairy.png") },
+    ],
+  }),
+  defineVowelCombineProject({
+    id: "yu-yu",
+    lessonId: "lesson-01-aa-baby-vowel-yu",
+    segment: { start: 0, end: 16.938 },
+    character: {
+      key: "yu",
+      name: "유유 의자",
+      letter: "유",
+      image: vowelAlphaCombinedAsset("유유 의자 시안-alpha.png"),
+    },
+    toolLabel: "유유 의자",
+    toolImage: vowelAlphaToolAsset("유유 의자-alpha.png"),
+    combinedImage: vowelAlphaCombinedHeroAsset("유유 의자 시안-hero.png"),
+    words: [
+      { id: "yu-glass", label: "유리", image: asset("word-yu-glass.png") },
+      { id: "yu-kindergarten", label: "유치원", image: asset("word-yu-kindergarten.png") },
+    ],
+  }),
 ];
 
 
-const SYLLABLE_COMBINE_CHARACTERS = {
+export const SYLLABLE_COMBINE_CHARACTERS = {
   gogo: { key: "gogo", name: "고고 고양이", letter: "ㄱ", image: characterAsset("ㄱ-gogo-cat.png") },
   nana: { key: "nana", name: "나나 나비", letter: "ㄴ", image: characterAsset("ㄴ-nana-butterfly.png") },
   mimi: { key: "mimi", name: "미미 문어", letter: "ㅁ", image: characterAsset("ㅁ-mimi-octopus.png") },

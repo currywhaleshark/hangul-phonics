@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "yu-yu",
+  "lessonId": "lesson-01-aa-baby-vowel-yu",
+  "title": "유유 의자 유 모음 만남",
+  "template": "vowel-combine-story",
+  "character": {
+    "key": "yu",
+    "name": "유유 의자",
+    "letter": "유",
+    "image": "public/video-assets/vowel-alpha/combined/유유 의자 시안-alpha.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/vowel_유_yu.mp3",
+    "duration": 16.938
+  },
+  "segment": {
+    "label": "유유 의자",
+    "start": 0,
+    "end": 16.938
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "yu-baby",
+      "label": "아기",
+      "assetKind": "baby",
+      "image": "public/video-assets/characters/consonants/ㅇ-aa-baby.png",
+      "start": 0.2,
+      "end": 6.198,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.54
+    },
+    {
+      "id": "yu-tool",
+      "label": "유유 의자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/유유 의자-alpha.png",
+      "start": 0.2,
+      "end": 6.198,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "yu-combined",
+      "label": "합친 이미지",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined-hero/유유 의자 시안-hero.png",
+      "start": 6.198,
+      "end": 16.938,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "position": {
+        "left": 50,
+        "top": 55
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "yu-glass",
+      "label": "유리",
+      "image": "worksheets/assets/word-yu-glass.png",
+      "start": 13.373,
+      "end": 16.205,
+      "position": {
+        "left": 19.316,
+        "top": 74.632
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "yu-kindergarten",
+      "label": "유치원",
+      "image": "worksheets/assets/word-yu-kindergarten.png",
+      "start": 14.825,
+      "end": 16.205,
+      "position": {
+        "left": 84.474,
+        "top": 77.813
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "yu-say",
+      "label": "유",
+      "start": 11.881,
+      "end": 12.62,
+      "position": {
+        "left": 17.526,
+        "top": 20.737
+      }
+    },
+    {
+      "id": "yu-final",
+      "label": "유",
+      "start": 16.455,
+      "end": 16.938,
+      "position": {
+        "left": 87.105,
+        "top": 21.485
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "yu-yu",
+    "timingFile": "yu-yu-card-timings.json"
+  }
+}

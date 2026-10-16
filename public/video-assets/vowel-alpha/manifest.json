@@ -226,6 +226,32 @@
         694,
         1045
       ]
+    },
+    {
+      "source": "야야 두 나뭇가지.png",
+      "alpha": "public/video-assets/vowel-alpha/tools/야야 두 나뭇가지-alpha.png",
+      "width": 482,
+      "height": 787,
+      "cropBox": [
+        326,
+        320,
+        817,
+        1115
+      ],
+      "tool": "tools/make_alpha_assets.py"
+    },
+    {
+      "source": "여여 두 풍선.png",
+      "alpha": "public/video-assets/vowel-alpha/tools/여여 두 풍선-alpha.png",
+      "width": 487,
+      "height": 834,
+      "cropBox": [
+        303,
+        334,
+        797,
+        1173
+      ],
+      "tool": "tools/make_alpha_assets.py"
     }
   ],
   "combined": [
@@ -1619,6 +1645,78 @@
         253,
         252
       ]
+    },
+    {
+      "source": "public/아아 아기 야 나뭇가지 노드방출 생성.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/아아 아기 야 나뭇가지-alpha.png",
+      "width": 932,
+      "height": 1030,
+      "cropBox": null,
+      "tool": "tools/make_alpha_assets.py"
+    },
+    {
+      "source": "public/아아 아기 여 풍선 노드방출 생성.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/아아 아기 여 풍선-alpha.png",
+      "width": 918,
+      "height": 1087,
+      "cropBox": null,
+      "tool": "tools/make_alpha_assets.py"
+    },
+    {
+      "source": "public/고고 겨 풍선.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 겨 풍선-alpha.png",
+      "width": 1150,
+      "height": 970,
+      "cropBox": null,
+      "tool": "tools/make_alpha_assets.py"
+    },
+    {
+      "source": "public/나나 녀 풍선.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/나나 녀 풍선-alpha.png",
+      "width": 1113,
+      "height": 1030,
+      "cropBox": null,
+      "tool": "tools/make_alpha_assets.py"
+    },
+    {
+      "source": "public/부부 벼 풍선.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/부부 벼 풍선-alpha.png",
+      "width": 1192,
+      "height": 987,
+      "cropBox": null,
+      "tool": "tools/make_alpha_assets.py"
+    },
+    {
+      "source": "public/하하 혀 풍선.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 혀 풍선-alpha.png",
+      "width": 1142,
+      "height": 1008,
+      "cropBox": null,
+      "tool": "tools/make_alpha_assets.py"
+    },
+    {
+      "source": "public/하하 휴 의자.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/하하 휴 의자-alpha.png",
+      "width": 797,
+      "height": 1135,
+      "cropBox": null,
+      "tool": "tools/make_alpha_assets.py"
+    },
+    {
+      "source": "public/아아 아기 와 오오상자 나뭇가지.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/아아 아기 와 오오상자 나뭇가지-alpha.png",
+      "width": 789,
+      "height": 1209,
+      "cropBox": null,
+      "tool": "tools/make_alpha_assets.py"
+    },
+    {
+      "source": "public/고고 과 오오상자 나뭇가지.png",
+      "alpha": "public/video-assets/vowel-alpha/combined/고고 과 오오상자 나뭇가지-alpha.png",
+      "width": 931,
+      "height": 1201,
+      "cropBox": null,
+      "tool": "tools/make_alpha_assets.py"
     }
   ]
 }

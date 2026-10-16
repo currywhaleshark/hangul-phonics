@@ -1,6 +1,7 @@
 import path from "node:path";
 import { existsSync } from "node:fs";
 
+import { SYLLABLE_GROUP_DEFINITIONS } from "./syllable-group-projects.mjs";
 import { TIMING_PROJECTS } from "./timing-editor-core.js";
 
 export const DEFAULT_VIDEO_DIR = "public/video-assets/consonant-lesson-samples";
@@ -37,11 +38,27 @@ export function isVowelIntroUploadProject(project) {
     && Boolean(project.render?.outputSlug);
 }
 
-export function isUploadProject(project) {
-  return isSyllableCombineUploadProject(project) || isVowelIntroUploadProject(project);
+export function isSyllableGroupUploadProject(project) {
+  return project?.template === "syllable-group-story"
+    && Boolean(project.title)
+    && Array.isArray(project.syllables)
+    && Boolean(project.render?.outputSlug);
 }
 
-export function syllableCombineUploadProjects(projects = TIMING_PROJECTS) {
+export function isUploadProject(project) {
+  return isSyllableCombineUploadProject(project) || isVowelIntroUploadProject(project) || isSyllableGroupUploadProject(project);
+}
+
+// Grouped lesson 15-17 videos only need their id, title and syllables to be uploaded.
+const SYLLABLE_GROUP_UPLOAD_PROJECTS = SYLLABLE_GROUP_DEFINITIONS.map((definition) => ({
+  id: definition.id,
+  template: "syllable-group-story",
+  title: definition.title,
+  syllables: definition.blocks.map((block) => block.syllable),
+  render: { outputSlug: definition.id },
+}));
+
+export function syllableCombineUploadProjects(projects = [...TIMING_PROJECTS, ...SYLLABLE_GROUP_UPLOAD_PROJECTS]) {
   return projects.filter(isUploadProject);
 }
 
@@ -58,7 +75,7 @@ export function makeUploadEntry(project, options = {}) {
     file: path.posix.join(normalizeSlashes(videoDir), `${slug}-timed-lesson.mp4`),
     title,
     description: options.description ?? DEFAULT_DESCRIPTION,
-    tags: [...DEFAULT_TAGS, project.targetSyllable ?? project.character.letter],
+    tags: [...DEFAULT_TAGS, ...(project.syllables ?? [project.targetSyllable ?? project.character.letter])],
     categoryId: options.categoryId ?? DEFAULT_CATEGORY_ID,
     privacyStatus: options.privacyStatus ?? DEFAULT_PRIVACY_STATUS,
     selfDeclaredMadeForKids: options.selfDeclaredMadeForKids ?? true,
@@ -84,6 +101,9 @@ export function buildUploadManifest(options = {}) {
 }
 
 export function buildYoutubeTitle(project) {
+  if (isSyllableGroupUploadProject(project)) {
+    return project.title;
+  }
   if (isVowelIntroUploadProject(project)) {
     const syllable = project.character.letter;
     const vowel = VOWEL_JAMO[Math.floor(((syllable.codePointAt(0) - 0xac00) % 588) / 28)];

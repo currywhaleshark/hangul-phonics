@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "id": "wa-group",
+  "lessonId": "vowel-group-wa-group",
+  "title": "오오 상자와 아아 나뭇가지 | 와·과",
+  "template": "syllable-group-story",
+  "character": {
+    "key": "wa-group",
+    "name": "오오 상자 + 아아 나뭇가지",
+    "letter": "ㅘ"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/group_와과_wa-group.mp3",
+    "duration": 29.095
+  },
+  "segment": {
+    "label": "ㅘ",
+    "start": 0,
+    "end": 29.095
+  },
+  "syllables": [
+    "와",
+    "과"
+  ],
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "wa-group-tool-1-intro",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 0.2,
+      "end": 12.043,
+      "fromPosition": {
+        "left": 84,
+        "top": 70
+      },
+      "toPosition": {
+        "left": 61,
+        "top": 70
+      },
+      "position": {
+        "left": 61,
+        "top": 70
+      },
+      "scale": 0.5
+    },
+    {
+      "id": "wa-group-tool-2-intro",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 0.2,
+      "end": 12.043,
+      "fromPosition": {
+        "left": 61,
+        "top": -20
+      },
+      "toPosition": {
+        "left": 62,
+        "top": 44.5
+      },
+      "position": {
+        "left": 62,
+        "top": 44.5
+      },
+      "scale": 0.5
+    },
+    {
+      "id": "wa-group-와-tool-1",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 12.043,
+      "end": 14.751,
+      "fromPosition": {
+        "left": 61,
+        "top": 70
+      },
+      "toPosition": {
+        "left": 61,
+        "top": 70
+      },
+      "position": {
+        "left": 61,
+        "top": 70
+      },
+      "scale": 0.5
+    },
+    {
+      "id": "wa-group-와-tool-2",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 12.043,
+      "end": 14.751,
+      "fromPosition": {
+        "left": 62,
+        "top": 44.5
+      },
+      "toPosition": {
+        "left": 62,
+        "top": 44.5
+      },
+      "position": {
+        "left": 62,
+        "top": 44.5
+      },
+      "scale": 0.5
+    },
+    {
+      "id": "wa-group-와-character",
+      "label": "아아 아기",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅇ-aa-baby.png",
+      "start": 12.043,
+      "end": 14.751,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "wa-group-와-combined",
+      "label": "와",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/아아 아기 와 오오상자 나뭇가지-alpha.png",
+      "start": 14.751,
+      "end": 16.387,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    },
+    {
+      "id": "wa-group-과-tool-1",
+      "label": "오오 상자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/오오 상자-alpha.png",
+      "start": 16.387,
+      "end": 21.015,
+      "fromPosition": {
+        "left": 61,
+        "top": 70
+      },
+      "toPosition": {
+        "left": 61,
+        "top": 70
+      },
+      "position": {
+        "left": 61,
+        "top": 70
+      },
+      "scale": 0.5
+    },
+    {
+      "id": "wa-group-과-tool-2",
+      "label": "아아 나뭇가지",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/아아 나뭇가지-alpha.png",
+      "start": 16.387,
+      "end": 21.015,
+      "fromPosition": {
+        "left": 62,
+        "top": 44.5
+      },
+      "toPosition": {
+        "left": 62,
+        "top": 44.5
+      },
+      "position": {
+        "left": 62,
+        "top": 44.5
+      },
+      "scale": 0.5
+    },
+    {
+      "id": "wa-group-과-character",
+      "label": "고고 고양이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png",
+      "start": 16.387,
+      "end": 21.015,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "wa-group-과-combined",
+      "label": "과",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/고고 과 오오상자 나뭇가지-alpha.png",
+      "start": 21.015,
+      "end": 22.049,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    }
+  ],
+  "cues": [
+    {
+      "id": "wa-group-word-1",
+      "label": "와플",
+      "badge": "와",
+      "image": "worksheets/assets/word-wa-waffle.png",
+      "start": 21.949,
+      "end": 29.095,
+      "position": {
+        "left": 20,
+        "top": 64
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "wa-group-word-2",
+      "label": "치와와",
+      "badge": "와",
+      "image": "worksheets/assets/word-wa-chihuahua.png",
+      "start": 22.399,
+      "end": 29.095,
+      "position": {
+        "left": 40,
+        "top": 64
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "wa-group-word-3",
+      "label": "과자",
+      "badge": "과",
+      "image": "worksheets/assets/word-gwa-snack.png",
+      "start": 22.849,
+      "end": 29.095,
+      "position": {
+        "left": 60,
+        "top": 64
+      },
+      "accent": "#ff8fab"
+    },
+    {
+      "id": "wa-group-word-4",
+      "label": "사과",
+      "badge": "과",
+      "image": "worksheets/assets/word-gwa-apple.png",
+      "start": 23.299,
+      "end": 29.095,
+      "position": {
+        "left": 80,
+        "top": 64
+      },
+      "accent": "#79ce91"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "wa-group-merged",
+      "label": "ㅘ",
+      "start": 10.693,
+      "end": 12.043,
+      "position": {
+        "left": 80,
+        "top": 22
+      }
+    },
+    {
+      "id": "wa-group-와",
+      "label": "와",
+      "start": 14.751,
+      "end": 29.095,
+      "position": {
+        "left": 42.5,
+        "top": 15
+      }
+    },
+    {
+      "id": "wa-group-과",
+      "label": "과",
+      "start": 21.015,
+      "end": 29.095,
+      "position": {
+        "left": 57.5,
+        "top": 15
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "wa-group",
+    "timingFile": "wa-group-card-timings.json"
+  }
+}

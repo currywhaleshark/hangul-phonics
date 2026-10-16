@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "id": "yeo-group",
+  "lessonId": "vowel-group-yeo-group",
+  "title": "여여 두 풍선과 자음 친구들 | 겨·녀·벼·혀",
+  "template": "syllable-group-story",
+  "character": {
+    "key": "yeo-group",
+    "name": "여여 두 풍선",
+    "letter": "ㅕ"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/group_겨녀벼혀_yeo-group.mp3",
+    "duration": 38.823
+  },
+  "segment": {
+    "label": "ㅕ",
+    "start": 0,
+    "end": 38.823
+  },
+  "syllables": [
+    "겨",
+    "녀",
+    "벼",
+    "혀"
+  ],
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "yeo-group-tool-1-intro",
+      "label": "여여 두 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/여여 두 풍선-alpha.png",
+      "start": 0.2,
+      "end": 6.343,
+      "fromPosition": {
+        "left": 84,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yeo-group-겨-tool-1",
+      "label": "여여 두 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/여여 두 풍선-alpha.png",
+      "start": 6.343,
+      "end": 11.669,
+      "fromPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yeo-group-겨-character",
+      "label": "고고 고양이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png",
+      "start": 6.343,
+      "end": 11.669,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "yeo-group-겨-combined",
+      "label": "겨",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/고고 겨 풍선-alpha.png",
+      "start": 11.669,
+      "end": 12.901,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    },
+    {
+      "id": "yeo-group-녀-tool-1",
+      "label": "여여 두 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/여여 두 풍선-alpha.png",
+      "start": 12.901,
+      "end": 17.587,
+      "fromPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yeo-group-녀-character",
+      "label": "나나 나비",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄴ-nana-butterfly.png",
+      "start": 12.901,
+      "end": 17.587,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "yeo-group-녀-combined",
+      "label": "녀",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/나나 녀 풍선-alpha.png",
+      "start": 17.587,
+      "end": 18.707,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    },
+    {
+      "id": "yeo-group-벼-tool-1",
+      "label": "여여 두 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/여여 두 풍선-alpha.png",
+      "start": 18.707,
+      "end": 22.92,
+      "fromPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yeo-group-벼-character",
+      "label": "부부 부엉이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅂ-bubu-owl.png",
+      "start": 18.707,
+      "end": 22.92,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "yeo-group-벼-combined",
+      "label": "벼",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/부부 벼 풍선-alpha.png",
+      "start": 22.92,
+      "end": 24.055,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    },
+    {
+      "id": "yeo-group-혀-tool-1",
+      "label": "여여 두 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/여여 두 풍선-alpha.png",
+      "start": 24.055,
+      "end": 28.578,
+      "fromPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yeo-group-혀-character",
+      "label": "하하 하마",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅎ-haha-hippo.png",
+      "start": 24.055,
+      "end": 28.578,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "yeo-group-혀-combined",
+      "label": "혀",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/하하 혀 풍선-alpha.png",
+      "start": 28.578,
+      "end": 29.603,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    }
+  ],
+  "cues": [
+    {
+      "id": "yeo-group-word-1",
+      "label": "겨울",
+      "badge": "겨",
+      "image": "worksheets/assets/word-gyeo-winter.png",
+      "start": 29.503,
+      "end": 38.823,
+      "position": {
+        "left": 20,
+        "top": 64
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "yeo-group-word-2",
+      "label": "소녀",
+      "badge": "녀",
+      "image": "worksheets/assets/word-nyeo-girl.png",
+      "start": 29.953,
+      "end": 38.823,
+      "position": {
+        "left": 40,
+        "top": 64
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "yeo-group-word-3",
+      "label": "벼",
+      "badge": "벼",
+      "image": "worksheets/assets/word-byeo-rice.png",
+      "start": 30.403,
+      "end": 38.823,
+      "position": {
+        "left": 60,
+        "top": 64
+      },
+      "accent": "#ff8fab"
+    },
+    {
+      "id": "yeo-group-word-4",
+      "label": "혀",
+      "badge": "혀",
+      "image": "worksheets/assets/word-hyeo-tongue.png",
+      "start": 30.853,
+      "end": 38.823,
+      "position": {
+        "left": 80,
+        "top": 64
+      },
+      "accent": "#79ce91"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "yeo-group-겨",
+      "label": "겨",
+      "start": 11.669,
+      "end": 38.823,
+      "position": {
+        "left": 27.5,
+        "top": 15
+      }
+    },
+    {
+      "id": "yeo-group-녀",
+      "label": "녀",
+      "start": 17.587,
+      "end": 38.823,
+      "position": {
+        "left": 42.5,
+        "top": 15
+      }
+    },
+    {
+      "id": "yeo-group-벼",
+      "label": "벼",
+      "start": 22.92,
+      "end": 38.823,
+      "position": {
+        "left": 57.5,
+        "top": 15
+      }
+    },
+    {
+      "id": "yeo-group-혀",
+      "label": "혀",
+      "start": 28.578,
+      "end": 38.823,
+      "position": {
+        "left": 72.5,
+        "top": 15
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "yeo-group",
+    "timingFile": "yeo-group-card-timings.json"
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "id": "yu-group",
+  "lessonId": "vowel-group-yu-group",
+  "title": "유유 의자와 자음 친구들 | 규·퓨·휴",
+  "template": "syllable-group-story",
+  "character": {
+    "key": "yu-group",
+    "name": "유유 의자",
+    "letter": "ㅠ"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/group_규퓨휴_yu-group.mp3",
+    "duration": 28.67
+  },
+  "segment": {
+    "label": "ㅠ",
+    "start": 0,
+    "end": 28.67
+  },
+  "syllables": [
+    "규",
+    "퓨",
+    "휴"
+  ],
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "yu-group-tool-1-intro",
+      "label": "유유 의자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/유유 의자-alpha.png",
+      "start": 0.2,
+      "end": 4.631,
+      "fromPosition": {
+        "left": 84,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yu-group-규-tool-1",
+      "label": "유유 의자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/유유 의자-alpha.png",
+      "start": 4.631,
+      "end": 8.694,
+      "fromPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yu-group-규-character",
+      "label": "고고 고양이",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㄱ-gogo-cat.png",
+      "start": 4.631,
+      "end": 8.694,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "yu-group-규-combined",
+      "label": "규",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/고고 규 새시안-alpha.png",
+      "start": 8.694,
+      "end": 9.871,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    },
+    {
+      "id": "yu-group-퓨-tool-1",
+      "label": "유유 의자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/유유 의자-alpha.png",
+      "start": 9.871,
+      "end": 15.134,
+      "fromPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yu-group-퓨-character",
+      "label": "푸푸 풍선",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅍ-pupu-balloon.png",
+      "start": 9.871,
+      "end": 15.134,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "yu-group-퓨-combined",
+      "label": "퓨",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/푸푸 퓨 의자 새시안-alpha.png",
+      "start": 15.134,
+      "end": 16.271,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    },
+    {
+      "id": "yu-group-휴-tool-1",
+      "label": "유유 의자",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/유유 의자-alpha.png",
+      "start": 16.271,
+      "end": 19.58,
+      "fromPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "toPosition": {
+        "left": 60,
+        "top": 58
+      },
+      "position": {
+        "left": 60,
+        "top": 58
+      },
+      "scale": 0.62
+    },
+    {
+      "id": "yu-group-휴-character",
+      "label": "하하 하마",
+      "assetKind": "character",
+      "image": "public/video-assets/characters/consonants/ㅎ-haha-hippo.png",
+      "start": 16.271,
+      "end": 19.58,
+      "fromPosition": {
+        "left": 14,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 40,
+        "top": 60
+      },
+      "position": {
+        "left": 40,
+        "top": 60
+      },
+      "scale": 0.56
+    },
+    {
+      "id": "yu-group-휴-combined",
+      "label": "휴",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined/하하 휴 의자-alpha.png",
+      "start": 19.58,
+      "end": 21.576,
+      "fromPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 60
+      },
+      "position": {
+        "left": 50,
+        "top": 60
+      },
+      "scale": 0.8
+    }
+  ],
+  "cues": [
+    {
+      "id": "yu-group-word-1",
+      "label": "규칙",
+      "badge": "규",
+      "image": "worksheets/assets/word-gyu-rule.png",
+      "start": 21.476,
+      "end": 28.67,
+      "position": {
+        "left": 30,
+        "top": 64
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "yu-group-word-2",
+      "label": "퓨마",
+      "badge": "퓨",
+      "image": "worksheets/assets/word-pyu-puma.png",
+      "start": 21.926,
+      "end": 28.67,
+      "position": {
+        "left": 50,
+        "top": 64
+      },
+      "accent": "#8ecae6"
+    },
+    {
+      "id": "yu-group-word-3",
+      "label": "휴지",
+      "badge": "휴",
+      "image": "worksheets/assets/word-hyu-tissue.png",
+      "start": 22.376,
+      "end": 28.67,
+      "position": {
+        "left": 70,
+        "top": 64
+      },
+      "accent": "#ff8fab"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "yu-group-규",
+      "label": "규",
+      "start": 8.694,
+      "end": 28.67,
+      "position": {
+        "left": 35,
+        "top": 15
+      }
+    },
+    {
+      "id": "yu-group-퓨",
+      "label": "퓨",
+      "start": 15.134,
+      "end": 28.67,
+      "position": {
+        "left": 50,
+        "top": 15
+      }
+    },
+    {
+      "id": "yu-group-휴",
+      "label": "휴",
+      "start": 19.58,
+      "end": 28.67,
+      "position": {
+        "left": 65,
+        "top": 15
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "yu-group",
+    "timingFile": "yu-group-card-timings.json"
+  }
+}

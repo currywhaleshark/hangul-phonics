@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "yeo-yeo",
+  "lessonId": "lesson-01-aa-baby-vowel-yeo",
+  "title": "여여 두 풍선 여 모음 만남",
+  "template": "vowel-combine-story",
+  "character": {
+    "key": "yeo",
+    "name": "여여 두 풍선",
+    "letter": "여",
+    "image": "public/video-assets/vowel-alpha/combined/아아 아기 여 풍선-alpha.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/vowel_여_yeo.mp3",
+    "duration": 18.546
+  },
+  "segment": {
+    "label": "여여 두 풍선",
+    "start": 0,
+    "end": 18.546
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "yeo-baby",
+      "label": "아기",
+      "assetKind": "baby",
+      "image": "public/video-assets/characters/consonants/ㅇ-aa-baby.png",
+      "start": 0.2,
+      "end": 7.876,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.54
+    },
+    {
+      "id": "yeo-tool",
+      "label": "여여 두 풍선",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/여여 두 풍선-alpha.png",
+      "start": 0.2,
+      "end": 7.876,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "yeo-combined",
+      "label": "합친 이미지",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined-hero/아아 아기 여 풍선-hero.png",
+      "start": 7.876,
+      "end": 18.546,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "position": {
+        "left": 50,
+        "top": 55
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "yeo-fox",
+      "label": "여우",
+      "image": "worksheets/assets/word-yeo-fox.png",
+      "start": 15.159,
+      "end": 17.824,
+      "position": {
+        "left": 19.316,
+        "top": 74.632
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "yeo-summer",
+      "label": "여름",
+      "image": "worksheets/assets/word-yeo-summer.png",
+      "start": 16.6,
+      "end": 17.824,
+      "position": {
+        "left": 84.474,
+        "top": 77.813
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "yeo-say",
+      "label": "여",
+      "start": 13.741,
+      "end": 14.475,
+      "position": {
+        "left": 17.526,
+        "top": 20.737
+      }
+    },
+    {
+      "id": "yeo-final",
+      "label": "여",
+      "start": 18.074,
+      "end": 18.546,
+      "position": {
+        "left": 87.105,
+        "top": 21.485
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "yeo-yeo",
+    "timingFile": "yeo-yeo-card-timings.json"
+  }
+}

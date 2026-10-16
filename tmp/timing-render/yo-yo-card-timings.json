@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "id": "yo-yo",
+  "lessonId": "lesson-01-aa-baby-vowel-yo",
+  "title": "요요 그네 요 모음 만남",
+  "template": "vowel-combine-story",
+  "character": {
+    "key": "yo",
+    "name": "요요 그네",
+    "letter": "요",
+    "image": "public/video-assets/vowel-alpha/combined/요요 그네 시안-alpha.png"
+  },
+  "audio": {
+    "src": "public/audio-gemini-candidates/vowel-combination-tts/vowel_요_yo.mp3",
+    "duration": 17.631
+  },
+  "segment": {
+    "label": "요요 그네",
+    "start": 0,
+    "end": 17.631
+  },
+  "sceneCues": [],
+  "combineCues": [
+    {
+      "id": "yo-baby",
+      "label": "아기",
+      "assetKind": "baby",
+      "image": "public/video-assets/characters/consonants/ㅇ-aa-baby.png",
+      "start": 0.2,
+      "end": 6.792,
+      "fromPosition": {
+        "left": 18,
+        "top": 56
+      },
+      "toPosition": {
+        "left": 43,
+        "top": 56
+      },
+      "position": {
+        "left": 43,
+        "top": 56
+      },
+      "scale": 0.54
+    },
+    {
+      "id": "yo-tool",
+      "label": "요요 그네",
+      "assetKind": "tool",
+      "image": "public/video-assets/vowel-alpha/tools/요요 그네-alpha.png",
+      "start": 0.2,
+      "end": 6.792,
+      "fromPosition": {
+        "left": 82,
+        "top": 57
+      },
+      "toPosition": {
+        "left": 58,
+        "top": 57
+      },
+      "position": {
+        "left": 58,
+        "top": 57
+      },
+      "scale": 0.74
+    },
+    {
+      "id": "yo-combined",
+      "label": "합친 이미지",
+      "assetKind": "combined",
+      "image": "public/video-assets/vowel-alpha/combined-hero/요요 그네 시안-hero.png",
+      "start": 6.792,
+      "end": 17.631,
+      "fromPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "toPosition": {
+        "left": 50,
+        "top": 55
+      },
+      "position": {
+        "left": 50,
+        "top": 55
+      },
+      "scale": 1.05
+    }
+  ],
+  "cues": [
+    {
+      "id": "yo-cooking",
+      "label": "요리",
+      "image": "worksheets/assets/word-yo-cooking.png",
+      "start": 13.642,
+      "end": 16.846,
+      "position": {
+        "left": 19.316,
+        "top": 74.632
+      },
+      "accent": "#ffb703"
+    },
+    {
+      "id": "yo-fairy",
+      "label": "요정",
+      "image": "worksheets/assets/word-yo-fairy.png",
+      "start": 15.352,
+      "end": 16.846,
+      "position": {
+        "left": 84.474,
+        "top": 77.813
+      },
+      "accent": "#8ecae6"
+    }
+  ],
+  "letterCues": [
+    {
+      "id": "yo-say",
+      "label": "요",
+      "start": 11.703,
+      "end": 12.618,
+      "position": {
+        "left": 17.526,
+        "top": 20.737
+      }
+    },
+    {
+      "id": "yo-final",
+      "label": "요",
+      "start": 17.096,
+      "end": 17.631,
+      "position": {
+        "left": 87.105,
+        "top": 21.485
+      }
+    }
+  ],
+  "render": {
+    "background": "public/video-assets/vowel-backgrounds/vowel-combine-playroom.png",
+    "outputSlug": "yo-yo",
+    "timingFile": "yo-yo-card-timings.json"
+  }
+}
