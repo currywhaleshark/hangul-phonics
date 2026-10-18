@@ -57,6 +57,11 @@
           "sound": "요!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Z7oh-Y1Q4aI",
+        "image": "../../../public/qr/youtube/Z7oh-Y1Q4aI.png"
+      },
       "teacherNote": "큰 글자 요를 손가락으로 천천히 따라간 뒤, ㅇ 아래에 ㅛ를 붙여 요를 만든다.",
       "footerLeft": "ㅇ + ㅛ = 요",
       "footerRight": "아아 아기와 요"
@@ -89,6 +94,11 @@
           "sound": "유!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=9v0-A3gqPf8",
+        "image": "../../../public/qr/youtube/9v0-A3gqPf8.png"
+      },
       "teacherNote": "큰 글자 유를 손가락으로 천천히 따라간 뒤, ㅇ 아래에 ㅠ를 붙여 유를 만든다.",
       "footerLeft": "ㅇ + ㅠ = 유",
       "footerRight": "아아 아기와 유"
@@ -121,6 +131,11 @@
           "sound": "교!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=hsqXJtjDxjo",
+        "image": "../../../public/qr/youtube/hsqXJtjDxjo.png"
+      },
       "teacherNote": "ㄱ 아래에 ㅛ를 붙여 교를 만든다. 교실 그림과 연결해 오늘 글자 교만 찾아본다.",
       "footerLeft": "ㄱ + ㅛ = 교",
       "footerRight": "고고와 교"
@@ -153,6 +168,11 @@
           "sound": "규!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Kggw4EMGbZ4",
+        "image": "../../../public/qr/youtube/Kggw4EMGbZ4.png"
+      },
       "teacherNote": "ㄱ 아래에 ㅠ를 붙여 규를 만든다. 규칙 그림은 '약속을 지켜요' 정도로 가볍게 연결한다.",
       "footerLeft": "ㄱ + ㅠ = 규",
       "footerRight": "고고와 규"
@@ -185,6 +205,11 @@
           "sound": "표!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=hsqXJtjDxjo",
+        "image": "../../../public/qr/youtube/hsqXJtjDxjo.png"
+      },
       "teacherNote": "ㅍ 아래에 ㅛ를 붙여 표를 만든다. 표범 낱말카드는 표 글자에만 집중한다.",
       "footerLeft": "ㅍ + ㅛ = 표",
       "footerRight": "푸푸와 표"
@@ -217,6 +242,11 @@
           "sound": "퓨!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Kggw4EMGbZ4",
+        "image": "../../../public/qr/youtube/Kggw4EMGbZ4.png"
+      },
       "teacherNote": "ㅍ 아래에 ㅠ를 붙여 퓨를 만든다. 퓨마 낱말은 첫 글자 퓨만 찾아보게 한다.",
       "footerLeft": "ㅍ + ㅠ = 퓨",
       "footerRight": "푸푸와 퓨"
@@ -249,6 +279,11 @@
           "sound": "휴!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=Kggw4EMGbZ4",
+        "image": "../../../public/qr/youtube/Kggw4EMGbZ4.png"
+      },
       "teacherNote": "ㅎ 아래에 ㅠ를 붙여 휴를 만든다. 활동 뒤에는 요/유와 교/규/표/퓨/휴를 나누어 복습한다.",
       "footerLeft": "ㅎ + ㅠ = 휴",
       "footerRight": "하하와 휴"

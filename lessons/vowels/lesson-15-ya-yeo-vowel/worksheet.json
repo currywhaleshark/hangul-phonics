@@ -57,6 +57,11 @@
           "sound": "야!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=28rfJgaUHfc",
+        "image": "../../../public/qr/youtube/28rfJgaUHfc.png"
+      },
       "teacherNote": "큰 글자 야를 손가락으로 천천히 따라간 뒤, ㅇ 오른쪽에 ㅑ를 붙여 야를 만든다.",
       "footerLeft": "ㅇ + ㅑ = 야",
       "footerRight": "아아 아기와 야"
@@ -89,6 +94,11 @@
           "sound": "여!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=JunIHSQuyEk",
+        "image": "../../../public/qr/youtube/JunIHSQuyEk.png"
+      },
       "teacherNote": "큰 글자 여를 손가락으로 천천히 따라간 뒤, ㅇ 오른쪽에 ㅕ를 붙여 여를 만든다.",
       "footerLeft": "ㅇ + ㅕ = 여",
       "footerRight": "아아 아기와 여"
@@ -121,6 +131,11 @@
           "sound": "겨!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=f079oUhOJJc",
+        "image": "../../../public/qr/youtube/f079oUhOJJc.png"
+      },
       "teacherNote": "ㄱ 오른쪽에 ㅕ를 붙여 겨를 만든다. ㄱ은 짧게, 겨는 한 번에 읽는다.",
       "footerLeft": "ㄱ + ㅕ = 겨",
       "footerRight": "고고와 겨"
@@ -153,6 +168,11 @@
           "sound": "녀!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=f079oUhOJJc",
+        "image": "../../../public/qr/youtube/f079oUhOJJc.png"
+      },
       "teacherNote": "ㄴ 오른쪽에 ㅕ를 붙여 녀를 만든다. 소녀 낱말에서는 두 번째 글자 녀만 찾아본다.",
       "footerLeft": "ㄴ + ㅕ = 녀",
       "footerRight": "나나와 녀"
@@ -185,6 +205,11 @@
           "sound": "벼!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=f079oUhOJJc",
+        "image": "../../../public/qr/youtube/f079oUhOJJc.png"
+      },
       "teacherNote": "ㅂ 오른쪽에 ㅕ를 붙여 벼를 만든다. 아이가 낱말 그림에서 벼를 먼저 가리키게 한다.",
       "footerLeft": "ㅂ + ㅕ = 벼",
       "footerRight": "부부와 벼"
@@ -217,6 +242,11 @@
           "sound": "혀!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=f079oUhOJJc",
+        "image": "../../../public/qr/youtube/f079oUhOJJc.png"
+      },
       "teacherNote": "ㅎ 오른쪽에 ㅕ를 붙여 혀를 만든다. 혀를 너무 오래 내미는 놀이보다 글자 모양 찾기에 집중한다.",
       "footerLeft": "ㅎ + ㅕ = 혀",
       "footerRight": "하하와 혀"

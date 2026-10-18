@@ -1078,6 +1078,102 @@
       "mask": 4,
       "penalty": 934,
       "source": "syllable-playlist"
+    },
+    {
+      "videoId": "28rfJgaUHfc",
+      "title": "아아 아기와 야야 두 나뭇가지 | ㅇ+ㅑ=야",
+      "url": "https://www.youtube.com/watch?v=28rfJgaUHfc",
+      "qrPng": "public/qr/youtube/28rfJgaUHfc.png",
+      "qrSvg": "public/qr/youtube/28rfJgaUHfc.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 937,
+      "source": "syllable-playlist"
+    },
+    {
+      "videoId": "JunIHSQuyEk",
+      "title": "아아 아기와 여여 두 풍선 | ㅇ+ㅕ=여",
+      "url": "https://www.youtube.com/watch?v=JunIHSQuyEk",
+      "qrPng": "public/qr/youtube/JunIHSQuyEk.png",
+      "qrSvg": "public/qr/youtube/JunIHSQuyEk.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 914,
+      "source": "syllable-playlist"
+    },
+    {
+      "videoId": "Z7oh-Y1Q4aI",
+      "title": "아아 아기와 요요 그네 | ㅇ+ㅛ=요",
+      "url": "https://www.youtube.com/watch?v=Z7oh-Y1Q4aI",
+      "qrPng": "public/qr/youtube/Z7oh-Y1Q4aI.png",
+      "qrSvg": "public/qr/youtube/Z7oh-Y1Q4aI.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 947,
+      "source": "syllable-playlist"
+    },
+    {
+      "videoId": "9v0-A3gqPf8",
+      "title": "아아 아기와 유유 의자 | ㅇ+ㅠ=유",
+      "url": "https://www.youtube.com/watch?v=9v0-A3gqPf8",
+      "qrPng": "public/qr/youtube/9v0-A3gqPf8.png",
+      "qrSvg": "public/qr/youtube/9v0-A3gqPf8.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 918,
+      "source": "syllable-playlist"
+    },
+    {
+      "videoId": "f079oUhOJJc",
+      "title": "여여 두 풍선과 자음 친구들 | 겨·녀·벼·혀",
+      "url": "https://www.youtube.com/watch?v=f079oUhOJJc",
+      "qrPng": "public/qr/youtube/f079oUhOJJc.png",
+      "qrSvg": "public/qr/youtube/f079oUhOJJc.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 908,
+      "source": "syllable-playlist"
+    },
+    {
+      "videoId": "hsqXJtjDxjo",
+      "title": "요요 그네와 자음 친구들 | 교·표",
+      "url": "https://www.youtube.com/watch?v=hsqXJtjDxjo",
+      "qrPng": "public/qr/youtube/hsqXJtjDxjo.png",
+      "qrSvg": "public/qr/youtube/hsqXJtjDxjo.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 958,
+      "source": "syllable-playlist"
+    },
+    {
+      "videoId": "Kggw4EMGbZ4",
+      "title": "유유 의자와 자음 친구들 | 규·퓨·휴",
+      "url": "https://www.youtube.com/watch?v=Kggw4EMGbZ4",
+      "qrPng": "public/qr/youtube/Kggw4EMGbZ4.png",
+      "qrSvg": "public/qr/youtube/Kggw4EMGbZ4.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 898,
+      "source": "syllable-playlist"
+    },
+    {
+      "videoId": "at0RzVgxBu8",
+      "title": "오오 상자와 아아 나뭇가지 | 와·과",
+      "url": "https://www.youtube.com/watch?v=at0RzVgxBu8",
+      "qrPng": "public/qr/youtube/at0RzVgxBu8.png",
+      "qrSvg": "public/qr/youtube/at0RzVgxBu8.svg",
+      "qrVersion": 6,
+      "errorCorrection": "M",
+      "mask": 4,
+      "penalty": 947,
+      "source": "syllable-playlist"
     }
   ]
 }

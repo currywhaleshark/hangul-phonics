@@ -53,6 +53,11 @@
           "sound": "와!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=at0RzVgxBu8",
+        "image": "../../../public/qr/youtube/at0RzVgxBu8.png"
+      },
       "teacherNote": "큰 글자 와를 손가락으로 따라가며 ㅗ와 ㅏ가 붙은 모양을 본다. 쓰기보다 '오-아-와' 소리 합치기를 먼저 한다.",
       "footerLeft": "ㅇ + ㅘ = 와",
       "footerRight": "오오 상자와 아아 나뭇가지"
@@ -85,6 +90,11 @@
           "sound": "과!"
         }
       ],
+      "videoQr": {
+        "label": "영상 보기",
+        "url": "https://www.youtube.com/watch?v=at0RzVgxBu8",
+        "image": "../../../public/qr/youtube/at0RzVgxBu8.png"
+      },
       "teacherNote": "ㄱ 오른쪽에 ㅘ를 붙여 과를 만든다. 와를 먼저 읽고 과로 이어 읽으며 같은 ㅘ 모양을 찾아본다.",
       "footerLeft": "ㄱ + ㅘ = 과",
       "footerRight": "고고와 ㅘ"
