@@ -25,7 +25,7 @@ assert.deepEqual(groupNarrationLines(yeo), [
 ]);
 
 const wa = getSyllableGroupDefinition("wa-group");
-assert.deepEqual(groupNarrationLines(wa).slice(1, 4), ["오, 아, 빨리 붙이면 와!", "아아 아기가 오면, 와!", "고고 고양이가 오면, 그, 와, 과!"]);
+assert.deepEqual(groupNarrationLines(wa).slice(1, 4), ["오, 아, 빨리 붙이면 와!", "아, 아, 아기가 오면, 와!", "고고 고양이가 오면, 그, 와, 과!"]);
 
 // One narration line per scene: the character walks in at the line start and turns into the
 // syllable just before its last phrase.

@@ -3,7 +3,7 @@
   "voiceName": "Callirrhoe",
   "style": "유아 대상 한국어 교사, 밝고 친절한 말투, 또박또박한 발음",
   "trimFilter": "silenceremove=start_periods=1:start_duration=0:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_duration=0:start_threshold=-45dB,areverse",
-  "generatedAt": "2026-10-16T04:43:15.550Z",
+  "generatedAt": "2026-10-18T11:40:00.160Z",
   "count": 82,
   "items": [
     {
@@ -722,7 +722,7 @@
       "text": "아아 아기가\n유유 의자를 만나\n유! 입을 앞으로 모으고 같이 말해요.\n유!\n유리, 유치원.\n유!",
       "mp3": "public/audio-gemini-candidates/vowel-combination-tts/vowel_유_yu.mp3",
       "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/vowel_유_yu.wav",
-      "duration": 16.938
+      "duration": 19.816
     },
     {
       "index": 201,
@@ -731,7 +731,7 @@
       "text": "여여 두 풍선에 자음 친구들이 놀러 와요.\n고고 고양이가 오면, 그, 여, 겨!\n나나 나비가 오면, 느, 여, 녀!\n부부 부엉이가 오면, 브, 여, 벼!\n하하 하마가 오면, 흐, 여, 혀!\n겨울, 소녀, 벼, 혀.\n겨, 녀, 벼, 혀!",
       "mp3": "public/audio-gemini-candidates/vowel-combination-tts/group_겨녀벼혀_yeo-group.mp3",
       "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/group/yeo-group",
-      "duration": 38.823,
+      "duration": 39.283,
       "lines": [
         {
           "text": "여여 두 풍선에 자음 친구들이 놀러 와요.",
@@ -754,26 +754,26 @@
         {
           "text": "부부 부엉이가 오면, 브, 여, 벼!",
           "start": 18.707,
-          "end": 23.455,
-          "lastPhraseStart": 23.07
+          "end": 23.916,
+          "lastPhraseStart": 23.581
         },
         {
           "text": "하하 하마가 오면, 흐, 여, 혀!",
-          "start": 24.055,
-          "end": 29.003,
-          "lastPhraseStart": 28.728
+          "start": 24.516,
+          "end": 29.463,
+          "lastPhraseStart": 29.188
         },
         {
           "text": "겨울, 소녀, 벼, 혀.",
-          "start": 29.603,
-          "end": 33.857,
-          "lastPhraseStart": 33.549
+          "start": 30.063,
+          "end": 34.318,
+          "lastPhraseStart": 34.009
         },
         {
           "text": "겨, 녀, 벼, 혀!",
-          "start": 34.457,
-          "end": 38.823,
-          "lastPhraseStart": 38.329
+          "start": 34.918,
+          "end": 39.283,
+          "lastPhraseStart": 38.789
         }
       ]
     },
@@ -869,10 +869,10 @@
       "index": 204,
       "slug": "wa-group",
       "label": "와과",
-      "text": "오오 상자 위에 아아 나뭇가지가 섰어요.\n오, 아, 빨리 붙이면 와!\n아아 아기가 오면, 와!\n고고 고양이가 오면, 그, 와, 과!\n와플, 치와와, 과자, 사과.\n와, 과!",
+      "text": "오오 상자 위에 아아 나뭇가지가 섰어요.\n오, 아, 빨리 붙이면 와!\n아, 아, 아기가 오면, 와!\n고고 고양이가 오면, 그, 와, 과!\n와플, 치와와, 과자, 사과.\n와, 과!",
       "mp3": "public/audio-gemini-candidates/vowel-combination-tts/group_와과_wa-group.mp3",
       "wav": "public/audio-gemini-candidates/vowel-combination-tts/_wav/group/wa-group",
-      "duration": 29.095,
+      "duration": 30.506,
       "lines": [
         {
           "text": "오오 상자 위에 아아 나뭇가지가 섰어요.",
@@ -887,28 +887,28 @@
           "lastPhraseStart": 10.793
         },
         {
-          "text": "아아 아기가 오면, 와!",
+          "text": "아, 아, 아기가 오면, 와!",
           "start": 12.043,
-          "end": 15.787,
-          "lastPhraseStart": 14.901
+          "end": 17.197,
+          "lastPhraseStart": 16.226
         },
         {
           "text": "고고 고양이가 오면, 그, 와, 과!",
-          "start": 16.387,
-          "end": 21.449,
-          "lastPhraseStart": 21.165
+          "start": 17.797,
+          "end": 22.859,
+          "lastPhraseStart": 22.575
         },
         {
           "text": "와플, 치와와, 과자, 사과.",
-          "start": 22.049,
-          "end": 26.847,
-          "lastPhraseStart": 26.375
+          "start": 23.459,
+          "end": 28.258,
+          "lastPhraseStart": 27.785
         },
         {
           "text": "와, 과!",
-          "start": 27.447,
-          "end": 29.095,
-          "lastPhraseStart": 28.636
+          "start": 28.858,
+          "end": 30.505,
+          "lastPhraseStart": 30.046
         }
       ]
     }

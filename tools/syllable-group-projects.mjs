@@ -13,7 +13,7 @@ const combinedAsset = (file) => `public/video-assets/vowel-alpha/combined/${file
 const wordAsset = (file) => `worksheets/assets/${file}`;
 const audioAsset = (file) => `public/audio-gemini-candidates/vowel-combination-tts/${file}`;
 
-const BABY = { key: "aa", name: "아아 아기", subject: "아아 아기가", image: VOWEL_COMBINE_BABY_IMAGE };
+const BABY = { key: "aa", name: "아아 아기", subject: "아, 아, 아기가", image: VOWEL_COMBINE_BABY_IMAGE };
 const FRIENDS = {
   gogo: { subject: "고고 고양이가", sound: "그" },
   nana: { subject: "나나 나비가", sound: "느" },
