@@ -11,3 +11,6 @@ secrets/
 client_secret*.json
 *oauth*token*.json
 youtube-token*.json
+
+# Book print output (rebuild with node tools/generate_book_print.mjs)
+book/volume-1/print/
