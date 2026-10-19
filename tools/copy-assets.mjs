@@ -18,6 +18,31 @@ function copyDir(src, dest) {
   }
 }
 
+// Videos live on YouTube and the TTS work files are only for re-rendering, so they stay out of the
+// deployed site (Vercel storage). Vite copies all of public/ into dist; prune them afterwards.
+const EXCLUDED_EXTENSIONS = new Set(['.mp4', '.mov', '.avi', '.webm']);
+// consonant-simple-video holds only video render frames and motion tests.
+const EXCLUDED_DIRS = new Set(['_wav', '_source_wav', 'contact-sheets', 'consonant-simple-video']);
+
+function pruneDir(dir) {
+  let removed = 0;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const entryPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (EXCLUDED_DIRS.has(entry.name)) {
+        fs.rmSync(entryPath, { recursive: true, force: true });
+        removed += 1;
+      } else {
+        removed += pruneDir(entryPath);
+      }
+    } else if (EXCLUDED_EXTENSIONS.has(path.extname(entry.name).toLowerCase())) {
+      fs.rmSync(entryPath);
+      removed += 1;
+    }
+  }
+  return removed;
+}
+
 // Ensure build output exists and copy static folders
 try {
   if (fs.existsSync('dist')) {
@@ -28,6 +53,8 @@ try {
     copyDir('worksheets', 'dist/worksheets');
     
     console.log('Successfully copied lessons and worksheets assets to dist!');
+
+    console.log(`Pruned ${pruneDir('dist')} video files and audio work folders from dist.`);
   } else {
     console.error('Error: dist directory does not exist. Run "vite build" first.');
     process.exit(1);
