@@ -28,9 +28,8 @@ const PARENT_STYLE = "아이를 키우는 부모가 다른 부모에게 이야�
 export const INTRO_LINES = [
   {
     id: "01-hook",
-    text: "고고 고양이가 아아 나뭇가지를 들면, 가!",
-    // Written apart so the doubled 아아 is spoken.
-    speech: "고고 고양이가 아, 아, 나뭇가지를 들면, 가!",
+    // "아아 나뭇가지" comes out as "아 나뭇가지" or "아아. 나뭇가지" with this voice, so the hook skips the name.
+    text: "고고 고양이가 나뭇가지를 들면, 가!",
     style: "어린아이에게 들려주듯 밝고 다정한 말투",
     scene: { kind: "clip", file: "ga-a-timed-lesson.mp4", syncAt: 3.95, syncFromLineEnd: 0.45 },
   },
