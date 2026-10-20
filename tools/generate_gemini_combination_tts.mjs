@@ -5,11 +5,11 @@ import { pathToFileURL } from "node:url";
 
 import { SYLLABLE_GROUP_DEFINITIONS, groupAudioFile, groupNarrationLines } from "./syllable-group-projects.mjs";
 
-const model = "gemini-3.1-flash-tts-preview";
+export const model = "gemini-3.1-flash-tts-preview";
 const voiceName = "Callirrhoe";
 const sampleRate = 24000;
 const style = "유아 대상 한국어 교사, 밝고 친절한 말투, 또박또박한 발음";
-const trimFilter = [
+export const trimFilter = [
   "silenceremove=start_periods=1:start_duration=0:start_threshold=-45dB",
   "areverse",
   "silenceremove=start_periods=1:start_duration=0:start_threshold=-45dB",
@@ -188,7 +188,7 @@ export function selectItems(args) {
   });
 }
 
-function run(command, args) {
+export function run(command, args) {
   if (process.platform === "win32" && command.endsWith(".cmd")) {
     return execFileSync("cmd.exe", ["/d", "/s", "/c", command, ...args], {
       encoding: "utf8",
@@ -228,7 +228,7 @@ function wavFromPcm(pcm) {
   return Buffer.concat([header, pcm]);
 }
 
-async function generateAudio({ endpoint, token, prompt, label }) {
+export async function generateAudio({ endpoint, token, prompt, label }) {
   const body = {
     contents: [{ role: "user", parts: [{ text: prompt }] }],
     generationConfig: {

@@ -53,6 +53,7 @@ export const VOWEL_TOOLS = [
 export const UNITS = [
   {
     number: 1,
+    handoutFile: "sorinara-hangul-vol1-unit1-consonant-friends.pdf",
     title: "자음 친구 만나기",
     letters: ["ㄱ", "ㄴ", "ㅁ", "ㅂ", "ㄷ", "ㄹ", "ㅅ", "ㅎ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ"],
     lead: "몸속에 자음을 품은 친구들을 만나요. 그림을 보고 이름을 부르고, 친구마다 가진 짧은 첫소리를 들어요.",
@@ -63,6 +64,7 @@ export const UNITS = [
   },
   {
     number: 2,
+    handoutFile: "sorinara-hangul-vol1-unit2-first-syllables.pdf",
     title: "모음 도구와 첫 글자",
     letters: ["ㅏ", "ㅗ", "ㅜ", "가", "고", "나", "노", "…", "파", "포"],
     lead: "아아 아기가 나뭇가지, 상자, 발판을 만나요. 자음 친구가 나뭇가지를 들고 상자에 올라타면 첫 글자가 돼요.",
@@ -80,6 +82,7 @@ export const UNITS = [
   },
   {
     number: 3,
+    handoutFile: "sorinara-hangul-vol1-unit3-vowel-expansion.pdf",
     title: "모음 넓히기",
     letters: ["ㅓ", "ㅜ", "ㅣ", "ㅡ", "거", "구", "기", "그", "…"],
     lead: "어어 풍선, 이이 막대, 으으 쿠션이 새로 와요. 자음 친구 하나씩 거·구·기·그처럼 소리를 넓혀 가요.",
@@ -97,6 +100,7 @@ export const UNITS = [
   },
   {
     number: 4,
+    handoutFile: "sorinara-hangul-vol1-unit4-double-vowels-wa.pdf",
     title: "두 줄 모음과 ㅘ",
     letters: ["ㅑ", "ㅕ", "ㅛ", "ㅠ", "ㅘ", "야", "여", "요", "유", "와"],
     lead: "두 줄 나뭇가지, 두 풍선, 그네, 의자를 만나요. 오오 상자 위에 나뭇가지가 서면 와가 돼요.",

@@ -3,9 +3,10 @@
 //   book/volume-1/print/cover.pdf     back + spine + front, with bleed
 //   book/volume-1/print/dividers.pdf  one A4 divider per unit
 //   book/volume-1/print/interior.pdf  dividers + every lesson worksheet in order
+//   book/volume-1/print/handouts/     one PDF per unit for home printing (no blank pages)
 // Options: --sided double|single  --sheet-thickness 0.11  --spine <mm>  --bleed 3  --skip-interior
 import { spawnSync } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, statSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -153,22 +154,36 @@ async function main() {
   console.log(`interior: ${pages} pages (${args.sided}-sided), spine ${spine}mm, cover ${coverWidth}x${297 + args.bleed * 2}mm`);
   if (args.skipInterior) return;
 
-  const plan = [];
-  for (const item of sequence) {
-    if (item.kind === "blank") plan.push({ file: blankPdf, page: 0 });
-    else if (item.kind === "divider") plan.push({ file: dividersPdf, page: item.unit - 1 });
-    else {
-      const lessonPdf = path.join(lessonPdfDir, `${item.id}.pdf`);
-      printPdf(path.join(root, "lessons", item.group, item.id, "worksheet.html"), lessonPdf);
-      plan.push({ file: lessonPdf });
-    }
-  }
-  const planPath = path.join(lessonPdfDir, "plan.json");
-  await writeFile(planPath, JSON.stringify(plan, null, 2));
-  const report = JSON.parse(run(PYTHON_WITH_PYPDF, [path.join(root, "tools", "merge_book_pdf.py"), planPath, path.join(printDir, "interior.pdf")]));
+  // Lesson PDFs are reused while they are newer than their worksheet HTML.
+  const lessonPdf = (item) => {
+    const htmlPath = path.join(root, "lessons", item.group, item.id, "worksheet.html");
+    const pdfPath = path.join(lessonPdfDir, `${item.id}.pdf`);
+    if (!existsSync(pdfPath) || statSync(pdfPath).mtimeMs < statSync(htmlPath).mtimeMs) printPdf(htmlPath, pdfPath);
+    return pdfPath;
+  };
+  const merge = async (name, plan, outputPath) => {
+    const planPath = path.join(lessonPdfDir, `${name}.json`);
+    await writeFile(planPath, JSON.stringify(plan, null, 2));
+    return JSON.parse(run(PYTHON_WITH_PYPDF, [path.join(root, "tools", "merge_book_pdf.py"), planPath, outputPath]));
+  };
+
+  const plan = sequence.map((item) => {
+    if (item.kind === "blank") return { file: blankPdf, page: 0 };
+    if (item.kind === "divider") return { file: dividersPdf, page: item.unit - 1 };
+    return { file: lessonPdf(item) };
+  });
+  const report = await merge("plan", plan, path.join(printDir, "interior.pdf"));
   console.log(`interior.pdf: ${report.pages} pages`, report.sizes);
   if (report.pages !== pages) {
     throw new Error(`Printed interior has ${report.pages} pages but worksheets list ${pages}; rerun with --spine after checking.`);
+  }
+
+  const handoutDir = path.join(printDir, "handouts");
+  await mkdir(handoutDir, { recursive: true });
+  for (const unit of units) {
+    const unitPlan = [{ file: dividersPdf, page: unit.number - 1 }, ...unit.lessonList.map((lesson) => ({ file: lessonPdf(lesson) }))];
+    const handout = await merge(`unit-${unit.number}`, unitPlan, path.join(handoutDir, unit.handoutFile));
+    console.log(`handouts/${unit.handoutFile}: ${handout.pages} pages`);
   }
 }
 
