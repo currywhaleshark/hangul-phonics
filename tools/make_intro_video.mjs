@@ -39,6 +39,11 @@ export const INTRO_LINES = [
     scene: { kind: "slide", slide: "friends" },
   },
   {
+    id: "02b-tools",
+    text: "모음은 나뭇가지, 상자, 발판, 풍선, 그네 같은 놀이 도구로 만들었어요.",
+    scene: { kind: "slide", slide: "tools" },
+  },
+  {
     id: "03-play",
     text: "친구가 나뭇가지를 들거나 상자에 올라타면 글자가 돼요. 아이가 이 놀이를 좋아해서 영상과 학습지도 조금씩 늘려 왔어요.",
     scene: { kind: "clip", file: "wa-group-timed-lesson.mp4", syncAt: 16.08, syncFromLineStart: 3.0 },
@@ -111,6 +116,11 @@ const CHARACTERS = [
   "ㅎ-haha-hippo", "ㅈ-jiji-worm", "ㅊ-chichi-train", "ㅋ-koko-koala", "ㅇ-aa-baby", "ㅌ-toto-rabbit", "ㅍ-pupu-balloon",
 ].map((name) => asset(`public/video-assets/characters/consonants/${name}.png`));
 
+const VOWEL_TOOLS = [
+  ["ㅏ", "아아 나뭇가지"], ["ㅗ", "오오 상자"], ["ㅜ", "우우 발판"], ["ㅓ", "어어 풍선"], ["ㅣ", "이이 막대"],
+  ["ㅡ", "으으 쿠션"], ["ㅑ", "야야 두 나뭇가지"], ["ㅕ", "여여 두 풍선"], ["ㅛ", "요요 그네"], ["ㅠ", "유유 의자"],
+].map(([letter, name]) => ({ letter, image: asset(`public/video-assets/vowel-alpha/tools/${name}-alpha.png`) }));
+
 const BASE_CSS = `
 * { box-sizing: border-box; }
 html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; font-family: 'Jua', sans-serif; color: #3a2a20; }
@@ -134,6 +144,10 @@ function page(body, { transparent = false } = {}) {
 .friends .row { display: flex; align-items: flex-end; }
 .friends .row img { width: 262px; height: 262px; object-fit: contain; margin: 0 4px; filter: drop-shadow(0 6px 4px rgba(58,42,32,.22)); }
 .friends .row + .row { margin-top: -40px; }
+.tools { position: absolute; left: 0; right: 0; top: 70px; display: grid; grid-template-columns: repeat(5, 300px); justify-content: center; gap: 18px 40px; }
+.tools figure { margin: 0; display: flex; flex-direction: column; align-items: center; }
+.tools img { width: 280px; height: 290px; object-fit: contain; object-position: bottom; filter: drop-shadow(0 6px 4px rgba(58,42,32,.22)); }
+.tools figcaption { margin-top: 8px; min-width: 76px; padding: 2px 16px; border-radius: 18px; background: #fff; text-align: center; font-size: 46px; color: #1b8fd6; box-shadow: 0 4px 0 rgba(58,42,32,.12); }
 .sheet { position: absolute; left: 150px; top: 46px; height: 790px; transform: rotate(-3deg); border-radius: 18px; box-shadow: 0 18px 40px rgba(58,42,32,.25); }
 .zoom { position: absolute; left: 520px; top: 70px; width: 300px; height: 300px; border-radius: 50%; border: 10px solid #1b8fd6; background: #fff center / 260px no-repeat; box-shadow: 0 10px 24px rgba(58,42,32,.25); }
 .arrow { position: absolute; left: 850px; top: 300px; font-size: 150px; color: #1b8fd6; }
@@ -158,6 +172,11 @@ function slideHtml(slide, line, extras) {
     return page(`<div class="stage"><div class="hill"></div><div class="friends">${rows
       .map((row) => `<div class="row">${row.map((src) => `<img src="${src}">`).join("")}</div>`)
       .join("")}</div>${caption(line.text)}</div>`);
+  }
+  if (slide === "tools") {
+    return page(`<div class="stage"><div class="hill"></div><div class="tools">${VOWEL_TOOLS.map(
+      (tool) => `<figure><img src="${tool.image}"><figcaption>${tool.letter}</figcaption></figure>`,
+    ).join("")}</div>${caption(line.text)}</div>`);
   }
   if (slide === "qr") {
     return page(`<div class="stage"><div class="hill"></div>
