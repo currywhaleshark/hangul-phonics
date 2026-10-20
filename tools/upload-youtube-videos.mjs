@@ -9,6 +9,7 @@ import {
   DEFAULT_SCOPES,
   buildBrowserOpenCommand,
   buildPlaylistInsertBody,
+  buildIntroUploadEntry,
   buildPublishStatusBody,
   buildUploadManifest,
   buildVideoInsertBody,
@@ -23,6 +24,7 @@ const VIDEO_UPLOAD_URL = "https://www.googleapis.com/upload/youtube/v3/videos?pa
 const PLAYLISTS_URL = "https://www.googleapis.com/youtube/v3/playlists";
 const PLAYLIST_ITEMS_URL = "https://www.googleapis.com/youtube/v3/playlistItems";
 const VIDEOS_URL = "https://www.googleapis.com/youtube/v3/videos";
+const THUMBNAILS_URL = "https://www.googleapis.com/upload/youtube/v3/thumbnails/set";
 const TOKEN_FILE_HINT = "secrets/youtube-oauth-token.json";
 const STATE_FILE_HINT = "secrets/youtube-upload-state.json";
 
@@ -30,6 +32,10 @@ async function main() {
   const args = parseUploadArgs(process.argv.slice(2));
   if (args.publishUnlisted) {
     await publishUnlistedUploads(args);
+    return;
+  }
+  if (args.intro) {
+    await uploadIntro(args);
     return;
   }
   const manifest = buildUploadManifest({
@@ -310,14 +316,64 @@ async function uploadVideo(entry, accessToken) {
   return uploaded.json();
 }
 
-async function insertPlaylistItem(videoId, playlistId, accessToken) {
+async function insertPlaylistItem(videoId, playlistId, accessToken, position = null) {
   const url = new URL(PLAYLIST_ITEMS_URL);
   url.searchParams.set("part", "snippet");
   return fetchJson(url, {
     accessToken,
     method: "POST",
-    body: buildPlaylistInsertBody(videoId, playlistId),
+    body: buildPlaylistInsertBody(videoId, playlistId, position),
   });
+}
+
+async function uploadIntro(args) {
+  const entry = buildIntroUploadEntry({ privacyStatus: args.privacyStatus === "private" ? "public" : args.privacyStatus });
+  console.log(`${args.dryRun ? "Dry run" : "Upload"}: ${entry.title} (${entry.privacyStatus}, made for kids: ${entry.selfDeclaredMadeForKids})`);
+  console.log(entry.description);
+  if (args.dryRun) return;
+  const state = await readJsonIfExists(args.stateFile, { uploads: {} });
+  state.uploads ??= {};
+  const oauthClient = await readOAuthClient(args.clientFile);
+  const token = await getAccessToken(oauthClient, args);
+
+  // Resumes after a partial run: the video upload, playlist item and thumbnail are separate steps.
+  let intro = args.force ? null : state.uploads.intro;
+  if (!intro?.videoId) {
+    const upload = await uploadVideo(entry, token.access_token);
+    intro = { videoId: upload.id, playlistItemId: null, title: entry.title, file: entry.file, playlistTitle: args.playlistTitle, uploadedAt: new Date().toISOString() };
+    state.uploads.intro = intro;
+    await writeJson(args.stateFile, state);
+  }
+  console.log(`Intro video: https://www.youtube.com/watch?v=${intro.videoId}`);
+
+  if (!intro.playlistItemId) {
+    const playlist = findPlaylistByTitle(await listPlaylists(token.access_token), args.playlistTitle);
+    if (!playlist) throw new Error(`Playlist not found: ${args.playlistTitle}`);
+    let playlistItem;
+    try {
+      playlistItem = await insertPlaylistItem(intro.videoId, playlist.id, token.access_token, entry.playlistPosition);
+      console.log(`Added to playlist ${args.playlistTitle} at position ${entry.playlistPosition}`);
+    } catch (error) {
+      if (!String(error.message).includes("manualSortRequired")) throw error;
+      playlistItem = await insertPlaylistItem(intro.videoId, playlist.id, token.access_token);
+      console.log(`Added to the end of ${args.playlistTitle}: the playlist is not manually sorted, so it cannot go first.`);
+    }
+    intro.playlistItemId = playlistItem.id ?? null;
+    await writeJson(args.stateFile, state);
+  }
+
+  if (!intro.thumbnailSet) {
+    // Custom thumbnails need a verified channel; the video keeps YouTube's frame when this fails.
+    const thumbnail = await readFile(resolveWorkspacePath(entry.thumbnail));
+    const response = await fetch(`${THUMBNAILS_URL}?videoId=${intro.videoId}`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token.access_token}`, "Content-Type": "image/png" },
+      body: thumbnail,
+    });
+    console.log(response.ok ? "Thumbnail set." : `Thumbnail not set: ${response.status} ${await response.text()}`);
+    intro.thumbnailSet = response.ok;
+    await writeJson(args.stateFile, state);
+  }
 }
 
 // Switches videos recorded in the upload state from unlisted to public; private ones are left alone.

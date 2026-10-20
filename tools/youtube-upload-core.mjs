@@ -1,6 +1,7 @@
 import path from "node:path";
 import { existsSync } from "node:fs";
 
+import { UNITS } from "./book_print_core.mjs";
 import { SYLLABLE_GROUP_DEFINITIONS } from "./syllable-group-projects.mjs";
 import { TIMING_PROJECTS } from "./timing-editor-core.js";
 
@@ -148,10 +149,11 @@ export function findPlaylistByTitle(playlists, title) {
   return playlists.find((playlist) => normalizeTitle(playlist?.snippet?.title) === normalizedTitle) ?? null;
 }
 
-export function buildPlaylistInsertBody(videoId, playlistId) {
+export function buildPlaylistInsertBody(videoId, playlistId, position = null) {
   return {
     snippet: {
       playlistId,
+      ...(position == null ? {} : { position }),
       resourceId: {
         kind: "youtube#video",
         videoId,
@@ -198,6 +200,8 @@ export function parseUploadArgs(argv) {
     } else if (arg === "--only") {
       args.only = readArgValue(argv, index, arg).split(",").map((item) => item.trim()).filter(Boolean);
       index += 1;
+    } else if (arg === "--intro") {
+      args.intro = true;
     } else if (arg === "--publish-unlisted") {
       args.publishUnlisted = true;
     } else if (arg === "--privacy") {
@@ -285,4 +289,35 @@ function hasFinalConsonant(value) {
     }
   }
   return false;
+}
+
+export const WORKSHEET_RELEASE_URL = "https://github.com/currywhaleshark/hangul-phonics/releases/download/worksheets-vol1";
+export const PLAYLIST_URL = "https://www.youtube.com/playlist?list=PL0u1NTgEz-xFjU8_KXoKUDf1AwcnOBfC0";
+
+// Parent-facing intro: not made for kids so the worksheet links stay usable; goes first in the playlist.
+export function buildIntroUploadEntry({ privacyStatus = "public" } = {}) {
+  const links = UNITS.map((unit) => `${unit.number}단원 ${unit.title}: ${WORKSHEET_RELEASE_URL}/${unit.handoutFile}`);
+  return {
+    projectId: "intro",
+    file: "public/video-assets/intro/sorinara-intro.mp4",
+    thumbnail: "public/video-assets/intro/sorinara-intro-thumbnail.png",
+    title: "아이 한글 가르치려고 만든 학습지, 무료로 나눠요 | 소리나라 한글친구들",
+    description: [
+      "아이에게 한글 소리를 알려 주려고 자음마다 친구를 만들고, 영상과 학습지를 조금씩 만들어 왔어요. 비슷한 또래 아이를 키우는 분들께 도움이 될까 해서 나눠요.",
+      "",
+      "학습지 무료로 받기 (A4 PDF)",
+      ...links,
+      "",
+      "학습지의 QR을 휴대폰으로 찍으면 그 글자 영상이 나와요.",
+      `전체 영상: ${PLAYLIST_URL}`,
+      "",
+      "개인이 만든 자료라 부족한 점이 있을 수 있어요. 편하게 써 주세요.",
+    ].join("\n"),
+    tags: [...DEFAULT_TAGS, "한글 학습지", "무료 학습지", "유아 한글", "한글 파닉스"],
+    categoryId: DEFAULT_CATEGORY_ID,
+    privacyStatus,
+    selfDeclaredMadeForKids: false,
+    containsSyntheticMedia: true,
+    playlistPosition: 0,
+  };
 }
